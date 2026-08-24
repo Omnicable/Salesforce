@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Salesperson__c</fullName>
+    <description>Who is your contact for this event?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who is the customer contact for this event?</inlineHelpText>
+    <label>Customer Salesperson</label>
+    <length>250</length>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

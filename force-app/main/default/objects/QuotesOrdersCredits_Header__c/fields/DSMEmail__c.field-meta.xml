@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DSMEmail__c</fullName>
+    <description>Will be filled out when QOC is created so that the email alert for DSM Orders can send to this email field.</description>
+    <externalId>false</externalId>
+    <label>DSMEmail</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

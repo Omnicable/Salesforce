@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Omni_Freight_Owner__c</fullName>
+    <externalId>false</externalId>
+    <formula>Account__r.Owner.FirstName &amp; &quot; &quot;&amp; Account__r.Owner.LastName</formula>
+    <label>Omni Freight Owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jacket_Search__c</fullName>
+    <description>Jacket options for the Advanced Search filters on the website.</description>
+    <label>Jacket Search</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CPE - Chlorinated Polyethylene</fullName>
+                <default>false</default>
+                <label>CPE - Chlorinated Polyethylene</label>
+            </value>
+            <value>
+                <fullName>CSPE - Chlorosulfonated Polyethylene</fullName>
+                <default>false</default>
+                <label>CSPE - Chlorosulfonated Polyethylene</label>
+            </value>
+            <value>
+                <fullName>EPDM - Ethylene Propylene Diene Monomer Rubber</fullName>
+                <default>false</default>
+                <label>EPDM - Ethylene Propylene Diene Monomer Rubber</label>
+            </value>
+            <value>
+                <fullName>FEP - Fluorinated Ethylene Propylene</fullName>
+                <default>false</default>
+                <label>FEP - Fluorinated Ethylene Propylene</label>
+            </value>
+            <value>
+                <fullName>Fiberglass</fullName>
+                <default>false</default>
+                <label>Fiberglass</label>
+            </value>
+            <value>
+                <fullName>LSZH - Low Smoke Zero Halogen</fullName>
+                <default>false</default>
+                <label>LSZH - Low Smoke Zero Halogen</label>
+            </value>
+            <value>
+                <fullName>Neoprene</fullName>
+                <default>false</default>
+                <label>Neoprene</label>
+            </value>
+            <value>
+                <fullName>Nylon</fullName>
+                <default>false</default>
+                <label>Nylon</label>
+            </value>
+            <value>
+                <fullName>PE - Polyethylene</fullName>
+                <default>false</default>
+                <label>PE - Polyethylene</label>
+            </value>
+            <value>
+                <fullName>Plenum</fullName>
+                <default>false</default>
+                <label>Plenum</label>
+            </value>
+            <value>
+                <fullName>PVC - Polyvinyl Chloride</fullName>
+                <default>false</default>
+                <label>PVC - Polyvinyl Chloride</label>
+            </value>
+            <value>
+                <fullName>Silicone/Rubber</fullName>
+                <default>false</default>
+                <label>Silicone/Rubber</label>
+            </value>
+            <value>
+                <fullName>TPE - Thermoplastic Elastomer</fullName>
+                <default>false</default>
+                <label>TPE - Thermoplastic Elastomer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

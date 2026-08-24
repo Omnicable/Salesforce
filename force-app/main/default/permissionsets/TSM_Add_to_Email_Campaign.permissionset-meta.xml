@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission to edit TSM Campaign checkbox to automatically add contacts to dynamic campaigns in Pardot</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.TSM_Campaign__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>TSM Add to Email Campaign</label>
+</PermissionSet>

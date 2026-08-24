@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manager_Role__c</fullName>
+    <description>Marketing Budget Owner&apos;s Role</description>
+    <externalId>false</externalId>
+    <formula>CreatedBy.Manager.UserRole.Name</formula>
+    <label>1st Manager Approver Role</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

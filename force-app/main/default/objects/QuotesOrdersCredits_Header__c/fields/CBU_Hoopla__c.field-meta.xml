@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CBU_Hoopla__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>used for Region 29 streaming alerts on Hoopla</description>
+    <label>CBU Hoopla</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

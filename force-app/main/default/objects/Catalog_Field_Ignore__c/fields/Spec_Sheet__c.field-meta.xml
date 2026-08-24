@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spec_Sheet__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Spec Sheets</label>
+    <referenceTo>Spec_Sheet__c</referenceTo>
+    <relationshipLabel>Catalog Field Ignores</relationshipLabel>
+    <relationshipName>Catalog_Field_Ignores</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

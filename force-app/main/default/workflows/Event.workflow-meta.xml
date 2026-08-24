@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>On_Call_Schedule_A2ssigned_User_has_Changed</fullName>
+        <description>On Call Notification Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dvanbelle@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_On_Call_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>On_Call_Schedule_Assigned_User_has_Changed</fullName>
+        <description>USED IN PROCESS BUILDER: On Call Schedule assigned user, start date, or end date has changed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>mkumar@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>wfiore@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/On_Call_Schedule_Assigned_User_Changed</template>
+    </alerts>
+    <alerts>
+        <fullName>R8_BDR_Outside_Sales_Call_Logged</fullName>
+        <description>R8 BDR Outside Sales Call Logged</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Task_Notification_for_mobile2</template>
+    </alerts>
+    <rules>
+        <fullName>On Call 1 Week Reminder Email</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Event.Subject</field>
+            <operation>equals</operation>
+            <value>On Call for Omni Cable</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Event.ActivityDate</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>On Call Notification Email Alert</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Event.Subject</field>
+            <operation>equals</operation>
+            <value>On Call for Omni Cable</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Event.Start_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Email sent to AM on call 7 days before start date</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>On_Call_Schedule_A2ssigned_User_has_Changed</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Event.Start_Date__c</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>TX BDR Log a call</fullName>
+        <actions>
+            <name>R8_BDR_Outside_Sales_Call_Logged</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Event.Created_by_Role__c</field>
+            <operation>equals</operation>
+            <value>District Sales Manager 8</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Event.Subject</field>
+            <operation>equals</operation>
+            <value>Outside Sales Call</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

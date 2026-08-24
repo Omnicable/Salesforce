@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <tasks>
+        <fullName>Review_Freight_Agreement</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Please follow up and review the freight agreement with this customer.</description>
+        <dueDateOffset>14</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Review Freight Agreement</subject>
+    </tasks>
+</Workflow>

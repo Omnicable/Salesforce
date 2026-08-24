@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Modified_Contact__c</fullName>
+    <description>Lookup to the contact that was modified</description>
+    <label>Modified Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Contact Modifications</relationshipLabel>
+    <relationshipName>Contact_Modifications</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

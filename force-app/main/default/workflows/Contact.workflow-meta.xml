@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Alert_for_me_to_Approve_new_Vendor_Contact</fullName>
+        <description>Email Alert to Approve new Vendor Contact</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Vendor_Contact_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_sent_to_Nikki_when_a_Pardot_Hard_Bounce_email_address_is_updated</fullName>
+        <description>Email sent to Nikki when a Pardot Hard Bounce email address is updated</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cserio@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Templates/Pardot_Hard_Bounce_Email_Updated</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Customer_Portal_User_Created_2018</fullName>
+        <description>New Customer Portal User Created 2018</description>
+        <protected>false</protected>
+        <recipients>
+            <field>RM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>TSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jlesaski@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Portal/New_User_Created2</template>
+    </alerts>
+    <alerts>
+        <fullName>Portal_User_signed_up_for_Reel_Rewards_NEW</fullName>
+        <description>Portal User signed up for Reel Rewards NEW</description>
+        <protected>false</protected>
+        <recipients>
+            <field>RM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>TSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kgarza@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Portal/New_Reel_Rewards_Participant</template>
+    </alerts>
+    <alerts>
+        <fullName>VIP_Contact_Email_Alert</fullName>
+        <description>VIP Contact Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Templates/VIP_Contact_Alert</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Buyer_Field</fullName>
+        <description>Change Multi-Location Contact field to N</description>
+        <field>Buyer__c</field>
+        <literalValue>N</literalValue>
+        <name>Change &quot;Multi-Location Contact&quot; to N</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Portal_User_Box</fullName>
+        <field>PortalUser__c</field>
+        <literalValue>Y</literalValue>
+        <name>Check Portal User Box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Assitant_Phone</fullName>
+        <field>AssistantPhone</field>
+        <name>Clear Assitant Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Fax</fullName>
+        <field>Fax</field>
+        <name>Clear Fax</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Home_Phones</fullName>
+        <field>HomePhone</field>
+        <name>Clear Home Phones</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Mobile</fullName>
+        <field>MobilePhone</field>
+        <name>Clear Mobile</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Other_Phone</fullName>
+        <field>OtherPhone</field>
+        <name>Clear Other Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Phones</fullName>
+        <field>Phone</field>
+        <name>Clear Phones</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactActiveField</fullName>
+        <field>Active__c</field>
+        <literalValue>A</literalValue>
+        <name>ContactActiveField</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactBuyerFlag</fullName>
+        <field>Buyer__c</field>
+        <literalValue>N</literalValue>
+        <name>ContactBuyerFlag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Owner</fullName>
+        <field>OwnerId</field>
+        <lookupValue>integration@omnicable.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Contact Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Owner_Integration</fullName>
+        <description>Make the contact owner Integration when the contact is deactivated</description>
+        <field>OwnerId</field>
+        <lookupValue>integration@omnicable.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Contact Owner = Integration</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>D_Contact_Add_zzz_to_First_Name</fullName>
+        <description>Add &quot;zzz&quot; to the beginning of the contact&apos;s first name. This is done so that &quot;D&quot; Contacts are moved to the bottom of the Contacts related list on Accounts.</description>
+        <field>FirstName</field>
+        <formula>&quot;zzz&quot; + FirstName</formula>
+        <name>D Contact - Add &quot;zzz&quot; to First Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>D_Contact_Add_zzz_to_Last_Name</fullName>
+        <description>Add &quot;zzz&quot; to the beginning of the contact&apos;s last name. This is done so that &quot;D&quot; Contacts are moved to the bottom of the Contacts related list on Accounts.</description>
+        <field>LastName</field>
+        <formula>&quot;zzz&quot; + LastName</formula>
+        <name>D Contact - Add &quot;zzz&quot; to Last Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>D_Contact_Add_zzz_to_email</fullName>
+        <description>Add &quot;zzz&quot; to the beginning of the contact&apos;s email. This is done so that &quot;D&quot; Contacts are moved to the bottom and so there aren&apos;t duplicates later.</description>
+        <field>Email</field>
+        <formula>&quot;zzz&quot; + Email</formula>
+        <name>D Contact - Add &quot;zzz&quot; to email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Deactivate_contacts</fullName>
+        <field>Active__c</field>
+        <literalValue>D</literalValue>
+        <name>Deactivate contacts</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VendorRecord_Type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>VendorContact</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>VendorRecord Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>%22Multi-Location Contact%22 %3D  N for D Contacts</fullName>
+        <actions>
+            <name>Buyer_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Owner_Integration</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Active__c</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </criteriaItems>
+        <description>If contact is deactivated, make the contact owner Integration and set Multi-Location Contact to &quot;N&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>%22zzz%22 deactivated Contacts</fullName>
+        <actions>
+            <name>D_Contact_Add_zzz_to_First_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>D_Contact_Add_zzz_to_Last_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Active__c</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </criteriaItems>
+        <description>When a contact is deactivated, add &quot;zzz&quot; to the beginning of the contact&apos;s first and last names. This is done so that &quot;D&quot; Contacts are moved to the bottom of the Contacts related list on the account page.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Active for new Contacts</fullName>
+        <actions>
+            <name>ContactActiveField</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>User.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Active__c</field>
+            <operation>notEqual</operation>
+            <value>D,X</value>
+        </criteriaItems>
+        <description>Defaults New Contacts to Active</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Assign D contacts to integration</fullName>
+        <actions>
+            <name>Clear_Assitant_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Fax</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Home_Phones</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Mobile</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Other_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Phones</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Active__c</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </criteriaItems>
+        <description>Hope to have D&apos;s no longer show up I also changed Account and Contact Org sharing to Private.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Buyer for new Contacts</fullName>
+        <actions>
+            <name>ContactBuyerFlag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>User.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Buyer__c</field>
+            <operation>notEqual</operation>
+            <value>Y,N</value>
+        </criteriaItems>
+        <description>Defaults blank Buyers to Contacts to N</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Deactivate contacts for D Accounts</fullName>
+        <actions>
+            <name>Deactivate_contacts</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Active__c</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Pardot Hard Bounce Email Updated</fullName>
+        <actions>
+            <name>Email_sent_to_Nikki_when_a_Pardot_Hard_Bounce_email_address_is_updated</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.CreatedDate</field>
+            <operation>notEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.pi__pardot_hard_bounced__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Active__c</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.FirstName</field>
+            <operation>equals</operation>
+            <value>John</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.LastName</field>
+            <operation>equals</operation>
+            <value>Dean</value>
+        </criteriaItems>
+        <description>Rule to alert Nikki when a contact&apos;s email adress that hard bounced was updated to a new email address</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

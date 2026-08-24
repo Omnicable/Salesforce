@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promo_Customer_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>The customer contact you planned this promotion with</inlineHelpText>
+    <label>Customer Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Promos (Customer Contact)</relationshipLabel>
+    <relationshipName>Promos1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

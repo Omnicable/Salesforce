@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Capital_Project</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide read access to all capital project opportunitites</description>
+        <label>Capital Project</label>
+        <sharedTo>
+            <role>Capital_Projects</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Capital_Project__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Capital_Project_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide edit access to all capital project opportuniteis to leaders</description>
+        <label>Capital Project Leaders</label>
+        <sharedTo>
+            <role>Capital_Projects_Leader</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Capital_Project__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>LOD_Leaders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Give LOD Leaders edit access to all LOD opportunities</description>
+        <label>LOD Leaders</label>
+        <sharedTo>
+            <role>Large_Order_Leader</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>LOD__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>LOD_Projects</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>LOD Projects</label>
+        <sharedTo>
+            <role>Large_Orders</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>LOD__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

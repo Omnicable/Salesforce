@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Order_Credit__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Quote/Order/Credit</label>
+    <referenceTo>QuotesOrdersCredits_Header__c</referenceTo>
+    <relationshipLabel>Alternative Part Numbers</relationshipLabel>
+    <relationshipName>Alternative_Part_Numbers</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

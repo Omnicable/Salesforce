@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Graybar_Current_Promos</fullName>
+    <columns>NAME</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Promo_Format__c</columns>
+    <columns>Other_Format_Prize__c</columns>
+    <columns>Promo_Tracking_Report__c</columns>
+    <columns>User__c</columns>
+    <columns>Status__c</columns>
+    <columns>Targeted_Sales_During_Promotion__c</columns>
+    <columns>Length_of_Promotion__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Graybar</value>
+    </filters>
+    <filters>
+        <field>End_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>Graybar Current Promos</label>
+    <sharedTo>
+        <group>AllSalesforceUsers</group>
+    </sharedTo>
+</ListView>

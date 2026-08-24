@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Strategic_Goal__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(Area_of_Focus__c  ,&quot;Product&quot;), &quot;Increase &quot; &amp; TEXT(Measure__c) &amp;&quot; for &quot;&amp; TEXT(Product_Groups__c) &amp; &quot; to &quot;&amp;  TEXT(Strategic_Target__c) &amp;&quot;. &quot;&amp; (Additional_Note__c)  , 
+
+IF( ISPICKVAL(Area_of_Focus__c  ,&quot;People&quot;), &quot;Increase &quot; &amp; TEXT(Measure__c) &amp;&quot; for &quot;&amp;  CPI_Contact1__r.FirstName &amp;&quot; &quot;&amp; CPI_Contact1__r.LastName &amp; IF( CPI_Contact2__c &lt;&gt;NULL, &quot; AND &quot;&amp; CPI_Contact2__r.FirstName &amp;&quot; &quot;&amp; CPI_Contact2__r.LastName,&quot;&quot;) &amp; &quot; to &quot;&amp;  TEXT(Strategic_Target__c) &amp;&quot;. &quot;&amp; (Additional_Note__c) , 
+
+IF( ISPICKVAL(Area_of_Focus__c  ,&quot;Order Size Bucket&quot;), &quot;Increase &quot; &amp; TEXT(Measure__c) &amp;&quot; for &quot;&amp; TEXT( Order_Size_Buckets__c ) &amp; &quot; to &quot;&amp;  TEXT(Strategic_Target__c )
+ &amp;&quot;. &quot;&amp; (Additional_Note__c)   
+,NULL)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Strategic Goal</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

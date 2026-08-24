@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Groups__c</fullName>
+    <label>Product Groups</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Area_of_Focus__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AI    | ALUMINUM INTERLOCKED ARMOR</fullName>
+                <default>false</default>
+                <label>AI    | ALUMINUM INTERLOCKED ARMOR</label>
+            </value>
+            <value>
+                <fullName>AL    | DISTRIBUTION ALUMINUM CABLES</fullName>
+                <default>false</default>
+                <label>AL    | DISTRIBUTION ALUMINUM CABLES</label>
+            </value>
+            <value>
+                <fullName>BC    | BARE COPPER</fullName>
+                <default>false</default>
+                <label>BC    | BARE COPPER</label>
+            </value>
+            <value>
+                <fullName>BE    | BELDEN ITEM</fullName>
+                <default>false</default>
+                <label>BE    | BELDEN ITEM</label>
+            </value>
+            <value>
+                <fullName>CC    | CONTINUOUS CORRUGATED ARMOR</fullName>
+                <default>false</default>
+                <label>CC    | CONTINUOUS CORRUGATED ARMOR</label>
+            </value>
+            <value>
+                <fullName>CT    | CALTRAN TRAFFIC CONTROL CABLE</fullName>
+                <default>false</default>
+                <label>CT    | CALTRAN TRAFFIC CONTROL CABLE</label>
+            </value>
+            <value>
+                <fullName>CX    | COAXIAL CABLE</fullName>
+                <default>false</default>
+                <label>CX    | COAXIAL CABLE</label>
+            </value>
+            <value>
+                <fullName>DC    | DATA CABLES-LOOP-POS-LAN-TWAX</fullName>
+                <default>false</default>
+                <label>DC    | DATA CABLES-LOOP-POS-LAN-TWAX</label>
+            </value>
+            <value>
+                <fullName>EC    | ELECTRICAL CABLE</fullName>
+                <default>false</default>
+                <label>EC    | ELECTRICAL CABLE</label>
+            </value>
+            <value>
+                <fullName>FA    | FIRE ALARM</fullName>
+                <default>false</default>
+                <label>FA    | FIRE ALARM</label>
+            </value>
+            <value>
+                <fullName>FC    | 600-2KV PORT CORD,WELD,DLO,W,G</fullName>
+                <default>false</default>
+                <label>FC    | 600-2KV PORT CORD,WELD,DLO,W,G</label>
+            </value>
+            <value>
+                <fullName>FO    | FIBER OPTIC</fullName>
+                <default>false</default>
+                <label>FO    | FIBER OPTIC</label>
+            </value>
+            <value>
+                <fullName>HT    | HIGH TEMP CABLE 150-538 DEG C.</fullName>
+                <default>false</default>
+                <label>HT    | HIGH TEMP CABLE 150-538 DEG C.</label>
+            </value>
+            <value>
+                <fullName>HU    | HOOK UP WIRE</fullName>
+                <default>false</default>
+                <label>HU    | HOOK UP WIRE</label>
+            </value>
+            <value>
+                <fullName>IC    | INSTR CABLE PVC 600-300V UL</fullName>
+                <default>false</default>
+                <label>IC    | INSTR CABLE PVC 600-300V UL</label>
+            </value>
+            <value>
+                <fullName>LT    | LUTRON CABLES</fullName>
+                <default>false</default>
+                <label>LT    | LUTRON CABLES</label>
+            </value>
+            <value>
+                <fullName>LU    | LUTZE - SILFLEX</fullName>
+                <default>false</default>
+                <label>LU    | LUTZE - SILFLEX</label>
+            </value>
+            <value>
+                <fullName>LV    | LOW VOLTAGE LIGHTING 150V 60C</fullName>
+                <default>false</default>
+                <label>LV    | LOW VOLTAGE LIGHTING 150V 60C</label>
+            </value>
+            <value>
+                <fullName>MC    | METAL CLAD POWER AND CONTROL</fullName>
+                <default>false</default>
+                <label>MC    | METAL CLAD POWER AND CONTROL</label>
+            </value>
+            <value>
+                <fullName>MO    | MONTROSE/M CABLE</fullName>
+                <default>false</default>
+                <label>MO    | MONTROSE/M CABLE</label>
+            </value>
+            <value>
+                <fullName>MU    | MEDIUM VOLTAGE URD CABLES</fullName>
+                <default>false</default>
+                <label>MU    | MEDIUM VOLTAGE URD CABLES</label>
+            </value>
+            <value>
+                <fullName>MV    | MED VOLTAGE 5-15KV CABLE</fullName>
+                <default>false</default>
+                <label>MV    | MED VOLTAGE 5-15KV CABLE</label>
+            </value>
+            <value>
+                <fullName>OL    | OLFLEX ITEMS</fullName>
+                <default>false</default>
+                <label>OL    | OLFLEX ITEMS</label>
+            </value>
+            <value>
+                <fullName>PC    | TELEPHONE COMMUNICATION CABLE</fullName>
+                <default>false</default>
+                <label>PC    | TELEPHONE COMMUNICATION CABLE</label>
+            </value>
+            <value>
+                <fullName>PL    | PLENUM CONTROL CABLE</fullName>
+                <default>false</default>
+                <label>PL    | PLENUM CONTROL CABLE</label>
+            </value>
+            <value>
+                <fullName>PV    | PVC-AUDIO VIDEO COMM CABLE</fullName>
+                <default>false</default>
+                <label>PV    | PVC-AUDIO VIDEO COMM CABLE</label>
+            </value>
+            <value>
+                <fullName>QR    | QUAD RATED: TC,PLTC,NPLF,FPL</fullName>
+                <default>false</default>
+                <label>QR    | QUAD RATED: TC,PLTC,NPLF,FPL</label>
+            </value>
+            <value>
+                <fullName>RT    | TE/RAYCHEM ITEMS</fullName>
+                <default>false</default>
+                <label>RT    | TE/RAYCHEM ITEMS</label>
+            </value>
+            <value>
+                <fullName>SA    | SAB ITEMS</fullName>
+                <default>false</default>
+                <label>SA    | SAB ITEMS</label>
+            </value>
+            <value>
+                <fullName>SC    | UL1015 600V PVC</fullName>
+                <default>false</default>
+                <label>SC    | UL1015 600V PVC</label>
+            </value>
+            <value>
+                <fullName>SP    | 600V UL SUBMERSIBLE PUMP 75C</fullName>
+                <default>false</default>
+                <label>SP    | 600V UL SUBMERSIBLE PUMP 75C</label>
+            </value>
+            <value>
+                <fullName>TC    | 600V UL TRAY CABLE 90C DB</fullName>
+                <default>false</default>
+                <label>TC    | 600V UL TRAY CABLE 90C DB</label>
+            </value>
+            <value>
+                <fullName>TH    | THERMOCOUPLE EXTENSION WIRE</fullName>
+                <default>false</default>
+                <label>TH    | THERMOCOUPLE EXTENSION WIRE</label>
+            </value>
+            <value>
+                <fullName>TK    | TECK 90 CABLES</fullName>
+                <default>false</default>
+                <label>TK    | TECK 90 CABLES</label>
+            </value>
+            <value>
+                <fullName>TP    | TYPE-P MARINE SHIPBOARD CABLE</fullName>
+                <default>false</default>
+                <label>TP    | TYPE-P MARINE SHIPBOARD CABLE</label>
+            </value>
+            <value>
+                <fullName>TS    | TRAFFIC SIGNAL CABLE</fullName>
+                <default>false</default>
+                <label>TS    | TRAFFIC SIGNAL CABLE</label>
+            </value>
+            <value>
+                <fullName>VL    | VITALINK</fullName>
+                <default>false</default>
+                <label>VL    | VITALINK</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>AI    | ALUMINUM INTERLOCKED ARMOR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>AL    | DISTRIBUTION ALUMINUM CABLES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>BC    | BARE COPPER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>BE    | BELDEN ITEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>CC    | CONTINUOUS CORRUGATED ARMOR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>CT    | CALTRAN TRAFFIC CONTROL CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>CX    | COAXIAL CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>DC    | DATA CABLES-LOOP-POS-LAN-TWAX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>EC    | ELECTRICAL CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>FA    | FIRE ALARM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>FC    | 600-2KV PORT CORD,WELD,DLO,W,G</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>FO    | FIBER OPTIC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>HT    | HIGH TEMP CABLE 150-538 DEG C.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>HU    | HOOK UP WIRE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>IC    | INSTR CABLE PVC 600-300V UL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>LT    | LUTRON CABLES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>LU    | LUTZE - SILFLEX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>LV    | LOW VOLTAGE LIGHTING 150V 60C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>MC    | METAL CLAD POWER AND CONTROL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>MO    | MONTROSE/M CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>MU    | MEDIUM VOLTAGE URD CABLES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>MV    | MED VOLTAGE 5-15KV CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>OL    | OLFLEX ITEMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>PC    | TELEPHONE COMMUNICATION CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>PL    | PLENUM CONTROL CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>PV    | PVC-AUDIO VIDEO COMM CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>QR    | QUAD RATED: TC,PLTC,NPLF,FPL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>RT    | TE/RAYCHEM ITEMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>SA    | SAB ITEMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>SC    | UL1015 600V PVC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>SP    | 600V UL SUBMERSIBLE PUMP 75C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>TC    | 600V UL TRAY CABLE 90C DB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>TH    | THERMOCOUPLE EXTENSION WIRE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>TK    | TECK 90 CABLES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>TP    | TYPE-P MARINE SHIPBOARD CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>TS    | TRAFFIC SIGNAL CABLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>VL    | VITALINK</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

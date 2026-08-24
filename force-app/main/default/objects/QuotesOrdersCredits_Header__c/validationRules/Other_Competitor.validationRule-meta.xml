@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Competitor</fullName>
+    <active>true</active>
+    <description>If Other is specified, Competitor name is required</description>
+    <errorConditionFormula>ISPICKVAL(Lost_to_Whom__c , &quot;Other:&quot;) &amp;&amp;  ISBLANK(Other_Competitor__c )</errorConditionFormula>
+    <errorMessage>Other competitor is required if you select &quot;Other:&quot; for whom we lost the quote to.</errorMessage>
+</ValidationRule>

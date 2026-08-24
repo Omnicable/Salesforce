@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region4Quotes</fullName>
+    <columns>NAME</columns>
+    <columns>Buy_Bid__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <columns>GPpct__c</columns>
+    <columns>Status__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>Date__c</columns>
+    <columns>Customer_Number__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>4</value>
+    </filters>
+    <label>Region 4 Quotes</label>
+    <sharedTo>
+        <roleAndSubordinates>RegionalManager4</roleAndSubordinates>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_Results_Title__c</fullName>
+    <description>The spec sheet title we want to show on the search results page</description>
+    <externalId>false</externalId>
+    <label>Search Results Title</label>
+    <length>150</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

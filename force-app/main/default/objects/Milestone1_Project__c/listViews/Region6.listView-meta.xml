@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region6</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Physical_Project_Region__c</columns>
+    <columns>Related_Regions__c</columns>
+    <columns>City__c</columns>
+    <columns>State__c</columns>
+    <columns>Status__c</columns>
+    <columns>Total_Potential__c</columns>
+    <columns>Bid_Buy__c</columns>
+    <columns>Kickoff__c</columns>
+    <columns>Probability__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Physical_Project_Region__c</field>
+        <operation>equals</operation>
+        <value>6</value>
+    </filters>
+    <filters>
+        <field>Related_Regions__c</field>
+        <operation>includes</operation>
+        <value>6</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>Region 6</label>
+    <sharedTo>
+        <group>Region6</group>
+        <role>RVP_NorthEast_Central</role>
+        <role>Territory_Sales_Manager</role>
+    </sharedTo>
+</ListView>

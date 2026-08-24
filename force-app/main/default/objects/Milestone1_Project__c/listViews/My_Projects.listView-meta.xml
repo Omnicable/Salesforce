@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Projects</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>W_C_Account_Manager__c</columns>
+    <columns>W_C_TSM__c</columns>
+    <columns>NAME</columns>
+    <columns>Total_Potential__c</columns>
+    <columns>Order_Number__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>LAST_YEAR</value>
+    </filters>
+    <label>My Projects</label>
+</ListView>

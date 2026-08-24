@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSC_RMAs</fullName>
+    <columns>NAME</columns>
+    <columns>RMA_Date__c</columns>
+    <columns>Account__c</columns>
+    <columns>RMA_Amount__c</columns>
+    <columns>RMA_Responsibility__c</columns>
+    <columns>RMA_Status__c</columns>
+    <columns>Order__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AM1__c</field>
+        <operation>equals</operation>
+        <value>126,120,116,117,118,121,123,119</value>
+    </filters>
+    <label>SSC RMAs</label>
+    <sharedTo>
+        <group>SSC</group>
+    </sharedTo>
+</ListView>

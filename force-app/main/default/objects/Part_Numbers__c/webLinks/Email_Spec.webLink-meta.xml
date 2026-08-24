@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Spec</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Email Spec</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>mailto:?subject={!Part_Numbers__c.Item_Description_OPUS__c}SpecSheet&amp;body={!Part_Numbers__c.Email_A_Spec__c}</url>
+</WebLink>

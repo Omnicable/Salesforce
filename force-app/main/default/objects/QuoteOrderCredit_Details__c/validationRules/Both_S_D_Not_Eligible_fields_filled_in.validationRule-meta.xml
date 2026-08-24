@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Both_S_D_Not_Eligible_fields_filled_in</fullName>
+    <active>true</active>
+    <description>If S&amp;D Not Eligible checkbox is checked then Why not S&amp;D Eligible text field must be filled in.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Order_Header__r.Type__c,&apos;Order&apos;),
+OR(
+AND(S_D_Not_Eligible__c = True,ISBLANK(Why_Not_S_D_Eligible__c)),
+AND(NOT(ISBLANK(Why_Not_S_D_Eligible__c)),S_D_Not_Eligible__c = False)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Why_Not_S_D_Eligible__c</errorDisplayField>
+    <errorMessage>You must fill in both S&amp;D Not Eligible and Why Not S&amp;D Eligible?</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Leaders responsible for overseeing sales teams and performance. They monitor pipeline, coach reps, and review account and opportunity activity but may not directly manager customer records themselves</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Leaders</label>
+    <permissionSets>Price_Book_User</permissionSets>
+    <permissionSets>Sales_Leader</permissionSets>
+    <permissionSets>Sales_Rep</permissionSets>
+    <permissionSets>Wire_Cable_Projects_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

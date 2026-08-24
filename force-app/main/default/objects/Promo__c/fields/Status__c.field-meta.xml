@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Current status of the promotion</description>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Approved</fullName>
+                <color>#E27001</color>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <color>#A845DC</color>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Finished</fullName>
+                <color>#A53711</color>
+                <default>false</default>
+                <label>Finished</label>
+            </value>
+            <value>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+                <label>Deferred</label>
+            </value>
+            <value>
+                <fullName>Pending Approval</fullName>
+                <default>true</default>
+                <label>Pending Approval</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

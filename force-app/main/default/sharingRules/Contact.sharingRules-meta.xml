@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>LOD_Capital_Projects_Contact_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This Sharing Rule allows the Capital Projects and Large Order team to make contact edits that have the permissions for.</description>
+        <label>LOD / Capital Projects Contact Sharing</label>
+        <sharedTo>
+            <group>Large_Order_Capital_Projects</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sales_Reps_Contacts_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Grants access to the Sales organization to Read/Write on contacts until the Private model is finalized.</description>
+        <label>Sales Reps Contacts Sharing</label>
+        <sharedTo>
+            <group>Sales_Rep</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Buckets</fullName>
+    <availability>online</availability>
+    <description>Order Buckets &amp; Quote/Order Ratio with Record Count, Sales, GP$, Average GP%</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Order Buckets</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/00O6000000495a8?pv0={!Account.Id}</url>
+</WebLink>

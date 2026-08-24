@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotation_Specialist__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Quotation Specialist</label>
+    <lookupFilter>
+        <active>false</active>
+        <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+        <errorMessage>Not a valid selection.</errorMessage>
+        <filterItems>
+            <field>User.Title</field>
+            <operation>contains</operation>
+            <value>Quotation</value>
+        </filterItems>
+        <filterItems>
+            <field>User.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>User.Full_Name__c</field>
+            <operation>equals</operation>
+            <value>Justin Wolf,Chris Sorah</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Quotes_Orders_Credits3</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

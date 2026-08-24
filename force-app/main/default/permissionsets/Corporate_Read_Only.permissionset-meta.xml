@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Users in departments outside of sales who need visibility into customer and sales data for reference for operational purposes but do not manage sales records</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Corporate / Read Only</label>
+    <license>Salesforce</license>
+</PermissionSet>

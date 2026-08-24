@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AccountPlanObjMeasCalcDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <conditions>
+        <fieldName>StageName</fieldName>
+        <operation>Equals</operation>
+        <value>Closed Won</value>
+    </conditions>
+    <description>Define sales revenue goals. Current Value will be auto-calculated as the sum of your selected Opportunities Amount with &apos;Closed Won&apos; Stage.</description>
+    <developerName>Opportunity_Revenue_Targets</developerName>
+    <masterLabel>Opportunity Revenue Targets</masterLabel>
+    <rollupType>Sum</rollupType>
+    <status>Active</status>
+    <targetField>Amount</targetField>
+    <targetObject>Opportunity</targetObject>
+</AccountPlanObjMeasCalcDef>

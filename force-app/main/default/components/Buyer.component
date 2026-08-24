@@ -1,0 +1,32 @@
+<apex:component controller="mycontroller2">
+    <apex:attribute name="pcontactsId" type="String" required="true" assignTo="{!pcontactsId}"
+                    description="This is the Account.Pare to bind the results to." />
+    <apex:form >
+
+<apex:pageBlock id="btable" title="Buyers">
+    <apex:pageBlockTable value="{!pcons}" var="pcontacts"> 
+<!-- Add Sorting capability and Show more/Go to List links -->   
+                <apex:column headervalue="Action" width="90">
+                    <apex:outputLink value="{!URLFOR($Action.Contact.Edit, pcontacts.Id)}">Edit</apex:outputLink> 
+        | 
+                <chatter:follow entityId="{!pcontacts.id}"/>
+                </apex:column> 
+                <apex:column headervalue="Contact Name">
+                    <apex:outputLink value="/{!pcontacts.id}">{!pcontacts.Name}</apex:outputLink></apex:column>
+                       <apex:column value="{!pcontacts.Active__c}"/>
+                       <apex:column value="{!pcontacts.Contact_Title__c}"/>
+                       <apex:column value="{!pcontacts.Email}"/>
+                       <apex:column value="{!pcontacts.Phone}"/>
+                <apex:column headervalue="Account">
+                     <apex:outputLink value="/{!pcontacts.Account.id}">{!pcontacts.Account.Name}</apex:outputLink>
+                </apex:column>
+
+
+    </apex:pageBlockTable>
+        <apex:commandButton value="Add 25 Rows" action="{!addRows}" rerender="btable" />        
+  </apex:pageBlock>
+  
+</apex:form>
+    
+    
+</apex:component>

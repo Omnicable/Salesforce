@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Combines foundational Salesforce access with permissions and functionality required for National Accounts workflows.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>National Account Managers</label>
+    <permissionSets>Price_Book_User</permissionSets>
+    <permissionSets>Sales_Rep</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

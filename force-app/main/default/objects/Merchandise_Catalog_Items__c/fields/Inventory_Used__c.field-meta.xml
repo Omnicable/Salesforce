@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inventory_Used__c</fullName>
+    <description>Going off of the new Merchandise Request Line Item Object</description>
+    <label>Inventory Used</label>
+    <summarizedField>Merchandise_Requests__c.Quantity__c</summarizedField>
+    <summaryForeignKey>Merchandise_Requests__c.Merchandise_Item__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;a href=&quot;mailto:0f932000000xeqzca0@post.6-jrjiea0.na26.chatter.salesforce.com?subject=Circuit%20Breaker%20Customer%20Feedback&amp;amp;body=1.%09Who%20is%20the%20customer%3F%20(Name%2C%20Contact%20Title%2C%20Location)%0A2.%09What%20was%20their%20feedback%3F%20%0A3.%09Is%20follow-up%20needed%3F%20If%20so%2C%20by%20whom%20(AM%2C%20BDR%2C%20RM)%3F&quot;&gt;B&lt;/a&gt;&lt;a href=&quot;https://omnicable.my.salesforce.com/a07?fcf=00B32000007ESmA&quot;&gt;REAKER FOLLOW-UP&lt;/a&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

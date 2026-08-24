@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_3_RMAs</fullName>
+    <columns>NAME</columns>
+    <columns>RMANumber_c__c</columns>
+    <columns>RMA_Date__c</columns>
+    <columns>Account__c</columns>
+    <columns>RMA_Amount__c</columns>
+    <columns>RMA_Responsibility__c</columns>
+    <columns>RMA_Status__c</columns>
+    <columns>Order__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>3</value>
+    </filters>
+    <label>Region 3 RMAs</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Region3</group>
+        <group>Region3RMs</group>
+    </sharedTo>
+</ListView>

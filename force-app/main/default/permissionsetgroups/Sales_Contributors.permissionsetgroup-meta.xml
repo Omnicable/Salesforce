@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Users who support the sales process but are not responsible for owning customer relationships. They collaborate with sales reps and may participate on opportunity teams or assist with account activity.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Contributors</label>
+    <permissionSets>Basic_Contact_Management</permissionSets>
+    <permissionSets>Basic_Salesforce_User</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mike_Projects</fullName>
+    <columns>in_Owner_s_Queue__c</columns>
+    <columns>NAME</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Priority__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>LAST_ACTIVITY</columns>
+    <columns>Project_Status__c</columns>
+    <columns>Internal_Notes__c</columns>
+    <columns>Requesting_Department__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project_Owner_Department__c</field>
+        <operation>equals</operation>
+        <value>I.T.</value>
+    </filters>
+    <filters>
+        <field>Project_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>OWNER.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>blessing</value>
+    </filters>
+    <label>Mike Projects</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ITGroup</group>
+    </sharedTo>
+</ListView>

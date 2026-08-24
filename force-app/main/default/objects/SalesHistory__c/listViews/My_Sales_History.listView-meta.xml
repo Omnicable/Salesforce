@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Sales_History</fullName>
+    <columns>Invoice_Date__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Order__c</columns>
+    <columns>NAME</columns>
+    <columns>Total_Invoice_Dollars__c</columns>
+    <columns>Inside_Account_Manager__c</columns>
+    <columns>Outside_Account_Manager__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Invoice_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>My Sales History</label>
+    <language>en_US</language>
+</ListView>

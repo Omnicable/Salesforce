@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>From_User_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>From_User__c =  null</errorConditionFormula>
+    <errorMessage>From User is required</errorMessage>
+</ValidationRule>

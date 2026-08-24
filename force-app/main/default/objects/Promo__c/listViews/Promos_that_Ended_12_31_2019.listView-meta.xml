@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promos_that_Ended_12_31_2019</fullName>
+    <columns>Region_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Customer_Account_s__c</columns>
+    <columns>Status__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Promo_Tracking_Report__c</columns>
+    <columns>Promo_Format__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>End_Date__c</field>
+        <operation>equals</operation>
+        <value>12/31/2020</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Promo__c.Customer_Promotion</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Promos that Ended 12/31/2019</label>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WHSE_OP_Cost__c</fullName>
+    <description>Rolling 12 Months</description>
+    <inlineHelpText>This is your warehouse operating cost.  It is based on the amount of time we spend processing their orders.  A higher than average Whse OP typically means that this customer makes purchases with a high number of put-ups, or has a small average order size.</inlineHelpText>
+    <label>WHSE OP Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

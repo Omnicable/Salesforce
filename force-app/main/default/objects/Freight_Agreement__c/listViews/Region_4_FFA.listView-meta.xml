@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_4_FFA</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>Account_Name__c</columns>
+    <columns>Omni_Freight_Owner__c</columns>
+    <columns>NAME</columns>
+    <columns>Review_Type__c</columns>
+    <columns>Needs_Review__c</columns>
+    <columns>Send_Finalized_Agreement__c</columns>
+    <columns>Branch_Contact_Name__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Omni_FFA_Goal__c</columns>
+    <columns>Sales_Trend__c</columns>
+    <columns>Freight_Notes__c</columns>
+    <columns>Mid_Year_Review__c</columns>
+    <columns>Year_End_Review__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region_Number__c</field>
+        <operation>equals</operation>
+        <value>4</value>
+    </filters>
+    <filters>
+        <field>Year__c</field>
+        <operation>equals</operation>
+        <value>2016</value>
+    </filters>
+    <label>Region 4 FFA</label>
+    <language>en_US</language>
+</ListView>

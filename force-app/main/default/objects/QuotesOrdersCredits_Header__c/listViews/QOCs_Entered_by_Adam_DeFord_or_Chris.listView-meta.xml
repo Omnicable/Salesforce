@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QOCs_Entered_by_Adam_DeFord_or_Chris</fullName>
+    <columns>LOD__c</columns>
+    <columns>LOD_Copy__c</columns>
+    <columns>VITALink__c</columns>
+    <columns>Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>Total_Order_Sales__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Followup_Date__c</columns>
+    <columns>Region__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Entered_By__c</field>
+        <operation>equals</operation>
+        <value>Adam DeFord,Chris Kennedy</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QuotesOrdersCredits_Header__c.Quotes</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>5/15/2017</value>
+    </filters>
+    <filters>
+        <field>VITALink__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>QOCs Entered by Adam DeFord or Chris</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Large_Order_Department</group>
+    </sharedTo>
+</ListView>

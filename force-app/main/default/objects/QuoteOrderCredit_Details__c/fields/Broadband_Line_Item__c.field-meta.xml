@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Broadband_Line_Item__c</fullName>
+    <description>Box is checked for every line in R29 orders, as well as for any non‑R29 line whose item class and vendor combination qualifies as Broadband.</description>
+    <formula>AND(
+    /* Not Cancelled or Closed-???*/
+    NOT(ISPICKVAL(Order_Header__r.Status__c, &apos;Cancelled&apos;)), 
+
+    /* Region 29/0029 OR Item class in exact list
+       OR (Item class family in list AND Vendor in list) */
+    OR(
+      CONTAINS(
+        &apos;;29;0029;&apos;,
+        &apos;;&apos; &amp; Order_Header__r.Region__c &amp; &apos;;&apos;
+      ),
+      CONTAINS(
+        &apos;;CSCB2;AP01J;AP01P;AP02X;AP03X;AP05J;AP06P;AP07J;AP07P;AP08J;AP08P;CD07D;CD09P;CD10D;CD10P;CD12D;CD12P;CD13D;CD14P;CD15P;CDB8;CP01P;CP03P;CP09P;CR06C;CU01P;FO01P;FO02C;FO03C;FO03G;FO03U;FO03X;FO03Y;FO03Z;FOOUT;FP01C;FP02C;FP02J;FP02P;FP03C;FP03P;FP04P;FP05C;FP06P;FP07C;FP08C;FP09P;PB01P;PB05D;TT01P;TT02C;TT03P;UG01P;UG05Y;UGH01;UGY01;UGY02;&apos;,
+        &apos;;&apos; &amp; Item_Class__c &amp; &apos;;&apos;
+      ),
+      AND(
+        CONTAINS(
+          &apos;;AP;BE;CS;CD;CN;CP;CU;EX;DB;FO;FT;FP;PB;UG;NS;TT;&apos;,
+          &apos;;&apos; &amp; Item_Class__c &amp; &apos;;&apos;
+        ),
+        CONTAINS(
+          &apos;;31489;31671;33634;33687;33797;33808;33811;33837;33840;33893;34097;34125;34153;50148;50149;60230;&apos;,
+          &apos;;&apos; &amp; Vendor_Number__c &amp; &apos;;&apos;
+        )
+      )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Box is checked for every line in R29 orders, as well as for any non‑R29 line whose item class and vendor combination qualifies as Broadband.</inlineHelpText>
+    <label>Broadband Line Item?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

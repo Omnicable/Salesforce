@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Graybar_Activity_Email_Alert</fullName>
+        <description>Graybar Activity Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jcollins@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Graybar_Activity_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>R8_BDR_Outside_Sales_Call_Logged_task</fullName>
+        <description>R8 BDR Outside Sales Call Logged (task)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Task_Notification_for_mobile2</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_notification_email_after_logged_call_on_mobile</fullName>
+        <description>Send notification email after logged call on mobile (including quote follow up)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Task_Notification_for_mobile2</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Activity_Type</fullName>
+        <field>Activity_Type__c</field>
+        <formula>TEXT( Type )</formula>
+        <name>Activity Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Activity Type</fullName>
+        <actions>
+            <name>Activity_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Type</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>This fills in the custom activity type field with the type from the task so that we can use that custom activity type field in custom report types</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Mobile Task Assignment - notify log a call assigned</fullName>
+        <actions>
+            <name>Send_notification_email_after_logged_call_on_mobile</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Send_Notification_Email__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Notify the assigned user when a call is logged on mobile if the custom send notification email box is checked</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notification Account Owner to contact Account</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Task.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Subject</field>
+            <operation>equals</operation>
+            <value>Location visit</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.UserRoleId</field>
+            <operation>contains</operation>
+            <value>Distric Sales Manager</value>
+        </criteriaItems>
+        <description>Notification to Account Owner to follow-up on Account after visit by Outside Manager</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>TEST FOR EMAIL NOTIFICATION CC</fullName>
+        <actions>
+            <name>R8_BDR_Outside_Sales_Call_Logged_task</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Subject</field>
+            <operation>equals</operation>
+            <value>Outside Sales Call</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Status</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Created_by_Role__c</field>
+            <operation>equals</operation>
+            <value>Administrator</value>
+        </criteriaItems>
+        <description>For brad cook</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

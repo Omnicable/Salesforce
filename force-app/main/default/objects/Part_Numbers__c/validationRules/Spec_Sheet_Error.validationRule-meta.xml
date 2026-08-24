@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spec_Sheet_Error</fullName>
+    <active>false</active>
+    <description>Error is spec name doesn&apos;t match spec extID</description>
+    <errorConditionFormula>Spec_Sheet__c = &quot;a2360000001mxYC&quot; &amp;&amp;
+ Spec_Sheet_ExtID__c  &lt;&gt; &quot;0000&quot;</errorConditionFormula>
+    <errorMessage>DON&apos;T LET THIS CHANGE THE SPEC SHEET NAME/EXTERNAL ID.</errorMessage>
+</ValidationRule>

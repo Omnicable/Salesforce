@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Projects_2</fullName>
+    <columns>NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>LAST_ACTIVITY</columns>
+    <columns>Description__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Project_Owner_Department__c</columns>
+    <columns>Private__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project_Owner_Department__c</field>
+        <operation>equals</operation>
+        <value>Marketing</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Marketing Projects 2</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

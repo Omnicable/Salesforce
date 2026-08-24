@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TJ_Hunt_LOD_Quotes</fullName>
+    <columns>NAME</columns>
+    <columns>Customer__c</columns>
+    <columns>AccountOwnerEmail__c</columns>
+    <columns>Job_Reference__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Status__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Entered_By__c</field>
+        <operation>equals</operation>
+        <value>TJ Hunt</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <label>TJ Hunt - LOD Quotes</label>
+    <sharedTo>
+        <group>Large_Order_Department</group>
+    </sharedTo>
+</ListView>

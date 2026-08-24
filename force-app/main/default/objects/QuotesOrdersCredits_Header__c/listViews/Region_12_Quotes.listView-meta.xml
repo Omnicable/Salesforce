@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_12_Quotes</fullName>
+    <columns>NAME</columns>
+    <columns>Buy_Bid__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Job_Reference__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <columns>GPpct__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:30</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>12</value>
+    </filters>
+    <label>Region 12 Quotes</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Region_12</group>
+    </sharedTo>
+</ListView>

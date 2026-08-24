@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Account_No_Activity_30_days</fullName>
+        <ccEmails>sfromhold@omnicable.com</ccEmails>
+        <description>Account No Activity 30 days</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>awalsh@omnicable.com.gone</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jkey@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mcardillo@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mnolte@omnicable.com.dead</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/No_Activity_30_days</template>
+    </alerts>
+    <alerts>
+        <fullName>No_Account_Activity_21_Days</fullName>
+        <description>No Account Activity 21 Days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/No_Activity_21_days</template>
+    </alerts>
+    <alerts>
+        <fullName>No_Account_Activity_7_Days</fullName>
+        <description>No Target Account Activity 7 Days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/No_Activity_7_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Outside_Sales_Customer_Visit</fullName>
+        <description>Outside Sales Customer Visit</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Outside_Sales_Customer_Visit</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Change_Account_Owner_to_Integration</fullName>
+        <description>When an account is deactivated, change the owner to integration</description>
+        <field>OwnerId</field>
+        <lookupValue>integration@omnicable.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Change Account Owner to Integration</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Customer_Potential</fullName>
+        <description>Update Redi, Commercial, and Industrial to 0</description>
+        <field>Commercial__c</field>
+        <formula>0</formula>
+        <name>Customer Commercial Potential</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Default_Rebate_Buying_Group</fullName>
+        <field>Rebate_Buying_Group__c</field>
+        <formula>Buying_Group__c</formula>
+        <name>Set Default Rebate Buying Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Account_Manager_Extension</fullName>
+        <field>Account_Manager_Extension__c</field>
+        <formula>Owner.Extension</formula>
+        <name>Update Account Manager Extension</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Industrial</fullName>
+        <field>Industrial__c</field>
+        <formula>0</formula>
+        <name>Update Industrial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Resi</fullName>
+        <field>Residential__c</field>
+        <formula>0</formula>
+        <name>Update Resi%</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account - No Activity Last 90 Days SSC</fullName>
+        <active>false</active>
+        <formula>ISPICKVAL(Active__c , &quot;A&quot;) &amp;&amp; 
+((TODAY() -  LastActivityDate  &gt;  9 || ISNULL(LastActivityDate)) &amp;&amp;
+(TODAY() - Max_Date_Order__c  &gt;  9 || ISNULL( Max_Date_Order__c))) &amp;&amp;
+NOT(CONTAINS(Name, &quot;Omni Cable&quot;)) &amp;&amp;
+OwnerId &lt;&gt; &quot;00560000001NBPM&quot; &amp;&amp;
+$User.UserRoleId = &quot;00E600000017kt5&quot;</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account - SSC No Activity Last 60 Days</fullName>
+        <active>true</active>
+        <description>You&apos;ll receive a task if your account has had no activity in 60 days.</description>
+        <formula>((TODAY() - LastActivityDate &gt; 60 || ISNULL(LastActivityDate)) &amp;&amp;
+(TODAY() - Max_Date_Order__c &gt; 60 || ISNULL( Max_Date_Order__c))) &amp;&amp; 
+ISPICKVAL(Active__c , &quot;A&quot;) &amp;&amp;
+NOT(CONTAINS(Name, &quot;Omni Cable&quot;)) &amp;&amp;
+ISPICKVAL( Type , &quot;Distributor&quot;) &amp;&amp;
+$User.UserRoleId = &quot;00E600000017kt5&quot; ||
+$Profile.Id =&quot;00e60000001BUuj&quot;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>No_Acitivity_60_Days</name>
+                <type>Task</type>
+            </actions>
+            <offsetFromField>Account.Max_Date_Order__c</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Account Manager Extension</fullName>
+        <actions>
+            <name>Update_Account_Manager_Extension</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>(ISPICKVAL( Active__c , &apos;A&apos;) &amp;&amp;  ISBLANK( Account_Manager_Extension__c )) || ( ISCHANGED( Salesperson_Code__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Assign D Account to Integration</fullName>
+        <actions>
+            <name>Change_Account_Owner_to_Integration</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Active__c</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>FL Sales - No Activity for 30 Days</fullName>
+        <actions>
+            <name>Account_No_Activity_30_days</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>No_Activity_for_300_Days</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>Sends task to account manager if account has had no activity in 30 days</description>
+        <formula>ISPICKVAL(Active__c , &quot;A&quot;) &amp;&amp;
+((TODAY() - Max_Date_Order__c  &gt;  30 || ISNULL( Max_Date_Order__c))) &amp;&amp;
+NOT(CONTAINS(Name, &quot;Omni Cable&quot;)) &amp;&amp;
+(CONTAINS(Salesperson_Code__c, &quot;343&quot;)) &amp;&amp;
+(CONTAINS(Salesperson_Code__c, &quot;342&quot;)) &amp;&amp;
+(CONTAINS(Salesperson_Code__c, &quot;340&quot;)) &amp;&amp;
+(CONTAINS(Salesperson_Code__c, &quot;339&quot;)) &amp;&amp;
+(CONTAINS(Salesperson_Code__c, &quot;344&quot;)) &amp;&amp;
+OwnerId &lt;&gt; &quot;00560000001NBPM&quot; &amp;&amp; 
+OwnerId &lt;&gt; &quot;00560000001NoXZ&quot; &amp;&amp; 
+( DATEVALUE(CreatedDate) &lt;&gt; TODAY())</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Initial Task</fullName>
+        <actions>
+            <name>Initial_Task</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Active__c</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </criteriaItems>
+        <description>This creates an initial task for all accounts. Leave active because it will then work for new accounts and shouldn&apos;t be triggered again for existing accounts that it has already run for.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rebate Buying</fullName>
+        <actions>
+            <name>Set_Default_Rebate_Buying_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Distributor</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Industrail Percentages</fullName>
+        <actions>
+            <name>Update_Industrial</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISPICKVAL(Active__c, &apos;A&apos;) &amp;&amp;   ISBLANK( Industrial__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Potential Percentages</fullName>
+        <actions>
+            <name>Customer_Potential</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISPICKVAL(Active__c, &apos;A&apos;) &amp;&amp;  ISBLANK(Commercial__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Residential Percentages</fullName>
+        <actions>
+            <name>Update_Resi</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISPICKVAL(Active__c, &apos;A&apos;) 
+&amp;&amp;  ISBLANK( Residential__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Initial_Task</fullName>
+        <assignedTo>integration@omnicable.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>This rule is set to create an initial completed task for all accounts per John Dean.</description>
+        <dueDateOffset>14</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Initial Task</subject>
+    </tasks>
+    <tasks>
+        <fullName>No_Acitivity_60_Days</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The account hasn&apos;t had any Quotes, Orders, or scheduled activities in the last 60 days. Please engage this customer.</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>No Acitivity 60 Days</subject>
+    </tasks>
+    <tasks>
+        <fullName>No_Activity_Last_21_Days</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The account hasn&apos;t had any Quotes, Orders, or scheduled activities in the last 21 days. Please engage this customer.</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>No Activity Last 21 Days</subject>
+    </tasks>
+    <tasks>
+        <fullName>No_Activity_Last_21_Days_Sonepar</fullName>
+        <assignedTo>SoneparSales</assignedTo>
+        <assignedToType>role</assignedToType>
+        <description>The account hasn&apos;t had any Quotes, Orders, or scheduled activities in the last 21 days. Please engage this customer.</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>No Activity Last 21 Days Sonepar</subject>
+    </tasks>
+    <tasks>
+        <fullName>No_Activity_for_300_Days</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The account hasn&apos;t had any Quotes, Orders, or scheduled activities in the last 30 days. Please engage this customer.</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>No Activity for 30 Days</subject>
+    </tasks>
+    <tasks>
+        <fullName>No_Activity_for_30_Days</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The account hasn&apos;t had any Quotes, Orders, or scheduled activities in the last 30 days. Please engage this customer.</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>No Activity for 30 Days</subject>
+    </tasks>
+    <tasks>
+        <fullName>No_Activity_for_7_Days</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The target account hasn&apos;t had any Quotes, Orders, or scheduled activities in the last 7 days. Please engage this customer.</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>No Activity for 7 Days</subject>
+    </tasks>
+</Workflow>

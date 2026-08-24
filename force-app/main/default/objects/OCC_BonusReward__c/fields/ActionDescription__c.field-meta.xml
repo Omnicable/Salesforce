@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ActionDescription__c</fullName>
+    <description>Brief explanation of why user receives the reward.  Format equals and placing {ActionDescriptoin} on the myomnicable portal</description>
+    <label>ActionDescription</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

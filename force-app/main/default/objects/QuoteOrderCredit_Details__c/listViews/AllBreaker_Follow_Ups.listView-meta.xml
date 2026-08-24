@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllBreaker_Follow_Ups</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Line_Entered__c</columns>
+    <columns>Order_Type__c</columns>
+    <columns>Line_Item__c</columns>
+    <columns>Qty_Ordered__c</columns>
+    <columns>Item_Description__c</columns>
+    <columns>Breaker_Follow_up_Notes__c</columns>
+    <columns>Lost_Reason__c</columns>
+    <columns>Dollars__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Job_Reference__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Order_Header__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>GPDollars__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>User_is_AM_or_DSM__c</field>
+        <operation>equals</operation>
+        <value>0,1</value>
+    </filters>
+    <filters>
+        <field>Class__c</field>
+        <operation>equals</operation>
+        <value>EA,SE</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QuoteOrderCredit_Details__c.Standard</value>
+    </filters>
+    <label>All Breaker Follow-Ups</label>
+    <language>en_US</language>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <role>Administrator</role>
+    </sharedTo>
+</ListView>

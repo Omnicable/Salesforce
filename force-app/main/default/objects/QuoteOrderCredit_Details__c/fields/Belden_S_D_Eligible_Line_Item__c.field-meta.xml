@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Belden_S_D_Eligible_Line_Item__c</fullName>
+    <description>Flags lines as potentially eligible for Belden S&amp;D when they meet Belden item classification criteria or have Vendor = Belden (31396), for completed lines with cost &gt; 0. Used by teams across the organization to identify items for Belden S&amp;D. If a line is determined not eligible, users can manually check the S_D_Not_Eligible__c field, causing this value to evaluate to false and remove the line from reporting.</description>
+    <formula>AND
+
+(OR(BEGINS(Item_Class_Description__c,&apos;BELDE&apos;), Class__c = &apos;BE&apos;,Class__c = &apos;BL&apos;, Item_Class__c = &apos;NE912&apos;,
+
+Vendor_Number__c = &apos;31396&apos;), 
+
+ISPICKVAL(Line_Status__c, &apos;Complete&apos;), S_D_Not_Eligible__c = False, Line_Cost__c &gt; 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates whether a line is potentially eligible for Belden S&amp;D based on item classification or vendor. To exclude a line, manually check the S&amp;D Not Eligible field, which will set this value to false and remove the line from reporting.</inlineHelpText>
+    <label>Belden S&amp;D Eligible Line Item?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NEW_OCC_Rewards_QOC__c</fullName>
+    <description># of points awarded for this quote/order based on New Total Order Sales (Portal) $ and the contact&apos;s reward step configuration. This new formula includes that if RewardOverride__c is populated, use that value instead of the standard calculation.</description>
+    <externalId>false</externalId>
+    <formula>IF (RewardOverride__c != 0, RewardOverride__c,  OCC_Rewards__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Points awarded for this quote/order based on the order $ and reward step setup. If RewardOverride__c is populated, that will be the # of points awarded.</inlineHelpText>
+    <label>NEW OCC_Rewards (QOC)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

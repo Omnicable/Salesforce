@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Finalized_Agreement__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>When you check this, you will receive the personalized email with your action plan filled in</inlineHelpText>
+    <label>Send Finalized Agreement</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

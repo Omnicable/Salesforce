@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gexpro_Denver_Promo_Sliders</fullName>
+    <columns>NAME</columns>
+    <columns>Index__c</columns>
+    <columns>LinkUrl__c</columns>
+    <columns>URL__c</columns>
+    <columns>Contact__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Cooler</value>
+    </filters>
+    <label>Gexpro Denver Promo Sliders</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Business_Innovation</group>
+    </sharedTo>
+</ListView>

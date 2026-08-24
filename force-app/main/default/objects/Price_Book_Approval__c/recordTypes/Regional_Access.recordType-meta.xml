@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regional_Access</fullName>
+    <active>false</active>
+    <description>Limits Regional Managers to Accounts and Region</description>
+    <label>Regional Access</label>
+    <picklistValues>
+        <picklist>Expiration__c</picklist>
+        <values>
+            <fullName>30 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>90 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indefinite</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hidden_Pages__c</picklist>
+        <values>
+            <fullName>ALUMINUM PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMMUNICATION %26 ELECTRONIC PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GROUNDING PRODUCTS%2C EXTENSION CORDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC CABLE%2C COPPER BUILDING WIRE%2C FLEXIBLE CONDUIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PORTABLE CORD PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Ready</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready to Submit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buying Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

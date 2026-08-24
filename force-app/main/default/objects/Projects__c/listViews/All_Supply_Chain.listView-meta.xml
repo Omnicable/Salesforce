@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Supply_Chain</fullName>
+    <columns>NAME</columns>
+    <columns>Requesting_Department__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Priority__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>LAST_ACTIVITY</columns>
+    <columns>Project_Owner_Department__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Requesting_Department__c</field>
+        <operation>equals</operation>
+        <value>Supply Chain,Distribution Centers</value>
+    </filters>
+    <filters>
+        <field>OWNER.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Bilotta,Rivera,Zeits,Balbach,Dean,Tullio</value>
+    </filters>
+    <filters>
+        <field>Project_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <label>All OPEN Sy CH &amp; DC  Projects</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ITGroup</group>
+        <group>Purchasing282492</group>
+    </sharedTo>
+</ListView>

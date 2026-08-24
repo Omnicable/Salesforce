@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Capital_Projects_Sales_Specialist__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Capital Projects Sales Specialist</label>
+    <lookupFilter>
+        <active>false</active>
+        <errorMessage>Not a valid selection.</errorMessage>
+        <filterItems>
+            <field>User.Title</field>
+            <operation>contains</operation>
+            <value>Capital Project</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Quotes_Orders_Credits4</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

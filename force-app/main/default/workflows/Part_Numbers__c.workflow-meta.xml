@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_PartNumber_Email_Alert</fullName>
+        <description>New PartNumber Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>kgarza@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/New_Part_Number_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>OPUS_spec_sheet_field_s_have_been_changed</fullName>
+        <description>Part Number changed (specified fields)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kgarza@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Spec_Sheet_OPUS_stacy</template>
+    </alerts>
+    <rules>
+        <fullName>Any Part Number Modified in Salesforce</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Part_Numbers__c.CreatedDate</field>
+            <operation>notEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Spec_Sheet__c.Belden_Url__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Part_Numbers__c.Belden_URL__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Reactivated for Stacy 6.10.16 - Email alert to Stacy anytime a part number is updated.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Part Number Alert</fullName>
+        <actions>
+            <name>New_PartNumber_Email_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Part_Numbers__c.Item_Number_OPUS__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Email Stacy &amp; Nikki when a new part number is created on OPUS and sent to SFDC</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Part %23 edited - NEW%21</fullName>
+        <actions>
+            <name>OPUS_spec_sheet_field_s_have_been_changed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to Stacy &amp; Nikki when one of the specified part numbers fields is changed. Updated 5.31.16 to include Spec Sheet URL and related Spec Sheet Name into the fields that change criteria.</description>
+        <formula>OR( 
+ISCHANGED( AWG__c ) , 
+ISCHANGED( Conductors__c ) , 
+ISCHANGED( Pairs__c ) , 
+ISCHANGED( Triads__c ) , 
+ISCHANGED( Nom_O_D_OPUS__c ) ,
+ISCHANGED(  Nom_O_D__c  ) ,
+ISCHANGED( Lbs_M__c ), 
+ISCHANGED( Name ) , 
+ISCHANGED( Spec_Sheet_URL__c ),
+ISCHANGED( Spec_Sheet__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

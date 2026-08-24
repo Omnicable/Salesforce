@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;IFRAME id=tickermain height=1 marginHeight=0 src=&quot;document.all&quot; frameBorder=1 width=1 marginWidth=0 scrolling=no&gt;&lt;/IFRAME&gt;
+&lt;SCRIPT language=JavaScript1.2&gt;
+//IFRAME TICKER- By Dynamic Drive (http://www.dynamicdrive.com)
+//configure delay between changing messages (3000=3 seconds)
+var delay=3000
+var ie4=document.all
+var curindex=0
+var totalcontent=0
+function get_total(){
+if (ie4){
+while (eval(&quot;document.all.content&quot;+totalcontent))
+totalcontent++
+}
+else{
+while (document.getElementById(&quot;content&quot;+totalcontent))
+totalcontent++
+}
+}
+function contract_all(){
+for (y=0;y&lt;totalcontent;y++){
+if (ie4)
+eval(&quot;document.all.content&quot;+y).style.display=&quot;none&quot;
+else
+document.getElementById(&quot;content&quot;+y).style.display=&quot;none&quot;
+}
+}
+function expand_one(which){
+contract_all()
+if (ie4)
+eval(&quot;document.all.content&quot;+which).style.display=&quot;&quot;
+else
+document.getElementById(&quot;content&quot;+which).style.display=&quot;&quot;
+}
+function rotate_content(){
+get_total()
+contract_all()
+expand_one(curindex)
+curindex=(curindex&lt;totalcontent-1)? curindex+1: 0
+setTimeout(&quot;rotate_content()&quot;,delay)
+}
+window.onload=rotate_content
+&lt;/SCRIPT&gt;
+ &lt;!--ADD YOUR TICKER CONTENT BELOW, by wrapping each one inside a &lt;DIV&gt; as shown below.--&gt;&lt;!--For each DIV, increment its ID attribute for each additional content (ie: &quot;content1&quot;, &quot;content2&quot; etc)--&gt;
+&lt;DIV id=content0&gt;&lt;!-- ADD TICKER&apos;s CONTENT #1 HERE---------------------&gt;
+&lt;P align=left&gt;&lt;STRONG&gt;&lt;FONT face=Verdana&gt;&lt;SMALL&gt;&lt;A href=&quot;http://www.findata.co.nz/markets/comex/hg/history.htm&quot; target=_top&gt;12/21/2010 Copper Closed at 4.270&lt;/A&gt;&amp;nbsp;&lt;/SMALL&gt;&lt;/FONT&gt;&lt;/STRONG&gt;&lt;BR&gt;&lt;FONT size=2 face=Verdana&gt;For informational pruposes only.&lt;/FONT&gt;&lt;/P&gt;&lt;!-- END CONTENT #1-----------------&gt;&lt;/DIV&gt;
+&lt;DIV style=&quot;DISPLAY: none&quot; id=content1&gt;&lt;!-- ADD TICKER&apos;s CONTENT #2 HERE---------------------&gt;
+&lt;P align=left&gt;&lt;STRONG&gt;&lt;FONT face=Verdana&gt;&lt;SMALL&gt;&lt;A href=&quot;http://www.omnicable.com/employee&quot; target=_top&gt;Product NEWS!!&lt;/A&gt;&amp;nbsp;&lt;/SMALL&gt;&lt;/FONT&gt;&lt;/STRONG&gt;&lt;BR&gt;&lt;FONT face=Verdana&gt;&lt;SMALL&gt;We are pushing all Aluminum stock for this month.&lt;/SMALL&gt;&lt;/FONT&gt;&lt;/P&gt;&lt;!-- END CONTENT #2-----------------&gt;&lt;/DIV&gt;
+&lt;DIV style=&quot;DISPLAY: none&quot; id=content2&gt;&lt;!-- ADD TICKER&apos;s CONTENT #3 HERE---------------------&gt;
+&lt;P align=left&gt;&lt;SMALL&gt;&lt;STRONG&gt;&lt;FONT face=Verdana&gt;&lt;A href=&quot;http://www.dynamicdrive.com/dynamicindex13/roamcursor.htm&quot; target=_top&gt;GP% PUSH&lt;/A&gt;&amp;nbsp;&lt;/FONT&gt;&lt;/STRONG&gt;&lt;/SMALL&gt;&lt;BR&gt;&lt;SMALL&gt;&lt;FONT face=Verdana&gt;All interlock should be at HIGH GP% this month.&lt;/FONT&gt;&lt;/SMALL&gt;&lt;/P&gt;&lt;!-- END CONTENT #3-----------------&gt;&lt;/DIV&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

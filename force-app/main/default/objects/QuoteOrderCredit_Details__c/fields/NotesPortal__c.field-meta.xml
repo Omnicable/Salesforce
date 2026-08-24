@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NotesPortal__c</fullName>
+    <description>IF(AND(NOT(ISBLANK(Firm__c)),ISBLANK(Flux__c)),&apos;Firm Price &apos;,
+IF(AND(ISBLANK(Firm__c),NOT(ISBLANK(Flux__c))),&apos;Fluctuating Price &apos;
+,&apos;&apos;))
++IF(ISBLANK(TRIM(Tolerance__c)),&apos;&apos;,TRIM(Tolerance__c)+&apos; &apos;)
++IF(ISBLANK(TRIM(Leadtime__c )),&apos;&apos;,TRIM(Leadtime__c )+&apos; &apos;)
++IF(ISBLANK(TRIM(C9NOTE1__c  )),&apos;&apos;,TRIM(C9NOTE1__c  )+&apos; &apos;)
++IF(ISBLANK(TRIM(C2SPECV__c  )),&apos;&apos;,TRIM(C2SPECV__c  )+&apos; &apos;)</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(TRIM(C3CTXT1_c__c)),&apos;&apos;,TRIM(C3CTXT1_c__c))
++IF(ISBLANK(TRIM(C3CTXT2_c__c)),&apos;&apos;,TRIM(C3CTXT2_c__c)+&apos; &apos;)
++IF(AND(NOT(ISBLANK(Firm__c)),ISBLANK(Flux__c)),&apos;--Firm Price &apos;,
+    IF(AND(ISBLANK(Firm__c),NOT(ISBLANK(Flux__c))),&apos;--Fluctuating Price &apos;
+,&apos;&apos;))
++IF(ISBLANK(TRIM(Tolerance__c)),&apos;&apos;,TRIM(Tolerance__c)+&apos; &apos;)
++IF(ISBLANK(TRIM(Leadtime__c )),&apos;&apos;,TRIM(Leadtime__c )+&apos; &apos;)
++IF(ISBLANK(TRIM(C9NOTE1__c  )),&apos;&apos;,TRIM(C9NOTE1__c  )+&apos; &apos;)
++IF(ISBLANK(TRIM(C2SPECV__c  )),&apos;&apos;,TRIM(C2SPECV__c  )+&apos; &apos;)
++&apos;--&apos;</formula>
+    <label>NotesPortal</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

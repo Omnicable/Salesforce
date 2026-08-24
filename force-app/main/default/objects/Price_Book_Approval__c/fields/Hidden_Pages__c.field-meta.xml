@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hidden_Pages__c</fullName>
+    <label>Choose Pages to Hide</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ALUMINUM PRODUCTS</fullName>
+                <default>false</default>
+                <label>ALUMINUM PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>PORTABLE CORD PRODUCTS</fullName>
+                <default>false</default>
+                <label>PORTABLE CORD PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>MC CABLE, COPPER BUILDING WIRE, FLEXIBLE CONDUIT</fullName>
+                <default>false</default>
+                <label>MC CABLE, COPPER BUILDING WIRE, FLEXIBLE CONDUIT</label>
+            </value>
+            <value>
+                <fullName>COMMUNICATION &amp; ELECTRONIC PRODUCTS</fullName>
+                <default>false</default>
+                <label>COMMUNICATION &amp; ELECTRONIC PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>GROUNDING PRODUCTS, EXTENSION CORDS</fullName>
+                <default>false</default>
+                <label>GROUNDING PRODUCTS, EXTENSION CORDS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

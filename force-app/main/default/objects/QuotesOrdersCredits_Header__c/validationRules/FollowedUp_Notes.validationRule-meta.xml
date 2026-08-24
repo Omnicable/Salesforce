@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FollowedUp_Notes</fullName>
+    <active>true</active>
+    <description>Add Notes for Followed Up</description>
+    <errorConditionFormula>NOT(ISPICKVAL( Status__c , &quot;Open&quot;))
+&amp;&amp;  ISBLANK( Notes__c )
+&amp;&amp;  $User.Username &lt;&gt; &quot;integration@omnicable.com&quot;
+&amp;&amp;  $User.Username &lt;&gt; &quot;jdean@omnicable.com.full&quot;
+&amp;&amp;  $User.Id &lt;&gt; &quot;00560000001PZm7AAG&quot;
+&amp;&amp;  $User.Username &lt;&gt; &quot;launchdm@omnicable.com&quot;
+&amp;&amp;  $User.Username &lt;&gt; &quot;svcdwh@omnicable.com.full&quot;
+&amp;&amp;  $User.Username &lt;&gt; &quot;svcdwh@omnicable.com&quot;
+&amp;&amp;  $User.Id &lt;&gt; &quot;005Po000004BWlRIAW&quot;
+&amp;&amp;  ISPICKVAL( Type__c  , &quot;Quote&quot;)</errorConditionFormula>
+    <errorMessage>Please use the Quote Follow Up button to enter notes. When you save the quote follow up, the Notes field will automatically populate.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specs_Created_Last_14_Days</fullName>
+    <columns>ExtID__c</columns>
+    <columns>NAME</columns>
+    <columns>Search_Results_Title__c</columns>
+    <columns>Cable_Type__c</columns>
+    <columns>Image__c</columns>
+    <columns>Belden_Url__c</columns>
+    <columns>Title__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Spec_Sheet__c.Breaker_Spec</value>
+    </filters>
+    <label>Breaker Specs</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Administrator</role>
+    </sharedTo>
+</ListView>

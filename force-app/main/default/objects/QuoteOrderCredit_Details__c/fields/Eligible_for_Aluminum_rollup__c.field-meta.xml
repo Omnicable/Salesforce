@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eligible_for_Aluminum_rollup__c</fullName>
+    <formula>AND(
+  OR(
+    Class__c = &quot;AL&quot;,
+    Item_Class__c = &quot;CASL&quot;
+  ),
+  NOT(ISPICKVAL(Line_Status__c, &quot;Cancelled&quot;))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Eligible for Aluminum $ rollup?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

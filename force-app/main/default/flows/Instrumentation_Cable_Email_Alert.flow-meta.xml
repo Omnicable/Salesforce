@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Instrumentation_Cable_Email_Alert</name>
+        <label>Send Instrumentation Cable Email Alert</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Loop_1</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>useEmailTemplate</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>00XPo00000R7KdZMAV</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Loop_1.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>GetRecordVariable.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
+    </actionCalls>
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Quote/Order contains Instrumentation Cable products and 1. account is in Bill’s list OR 2. ≥$40K in Instrumentation Cable and not entered by the LOD team.</description>
+        <name>Instrumentation_Cable_40K_Not_LOD</name>
+        <label>Instrumentation Cable &gt; 0 for Certain Accounts or &gt;= 40K &amp; Not LOD</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Instrumentation Cable &lt; 40K</defaultConnectorLabel>
+        <rules>
+            <name>Instrumentation_Cable_40K_Plus</name>
+            <conditionLogic>(1 AND 2) OR (3 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>GetRecordVariable.Instrumentation_Cable_dollars__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>40000.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetRecordVariable.Entered_By__r.Department</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Large Order Department</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetRecordVariable.Instrumentation_Cable_dollars__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IsInAccountList</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Instrumentation_Cable_Email_Distribution_List_User_IDs</targetReference>
+            </connector>
+            <label>Instrumentation Cable &gt;0 for Specific Accounts or &gt;=40K</label>
+        </rules>
+    </decisions>
+    <description>Added new decision path: Instrumentation Cable &gt;0 for Specific Accounts or &gt;=40K</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Bill Provided this list of 146 accounts in Solarwinds Ticket 47235.</description>
+        <name>IsInAccountList</name>
+        <dataType>Boolean</dataType>
+        <expression>CONTAINS(
+&quot;,805596,805601,811538,811575,828105,847144,847177,968538,975420,811460,816309,822694,828102,844518,847166,968489,968530,968515,975402,804558,811547,838350,847155,847159,847179,848642,848643,848669,817638,844010,843784,840730,843890,840741,807135,826036,819210,807031,843570,802305,820470,802775,831497,809764,849455,809658,843996,826369,820040,842334,806720,808192,813034,833717,806087,967945,841161,600148,960800,965404,967910,970370,970660,989800,992413,994380,994734,960344,968371,972662,972867,973000,973860,974435,974615,979450,989185,808211,838700,838701,838703,967961,967963,979600,985637,985643,991576,837379,960979,962926,963960,963962,963963,963971,985556,998934,848767,961327,965455,992250,974480,977235,977957,977958,977959,989225,961102,975020,982499,991571,991594,996907,996908,996919,996921,997201,904000,981546,900406,975339,970600,901501,901507,901509,935919,963964,981531,962823,997973,975397,935920,936010,968886,984150,987698,996808,984422,984428,984434,984455,984469,965634,957207,962116,962876,962891,&quot;,
+&quot;,&quot; &amp; {!GetRecordVariable.Customer_Number__c} &amp; &quot;,&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>Instrumentation Cable Email Alert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Instrumentation Cable Email Alert</label>
+    <loops>
+        <name>Loop_1</name>
+        <label>Loop 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Instrumentation_Cable_Email_Distribution_List_User_IDs</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Send_Instrumentation_Cable_Email_Alert</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Instrumentation_Cable_Email_Distribution_List_User_IDs</name>
+        <label>Get Instrumentation Cable Email Distribution List User IDs</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_1</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Full_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Bill Blank</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Full_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Michelle Babcock</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Full_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Windy Fiore</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>User</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Full_Name__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Instrumentation_Cable_40K_Not_LOD</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>GetRecordVariable</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>QuotesOrdersCredits_Header__c</objectType>
+    </variables>
+    <variables>
+        <name>TC_Email_Dist_List</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

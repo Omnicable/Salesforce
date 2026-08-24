@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Putups__c</fullName>
+    <description>Text string combining all putups for the line item</description>
+    <externalId>false</externalId>
+    <formula>Put_up_1__c + (IF(ISBLANK(Put_up_2__c),&quot;&quot;,&quot;,&quot;) )
++ Put_up_2__c + IF(ISBLANK(Put_up_3__c),&quot;&quot;,&quot;,&quot;) 
++ Put_up_3__c + IF(ISBLANK(Put_up_4__c),&quot;&quot;,&quot;,&quot;)
++ Put_up_4__c + IF(ISBLANK(Put_up_5__c),&quot;&quot;,&quot;,&quot;) 
++ Put_up_5__c + IF(ISBLANK(Put_up_6__c),&quot;&quot;,&quot;,&quot;) 
++ Put_up_6__c + IF(ISBLANK(Put_up_7__c),&quot;&quot;,&quot;,&quot;) + Put_up_7__c</formula>
+    <label>Putups</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

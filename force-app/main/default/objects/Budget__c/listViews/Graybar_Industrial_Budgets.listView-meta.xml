@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Graybar_Industrial_Budgets</fullName>
+    <columns>NAME</columns>
+    <columns>Customer__c</columns>
+    <columns>Budget_Year__c</columns>
+    <columns>Sales_YTD__c</columns>
+    <columns>Budget_YTD__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AM1__c</field>
+        <operation>equals</operation>
+        <value>101,101a</value>
+    </filters>
+    <filters>
+        <field>Budget_Year__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>Graybar Industrial Budgets</label>
+    <sharedTo></sharedTo>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Belden_URL__c</fullName>
+    <description>The vendor external URL link for the spec sheets result page on the website.</description>
+    <inlineHelpText>The vendor external URL link for the spec sheets result page on the website.</inlineHelpText>
+    <label>External Spec URL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

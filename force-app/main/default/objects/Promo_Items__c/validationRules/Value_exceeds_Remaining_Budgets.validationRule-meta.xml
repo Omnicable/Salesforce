@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_exceeds_Remaining_Budgets</fullName>
+    <active>true</active>
+    <errorConditionFormula>Value__c &gt; Promo__r.Marketing_Budget__r.XPromo_Remaining__c</errorConditionFormula>
+    <errorMessage>Entered amount exceeds the remaining Marketing Budgeted $.</errorMessage>
+</ValidationRule>

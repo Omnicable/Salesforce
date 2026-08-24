@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promo_Format__c</fullName>
+    <description>Tango Card, AD Rewards, or Other format</description>
+    <inlineHelpText>* Tango Card: For every $100 in sales, the customer earns a $1 tango card.</inlineHelpText>
+    <label>Promo Format</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AD Rewards - Double points for AD customers</fullName>
+                <default>false</default>
+                <label>AD Rewards - Double points for AD customers</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>OmniCable Points Program - $1 for every $250</fullName>
+                <default>true</default>
+                <label>OmniCable Points Program - $1 for every $250</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

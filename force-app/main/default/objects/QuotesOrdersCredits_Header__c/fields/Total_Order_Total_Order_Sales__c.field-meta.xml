@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Order_Total_Order_Sales__c</fullName>
+    <description>1 = they match within $1
+0 = they don&apos;t match</description>
+    <externalId>false</externalId>
+    <formula>IF  (Total_Order_Sales__c - TotalDollars__c &gt; 1  ||  
+Total_Order_Sales__c - TotalDollars__c &lt; -1, 0, 1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Order $ = Total Order Sales</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

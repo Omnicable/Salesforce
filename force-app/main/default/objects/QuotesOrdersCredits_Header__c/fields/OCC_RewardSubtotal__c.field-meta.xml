@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_RewardSubtotal__c</fullName>
+    <description>Meant to be used if we were doing product-specific rewards. It&apos;s a roll-up of line dollars for lines where a OCC_ItemRewards checkbox field is checked. We are not currently utilizing this checkbox, so the value is $0</description>
+    <label>OCC_RewardSubtotal</label>
+    <summarizedField>QuoteOrderCredit_Details__c.Dollars__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.OCC_ItemRewards__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteOrderCredit_Details__c.Order_Header__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

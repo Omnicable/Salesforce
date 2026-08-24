@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wire_Cable</fullName>
+    <fields>OwnerId</fields>
+    <fields>Name</fields>
+    <fields>Total_Potential__c</fields>
+    <fields>Order_Number__c</fields>
+    <fields>Region_Number__c</fields>
+    <label>Wire &amp; Cable</label>
+</CompactLayout>

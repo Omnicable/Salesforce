@@ -1,0 +1,8 @@
+<apex:page standardController="Account">
+<apex:outputField value="{!account.ParentAccount__c}" rendered="false"/>
+<social:profileViewer entityId="{!account.id}"/>
+<apex:outputField value="{!Account.LastActivityDate}" rendered="true"/>
+<apex:detail relatedList="true" relatedListHover="true" title="true" showChatter="true" inlineEdit="true" />
+
+<c:Buyer pcontactsId="{!account.ParentAccount__c}" / >
+</apex:page>

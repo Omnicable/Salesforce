@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Promos</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
+    <columns>NAME</columns>
+    <columns>User__c</columns>
+    <columns>Promo_Format__c</columns>
+    <columns>Other_Format_Prize__c</columns>
+    <columns>Promo_Tracking_Report__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Promo__c.Customer_Promotion</value>
+    </filters>
+    <filters>
+        <field>Start_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>End_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>User__c</field>
+        <operation>equals</operation>
+        <value>Jim Clarke</value>
+    </filters>
+    <label>Jim Clarke Active Promos</label>
+    <sharedTo>
+        <group>Marketing</group>
+        <role>National_Account_Manager</role>
+    </sharedTo>
+</ListView>

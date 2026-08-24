@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>LOD_W_C_Reminder_Email</fullName>
+        <description>LOD W&amp;C Reminder Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>W_C_Account_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>W_C_TSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/LOD_W_C_Reminder_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>TSM_W_C_Reminder_Email</fullName>
+        <description>TSM W&amp;C Reminder Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/TSM_W_C_Reminder_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Check_LOD_Box</fullName>
+        <field>LOD__c</field>
+        <literalValue>1</literalValue>
+        <name>Check LOD Box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>LOD W%26C Reminder Email Follow Up</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Milestone1_Project__c.LOD__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Milestone1_Project__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Quoted</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Milestone1_Project__c.CreatedDate</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>LOD W%26C Reminder Email Follow Up NEW</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Milestone1_Project__c.LOD__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Milestone1_Project__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Quoted</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>LOD_W_C_Reminder_Email</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Milestone1_Project__c.CreatedDate</offsetFromField>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>TSM W%26C Reminder Email Follow Up NEW</fullName>
+        <active>true</active>
+        <formula>CONTAINS( CreatedBy.UserRole.Name, &apos;District Sales Manager&apos;) &amp;&amp;   ISPICKVAL( Status__c , &apos;Quoted&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>TSM_W_C_Reminder_Email</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Milestone1_Project__c.CreatedDate</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Update W%26C LOD Checkbox</fullName>
+        <actions>
+            <name>Check_LOD_Box</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Milestone1_Project__c.CreatedById</field>
+            <operation>equals</operation>
+            <value>Adam DeFord,Chris Kennedy,Aaron Shore,Kim Lamb,Emmett Mauer,Gigi Kennedy,Glenn Richardson,Steven Carr,Jim Turcich,Sarah Keune,Sam Harman,Matthew Chylack,Justin Wolf,Chris Reed,Chris Sorah,Bell Tran,Nicole Mooney</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

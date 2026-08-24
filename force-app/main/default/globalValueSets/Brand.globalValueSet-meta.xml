@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>OmniCable</fullName>
+        <default>true</default>
+        <label>OmniCable</label>
+    </customValue>
+    <customValue>
+        <fullName>HWC</fullName>
+        <default>false</default>
+        <label>HWC</label>
+    </customValue>
+    <masterLabel>Brand</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

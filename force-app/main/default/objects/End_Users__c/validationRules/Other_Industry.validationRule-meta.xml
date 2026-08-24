@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Industry</fullName>
+    <active>true</active>
+    <description>Please explain Other Industry</description>
+    <errorConditionFormula>INCLUDES( Industry__c , &quot;Other (specify below)&quot;)   &amp;&amp; ISBLANK( Other_Industry__c )</errorConditionFormula>
+    <errorDisplayField>Other_Industry__c</errorDisplayField>
+    <errorMessage>Please specify the &quot;Other&quot; Industry.</errorMessage>
+</ValidationRule>

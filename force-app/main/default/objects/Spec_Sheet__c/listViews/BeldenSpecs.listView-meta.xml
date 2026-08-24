@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BeldenSpecs</fullName>
+    <columns>ExtID__c</columns>
+    <columns>NAME</columns>
+    <columns>Search_Results_Title__c</columns>
+    <columns>Title__c</columns>
+    <columns>Cable_Type__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Belden_Url__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Spec_Sheet__c.Omni_Spec_Sheets</value>
+    </filters>
+    <label>Belden Specs</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SFDCAdministrators</group>
+    </sharedTo>
+</ListView>

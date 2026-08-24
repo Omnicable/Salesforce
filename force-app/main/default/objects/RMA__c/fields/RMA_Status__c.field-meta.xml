@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RMA_Status__c</fullName>
+    <label>RMA Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>APPROVED</fullName>
+                <color>#0B6FCE</color>
+                <default>false</default>
+                <label>APPROVED</label>
+            </value>
+            <value>
+                <fullName>AWAITING RECEIPT</fullName>
+                <color>#78C953</color>
+                <default>false</default>
+                <label>AWAITING RECEIPT</label>
+            </value>
+            <value>
+                <fullName>BEING RECEIVED</fullName>
+                <color>#E27001</color>
+                <default>false</default>
+                <label>BEING RECEIVED</label>
+            </value>
+            <value>
+                <fullName>WHSE REC</fullName>
+                <color>#A845DC</color>
+                <default>false</default>
+                <label>WHSE REC</label>
+            </value>
+            <value>
+                <fullName>FRT RESEARCH</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>FRT RESEARCH</label>
+            </value>
+            <value>
+                <fullName>CANCELLED</fullName>
+                <color>#A53711</color>
+                <default>false</default>
+                <label>CANCELLED</label>
+            </value>
+            <value>
+                <fullName>EXPIRED</fullName>
+                <color>#66E9BD</color>
+                <default>false</default>
+                <label>EXPIRED</label>
+            </value>
+            <value>
+                <fullName>CLOSED</fullName>
+                <color>#0B24BE</color>
+                <default>false</default>
+                <label>CLOSED</label>
+            </value>
+            <value>
+                <fullName>CREDITED</fullName>
+                <color>#419249</color>
+                <default>false</default>
+                <label>CREDITED</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

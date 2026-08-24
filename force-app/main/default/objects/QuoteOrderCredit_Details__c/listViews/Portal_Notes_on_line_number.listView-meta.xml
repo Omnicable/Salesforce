@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_Notes_on_line_number</fullName>
+    <columns>NAME</columns>
+    <columns>Leadtime__c</columns>
+    <columns>NotesPortal__c</columns>
+    <columns>C2ACT__c</columns>
+    <columns>C2SPECV__c</columns>
+    <columns>C2TLIP__c</columns>
+    <columns>C3CTXT__c</columns>
+    <columns>C3CTXT1_c__c</columns>
+    <columns>C3CTXT2_c__c</columns>
+    <columns>C9NOTE1__c</columns>
+    <columns>Line_Item__c</columns>
+    <columns>Line_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NotesPortal__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Date_Line_Entered__c</field>
+        <operation>equals</operation>
+        <value>THIS_WEEK</value>
+    </filters>
+    <label>Portal Notes on line numbers</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>AccountManager3</role>
+    </sharedTo>
+</ListView>

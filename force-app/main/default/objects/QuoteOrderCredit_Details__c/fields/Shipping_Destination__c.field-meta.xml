@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Destination__c</fullName>
+    <description>If the line is a Will Call, &quot;Will Call&quot;, if it&apos;s being delivered to same address and the account, &quot;Into Cust Stock&quot;, if it&apos;s being delivered to a different address from the account, &quot;To Job Site&quot;</description>
+    <externalId>false</externalId>
+    <formula>IF (
+
+AND(
+Ship_Via__c &lt;&gt; &quot;WC&quot;
+,
+UPPER(Order_Header__r.Customer__r.ShippingStreet) &lt;&gt; UPPER(Order_Header__r.Ship_to_Address_1__c) 
+),
+&quot;To Job Site&quot;,
+IF(
+Ship_Via__c = &quot;WC&quot;,
+&quot;Will Call&quot;, 
+&quot;Into Cust Stock&quot;
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Shipping Destination</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

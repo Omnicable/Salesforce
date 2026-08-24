@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Schedule_Followup</fullName>
+    <availability>online</availability>
+    <description>Use this button for followup tasks, autofills Buyername</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Schedule Followup</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/00T/e?what_id={!QuotesOrdersCredits_Header__c.Id}&amp;retURL=%{!QuotesOrdersCredits_Header__c.Id}&amp;tsk2={!QuotesOrdersCredits_Header__c.Buyer__c}</url>
+</WebLink>

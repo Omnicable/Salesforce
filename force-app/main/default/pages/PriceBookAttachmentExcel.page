@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : chrisw@launchdm.com
+  @group             : 
+  @last modified on  : 08-15-2022
+  @last modified by  : chrisw@launchdm.com
+  contentType="application/x-excel#Demo Example.xls"
+-->
+<apex:page controller="PriceSheetController" showHeader="false" contentType="text/csv">{!csv}</apex:page>
+
+<!-- <apex:dataTable border="1" headerClass="header"  rendered="{!entryCatMap['Aluminum']['ALUMINUM XHHW ALL COLORS'] != null}" value="{!entryCatMap['Aluminum']['ALUMINUM XHHW ALL COLORS']}"
+	 var="entry" title="ALUMINUM XHHW ALL COLORS" rowClasses="odd,even" styleClass="part" style="width: 100%; border-color: 2px solid black;">
+
+		<apex:facet name="header">
+			<apex:outputText value="ALUMINUM XHHW ALL COLORS" />
+		</apex:facet>
+
+		<apex:column>
+			<apex:facet  name="header">Part #</apex:facet>
+			<apex:outputText value="{!entry.name}" />
+		</apex:column>
+
+		<apex:column>
+			<apex:facet name="header">Size</apex:facet>
+			<apex:outputText value="{!entry.Product2.Size__c}" />
+		</apex:column>
+
+		<apex:column>
+			<apex:facet name="header">Price/{!entry.Product2.QuantityUnitOfMeasure}</apex:facet>
+			<apex:outputText value="{!entry.UnitPrice}" />
+		</apex:column>
+
+	</apex:dataTable> -->

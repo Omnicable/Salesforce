@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalClientApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>mkumar@omnicable.com</contactEmail>
+    <distributionState>Local</distributionState>
+    <isProtected>false</isProtected>
+    <label>Ecom Integration API</label>
+    <orgScopedExternalApp>00D60000000JrJI:Ecom_Integration_API</orgScopedExternalApp>
+</ExternalClientApplication>

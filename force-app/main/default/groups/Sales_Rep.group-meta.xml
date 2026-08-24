@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Group xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Consists of all roles underneath the Senior VP of Sales.</description>
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <name>Sales Rep</name>
+</Group>

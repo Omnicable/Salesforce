@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allow all users to manage external users -- Maybe remove later</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Portal: Manage External Users ALL USERS</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManagePartners</name>
+    </userPermissions>
+</PermissionSet>

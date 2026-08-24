@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Users responsible for managing customer relationships and driving revenue. They may own accounts and opportunities or collaborate on them through account and opportunity teams.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Reps</label>
+    <permissionSets>Sales_Rep</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

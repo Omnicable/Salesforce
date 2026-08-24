@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RedeemMessage__c</fullName>
+    <externalId>false</externalId>
+    <formula>&apos;Wow, you are on a roll…or shall we say on a reel?  Ok, we’ll stop with the bad jokes. &lt;br&gt;&lt;br&gt;&apos;  &amp; 
+
+ 
+&apos;Either way, we want to thank you for being a valued customer of Omni Cable and placing &apos; + ActionDescription__c + &apos; on the &lt;a href=&quot;https://myomnicable.com&quot;&gt; myomnicable.com &lt;/a&gt; customer portal.&lt;br&gt;&lt;br&gt;&apos;
+
+ &amp; 
+
+IF( Contact__r.OCC_Rewards__c  = true, 
+&apos;&lt;b&gt;We added $&apos;
+ &amp; 
+
+ TEXT(RewardValue__c) 
+
+ &amp; 
+
+&apos; to your Reel Rewards Account as a token of our appreciation.&lt;/b&gt;&lt;br&gt;&lt;br&gt;&apos;, 
+ 
+&apos;&lt;b&gt;We are emailing you a $&apos;  
+
+ &amp; 
+
+ TEXT(RewardValue__c) 
+
+ &amp; 
+
+&apos; Tango Card as a token of our appreciation.&lt;/b&gt;&lt;br&gt;&lt;br&gt;&apos;)
+
+ &amp;
+
+&apos;We hope that&lt;a href=&quot;https://myomnicable.com&quot;&gt; myomnicable.com &lt;/a&gt; had made it a little easier for you to do business with Omni Cable. If you can, please take two minutes to fill out this short survey to let us know how we’re doing. Your feedback will help us to continue improving the site.  &lt;br&gt;&lt;br&gt; Thank you for your continued support and enjoy your tango card!&lt;br&gt;&lt;br&gt; Omni Cable&apos;</formula>
+    <label>RedeemMessage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

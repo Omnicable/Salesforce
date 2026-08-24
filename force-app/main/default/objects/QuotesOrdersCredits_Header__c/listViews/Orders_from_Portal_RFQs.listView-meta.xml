@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orders_from_Portal_RFQs</fullName>
+    <columns>Portal_RFQ__c</columns>
+    <columns>Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>RFQ_Text__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Portal_RFQ__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Order</value>
+    </filters>
+    <label>Orders from Portal RFQs</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SFDCAdministrators</group>
+    </sharedTo>
+</ListView>

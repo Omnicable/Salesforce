@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cable_Type__c</fullName>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>--</fullName>
+                <default>true</default>
+                <label>--</label>
+            </value>
+            <value>
+                <fullName>Aluminum</fullName>
+                <default>false</default>
+                <label>Aluminum</label>
+            </value>
+            <value>
+                <fullName>Armored</fullName>
+                <default>false</default>
+                <label>Armored</label>
+            </value>
+            <value>
+                <fullName>Bare &amp; Tinned Copper</fullName>
+                <default>false</default>
+                <label>Bare &amp; Tinned Copper</label>
+            </value>
+            <value>
+                <fullName>Building Wire</fullName>
+                <default>false</default>
+                <label>Building Wire</label>
+            </value>
+            <value>
+                <fullName>Eaton Circuit Breaker</fullName>
+                <default>false</default>
+                <label>Eaton Circuit Breaker</label>
+            </value>
+            <value>
+                <fullName>Fiber Optic</fullName>
+                <default>false</default>
+                <label>Fiber Optic</label>
+            </value>
+            <value>
+                <fullName>Flexible &amp; Portable Cord</fullName>
+                <default>false</default>
+                <label>Flexible &amp; Portable Cord</label>
+            </value>
+            <value>
+                <fullName>High Temp</fullName>
+                <default>false</default>
+                <label>High Temp</label>
+            </value>
+            <value>
+                <fullName>Hook-Up Wire</fullName>
+                <default>false</default>
+                <label>Hook-Up Wire</label>
+            </value>
+            <value>
+                <fullName>IMSA</fullName>
+                <default>false</default>
+                <label>IMSA</label>
+            </value>
+            <value>
+                <fullName>Instrumentation</fullName>
+                <default>false</default>
+                <label>Instrumentation</label>
+            </value>
+            <value>
+                <fullName>Medium Voltage</fullName>
+                <default>false</default>
+                <label>Medium Voltage</label>
+            </value>
+            <value>
+                <fullName>Sound, Security &amp; Alarm</fullName>
+                <default>false</default>
+                <label>Sound, Security &amp; Alarm</label>
+            </value>
+            <value>
+                <fullName>Square D Circuit Breaker</fullName>
+                <default>false</default>
+                <label>Square D Circuit Breaker</label>
+            </value>
+            <value>
+                <fullName>Telephone &amp; Data</fullName>
+                <default>false</default>
+                <label>Telephone &amp; Data</label>
+            </value>
+            <value>
+                <fullName>Thermocouple</fullName>
+                <default>false</default>
+                <label>Thermocouple</label>
+            </value>
+            <value>
+                <fullName>Tray Cable</fullName>
+                <default>false</default>
+                <label>Tray Cable</label>
+            </value>
+            <value>
+                <fullName>VFD</fullName>
+                <default>false</default>
+                <label>VFD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

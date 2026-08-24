@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>My_Accounts</links>
+    <links>My_Daily_Bookings</links>
+    <links>Today_s_Quotes_for_My_Accounts</links>
+    <links>My_Sales_History</links>
+    <links>My_Quotes</links>
+    <links>My_Open_Orders</links>
+    <links>My_Credits</links>
+    <links>My_RMAs</links>
+    <links>My_Pending_Issues</links>
+    <links>Omni_Cable_Directory</links>
+    <links>Tango_Card_Request</links>
+    <links>Promotion_Request</links>
+    <links>Marketing_Request</links>
+    <links>Portal_Dashboards</links>
+    <links>On_Call_Schedule</links>
+    <links>Eaton_Internal_Spiff_Report</links>
+    <links>Eaton_Internal_Spiff_Central_TSM_Report</links>
+    <links>Eaton_Internal_Spiff_Western_TSMs</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

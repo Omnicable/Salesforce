@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExtID__c</fullName>
+    <description>We believe this gets auto-filled upon part number creation.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>We believe this gets auto-filled upon part number creation.</inlineHelpText>
+    <label>ExtID (part number)</label>
+    <length>30</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,7 @@
+<apex:component >
+<div class="col-xs-12">
+    <div class="footer-div" style="float:right; margin-top:20px; margin-bottom:20px">
+        {{::footerContent}}
+    </div>
+</div>
+</apex:component>

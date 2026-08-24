@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_RFQ_No_Quote_only_for_type_RFQ</fullName>
+    <active>true</active>
+    <description>Only type RFQ can have the status RFQ No Quote. You cannot select RFQ No Quote for a regular quote.</description>
+    <errorConditionFormula>$User.ProfileId  = &quot;00e60000001BUZM&quot; &amp;&amp;
+ISPICKVAL( Type__c, &quot;Quote&quot;)&amp;&amp;
+ISPICKVAL(Status__c, &quot;RFQ No Quote&quot;)</errorConditionFormula>
+    <errorMessage>Status &quot;RFQ No Quote&quot; is only for RFQs requested through the portal.</errorMessage>
+</ValidationRule>

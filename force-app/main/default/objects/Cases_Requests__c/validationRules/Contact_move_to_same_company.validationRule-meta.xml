@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_move_to_same_company</fullName>
+    <active>true</active>
+    <description>The moving contact and the move to account must have the same parent account.</description>
+    <errorConditionFormula>AND(
+NOT($Profile.Name = &quot;Omni System Admin&quot;),
+RecordType.Name =&quot;Move Contact&quot; &amp;&amp;    Contact__r.RecordType.DeveloperName = &apos;Standard&apos; &amp;&amp;
+
+ Contact__r.Account.ParentAccount__c &lt;&gt;  Move_to_Account__r.ParentAccount__c
+)</errorConditionFormula>
+    <errorDisplayField>Move_to_Account__c</errorDisplayField>
+    <errorMessage>Contact can only be moved to another branch in the same company. 
+Contact omnisolutions@omnicable.com for assistance.</errorMessage>
+</ValidationRule>

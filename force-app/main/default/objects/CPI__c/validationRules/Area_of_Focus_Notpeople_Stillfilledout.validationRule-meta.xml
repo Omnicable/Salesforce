@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area_of_Focus_Notpeople_Stillfilledout</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISPICKVAL( Area_of_Focus__c , &quot;People&quot;)) &amp;&amp; NOT(ISBLANK( CPI_Contact1__c ) ||
+ISBLANK( CPI_Contact2__c )
+)</errorConditionFormula>
+    <errorDisplayField>CPI_Contact1__c</errorDisplayField>
+    <errorMessage>Please delete Contacts if they are not the area of focus</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Detail__c</fullName>
+    <externalId>false</externalId>
+    <formula>If( LEN( Item_Class__c ) = 5, RIGHT(Item_Class__c, 3) , If( LEN( Item_Class__c ) = 4, RIGHT(Item_Class__c, 2), If( LEN( Item_Class__c ) = 3, RIGHT(Item_Class__c, 1),&quot;n/a&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Returns the SubClass based on Item Class depending on the length of the Item Class</inlineHelpText>
+    <label>Class Detail</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

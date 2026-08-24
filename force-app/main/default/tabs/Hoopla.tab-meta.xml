@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>900</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>Hoopla</label>
+    <motif>Custom100: TV Widescreen</motif>
+    <url>https://tv.hoopla.net/#/CJybS3M</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

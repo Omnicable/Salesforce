@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_3_Quotes_over_5k</fullName>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Customer_Number__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Status__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <columns>GPpct__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>Outside_AM_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>TotalDollars__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>5000</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,Followd Up</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>3</value>
+    </filters>
+    <label>Region 3 Quotes over 5k</label>
+    <sharedTo>
+        <role>DistrictSalesManager3</role>
+        <role>RVP_Southeast</role>
+        <role>RegionalManager3</role>
+    </sharedTo>
+</ListView>

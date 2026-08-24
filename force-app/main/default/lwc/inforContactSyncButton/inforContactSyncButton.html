@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Re-sync this contact to OmniSync" icon-name="standard:connected_apps">
+        <lightning-button label="Sync"
+        title="Sync"
+        onclick={handleSync}
+        disabled={isDisabled} slot="actions"></lightning-button>
+
+        <div class="slds-p-around_small slds-is-relative">
+            <template if:true={isSyncing}>
+                <lightning-spinner
+                    alternative-text="Syncing contact to Infor"
+                    size="small"
+                ></lightning-spinner>
+            </template>
+
+            <template if:true={showStatus}>
+                <p class={statusClass} role="status">{statusMessage}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

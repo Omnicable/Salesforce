@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalDollars__c</fullName>
+    <description>This is a summary field of Line Dollars. It&apos;s normally accurate, but occasionally if a line item doesn&apos;t get updated properly, it could cause the value to be incorrect.</description>
+    <label>Total Order $ (Booked)</label>
+    <summarizedField>QuoteOrderCredit_Details__c.Dollars__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.C2ACT__c</field>
+        <operation>notEqual</operation>
+        <value>D</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteOrderCredit_Details__c.Order_Header__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

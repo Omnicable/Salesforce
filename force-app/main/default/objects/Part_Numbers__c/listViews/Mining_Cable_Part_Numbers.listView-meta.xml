@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mining_Cable_Part_Numbers</fullName>
+    <columns>NAME</columns>
+    <columns>Product_Type__c</columns>
+    <columns>Spec_Sheet__c</columns>
+    <columns>Belden_URL__c</columns>
+    <columns>ExtID__c</columns>
+    <columns>Shielding__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>B5,B6</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Part_Numbers__c.Part_Number</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>-A</value>
+    </filters>
+    <label>Mining Cable Part Numbers</label>
+    <language>en_US</language>
+</ListView>

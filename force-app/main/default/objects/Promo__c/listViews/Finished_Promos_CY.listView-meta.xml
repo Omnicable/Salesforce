@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finished_Promos_CY</fullName>
+    <columns>Region_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>User__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Promo_Tracking_Report__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Finished</value>
+    </filters>
+    <filters>
+        <field>End_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>Finished Promos CY</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <group>Business_Innovation</group>
+        <group>Corporate_Sales_Managment</group>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

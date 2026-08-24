@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Spec</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Requested__c</columns>
+    <columns>Issue_Type_Desc__c</columns>
+    <columns>Issue_Status__c</columns>
+    <columns>Responsibility__c</columns>
+    <columns>Region__c</columns>
+    <columns>AM1__c</columns>
+    <columns>Account__c</columns>
+    <columns>Order__c</columns>
+    <columns>Amount__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

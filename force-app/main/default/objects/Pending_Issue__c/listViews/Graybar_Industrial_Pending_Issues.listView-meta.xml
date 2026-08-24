@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Graybar_Industrial_Pending_Issues</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Date_Requested__c</columns>
+    <columns>Disposition_Date__c</columns>
+    <columns>Issue_Status__c</columns>
+    <columns>Issue_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AM1__c</field>
+        <operation>equals</operation>
+        <value>101,101a</value>
+    </filters>
+    <label>Graybar Industrial Pending Issues</label>
+    <sharedTo></sharedTo>
+</ListView>

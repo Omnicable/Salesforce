@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_PP</fullName>
+    <availability>online</availability>
+    <description>Products (JUST ORDERS) with Record Count, Sales, GP$, Average GP%, and Average Order Size. Has stats for Whole Region.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Region Products</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/00O6000000497T9?pv0={!Account.Region_Number__c}</url>
+</WebLink>

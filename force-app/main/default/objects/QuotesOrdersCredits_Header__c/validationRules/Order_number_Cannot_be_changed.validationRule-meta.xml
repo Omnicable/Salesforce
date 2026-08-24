@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_number_Cannot_be_changed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND($User.Username &lt;&gt;&quot;integration@omnicable.com&quot;,
+$User.Username &lt;&gt; &quot;jdean@omnicable.com&quot;,
+$User.Username &lt;&gt; &quot;sfromhold@omnicable.com&quot;,
+$User.Username &lt;&gt; &quot;opus@omnicable.com&quot;)
+
+&amp;&amp; ( ISCHANGED( Order_Number__c ) || ISCHANGED( Name ))</errorConditionFormula>
+    <errorDisplayField>Order_Number__c</errorDisplayField>
+    <errorMessage>You cannot change the order number</errorMessage>
+</ValidationRule>

@@ -1,0 +1,3 @@
+<apex:page standardStylesheets="false">
+<iframe title="VIP DSP Program" width="1600" height="759.65" src="https://app.powerbi.com/reportEmbed?reportId=ebdb20db-ee63-401f-9a33-70375276da94&autoAuth=true&ctid=739e087e-fa34-47c2-8d2f-a155036455ce" frameborder="0" allowFullScreen="true"></iframe>
+</apex:page>

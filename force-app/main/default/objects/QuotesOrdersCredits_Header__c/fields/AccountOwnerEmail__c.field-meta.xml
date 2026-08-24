@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountOwnerEmail__c</fullName>
+    <description>The account owner&apos;s email created for the send priceless quote template to reply to the AM&apos;s email.</description>
+    <externalId>false</externalId>
+    <formula>Customer__r.Owner.Email</formula>
+    <label>AccountOwnerEmail</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

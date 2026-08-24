@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_Idea_email_John_Dean</fullName>
+        <description>New Idea email John Dean</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Idea</template>
+    </alerts>
+    <alerts>
+        <fullName>Updated_Idea</fullName>
+        <description>Updated Idea</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Updated_Idea_Admin</template>
+    </alerts>
+    <alerts>
+        <fullName>Updated_Idea_Creator</fullName>
+        <description>Updated Idea to Creator</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Updated_Idea</template>
+    </alerts>
+    <rules>
+        <fullName>Idea Changed</fullName>
+        <actions>
+            <name>Updated_Idea_Creator</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Comments added or Status Change</description>
+        <formula>NOT(ISNEW() ) &amp;&amp; (CreatedById &lt;&gt;  $User.Id) &amp;&amp;  ISCHANGED(NumComments)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Idea Changed by Owner</fullName>
+        <actions>
+            <name>Updated_Idea</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Comments added or Status Change by Owner</description>
+        <formula>NOT(ISNEW() ) &amp;&amp; (CreatedById =  $User.Id) &amp;&amp;  ISCHANGED(NumComments)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Idea</fullName>
+        <actions>
+            <name>New_Idea_email_John_Dean</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Email John Dean on new Idea&apos;s</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

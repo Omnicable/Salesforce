@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drop_Ship_Count__c</fullName>
+    <description>Count of order detail line items with Order Process = DS and Line Status &lt;&gt; Cancelled</description>
+    <label>Drop Ship Count</label>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Order_Process__c</field>
+        <operation>equals</operation>
+        <value>DS</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Line_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteOrderCredit_Details__c.Order_Header__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

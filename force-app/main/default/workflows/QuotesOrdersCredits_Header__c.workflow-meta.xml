@@ -1,0 +1,2923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>AdamBiggs_Email_to_Alert_Quote_over_10k</fullName>
+        <description>Adam Biggs - Email to Alert Quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>abiggs@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_Bjorkman_10</fullName>
+        <description>Alert to Bjorkman &lt;10%</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cbjorkman@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Alert_Order_GP_under_threshold</template>
+    </alerts>
+    <alerts>
+        <fullName>Armor_order_over_50k</fullName>
+        <description>Armor order over $50k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>emauer@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mthomason@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Armor_Email_alert_with_line_items</template>
+    </alerts>
+    <alerts>
+        <fullName>BDR_Email_Alert_All_Quotes_over_10K</fullName>
+        <description>TSM Email Alert All Quotes over $10K</description>
+        <protected>false</protected>
+        <recipients>
+            <field>DSMEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Outside_AM_Name__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_10k</template>
+    </alerts>
+    <alerts>
+        <fullName>Belden_order_over_25k</fullName>
+        <description>Belden order over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cbjorkman@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Belden_Order_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>Belden_quote_over_25k</fullName>
+        <description>Belden quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cbjorkman@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Belden_Quote_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>BradCook_Email_to_Alert_Quote_over_2500</fullName>
+        <description>Brad Cook - Email to Alert Quote over $10000</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bcook@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Quote_over_2500</template>
+    </alerts>
+    <alerts>
+        <fullName>Breaker_Order_QOC_with_line_details_in_one_template</fullName>
+        <description>Breaker Q/O entered - VF template shows line items</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ManagerEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>dcarolan@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Stacy_s_Working_Folder/TEST_QOC_with_QOC_detail_list7</template>
+    </alerts>
+    <alerts>
+        <fullName>Breaker_Order_QOC_with_line_details_in_one_template3</fullName>
+        <description>$10k-$25k quotes for product class FC - VF template shows line items</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cemmett@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Stacy_s_Working_Folder/QUOTE_PRICING_FINAL6</template>
+    </alerts>
+    <alerts>
+        <fullName>BruceMontgomery_Email_to_Alert_Quote_over_5K</fullName>
+        <description>Bruce Montgomery - Email to Alert Quote over $5K</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bmontgomery@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>csorah@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_5000</template>
+    </alerts>
+    <alerts>
+        <fullName>ChrisEmmett_Email_to_Alert_Quote_over_15k</fullName>
+        <description>Chris Emmett - Email to Alert Quote over $15k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cemmett@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Chris_Emmett_Email_to_Alert_Element_2_Quote_over_10_GP</fullName>
+        <description>Chris Emmett - Email to Alert Element 2 Quote over 10% GP</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cemmett@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Stacy_s_Working_Folder/Element_2_Quote_GP_10</template>
+    </alerts>
+    <alerts>
+        <fullName>DSM_Email_Alert_All_Quotes_over_20K</fullName>
+        <ccEmails>sfromhold@omnicable.com</ccEmails>
+        <description>DSM Email Alert All Quotes over $2500</description>
+        <protected>false</protected>
+        <recipients>
+            <field>DSMEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Outside_AM_Name__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_20k</template>
+    </alerts>
+    <alerts>
+        <fullName>Drew_Piller_Order_over_25k</fullName>
+        <description>Drew Piller Order over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dpiller@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Order_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_alert_when_quote_or_order_25_000_entered_by_CSC_AM</fullName>
+        <description>Email alert when quote or order &gt; $25,000 entered by CSC AM</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Market_Development</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CSC_Quote_or_Order_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Alert_Quote_over_70K_Brandilyn</fullName>
+        <description>Email to Alert Quote over 70K - Brandilyn</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bjohnson@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_over_70k</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Alex_Mancilla_for_a_quote_over_15k_at_Cooper_Friedman_City</fullName>
+        <description>Email to Alex Mancilla for a quote over $25k at Cooper/Friedman/City</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>_alex.mancilla@cooper-electric.com</recipient>
+            <type>customerPortalUser</type>
+        </recipients>
+        <recipients>
+            <recipient>_randy.montgomeryjr@cooper-electric.com</recipient>
+            <type>customerPortalUser</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rbruni@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pete_Email_Templates/QUOTE_PRICING_FINAL4</template>
+    </alerts>
+    <alerts>
+        <fullName>Follow_Up_on_BUY_Quote</fullName>
+        <description>Follow-Up on BUY Quote</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Templates/Follow_Up_on_BUY_Quote</template>
+    </alerts>
+    <alerts>
+        <fullName>Freight_Allowed_Order_has_been_entered</fullName>
+        <description>Non-Policy Freight Allowed Order has been entered</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Entered_By_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>ManagerEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Freight_Allowed_Order_Entered</template>
+    </alerts>
+    <alerts>
+        <fullName>GP12_Notification</fullName>
+        <description>GP12%Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Templates/OrdersGP_13</template>
+    </alerts>
+    <alerts>
+        <fullName>GP12_Notification2</fullName>
+        <description>GP12%Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Templates/OrdersGP_13</template>
+    </alerts>
+    <alerts>
+        <fullName>Graybar_Order_Over_5k</fullName>
+        <description>Graybar Order Over $5k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jcrosby@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Order_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>Graybar_Quote_over_25k</fullName>
+        <description>Graybar Quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jcrosby@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Greg_D_GP_under_threshold</fullName>
+        <description>Greg D - GP% under threshold</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>gdonato@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Stacy_s_Working_Folder/Alert_Order_GP_under_threshold</template>
+    </alerts>
+    <alerts>
+        <fullName>HL_quote_over_1k</fullName>
+        <description>Hirschmann Lumberg quote over $1k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jcollins@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>wpullen@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Hirschmann_Lumberg_Quotes_1K</template>
+    </alerts>
+    <alerts>
+        <fullName>High_Temp_order_over_25k</fullName>
+        <description>High Temp order over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>emauer@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mthomason@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/High_Temp_Email_alert_with_line_items</template>
+    </alerts>
+    <alerts>
+        <fullName>Industrial_Cord_quote_order_over_50k</fullName>
+        <description>Industrial Cord quote or order over $50k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>emauer@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mthomason@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>wfiore@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Industrial_Cord_Email_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>LOD_Email_to_Alert_Order_over_25K</fullName>
+        <description>LOD- Email to Alert Order over $50K</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ckennedy@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>creed@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>csorah@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>emauer@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jwolf@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_over_50k</template>
+    </alerts>
+    <alerts>
+        <fullName>LOD_Open_Quote_Follow_Up</fullName>
+        <description>LOD Open Quote Follow-Up</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Sales_Templates/Follow_Up_on_Quote</template>
+    </alerts>
+    <alerts>
+        <fullName>Medium_Voltage_order_over_50k</fullName>
+        <ccEmails>pbingham@omnicable.com</ccEmails>
+        <ccEmails>jurban@omnicable.com</ccEmails>
+        <description>Medium Voltage order over $5k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>emauer@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mthomason@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rborio@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Med_Voltage_Email_alert_with_line_items</template>
+    </alerts>
+    <alerts>
+        <fullName>OmniPoints_order_1M</fullName>
+        <description>OmniPoints order &gt; $1M</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bcook@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>chayes@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jcrosby@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/OmniPoints_Order_over_1M</template>
+    </alerts>
+    <alerts>
+        <fullName>Orders_over_10k_DSS_Tom</fullName>
+        <description>Orders over $50k DSS - Director of DSS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>rbruni@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_over_50k</template>
+    </alerts>
+    <alerts>
+        <fullName>Panduit_Order_15_GP</fullName>
+        <description>Eastern Panduit Order &lt; 15 % GP</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ManagerEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>RVP_Southeast</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>cbarrett@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Inside_AM_Name__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/TEST_QOC_with_QOC_detail_list72</template>
+    </alerts>
+    <alerts>
+        <fullName>Panduit_Order_15_GP2</fullName>
+        <description>Western Panduit Order &lt; 15 % GP</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ManagerEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>RVPWest</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>cbarrett@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Inside_AM_Name__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/TEST_QOC_with_QOC_detail_list72</template>
+    </alerts>
+    <alerts>
+        <fullName>Panduit_Order_15_GP3</fullName>
+        <description>Central Panduit Order &lt; 15 % GP</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ManagerEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>RVP_NorthEast_Central</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>cbarrett@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Inside_AM_Name__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/TEST_QOC_with_QOC_detail_list72</template>
+    </alerts>
+    <alerts>
+        <fullName>RVPSouth_Email_to_Alert_Order_over_25K</fullName>
+        <description>RVP East - Email to Alert Order over $25K</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RVP_Southeast</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Order_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>RVP_NortheastCentral_Email_to_Alert_Order_over_25K</fullName>
+        <description>RVP West - Email to Alert Order over $25K</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RVPWest</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Order_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>RVP_Northeast_Email_to_Alert_Order_over_25K</fullName>
+        <description>RVP Northeast - Email to Alert Order over $25K</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RVP_Northeast</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Order_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>Region13_Email_to_Alert_Quote_over_25k</fullName>
+        <description>Region 13 - Email to Alert Quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Manager_13</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Region15_Email_to_Alert_Quote_over_25k</fullName>
+        <description>Region 15 - Email to Alert Quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>wfiore@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Region2_Email_to_Alert_Quote_over_25k</fullName>
+        <description>Region 2 - Email to Alert Quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>RegionalManager2</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Manager_2</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Region5_Email_to_Alert_Quote_over_25k</fullName>
+        <description>Region 5 - Email to Alert Quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jharbaugh@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Region7_Email_to_Alert_Quote_over_25k</fullName>
+        <description>Region 7 - Email to Alert Quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Manager_7</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Region9_Email_to_Alert_Quote_over_25k</fullName>
+        <description>Region 9 - Email to Alert Quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Manager_9</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Region_14_Email_to_Alert_Quote_over_75k</fullName>
+        <description>Region 14 - Email to Alert Quote over $75k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>wfiore@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_75k</template>
+    </alerts>
+    <alerts>
+        <fullName>Region_5_Email_to_Alert_Order_over_10K</fullName>
+        <description>Region 5 - Email to Alert Order over $10K</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jharbaugh@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Order_over_10k</template>
+    </alerts>
+    <alerts>
+        <fullName>SB_Quote_over_25k</fullName>
+        <description>Shaker Brock Order over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Order_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>Sonepar_Order_Over_25k</fullName>
+        <description>Sonepar Order Over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>krichards@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Order_over_25k</template>
+    </alerts>
+    <alerts>
+        <fullName>Sonepar_Quote_over_25k</fullName>
+        <description>Sonepar Quote over $25k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>krichards@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/Quote_over_15k</template>
+    </alerts>
+    <alerts>
+        <fullName>Steve_Azzopardi_Email_to_Alert_Quote_over_5K</fullName>
+        <description>DSM Email to Alert Quote/Order - Steve Azzopardi</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Templates/DSM_Quote_Order_Email_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>VP_PLM_Email_to_Alert_Order_over_50k</fullName>
+        <description>VP PLM - Email to Alert Order over 50k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cbjorkman@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mgentry@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_over_50k</template>
+    </alerts>
+    <alerts>
+        <fullName>VP_PLM_Email_to_Alert_Quote_over_100K</fullName>
+        <description>VP PLM - Email to Alert Quote over 100K</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cbjorkman@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mgentry@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Quote_over_100k_2</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CBU_Hoopla</fullName>
+        <field>CBU_Hoopla__c</field>
+        <literalValue>1</literalValue>
+        <name>CBU Hoopla</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Broadband</fullName>
+        <field>Broadband__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Broadband</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Enterprise</fullName>
+        <field>Enterprise__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Enterprise</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_LOD_Box</fullName>
+        <field>LOD__c</field>
+        <literalValue>1</literalValue>
+        <name>Check LOD Box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_LOD_Copy</fullName>
+        <field>LOD_Copy__c</field>
+        <literalValue>1</literalValue>
+        <name>Check LOD Copy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_LOD_box2</fullName>
+        <field>LOD__c</field>
+        <literalValue>1</literalValue>
+        <name>Check LOD box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Order_Booked_25k_Box</fullName>
+        <description>Check Order Booked $25k+ checkbox, which will trigger hoopla alert</description>
+        <field>Booked_Order_over_25k__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Order Booked $25k+ Box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Order_box</fullName>
+        <field>Order__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Order box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Portal_RFQ_Box</fullName>
+        <description>Check &quot;Portal RFQ&quot; box on QOC</description>
+        <field>Portal_RFQ__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Portal RFQ Box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_TimeDelay_Field</fullName>
+        <field>TimeDelay__c</field>
+        <literalValue>1</literalValue>
+        <name>Check TimeDelay Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DSMEmailUpdate</fullName>
+        <description>DSM Email field will be updated when QOC is entered so that the email alert knows to send to the DSM&apos;s email address.</description>
+        <field>DSMEmail__c</field>
+        <formula>Outside_AM_Name__r.Email</formula>
+        <name>DSMEmailUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DisplayHooplatvQ</fullName>
+        <field>DisplayHooplatvQ__c</field>
+        <literalValue>1</literalValue>
+        <name>DisplayHooplatvQ</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EnteredByEmail</fullName>
+        <field>Entered_By_Email__c</field>
+        <formula>Entered_By__r.Email</formula>
+        <name>EnteredByEmail</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFAEmailSent</fullName>
+        <field>FFA_Email_Sent__c</field>
+        <literalValue>1</literalValue>
+        <name>FFAEmailSent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFA_Policy_Allowed_Field</fullName>
+        <description>Check the FFA Policy Allowed field checkbox when the order is an order with an FFA account, the industrial lbs is over 5000, the electronic $ is greater than 2500, or the ALR $ is greater than 500</description>
+        <field>FFA_Policy_allowed__c</field>
+        <literalValue>1</literalValue>
+        <name>FFA Policy Allowed Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Followup_Checkbox</fullName>
+        <field>Follow_up__c</field>
+        <literalValue>1</literalValue>
+        <name>Followup Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>GateKeeper_SF_True</fullName>
+        <field>Workflow_Gate_Keeper_SF__c</field>
+        <literalValue>1</literalValue>
+        <name>GateKeeper (SF) True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>GateKeeper_True</fullName>
+        <field>Workflow_Gate_Keeper__c</field>
+        <literalValue>1</literalValue>
+        <name>GateKeeper True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>HoopaTV</fullName>
+        <field>DisplayonHooplaTV__c</field>
+        <literalValue>1</literalValue>
+        <name>HoopaTV</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ManagerEmailUpdate</fullName>
+        <field>ManagerEmail__c</field>
+        <formula>Inside_AM_Name__r.Manager.Email</formula>
+        <name>ManagerEmailUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OrderCredit_RT_assignment</fullName>
+        <description>Assigns Record Type Order/Credit when QOC Type = Order or Credit</description>
+        <field>RecordTypeId</field>
+        <lookupValue>OrderCredits</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>OrderCredit - RT assignment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Status</fullName>
+        <description>Updates ORep field when Order becomes an Order</description>
+        <field>ORep__c</field>
+        <formula>&quot;O&quot;</formula>
+        <name>Order Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Buyer_s_Phone_field2</fullName>
+        <description>Will enable Click to Call right from the quote screen</description>
+        <field>Buyer_s_Phone2__c</field>
+        <formula>Buyer__r.Phone</formula>
+        <name>Populate Buyer&apos;s Phone field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_RT_Assignment</fullName>
+        <description>Assigns Quote record type when QOC Type = Quote</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Quotes</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Quote - RT Assignment</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Status</fullName>
+        <description>Updates Qrep field when order starts as a Quote</description>
+        <field>Qrep__c</field>
+        <formula>&quot;Q&quot;</formula>
+        <name>Quote Status - Qrep = Q</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RFQNumberText</fullName>
+        <field>RFQNumberText__c</field>
+        <formula>RFQNumber__c</formula>
+        <name>RFQNumberText</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Remove_R18_Agent_name_from_Quotes_1500</fullName>
+        <description>Remove R18 Agent name from Quotes that are &lt; $1500  [10/2/2024 WF deactivated the related WFR. Change has to be made to OmniPro email notification. Also, I&apos;ve since learned we can&apos;t update lookup field to &quot;&quot; in SFDC]</description>
+        <field>Agent__c</field>
+        <name>Remove R18 Agent name from Quotes &lt;1500</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Time_Stamp_Invoice_Date_Time</fullName>
+        <description>When order status is changed to Invoiced, update field with current date/time</description>
+        <field>Invoiced_Date_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Time Stamp &quot;Invoiced Date/Time&quot; to Now</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_MCCB_Box</fullName>
+        <description>If MCCB box was checked, but breaker $ is changed to 0 (meaning breaker lines were cancelled), uncheck the box</description>
+        <field>MCCB__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck MCCB Box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Sub_Type</fullName>
+        <field>Sub_Type__c</field>
+        <formula>&quot;Change Order&quot;</formula>
+        <name>Update Sub Type to Change Order</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ZeroSalesPY2</fullName>
+        <description>Checkbox on accounts that had $0 sales PY. Delete in 2018 if not used after 1 year. Used to be used for zero to hero, but CSC now just uses a report for that.</description>
+        <field>ZeroSalesPY__c</field>
+        <literalValue>0</literalValue>
+        <name>xZeroSalesPY</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Customer__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ZeroSalesPYCount2</fullName>
+        <description>Counted the number of CY orders for an account that had $0 sales last year. Delete in 2018 if not used after 1 year. Used to be used for zero to hero, but CSC now just uses a report for that.</description>
+        <field>ZeroSalesPYCount__c</field>
+        <formula>1</formula>
+        <name>xZeroSalesPYCount2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Customer__c</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Adam Biggs - Quote over %2425k</fullName>
+        <active>true</active>
+        <description>Email alert to Adam Biggs when quote &gt; $25,000 entered for a region 12 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;12&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>AdamBiggs_Email_to_Alert_Quote_over_10k</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Alex Mancilla - Quote %3E %2415k</fullName>
+        <active>false</active>
+        <description>Alert to Alex Mancilla for quotes &gt; $15k for Cooper/Friedman/City</description>
+        <formula>AND(
+ISPICKVAL(Type__c,&quot;Quote&quot;),
+NOT(ISPICKVAL (Status__c, &quot;Cancelled&quot;)), 
+Total_Order_Sales__c &gt; 15000, 
+ Sent_to_Customer__c =True,
+ OR(Customer__r.Company_Name__c =&quot;Cooper&quot;,
+Customer__r.Company_Name__c =&quot;Friedman&quot;,
+Customer__r.Company_Name__c =&quot;City&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alex Mancilla -- Quote %3E %2425k</fullName>
+        <active>false</active>
+        <formula>AND( 
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+NOT(ISPICKVAL (Status__c, &quot;Cancelled&quot;)), 
+Total_Order_Sales__c &gt; 5000, 
+Sent_to_Customer__c =True, 
+OR(Customer__r.Company_Name__c =&quot;COOPER&quot;, 
+Customer__r.Company_Name__c =&quot;FRIEDMAN&quot;, 
+Customer__r.Company_Name__c =&quot;CITY&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Email_to_Alex_Mancilla_for_a_quote_over_15k_at_Cooper_Friedman_City</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Armor products total over %2450K</fullName>
+        <actions>
+            <name>Armor_order_over_50k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Orders with Armor products total over $50K</description>
+        <formula>AND(
+  Armor_dollars__c &gt;= 50000,
+  OR(
+    ISPICKVAL(Type__c, &quot;Quote&quot;),
+    ISPICKVAL(Type__c, &quot;Order&quot;)
+  ),
+  OR(
+    NOT(ISPICKVAL(Status__c, &quot;Closed&quot;)),
+    NOT(ISPICKVAL(Status__c, &quot;Cancelled&quot;))
+  ),
+  OR(
+    /* 1. New record that qualifies */
+    ISNEW(), 	
+    /* 2. Record was previously unqualified, now qualifies */    
+    AND(
+      ISCHANGED(Armor_dollars__c),
+      PRIORVALUE(Armor_dollars__c) &lt; 50000
+    ), 
+    /* 3. Qualified Quote changes to Order */
+    AND(
+      ISCHANGED(Type__c),
+      ISPICKVAL(Type__c, &quot;Order&quot;),
+      ISPICKVAL(PRIORVALUE(Type__c), &quot;Quote&quot;)
+    ) 
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>BDR Alert - Quotes over %2410k by WebService</fullName>
+        <actions>
+            <name>BDR_Email_Alert_All_Quotes_over_10K</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Alert specifically for when quote is &apos;created by&apos; WebServices, which indicates that the buyer is a portal user. The time dependent trigger required for fields to populate.</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 20000,
+ISPICKVAL(Type__c,&quot;Quote&quot;),
+CreatedById = &quot;00532000004zRAf&quot;, 
+(NOT(ISBLANK(DSMEmail__c))),
+Customer__r.Outside_Salesperson__r.Profile.Name = &quot;DSM Platform User&quot;,
+Customer__r.Outside_Salesperson_Role__c  =  &quot;District Sales Manager 12&quot;,
+Customer__r.Outside_Salesperson_Role__c  =  &quot;District Sales Manager 9&quot;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Belden order over %2425k</fullName>
+        <actions>
+            <name>Belden_order_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Cost_Belden_Line_Items__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>25000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <description>Email alert to Chris Bjorkman when order includes &gt;= $25,000 in Belden products</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Belden quote over %2425k</fullName>
+        <actions>
+            <name>Belden_quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Cost_Belden_Line_Items__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>25000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <description>Email alert to Chris Bjorkman when quote includes &gt;= $25,000 in Belden products</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Booked Order %2425k%2B</fullName>
+        <actions>
+            <name>Check_Order_Booked_25k_Box</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>25000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Booked_Order_over_25k__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Created to trigger hoopla alert for orders $25k+</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Brad Cook - Quote over %2410000</fullName>
+        <actions>
+            <name>BradCook_Email_to_Alert_Quote_over_2500</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to Brad Cook when quote &gt; $10000 entered for a region 8 account</description>
+        <formula>AND( 
+	Total_Order_Sales__c &gt; 10000,
+	ISPICKVAL(Type__c,&quot;Quote&quot;), 
+    OR(
+	ISPICKVAL (Customer__r.Region_Number__c,&quot;8&quot;),
+	ISPICKVAL (Customer__r.Region_Number__c,&quot;17&quot;)
+)
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Breaker ORDER</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.MCCB__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Closed</value>
+        </criteriaItems>
+        <description>Send email to Greg D, John D, Chris K, Doug C, and RM when a breaker order is entered.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Breaker_Order_QOC_with_line_details_in_one_template</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Breaker QUOTE</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.MCCB__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Closed</value>
+        </criteriaItems>
+        <description>Send email to Greg D, John D, Chris K, Doug C, and RM when a breaker quote is entered.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Breaker_Order_QOC_with_line_details_in_one_template</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Broadband Quote Entered</fullName>
+        <actions>
+            <name>Check_Broadband</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Entered_By__c</field>
+            <operation>equals</operation>
+            <value>Natalie Bourlotos,Brittany Brown,Rich Del Conte,Adam Blackley,Crystle Yoder</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <description>Check Broadband box when  quote entered by Broadband team</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>CED - alert over %2425k to Drew Piller</fullName>
+        <actions>
+            <name>Drew_Piller_Order_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to Drew Piller when order &gt; $25,000 entered for a CED account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Order&quot;), 
+ Customer__r.Buying_Group__c = &apos;CED&apos;
+
+
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CES - alert over %2425k to Drew Piller</fullName>
+        <actions>
+            <name>Drew_Piller_Order_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to Drew Piller when order &gt; $25,000 entered for CES account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Order&quot;), 
+ISPICKVAL(Customer__r.National_Account__c , &quot;CES&quot;) 
+
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CSC - Quote or Order over %2425k</fullName>
+        <actions>
+            <name>Email_alert_when_quote_or_order_25_000_entered_by_CSC_AM</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert when quote or order &gt; $25,000 entered by CSC AM</description>
+        <formula>/* 1. New record that qualifies */
+OR( 
+
+   AND(
+      ISNEW(),
+      Total_Order_Sales__c &gt; 25000,
+      OR(
+        ISPICKVAL(Type__c, &quot;Quote&quot;),
+        ISPICKVAL(Type__c, &quot;Order&quot;)
+        ),
+      OR(
+        Entered_By__r.UserRole.Name = &quot;Inside Sales - CSC&quot;,
+        Entered_By__c = &quot;0050d000007BeYm&quot;
+        )
+      ),
+
+/* 2. Record was previously unqualified, now qualifies */
+   AND(
+      NOT(ISNEW()),
+      Total_Order_Sales__c &gt; 25000,
+      OR(
+        Entered_By__r.UserRole.Name = &quot;Inside Sales - CSC&quot;,
+        Entered_By__c = &quot;0050d000007BeYm&quot;
+        ),
+      OR(
+        ISPICKVAL(Type__c, &quot;Quote&quot;),
+        ISPICKVAL(Type__c, &quot;Order&quot;)
+        ),
+      OR(
+        AND(
+           ISCHANGED(Total_Order_Sales__c),
+           PRIORVALUE(Total_Order_Sales__c) &lt;= 25000
+           )
+        )
+      ),
+/* 3. Qualified Quote changes to Order */
+   AND(
+      ISCHANGED(Type__c),
+      ISPICKVAL(Type__c, &quot;Order&quot;),
+      ISPICKVAL(PRIORVALUE(Type__c), &quot;Quote&quot;),
+      Total_Order_Sales__c &gt; 25000,
+      OR(
+        Entered_By__r.UserRole.Name = &quot;Inside Sales - CSC&quot;,
+        Entered_By__c = &quot;0050d000007BeYm&quot;
+        )
+      )
+  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Central Panduit Order %3C15%25 GP</fullName>
+        <actions>
+            <name>Panduit_Order_15_GP3</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Panduit__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_GP_Pct__c</field>
+            <operation>lessThan</operation>
+            <value>15</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>6,8,11,14</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Central Quote%2F Order %3C10%25 GP</fullName>
+        <actions>
+            <name>Alert_to_Bjorkman_10</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order,Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>6,8,11,14</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_GP_Pct__c</field>
+            <operation>lessThan</operation>
+            <value>10</value>
+        </criteriaItems>
+        <description>For Chris Bjorkman</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Check FFA Policy Allowed</fullName>
+        <actions>
+            <name>FFA_Policy_Allowed_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR (2 AND (3 OR 4 OR 5))</booleanFilter>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.FFA__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.FFA__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Industrial_LBS__c</field>
+            <operation>greaterThan</operation>
+            <value>5000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Electronic__c</field>
+            <operation>greaterThan</operation>
+            <value>2500</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.ALR__c</field>
+            <operation>greaterThan</operation>
+            <value>500</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Chris Emmett - %245000-%2425k Quote GP %3E 10%25</fullName>
+        <actions>
+            <name>Chris_Emmett_Email_to_Alert_Element_2_Quote_over_10_GP</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to Chris Emmett when quote for $5000-$25k with GP greater than 10% entered for a region 11 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt;= 5000,
+Total_Order_Sales__c &lt; 25000, 
+Total_Order_GP__c/Total_Order_Sales__c &gt; 0.1000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;11&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Chris Emmett - Quote over %2415k</fullName>
+        <active>false</active>
+        <description>Email alert to Chris Emmett when quote &gt; $15000 entered for a region 11 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 15000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;11&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ChrisEmmett_Email_to_Alert_Quote_over_15k</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Comms BU Quote Entered</fullName>
+        <actions>
+            <name>CBU_Hoopla</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>29</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.TotalDollars__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>10000</value>
+        </criteriaItems>
+        <description>Check CBU Hoopla box when order entered for region 29</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>East Panduit Order %3C15%25 GP</fullName>
+        <actions>
+            <name>Panduit_Order_15_GP</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Panduit__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_GP_Pct__c</field>
+            <operation>lessThan</operation>
+            <value>15</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>2,3,4,10,12</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Enterprise Quote Entered</fullName>
+        <actions>
+            <name>Check_Enterprise</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Entered_By__c</field>
+            <operation>equals</operation>
+            <value>Nicholas Douglas,Christian Morris,Victor Cruz,Louise Andrasik,Adam Zehring,Grace MacKenzie,Nikki Douglass,Ronni Wilhoit,Robert Bemoras,Pete Rock,Juan Leger,Gina Crall,Socorro Lazalde</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <description>Check Enterprise box when  quote entered by Enterprise team</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Followup Checkbox</fullName>
+        <actions>
+            <name>Followup_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote,Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Notes__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Follow_up__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Graybar - Order alert over %2425k</fullName>
+        <actions>
+            <name>Graybar_Order_Over_5k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to Jeremy Crosby when order &gt; $25,000 entered for a Graybar, Blazer, Cape, Connexion, Metro, and Shepherd Ele accounts</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Order&quot;),  Region__c &lt;&gt; &apos;14&apos;,  Region__c &lt;&gt; &apos;014&apos;,  
+ OR(Customer__r.Company_Name__c = &apos;GRAYBAR&apos;, 
+    Customer__r.Company_Name__c = &apos;BLAZER&apos;,
+    Customer__r.Company_Name__c = &apos;CAPE ELECT&apos;, 
+    Customer__r.Company_Name__c = &apos;CAPE&apos;,
+    Customer__r.Company_Name__c = &apos;CONNEXION&apos;,
+    Customer__r.Company_Name__c = &apos;METRO&apos;,
+    Customer__r.Company_Name__c = &apos;SHEPHERD ELE&apos;)
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Graybar - Quote alert over %2425k</fullName>
+        <actions>
+            <name>Graybar_Quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to Jeremy Crosby when quote &gt; $25,000 entered for a Graybar, Blazer, Cape, Connexion, Metro, and Shepherd Ele accounts</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), Region__c &lt;&gt; &apos;14&apos;,  Region__c &lt;&gt; &apos;014&apos;,  
+ OR(Customer__r.Company_Name__c = &apos;GRAYBAR&apos;, 
+    Customer__r.Company_Name__c = &apos;BLAZER&apos;,
+    Customer__r.Company_Name__c = &apos;CAPE ELECT&apos;,
+    Customer__r.Company_Name__c = &apos;CAPE&apos;,
+    Customer__r.Company_Name__c = &apos;CONNEXION&apos;,
+    Customer__r.Company_Name__c = &apos;METRO&apos;,
+    Customer__r.Company_Name__c = &apos;SHEPHERD ELE&apos;)
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Greg D Alert - Booked GP%25 orders %3C%3D 5000</fullName>
+        <active>false</active>
+        <description>This one works.</description>
+        <formula>ISPICKVAL(Type__c, &quot;Order&quot;) &amp;&amp; 
+(NOT (ISPICKVAL(Status__c, &quot;Cancelled&quot;))) &amp;&amp;
+Total_Order_GP__c  &gt; 0.00 &amp;&amp;
+Total_Order_Sales__c &gt; 0
+&amp;&amp; 
+((Total_Order_Sales__c &gt;= 1 &amp;&amp;
+Total_Order_Sales__c &lt;= 1000 &amp;&amp; 
+Total_Order_GP__c/Total_Order_Sales__c  &lt; 0.1400)
+ || 
+(Total_Order_Sales__c &gt;= 1001 &amp;&amp;
+Total_Order_Sales__c &lt;= 2500 &amp;&amp;
+Total_Order_GP__c/Total_Order_Sales__c  &lt; 0.1200)
+ || 
+(Total_Order_Sales__c &gt;= 2501 &amp;&amp; 
+Total_Order_Sales__c &lt;= 5000 &amp;&amp;
+Total_Order_GP__c/Total_Order_Sales__c  &lt; 0.1000))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Greg_D_GP_under_threshold</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>High Temp products total over %2425K</fullName>
+        <actions>
+            <name>High_Temp_order_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Orders with High Temp products total over $25K</description>
+        <formula>AND(
+  HT_Dollars__c &gt;= 25000,
+  OR(
+    ISPICKVAL(Type__c, &quot;Quote&quot;),
+    ISPICKVAL(Type__c, &quot;Order&quot;)
+  ),
+  OR(
+    NOT(ISPICKVAL(Status__c, &quot;Closed&quot;)),
+    NOT(ISPICKVAL(Status__c, &quot;Cancelled&quot;))
+  ),
+  OR(
+    /* 1. New record that qualifies */
+    ISNEW(),
+    /* 2. Record was previously unqualified, now qualifies */
+    AND(
+      ISCHANGED(HT_Dollars__c),
+      PRIORVALUE(HT_Dollars__c) &lt; 25000
+    ),
+    /* 3. Qualified Quote changes to Order */
+    AND(
+      ISCHANGED(Type__c),
+      ISPICKVAL(Type__c, &quot;Order&quot;),
+      ISPICKVAL(PRIORVALUE(Type__c), &quot;Quote&quot;)
+    )
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Hirschmann Lumberg products total over %241k</fullName>
+        <actions>
+            <name>HL_quote_over_1k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.HL_dollars__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1000</value>
+        </criteriaItems>
+        <description>Quotes with Hirschmann and/or Lumberg products total &gt;= $1k</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>IMARK - alert over %2425k to Shaker Brock</fullName>
+        <actions>
+            <name>SB_Quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to Shaker Brock when order &gt; $25,000 entered for IMARK account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Order&quot;),  
+OR(Customer__r.Buying_Group__c = &quot;IMARK&quot;, Customer__r.Buying_Group__c = &quot;EDN Sales&quot;) 
+
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Industrial Cord products total over %2450K</fullName>
+        <actions>
+            <name>Industrial_Cord_quote_order_over_50k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Quotes &amp; Orders with Industrial Cord products total over $50K</description>
+        <formula>AND(
+  Industrial_Cord__c &gt;= 50000,
+  OR(
+    ISPICKVAL(Type__c, &quot;Quote&quot;),
+    ISPICKVAL(Type__c, &quot;Order&quot;)
+  ),
+  NOT(ISPICKVAL(Status__c, &quot;Closed&quot;)),
+  NOT(ISPICKVAL(Status__c, &quot;Cancelled&quot;)),
+  OR(
+    /* 1. Record was previously unqualified, now qualifies */
+    AND(
+      ISCHANGED(Industrial_Cord__c),
+      NOT(ISBLANK(PRIORVALUE(Industrial_Cord__c))),
+      PRIORVALUE(Industrial_Cord__c) &lt; 50000
+    ),
+    /* 2. Qualified Quote changes to Order */
+    AND(
+      ISCHANGED(Type__c),
+      NOT(ISBLANK(TEXT(PRIORVALUE(Type__c)))),
+      ISPICKVAL(Type__c, &quot;Order&quot;),
+      ISPICKVAL(PRIORVALUE(Type__c), &quot;Quote&quot;)
+    )
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>LOD Open Quotes need follow-up</fullName>
+        <active>false</active>
+        <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote,RFQ</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.LOD__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.LOD_Copy__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.VITALink__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Alert only if LOD or LOD Copy is checked</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>LOD_Open_Quote_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>QuotesOrdersCredits_Header__c.Followup_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>LOD Quote Entered</fullName>
+        <actions>
+            <name>Check_LOD_Box</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Entered_By__c</field>
+            <operation>equals</operation>
+            <value>Adam DeFord,Chris Kennedy,Aaron Shore,Kim Lamb,Emmett Mauer,Gigi Kennedy,Glenn Richardson,Steven Carr,Jim Turcich,Sarah Keune,Sam Harman,Matthew Chylack,Justin Wolf,Chris Reed,Chris Sorah,Bell Tran,Nicole Mooney,Johnny Vigil,Ariana Palmeri</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.VITALink__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Check LOD box when non-VITALink quote entered by LOD Department</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>LOD Quote Entered by Joe or TJ</fullName>
+        <actions>
+            <name>Check_LOD_Copy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Check_LOD_box2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Entered_By__c</field>
+            <operation>equals</operation>
+            <value>Joe Boccella,TJ Hunt</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.VITALink__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Check LOD &amp; LOD Copy box when non-VITALink quote entered by Joe Boccella or TJ Hunt</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Medium Voltage products total over %245K</fullName>
+        <actions>
+            <name>Medium_Voltage_order_over_50k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Orders with Medium Voltage products total over $5K</description>
+        <formula>AND(
+  MV_dollars__c &gt;= 5000,
+  OR(
+    ISPICKVAL(Type__c, &quot;Quote&quot;),
+    ISPICKVAL(Type__c, &quot;Order&quot;)
+  ),
+  OR(
+    NOT(ISPICKVAL(Status__c, &quot;Closed&quot;)),
+    NOT(ISPICKVAL(Status__c, &quot;Cancelled&quot;))
+  ),
+  OR(
+    /* 1. New record that qualifies */
+    ISNEW(),
+    /* 2. Record was previously unqualified, now qualifies */
+    AND(
+      ISCHANGED(MV_dollars__c),
+      PRIORVALUE(MV_dollars__c) &lt; 5000
+    ),
+    /* 3. Qualified Quote changes to Order */
+    AND(
+      ISCHANGED(Type__c),
+      ISPICKVAL(Type__c, &quot;Order&quot;),
+      ISPICKVAL(PRIORVALUE(Type__c), &quot;Quote&quot;)
+    )
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Non-Policy Freight Allowed Order Entered</fullName>
+        <actions>
+            <name>Freight_Allowed_Order_has_been_entered</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>FFAEmailSent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>GateKeeper_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>AND( 
+ FFA__c &gt;0, 
+ FFA_Email_Sent__c =FALSE,
+ FFA_Lines__c =TRUE,
+ISPICKVAL(Type__c,&quot;Order&quot;), 
+ NOT(ISPICKVAL( Status__c ,&quot;Cancelled&quot;)), 
+  Freight_Agreement__c =FALSE,
+ Industrial_LBS__c  &lt; 5000,
+ ALR__c  &lt; 500,
+ Electronic__c  &lt; 2500)</description>
+        <formula>AND( 
+ FFA__c &gt;0, 
+ FFA_Email_Sent__c =FALSE,
+ FFA_Lines__c =TRUE,
+ISPICKVAL(Type__c,&quot;Order&quot;), 
+ NOT(ISPICKVAL( Status__c ,&quot;Cancelled&quot;)), 
+ Industrial_LBS__c  &lt; 5000,
+ ALR__c  &lt; 500,
+ Electronic__c  &lt; 2500)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>OmniPoints Order %3E %241M alert for R8%2C R18</fullName>
+        <actions>
+            <name>OmniPoints_order_1M</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to Brad Cook, Clyde Hayes, Jeremy Crosby when OmniPoints order &gt; $1M</description>
+        <formula>AND( 
+Total_Order_Sales__c  &gt;=  1000000,
+ISPICKVAL(Type__c,&quot;Order&quot;),  
+Customer__r.ReelRewards_Promo__c = True,
+ Buyer__r.OCC_Rewards__c = True,
+ OR(Region__c = &quot;8&quot;, Region__c =&quot;18&quot;) 
+
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order Status</fullName>
+        <actions>
+            <name>HoopaTV</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <description>Update ORep field to O when Quotes/order/Credit becomes an Order. Used for History reporting</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order Status Invoiced - Time Stamp Date%2FTime</fullName>
+        <actions>
+            <name>Time_Stamp_Invoice_Date_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Invoiced</value>
+        </criteriaItems>
+        <description>When Order status is becomes &quot;Invoiced,&quot; update the Invoice Date/Time date to NOW.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order over %2410k %28R5%29</fullName>
+        <actions>
+            <name>Region_5_Email_to_Alert_Order_over_10K</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>005</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterThan</operation>
+            <value>10000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <description>Regions 5</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order over %2425k</fullName>
+        <active>false</active>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Order&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order over %2425k %28RVP Northeast%29</fullName>
+        <actions>
+            <name>RVP_Northeast_Email_to_Alert_Order_over_25K</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>2,4,15</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterThan</operation>
+            <value>25000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <description>Regions 2,4,15</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order over %2425k %28RVP SouthEast%29</fullName>
+        <actions>
+            <name>RVPSouth_Email_to_Alert_Order_over_25K</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>3,10,12</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterThan</operation>
+            <value>25000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <description>Regions 3,10,12</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order over %2425k %28RVP West%29</fullName>
+        <actions>
+            <name>RVP_NortheastCentral_Email_to_Alert_Order_over_25K</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>5,7,9,13</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterThan</operation>
+            <value>25000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <description>Regions 5,7,9,13</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order over %2450k %28DSS%29</fullName>
+        <actions>
+            <name>Orders_over_10k_DSS_Tom</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Inside_AM_Name__c</field>
+            <operation>equals</operation>
+            <value>Christian Stinson,Dylan Farguson,Patrick Scott,Ryan Wroblewski,Tucker Campbell,Andrew Slezak,Derrick Martinez</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterThan</operation>
+            <value>50000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <description>Inside AM = DSS</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order over %2450k %28LOD%29</fullName>
+        <actions>
+            <name>LOD_Email_to_Alert_Order_over_25K</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterThan</operation>
+            <value>50000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <description>All regions</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order over %2450k %28VP PLM%29</fullName>
+        <actions>
+            <name>VP_PLM_Email_to_Alert_Order_over_50k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>50000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <description>4/28/26 WF changed rule name to Order over $50k (VP PLM) per SW Ticket 47008.  4/4/25 WF changed rule name from Order over $50k (RVP Central) to Order over $100k (VP PLM)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>OrderCredit - RT assignment</fullName>
+        <actions>
+            <name>OrderCredit_RT_assignment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order,Credit,Release</value>
+        </criteriaItems>
+        <description>Assigns Order/Credit Record type when QOC Type = Order or Credit</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>QOC Updated</fullName>
+        <actions>
+            <name>DSMEmailUpdate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>EnteredByEmail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ManagerEmailUpdate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Active__c</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote - RT assignment</fullName>
+        <actions>
+            <name>Quote_RT_Assignment</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <description>Assigns Quote Record Type to QOC when type is a Quote</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote Status</fullName>
+        <actions>
+            <name>DisplayHooplatvQ</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Populate_Buyer_s_Phone_field2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Quote_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <description>Update QRep field to Q when order starts as Quote</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote over %24100k %28VP PLM%29</fullName>
+        <actions>
+            <name>VP_PLM_Email_to_Alert_Quote_over_100K</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>100000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <description>4/3/25 WF changed rule name from Quote over $500k (RVP Central) to Quote over $100k (VP PLM)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote over %2470k %28Brandilyn%29</fullName>
+        <actions>
+            <name>Email_to_Alert_Quote_over_70K_Brandilyn</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>greaterThan</operation>
+            <value>69999</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>R11 Portable Cord Quotes</fullName>
+        <actions>
+            <name>Breaker_Order_QOC_with_line_details_in_one_template3</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>11</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Industrial_Cord__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>10000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Industrial_Cord__c</field>
+            <operation>lessOrEqual</operation>
+            <value>25000</value>
+        </criteriaItems>
+        <description>Email to Chris Emmett when portable cord $ quote is $10k-25k</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>R11 TSM - alert over %2410k</fullName>
+        <actions>
+            <name>BDR_Email_Alert_All_Quotes_over_10K</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to R11 TSMs when quote &gt; $10,000 entered</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 10000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+Customer__r.Outside_Salesperson__r.Profile.Name = &quot;DSM Platform User&quot;,
+Customer__r.Outside_Salesperson_Role__c = &quot;District Sales Manager 11&quot;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>R2 Pipeline Quote Follow-Up</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Buy_Bid__c</field>
+            <operation>equals</operation>
+            <value>Buy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.TotalDollars__c</field>
+            <operation>greaterThan</operation>
+            <value>5000</value>
+        </criteriaItems>
+        <description>BUY quotes over $5k</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Follow_Up_on_BUY_Quote</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>QuotesOrdersCredits_Header__c.Followup_Date__c</offsetFromField>
+            <timeLength>6</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>R6 Belden Order %3E %241800</fullName>
+        <active>false</active>
+        <description>Email alert to Kevin Dantley when order &gt; $1800 contains Belden</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 1800,
+ISPICKVAL(Type__c,&quot;Order&quot;), 
+Belden_dollars__c &gt; 0,
+NOT(ISPICKVAL (Status__c, &quot;Cancelled&quot;)),
+ISPICKVAL (Customer__r.Region_Number__c,&quot;6&quot;),
+CONTAINS(Customer__r.Owner.UserRole.Name, &quot;6&quot;),
+Customer__r.Owner.UserRole.Name &lt;&gt; &quot;Regional Manager 6&quot;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>R6 Quote Follow-Up</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Buy_Bid__c</field>
+            <operation>equals</operation>
+            <value>Buy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>6</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Outside_Salesperson_Role__c</field>
+            <operation>contains</operation>
+            <value>6</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.OwnerId</field>
+            <operation>notContain</operation>
+            <value>Jon Collins</value>
+        </criteriaItems>
+        <description>All BUY quotes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Follow_Up_on_BUY_Quote</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>QuotesOrdersCredits_Header__c.Followup_Date__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>R7%2FR13 Quote Follow-Up</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Buy_Bid__c</field>
+            <operation>equals</operation>
+            <value>Buy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>7,13</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.OwnerId</field>
+            <operation>equals</operation>
+            <value>TJ Neff,Andrew Slezak</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.TotalDollars__c</field>
+            <operation>greaterThan</operation>
+            <value>5000</value>
+        </criteriaItems>
+        <description>All BUY quotes over $5,000 for TJ Neff &amp; Andrew Slezak</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Follow_Up_on_BUY_Quote</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>QuotesOrdersCredits_Header__c.Followup_Date__c</offsetFromField>
+            <timeLength>6</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>R8 BDR Alert - Quotes over %242500</fullName>
+        <actions>
+            <name>DSM_Email_Alert_All_Quotes_over_20K</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>TOTAL ORDER SALES is the correct metric. Excludes quotes created by Webservices (which indicates portal users)</description>
+        <formula>AND( 
+Total_Order_Sales__c  &gt;= 2500,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+Customer__r.Outside_Salesperson__r.Profile.Name = &quot;DSM Platform User&quot;,
+ Customer__r.Outside_Salesperson_Role__c = &quot;District Sales Manager 8&quot;,
+ CreatedById  &lt;&gt; &quot;00532000004zRAf&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>R8 BDR Alert - Quotes over %242500 by WebService</fullName>
+        <active>false</active>
+        <description>Alert specifically for when quote is &apos;created by&apos; WebServices, which indicates that the buyer is a portal user. The time dependent trigger required for fields to populate.</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 2500,
+ISPICKVAL(Type__c,&quot;Quote&quot;),
+CreatedById = &quot;00532000004zRAf&quot;, 
+(NOT(ISBLANK(DSMEmail__c))),
+Customer__r.Outside_Salesperson__r.Profile.Name = &quot;DSM Platform User&quot;,
+Customer__r.Outside_Salesperson_Role__c = &quot;District Sales Manager 8&quot;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>DSM_Email_Alert_All_Quotes_over_20K</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RFQ Entered on Portal</fullName>
+        <actions>
+            <name>Check_Portal_RFQ_Box</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>RFQ</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RFQNumberText</fullName>
+        <actions>
+            <name>RFQNumberText</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.RFQNumber__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>RFQ</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Region 13 - Quote over %2425k</fullName>
+        <actions>
+            <name>Region13_Email_to_Alert_Quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to R13 SM when quote &gt; $25,000 entered for a region 13 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;13&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Region 14 - Quote over %2475k</fullName>
+        <actions>
+            <name>Region_14_Email_to_Alert_Quote_over_75k</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to Ian Rand when quote &gt; $75,000 entered for a region 14 account
+5/29/25 made myself (Windy Fiore) the Email Alert Recipient so I could deactivate Ian&apos;s user account and free up his user license.</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 75000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;14&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Region 15 - Quote over %2425k</fullName>
+        <actions>
+            <name>Region15_Email_to_Alert_Quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to Rob Orio &amp; Steve Reber when quote &gt; $25,000 entered for a region 15 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;15&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Region 2 - Quote over %2425k</fullName>
+        <actions>
+            <name>Region2_Email_to_Alert_Quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to Rob Orio &amp; Steve Reber when quote &gt; $25,000 entered for a region 2 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;2&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Region 5 - Quote over %2425k</fullName>
+        <actions>
+            <name>Region5_Email_to_Alert_Quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to John Harbaugh when quote &gt; $25,000 entered for a region 5 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;5&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Region 7 - Quote over %2425k</fullName>
+        <actions>
+            <name>Region7_Email_to_Alert_Quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to R7 SM when quote &gt; $25,000 entered for a region 7 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;7&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Region 9 - Quote over %2425k</fullName>
+        <actions>
+            <name>Region9_Email_to_Alert_Quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to R9 SM when quote &gt; $25,000 entered for a region 9 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;9&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Remove R18 Agent from Quotes %3C1500</fullName>
+        <actions>
+            <name>Remove_R18_Agent_name_from_Quotes_1500</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Agent__c</field>
+            <operation>equals</operation>
+            <value>ElecTech</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</field>
+            <operation>lessThan</operation>
+            <value>1500</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Quote</value>
+        </criteriaItems>
+        <description>Remove Agent name from Quotes that are &lt; $1500. [10/2/2024 WF deactivated this WFR. I misunderstood the request. This WFR isn&apos;t needed. Change has to be made to OmniPro email notification.]</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Ryan Horrell - Quote over %2410k</fullName>
+        <active>false</active>
+        <description>Email alert to Ryan Horrell when quote &gt; $10,000 entered for a region 6 account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 10000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+ISPICKVAL (Customer__r.Region_Number__c,&quot;6&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sonepar - alert order over %2425k</fullName>
+        <actions>
+            <name>Sonepar_Order_Over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to Kerith Richards when order &gt; $25,000 entered for a Sonepar account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Order&quot;), 
+  Customer__r.Buying_Group__c = &apos;SONEPAR&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sonepar - alert quote over %2425k</fullName>
+        <actions>
+            <name>Sonepar_Quote_over_25k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to Kerith Richards when quote &gt; $25,000 entered for a Sonepar account</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 25000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+  Customer__r.Buying_Group__c = &apos;SONEPAR&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>TJ Mahan - Quote over %2410k</fullName>
+        <active>true</active>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 10000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+Outside_AM_Name__r.LastName = &quot;Mahan&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>TSM Alert - Quotes over %2410k</fullName>
+        <actions>
+            <name>BDR_Email_Alert_All_Quotes_over_10K</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>SPECIFICALLY FOR REGION 12 BDRs. TOTAL ORDER SALES is the correct metric. Excludes quotes created by Webservices (which indicates portal users).</description>
+        <formula>AND( 
+Total_Order_Sales__c &gt; 10000,
+ISPICKVAL(Type__c,&quot;Quote&quot;), 
+Customer__r.Outside_Salesperson__r.Profile.Name = &quot;DSM Platform User&quot;,
+ Customer__r.Outside_Salesperson_Role__c  =  &quot;District Sales Manager 12&quot;,
+ CreatedById  &lt;&gt; &quot;00532000004zRAf&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Sub Type for McMc Pwr %26 Instru Orders</fullName>
+        <actions>
+            <name>Update_Sub_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Customer_Number__c</field>
+            <operation>equals</operation>
+            <value>979602,979603</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Sub_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Blanket</value>
+        </criteriaItems>
+        <description>If there is an order for 979602 and 979603 where Sub Type not equal to Blanket, update the Sub Type to Change Order. This allows these orders to show in the project management portal.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Western Panduit Order %3C15%25 GP</fullName>
+        <actions>
+            <name>Panduit_Order_15_GP2</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Panduit__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Total_Order_GP_Pct__c</field>
+            <operation>lessThan</operation>
+            <value>15</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuotesOrdersCredits_Header__c.Region__c</field>
+            <operation>equals</operation>
+            <value>5,7,9,13</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>xZeroPYSales</fullName>
+        <actions>
+            <name>ZeroSalesPY2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ZeroSalesPYCount2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Delete if not used. Used to be used for zero to hero, but CSC now just uses a report for that.</description>
+        <formula>Customer__r.ZeroSalesPY__c = True &amp;&amp; Customer__r.Sales_Year_Prior__c = 0 &amp;&amp;  Customer__r.Sales_Current_Year__c  = 0 &amp;&amp;  ISPICKVAL(Type__c, &quot;Order&quot;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Open_Quote_over_2000SP</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>QuotesOrdersCredits_Header__c.Followup_Date__c</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Open Quote over $2500</subject>
+    </tasks>
+</Workflow>

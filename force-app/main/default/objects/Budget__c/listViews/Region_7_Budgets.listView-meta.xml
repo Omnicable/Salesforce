@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_7_Budgets</fullName>
+    <columns>NAME</columns>
+    <columns>Customer__c</columns>
+    <columns>Budget_Year__c</columns>
+    <columns>Sales_YTD__c</columns>
+    <columns>Budget_YTD__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Budget_Year__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>7</value>
+    </filters>
+    <label>Region 7 Budgets</label>
+    <sharedTo>
+        <group>Region7</group>
+        <group>Region7RMs</group>
+    </sharedTo>
+</ListView>

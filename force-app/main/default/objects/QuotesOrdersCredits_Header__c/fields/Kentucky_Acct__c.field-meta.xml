@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kentucky_Acct__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the quote/order is for an account where Shipping State = KY</description>
+    <label>Kentucky Acct</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

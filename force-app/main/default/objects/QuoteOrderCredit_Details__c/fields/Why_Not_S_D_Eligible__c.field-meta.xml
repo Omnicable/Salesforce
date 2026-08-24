@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Why_Not_S_D_Eligible__c</fullName>
+    <description>Text field users fill-in to expalin why the Belden item isn&apos;t S&amp;D eligible</description>
+    <inlineHelpText>Explain why the Belden item isn&apos;t S&amp;D eligible</inlineHelpText>
+    <label>Why Not S&amp;D Eligible?</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

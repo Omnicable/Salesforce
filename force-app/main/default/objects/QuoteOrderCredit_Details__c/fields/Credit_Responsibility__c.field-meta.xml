@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Responsibility__c</fullName>
+    <label>Credit Responsibility</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CUST</fullName>
+                <default>false</default>
+                <label>CUST</label>
+            </value>
+            <value>
+                <fullName>FRT</fullName>
+                <default>false</default>
+                <label>FRT</label>
+            </value>
+            <value>
+                <fullName>OMNI</fullName>
+                <default>false</default>
+                <label>OMNI</label>
+            </value>
+            <value>
+                <fullName>WHSE</fullName>
+                <default>false</default>
+                <label>WHSE</label>
+            </value>
+            <value>
+                <fullName>VEND</fullName>
+                <default>false</default>
+                <label>VEND</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_Results_Titles</fullName>
+    <columns>ExtID__c</columns>
+    <columns>NAME</columns>
+    <columns>Cable_Type__c</columns>
+    <columns>Search_Results_Title__c</columns>
+    <columns>Applications__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Spec_Sheet__c.Omni_Spec_Sheets</value>
+    </filters>
+    <filters>
+        <field>Belden_Url__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ExtID__c</field>
+        <operation>notEqual</operation>
+        <value>0000</value>
+    </filters>
+    <label>Blank Search Results Titles</label>
+</ListView>

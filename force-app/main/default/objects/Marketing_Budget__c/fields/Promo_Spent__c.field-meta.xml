@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promo_Spent__c</fullName>
+    <label>Promo $ Spent</label>
+    <summarizedField>Promo__c.Total_Promo_Value__c</summarizedField>
+    <summaryForeignKey>Promo__c.Marketing_Budget__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OmniSync_Contact_Report__c</fullName>
+    <deleteConstraint>Cascade</deleteConstraint>
+    <label>OmniSync Contact Report</label>
+    <referenceTo>OmniSync_Contact_Report__c</referenceTo>
+    <relationshipLabel>Platform Event Logs</relationshipLabel>
+    <relationshipName>Platform_Event_Logs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

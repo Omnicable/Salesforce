@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Belden_Meet_Comp_Line__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Box is checked if the line item has a Belden Meet Comp (if BSD Cost field is greater than 0)</description>
+    <label>Belden Meet Comp Line</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

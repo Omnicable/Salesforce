@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>SendSlaViolationEmailAlert</fullName>
+        <description>A sample email alert for SLA breaches and consequential escalation.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SlaEmailTemplateFolder/SlaEmailAlertActionEmailTemplate</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>ChangeStatusToEscalated</fullName>
+        <field>Status</field>
+        <literalValue>Escalated</literalValue>
+        <name>Changes the case status to escalated.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Approved_or_Denied</fullName>
+    <columns>NAME</columns>
+    <columns>Disposition_Date__c</columns>
+    <columns>Date_Requested__c</columns>
+    <columns>Account__c</columns>
+    <columns>Order__c</columns>
+    <columns>Issue_Type_Desc__c</columns>
+    <columns>Issue_Status__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Issue_Status__c</field>
+        <operation>equals</operation>
+        <value>Approved,Denied</value>
+    </filters>
+    <label>All Approved or Denied</label>
+    <sharedTo>
+        <group>ITGroup</group>
+    </sharedTo>
+</ListView>

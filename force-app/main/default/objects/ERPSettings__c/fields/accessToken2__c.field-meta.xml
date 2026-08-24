@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>accessToken2__c</fullName>
+    <description>OmniSync access token.  Its required because tokens are longer than 255 character limit</description>
+    <label>Access Token 2</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

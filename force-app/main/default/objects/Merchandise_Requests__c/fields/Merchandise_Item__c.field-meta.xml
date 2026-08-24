@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merchandise_Item__c</fullName>
+    <description>Relationship so that the details of requests relate back to the Merchandise Items, ie. adjust inventory, price etc.</description>
+    <label>Merchandise Item</label>
+    <referenceTo>Merchandise_Catalog_Items__c</referenceTo>
+    <relationshipName>Merchandise_Requests1</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

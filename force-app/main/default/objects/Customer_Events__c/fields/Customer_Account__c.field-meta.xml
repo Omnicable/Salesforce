@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Account__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <label>Customer Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Customer Events</relationshipLabel>
+    <relationshipName>Customer_Events</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_2_Pending_Issues</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Date_Requested__c</columns>
+    <columns>Issue_Status__c</columns>
+    <columns>Issue_Type__c</columns>
+    <columns>Disposition_Date__c</columns>
+    <columns>Order_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>2</value>
+    </filters>
+    <filters>
+        <field>Issue_Status__c</field>
+        <operation>equals</operation>
+        <value>Open,Approved</value>
+    </filters>
+    <filters>
+        <field>Date_Requested__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:365</value>
+    </filters>
+    <label>Region 2 Pending Issues</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Region2RMs</group>
+    </sharedTo>
+</ListView>

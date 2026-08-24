@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_Cord__c</fullName>
+    <description>Quote &amp; Order dollars summed up from line items where Item Class = FCB2,FCB3,FCB4,FCB5,FCB6,FCB8,FCF1</description>
+    <inlineHelpText>Quote &amp; Order dollars summed up from line items where Item Class = FCB2,FCB3,FCB4,FCB5,FCB6,FCB8,FCF1</inlineHelpText>
+    <label>Industrial Cord $</label>
+    <summarizedField>QuoteOrderCredit_Details__c.Dollars__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Item_Class__c</field>
+        <operation>equals</operation>
+        <value>FCB2,FCB3,FCB4,FCB5,FCB6,FCB8,FCF1</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Line_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteOrderCredit_Details__c.Order_Header__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

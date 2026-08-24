@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GPDollars__c</fullName>
+    <description>Stacy (7/10/18) Corrected because the old Sales History Line item GP$ was Line_Total__c - Line_Cost__c - Total_Misc_Cost__c and the Misc Cost was on the whole order, not just the line.</description>
+    <formula>Line_Total__c -  Line_Cost__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Line GP$ (Invoiced)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

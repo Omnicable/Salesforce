@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NAM_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>Private__c</columns>
+    <columns>LAST_ACTIVITY</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Todd</value>
+    </filters>
+    <label>NAM Projects</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>COO_Only</group>
+        <role>National_Account_Manager</role>
+    </sharedTo>
+</ListView>

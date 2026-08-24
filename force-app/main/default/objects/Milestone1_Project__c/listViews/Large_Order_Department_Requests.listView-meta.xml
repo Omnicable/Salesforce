@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Large_Order_Department_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>Project_Registration_Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Desired_Due_Date__c</columns>
+    <columns>Bid_Buy__c</columns>
+    <columns>Is_immediate_stock_necessary__c</columns>
+    <columns>City__c</columns>
+    <columns>State__c</columns>
+    <columns>Status__c</columns>
+    <columns>Requested_By__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Milestone1_Project__c.Large_Order_Department</value>
+    </filters>
+    <label>Large Order Department Requests</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Large_Order_Department</group>
+    </sharedTo>
+</ListView>

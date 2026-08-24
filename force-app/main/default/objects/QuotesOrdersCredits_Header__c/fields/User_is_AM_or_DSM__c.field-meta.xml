@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_is_AM_or_DSM__c</fullName>
+    <description>If User is the AM or TSM of the account or the AM&apos;s manager, 1
+If User is NOT, 0</description>
+    <externalId>false</externalId>
+    <formula>IF (( Customer__r.Owner.Id = $User.Id ||  Customer__r.Outside_Salesperson__r.Id = $User.Id ||  Customer__r.Owner.ManagerId = $User.Id),1,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>User is AM/BDR/RM</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

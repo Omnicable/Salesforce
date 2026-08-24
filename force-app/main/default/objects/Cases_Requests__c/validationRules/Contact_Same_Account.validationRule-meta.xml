@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Same_Account</fullName>
+    <active>true</active>
+    <description>Can&apos;t request to move a contact to an account they are already listed at</description>
+    <errorConditionFormula>RecordType.Name =&quot;Move Contact&quot; &amp;&amp; ISPICKVAL(Status__c ,&quot;Not Started&quot;)  &amp;&amp;
+
+ Contact__r.Account.Name =  Move_to_Account__r.Name</errorConditionFormula>
+    <errorDisplayField>Move_to_Account__c</errorDisplayField>
+    <errorMessage>This contact is already listed at this account. Please input a different account to switch the contact to.</errorMessage>
+</ValidationRule>

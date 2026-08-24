@@ -1,0 +1,3 @@
+<apex:page standardStylesheets="false">
+<iframe title="VIP DSP Sales Snapshot" width="1140" height="750" src="https://app.powerbi.com/reportEmbed?reportId=5d29b5dd-5159-4e52-870e-8a1d92754884&autoAuth=true&ctid=739e087e-fa34-47c2-8d2f-a155036455ce" frameborder="0" allowFullScreen="true"></iframe>
+</apex:page>

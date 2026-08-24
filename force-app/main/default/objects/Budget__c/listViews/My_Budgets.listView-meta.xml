@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Budgets</fullName>
+    <columns>NAME</columns>
+    <columns>Customer__c</columns>
+    <columns>Budget_Year__c</columns>
+    <columns>Budget_YTD__c</columns>
+    <columns>Sales_YTD__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Budget_Year__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>My Budgets</label>
+    <sharedTo>
+        <group>AccountManagers</group>
+        <group>AllSalesforceUsers</group>
+        <group>CorpSalesMgr</group>
+        <group>Region10RMs</group>
+        <group>Region11RMs</group>
+        <group>Region2RMs</group>
+        <group>Region3RMs</group>
+        <group>Region4RMs</group>
+        <group>Region5RMs</group>
+        <group>Region6RMs</group>
+        <group>Region7RMs</group>
+        <group>Region8RMs</group>
+        <group>Region9RMs</group>
+        <group>SSC</group>
+        <group>Sonepar</group>
+    </sharedTo>
+</ListView>

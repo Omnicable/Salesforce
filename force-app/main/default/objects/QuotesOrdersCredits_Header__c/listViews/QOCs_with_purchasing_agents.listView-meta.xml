@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QOCs_with_purchasing_agents</fullName>
+    <columns>NAME</columns>
+    <columns>Buy_Bid__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Job_Reference__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <columns>GPpct__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote,Order</value>
+    </filters>
+    <filters>
+        <field>Purchase_Agent__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>QOCs with purchasing agents</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Region_12</group>
+    </sharedTo>
+</ListView>

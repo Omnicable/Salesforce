@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manager_Approver2__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( CreatedBy.Manager.Manager.UserRoleId &lt;&gt; &quot;00E600000017k9g&quot;, CreatedBy.Manager.Manager.FirstName  &amp; &quot; &quot; &amp; CreatedBy.Manager.Manager.LastName, Null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>2nd Manager Approver</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

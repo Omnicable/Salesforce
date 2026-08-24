@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RMF_PO__c</fullName>
+    <label>RMF PO #</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RMFInstrumentation__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>193108-1137-22000</fullName>
+                <default>true</default>
+                <label>193108-1137-22000</label>
+            </value>
+            <value>
+                <fullName>193119-1001-20103</fullName>
+                <default>false</default>
+                <label>193119-1001-20103</label>
+            </value>
+            <value>
+                <fullName>193119-1002-20206</fullName>
+                <default>false</default>
+                <label>193119-1002-20206</label>
+            </value>
+            <value>
+                <fullName>193119-1003-20256</fullName>
+                <default>false</default>
+                <label>193119-1003-20256</label>
+            </value>
+            <value>
+                <fullName>193119-1004-20306</fullName>
+                <default>false</default>
+                <label>193119-1004-20306</label>
+            </value>
+            <value>
+                <fullName>193119-1005-20406</fullName>
+                <default>false</default>
+                <label>193119-1005-20406</label>
+            </value>
+            <value>
+                <fullName>193119-1006-20506</fullName>
+                <default>false</default>
+                <label>193119-1006-20506</label>
+            </value>
+            <value>
+                <fullName>193119-1007-20606</fullName>
+                <default>false</default>
+                <label>193119-1007-20606</label>
+            </value>
+            <value>
+                <fullName>193119-1008-20706</fullName>
+                <default>false</default>
+                <label>193119-1008-20706</label>
+            </value>
+            <value>
+                <fullName>193119-1009-20957</fullName>
+                <default>false</default>
+                <label>193119-1009-20957</label>
+            </value>
+            <value>
+                <fullName>193119-1010-21701</fullName>
+                <default>false</default>
+                <label>193119-1010-21701</label>
+            </value>
+            <value>
+                <fullName>193119-1011-20185</fullName>
+                <default>false</default>
+                <label>193119-1011-20185</label>
+            </value>
+            <value>
+                <fullName>193119-1012-05026</fullName>
+                <default>false</default>
+                <label>193119-1012-05026</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>RMF - Power</controllingFieldValue>
+            <valueName>193108-1137-22000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1001-20103</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1002-20206</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1003-20256</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1004-20306</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1005-20406</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1006-20506</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1007-20606</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1008-20706</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1009-20957</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1010-21701</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1011-20185</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RMF - Instru</controllingFieldValue>
+            <valueName>193119-1012-05026</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

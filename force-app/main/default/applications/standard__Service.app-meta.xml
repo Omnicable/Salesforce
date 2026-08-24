@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>QuotesOrdersCredits_Header__c</tabs>
+    <tabs>RMA__c</tabs>
+    <tabs>Budget__c</tabs>
+    <tabs>Pending_Issue__c</tabs>
+    <tabs>standard-Idea</tabs>
+    <tabs>standard-Chatter</tabs>
+    <tabs>standard-File</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Document</tabs>
+    <tabs>Part_Numbers__c</tabs>
+    <tabs>Project_Contacts__c</tabs>
+    <tabs>OCC_ContactSlider__c</tabs>
+    <tabs>XC_Admin_Tool</tabs>
+    <tabs>XactlyExpress__XCPlan__c</tabs>
+    <tabs>standard-WaveHome</tabs>
+    <tabs>AM_Budget_Month__c</tabs>
+    <tabs>Inventory_Item__c</tabs>
+    <tabs>Price_Book_Email_Report__c</tabs>
+    <tabs>KAM_Notes__c</tabs>
+    <tabs>PlatformEventLog__c</tabs>
+    <tabs>Vendor__c</tabs>
+</CustomApplication>

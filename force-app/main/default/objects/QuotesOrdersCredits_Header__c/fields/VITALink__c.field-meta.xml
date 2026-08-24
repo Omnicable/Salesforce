@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VITALink__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox for when an order contains VITALink material</description>
+    <label>VITALink</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

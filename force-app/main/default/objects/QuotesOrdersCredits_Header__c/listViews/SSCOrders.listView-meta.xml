@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSCOrders</fullName>
+    <columns>NAME</columns>
+    <columns>Customer__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <columns>GPpct__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Order</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_WEEK</value>
+    </filters>
+    <filters>
+        <field>AM_1__c</field>
+        <operation>lessOrEqual</operation>
+        <value>150</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </filters>
+    <label>CSC Orders</label>
+    <sharedTo>
+        <group>SSC</group>
+    </sharedTo>
+</ListView>

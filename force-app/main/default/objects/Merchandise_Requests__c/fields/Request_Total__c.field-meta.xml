@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Total__c</fullName>
+    <description>Field that gets updated so that this value is a non-formula field and can be used in a Roll-Up summary field on the Marketing Budget Object</description>
+    <label>Request Total $</label>
+    <precision>17</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

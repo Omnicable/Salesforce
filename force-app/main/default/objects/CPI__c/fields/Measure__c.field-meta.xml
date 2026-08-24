@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Measure__c</fullName>
+    <label>Measure</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales $</fullName>
+                <default>false</default>
+                <label>Sales $</label>
+            </value>
+            <value>
+                <fullName>GP%</fullName>
+                <default>false</default>
+                <label>GP%</label>
+            </value>
+            <value>
+                <fullName>Avg Order Size $</fullName>
+                <default>false</default>
+                <label>Avg Order Size $</label>
+            </value>
+            <value>
+                <fullName>Quote to Order Ratio %</fullName>
+                <default>false</default>
+                <label>Quote to Order Ratio %</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GP_w_BSD__c</fullName>
+    <description>Added criteria &gt; Line Status not equal to Cancelled</description>
+    <label>Total Order GP with BSD (Booked)</label>
+    <summarizedField>QuoteOrderCredit_Details__c.BSD_GP__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Line_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteOrderCredit_Details__c.Order_Header__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

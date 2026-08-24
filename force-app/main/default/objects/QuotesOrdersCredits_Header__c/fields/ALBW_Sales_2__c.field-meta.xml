@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ALBW_Sales_2__c</fullName>
+    <description>Line Item starts with MCA. Field 2 of 2.</description>
+    <inlineHelpText>Line Item starts with MCA</inlineHelpText>
+    <label>ALBW Sales 2</label>
+    <summarizedField>QuoteOrderCredit_Details__c.Dollars__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Line_Item__c</field>
+        <operation>startsWith</operation>
+        <value>MCA</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Line_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteOrderCredit_Details__c.Order_Header__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

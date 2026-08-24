@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>cacheAge</name>
+                    <value>1440</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>reportName</name>
+                    <value>Copy_of_My_Sales_History_rAk</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showRefreshButton</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:reportChart</componentName>
+                <identifier>flexipage_reportChart</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Inside Sales</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Outside Sales</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Title}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Customer Service Representative</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Title}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Branch Administrative Manager</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>cacheAge</name>
+                    <value>1440</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>reportName</name>
+                    <value>All_Orders_Net_GP_GP_YvV</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showRefreshButton</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:reportChart</componentName>
+                <identifier>flexipage_reportChart3</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Sales Leader</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Vice President</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;TSM Resources&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://omnicable.my.salesforce.com/sfc/p/60000000JrJI/a/3g000000TPy4/YHOvQTWrTXUVe0Al_FRZUh12k7szmDR2N_Ks16eOmUk&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Price Sheet Tracker&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/r/Report/00O3g000000eSYYEA2/view?queryScope=userFolders&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Price Sheet Tracker Report&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://spark.adobe.com/page/yTp5hn2bSEcrg/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;TSM Sales Kit&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/r/Projects__c/a1w3g00000PLoSMAA1/view?0.source=alohaHeader&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;TSM Tool Kit - Internal Files&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://omnicable.go.customprintcenter.com/login?ReturnUrl=%2f&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;Vistaprint&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://omnicable.my.salesforce.com/sfc/p/60000000JrJI/a/3g000000Kzca/97zjFFvP.dYO.hXS9Wxk7oTPtLsC8k0jk1EUeT9JTVE&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;Salesforce Management &amp;amp; Best Practices Guide&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/n/Promo_Page&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;Promo Tracker&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>District</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Territory</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <mode>Replace</mode>
+        <name>top</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>cacheAge</name>
+                    <value>1440</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>reportName</name>
+                    <value>Sales_by_Region_zxJ</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showRefreshButton</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:reportChart</componentName>
+                <identifier>flexipage_reportChart5</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.Title}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Account Manager</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Title}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Account Associate</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Title}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Sales Manager</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Title}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Regional Manager</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Title}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Territory Sales Manager</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Title}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Corporate Sales Manager</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Department}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Business Development</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>home:eventContainer</componentName>
+                <identifier>home_eventContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 193, 222); font-size: 16px;&quot;&gt;﻿Salesforce Documents&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable.my.salesforce.com/sfc/p/60000000JrJI/a/0d000000LNwN/dHVHXYyb8nfzlz8ZGe59CZ4UeIYBarOtHRYbHrb6.dw&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;Lightning Cheatsheet&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable.my.salesforce.com/sfc/p/60000000JrJI/a/3g000000Kzca/97zjFFvP.dYO.hXS9Wxk7oTPtLsC8k0jk1EUeT9JTVE&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;Salesforce Management &amp;amp; Best Practices&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://omnicable.my.salesforce.com/sfc/p/60000000JrJI/a/Po000003LXQf/NHOucOOfRpeha67ATSdG.jkWTwqgPaNNEfE1EkER8.o&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;How to Create a Report Subscription&lt;/a&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <mode>Replace</mode>
+        <name>bottomLeft</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(0, 193, 222);&quot;&gt;Quick Links&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/r/Report/00OPo000007SOplMAG/view?queryScope=userFolders&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 16px;&quot;&gt;My Backorders&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/r/Report/00OPo000002V94HMAS/view?queryScope=userFolders&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;﻿My Pipeline Quotes&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/r/Report/00O60000003VjUTEA0/view?queryScope=userFolders&amp;amp;0.source=alohaHeader&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt;My Daily Bookings&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/r/Report/00O0d000004FG7LEAW/view?queryScope=userFolders&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt;My Daily Quotes&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/r/Report/00O60000002TPvXEAW/view?queryScope=userFolders&amp;amp;0.source=alohaHeader&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt;My Sales History&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/r/Report/00O60000002TtAgEAK/view?0.source=alohaHeader&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt;My Open Orders&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/r/Projects__c/a1wPo0000085qFtIAI/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;On Call Schedule&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;http://employee.omnicable.com/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt;OmniCable Intranet&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.omnicable.com/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt;OmniCable Website&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/n/Promo_Page&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt;Promo Tracker&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://careers.omnicable.com/us/en/home&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt;Job Opportunities&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://omnicable0.sharepoint.com/:f:/s/Purchasingadmin/EpxSFIAnB9VEuorn-oxV68UBbTnXX5vzVSTVkmMts9lUag?e=qt87ux&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 117, 191); font-size: 16px;&quot;&gt;Vendor Documents&lt;/a&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText3</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Account Manager 14</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Regional Manager 14</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Account Manager 11</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>District Sales Manager 11</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Sales Manager 11</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px; color: rgb(0, 193, 222);&quot;&gt;Requests&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;mailto:marketingsolutions@omnicable.com?subject=Marketing%20Support-%20&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 16px;&quot;&gt;Marketing Request&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://omnicable--full.sandbox.lightning.force.com/lightning/o/Promo__c/new?count=1&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 16px;&quot;&gt;Promotion Request&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://omnicable.lightning.force.com/lightning/_classic/%2Fa2S%2Fe%3FretURL%3D%252Fa2S%252Fo%26RecordType%3D01232000000JNHF%26ent%3D01I32000000Mwut&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 16px;&quot;&gt;Tango Card Request&lt;/a&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>runtime_sales_activities:todayTaskContainer</componentName>
+                <identifier>runtime_sales_activities_todayTaskContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <mode>Replace</mode>
+        <name>bottomRight</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;OmniCable St Louis Sales Hours:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;7:30 am – 4:30 pm – Nicole / Sean / Miquela&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;8:00 am – 5:00 pm – Nick / Drew / Jessica / Cindy / Chad / Madison&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;OmniCable St Louis Lunch Break Times:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;11:30 am – 12:30 pm – Miquela / Jessica&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;12:00 pm – 1:00 pm – Sean / Chad&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;12:30 pm – 1:30 pm – Nicole / Nick / Drew / Madison&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;1:00 pm - 2:00 pm - Cindy&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Please email the team for any exceptions to these times.&lt;/span&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText6</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.UserRole.Name}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>6</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>context</name>
+                    <value>NEWS</value>
+                </componentInstanceProperties>
+                <componentName>forceChatter:exposedFeed</componentName>
+                <identifier>forceChatter_exposedFeed</identifier>
+            </componentInstance>
+        </itemInstances>
+        <mode>Replace</mode>
+        <name>sidebar</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Home Page Default</masterLabel>
+    <parentFlexiPage>home__desktopDefault</parentFlexiPage>
+    <template>
+        <name>home:desktopTemplate</name>
+    </template>
+    <type>HomePage</type>
+</FlexiPage>

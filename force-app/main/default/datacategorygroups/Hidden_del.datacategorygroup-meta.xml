@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <dataCategory>
+        <dataCategory>
+            <label>A</label>
+            <name>A</name>
+        </dataCategory>
+        <dataCategory>
+            <label>D</label>
+            <name>D</name>
+        </dataCategory>
+        <label>Active</label>
+        <name>Active</name>
+    </dataCategory>
+    <description>Not viewable</description>
+    <label>Hidden</label>
+    <objectUsage/>
+</DataCategoryGroup>

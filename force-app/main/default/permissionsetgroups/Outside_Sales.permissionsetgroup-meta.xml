@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Combines foundational Salesforce access with permissions and functionality required for Outside Sales workflows.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Outside Sales</label>
+    <permissionSets>Price_Book_User</permissionSets>
+    <permissionSets>Sales_Rep</permissionSets>
+    <permissionSets>Wire_Cable_Projects_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

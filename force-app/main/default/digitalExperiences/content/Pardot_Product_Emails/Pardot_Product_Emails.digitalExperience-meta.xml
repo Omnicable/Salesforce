@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DigitalExperienceBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>OmniCable HWC Product Email Marketing Materials</description>
+    <digitalExperienceFolderShares/>
+    <label>Pardot Product Emails</label>
+    <modules>
+        <module>
+            <fullyQualifiedName>sfdc_cms__orchestrator</fullyQualifiedName>
+            <status>ENABLED</status>
+        </module>
+        <module>
+            <fullyQualifiedName>sfdc_cms__externalAssetsProvider</fullyQualifiedName>
+            <status>ENABLED</status>
+        </module>
+        <module>
+            <fullyQualifiedName>sfdc_cms__collection</fullyQualifiedName>
+            <status>ENABLED</status>
+        </module>
+        <module>
+            <fullyQualifiedName>sfdc_cms__exportImport</fullyQualifiedName>
+            <status>ENABLED</status>
+        </module>
+        <module>
+            <fullyQualifiedName>sfdc_cms__media</fullyQualifiedName>
+            <status>ENABLED</status>
+        </module>
+    </modules>
+</DigitalExperienceBundle>

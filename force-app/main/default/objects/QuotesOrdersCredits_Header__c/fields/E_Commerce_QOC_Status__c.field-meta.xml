@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E_Commerce_QOC_Status__c</fullName>
+    <description>The Status field displayed to customers on E-Commerce platform.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+ISPICKVAL (Status__c, &quot;Open&quot;),
+ISPICKVAL (Type__c,&quot;Quote&quot;),
+Today() - Date__c &lt;=3),&quot;Open&quot;,
+IF(
+AND(
+ISPICKVAL (Status__c, &quot;Open&quot;),
+ISPICKVAL (Type__c,&quot;Quote&quot;),
+Today() - Date__c &gt;=3), &quot;Expired&quot;,
+
+IF(
+AND(
+ISPICKVAL (Status__c, &quot;Followed Up&quot;),
+ISPICKVAL (Type__c,&quot;Quote&quot;),
+Today() - Date__c &lt;=3),&quot;Open&quot;,
+IF(
+AND(
+ISPICKVAL (Status__c, &quot;Followed Up&quot;),
+ISPICKVAL (Type__c,&quot;Quote&quot;),
+Today() - Date__c &gt;=3), &quot;Expired&quot;,
+IF(ISPICKVAL (Status__c, &quot;Closed&quot;), &quot;Expired&quot;,
+IF(ISPICKVAL (Status__c, &quot;In Process&quot;), &quot;In Process&quot;,
+IF(ISPICKVAL (Status__c, &quot;Shipping&quot;), &quot;In Process&quot;,
+IF(ISPICKVAL (Status__c, &quot;Printed&quot;), &quot;In Process&quot;,
+IF(ISPICKVAL (Status__c, &quot;Order Received&quot;), &quot;Order Received&quot;,
+IF(ISPICKVAL (Status__c, &quot;Entered&quot;), &quot;Order Received&quot;,
+IF(ISPICKVAL (Status__c, &quot;Invoiced&quot;), &quot;Invoiced&quot;,
+IF(ISPICKVAL (Status__c, &quot;Cancelled&quot;), &quot;Cancelled&quot;,
+ &quot;-&quot;))))))))))))</formula>
+    <label>E-Commerce QOC Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

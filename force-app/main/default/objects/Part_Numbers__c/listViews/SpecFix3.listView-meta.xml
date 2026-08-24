@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SpecFix3</fullName>
+    <columns>NAME</columns>
+    <columns>Spec_Sheet_URL__c</columns>
+    <columns>Spec_Sheet_ExtID__c</columns>
+    <columns>Spec_Sheet__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>LZ2</value>
+    </filters>
+    <filters>
+        <field>Belden_URL__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Spec_Sheet_ExtID__c</field>
+        <operation>notEqual</operation>
+        <value>0000</value>
+    </filters>
+    <filters>
+        <field>Spec_Sheet__c</field>
+        <operation>notEqual</operation>
+        <value>a2360000001mxYC</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Part_Numbers__c.Part_Number</value>
+    </filters>
+    <label>SpecFix for URL - just edit ExtID</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Administrator</role>
+    </sharedTo>
+</ListView>

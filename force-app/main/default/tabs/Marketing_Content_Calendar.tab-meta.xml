@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Created by Lightning App Builder</description>
+    <flexiPage>Content_Calendar</flexiPage>
+    <label>Marketing Content Calendar</label>
+    <motif>Custom15: People</motif>
+</CustomTab>

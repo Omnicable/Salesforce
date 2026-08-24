@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ai4mSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEinsteinMCDesiger>false</enableEinsteinMCDesiger>
+    <enableStoEmailPooledModel>false</enableStoEmailPooledModel>
+    <enableUmaEef>false</enableUmaEef>
+    <enableUmaEefWhatsappSetting>false</enableUmaEefWhatsappSetting>
+    <enableUmaEes>false</enableUmaEes>
+    <enableUmaEesSmsSetting>false</enableUmaEesSmsSetting>
+    <enableUmaEesWhatsappSetting>false</enableUmaEesWhatsappSetting>
+    <enableUmaEmg>false</enableUmaEmg>
+    <enableUmaGlobalModel>false</enableUmaGlobalModel>
+    <enableUmaSto>false</enableUmaSto>
+</Ai4mSettings>

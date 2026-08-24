@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningExperienceTheme xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultBrandingSet>LEXTHEMINGOmniCable_Gray_Background_Opaque</defaultBrandingSet>
+    <description>Empowering Distribution logo and Omni Blue</description>
+    <isDarkModeEnabled>false</isDarkModeEnabled>
+    <masterLabel>OmniCable - Gray Background Opaque</masterLabel>
+    <shouldOverrideLoadingImage>false</shouldOverrideLoadingImage>
+</LightningExperienceTheme>

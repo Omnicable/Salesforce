@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tray_Cable_dollars__c</fullName>
+    <description>Sum of the Line Dollars (Booked) for non-cancelled line items where Item Class = TCA1, TCA2, TCA3, TCA5, TCA6, TCA17, and TCAF</description>
+    <inlineHelpText>Sum of the Line Dollars (Booked) for non-cancelled line items where Item Class = TCA1, TCA2, TCA3, TCA5, TCA6, TCA17, and TCAF</inlineHelpText>
+    <label>Tray Cable $</label>
+    <summarizedField>QuoteOrderCredit_Details__c.Dollars__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Item_Class__c</field>
+        <operation>equals</operation>
+        <value>TCA1,TCA2,TCA3,TCA5,TCA6,TCA17,TCAF</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Line_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteOrderCredit_Details__c.Order_Header__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

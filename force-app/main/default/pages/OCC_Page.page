@@ -1,0 +1,3383 @@
+<apex:page controller="OCCommunitiesResource" docType="html-5.0" sidebar="false" standardStylesheets="false" showHeader="false">
+
+    <c:OCC_IncludeAllScripts />
+    <div ng-app="omniCableApp" ng-controller="OmniCtrl" class="ng-cloak">
+        <c:OCC_Header />
+
+
+        <style type="text/css">
+            .receive {
+                font-size: 14px;
+                right: 0px;
+                top: 10px;
+                position: absolute;
+            }
+
+            .checkbox-label {
+                font-weight: bold;
+                margin-left: 5px;
+                float: left;
+            }
+
+            .qty-status {
+                font-size: 2em;
+                right: 0px;
+                top: 10px;
+                position: absolute;
+            }
+
+            .reel-img {
+                width: 100px;
+                height: auto;
+                text-align: center;
+                font-size: 90px;
+                float: left;
+                margin: 15px;
+            }
+
+            .reel-logo {
+                margin-bottom: 15px;
+            }
+
+            .recent-container .panel-group {
+                border: none;
+            }
+
+            .editable-content {
+                min-height: 82vh;
+            }
+
+
+
+            /*  .newRequestForm input.ng-invalid.ng-touched {
+		    border-color: #66afe9;
+			outline: 0;
+			-webkit-box-shadow: inset 0 0 1em gold, 0 0 1em red;
+			box-shadow: inset 0 0 1em white, 0 0 .2em red;
+		  }
+		  
+		  .allRequestForm input.ng-invalid.ng-touched {
+		    border-color: #66afe9;
+			outline: 0;
+			-webkit-box-shadow: inset 0 0 1em gold, 0 0 1em red;
+			box-shadow: inset 0 0 1em white, 0 0 .2em red;
+		  } */
+
+            /* .new-request-form input.ng-valid.ng-touched {
+		    background-color: #78FA89;
+		  } */
+        </style>
+
+        <div class="main-container">
+            <div class="editable-content">
+
+                <!-- <h1 ng-hide="page === 'Home'" class="page-title" >{{page}}</h1> 
+                    <div ng-show="page === 'Quotes' || page === 'Orders' || page === 'Credits & Returns'" class="search-div col-sm-12" >
+                            
+                        <div class="col-md-4 col-md-offset-4">
+                              <input  ng-model="searchText" ng-init="searchText=''" class="form-control" type="text" style="text-align:center;" placeholder="{{searchPlaceholder}}"/>
+                        </div>
+                        
+                        <div class="col-md-3 col-md-offset-1">
+                            <select type="number" ng-model="orderProp" class="form-control" style="text-align:center;">
+                                 <option value="">--Sort By--</option>
+                                 <option ng-if="page == 'Orders'" value="header.Customer_PO__c">Customer PO</option>
+                                 <option value="header.Date__c">Date</option>
+                                 <option ng-if="page == 'Orders'" value="header.Name">Order.</option>
+                                 <option ng-if="page == 'Quotes'" value="header.Name">Quote.</option>
+                                 <option value="header.Status__c">Status</option>
+                                 <option ng-if="page == 'Credits & Returns'" value="header.sortDollar">Amount</option>
+                                 <option ng-if="page != 'Credits & Returns'" value="header.sortDollar">Total</option>
+                            </select> 
+                        </div>
+                        <div class="col-md-8 col-md-offset-2 cb-div" > 
+                                <div class="col-md-3 cb-row"><input ng-model="AllSearch" ng-init="AllSearch = true"  type="checkbox" value="name" ng-click="onCheckChange()">All</input></div>
+                                <div class="col-md-3 cb-row"><input ng-model="NameSearch" ng-init="NameSearch = false"  type="checkbox" value="name" ng-click="onCheckChange()">Name</input></div>
+                                <div class="col-md-3 cb-row"><input ng-model="TotalSearch" ng-init="TotalSearch = false" type="checkbox" value="name" ng-click="onCheckChange()"> Total</input></div>
+                                <div class="col-md-3 cb-row"><input ng-model="CustomerPO" ng-init="CustomerPO = false" type="checkbox" value="name" ng-click="onCheckChange()"> Customer PO</input></div>
+                                <div class="col-md-3 cb-row"><input ng-model="JobReference" ng-init="JobReference = false" type="checkbox" value="name" ng-click="onCheckChange()"> Job Reference</input></div>
+                                <div class="col-md-3 cb-row"><input ng-model="ItemDescription" ng-init="ItemDescription = false" type="checkbox" value="name" ng-click="onCheckChange()"> Item Description</input></div>
+                                <div class="col-md-3 cb-row"><input ng-model="ItemNumber" ng-init="ItemNumber = false" type="checkbox" value="name" ng-click="onCheckChange()"> Item Number</input></div>
+                                <div class="col-md-3 cb-row"><input ng-model="TrackingNumber" ng-init="TrackingNumber = false" type="checkbox" value="name" ng-click="onCheckChange()"> Tracking Number</input></div>
+                        </div>
+                        
+                    </div> -->
+                <div ng-if="page === 'Releases'" class="col-xs-12">
+
+                    <uib-tabset>
+                        <uib-tab heading="My Releases" select="tabSelected('myQuotes')">
+                            <uib-accordion class="animation" close-others="false">
+                                <div dir-paginate="quote in pagination.Data | itemsPerPage: 10: 'myQuote' track by quote.header.Id" total-items="pagination.Total"
+                                    pagination-id="myQuote">
+                                    <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                        <c:OCC_AccordionView />
+                                    </uib-accordion-group>
+                                </div>
+                            </uib-accordion>
+                            <dir-pagination-controls on-page-change="onMyQuoteChange(newPageNumber, 'myQuotes')" auto-hide="false" boundary-links="true"
+                                template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}"
+                                pagination-id="myQuote"></dir-pagination-controls>
+                        </uib-tab>
+
+                        <uib-tab heading="Other Releases" select="tabSelected('otherQuotes')">
+                            <uib-accordion class="animation" close-others="false">
+                                <div dir-paginate="quote in pagination.Data | itemsPerPage: 10: 'otherQuote' track by quote.header.Id" total-items="pagination.Total"
+                                    pagination-id="otherQuote">
+                                    <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                        <c:OCC_AccordionView />
+                                    </uib-accordion-group>
+                                </div>
+                            </uib-accordion>
+                            <dir-pagination-controls on-page-change="onOtherQuoteChange(newPageNumber, 'otherQuotes')" auto-hide="false" boundary-links="true"
+                                template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}"
+                                pagination-id="otherQuote"></dir-pagination-controls>
+                        </uib-tab>
+                    </uib-tabset>
+
+
+                </div>
+
+                <div ng-if="page === 'Orders'" class="col-xs-12">
+
+                    <uib-tabset>
+                        <uib-tab heading="All Master Orders" select="tabSelected('myOrders')">
+                            <uib-accordion class="animation" close-others="false">
+                                <div dir-paginate="quote in masterOrders | itemsPerPage: 20: 'myOrder' track by quote.header.Id" total-items="pagination.Total"
+                                    pagination-id="myOrder" class="accord-parent">
+
+                                    <div class="active-checkbox">
+                                        <span>SELECTED: </span>
+                                        <input ng-model="quote.selected" ng-checked="quote.selected" type="checkbox" ng-change="selectMasterOrder(pagination.Data, quote)"></input>
+                                    </div>
+                                    <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                        <c:OCC_AccordionView />
+                                    </uib-accordion-group>
+                                </div>
+                            </uib-accordion>
+                            <dir-pagination-controls on-page-change="onMyOrderChange(newPageNumber, 'myOrders')" auto-hide="false" boundary-links="true"
+                                template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}"
+                                pagination-id="myOrder"></dir-pagination-controls>
+                        </uib-tab>
+
+                        <!-- <uib-tab heading="Other Master Orders" select="tabSelected('otherOrders')">
+                            <uib-accordion class="animation" close-others="false">
+                                <div dir-paginate="quote in pagination.Data | itemsPerPage: 10: 'otherOrder' track by quote.header.Id" total-items="pagination.Total"
+                                    pagination-id="otherOrder">
+                                    <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                        <c:OCC_AccordionView />
+                                    </uib-accordion-group>
+                                </div>
+                            </uib-accordion>
+                            <dir-pagination-controls on-page-change="onOtherOrderChange(newPageNumber, 'otherOrders')" auto-hide="false" boundary-links="true"
+                                template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}"
+                                pagination-id="otherOrder"></dir-pagination-controls>
+                        </uib-tab> -->
+                    </uib-tabset>
+                </div>
+
+                <div ng-if="page === 'Search All'" class="col-xs-12">
+                    <uib-tabset>
+                        <uib-tab heading="Releases ({{searchQuotes.length}})">
+                            <uib-accordion class="animation" close-others="false">
+                                <div dir-paginate="quote in searchQuotes | itemsPerPage: 10: 'allQuotes' track by quote.header.Id" pagination-id="allQuotes">
+                                    <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                        <c:OCC_AccordionView />
+                                    </uib-accordion-group>
+                                </div>
+                            </uib-accordion>
+                            <dir-pagination-controls auto-hide="false" boundary-links="true" template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}"
+                                pagination-id="allQuotes"></dir-pagination-controls>
+                        </uib-tab>
+
+                        <uib-tab heading="Master Orders ({{searchOrders.length}})">
+                            <uib-accordion class="animation" close-others="false">
+                                <div dir-paginate="quote in searchOrders | itemsPerPage: 10: 'allOrders' track by quote.header.Id" pagination-id="allOrders">
+                                    <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                        <c:OCC_AccordionView />
+                                    </uib-accordion-group>
+                                </div>
+                            </uib-accordion>
+                            <dir-pagination-controls auto-hide="false" boundary-links="true" template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}"
+                                pagination-id="allOrders"></dir-pagination-controls>
+                        </uib-tab>
+
+                        <!-- NOTE: Removed Credits & Returns -->
+                        <!-- <uib-tab heading="Credits & Returns ({{searchCredits.length}})">
+                                        <uib-accordion class="animation" close-others="false">
+                                            <div dir-paginate="quote in searchCredits | itemsPerPage: 10: 'allCredits' track by quote.header.Id"  pagination-id="allCredits">
+                                                <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                                        <c:OCC_AccordionView />
+                                                </uib-accordion-group>
+                                            </div>  
+                                        </uib-accordion>
+                                    <dir-pagination-controls auto-hide="false" boundary-links="true" template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}" pagination-id="allCredits"></dir-pagination-controls>
+                                    </uib-tab> -->
+                    </uib-tabset>
+
+                </div>
+
+
+                <div ng-if="page === 'Credits & Returns'" class="col-xs-12">
+                    <uib-tabset>
+                        <!-- <uib-tab heading="Requests">
+                                        <uib-accordion class="animation" close-others="false">
+                                            <div dir-paginate="quote in Debits | filter:filterMultiple : false | orderBy:orderProp |  itemsPerPage: 10: 'myDebitsId'" pagination-id="myDebitsId" >
+                                                <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                                        <c:OCC_AccordionView />
+                                                </uib-accordion-group>
+                                            </div>  
+                                        </uib-accordion>
+                                        <dir-pagination-controls auto-hide="false" boundary-links="true"  template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}" pagination-id="myDebitsId"></dir-pagination-controls>
+                                
+                                    </uib-tab>
+                                    <uib-tab heading="RMAs">
+                                        <uib-accordion class="animation" close-others="false">
+                                            <div dir-paginate="quote in RMA | filter:filterMultiple | orderBy:orderProp |  itemsPerPage: 10: 'myRMAId'" pagination-id="myRMAId" >
+                                                <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                                        <c:OCC_AccordionView />
+                                                </uib-accordion-group>
+                                            </div>  
+                                        </uib-accordion>
+                                        <dir-pagination-controls auto-hide="false" boundary-links="true"  template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}" pagination-id="myRMAId"></dir-pagination-controls>
+                                    </uib-tab> -->
+                        <uib-tab heading="Credits & Returns" select="tabSelected('credits')">
+                            <uib-accordion class="animation" close-others="false">
+                                <div dir-paginate="quote in pagination.Data | itemsPerPage: 10: 'myCreditsId'" total-items="pagination.Total" pagination-id="myCreditsId">
+                                    <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                        <c:OCC_AccordionView />
+                                    </uib-accordion-group>
+                                </div>
+                            </uib-accordion>
+                            <dir-pagination-controls on-page-change="onCreditChange(newPageNumber, 'credits')" auto-hide="false" boundary-links="true"
+                                template-url="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/template/dirPagination.tpl.html')}"
+                                pagination-id="myCreditsId"></dir-pagination-controls>
+                        </uib-tab>
+                    </uib-tabset>
+
+
+                </div>
+
+                <div ng-if="page === 'Request Releases'" class="col-xs-12">
+
+                    <div class="request-row-container col-xs-12" ng-model="newRequest">
+                        <div ng-if="filteredAlternativePartNumbers.length == 0">
+                            <div class="no-release"></div>
+                            <h2>No Releses Available For This Order</h2>
+                        </div>
+
+
+                        <div class="" style="font-size: 1.2em; padding: 2px 8px; font-weight:bold; left:10px; top:20%; position: absolute; color:#0074BF;">Add
+                            <br></br> Line</div>
+
+                        <div class="col-xs-12" style="padding-left:50px; padding-right:50px;">
+                            <form class="newRequestForm" name="newRequestForm">
+                                <div class="col-md-3 col-xs-12 rma-row" style="display: inline-block; text-align:center;">
+                                    <div class="col-xs-6" style="text-align:left; font-weight:bold; padding-left:0px;">Qty:</div>
+                                    <div class="col-xs-6" style="text-align:left; font-weight:bold;">Length:</div>
+                                    <input onkeypress="return isNumberKey(event)" style="width:45%;" class="col-xs-6 form-control request-row" ng-model="newRequest.qty"
+                                        ng-minlength="1" required="true" type="text" placeholder="Qty: 2" />
+                                    <span style="width:10%;padding-top:10px; vertical-align: middle; padding-top:15px; display:inline-block; font-weight:bold;">X</span>
+                                    <input onkeypress="return isNumberKey(event)" name="newRequestLength" ng-minlength="1" required="true" style="width:45%; float:right;"
+                                        class="col-xs-6 form-control request-row" ng-model="newRequest.length" type="text" placeholder="Length: 500"
+                                    />
+                                </div>
+                                <div class="col-md-2 col-xs-12 rma-row">
+                                    <div style="font-weight:bold;">Cable #:</div>
+                                    <input type="text" ng-model="newRequest.item" placeholder="Search Cable #" uib-typeahead="item as item.Name for item in filteredAlternativePartNumbers | filter:{Name:$viewValue} | limitTo:25"
+                                        class="col-xs-12 form-control request-row" typeahead-show-hint="true" typeahead-min-length="0"
+                                        typeahead-on-select="newRequestChange(newRequest.item)" />
+                                </div>
+
+                                <div class="col-md-3 col-xs-12 rma-row">
+                                    <div style="font-weight:bold;">Description:</div>
+                                    <input class="col-xs-12 form-control request-row" ng-model="newRequest.itemDescription" type="text" placeholder="Item Description: 12/4c tray"
+                                        disabled="true" />
+                                </div>
+                                <div class="col-md-4 col-xs-12 rma-row">
+                                    <div style="font-weight:bold;">Additional Info:</div>
+                                    <input class="col-xs-12 form-control request-row" ng-model="newRequest.addInfo" type="text" placeholder="Additional Info: Please ship on plastic reels"
+                                    />
+                                </div>
+                                <!-- <div class="col-md-1 col-xs-12 rma-row">
+	                                            <input class="col-xs-12  request-row" ng-model="newRequest.totalQuantity"  type="text" placeholder="Field is Autocompleted" disabled="true"/>
+	                                        </div> -->
+                                <!-- <div class="col-md-1 rma-row">
+	                                            <button class="col-xs-12  request-row omni-btn" style="padding-top:5px; padding-bottom:5px" ng-click="addItem(newRequest)">Add</button>
+                                            </div> -->
+
+                                <div class="col-md-3 col-xs-12 rma-row" style="margin-top:10px;">
+                                    <div style="font-weight:bold;">Area</div>
+                                    <!-- <span style="color:red;">*</span> -->
+                                    <select ng-options="area as area.Name for area in req.areas track by area.Id" ng-model="newRequest.area" class="col-xs-6 form-control"
+                                        required="true">
+                                    </select>
+                                </div>
+
+                                <div class="col-xs-6 col-lg-2 col-md-2" style="margin-top:35px; padding-left: 10px;">
+                                    <div class="col-xs-12" style="padding-left:0px;">
+                                        <input ng-model="newRequest.paralleling" type="checkbox" style="float:left;"></input>
+                                        <span class="checkbox-label">Paralelling</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-3" style="margin-top:35px; padding-left: 10px;">
+                                    <div class="col-xs-12" style="padding-left:0px;">
+                                        <!-- <input ng-model="newRequest.pullingHeads" type="checkbox" style="float:left;"></input> -->
+                                        <input type="radio" ng-model="newRequest.pullingHeads" value="Attach Pulling Heads" style="float:left;" />
+
+                                        <span class="checkbox-label">Attach Pulling Heads</span>
+                                        <span class="col-xs-12" style="font-style: italic; font-style: italic; color: gray; font-size: .9em;">*Pulling heads 2# and larger Tray Cable</span>
+                                        <div class="col-xs-12" style="font-style: italic; font-style: italic; color: gray; font-size: .9em;">Additional Lead-time</div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-3" style="margin-top:35px; padding-left: 10px;">
+                                    <!-- <input ng-model="newRequest.includePullingHeads" type="checkbox" style="float:left;"></input> -->
+                                    <input type="radio" ng-model="newRequest.pullingHeads" value="Include Pulling Heads" style="float:left;" />
+                                    <div class="checkbox-label">Include Pulling Heads</div>
+                                    <div class="col-xs-12" style="font-style: italic; font-style: italic; color: gray; font-size: .9em;">*NOT Attached No additional Lead-Time</div>
+                                </div>
+
+                                <div class="col-xs-1" style="margin-top:35px; padding-left: 10px;">
+                                    <!-- <input ng-model="newRequest.includePullingHeads" type="checkbox" style="float:left;"></input> -->
+                                    <input type="radio" ng-model="newRequest.pullingHeads" value="None" style="float:left;" />
+                                    <div class="checkbox-label">None</div>
+                                </div>
+
+                                <span ng-if="newRequest.item != null">{{::}}</span>
+
+
+                            </form>
+
+                        </div>
+
+
+                        <i class="ng-scope glyphicon glyphicon-plus-sign clickable" ng-click="addItem(newRequest)" style="font-size: 2em; right:8px; top:35%; position: absolute; color:#0074BF;"></i>
+
+                    </div>
+                    <div class="col-xs-12 row-padding" style="margin-top:10px; margin-bottom:8px;">
+                        <span style="color:red;">*</span> Please enter Qty, Length, and Cable #. Then click the plus sign to add the line to your
+                        request.
+                    </div>
+
+
+                    <div class="col-xs-12 request-info" style="margin-top:50px;  margin-bottom:50px; border-top:1px solid black; padding-top:30px;">
+
+                        <div class="col-md-4">
+                            <span style="font-weight:bold;">Delivery Requirements</span>
+                            <span style="color:red;">*</span>
+                            <input ng-model="req.deliveryReq" class="col-xs-12 form-control calendar-rfq" placeholder="Enter Date" />
+                            <!-- <select class="col-xs-12 form-control" ng-model="req.deliveryReq" ng-init="req.deliveryReq='--Choose One--'" required="true">
+                                        	 <option value="">--Choose One--</option>
+                                             <option value="Will Call">Will Call</option>
+                                             <option value="Next Day">Next Day</option>
+                                             <option value="2 Day">2 Day</option>
+                                             <option value="3 Day">3 Day</option>
+                                             <option value="Best Way Standard">Best Way Standard</option>
+                                             <option value="Cross Docks">Cross Docks</option>
+                                             
+                                        </select>  -->
+                        </div>
+
+
+                        <!-- <div class="col-md-4">
+                                        <span style="font-weight:bold;">Requested Freight</span>
+                                        <select class="col-xs-12 form-control" ng-model="req.freight" ng-init="req.freight='--Choose One--'">
+                                        	<option value="">--Choose One--</option>
+                                        	<option value="3rd Party">3rd Party</option>
+                                        	<option value="Collect">Collect</option>
+                                        	<option value="Freight Allowed">Freight Allowed</option>
+                                            <option value="Prepaid">Prepaid</option>
+                                        </select> 
+                                    </div>
+                                     -->
+
+
+
+                        <div class="col-md-4">
+                            <span style="font-weight:bold;">Delivery Address</span>
+                            <span style="color:red;">*</span>
+
+                            <select ng-options="add as add.Name for add in deliveryAddresses track by add.Name" class="col-xs-12 form-control" ng-model="req.deliveryAddress"
+                                required="true" ng-init="req.deliveryAddress = deliveryAddresses[0]" />
+
+                            <!-- <select class="col-xs-12 form-control" ng-model="req.deliveryAddress" required="true" ng-init="req.deliveryAddress='Cleveland Cliffs, 2768 Front St, Toledo, OH 43605'" ng-minlength="1">
+                                <option value="Cleveland Cliffs, 2768 Front St, Toledo, OH 43605" selected="selected">Cleveland Cliffs, 2768 Front St, Toledo, OH 43605</option>
+                                <option value="Mc-Mc, 355 Tomahawk Dr, Maumee, Oh 43537">Mc-Mc, 355 Tomahawk Dr, Maumee, Oh 43537</option>
+                                <option value="RMF Nooter, 915 Matzinger Rd, Toledo, Oh 43612">RMF Nooter, 915 Matzinger Rd, Toledo, Oh 43612</option>
+                            </select> -->
+                        </div>
+
+                        <div class="col-md-4">
+                            <span style="font-weight:bold;">Best Way to Contact Me</span>
+                            <span style="color:red;">*</span>
+                            <select class="col-xs-12 form-control" ng-model="req.contactMethod" ng-init="req.contactMethod='--Choose One--'" required="true"
+                                ng-minlength="1">
+                                <option value="">--Choose One--</option>
+                                <option value="{{contact.Email}}">{{::contact.Email}}</option>
+                                <option value="{{contact.Phone}}">{{::contact.Phone}}</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4" style="margin-top:15px;">
+                            <span style="font-weight:bold;">Job Reference #</span>
+                            <input class="form-control" ng-model="req.jobReference" ng-init="req.jobReference=''" type="text" placeholder="Enter Job Reference #"></input>
+                        </div>
+
+
+                        <div class="col-md-4" style="margin-top:15px;">
+                            <span style="font-weight:bold;">RMF PO #</span>
+                            <span style="color:red;">*</span>
+                            <select ng-options="value as value for value in rmfPOValues" ng-model="req.rmfPO" class="col-xs-6 form-control" required="true"
+                                ng-init="req.rmfPO = rmfPOValues[0]">
+                            </select>
+
+
+                        </div>
+
+                        <!-- TODO: finish option -->
+                        <div class="col-md-4" style="margin-top:15px;">
+                            <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Add Attachment (optional).</span>
+                            <input type="file" id="rfq-file" name="rfq-file" style="width:100%; padding-top:10px;" multiple="true" />
+                        </div>
+
+                        <!-- TODO: finish option -->
+                        <!-- <div class="col-md-6" style="margin-top:15px;">
+				                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Add a request pulling heads</span>
+                                        <div class="col-xs-12" style="padding-left:0px;">
+                                            <input ng-model="req.pullingHeads" type="checkbox" style="margin-right:5px; width:25px; height:30px; float:left;"></input>
+                                        </div>
+                                    </div> -->
+
+
+                    </div>
+
+                    <div ng-if="Requests.length > 0" class="col-xs-12 row-padding" style="padding-top:20px;">
+
+                        <form class="allRequestForm" name="newRequestForm">
+
+                            <div class="col-xs-12 row-padding" style="" ng-repeat="request in Requests track by $index">
+                                <div class="col-xs-12" style="margin-bottom: 0px; padding:20px 50px 20px 50px;" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                    <div class="col-md-3 col-xs-12 rma-row" style="display: inline-block; text-align:center;">
+                                        <div class="col-xs-6" style="text-align:left; font-weight:bold;">Qty:</div>
+                                        <div class="col-xs-6" style="text-align:left; font-weight:bold;">Length:</div>
+                                        <input onkeypress="return isNumberKey(event)" ng-change="updateTotal(request)" ng-minlength="1" required="true" style="width:45%;"
+                                            class="col-xs-6  form-control request-row" ng-model="request.qty" type="text" placeholder="Qty"
+                                        />
+                                        <span style="width:10%;padding-top:10px; vertical-align: middle; padding-top:15px; display:inline-block;">X</span>
+                                        <input onkeypress="return isNumberKey(event)" ng-change="updateTotal(request)" ng-minlength="1" required="true" style="width:45%; float:right;"
+                                            class="col-xs-6 form-control request-row" ng-model="request.length" type="text" placeholder="Length"
+                                        />
+
+                                    </div>
+                                    <div class="col-md-2 col-xs-12 rma-row">
+                                        <div style="font-weight:bold;">Cable #:</div>
+                                        <input class="col-xs-12 form-control request-row" ng-model="request.item.Name" type="text" placeholder="Item #" disabled="true"
+                                        />
+                                    </div>
+
+
+                                    <div class="col-md-3 rma-row">
+                                        <div style="font-weight:bold;">Item Description:</div>
+                                        <input class="col-xs-12 form-control request-row" ng-model="request.itemDescription" type="text" placeholder="Description"
+                                            disabled="true" />
+                                    </div>
+                                    <div class="col-md-3 rma-row">
+                                        <div style="font-weight:bold;">Additional Info:</div>
+                                        <input class="col-xs-12 form-control request-row" ng-model="request.addInfo" ng-init="request.addInfo=''" type="text" placeholder="Additional Info"
+                                        />
+                                    </div>
+                                    <div class="col-md-1 rma-row">
+                                        <div style="font-weight:bold;">Total Qty:</div>
+                                        <input class="col-xs-12 form-control request-row" ng-model="request.totalQuantity" type="text" placeholder="##" disabled="true"
+                                        />
+                                    </div>
+
+                                    <div class="col-md-3 col-xs-12 rma-row" style="margin-top:10px;">
+                                        <div style="font-weight:bold;">Area</div>
+                                        <!-- <span style="color:red;">*</span> -->
+                                        <select ng-options="area as area.Name for area in req.areas track by area.Id" ng-model="request.area" class="col-xs-6 form-control"
+                                            required="true">
+                                        </select>
+                                    </div>
+
+                                    <div class="col-xs-6 col-lg-2 col-md-2" style="margin-top:35px; padding-left: 10px;">
+                                        <div class="col-xs-12" style="padding-left:0px;">
+                                            <input ng-model="request.paralleling" type="checkbox" style="float:left;"></input>
+                                            <span class="checkbox-label">Paralelling</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-3" style="margin-top:35px; padding-left: 10px;">
+                                        <div class="col-xs-12" style="padding-left:0px;">
+                                            <!-- <input ng-model="request.pullingHeads" type="checkbox" style="float:left;"></input> -->
+                                            <input type="radio" ng-model="request.pullingHeads" value="Attach Pulling Heads" style="float:left;" />
+                                            <span class="checkbox-label">Attach Pulling Heads</span>
+                                            <span class="col-xs-12" style="font-style: italic; font-style: italic; color: gray; font-size: .9em;">*Pulling heads 2# and larger Tray Cable</span>
+                                            <div class="col-xs-12" style="font-style: italic; font-style: italic; color: gray; font-size: .9em;">Additional Lead-time</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xs-3" style="margin-top:35px; padding-left: 10px;">
+                                        <!-- <input ng-model="request.includePullingHeads" type="checkbox" style="float:left;"></input> -->
+                                        <input type="radio" ng-model="request.pullingHeads" value="Include Pulling Heads" style="float:left;" />
+                                        <div class="checkbox-label">Include Pulling Heads</div>
+                                        <div class="col-xs-12" style="font-style: italic; font-style: italic; color: gray; font-size: .9em;">*NOT Attached No additional Lead-Time</div>
+                                    </div>
+
+                                    <div class="col-xs-1" style="margin-top:35px; padding-left: 10px;">
+                                        <!-- <input ng-model="newRequest.includePullingHeads" type="checkbox" style="float:left;"></input> -->
+                                        <input type="radio" ng-model="request.pullingHeads" value="None" style="float:left;" />
+                                        <div class="checkbox-label">None</div>
+                                    </div>
+
+
+                                    <div class="" style="font-size: 1.2em; padding: 2px 8px; font-weight:bold; left:10px; top:45%; position: absolute; background-color:black; color:white;">{{$index+1}}</div>
+                                    <i class="ng-scope glyphicon glyphicon-minus-sign clickable" ng-click="deleteItem($index)" style="font-size: 2em; right:10px; top:45%; position: absolute; color:red;"></i>
+
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="col-md-12">
+                            <button class="col-xs-12 omni-btn" ng-click="submit()" style="font-size:20px; margin-top:35px; padding: 3px 0px 3px 0px;">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div ng-if="page === 'My Profile'" class="col-xs-12" style="padding-left:0px; padding-right:0px;">
+
+                    <h1 style="padding-left:15px;">My Account</h1>
+                    <h3 style="padding-left:15px; margin-top:10px;">Contact Information</h3>
+
+
+                    <div class="col-xs-12" style="padding-left:0px; padding-right:0px; padding-top:10px;">
+                        <div class="col-md-4 col-sm-12 col-xs-12 profile-container-1" style="margin-top:0px;">
+
+                            <div class="col-xs-12 profile-row" style="vertical-align:middle;">
+                                <span class="col-xs-4 row-padding" style="font-weight: bold; padding-top:5px;">First Name: </span>
+                                <input class="col-xs-8 form-control" ng-model="contact.FirstName" type="text" placeholder="Name" style="display:inline;"></input>
+                            </div>
+                            <div class="col-xs-12 profile-row" style="vertical-align:middle;">
+                                <span class="col-xs-4 row-padding" style="font-weight: bold; padding-top:5px;">Last Name: </span>
+                                <input class="col-xs-8 form-control" ng-model="contact.LastName" type="text" placeholder="Name" style="display:inline;"></input>
+                            </div>
+                            <div class="col-xs-12 profile-row" style="vertical-align:middle;">
+                                <span class="col-xs-4 row-padding" style="font-weight: bold; padding-top:5px;">Birthdate: </span>
+                                <input class="col-xs-8 form-control" ng-model="contact.Birthdate" type="text" placeholder="year-month-day (19**-**-**)" style="display:inline;"></input>
+                            </div>
+                            <div class="col-xs-12 profile-row" style="vertical-align:middle;">
+                                <span class="col-xs-4 row-padding" style="font-weight: bold; padding-top:5px;">Phone: </span>
+                                <input class="col-xs-8 form-control" ng-model="contact.Phone" type="text" placeholder="Phone Number" style="display:inline;"></input>
+                            </div>
+                            <div class="col-xs-12 profile-row" style="vertical-align:middle;">
+                                <span class="col-xs-4 row-padding" style="font-weight: bold; padding-top:5px;">Email: </span>
+                                <input class="col-xs-8 form-control" ng-model="contact.Email" type="text" placeholder="Email" style="display:inline;"></input>
+                            </div>
+                            <div class="col-xs-12 profile-row" style="vertical-align:middle;">
+                                <span class="col-xs-4 row-padding" style="font-weight: bold; padding-top:5px;">Points Email: </span>
+                                <input class="col-xs-8 form-control" ng-model="contact.tangoEmail" ng-disabled="contact.sameEmail == true" type="text" placeholder="Enter Email"
+                                    style="display:inline;"></input>
+                            </div>
+                            <div class="col-xs-12 profile-row" style="vertical-align:middle;">
+                                <input ng-model="contact.sameEmail" ng-change="sameEmailChange()" type="checkbox" style="margin-right:5px; width:25px; height:30px; float:left;"></input>
+                                <div style="margin-top:10px;">Check if same as Email</div>
+                            </div>
+                            <button class="col-xs-12  omni-btn" ng-click="saveProfile()" style="padding-top:5px; padding-bottom:5px; margin-top: 15px;">Save</button>
+                        </div>
+
+                        <div class="col-md-4 col-sm-12 col-xs-12 profile-container-2">
+
+                            <div ng-if="Rewards == true" class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12"
+                                style="display:inline-flex; border:1px solid #F06522; margin-top:10px;">
+                                <div style="width:45%; text-align:center;">
+                                    <p style="padding-top:10px; margin-bottom:0px;">You have:</p>
+                                    <h1 class="" style="color:#F06522; margin:0px; font-size:50px; font-weight:bold;">{{RewardsTotal}}</h1>
+                                    <h4 style="color:#F06522; margin-top:0px;">Points</h4>
+                                </div>
+                                <button class="redeem-btn" ng-click="redeem()" style="width: 90%; float: right; height: 30px; margin-top: 40px;">Redeem</button>
+                            </div>
+
+                            <div class="col-xs-12  col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12" style="padding: 12px; border:1px solid #0074BF; margin-top:15px;">
+                                <h3 class="col-xs-12" style="margin-top:0px">Photo</h3>
+
+                                <div class="col-xs-12 row-padding" style="display: inline-flex;">
+                                    <img ng-if="contact.OCC_Photo__c == ''" class="profile-img" ng-src="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/avatar.jpg')}"
+                                        onerror="this.onerror=null;this.src='{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/avatar.jpg')}'"
+                                        height="100px" width="100px"></img>
+                                    <img ng-if="contact.OCC_Photo__c != ''" class="profile-img" ng-src="{{contact.OCC_Photo__c}}" onerror="this.onerror=null;this.src='{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/avatar.jpg')}'"
+                                        height="100px" width="100px"></img>
+                                    <div style="padding:10px; width:100%">
+
+                                        <div class="input-group col-xs-12">
+                                            <span class="input-group-btn">
+                                                <span class="btn btn-primary btn-file" style="background-color:#1E253A; border-radius:0px; height:30px; padding-top: 3px;">
+                                                    Browse&hellip;
+                                                    <input type="file" id="photo-file" custom-on-change="uploadFile" multiple="false" style="border-radius:0px;"></input>
+                                                </span>
+                                            </span>
+                                            <input type="text" class="form-control" ng-model="photoName" readonly="" style="border-radius:0px; height:30px; border:1px solid;"></input>
+                                        </div>
+
+                                        <button class="col-xs-12 omni-btn" ng-click="uploadProfileImage()" style="padding-top:5px; padding-bottom:5px; margin-top:10px;">Upload</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="entry-content" itemprop="text">
+                                <div class="pull-left">
+                                    <style type="text/css">
+                                        ul.rig {
+                                            list-style: none;
+                                            font-size: 0px;
+                                            margin-left: -2.5%;
+                                            /* should match li left margin */
+                                        }
+
+                                        ul.rig li {
+                                            display: inline-block;
+                                            padding: 10px;
+                                            margin: 0 0 2.5% 2.5%;
+                                            background: #fff;
+                                            border: 1px solid #ddd;
+                                            font-size: 16px;
+                                            font-size: 1rem;
+                                            vertical-align: top;
+                                            box-shadow: 0 0 5px #ddd;
+                                            box-sizing: border-box;
+                                            -moz-box-sizing: border-box;
+                                            -webkit-box-sizing: border-box;
+                                        }
+
+                                        ul.rig li img {
+                                            max-width: 100%;
+                                            height: auto;
+                                            margin: 0 0 10px;
+                                        }
+
+                                        ul.rig li h3 {
+                                            margin: 0 0 5px;
+                                        }
+
+                                        ul.rig li p {
+                                            font-size: .9em;
+                                            line-height: 1.5em;
+                                            color: #999;
+                                        }
+
+                                        /* class for 2 columns */
+
+                                        ul.rig.columns-2 li {
+                                            width: 47.5%;
+                                            /* this value + 2.5 should = 50% */
+                                        }
+
+                                        /* class for 3 columns */
+
+                                        ul.rig.columns-3 li {
+                                            width: 30.83%;
+                                            /* this value + 2.5 should = 33% */
+                                        }
+
+                                        /* class for 4 columns */
+
+                                        ul.rig.columns-4 li {
+                                            width: 22.5%;
+                                            /* this value + 2.5 should = 25% */
+                                        }
+
+                                        @media (max-width: 480px) {
+                                            ul.grid-nav li {
+                                                display: block;
+                                                margin: 0 0 5px;
+                                            }
+                                            ul.grid-nav li a {
+                                                display: block;
+                                            }
+                                            ul.rig {
+                                                margin-left: 0;
+                                            }
+                                            ul.rig li {
+                                                width: 100% !important;
+                                                /* over-ride all li styles */
+                                                margin: 0 0 20px;
+                                            }
+                                        }
+                                    </style>
+                                    <ul class="rig columns-3">
+                                        <h3 style="text-align: center">
+                                            Customer Training
+                                        </h3>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zGyzi7nwzOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=462664810&amp;r=2041629235"
+                                                />
+                                            </a>
+                                            <strong>Basics of Wire &amp; Cable</strong>
+                                            Overview</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zHEzRlZL0zOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=100881485&amp;r=24795251"
+                                                />
+                                            </a>
+                                            <strong>Basics of Wire &amp; Cable</strong>
+                                            Principles of Electricity</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zFWz7O598zOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=971013093&amp;r=2040748985"
+                                                />
+                                            </a>
+                                            <strong>Basics of Wire &amp; Cable</strong>
+                                            Conductors &amp; Stranding</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zI7z7qciVzOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=165958461&amp;r=1115196561"
+                                                />
+                                            </a>
+                                            <strong>Basics of Wire &amp; Cable</strong>
+                                            Jackets &amp; Insulation</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zGNzHC5m3zOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=361390233&amp;r=1646886997"
+                                                />
+                                            </a>
+                                            <strong>Basics of Wire &amp; Cable</strong>
+                                            Shielding &amp; Armoring</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zHxzQXrt2zOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=193216218&amp;r=1990205910"
+                                                />
+                                            </a>
+                                            <strong>Basics of Wire &amp; Cable</strong>
+                                            Color Codes</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zIQzUBVwyzOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=376481349&amp;r=1133167987"
+                                                />
+                                            </a>
+                                            <strong>Basics of Wire &amp; Cable</strong>
+                                            Standard Series</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zHhzORcjCzOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=619361969&amp;r=1614847092"
+                                                />
+                                            </a>
+                                            <strong>Basics of Wire &amp; Cable</strong>
+                                            Value Added Services</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zJAzjgwOszOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=974176952&amp;r=104322902"
+                                                />
+                                            </a>
+                                            <strong>Tray Cable</strong>
+                                            <br/> Overview
+                                        </li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zGbzZCG1YzOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=205527482&amp;r=1952056373"
+                                                />
+                                            </a>
+                                            <strong>Portable Cord</strong>
+                                            <br/> Overview
+                                        </li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zHVzrBPXIzOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=116639502&amp;r=1888124152"
+                                                />
+                                            </a>
+                                            <strong>Medium Voltage</strong>
+                                            <br/> Overview
+                                        </li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zHjzAn0mgzOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=565330419&amp;r=83774958"
+                                                />
+                                            </a>
+                                            <strong>Instrumentation</strong>
+                                            Overview</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zIlzlgxn9zOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=661471743&amp;r=1032222645"
+                                                />
+                                            </a>
+                                            <strong>Building &amp; Hook-Up Wire</strong>
+                                            Overview</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zIhzUiWrgzOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=550166636&amp;r=73071910"
+                                                />
+                                            </a>
+                                            <strong>High Temp Lead Wire</strong>
+                                            Overview</li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zIqzKcjyfzOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188px" width="250px" src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi=57804057&amp;r=377976152"
+                                                />
+                                            </a>
+                                            <strong>Thermocouple</strong>
+                                            <br/> Overview
+                                        </li>
+                                        <li style="text-align: center;">
+                                            <a href="https://www.brainshark.com/omnicable/vu?pi=zHKzc9d9azOJSwz0" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">
+                                                <img height="188" width="250px" src="http://wvw.omnicable.com/l/129951/2017-09-08/2n7986/129951/103127/VFD_Screenshot.jpg&amp;r=377976152"
+                                                />
+                                            </a>
+                                            <strong>Variable Frequency Drive Cable</strong>
+                                            <br/> Overview
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-12 col-xs-12 profile-container-2">
+                            <div ng-hide="AccountManager == null" class="col-xs-12 row-padding profile-container" style="display:inherit; margin-top:10px; padding:10px;">
+                                <h4 class="col-xs-12 row-padding" style="margin-top:0px;">Your Account Manager</h4>
+                                <div class="col-xs-12 row-padding">
+                                    <img ng-src="{{::AccountManager.Photo__c}}" onError="this.onerror=null;this.src='{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/avatar.jpg')}'"
+                                        class="profile-img" height="70" width="70"></img>
+                                    <div class="prof-text">
+                                        <p class="am-data ng-binding">{{::AccountManager.FirstName}} {{::AccountManager.LastName}}
+                                        </p>
+                                        <p class="am-data ng-binding">{{::AccountManager.Phone}}</p>
+                                        <p class="am-data ng-binding">
+                                            <a class="clickable" ng-click="sendEmail(AccountManager.Email)">{{::AccountManager.Email}}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div ng-hide="DistrictManager == null" class="col-xs-12 row-padding profile-container" style="display: inherit; margin-top:10px; padding:10px;">
+                                <h4 class="col-xs-12 row-padding" style="margin-top:0px;">Territory Sales Manager</h4>
+                                <div class="col-xs-12 row-padding">
+                                    <img ng-src="{{::DistrictManager.Photo__c}}" onError="this.onerror=null;this.src='{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/avatar.jpg')}'"
+                                        class="profile-img" height="70" width="70"></img>
+                                    <div class="prof-text">
+                                        <p class="am-data ng-binding">{{::DistrictManager.Name}}</p>
+                                        <p class="am-data ng-binding">{{::DistrictManager.Phone}}</p>
+                                        <p class="am-data ng-binding">
+                                            <a class="clickable" ng-click="sendEmail(DistrictManager.Email)">{{::DistrictManager.Email}}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div ng-hide="RegionalManager == null" class="col-xs-12 row-padding profile-container" style="display:inherit; margin-top:10px; padding:10px;">
+                                <h4 class="col-xs-12 row-padding" style="margin-top:0px;">Regional Manager</h4>
+                                <div class="col-xs-12 row-padding">
+                                    <img ng-src="{{::RegionalManager.Photo__c}}" onError="this.onerror=null;this.src='{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/avatar.jpg')}'"
+                                        class="profile-img" height="70" width="70"></img>
+                                    <div class="prof-text">
+                                        <p class="am-data ng-binding">{{::RegionalManager.Name}}</p>
+                                        <p class="am-data ng-binding">{{::RegionalManager.Phone}}</p>
+                                        <p class="am-data ng-binding">
+                                            <a class="clickable" ng-click="sendEmail(RegionalManager.Email)">{{::RegionalManager.Email}}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <!-- <div ng-if="contact.OCC_ViewApproved__c == 'true' && contact.OCC_ViewAll__c == 'false' && contact.OCC_Hide_Account_Access_Panel__c == 'false'"
+                        class="col-md-4 col-sm-12 col-xs-12 profile-container-2" style="margin-top:25px;">
+                        <h3>Accounts Access</h3>
+                        <div class="col-xs-12 " style="height:300px; border: solid 1px black; overflow-y:scroll;">
+                            <div ng-repeat="account in AllAccounts">
+                                <div style="clear:both;">
+                                    <i ng-if="account.status == 'Accepted'" class="ng-scope glyphicon glyphicon-minus-sign clickable" ng-click="deleteApprovedAccount(account)"
+                                        style="font-size: 1.4em; width:25px; height:30px; float:left; color:red;margin-top: 8px;margin-left: 2px;"></i>
+                                    <input ng-if="account.status != 'Accepted'" ng-model="account.checked" ng-checked="account.checked" ng-disabled="account.disabled"
+                                        type="checkbox" style="float:left; margin-right:5px; width:25px; height:30px;"></input>
+                                    <div style="float: left;margin-top: 8px;">{{account.Name}}</div>
+                                    <div style="float:right; margin-top: 8px; color:gray; font-size: .7em;">{{account.status}}</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="col-xs-12 omni-btn" ng-click="requestAccess()" style="padding-top:5px; padding-bottom:5px; margin-top: 10px;">Submit Request</button>
+                        </div> -->
+
+                </div>
+
+                <div ng-if="page === 'Search'" style="padding: 0px 10px 0px 10px;">
+                    <h3>{{searchTitle}}</h3>
+                    <uib-accordion class="animation" close-others="false">
+                        <div ng-repeat="quote in singleView">
+                            <uib-accordion-group is-open="true" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                <c:OCC_AccordionView />
+                            </uib-accordion-group>
+                        </div>
+                    </uib-accordion>
+                    <h2 ng-if="singleView.length == 0" style="text-align:center;">No Results Found For Id: {{searchUrlParam}}</h2>
+                </div>
+
+                <div ng-if="page === 'Home'" class="col-xs-12 submit-container">
+
+                    <flex-slider flex-slide="slide in ::slideshow.slides" slide-show="true" after="slideshow.after($slider)">
+                        <li>
+
+                            <a ng-href="{{::slide.LinkUrl__c}}" target="_blank">
+                                <img ng-src="{{::slide.URL__c}}" />
+                            </a>
+                        </li>
+                    </flex-slider>
+
+                    <!-- NOTE: Removed via request
+                                <div ng-click="changeHash('Request Quote')" class="col-sm-3 col-xs-6 home-container clickable" style="text-align:center;">
+                                    <img class="col-xs-12 home-img" style="padding:0px;" src="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/home-request-quote.png')}"/>
+                                    <h3 class="home-title">Request <br></br> Quotes</h3>                            
+                                </div>
+                                
+                                <div ng-click="changeHash('Quotes')" class="col-sm-3 col-xs-6 home-container clickable" style="background-color: #1d243a">
+                                    <img class="col-xs-12 home-img" style="padding:0px;" src="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/home-place-order.png')}"/>
+                                    <h3 class="home-title">Place <br></br> Orders</h3>
+                                </div>
+                                
+                                <div ng-click="changeHash('Orders')" class="col-sm-3 col-xs-6 home-container clickable">
+                                    <img class="col-xs-12 home-img" style="padding:0px;" src="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/home-track-order.png')}"/>
+                                    <h3 class="home-title">Track <br></br> Orders</h3>
+                                </div>
+                                
+                                 <div ng-click="changeHash('Orders')" class="col-sm-3 col-xs-6 home-container clickable">
+                                    <img class="col-xs-12 home-img" style="padding:0px;" src="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/home-invoices.png')}"/>
+                                    <h3 class="home-title">View <br></br> Invoices</h3>
+                                </div>
+                            -->
+
+                    <div class="col-xs-12" style="padding: 0px; margin-top: 20px;">
+                        <div class="col-xs-12">
+                            <h3 style="color:black; text-align:center;">Recent Releases</h3>
+                            <div class="col-xs-12 recent-container">
+                                <uib-accordion class="animation" close-others="false">
+                                    <div ng-repeat="quote in Quotes | limitTo : 5  track by quote.header.Id">
+                                        <uib-accordion-group is-open="status.open" ng-class-even="'even-header'" ng-class-odd="'odd-header'">
+                                            <c:OCC_AccordionView />
+                                        </uib-accordion-group>
+                                    </div>
+                                </uib-accordion>
+
+
+
+
+                                <!-- <div class="col-xs-2 recent-row" style="line-height: 1.5em;">
+                                                Job Reference
+                                            </div>
+                                            <div class="col-xs-1 recent-row" style="line-height: 1.5em;">
+                                                Date
+                                            </div>
+                                            <div class="col-xs-1 recent-row" style="line-height: 1.5em;">
+                                                Area/Job Site
+                                            </div>
+
+                                            <div class="col-xs-2 recent-row" style="line-height: 1.5em;">
+                                                Customer Mark
+                                            </div>
+
+                                            <div class="col-xs-1 recent-row" style="line-height: 1.5em;">
+                                                Item #
+                                            </div>
+
+                                            <div class="col-xs-2 recent-row" style="line-height: 1.5em;">
+                                                Item Description
+                                            </div>
+
+                                            <div class="col-xs-1 recent-row" style="line-height: 1.5em;">
+                                                Status
+                                            </div>
+
+                                            <div class="col-xs-2 recent-row" style="line-height: 1.5em;">
+                                                Footage Requested/Shipped
+                                            </div>
+
+                                            <div ng-repeat="quote in Quotes | limitTo : 5  track by quote.header.Id">
+                                                <div class="clickable recent-line" ng-class-odd="'even-row'" style="padding-left:0px;" ng-click="viewSingle(quote)">
+                                                    <div class="col-xs-2 recent-row" style="font-weight:bold;">
+                                                        {{::quote.header.Job_Reference__c}}
+                                                    </div>
+                                                    <div class="col-xs-1 recent-row" >
+                                                        {{::quote.header.Date__c}}
+                                                    </div>
+                                                    <div class="col-xs-1 recent-row">
+                                                        TBD
+                                                    </div>
+        
+                                                    <div class="col-xs-2 recent-row" >
+                                                        TBD
+                                                    </div>
+        
+                                                    <div class="col-xs-1 recent-row">
+                                                        {{::quote.header.of_Lines__c}}
+                                                    </div>
+        
+                                                    <div class="col-xs-2 recent-row">
+                                                        TBD
+                                                    </div>
+        
+                                                    <div class="col-xs-1 recent-row">
+                                                        {{::quote.header.Status__c}}
+                                                    </div>
+                                                    <div class="col-xs-2 recent-row">
+                                                        TBD
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                            </div>
+                            <button ng-click="changeHash('Releases')" class="omni-btn-recent col-xs-12"> View Releases
+                                <i class="glyphicon glyphicon-play" style="float:right"></i>
+                            </button>
+                        </div>
+
+                        <!--
+                                    <div class="col-md-6">
+                                        <div class="col-xs-12 recent-container">
+                                            <h3 style="color:black; padding-left:10px;">Recent Orders</h3>
+                                            
+                                            <div class="col-xs-6 recent-row" style="line-height: 1.5em;">
+                                                Customer PO
+                                            </div>
+                                            <div class="col-xs-3 recent-row" style="line-height: 1.5em;">
+                                                Date
+                                            </div>
+                                            <div class="col-xs-3 recent-row" style="line-height: 1.5em;">
+                                                Total
+                                            </div>
+                                            
+                                            <div ng-repeat="quote in Orders | limitTo : 5  track by quote.header.Id" >
+                                                <div class="col-xs-12 clickable recent-line " ng-class-odd="'even-row'" style="padding-left:0px;" ng-click="viewSingle(quote)">
+                                                    <div class="col-xs-6 recent-row" style="font-weight:bold;">
+                                                        {{::quote.header.Customer_PO__c}}
+                                                    </div>
+                                                    <div class="col-xs-3 recent-row">
+                                                        {{::quote.header.Date__c}}
+                                                    </div>
+                                                    <div class="col-xs-3 recent-row">
+                                                        {{::quote.header.TotalOrderSalesPortal__c}}
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <button ng-click="changeHash('Orders')"  class="omni-btn-recent col-xs-12"> View Orders<i class="glyphicon glyphicon-play" style="float:right"></i></button>
+                                    </div>
+                                -->
+                    </div>
+                </div>
+
+                <c:OCC_Footer />
+            </div>
+
+            <img class="clickable chat-container" id="chat-container" ng-click="startChat()" style="position:fixed; z-index:100; width: 37px; top:30%; right:0px;"
+                alt="" src="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/chat-button.png')}"></img>
+            <!--                 <div class="chat-container">  
+                    <div ng-if="notClosed"> 
+                        <button ng-click="hideChat()" class="glyphicon glyphicon-remove-sign close-chat"></button>
+                        <img id="chat-img" onclick="SnapEngage.openProactiveChat(true, true, 'Hello');" class="chat-btn clickable" alt="" height="70" width="224" src="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/omni-portal-chat-bubble.png')}"/>
+                    </div>  
+                    <div class="clickable" onclick="SnapEngage.openProactiveChat(true, true, 'Hello');" style="padding-top: 5px; padding-left: 10px; background-color:#0875BC; color:white; height:30px; width:224px; border-radius: 5px 5px 0px 0px;">
+                        <span>Have questions?</span>
+                        <i class="glyphicon glyphicon-play" style="float: right; padding-right: 8px; padding-left: 8px; padding-top: 3px;"></i>
+                    </div>
+                </div> -->
+        </div>
+
+        <!-- Modals -->
+        <div id="add-dialog" title="Basic dialog" style="overflow-y:scroll; display:none;">
+            <script type="text/ng-template" id="notification-modal.html">
+            
+                <div class="modal-header" style="color:white; text-align:center; font-weight:bold;">
+                    Congratulations!
+                </div>
+                <div class="modal-body" >
+					<div>
+                    	<img class ="reel-logo" ng-src="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/reel_rewards_logo.png')}"  height="auto" width="50%"></img>
+					<div>
+					<div style="margin-bottom: 15px;">
+						<img class="reel-img" ng-src="{!URLFOR($Resource.OCC_StaticResources, 'OCC_StaticResources/img/reel.jpg')}"  height="auto" width="100px"/>
+						<div ng-bind-html="escapeHTML()"></div>
+					</div>
+					     
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="close()">Close</button>
+                </div>
+                </script>
+
+        </div>
+
+
+        <div id="add-dialog" title="Basic dialog" style="overflow-y:scroll; display:none;">
+            <script type="text/ng-template" id="rma-modal.html">
+            
+                <div class="modal-header" style="color:white; text-align:center; font-weight:bold;">
+                    We are sorry that there was a problem with your order.  Please fill out this form to request a Return Material Authorization.  You can contact our RMA department directly at RMAs@omnicable.com.
+                </div>
+                <div class="modal-body" style="overflow-y:scroll;">
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle; font-weight:bold;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Name: </span>
+                        <input class="form-control request-input " ng-model="requestRMA.name"  type="text" placeholder="Enter Name" style="display:inline; text-align:left"></input>
+                    </div>
+
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Email: </span>
+                        <input class="form-control request-input " ng-model="requestRMA.email"  type="text" placeholder="Enter Email" style="display:inline; text-align:left"></input>
+                    </div>
+
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Your P.O. Number: </span>
+                        <input class="form-control request-input " ng-model="requestRMA.po"  type="text" placeholder="Enter P.O. Number" style="display:inline; text-align:left"></input>
+                    </div>
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Which item(s) do you wish to return? </span>
+                        <input class="form-control request-input " ng-model="requestRMA.itemNumber"  type="text" placeholder="Enter Item Number" style="display:inline; text-align:left"></input>
+                    </div>
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Is the item(s) in its original packaging?</span>
+                        <input class="form-control request-input " ng-model="requestRMA.packaging"  type="text" placeholder="Yes or No" style="display:inline; text-align:left"></input>
+                    </div>
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Would you like us to issue a replacement order?</span>
+                        <input class="form-control request-input " ng-model="requestRMA.replacement"  type="text" placeholder="Yes or No" style="display:inline; text-align:left"></input>
+                    </div>
+					<div class="col-xs-6 profile-row" style="vertical-align:middle; padding-right:20px;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Your Branch/Location</span>
+						<select type="number" ng-options="city as city.ShippingAddress.city for city in Cities track by city.Id" ng-model="requestRMA.location" ng-init="requestRMA.location = Cities[0]"class="form-control" style="text-align:center;">
+							
+						</select> 
+                    </div>
+					
+                    <div class="col-xs-6 profile-row" style="padding:0 20px 10px 0px;">
+						<span style="font-weight: bold; padding-top:5px;">Reason: </span>
+                    	<select type="number" ng-model="requestRMA.reasonList" ng-init="requestRMA.reasonList = '--Choose One--'" class="form-control" style="text-align:center;">
+                        	<option value="--Choose One--">--Choose One--</option>
+                            <option value="End user cancelled order">End user cancelled order</option>
+                            <option value="Ordered by mistake">Ordered by mistake</option>
+                            <option value="Over ordered quantity">Over ordered quantity</option>
+                            <option value="Ordered wrong length(s)">Ordered wrong length(s)</option>
+                            <option value="Other (Please explain below)">Other (Please explain below)</option>
+                        </select> 
+                    </div>
+                    <div class="col-xs-12 profile-row" style="vertical-align:middle;">
+                        <div style="font-weight: bold; padding:5px 0px 0px 0px; margin-right: 10px; width: 100%;" class="col-xs-12">Additional Information:</div>
+                        <textarea rows="7" class="form-control request-input " ng-model="requestRMA.reason"  type="text" placeholder="Please be as detailed as possible" style="display:inline; text-align:left; resize: none;"></textarea>
+                    </div>
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle; padding:20px;text-align:center;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">What is the best way to contact you?</span>
+                        <select class="col-xs-12 form-control" style="text-align:center;" ng-model="requestRMA.contactMethod" ng-init="requestRMA.contactMethod = '--Choose One--'">
+							<option value="--Choose One--">--Choose One--</option>
+                            <option value="{{::requestRMA.email}}">{{requestRMA.email}}</option>
+                            <option value="{{::requestRMA.phone}}">{{requestRMA.phone}}</option>
+                         </select> 
+                    </div>
+
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle;margin-bottom:10px;padding:20px;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Please upload picture(s) of the material and/or labels to expedite the processing of this request (optional).</span>
+                        <input type="file" id="attachment-file" name="logo-file" style="width:100%; padding-top:10px;" multiple/>                    
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    <button class="btn btn-primary" ng-click="send()">Send</button>
+                </div>
+                </script>
+
+        </div>
+
+        <div id="add-dialog" title="Basic dialog" style="overflow-y:scroll; display:none;">
+            <script type="text/ng-template" id="buy-modal.html">
+            
+                <div class="modal-header">
+                    <h2 style="text-align:center; margin:0px; color:white;">Purchase Order</h2>
+                </div>
+                <div class="modal-body" style="overflow-y:scroll;">
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Shipping Address:</span>
+                        <textarea class="form-control request-input " ng-model="shipping.address"  type="text" placeholder="Shipping Address" style="display:inline; text-align:left"></textarea>
+                    </div>
+					
+                    <div class="col-xs-6 profile-row" style="vertical-align:middle;margin-bottom:10px;padding:20px;text-align:center;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Optionally attach a Purchase Order to expedite and ensure accuracy</span>
+                        <input type="file" id="buy-files" name="logo-file" style="width:100%;text-align:center;" multiple/>                    
+                    </div>
+
+					<div class="col-xs-6 profile-row" style="vertical-align:middle;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Customer PO:</span>
+                        <input class="form-control request-input " ng-model="po.customerPO"  type="text" placeholder="Customer PO" style="display:inline; text-align:left"></input>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    <button class="btn btn-primary" ng-click="send()">Send</button>
+                </div>
+                </script>
+
+        </div>
+
+        <div id="add-dialog" title="Basic dialog" style="overflow-y:scroll; display:none;">
+            <script type="text/ng-template" id="email-modal.html">
+            
+                <div class="modal-header">
+                    <h2 style="text-align:center; margin:0px; color:white;">Send email to: {{::toEmail}}</h2>
+                </div>
+                <div class="modal-body" style="overflow-y:scroll;">
+      
+					<div class="col-xs-6 profile-row" style="vertical-align:middle;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Subject:</span>
+                        <input class="form-control request-input " ng-model="email.subject"  type="text" placeholder="Subject" style="display:inline; text-align:left"></input>
+                    </div>
+
+					<div class="col-xs-12 profile-row" style="vertical-align:middle;">
+                        <span style="font-weight: bold; padding-top:5px; margin-right: 10px;">Message</span>
+                        <textarea class="form-control request-input " ng-model="email.message"  type="text" rows="6" placeholder="Message" style="display:inline; text-align:left"></textarea>
+                    </div>
+					
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    <button class="btn btn-primary" ng-click="send()">Send</button>
+                </div>
+                </script>
+
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+        Number.prototype.format = function (n, x) {
+            var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+            return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+        };
+
+        /** Generic Method to convert to data to array**/
+        function arrayify(inArray, defaultOption) {
+            var temp = [];
+
+            if (typeof inArray == 'undefined') {
+                temp = [];
+            } else if (!Array.isArray(inArray)) {
+                temp = [inArray];
+            } else {
+                temp = inArray;
+            }
+            if (defaultOption) {
+                temp.unshift(defaultOption);
+            }
+
+            return temp
+        }
+
+        /** Generic Method to convert to data to array**/
+        function arrayifyChild(masterOrder, fieldName, defaultOption) {
+            var temp = [];
+
+            if (typeof masterOrder == 'undefined' || typeof masterOrder.header[fieldName] == 'undefined' || typeof masterOrder.header[fieldName].records == 'undefined') {
+                temp = [];
+            } else if (!Array.isArray(masterOrder.header[fieldName].records)) {
+                temp = [masterOrder.header[fieldName].records];
+            } else {
+                temp = masterOrder.header[fieldName].records;
+            }
+            if (defaultOption) {
+                temp.unshift(defaultOption);
+            }
+
+            return temp
+        }
+
+
+        //NOTE: Custom funciton building out quotes
+        function makeArray(array, scope = undefined) {
+
+            if (typeof array == 'undefined' || array == null) {
+                array = [];
+            } else if (!Array.isArray(array)) {
+                array = [array];
+            }
+
+            for (var i = 0; i < array.length; i++) {
+
+                if (typeof array[i].attachments == 'undefined' || array[i].attachments == null) {
+                    array[i].attachments = [];
+                } else if (!Array.isArray(array[i].attachments)) {
+                    array[i].attachments = [array[i].attachments];
+                }
+
+                if (typeof array[i].details == 'undefined' || array[i].details == null) {
+                    array[i].details = [];
+                } else if (!Array.isArray(array[i].details)) {
+                    array[i].details = [array[i].details];
+                }
+
+                for (var j = 0; j < array[i].details.length; j++) {
+                    buildPutups(array[i].details[j]);
+
+
+                    // // NOTE: Get alternative part number
+                    //var alternativePartNumbers = arrayifyChild(array[i], 'Alternative_Part_Numbers__r', undefined);
+                    if (scope.alternativePartNumbers.length > 0) {
+                        array[i].details[j].cableNumber = '';
+                        if (array[i].details[j].Line_Item__c && typeof scope.alternativePartNumbers != 'undefined') {
+                            const detail = array[i].details[j];
+
+                            for (let index = 0; index < scope.alternativePartNumbers.length; index++) {
+                                const part = scope.alternativePartNumbers[index];
+
+                                if (typeof part.Part_Numbers__r != 'undefined' && part.Part_Numbers__r.Name == detail.Line_Item__c) {
+                                    array[i].details[j].cableNumber = part.Name;
+                                    if (part.Cable_Code__c) {
+                                        array[i].details[j].Cable_Code__c = part.Cable_Code__c;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+
+
+                    if (array[i].details[j].Expected_Date__c != 'undefined' && array[i].details[j].Expected_Date__c != null) {
+                        var expectedDate = new Date(array[i].details[j].Expected_Date__c);
+                        array[i].details[j].Expected_Date__c = (expectedDate.getUTCMonth() + Number(1)) + '/' + (expectedDate.getUTCDate()) + '/' + expectedDate.getFullYear();
+                    }
+
+                    if (array[i].details[j].Line_Status__c == 'Order Received') {
+                        array[i].details[j].Line_Status__c = 'Open';
+                    }
+
+                    if (array[i].details[j].Line_Status__c == 'Shipping') {
+                        array[i].details[j].Line_Status__c = 'In Process';
+                    }
+
+                }
+
+
+                var date = new Date(array[i].header.Date__c);
+                var day = date.getDate();
+                var utcdate = date.getUTCDate();
+                var month = date.getUTCMonth();
+                var year = date.getFullYear();
+                array[i].header.Date__c = (date.getUTCMonth() + Number(1)) + '/' + (date.getUTCDate()) + '/' + date.getFullYear();
+
+                var expDate = new Date(array[i].header.Date__c);
+                var numberOfDaysToAdd = 3;
+                expDate.setDate(expDate.getUTCDate() + numberOfDaysToAdd);
+
+                array[i].header['ExpiredDate'] = (expDate.getUTCMonth() + Number(1)) + '/' + expDate.getUTCDate() + '/' + date.getFullYear();
+
+                if (array[i].header.Status__c == 'Followed Up') {
+                    array[i].header.Status__c = 'Open'
+                }
+
+                if (array[i].header.Status__c == 'Shipping' || array[i].header.Status__c == 'Printed') {
+                    array[i].header.Status__c = 'In Process'
+                }
+
+
+                if (array[i].header.Status__c == 'Entered') {
+                    array[i].header.Status__c = 'Order Received'
+                }
+
+
+            }
+
+            return array;
+        }
+
+        function buildPutups(detail) {
+            if (typeof detail != 'undefined') {
+                detail['putups'] = [];
+                if (typeof detail['Put_up_1__c'] != 'undefined' && detail['Put_up_1__c'] != null) {
+                    detail['putups'].push(detail['Put_up_1__c']);
+                }
+                if (typeof detail['Put_up_2__c'] != 'undefined' && detail['Put_up_2__c'] != null) {
+                    detail['putups'].push(detail['Put_up_2__c']);
+                }
+                if (typeof detail['Put_up_3__c'] != 'undefined' && detail['Put_up_3__c'] != null) {
+                    detail['putups'].push(detail['Put_up_3__c']);
+                }
+                if (typeof detail['Put_up_4__c'] != 'undefined' && detail['Put_up_4__c'] != null) {
+                    detail['putups'].push(detail['Put_up_4__c']);
+                }
+                if (typeof detail['Put_up_5__c'] != 'undefined' && detail['Put_up_5__c'] != null) {
+                    detail['putups'].push(detail['Put_up_5__c']);
+                }
+                if (typeof detail['Put_up_6__c'] != 'undefined' && detail['Put_up_6__c'] != null) {
+                    detail['putups'].push(detail['Put_up_6__c']);
+                }
+                if (typeof detail['Put_up_7__c'] != 'undefined' && detail['Put_up_7__c'] != null) {
+                    detail['putups'].push(detail['Put_up_7__c']);
+                }
+
+                //console.log(detail['putups']);
+            }
+
+        }
+
+        function getFileArray(files, callback) {
+            var total = files.length;
+            var count = 0;
+            var fileArray = [];
+            if (files.length != 0) {
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    if (file != null) {
+                        var reader = new FileReader();
+                        reader.onload = (function (file) {
+                            return function (e) {
+
+
+                                var title = file.name;
+                                var baseendoed = e.target.result.split(',')[1];
+                                var imageData = { name: title, image: baseendoed };
+
+                                fileArray.push(imageData);
+                                count++;
+                                //alert(count + ' => ' + total);
+                                if (count == total) {
+                                    callback(fileArray);
+                                }
+
+                            };
+                        })(file);
+                        reader.readAsDataURL(file);
+
+                    } else {
+                        count++;
+                    }
+                }
+
+            } else {
+                callback(fileArray);
+            }
+
+
+        }
+
+
+        var omniCableApp = angular.module('omniCableApp', ['ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngAnimate', 'ngRoute', 'angular-flexslider']);
+
+        omniCableApp.config(['$locationProvider', function AppConfig($locationProvider) {
+
+            $locationProvider.html5Mode({ enabled: true/*, requireBase: false */ });
+
+        }]);
+
+
+
+        omniCableApp.directive('customOnChange', function () {
+            return {
+                restrict: 'A',
+                link: function (scope, element, attrs) {
+                    var onChangeFunc = scope.$eval(attrs.customOnChange);
+                    element.bind('change', onChangeFunc);
+                }
+            };
+        });
+
+        omniCableApp.controller('sendEmailCtrl', function ($scope, $modalInstance, inData) {
+            $scope.toEmail = inData.toEmail;
+            $scope['email'] = '';
+
+            $scope.send = function () {
+
+                if (typeof $scope.email.message != 'undefined' && $scope.email.message != '' && typeof $scope.email.subject != 'undefined' && $scope.email.subject != '' && typeof $scope.toEmail != 'undefined' && $scope.toEmail != '') {
+
+                    var wrapper = new Object();
+                    wrapper['Message'] = $scope.email.message;
+                    wrapper['Subject'] = $scope.email.subject;
+                    wrapper['Email'] = $scope.toEmail;
+
+                    var request = { params: JSON.stringify(wrapper) };
+                    do_execute_service_callback("OCCommunitiesResource", "sendEmail", request, function (result) {
+
+                        if (result['Success'] == 'true') {
+                            toastr.success('Request Sent');
+                            $modalInstance.dismiss('cancel');
+                        } else {
+                            toastr.error(result['Message']);
+                        }
+                    }, true);
+
+                } else {
+
+                    toastr.error('Please fill out all fields.');
+
+                }
+
+            }
+
+            $scope.cancel = function () {
+                $modalInstance.dismiss('cancel');
+            }
+        });
+
+
+        omniCableApp.controller('NotificationCtrl', function ($scope, $sce, $modalInstance, inData) {
+            //$scope.title = inData['title'];
+            $scope.message = inData['message'];
+            //$scope.delivery = inData['delivery'];
+            //$scope.amount = inData['amount'];
+            $uibModal
+            $scope.escapeHTML = function (message) {
+                return $sce.trustAsHtml($scope.message);
+            }
+
+            $scope.close = function () {
+                $modalInstance.dismiss('cancel');
+            }
+        });
+
+        omniCableApp.controller('BuyQuoteCtrl', function ($scope, $modalInstance, inData) {
+            $scope.lineItems = inData.order['details'],
+                $scope.account = inData.account;
+            $scope.shipping = {};
+            $scope.buyNowOrder = inData.order;
+
+            if (typeof $scope.account != 'undefined') {
+                $scope.shipping['address'] = $scope.account.ShippingAddress.street + ' ' +
+                    $scope.account.ShippingAddress.city + ', ' + $scope.account.ShippingAddress.state + ' ' + $scope.account.ShippingAddress.postalCode;
+            }
+
+            $scope.send = function () {
+
+                if (typeof $scope.po == 'undefined' || typeof $scope.po.customerPO == 'undefined' || $scope.po.customerPO.trim() == '') {
+                    toastr.error('Customer PO Required');
+                } else if (typeof $scope.shipping == 'undefined' || typeof $scope.shipping.address == 'undefined' || $scope.shipping.address.trim() == '') {
+                    toastr.error('Shipping Address Required');
+                } else {
+
+
+                    var buyAttachmentInput = document.querySelector('#buy-files');
+                    var files = buyAttachmentInput.files;
+                    getFileArray(files, function (filesArray) {
+
+                        var quoteLink = 'https://myomnicable.com/apex/OCC_Page?search=' + $scope.buyNowOrder.header.Id;
+
+                        var orderData = '<b>Quote #:</b> ' + '<a href="' + quoteLink + '">' + $scope.buyNowOrder.header.Name + '</a>'
+                            + '<br> <b>Job Reference:</b> ' + $scope.buyNowOrder.header.Job_Reference__c
+                            + '<br> <b>Customer PO:</b>  ' + $scope.po.customerPO + '<br>'
+                            + '<br> <b>Shipping Address:</b>  <br>' + $scope.shipping.address;
+
+                        var wrapper = new Object();
+                        wrapper['RFQData'] = orderData;
+                        wrapper['imageData'] = filesArray;
+                        wrapper['typeStr'] = 'Order';
+                        wrapper['AccountNumber'] = $scope.account.Account_Number__c;
+
+
+                        if (filesArray.length > 0) {
+                            $scope.orderHasImage = true;
+                        } else {
+                            $scope.orderHasImage = false;
+                        }
+
+                        var request = { params: JSON.stringify(wrapper) };
+                        do_execute_service_callback("OCCommunitiesResource", "sendRFQ", request, function (result) {
+                            //
+                            if (result['Success'] == 'true') {
+                                var lineItems = $scope.buyNowOrder['details'];
+
+                                for (var i = 0; i < lineItems.length; i++) {
+                                    var putup = lineItems[i]['qty'] + " x " + lineItems[i]['length'];
+                                    //mixpanel.track('Order: Place Order', { "Total": $scope.buyNowOrder['header']['TotalOrderSalesPortal__c'], 'Quote#': $scope.buyNowOrder['header']['Name'], "Customer PO": $scope.po.customerPO, "Item Description": lineItems[i]['Item_Description__c'], "Putup": putup, "Street Address": $scope.account.ShippingAddress.street, "City": $scope.account.ShippingAddress.city, "State": $scope.account.ShippingAddress.state, "Zip Code": $scope.account.ShippingAddress.postalCode, "Image": $scope.orderHasImage });
+                                }
+
+                                var totalOrderSale = $scope.buyNowOrder['header']['TotalOrderSalesPortal__c'];
+                                var sale = Number(totalOrderSale.replace(/[^0-9\.]+/g, ""));
+
+                                // mixpanel.people.increment({
+                                //     "Total Orders": 1,
+                                //     "Total Order Sales": sale
+                                // });
+
+
+                                toastr.success('Request Sent');
+                                $modalInstance.dismiss('cancel');
+                            } else {
+                                toastr.error(result['Message']);
+                            }
+                        }, true);
+
+
+                    });
+
+                }
+
+
+
+            }
+
+            $scope.cancel = function () {
+                $modalInstance.dismiss('cancel');
+            }
+        });
+
+        omniCableApp.controller('RMACtrl', function ($scope, $modalInstance, inData) {
+
+            //set scope from indata
+            $scope.requestRMA = {};
+            $scope.requestRMA['name'] = inData.contact.FirstName + ' ' + inData.contact.LastName;
+            $scope.requestRMA['email'] = inData.contact.Email;
+            $scope.requestRMA['phone'] = inData.contact.Phone;
+            $scope.contactMethod = $scope.requestRMA['email'];
+
+            $scope.Cities = inData.Cities;
+
+
+
+            $scope.updateContactMethods = function (position, contactMethods) {
+                angular.forEach(contactMethods, function (method, index) {
+                    if (position != index)
+                        method.checked = false;
+                });
+            }
+
+            $scope.init = function (value) {
+                $scope.contactMethod = value;
+            }
+
+
+            $scope.send = function () {
+                var attachmentInput = document.querySelector('#attachment-file');
+                var files = attachmentInput.files;
+                getFileArray(files, function (filesArray) {
+
+                    if (typeof $scope.requestRMA.name == 'undefined' || $scope.requestRMA.name == '') {
+                        toastr.error('Name is required');
+
+                    } else if (typeof $scope.requestRMA.email == 'undefined' || $scope.requestRMA.email == '') {
+                        toastr.error('Email is required');
+
+                    } else if (typeof $scope.requestRMA.po == 'undefined' || $scope.requestRMA.po == '') {
+                        toastr.error('P.O. Number is required');
+
+                    } else if (typeof $scope.requestRMA.itemNumber == 'undefined' || $scope.requestRMA.itemNumber == '') {
+                        toastr.error('Item Number is required');
+
+                    } else if (typeof $scope.requestRMA.reason == 'undefined' || $scope.requestRMA.reason == '') {
+                        toastr.error('Additional Info is required');
+
+                    } else if (typeof $scope.requestRMA.packaging == 'undefined' || $scope.requestRMA.packaging == '') {
+                        toastr.error('Original Packaging is required');
+
+                    } else if (typeof $scope.requestRMA.replacement == 'undefined' || $scope.requestRMA.replacement == '') {
+                        toastr.error('Replacement is required');
+
+                    } else if (typeof $scope.requestRMA.location.Name == 'undefined' || $scope.requestRMA.location.Name == '--Choose One--') {
+                        toastr.error('Your Brance/Location is required');
+
+                    } else if (typeof $scope.requestRMA.contactMethod == 'undefined' || $scope.requestRMA.contactMethod == '--Choose One--') {
+                        toastr.error('Contact Method is required');
+
+                    } else if (typeof $scope.requestRMA.reasonList == 'undefined' || $scope.requestRMA.reasonList == '--Choose One--') {
+                        toastr.error('Reason is required');
+                    } else {
+
+                        var emailBody = '<b>Name: </b>' + $scope.requestRMA.name + '<br>'
+                            + '<b>Email: </b>' + $scope.requestRMA.email + '<br>'
+                            + '<b>Your P.O. Number: </b>' + $scope.requestRMA.po + '<br>'
+                            + '<b>Which item(s) do you wish to return? </b>' + $scope.requestRMA.itemNumber + '<br>'
+                            + '<b>Is the item(s) in its original packaging? </b>' + $scope.requestRMA.packaging + '<br>'
+                            + '<b>Would you like us to issue a replacement order?</b> ' + $scope.requestRMA.replacement + '<br>'
+                            + '<b>Your Branch/Location: </b>' + $scope.requestRMA.location.ShippingAddress.city + '<br>'
+                            + '<b>Reason: </b>' + $scope.requestRMA.reasonList + '<br>'
+                            + '<b>Additional Information: </b>' + $scope.requestRMA.reason + '<br>'
+                            + '<b>What is the best way to contact you?</b> ' + $scope.contactMethod;
+
+                        var wrapper = new Object();
+                        wrapper['RFQData'] = emailBody;
+                        wrapper['imageData'] = filesArray;
+                        wrapper['typeStr'] = 'RMA';
+                        wrapper['AccountNumber'] = $scope.requestRMA.location.Account_Number__c
+
+
+                        // if (filesArray.length > 0) {
+                        //     mixpanel.track("RMA", { "Reason": $scope.requestRMA.reasonList, "Images": true });
+                        // } else {
+                        //     mixpanel.track("RMA", { "Reason": $scope.requestRMA.reasonList, "Images": false });
+                        // }
+
+                        var request = { params: JSON.stringify(wrapper) };
+                        do_execute_service_callback("OCCommunitiesResource", "sendRFQ", request, function (result) {
+                            if (result['Success'] == 'true') {
+                                toastr.success('Release Request Sent');
+                                $modalInstance.dismiss('cancel');
+                            } else {
+                                toastr.error(result['Message']);
+                            }
+                        }, true);
+                    }
+
+                });
+
+            };
+
+
+
+            $scope.cancel = function () {
+                $modalInstance.dismiss('cancel');
+            };
+
+
+        });
+
+        omniCableApp.controller('OmniCtrl', ['$scope', '$sce', '$uibModal', '$location', '$window', '$routeParams', '$timeout', '$interval',
+            function ($scope, $sce, $uibModal, $location, $window, $routeParams, $timeout, $interval) {
+
+                var searchParam = $location.search().search;
+                if (typeof searchParam === undefined || searchParam == null) {
+                    searchParam = localStorage.getItem("search");
+                    localStorage.clear();
+                }
+
+                $scope.searchUrlParam = searchParam;
+                $scope.slideshow = {};
+                $scope.RFQMixPanelTitle = "";
+                $scope.Rewards = false;
+                $scope.orderProp = '-header.Date__c';
+                $scope.Requests = [];
+                $scope.newRequest = { pullingHeads: 'None' };
+
+                $scope.req = {};
+                $scope.notClosed = true;
+                $scope.searchAllText = '';
+                $location.url('/');
+                $scope.nextLogOut = false;
+
+                $scope.$on('$locationChangeStart', function (event, next, current) {
+
+                    var hash = $location.hash();
+
+                    if ($scope.nextLogOut == true && hash == "") {
+
+                        var retVal = confirm("Are you sure you want to Logout?");
+                        if (retVal == true) {
+                            window.location.href = '{!$Site.Prefix}/secur/logout.jsp';
+                        } else {
+                            event.preventDefault();
+                            $scope.forceLogoutDialog = true;
+                            return false;
+                        }
+
+                    } else {
+
+                        if (hash == "") {
+                            $scope.nextLogOut = true;
+                            $scope.checkPage(hash)
+                        } else {
+                            $scope.checkPage(hash);
+                        }
+
+                    }
+
+                });
+
+                // $interval(function () {
+                //     do_execute_service_callback("OCCommunitiesResource", "pollForNotifications", {}, function (result) {
+                //         if (result['hasMessage'] == 'true') {
+                //             $scope.$apply(function () {
+                //                 $scope.showNotifiaction(result['Message']);
+                //                 $scope.updateRewards();
+                //             });
+
+                //         }
+
+                //     }, false);
+
+                // }, 20000);
+
+                $scope.myQuotesTotal = 0;
+                $scope.pagination = {};
+                $scope.pagination['Total'] = 0;
+                $scope.pagination['Data'] = [];
+                $scope.pagination['Type'] = '';
+
+                $scope.tabSelected = function (tabName) {
+                    $scope.currentTab = tabName;
+                    var url = location.protocol + "//" + location.host;
+
+                    //NOTE: if current tab is order we handle differently
+                    if ($scope.currentTab.toLowerCase().indexOf('order') !== -1) {
+
+                        $scope.pagination.Data = $scope.masterOrders;
+                        $scope.pagination.Total = $scope.masterOrders.length;
+                        // $scope.$apply();
+
+                    } else {
+
+                        var wrapper = new Object();
+                        wrapper['offset'] = 0;
+                        wrapper['typeStr'] = tabName;
+                        wrapper['url'] = url;
+                        var request = { params: JSON.stringify(wrapper) };
+
+                        do_execute_service_callback("OCCommunitiesResource", "getDataPortal", request, function (result) {
+
+                            var quotes = makeArray(result['quotes'], $scope);
+                            $scope.pagination.Data = quotes;
+
+                            if ($scope.currentTab.toLowerCase().indexOf('order') !== -1 && quotes.length > 0) {
+
+
+                                /*
+                                if(typeof $scope.masterOrder == 'undefined'){
+                                    $scope.masterOrder = quotes[0];
+                                }else{
+
+                                    var foundMaster = quotes.filter(item => item.header.Id == $scope.masterOrder.header.Id);
+                                    if(foundMaster.length > 0){
+                                        $scope.masterOrder = foundMaster[0];
+                                    }else{
+                                        $scope.masterOrder  = quotes[0];
+                                    }
+
+                                }
+                                
+                                $scope.masterOrder.selected = true;
+                                */
+                                // $scope.filterAlternativeParts();
+                            }
+
+
+                            $scope.pagination.Total = result['totalCount'];
+                            $scope.$apply();
+
+                        }, true);
+
+                    }
+
+
+
+
+
+                }
+
+
+                $scope.onCreditChange = function (pageNumber, type) {
+                    if ($scope.currentTab == type) {
+                        $scope.onPageChange(pageNumber, type);
+                    }
+
+                }
+
+                $scope.onMyQuoteChange = function (pageNumber, type) {
+                    if ($scope.currentTab == type) {
+                        $scope.onPageChange(pageNumber, type);
+                    }
+
+                }
+
+                $scope.onOtherQuoteChange = function (pageNumber, type) {
+                    if ($scope.currentTab == type) {
+                        $scope.onPageChange(pageNumber, type);
+                    }
+                }
+
+                $scope.onMyOrderChange = function (pageNumber, type) {
+                    if ($scope.currentTab == type) {
+                        $scope.onPageChange(pageNumber, type);
+                    }
+                }
+
+                $scope.onOtherOrderChange = function (pageNumber, type) {
+                    if ($scope.currentTab == type) {
+                        $scope.onPageChange(pageNumber, type);
+                    }
+                }
+
+                $scope.onPageChange = function (pageNumber, type) {
+                    var page = pageNumber - 1;
+                    var url = location.protocol + "//" + location.host;
+                    var wrapper = new Object();
+                    wrapper['offset'] = page * 10;
+                    wrapper['typeStr'] = type;
+                    wrapper['url'] = url;
+
+                    var request = { params: JSON.stringify(wrapper) };
+
+                    do_execute_service_callback("OCCommunitiesResource", "getDataPortal", request, function (result) {
+
+
+                        var quotes = makeArray(result['quotes'], $scope);
+                        $scope.pagination.Data = quotes;
+                        $scope.pagination.Total = result['totalCount'];
+                        $scope.$apply();
+
+                    }, true);
+
+                }
+
+
+                $scope.showNotifiaction = function (message) {
+
+                    var modalInstance = $modal.open({
+                        animation: true,
+                        templateUrl: 'notification-modal.html',
+                        controller: 'NotificationCtrl',
+
+                        resolve: {
+                            inData: function () {
+                                return { message: message }
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function (outScope) {
+
+
+                    }, function () {
+
+                    });
+
+                }
+
+                var url = location.protocol + "//" + location.host;
+
+                var wrapper = new Object();
+                wrapper['url'] = url;
+
+                var request = { params: JSON.stringify(wrapper) };
+
+                do_execute_service_callback("OCCommunitiesResource", "getInitialData", request, function (result) {
+                    //console.log(JSON.stringify(result));
+
+                    var sliderImgs = result['contactSlider'];
+                    if (typeof sliderImgs == 'undefined' || sliderImgs == null) {
+                        sliderImgs = [];
+                    } else if (!Array.isArray(sliderImgs)) {
+                        sliderImgs = [sliderImgs];
+                    }
+
+                    $scope.contactSliderImgs = sliderImgs;
+
+                    $scope.slideshow['slides'] = sliderImgs;
+
+                    if (result['user'] != null) {
+                        $scope.user = result['user'];
+                    }
+
+                    if (result['contact'] != null) {
+                        $scope.contact = result['contact'];
+                        SnapEngage.setTags($scope.contact.Region__c);
+                        $scope.contact.tangoEmail = result['contact']['Email']
+                        $scope.contact['OCC_Photo__c'] = $scope.getSource($scope.contact['OCC_Photo__c']);
+
+                        $scope.req['contactMethod'] = $scope.contact.Email;
+
+                        // if (typeof $scope.contact['OCC_WHRewardsCriteria__c'] != 'undefined') {
+
+                        //     mixpanel.people.set({
+                        //         "Rewards Criteria": $scope.contact.OCC_WHRewardsCriteria__c
+                        //     });
+
+                        // } else {
+                        //     mixpanel.people.set({
+                        //         "OCC_WHRewardsCriteria__c": 'none'
+                        //     });
+                        // }
+
+                    }
+
+                    var siteUrl = result['siteUrl'];
+                    var split = siteUrl.split(".");
+                    $scope.url = 'https://c.' + split[1] + '.content.' + split[2] + '.com';
+
+                    $scope.role = ' ';
+                    if (typeof result['roles'] != 'undefined' && result['roles'] != null) {
+                        $scope.role = result['roles'].Name;
+                    }
+
+                    var BuyerId = result['BuyerId'];
+
+                    if (typeof result['account'] != 'undefined' && result['account'] != null) {
+                        $scope.Account = result['account'];
+                        var Manager1 = $scope.Account.Owner;
+                        var Manager2 = result['manager2'];
+                        var Manager3 = result['manager3'];
+
+                        var allManagers = [];
+
+                        if (Manager1 != null) {
+                            allManagers.push(Manager1);
+                        }
+
+                        if (Manager2 != null) {
+                            allManagers.push(Manager2);
+                        }
+
+                        if (Manager3 != null) {
+                            allManagers.push(Manager3);
+                        }
+
+                        for (var i = 0; i < allManagers.length; i++) {
+
+                            var manager = allManagers[i];
+
+                            if (manager.UserRole != null && manager.UserRole.Name.indexOf('Regional') > -1) {
+                                $scope.RegionalManager = manager;
+
+                            } else if (manager.UserRole != null && manager.UserRole.Name.indexOf('District') > -1) {
+                                $scope.DistrictManager = manager;
+
+                            } else if (manager.UserRole != null && $scope.Account.Owner.Name == manager.Name) {
+                                $scope.AccountManager = manager;
+                            }
+                        }
+
+                    }
+
+
+                    //Child Accounts
+                    var allCities = result['childAccounts'];
+                    if (typeof allCities == 'undefined') {
+                        allCities = [];
+                    } else if (!Array.isArray(allCities)) {
+                        allCities = [allCities];
+                    }
+
+
+                    //All Accounts
+                    var allAccounts = result['allAccounts'];
+                    if (typeof allAccounts == 'undefined') {
+                        allAccounts = [];
+                    } else if (!Array.isArray(allAccounts)) {
+                        allAccounts = [allAccounts];
+                    }
+
+                    $scope.myAccount = result['account'];
+                    var myCurrAccount = result['account'];
+
+                    for (var i = 0; i < allAccounts.length; i++) {
+                        allAccounts[i]['checked'] = false;
+                        allAccounts[i]['disabled'] = false;
+                        allAccounts[i]['orginalValue'] = allAccounts[i]['checked'];
+                        allAccounts[i]['status'] = 'No Access';
+                    }
+
+                    var approvedAccounts = result['approvedAccounts'];
+                    if (typeof approvedAccounts == 'undefined') {
+                        approvedAccounts = [];
+                    } else if (!Array.isArray(approvedAccounts)) {
+                        approvedAccounts = [approvedAccounts];
+                    }
+
+                    for (var i = 0; i < allAccounts.length; i++) {
+                        var allAccount = allAccounts[i];
+                        if (allAccount['Id'] == myCurrAccount['Id']) {
+                            allAccount['checked'] = true;
+                            allAccount['disabled'] = true;
+                            allAccount['orginalValue'] = allAccount['checked'];
+                            allAccount['status'] = 'My Account';
+                        }
+
+                        for (var j = 0; j < approvedAccounts.length; j++) {
+                            var account = approvedAccounts[j];
+                            if (allAccount['Id'] == account['Account__c']) {
+                                if (account['Status__c'] == 'Accepted') {
+                                    allAccount['checked'] = true;
+                                    allAccount['disabled'] = true;
+                                    allAccount['orginalValue'] = allAccount['checked'];
+
+                                } else {
+                                    allAccount['checked'] = false;
+                                    allAccount['disabled'] = true;
+                                    allAccount['orginalValue'] = allAccount['checked'];
+                                }
+
+                                allAccount['status'] = account['Status__c'];
+                                break;
+                            }
+
+                        }
+                    }
+
+
+
+                    $scope.AllAccounts = allAccounts;
+                    //console.log(JSON.stringify($scope.AllAccounts));
+
+                    if (typeof $scope.contact != 'undefined' && $scope.contact.Buyer__c != 'Y') {
+                        $scope.Cities = [$scope.myAccount];
+                    } else {
+                        $scope.Cities = allCities;
+                    }
+
+                    if ($scope.Cities.length == 1) {
+                        $scope.req = { location: $scope.Cities[0] }
+                    } else {
+                        $scope.Cities.unshift({ Id: "--Choose One--", Name: "--Choose One--", ShippingAddress: { city: "--Choose One--" } });
+                        $scope.req = { location: $scope.myAccount }
+                    }
+
+                    $scope.req['zipCode'] = '';
+
+                    if ($scope.myAccount != null && typeof $scope.myAccount.Job_Areas__r != 'undefined' && typeof $scope.myAccount.Job_Areas__r.records != 'undefined') {
+                        // $scope.req['area'] = $scope.myAccount.Job_Area__r;
+                        $scope.req['areas'] = $scope.myAccount.Job_Areas__r.size == 1 ? [$scope.myAccount.Job_Areas__r.records] : $scope.myAccount.Job_Areas__r.records;
+                        $scope.req['area'] = $scope.req['areas'][0];
+                        $scope.newRequest['areas'] = $scope.myAccount.Job_Areas__r.size == 1 ? [$scope.myAccount.Job_Areas__r.records] : $scope.myAccount.Job_Areas__r.records;
+                        $scope.newRequest['area'] = $scope.req['areas'][0];
+                    } else {
+                        $scope.req['area'] = { 'Name': 'N/A', 'Area_Account_Manager__r': { 'Name': 'N/A' } };
+                        $scope.req['areas'] = [$scope.req.area];
+
+                        $scope.newRequest['area'] = { 'Name': 'N/A', 'Area_Account_Manager__r': { 'Name': 'N/A' } };
+                        $scope.newRequest['areas'] = [$scope.req.area];
+                    }
+
+                    if (result['Rewards'] === "false" || $scope.Account.OCC_Rewards__c === 'false') {
+                        $scope.Rewards = false;
+                    } else {
+                        $scope.Rewards = true;
+                    }
+
+
+                    $scope.rmfPOValues = arrayify(result.rmfPOValues, '--Choose One--');
+                    $scope.deliveryAddresses = arrayify(result.deliveryAddresses, { Name: '--Choose One--' });
+                    $scope.alternativePartNumbers = arrayify(result.alternativePartNumbers, null);
+                    $scope.filteredAlternativePartNumbers = arrayify(result.filteredAlternativePartNumbers, null);
+
+                    // $scope.Orders = makeArray(result['orders'], $scope);
+                    $scope.Quotes = makeArray(result['quotes'], $scope);
+                    $scope.masterOrders = makeArray(result['masterOrders'], $scope);
+
+                    //Note: Temp set fist order as master order.  Eventually there will only be one
+                    if ($scope.masterOrders != null && $scope.masterOrders.length > 0) {
+                        $scope.masterOrder = $scope.masterOrders[0];
+                        $scope.masterOrder.selected = true;
+                    }
+
+                    //NOTE: Filter alternative parts using line item
+                    //$scope.filterAlternativeParts();
+
+                    if (typeof searchParam != 'undefined' && searchParam != null) {
+                        $scope.page = 'Search'
+                        $scope.findQOCById(searchParam);
+                        //$scope.viewSingle(quote);
+                    } else {
+                        $scope.checkPage('Home');
+                        $scope.changeHash('Home');
+                    }
+
+
+                    $scope.$digest();
+
+                }, true);
+
+                var date = new Date();
+                $scope.footerContent = '@ ' + date.getFullYear() + ' Omni Cable';
+
+
+
+
+                $scope.slideshow.after = function (element) {
+                    var index = element['element']['currentSlide'];
+                    var slide = $scope.slideshow.slides[index];
+                    // mixpanel.track("Slider", { "Index": slide['Index__c'], "Url": slide['URL__c'], "Link Url": slide['LinkUrl__c'], "Name": slide['Name'] });
+
+                }
+
+                /*
+                $scope.getAltPartNumberForOrder = function(masterOrders){
+                     // NOTE: Get alternative part number
+                    for (let i = 0; i < masterOrders.length; i++) {
+                        const masterOrder = masterOrders[i];
+
+                        for (let j = 0; j < masterOrder.details.length; j++) {
+                            const detail = masterOrder.details[j];
+
+                            detail.cableNumber = '';
+                            if(detail.Line_Item__c && typeof  scope.alternativePartNumbers != 'undefined'){
+
+                                for (let index = 0; index < scope.alternativePartNumbers.length; index++) {
+                                    const part = scope.alternativePartNumbers[index];
+                                    
+                                    if(typeof part.Part_Numbers__r != 'undefined' && part.Part_Numbers__r.Name == detail.Line_Item__c){
+                                        detail.cableNumber = part.Name;
+                                    }
+                    
+                                }
+                            }
+                        }
+                    }
+                }
+                */
+
+                $scope.filterAlternativeParts = function () {
+
+                    //TODO: move to more ideal place for now this is called when everytime master order changes
+                    // $scope.rmfPOValues = arrayifyChild($scope.masterOrder, 'RMF_PO__r', {Name: '--Choose One--'});
+                    // $scope.deliveryAddresses = arrayifyChild($scope.masterOrder, 'Delivery_Addresses__r', {Name: '--Choose One--'});
+                    // $scope.alternativePartNumbers = arrayifyChild($scope.masterOrder, 'Alternative_Part_Numbers__r', undefined);
+
+                    var parts = [];
+
+                    if (typeof $scope.masterOrder != 'undefined' && typeof $scope.masterOrder.details) {
+
+                        for (let j = 0; j < $scope.masterOrder.details.length; j++) {
+                            const lineItem = $scope.masterOrder.details[j];
+
+                            for (let index = 0; index < $scope.alternativePartNumbers.length; index++) {
+                                const part = $scope.alternativePartNumbers[index];
+
+                                if (typeof part.Part_Numbers__r != 'undefined' && part.Part_Numbers__r.Name == lineItem.Line_Item__c && parseInt(lineItem.Qty_Shipped__c) < parseInt(lineItem.Qty_Ordered__c)) {
+                                    var pos = parts.map(function (e) { return e.Name; }).indexOf(part.Name);
+                                    if (pos == -1) {
+                                        parts.push(part);
+                                    }
+
+                                }
+
+                            }
+
+
+                        }
+
+
+
+
+
+
+
+                        /*
+                        for (let index = 0; index < $scope.alternativePartNumbers.length; index++) {
+                            const part = $scope.alternativePartNumbers[index];
+
+                            for (let j = 0; j <  $scope.masterOrder.details.length; j++) {
+                                const lineItem =  $scope.masterOrder.details[j];
+                                if(typeof part.Part_Numbers__r != 'undefined' && part.Part_Numbers__r.Name == lineItem.Line_Item__c && lineItem.Qty_Shipped__c < lineItem.Qty_Ordered__c){
+                                    var pos = parts.map(function(e) { return e.Name; }).indexOf(part.Name);
+                                    if(pos == -1){
+                                        parts.push(part);
+                                    }
+                                    
+                                }
+                            }
+                            
+                        }
+
+                        */
+
+
+                    }
+
+
+                    $scope.filteredAlternativePartNumbers = parts;
+                    // $scope.filteredAlternativePartNumbers.unshift({Name:'--Choose One--'});
+
+                }
+
+                $scope.globalSearch = function () {
+                    if ($scope.globalSearchText.length > 3) {
+
+                        $scope.changeHash('Search All');
+                        $scope.searchAllText = $scope.globalSearchText;
+
+
+                        var url = location.protocol + "//" + location.host;
+
+                        var wrapper = new Object();
+                        wrapper['offset'] = 0;
+                        wrapper['typeStr'] = 'search';
+                        wrapper['searchText'] = $scope.searchAllText;
+                        wrapper['url'] = url;
+                        var request = { params: JSON.stringify(wrapper) };
+
+
+                        do_execute_service_callback("OCCommunitiesResource", "getDataPortal", request, function (result) {
+
+
+                            var quotes = makeArray(result['quotes'], $scope);
+                            var orders = makeArray(result['orders'], $scope);
+                            var credits = makeArray(result['credits'], $scope);
+
+                            $scope.searchQuotes = quotes;
+                            $scope.searchOrders = orders;
+                            $scope.searchCredits = credits;
+
+                            //$scope.pagination.Data = quotes;
+                            //$scope.pagination.Total = result['totalCount'];
+                            $scope.$apply();
+
+                        }, true);
+
+                    } else {
+
+                        toastr.error('Search term must be longer than three characters');
+
+                    }
+
+                }
+
+                $scope.newRequestChange = function (item) {
+                    if (typeof item.Part_Numbers__r != 'undefined' && typeof item.Part_Numbers__r.Item_Description_OPUS__c != 'undefined') {
+                        $scope.newRequest.itemDescription = item.Part_Numbers__r.Item_Description_OPUS__c;
+                    } else {
+                        $scope.newRequest.itemDescription = '';
+                    }
+
+                }
+
+                $scope.addItem = function (newRequest) {
+
+                    var addRequest = JSON.parse(JSON.stringify(newRequest));
+                    var success = true;
+
+                    //NOTE: If addRequest is a string we need to find based on text to get actual object
+                    if (typeof addRequest.item != 'undefined' && typeof addRequest.item == 'string') {
+                        var temp = $scope.filteredAlternativePartNumbers.filter(part => part.Name == addRequest.item);
+                        addRequest.item = temp.length != 0 ? temp[0] : undefined;
+                    }
+
+
+                    if (((typeof addRequest.item == 'undefined' || typeof addRequest.item.Id === 'undefined' || addRequest.itemDescription === '' || typeof addRequest.itemDescription === 'undefined') && (addRequest.itemNumber === '' || typeof addRequest.itemNumber === 'undefined')) || typeof addRequest.qty === 'undefined' || addRequest.qty === '' || addRequest.length === '' || typeof addRequest.length === 'undefined') {
+                        var message = (typeof addRequest.qty === 'undefined' || addRequest.qty === '') ? 'Quanity Required' : (addRequest.length === '' || typeof addRequest.length === 'undefined') ? 'Length Required' : (typeof addRequest.item == 'undefined' || typeof addRequest.item.Id == 'undefined') ? 'Invalid Cable#' : 'Please complete Quantiy, Length, & Cable #';
+                        toastr.error(message);
+                        success = false;
+                    } else {
+                        addRequest.totalQuantity = 0;
+                        addRequest.totalQuantity = parseInt(addRequest.qty) * parseInt(addRequest.length);
+
+                        //var item =  $scope.masterOrder.details.filter(item => item.Customer_Item__c == addRequest.item.Customer_Item__c);
+                        // var item =  $scope.masterOrder.details.filter(item => item.Line_Item__c == addRequest.item.Part_Numbers__r.Name);
+                        // item = item[0];
+
+                        // var totalQ = addRequest.totalQuantity;
+                        // var alreadyAdded = $scope.Requests.filter(item => item.item.Part_Numbers__r.Name == addRequest.item.Part_Numbers__r.Name);
+                        // alreadyAdded.forEach(function(item) {
+                        //     totalQ += item.totalQuantity;
+                        // });
+
+                        // var remaining = item.Qty_Ordered__c - item.Qty_Shipped__c;
+                        // if(totalQ > remaining){
+                        //     toastr.error("Your requested quanity exceeds your availbale quantity.  Please review your request");
+                        //     success = false;
+                        // }
+                    }
+
+                    if (success == true) {
+                        $scope.Requests.push(addRequest);
+                        $scope.newRequest.qty = '';
+                        $scope.newRequest.length = '';
+                        $scope.newRequest.itemDescription = '';
+                        $scope.newRequest.addInfo = '';
+                        $scope.newRequest.itemNumber = '';
+                        $scope.newRequest.paralleling = false;
+                        $scope.newRequest.pullingHeads = 'None';
+                        // $scope.newRequest.includePullingHeads = false;
+
+                        //Reset
+                        // $scope.newRequest.item = $scope.filteredAlternativePartNumbers[0];
+                        $scope.newRequest.item = "";
+                    }
+
+                }
+
+                $scope.deleteItem = function (index) {
+                    $scope.Requests.splice(index, 1);
+
+                }
+
+                $scope.receiveRequest = function (release) {
+                    var message = release.Received_Complete__c == 'true' ? 'Are you sure you\'d like to mark this Release as received' : 'Are you sure you\'d like to mark this Release as NOT received';
+                    var confirm = window.confirm(message);
+                    if (confirm) {
+                        var wrapper = new Object();
+                        wrapper['id'] = release.Id;
+                        wrapper['value'] = release.Received_Complete__c == 'true' ? true : false;
+                        var request = { params: JSON.stringify(wrapper) };
+
+                        do_execute_service_callback("OCCommunitiesResourceHelper", "toggleReleaseReceive", request, function (result) {
+                            toastr.success('Release Updated');
+                        });
+                    } else {
+                        //Undo change
+                        release.Received_Complete__c = release.Received_Complete__c == 'false' ? 'true' : 'false';
+                    }
+                }
+
+
+                $scope.submit = function () {
+                    debugger;
+                    var attachmentInput = document.querySelector('#rfq-file');
+                    var files = attachmentInput.files;
+                    getFileArray(files, function (filesArray) {
+
+                        //NOTE: Add Area Manager name field to RFQ page
+
+                        if ($scope.Requests.length == 0) {
+                            toastr.error('Please click the + sign to add the line.');
+
+                        } else {
+
+                            var success = true;
+                            var errorMessage = "";
+
+                            var emailBody = '<b>Customer Name:</b> ' + $scope.contact.Name + '<br>' + '<b>Delivery Address:</b> ' + $scope.req.deliveryAddress.Name + '<br>' + '<b>Job Reference #:</b> ' + $scope.req.jobReference + ' <br> <b>RMF PO #:</b> ' + $scope.req.rmfPO + '<br> <b>Account #:</b> ' + $scope.req.location.Account_Number__c + /*'<br> <b>Area:</b> ' + $scope.req.area.Name + '<br> ' + '<b>Area Manager:</b> ' + $scope.req.area.Area_Account_Manager__r.Name +*/ '<br> <br>';
+
+                            if ($scope.req.deliveryAddress.Name == '--Choose One--') {
+                                errorMessage = 'Delivery Address Required';
+                                success = false;
+                            } else if ($scope.req.rmfPO == '--Choose One--') {
+                                errorMessage = 'RMF PO# Required';
+                                success = false;
+                            } else if ($scope.req.contactMethod == '--Choose One--' || typeof $scope.req.contactMethod == 'undefined') {
+                                errorMessage = 'Contact Method is required';
+                                success = false;
+                            } else if ($scope.req.location.Name == '--Choose One--' || typeof $scope.req.location.Name == 'undefined') {
+                                errorMessage = 'Location is required';
+                                success = false;
+                            } else if ($scope.req.deliveryReq == '' || typeof $scope.req.deliveryReq == 'undefined') {
+                                errorMessage = 'Delivery Requirements required';
+                                success = false;
+                            } else {
+                                success = true;
+                            }
+
+                            if (success == true) {
+
+                                for (var i = 0; i < $scope.Requests.length; i++) {
+                                    emailBody = emailBody + '<b>Line Number:</b> ' + (i + 1) + '<br>';
+                                    if ($scope.Requests[i].qty == 0 || $scope.Requests[i].qty == null || typeof $scope.Requests[i].qty == 'undefined') {
+                                        errorMessage = 'Quantity is required - Line Item: ' + (i + 1);
+                                        success = false;
+                                        //$scope.newRequestForm['newRequestQty'].$setValidity("default1", false);
+                                        break;
+                                    } else if ($scope.Requests[i].length == 0 || $scope.Requests[i].length == null || typeof $scope.Requests[i].length == 'undefined') {
+                                        errorMessage = 'Length is required - Line Item: ' + (i + 1);
+                                        success = false;
+                                        break;
+                                    } else if (($scope.Requests[i].itemNumber == '' || $scope.Requests[i].itemNumber == null || typeof $scope.Requests[i].itemNumber == 'undefined') && ($scope.Requests[i].itemDescription == '' || $scope.Requests[i].itemDescription == null || typeof $scope.Requests[i].itemDescription == 'undefined')) {
+                                        errorMessage = 'Item Number or Description is required - Line Item: ' + (i + 1);
+                                        success = false;
+                                        break;
+                                    } else {
+                                        emailBody = emailBody + '<b>Cable #:</b> ' + $scope.Requests[i].item.Name + '<br> <b>Item #:</b> ' + $scope.Requests[i].item.Part_Numbers__r.Name + '<br> <b>Item Description:</b> ' + $scope.Requests[i].itemDescription + '<br> <b>Quantity:</b> ' + $scope.Requests[i].qty + '<br> <b>Length:</b> ' + $scope.Requests[i].length + '<br> <b>Total Quantity:</b> ' + $scope.Requests[i].totalQuantity + '<br>' + '<b>Additional Info:</b> ' + $scope.Requests[i].addInfo + '<br> <b>Pulling Heads:</b> ' + $scope.Requests[i].pullingHeads + '<br> <b>Paralleling: </b> ' + ($scope.Requests[i].paralleling == true ? 'Yes' : 'No') + '<br> <b>Area:</b> ' + $scope.Requests[i].area.Name + '<br> <b>Area Manager:</b> ' + $scope.Requests[i].area.Area_Account_Manager__r.Name + '<br><br>';
+                                    }
+
+                                }
+
+                            }
+
+                            if (success == true) {
+
+                                emailBody = emailBody + '<b>Delivery Requirements:</b> ' + $scope.req.deliveryReq /* + '<br> <b>Requested Freight:</b> '  + $scope.req.freight */ + '<br>' + '<b>Contact Method:</b> ' + $scope.req.contactMethod;
+
+                                var wrapper = new Object();
+                                wrapper['RFQData'] = emailBody;
+                                wrapper['typeStr'] = 'RFQ';
+                                wrapper['imageData'] = filesArray;
+                                wrapper['AccountNumber'] = $scope.req.location.Account_Number__c;
+                                wrapper['jobReferenceNumber'] = $scope.req.jobReference;
+                                wrapper['markNumber'] = $scope.req.markNumber;
+                                wrapper['RFQData'] = emailBody;
+                                var request = { params: JSON.stringify(wrapper) };
+
+
+                                do_execute_service_callback("OCCommunitiesResource", "sendRFQ", request, function (result) {
+
+                                    if (result['Success'] == 'true') {
+
+                                        var quote = result['quoteData'];
+
+                                        if ($scope.RFQMixPanelTitle == "") {
+
+                                            for (var i = 0; i < $scope.Requests.length; i++) {
+                                                var lineItem = $scope.Requests[i];
+                                                var putup = lineItem['qty'] + " x " + lineItem['length'];
+                                                // mixpanel.track("RFQ's Requested", { "RFQ-Number": quote['header']['RFQNumber__c'], "Lines": $scope.Requests.length, "Putup": putup, "Item Description": lineItem['itemDescription'], "Destination Zip": $scope.destinationZip, "Location": $scope.req.location.Name });
+                                            }
+
+
+                                        } else {
+                                            var objectId = $scope.RequotedQuote['Type__c'] + '#';
+                                            // //mixpanel.track($scope.RFQMixPanelTitle, {"RFQ-Number": quote['header']['RFQNumber__c'], "Total": $scope.RequotedQuote['TotalOrderSalesPortal__c'], objectId: $scope.RequotedQuote['Name'] , "Data": $scope.Requests, "Zip Code": $scope.zipCode});
+
+
+                                            for (var i = 0; i < $scope.Requests.length; i++) {
+                                                var lineItem = $scope.Requests[i];
+                                                var putup = lineItem['qty'] + " x " + lineItem['length'];
+                                                // mixpanel.track($scope.RFQMixPanelTitle, { "RFQ-Number": quote['header']['RFQNumber__c'], "Total": $scope.RequotedQuote['TotalOrderSalesPortal__c'], objectId: $scope.RequotedQuote['Name'], "Lines": $scope.Requests.length, "Line Item": i + 1, "Putup": putup, "Item Description": lineItem['itemDescription'], "Destination Zip": $scope.destinationZip, "Location": $scope.req.location.Name });
+                                            }
+
+
+                                        }
+
+                                        $scope.RFQMixPanelTitle = "";
+                                        $scope.RequoteTotal = 0;
+
+                                        $scope.Requests = [];
+
+
+                                        var date = new Date(quote.header.Date__c);
+                                        quote.header.Date__c = (date.getUTCMonth() + Number(1)) + '/' + (date.getUTCDate()) + '/' + date.getFullYear();
+
+                                        $scope.Quotes.unshift(quote);
+                                        $scope.$apply();
+                                        toastr.success('Release Request Sent');
+                                    } else {
+                                        toastr.error(result['Message']);
+                                    }
+                                }, true);
+
+                            } else {
+                                toastr.error(errorMessage);
+
+                            }
+
+
+                        }
+
+                        /////
+                    });
+
+
+                }
+
+                $scope.escapeText = function (text) {
+                    return $sce.trustAsHtml(text);
+                };
+
+                $scope.isQuoteExpired = function (createdDate) {
+
+                    var today = new Date();
+                    today.setHours(0, 0, 0, 0);
+
+                    var created = new Date(createdDate);
+                    created.setHours(0, 0, 0, 0);
+
+                    var hours = Math.abs(today - created) / 36e5;
+                    if (hours > 72) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+
+                }
+
+                $scope.updateTotal = function (request) {
+                    //request.totalQuantity = 0;
+                    request.totalQuantity = parseInt(request.qty) * parseInt(request.length);
+                }
+
+                $scope.hideChat = function () {
+                    $scope.notClosed = false;
+                }
+
+                $scope.uploadProfileImage = function () {
+                    var fileLogoInput = document.querySelector('#photo-file');
+                    var files = fileLogoInput.files;
+                    var file = files[0];
+
+
+                    if (file != null) {
+                        var supportedFormats = ['png', 'jpg', 'tiff', 'gif'];
+                        var reader = new FileReader();
+
+                        reader.onload = (function () {
+                            return function (e) {
+
+                                var title = file.name;
+                                var baseendoed = e.target.result.split(',')[1];
+
+                                var wrapper = new Object();
+                                wrapper['image'] = baseendoed;
+                                wrapper['title'] = title;
+
+                                var request = { params: JSON.stringify(wrapper) };
+                                //alert(JSON.stringify(request));
+                                do_execute_service_callback("OCCommunitiesResource", "uploadProfilePhoto", request, function (result) {
+                                    //alert(result)
+                                    if (result['Success'] == 'true') {
+                                        // mixpanel.people.increment("Profile Photo");
+                                        //$scope.user.FullPhotoUrl =  $scope.determineLink(result['user']['FullPhotoUrl']);
+                                        $scope.contact['OCC_Photo__c'] = $scope.getSource(result['contact']['OCC_Photo__c']);
+                                        $scope.$apply();
+                                        toastr.success('Photo Updated');
+
+                                    } else {
+                                        toastr.error(result['Message']);
+                                    }
+                                }, true);
+
+                            };
+                        })();
+                        reader.readAsDataURL(file);
+
+                    } else {
+                        toastr.error('Please choose a photo for upload');
+
+                    }
+
+                }
+                /*
+                $scope.determineLink = function(url){
+                    var newUrl = '';
+                    if(url.indexOf("//") > -1){
+                        newUrl = url;
+                    }else{
+                        newUrl = $scope.url + url
+                    }
+                    
+                    return newUrl;
+                
+                }
+                */
+
+                $scope.getSource = function (imgStr) {
+                    //var contactPhotoStr = $scope.contact['OCC_Photo__c'];
+                    var elem = document.createElement("div");
+                    elem.innerHTML = imgStr;
+                    var images = elem.getElementsByTagName("img");
+                    var source = '';
+                    for (var i = 0; i < images.length; i++) {
+                        source = images[i].src;
+                    }
+
+                    return source;
+
+                }
+
+                $scope.updateContactMethods = function (position, contactMethods) {
+                    angular.forEach(contactMethods, function (method, index) {
+                        if (position != index)
+                            method.checked = false;
+                    });
+                }
+
+                $scope.startRMARequest = function () {
+                    var modalInstance = $modal.open({
+                        animation: true,
+                        templateUrl: 'rma-modal.html',
+                        controller: 'RMACtrl',
+                        size: 'lg',
+                        resolve: {
+                            inData: function () {
+                                return { contactMethods: $scope.req.contactMethod, contact: $scope.contact, Cities: $scope.Cities }
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function (outScope) {
+
+
+                    }, function () {
+
+                    });
+
+                }
+
+
+                $scope.sameEmailChange = function () {
+
+                    if ($scope.contact.sameEmail == true) {
+                        $scope.contact.tangoEmail = $scope.contact.Email;
+                        //alert($scope.user.sameEmail);
+                    }
+
+                }
+
+
+                $scope.filterAll = function (quote) {
+
+                    var searchString = '';
+                    angular.forEach(quote.details, function (detail) {
+                        searchString = searchString + ' ' + detail.Line_Item__c + ' ' + detail.Item_Description__c;
+                    });
+
+                    searchString = searchString + quote.header.Name + quote.header.TotalDollars__c + quote.header.Status__c + quote.header.OCC_Rewards__c +
+                        quote.header.Customer_Name__c + quote.header.Customer_PO__c + quote.header.Job_Reference__c +
+                        quote.header.Buyer__c;
+                    return searchString.toLowerCase().indexOf($scope.searchAllText.toLowerCase()) >= 0;
+
+                };
+
+                /*
+                $scope.filterMultiple = function(quote) {
+                
+                    var searchString = '';
+                    angular.forEach(quote.details, function (detail) {          
+                        searchString = searchString + ' ' + detail.Line_Item__c + ' ' + detail.Item_Description__c + ' ';
+                    });
+                    
+                    searchString = searchString + ' ' + quote.header.Name + ' ' + quote.header.TotalDollars__c + ' ' + quote.header.Status__c + ' ' + quote.header.OCC_Rewards__c + ' ' +
+                    quote.header.Customer_Name__c  + ' ' + quote.header.Customer_PO__c + ' ' + quote.header.Job_Reference__c + ' ' +
+                    quote.header.Buyer__c;
+                    
+                    return searchString.indexOf($scope.searchText) >= 0;
+    
+                  };
+                  */
+
+                $scope.saveProfile = function () {
+
+                    var wrapper = new Object();
+                    wrapper['firstName'] = $scope.contact.FirstName;
+                    wrapper['lastName'] = $scope.contact.LastName;
+
+                    //
+                    var spliceDate = $scope.contact.Birthdate.split('-');
+                    wrapper['day'] = spliceDate[2];
+                    wrapper['month'] = spliceDate[1];
+                    wrapper['year'] = spliceDate[0];
+
+                    wrapper['email'] = $scope.contact.Email;
+                    wrapper['phone'] = $scope.contact.Phone;
+                    wrapper['contactId'] = $scope.contact.Id;
+
+                    var request = { params: JSON.stringify(wrapper) };
+                    //alert(JSON.stringify(request));
+                    do_execute_service_callback("OCCommunitiesResource", "updateProfile", request, function (result) {
+
+                        if (result['Success'] == 'true') {
+                            toastr.success('Profile Updated!');
+                        }
+                    }, true);
+
+                }
+
+
+                $scope.uploadFile = function () {
+                    //alert('called')
+                    var fileLogoInput = document.querySelector('#photo-file');
+                    var files = fileLogoInput.files;
+                    var file = files[0];
+
+                    if (file != null) {
+                        var supportedFormats = ['png', 'jpg', 'tiff', 'gif'];
+                        var reader = new FileReader();
+
+                        reader.onload = (function () {
+                            return function (e) {
+                                var title = file.name;
+                                //$scope.user.FullPhotoUrl = e.target.result.split(',')[1];
+                                //$scope.user.oldPhoto = $scope.user.FullPhotoUrl;
+                                $scope.contact.OCC_Photo__c = e.target.result;
+                                $scope.photoName = title;
+                                $scope.$apply();
+                            };
+                        })();
+                        reader.readAsDataURL(file);
+                    }
+
+
+                };
+
+                $scope.accountCheckChange = function (account) {
+                    account.checked = !account.checked;
+                }
+
+                $scope.deleteApprovedAccount = function (account) {
+
+                    var retVal = confirm("Are you sure you want to delete access to " + account.Name);
+                    if (retVal == true) {
+
+
+                        var wrapper = new Object();
+                        //wrapper['currAccount'] = account;
+                        wrapper['Name'] = account.Name;
+                        wrapper['Id'] = account.Id;
+
+                        var request = { params: JSON.stringify(wrapper) };
+
+                        do_execute_service_callback("OCCommunitiesResource", "deleteAccountAccess", request, function (result) {
+
+                            if (result['Success'] == 'true') {
+                                toastr.success(result['Message']);
+                                var deletedId = result['DeletedId'];
+
+                                for (var i = 0; i < $scope.AllAccounts.length; i++) {
+                                    var currAccount = $scope.AllAccounts[i];
+                                    if (currAccount.Account__c == deletedId) {
+                                        currAccount['checked'] = false;
+                                        currAccount['disabled'] = false;
+                                        currAccount['status'] = 'No Access';
+                                        currAccount['orginalValue'] = currAccount['checked'];
+                                        break;
+                                    }
+                                }
+
+                                $scope.$apply();
+
+                            } else {
+                                toastr.error(result['Message']);
+                            }
+                        }, true);
+
+                        return true;
+                    } else {
+                        return false;
+                    }
+
+                }
+
+                $scope.requestAccess = function () {
+
+                    var newRequest = [];
+                    var deleteRequest = [];
+
+                    for (var i = 0; i < $scope.AllAccounts.length; i++) {
+                        var currAccount = $scope.AllAccounts[i];
+                        if (currAccount['orginalValue'] != currAccount['checked']) {
+
+                            if (currAccount['checked'] == true) {
+                                newRequest.push({ Name: currAccount.Name, Account: currAccount.Id });
+                            } else {
+                                deleteRequest.push(currAccount.Id);
+                            }
+
+                        }
+                    }
+
+
+
+                    var wrapper = new Object();
+                    wrapper['Added'] = newRequest;
+                    wrapper['DeletedIds'] = deleteRequest;
+                    wrapper['RegionalManagerId'] = $scope.RegionalManager.Id;
+
+                    var request = { params: JSON.stringify(wrapper) };
+
+                    do_execute_service_callback("OCCommunitiesResource", "requestAccountAccess", request, function (result) {
+
+                        if (result['Success'] == 'true') {
+                            toastr.success(result['Message']);
+                            ///////
+
+                            var requestedIds = result['requestedIds'];
+
+                            if (typeof requestedIds == 'undefined') {
+                                requestedIds = [];
+                            } else if (!Array.isArray(requestedIds)) {
+                                requestedIds = [requestedIds];
+                            }
+
+                            for (var i = 0; i < $scope.AllAccounts.length; i++) {
+                                var currAccount = $scope.AllAccounts[i];
+                                for (var j = 0; j < requestedIds.length; j++) {
+
+                                    if (currAccount['Id'] == requestedIds[j]) {
+                                        currAccount['checked'] = false;
+                                        currAccount['disabled'] = true;
+                                        currAccount['status'] = 'Pending';
+                                        currAccount['orginalValue'] = currAccount['checked'];
+                                    }
+
+                                }
+
+                            }
+
+                            $scope.$apply();
+
+                        } else {
+                            toastr.error(result['Message']);
+                        }
+                    }, true);
+                }
+
+                $scope.foundRole = function (role) {
+
+                    if (typeof role != 'undefined' && role.indexOf('Regional Manager') > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+
+                }
+
+
+                $scope.viewSingle = function (quote) {
+                    //window.location.href = 'https://c.cs18.visual.force.com/apex/search?id='+quote.header.Id;
+                    //$location.path('search') = quote.header.Id;
+                    $scope.changeHash('Search');
+                    $scope.singleView = [];
+
+                    if (quote != 'undefined') {
+                        $scope.searchTitle = quote.header.Type__c;
+                        $scope.singleView.push(quote);
+                    }
+
+                }
+
+                $scope.findQOCById = function (id) {
+                    //
+                    $scope.singleView = [];
+                    var wrapper = new Object();
+                    wrapper['id'] = id;
+
+                    var request = { id: JSON.stringify(wrapper) };
+                    do_execute_service_callback("OCCommunitiesResource", "findQOCById", request, function (result) {
+
+                        if (result['Success'] == 'true') {
+                            var quote = makeArray(result['quotes'], $scope);
+                            $scope.singleView = quote;
+                            $scope.$digest();
+                        } else {
+                            toastr.error(result['Message']);
+                        }
+                    }, true);
+
+
+                    /*
+                        var quote = 'undefined';
+                        var found = false;
+                        for(var i=0; i < $scope.Orders.length; i++){
+                            if ($scope.Orders[i].header.Id == id){
+                                quote = ($scope.Orders[i]);
+                                found = true;
+                                break;
+                            }
+                        }
+                        
+                        if (found == false){
+                            for(var i=0; i < $scope.Quotes.length; i++){
+                                if ($scope.Quotes[i].header.Id == id){
+                                    quote = ($scope.Quotes[i]);
+                                    found = true;
+                                    break;
+                                }
+                            }
+                        
+                        }
+                        return quote;
+                        */
+
+                }
+
+                $scope.startChat = function () {
+
+                    // mixpanel.people.increment("chat clicked");
+                    SnapEngage.openProactiveChat(true, true, 'Hello');
+                    //console.log("$scope.startChat - Timeout occurred");
+                }
+
+                $scope.changeHash = function (page) {
+                    $location.hash(page);
+                    //console.log($scope.$$watchersCount);
+                    //console.log($scope);
+                }
+
+                $scope.checkPage = function (page) {
+                    $scope.searchText = '';
+                    $scope.priceLabel = 'Total';
+                    $scope.page = page;
+
+                    // if (page != "") {
+                    //     mixpanel.track("Navigation", { "page": page });
+                    // }
+
+                    clearTimeout($scope.interval);
+                    //console.log('timeout cancelled')
+
+                    if (page == 'HomeStart') {
+                        $scope.page = 'Home';
+                        $scope.homeClass = 'active';
+                        $scope.quoteClass = '';
+                        $scope.orderClass = '';
+                        $scope.profileClass = '';
+                        $scope.requestClass = '';
+                        $scope.pendingClass = ''
+                    } else if (page == 'Home') {
+                        $scope.homeClass = 'active';
+                        $scope.quoteClass = '';
+                        $scope.orderClass = '';
+                        $scope.profileClass = '';
+                        $scope.requestClass = '';
+                        $scope.pendingClass = ''
+                        //$timeout.cancel(chatCall); 
+                    } else if (page == 'Releases') {
+                        $scope.homeClass = '';
+                        $scope.quoteClass = 'active';
+                        $scope.orderClass = '';
+                        $scope.profileClass = '';
+                        $scope.requestClass = '';
+                        $scope.pendingClass = ''
+                        $scope.searchPlaceholder = 'Search Quotes';
+                        $scope.priceLabel = 'Total';
+
+                    } else if (page == 'Orders') {
+                        $scope.homeClass = '';
+                        $scope.quoteClass = '';
+                        $scope.orderClass = 'active';
+                        $scope.profileClass = '';
+                        $scope.requestClass = '';
+                        $scope.pendingClass = ''
+                        $scope.priceLabel = 'Total';
+                        $scope.searchPlaceholder = 'Search Orders';
+
+                    } else if (page == 'My Profile') {
+                        $scope.homeClass = '';
+                        $scope.quoteClass = '';
+                        $scope.orderClass = '';
+                        $scope.profileClass = 'active';
+                        $scope.requestClass = '';
+                        $scope.pendingClass = ''
+                    } else if (page == 'Request Releases') {
+                        //$location.url('#request');
+                        $scope.homeClass = '';
+                        $scope.quoteClass = '';
+                        $scope.orderClass = '';
+                        $scope.profileClass = '';
+                        $scope.requestClass = 'active';
+                        $scope.pendingClass = '';
+
+                        var _this = this;
+                        window.setTimeout(function () {
+
+
+                            if (window.picker) {
+                                window.picker.remove();
+                                window.picker = null;
+                            }
+
+                            // const picker = datepicker('#calendar-rfq');
+                            if (!window.picker) {
+                                window.picker = datepicker('.calendar-rfq', {
+                                    // Event callbacks.
+                                    onSelect: instance => {
+                                        // Show which date was selected.
+
+                                        var formattedDate = instance.dateSelected.toLocaleDateString("en-US");
+                                        $scope.req.deliveryReq = formattedDate;
+                                        this.value = formattedDate;
+                                        console.log(instance.dateSelected)
+                                    },
+                                    // onShow: instance => {
+                                    //     console.log('Calendar showing.')
+                                    // },
+                                    // onHide: instance => {
+                                    //     console.log('Calendar hidden.')
+                                    // },
+                                    // onMonthChange: instance => {
+                                    //     // Show the month of the selected date.
+                                    //     console.log(instance.currentMonthName);
+                                    // },
+
+                                    // Customizations.
+                                    formatter: (input, date, instance) => {
+                                        // This will display the date as `1/1/2019`.
+                                        input.value = date.toDateString()
+                                        input.value = date.toLocaleDateString("en-US");
+                                    },
+                                    // position: 'tr', // Top right.
+                                    startDay: 1, // Calendar week starts on a Monday.
+                                    customDays: ['S', 'M', 'T', 'W', 'Th', 'F', 'S'],
+                                    customMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                                    customOverlayMonths: ['😀', '😂', '😎', '😍', '🤩', '😜', '😬', '😳', '🤪', '🤓 ', '😝', '😮'],
+                                    overlayButton: 'Go!',
+                                    overlayPlaceholder: 'Enter a 4-digit year',
+
+                                    // Settings.
+                                    // alwaysShow: true, // Never hide the calendar.
+                                    // dateSelected: new Date(), // Today is selected.
+                                    maxDate: new Date(2099, 0, 1), // Jan 1st, 2099.
+                                    minDate: new Date(), // June 1st, 2016.
+                                    startDate: new Date(), // This month.
+                                    showAllDates: true, // Numbers for leading & trailing days outside the current month will show.
+
+                                    // Disabling things.
+                                    // noWeekends: true, // Saturday's and Sunday's will be unselectable.
+                                    // disabler: date => (date.getDay() === 2 && date.getMonth() === 9), // Disabled every Tuesday in October
+                                    // disabledDates: [new Date(2050, 0, 1), new Date(2050, 0, 3)], // Specific disabled dates.
+                                    // disableMobile: true, // Conditionally disabled on mobile devices.
+                                    // disableYearOverlay: true, // Clicking the year or month will *not* bring up the year overlay.
+
+                                    // ID - be sure to provide a 2nd picker with the same id to create a daterange pair.
+                                    id: 1
+                                });
+                            } else {
+
+                            }
+
+
+
+                        }, 500);
+
+
+
+
+                        $scope.interval = window.setTimeout(function () {
+                            SnapABug.openProactiveChat(true, false, 'Hello, can I help you with your quote process?');
+                        }, 120000);
+
+                        //console.log('chat pending');
+                    } else if (page == 'Credits & Returns') {
+                        $scope.homeClass = '';
+                        $scope.quoteClass = '';
+                        $scope.orderClass = '';
+                        $scope.profileClass = '';
+                        $scope.requestClass = '';
+                        $scope.pendingClass = 'active';
+                        $scope.searchPlaceholder = 'Search Credits & Returns';
+                        $scope.priceLabel = 'Amount';
+
+                    } else if (page == 'Search All') {
+                        $scope.homeClass = '';
+                        $scope.quoteClass = '';
+                        $scope.orderClass = '';
+                        $scope.profileClass = '';
+                        $scope.requestClass = '';
+                        $scope.pendingClass = ''
+
+                    } else if (page == 'Search') {
+                        $scope.homeClass = '';
+                        $scope.quoteClass = '';
+                        $scope.orderClass = '';
+                        $scope.profileClass = '';
+                        $scope.requestClass = '';
+                        $scope.pendingClass = ''
+                    }
+
+                }
+
+                $scope.sendEmail = function (toEmail) {
+                    var modalInstance = $modal.open({
+                        animation: true,
+                        templateUrl: 'email-modal.html',
+                        controller: 'sendEmailCtrl',
+                        size: 'lg',
+                        resolve: {
+                            inData: function () {
+                                return { toEmail: toEmail }
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function (outScope) {
+
+
+                    }, function () {
+
+                    });
+
+
+                }
+
+                $scope.selectMasterOrder = function (allQuotes, quote) {
+
+                    if (quote.selected != false) {
+
+                        if ($scope.Requests.length > 0) {
+                            var confirm = window.confirm('Changing the Master Order will clear out the current Request Release.  Would you like to continue?');
+                            if (confirm) {
+                                $scope.masterOrder = quote;
+                                $scope.Requests = [];
+                                $scope.newRequest['pullingHeads'] = 'None';/* = {pullingHeads:'None'};*/
+                                for (let index = 0; index < allQuotes.length; index++) {
+                                    const element = allQuotes[index];
+                                    if (element.header.Id != quote.header.Id) {
+                                        element.selected = false;
+                                    }
+                                }
+                            } else {
+                                quote.selected = true;
+                            }
+
+                        } else {
+                            //NOTE: Changing master order resets current release request
+                            $scope.Requests = [];
+                            $scope.newRequest['pullingHeads'] = 'None';/* = {pullingHeads:'None'};*/
+                            $scope.masterOrder = quote;
+                            for (let index = 0; index < allQuotes.length; index++) {
+                                const element = allQuotes[index];
+                                if (element.header.Id != quote.header.Id) {
+                                    element.selected = false;
+                                }
+                            }
+                        }
+
+
+
+                    } else {
+                        quote.selected = true;
+                    }
+
+                    //$scope.filterAlternativeParts();
+                }
+
+                $scope.buyNow = function (order) {
+                    var modalInstance = $modal.open({
+                        animation: true,
+                        templateUrl: 'buy-modal.html',
+                        controller: 'BuyQuoteCtrl',
+                        size: 'lg',
+                        resolve: {
+                            inData: function () {
+
+                                return { order: order, account: $scope.Account }
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function (outScope) {
+
+
+                    }, function () {
+
+                    });
+
+                }
+
+                /*
+               $scope.addAllItems = function(lineItems){
+                   if (typeof lineItems == 'undefined') {
+                           lineItems = [];
+                   } else if(!Array.isArray (lineItems)) {
+                       lineItems = [ lineItems ];
+                   }
+                   
+                   for (var i=0; i< lineItems.length; i++){
+                   
+                       var totalQ = Number(lineItems[i].Qty_Ordered__c) * Number(lineItems[i].Qty_Ordered__c);
+                       $scope.Requests.push({'qty': lineItems[i].Qty_Ordered__c, 'length': lineItems[i]['putups'], 'itemNumber': lineItems[i].Line_Item__c, 'itemDescription': lineItems[i].Item_Description__c, 'totalQuantity': totalQ});
+                   
+                   }
+                               	
+               }
+               */
+
+
+                $scope.addAllItems = function (qoc, type) {
+                    //
+                    $scope.RFQMixPanelTitle = type;
+                    $scope.RequotedQuote = qoc.header;
+                    var lineItems = qoc['details'];
+                    if (typeof lineItems == 'undefined') {
+                        lineItems = [];
+                    } else if (!Array.isArray(lineItems)) {
+                        lineItems = [lineItems];
+                    }
+
+                    for (var i = 0; i < lineItems.length; i++) {
+                        if (typeof lineItems[i]['putups'] == 'undefined') {
+                            lineItems[i]['putups'] = [];
+                        } else if (!Array.isArray(lineItems[i]['putups'])) {
+                            lineItems[i]['putups'] = [lineItems[i]['putups']];
+                        }
+
+
+                        if (lineItems[i]['putups'].length == 0) {
+
+                            var totalQ = Number(lineItems[i].Qty_Ordered__c) * 1;
+                            $scope.Requests.push({ 'qty': 1, 'length': lineItems[i].Qty_Ordered__c, 'itemNumber': lineItems[i].Line_Item__c, 'itemDescription': lineItems[i].Item_Description__c, 'totalQuantity': totalQ });
+
+                        } else {
+
+                            for (var j = 0; j < lineItems[i]['putups'].length; j++) {
+                                var split = lineItems[i]['putups'][j].toLowerCase().split('x');
+
+                                var qty = split[0].trim();
+                                var length = split[1].trim();
+
+                                var totalQ = Number(qty) * Number(length);
+                                $scope.Requests.push({ 'qty': qty, 'length': length, 'itemNumber': lineItems[i].Line_Item__c, 'itemDescription': lineItems[i].Item_Description__c, 'totalQuantity': totalQ });
+
+                            }
+
+                        }
+
+
+
+                    }
+
+                    if ($scope.Requests.length == 0) {
+                        toastr.error('There are no Put-ups available to add.');
+                    } else {
+                        toastr.success('Line items added to your request.');
+                    }
+
+                }
+
+
+                $scope.updateRewards = function () {
+                    do_execute_service_callback("OCCommunitiesResource", "getRewards", {}, function (rewardsResult) {
+                        $scope.RewardsTotal = rewardsResult.Value;
+                    }, true);
+                }
+
+                $scope.redeem = function () {
+
+                    if ($scope.RewardsTotal <= 0) {
+                        toastr.error("Sorry you have " + $scope.RewardsTotal + " points to redeem.");
+
+                    } else {
+
+                        var retVal = confirm("Are you sure you want to redeem your points?");
+                        if (retVal == true) {
+
+                            var wrapper = new Object();
+                            wrapper['Name'] = $scope.contact.FirstName + ' ' + $scope.contact.LastName;
+                            wrapper['Email'] = $scope.contact.tangoEmail;
+                            wrapper['AccountName'] = $scope.Account.Name;
+                            var request = { params: JSON.stringify(wrapper) };
+                            do_execute_service_callback("OCCommunitiesResource", "redeemRewards", request, function (rewardsResult) {
+                                if (rewardsResult['Success'] == 'true') {
+                                    $scope.RewardsTotal = rewardsResult['Value'];
+                                    $scope.$apply();
+                                    toastr.success('Points Redeem!  Rewards email sent to ' + $scope.contact.tangoEmail);
+
+                                    var redeemedPoints = rewardsResult['OrginalValue'];
+                                    // mixpanel.track("Points", { "redeemed": redeemedPoints });
+
+                                } else {
+
+                                    toastr.error(rewardsResult['Message']);
+                                }
+                            }, true);
+
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+
+                    }
+
+
+                }
+
+                angular.element(document).ready(function () {
+
+                    var imageHeight = $j('#chat-container').height();
+                    //alert(imageHeight);
+                    $j('#chat-container').animate({ bottom: 0 }, 1000, function () {
+                        //alert('animInside');
+                        /*
+                        $('#line').css({
+                            bottom: desiredBottom,
+                            top: 'auto'
+                        });
+                        */
+                    });
+
+                    $scope.updateRewards();
+                    //setInterval(function(){ $scope.updateRewards(); }, 10000); 
+                });
+
+
+            }]);
+
+    </script>
+</apex:page>

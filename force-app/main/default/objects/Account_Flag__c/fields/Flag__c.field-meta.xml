@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flag__c</fullName>
+    <description>list of vendors who have transferred customers to us or a general account tracking flag (e.g., AD IESD)</description>
+    <inlineHelpText>Vendors who have transferred customers to us or a general account tracking flag (e.g., AD IESD)</inlineHelpText>
+    <label>Flag</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corning</fullName>
+                <default>false</default>
+                <label>Corning</label>
+            </value>
+            <value>
+                <fullName>Duraline</fullName>
+                <default>false</default>
+                <label>Duraline</label>
+            </value>
+            <value>
+                <fullName>HS Springsteen</fullName>
+                <default>false</default>
+                <label>HS Springsteen</label>
+            </value>
+            <value>
+                <fullName>Hubbell Lenoir City</fullName>
+                <default>false</default>
+                <label>Hubbell Lenoir City</label>
+            </value>
+            <value>
+                <fullName>Hubbell Power Systems</fullName>
+                <default>false</default>
+                <label>Hubbell Power Systems</label>
+            </value>
+            <value>
+                <fullName>PPC</fullName>
+                <default>false</default>
+                <label>PPC</label>
+            </value>
+            <value>
+                <fullName>Utility Plastics</fullName>
+                <default>false</default>
+                <label>Utility Plastics</label>
+            </value>
+            <value>
+                <fullName>AD IESD G2G</fullName>
+                <default>false</default>
+                <label>AD IESD G2G</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

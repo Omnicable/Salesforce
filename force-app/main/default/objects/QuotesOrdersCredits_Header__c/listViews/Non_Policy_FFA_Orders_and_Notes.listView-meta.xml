@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Policy_FFA_Orders_and_Notes</fullName>
+    <columns>Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>FFA__c</columns>
+    <columns>FFA_Mgr_Approved__c</columns>
+    <columns>SalesNote1__c</columns>
+    <columns>SalesNote2__c</columns>
+    <columns>SalesNote3__c</columns>
+    <columns>Type__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QuotesOrdersCredits_Header__c.OrderCredits</value>
+    </filters>
+    <filters>
+        <field>Industrial_LBS__c</field>
+        <operation>lessThan</operation>
+        <value>5000</value>
+    </filters>
+    <filters>
+        <field>Electronic__c</field>
+        <operation>lessThan</operation>
+        <value>2500</value>
+    </filters>
+    <filters>
+        <field>FFA__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Non-Policy FFA Orders and Notes</label>
+</ListView>

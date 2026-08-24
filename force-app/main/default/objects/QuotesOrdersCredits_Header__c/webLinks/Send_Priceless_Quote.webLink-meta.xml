@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Priceless_Quote</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send Priceless Quote</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://omnicable.my.salesforce.com/_ui/core/email/author/EmailAuthor?&amp;rtype=003&amp;p2_lkid={!QuotesOrdersCredits_Header__c.BuyerId__c}&amp;p3_lkid={!QuotesOrdersCredits_Header__c.Id}&amp;retURL=%2F{!QuotesOrdersCredits_Header__c.Id}&amp;template_id=00X0d0000053SCN</url>
+</WebLink>

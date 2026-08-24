@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GP_Dollars__c</fullName>
+    <description>Rolling 12 Months</description>
+    <inlineHelpText>This is your starting gross profit when your quote/order is entered into OPUS.  Consider all of the factors below before quoting your customer to ensure that you are covering all costs.</inlineHelpText>
+    <label>GP Dollars</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

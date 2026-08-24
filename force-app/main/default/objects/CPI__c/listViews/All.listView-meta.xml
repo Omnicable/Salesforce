@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>Customer_Number__c</columns>
+    <columns>Customer__c</columns>
+    <columns>CPI_Rank__c</columns>
+    <columns>Strategic_Goal__c</columns>
+    <columns>Omni_Profit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <label>All</label>
+</ListView>

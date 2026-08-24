@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Line_Status__c</fullName>
+    <inlineHelpText>1 = Open
+3 = Released for Billing
+5 = Pre-released for the warehouse
+8 = Complete
+9 = Cancelled</inlineHelpText>
+    <label>Line Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Open</fullName>
+                <default>false</default>
+                <label>Open</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Order Received</fullName>
+                <default>false</default>
+                <label>Order Received</label>
+            </value>
+            <value>
+                <fullName>Backordered</fullName>
+                <default>false</default>
+                <label>Backordered</label>
+            </value>
+            <value>
+                <fullName>In Process</fullName>
+                <default>false</default>
+                <label>In Process</label>
+            </value>
+            <value>
+                <fullName>Ready For Pickup</fullName>
+                <default>false</default>
+                <label>Ready For Pickup</label>
+            </value>
+            <value>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+                <label>Shipping</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

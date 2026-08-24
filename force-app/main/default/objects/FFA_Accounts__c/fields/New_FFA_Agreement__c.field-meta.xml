@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_FFA_Agreement__c</fullName>
+    <label>New FFA Agreement</label>
+    <referenceTo>Freight_Agreements__c</referenceTo>
+    <relationshipLabel>FFA Accounts</relationshipLabel>
+    <relationshipName>FFA_Accounts</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

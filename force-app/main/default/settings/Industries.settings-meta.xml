@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IndustriesSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableAccountScoreEnabled>false</enableAccountScoreEnabled>
+    <enableAutoIdentifyDocAITemplates>false</enableAutoIdentifyDocAITemplates>
+    <enableDontSharePartyprofWPortalOrgPref>false</enableDontSharePartyprofWPortalOrgPref>
+    <enableNewTimelineSetupFlow>false</enableNewTimelineSetupFlow>
+    <enablePartyProfileParentSharingOrgPref>false</enablePartyProfileParentSharingOrgPref>
+    <enablePartyprofParentMultiSharingOrgPref>false</enablePartyprofParentMultiSharingOrgPref>
+    <enableRecordAlertCustomSharingPref>false</enableRecordAlertCustomSharingPref>
+    <enableSmartTags>false</enableSmartTags>
+    <enableTimelineCachePref>false</enableTimelineCachePref>
+    <enableTimelinePref>false</enableTimelinePref>
+    <participantRecordDeactivateUser>PreventDeactivateUserWithParticipantRecords</participantRecordDeactivateUser>
+    <partyProfMultiShrPrtnrsOrgPref>false</partyProfMultiShrPrtnrsOrgPref>
+    <rlaEditIfAccHasEdit>false</rlaEditIfAccHasEdit>
+</IndustriesSettings>

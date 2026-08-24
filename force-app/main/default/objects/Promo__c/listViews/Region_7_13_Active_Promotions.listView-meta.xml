@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_7_13_Active_Promotions</fullName>
+    <columns>Status__c</columns>
+    <columns>NAME</columns>
+    <columns>User__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Promo_Tracking_Report__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region_Number__c</field>
+        <operation>equals</operation>
+        <value>13</value>
+    </filters>
+    <filters>
+        <field>End_Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_YEAR</value>
+    </filters>
+    <label>Region 7 &amp; 13 Promos</label>
+    <sharedTo>
+        <group>Marketing</group>
+        <group>Region7RMs</group>
+        <group>Region_13_RMs</group>
+    </sharedTo>
+</ListView>

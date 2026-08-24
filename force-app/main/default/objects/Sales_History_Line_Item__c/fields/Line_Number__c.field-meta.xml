@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Line_Number__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Lookup to line number on Quotes/Orders/Credits</inlineHelpText>
+    <label>Line Number</label>
+    <referenceTo>QuoteOrderCredit_Details__c</referenceTo>
+    <relationshipLabel>Sales History Line Items</relationshipLabel>
+    <relationshipName>Sales_History_Line_Items</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

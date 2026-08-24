@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_3_FFA_2014</fullName>
+    <columns>Account_Name__c</columns>
+    <columns>Omni_Freight_Owner__c</columns>
+    <columns>NAME</columns>
+    <columns>Review_Type__c</columns>
+    <columns>Needs_Review__c</columns>
+    <columns>Send_Finalized_Agreement__c</columns>
+    <columns>Branch_Contact_Name__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Omni_FFA_Goal__c</columns>
+    <columns>Sales_Trend__c</columns>
+    <columns>Freight_Notes__c</columns>
+    <columns>Mid_Year_Review__c</columns>
+    <columns>Year_End_Review__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region_Number__c</field>
+        <operation>equals</operation>
+        <value>3</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Year__c</field>
+        <operation>equals</operation>
+        <value>2014</value>
+    </filters>
+    <label>Region 3 FFA 2014</label>
+    <sharedTo>
+        <role>Administrator</role>
+    </sharedTo>
+</ListView>

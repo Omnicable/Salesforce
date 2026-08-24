@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Pending_Issues_JD</fullName>
+    <columns>NAME</columns>
+    <columns>Date_Requested__c</columns>
+    <columns>Order__c</columns>
+    <columns>Issue_Type_Desc__c</columns>
+    <columns>Account__c</columns>
+    <columns>Issue_Status__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Ext_Id__c</columns>
+    <columns>Order_Number__c</columns>
+    <columns>Region__c</columns>
+    <columns>RMA__c</columns>
+    <columns>RMA_No__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Pending Issues ALL</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ITGroup</group>
+    </sharedTo>
+</ListView>

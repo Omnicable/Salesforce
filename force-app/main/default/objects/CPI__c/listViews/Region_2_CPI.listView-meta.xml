@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_2_CPI</fullName>
+    <columns>Average_Order_Size__c</columns>
+    <columns>NAME</columns>
+    <columns>Customer__c</columns>
+    <columns>CPI_Rank__c</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>Strategic_Goal__c</columns>
+    <columns>Strategic_Results__c</columns>
+    <columns>Strategic_Results_Trend__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region_Number__c</field>
+        <operation>equals</operation>
+        <value>2</value>
+    </filters>
+    <filters>
+        <field>AM_Number__c</field>
+        <operation>notEqual</operation>
+        <value>216,214</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Average_Order_Size__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Region 2 CPI</label>
+    <language>en_US</language>
+</ListView>

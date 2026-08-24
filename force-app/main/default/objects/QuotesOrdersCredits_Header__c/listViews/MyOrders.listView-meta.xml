@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyOrders</fullName>
+    <columns>Customer_Name__c</columns>
+    <columns>Customer_Number__c</columns>
+    <columns>Date__c</columns>
+    <columns>Region__c</columns>
+    <columns>NAME</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <columns>GPpct__c</columns>
+    <columns>GP_after_freight_Booked__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>Status__c</columns>
+    <columns>E_Commerce_QOC_Status__c</columns>
+    <columns>FFA__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>10910343</value>
+    </filters>
+    <label>My Orders</label>
+    <sharedTo>
+        <group>AccountManagers</group>
+        <group>AllSalesforceUsers</group>
+        <group>CorpSalesMgr</group>
+        <group>Region10RMs</group>
+        <group>Region2RMs</group>
+        <group>Region_12</group>
+        <group>SSC</group>
+        <group>Sonepar</group>
+    </sharedTo>
+</ListView>

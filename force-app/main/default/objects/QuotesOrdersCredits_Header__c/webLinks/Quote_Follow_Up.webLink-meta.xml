@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Follow_Up</fullName>
+    <availability>online</availability>
+    <description>Button that launches a log a call related to that quote. Streamlines having the button at the top of the page instead of the user having to scroll down to Activity History and clicking Log a Call.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Quote Follow Up</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/00T/e?title=Quote Follow Up &amp;who_id={!QuotesOrdersCredits_Header__c.BuyerId__c} &amp; followup=1&amp;tsk5=Quote Follow Up &amp;what_id={!QuotesOrdersCredits_Header__c.Id}&amp;retURL={!QuotesOrdersCredits_Header__c.Id}&amp;tsk4={!Today}&amp;tsk12=&quot;Completed&quot;&amp;TaskSubtype=Call &amp;00N60000002V1SV=&quot;Quote Follow Up&quot;</url>
+</WebLink>

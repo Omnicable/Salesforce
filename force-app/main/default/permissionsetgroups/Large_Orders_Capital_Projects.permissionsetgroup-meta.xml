@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Combines foundational Salesforce access with permissions and functionality required for Large Order and Capital Projects team workflows.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Large Orders &amp; Capital Projects</label>
+    <permissionSets>Basic_Contact_Management</permissionSets>
+    <permissionSets>Basic_Salesforce_User</permissionSets>
+    <permissionSets>NEW_LOD_Capital_Projects_Assignment_Job_Location_fields</permissionSets>
+    <permissionSets>Opportunities_User</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

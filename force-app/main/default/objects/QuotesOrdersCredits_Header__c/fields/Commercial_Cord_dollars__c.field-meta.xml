@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_Cord_dollars__c</fullName>
+    <description>Sum of the Line Dollars (Booked) for non-cancelled line items where Item Class = CSFC, FCAC, FCB1, FCB9, FCBE, FCBEJ, FCBJ1, FCBS, FCDSP, FCEX, FCPS, FCRD</description>
+    <inlineHelpText>Sum of the Line Dollars (Booked) for non-cancelled line items where Item Class = CSFC, FCAC, FCB1, FCB9, FCBE, FCBEJ, FCBJ1, FCBS, FCDSP, FCEX, FCPS, FCRD</inlineHelpText>
+    <label>Commercial Cord $</label>
+    <summarizedField>QuoteOrderCredit_Details__c.Dollars__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Item_Class__c</field>
+        <operation>equals</operation>
+        <value>CSFC,FCAC,FCB1,FCB9,FCBE,FCBEJ,FCBJ1,FCBS,FCDSP,FCEX,FCPS,FCRD</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Line_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteOrderCredit_Details__c.Order_Header__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

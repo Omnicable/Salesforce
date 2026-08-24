@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>massedits</fullName>
+    <booleanFilter>(1 OR 2 or 3 or 4 or 5) AND 6</booleanFilter>
+    <columns>NAME</columns>
+    <columns>ExtID__c</columns>
+    <columns>Spec_Sheet_ExtID__c</columns>
+    <columns>Spec_Sheet__c</columns>
+    <columns>Lbs_M__c</columns>
+    <columns>AWG__c</columns>
+    <columns>Conductors__c</columns>
+    <columns>Item_Class_Description_OPUS__c</columns>
+    <columns>Item_Description_OPUS__c</columns>
+    <columns>Stranding__c</columns>
+    <columns>Insulation_Thickness__c</columns>
+    <columns>Nom_O_D__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>B11005,B11006,B11007,B11009,B11205,B11206,B11405,B11207,B11208,B11406,B11209</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>B11407,B11210,B11408,B11212,B11409,B11214,B11410,B11216,B11412,B11414,B11416</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>B11220,B11224,B11420,B11424,B11230,B11430,B11605,B11805,B11606,B11806,B11607</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>B11807,B11608,B11808,B11610,B11810,B11612,B11812,B11614,B11814,B11616,B11816</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>B11620,B11820,B11624,B11824,B11630,B11830</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+    </filters>
+    <label>PART NUMBERS MISSING SPEC SHEETS</label>
+</ListView>

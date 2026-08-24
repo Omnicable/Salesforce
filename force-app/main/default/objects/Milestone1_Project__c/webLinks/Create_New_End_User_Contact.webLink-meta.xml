@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_New_End_User_Contact</fullName>
+    <availability>online</availability>
+    <description>Create new end user contact from the project end user contacts related list on the W&amp;C Projects page</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Create New End User Contact</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://omnicable.my.salesforce.com/a0X/e?retURL=%2Fa0X%2Fo</url>
+</WebLink>

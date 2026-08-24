@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Order_Sales__c</fullName>
+    <description>Comes from the OPUS Order Value displayed when you click RELATED ORDERS. I asked Paul if it would be feasible to push the Order Value field on order info instead of the Order Value field on related orders since the value on order info is always correct, but he said no because that order info field is calculated as that screen is shown in OPUS. So we&apos;ll just need to be aware that this value won&apos;t always be correct. - Stacy 7/18/18</description>
+    <externalId>false</externalId>
+    <label>Total Order Sales (Booked)</label>
+    <precision>14</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

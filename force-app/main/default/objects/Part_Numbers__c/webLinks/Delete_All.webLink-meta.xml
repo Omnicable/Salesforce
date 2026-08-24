@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delete_All</fullName>
+    <availability>online</availability>
+    <description>Delete all Part Numbers</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Delete All</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/9.0/connection.js&quot;)} 
+
+var arr = []; 
+var count = 0; 
+var result = sforce.connection.query(&quot;Select Id from Part_Numbers__c&quot;); 
+
+if (result.size &gt; 0){ 
+
+if (confirm(&apos;Are you sure you want to DELETE all records?&apos;)) { 
+var records = result.getArray(&quot;records&quot;); 
+
+for (var i=0; i&lt; records.length; i++) { 
+
+var record = records[i]; 
+arr.push(record.Id) 
+
+if (arr.length == 200){ 
+var result = sforce.connection.deleteIds(arr); 
+arr = []; 
+count++; 
+} 
+
+} 
+
+if (arr.length &gt;0){ 
+var result = sforce.connection.deleteIds(arr); 
+alert(&quot; Deleted Records = &quot; + arr.length + count); 
+} 
+
+window.location.reload(); 
+
+}else{ 
+//Do nothing 
+} 
+
+}else{ 
+alert(&quot;No records found!&quot;); 
+}</url>
+</WebLink>

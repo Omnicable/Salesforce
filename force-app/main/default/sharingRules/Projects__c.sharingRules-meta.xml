@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Darrin_COO</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Projects created by Darrin that are private can only be seen by Greg.</description>
+        <label>Darrin COO</label>
+        <sharedTo>
+            <group>COO_Only</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerProfile2__c</field>
+            <operation>equals</operation>
+            <value>Purchasing Profile</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Private__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>00560000001NDC5</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Exec_COO</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>RVP/NAM COO</label>
+        <sharedTo>
+            <group>COO_Only</group>
+        </sharedTo>
+        <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+        <criteriaItems>
+            <field>OwnerProfile2__c</field>
+            <operation>equals</operation>
+            <value>Management Platform User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Private__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>00560000001NDC5</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>00560000001NOgk</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>RM_COO</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>RM COO</label>
+        <sharedTo>
+            <group>COO_Only</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerProfile2__c</field>
+            <operation>equals</operation>
+            <value>Region Mgr Platform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Private__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>00560000001NDC5</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

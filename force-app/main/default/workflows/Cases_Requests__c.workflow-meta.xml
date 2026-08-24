@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Budget_Request_Submitted</fullName>
+        <description>Budget Request Submitted</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grossi@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>holp@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>scahill@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Templates/Contact_Move_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Move_Request</fullName>
+        <description>Contact Move Request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mkumar@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>wfiore@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Templates/New_Contact_Move_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Move_Request_Completed</fullName>
+        <description>Contact Move Request Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>mkumar@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Templates/Contact_Move_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>Marketing_Case_Request_Created</fullName>
+        <description>Marketing Case Request Created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Marketing</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Templates/Marketing_Case_Request_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Marketing_Request_Completed</fullName>
+        <description>Marketing Request Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Requested_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Templates/Marketing_Case_Request_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>Marketing_Request_Received</fullName>
+        <description>Marketing Request Received</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Templates/Marketing_Request_has_been_Received</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Tango_Card_Request</fullName>
+        <description>New Tango Card Request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nbabcock@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vboylston@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Templates/Tango_Card_Request_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Tango_Card_Request_Completed</fullName>
+        <description>Tango Card Request Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>jdean@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Requested_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Templates/Tango_Card_Request_Completed</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Change_Owner_to_Glenn</fullName>
+        <description>Used for commission requests
+*9/9/25 replaced Philip DeAngelis&apos; name with my name (Windy Fiore) so I could deactive Phil&apos;s account and reassign his license. Shouldn&apos;t matter. Doesn&apos;t look like this field update is live anymore.*</description>
+        <field>OwnerId</field>
+        <lookupValue>wfiore@omnicable.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Change Owner to Glenn</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Owner_to_Nikki</fullName>
+        <description>For contact move requests</description>
+        <field>OwnerId</field>
+        <lookupValue>nbabcock@omnicable.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Change Owner to Nikki</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Owner_to_Steve</fullName>
+        <description>For commission requests</description>
+        <field>OwnerId</field>
+        <lookupValue>scahill@omnicable.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Change Owner to Steve</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Completion_Date</fullName>
+        <description>Time-stamped when the case status is updated to COMPLETED</description>
+        <field>Completion_Date_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Update Completion Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contact Move Request Completed</fullName>
+        <actions>
+            <name>Contact_Move_Request_Completed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Cases_Requests__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Move Contact</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Cases_Requests__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <description>Email to requester when contact move has been completed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>IT Case Completed</fullName>
+        <actions>
+            <name>Completion_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Cases_Requests__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Cases_Requests__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <description>When IT Case is mark Completed, update the completion date to NOW.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Marketing Request Completed</fullName>
+        <actions>
+            <name>Marketing_Request_Completed</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Completion_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Cases_Requests__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Marketing Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Cases_Requests__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <description>When Marketing Request  is mark Completed, update the completion date to NOW.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Marketing Request Created</fullName>
+        <actions>
+            <name>Marketing_Case_Request_Created</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Marketing_Request_Received</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Cases_Requests__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Marketing Request</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Contact Move Request</fullName>
+        <actions>
+            <name>Contact_Move_Request</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Change_Owner_to_Nikki</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Cases_Requests__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Move Contact</value>
+        </criteriaItems>
+        <failedMigrationToolVersion>238.18.34</failedMigrationToolVersion>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Tango Card Request Completed</fullName>
+        <actions>
+            <name>Tango_Card_Request_Completed</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Completion_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Cases_Requests__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Tango Card Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Cases_Requests__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <description>When Tango Card Request is mark Completed, update the completion date to NOW and send completion email.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Tango Card Request Created</fullName>
+        <actions>
+            <name>New_Tango_Card_Request</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Cases_Requests__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Tango Card Request</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

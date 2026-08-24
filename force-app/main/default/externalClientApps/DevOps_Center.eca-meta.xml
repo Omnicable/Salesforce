@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalClientApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>chrisw@launchmd.com</contactEmail>
+    <description>Manage your development and release processes</description>
+    <distributionState>Local</distributionState>
+    <isProtected>false</isProtected>
+    <label>DevOps Center</label>
+    <logoUrl>https://tinyurl.com/doc-icon</logoUrl>
+    <orgScopedExternalApp>00D60000000JrJI:DevOps_Center</orgScopedExternalApp>
+</ExternalClientApplication>

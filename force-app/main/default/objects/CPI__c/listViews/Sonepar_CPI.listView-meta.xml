@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sonepar_CPI</fullName>
+    <columns>NAME</columns>
+    <columns>Customer__c</columns>
+    <columns>CPI_Rank__c</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>Omni_Profit_Trend__c</columns>
+    <columns>Omni_Profit_Percent_Trend__c</columns>
+    <columns>Close_To_Moving__c</columns>
+    <columns>Strategic_Goal__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AM_Number__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>100</value>
+    </filters>
+    <filters>
+        <field>AM_Number__c</field>
+        <operation>lessOrEqual</operation>
+        <value>110</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <label>Sonepar CPI</label>
+</ListView>

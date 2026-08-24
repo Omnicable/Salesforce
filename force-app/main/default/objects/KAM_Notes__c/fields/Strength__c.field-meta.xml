@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Strength__c</fullName>
+    <label>Strength</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Value Category Cable</fullName>
+                <default>false</default>
+                <label>Value Category Cable</label>
+            </value>
+            <value>
+                <fullName>Paige Datacom</fullName>
+                <default>false</default>
+                <label>Paige Datacom</label>
+            </value>
+            <value>
+                <fullName>Belden</fullName>
+                <default>false</default>
+                <label>Belden</label>
+            </value>
+            <value>
+                <fullName>Core Omni Products</fullName>
+                <default>false</default>
+                <label>Core Omni Products</label>
+            </value>
+            <value>
+                <fullName>Value LV Cable</fullName>
+                <default>false</default>
+                <label>Value LV Cable</label>
+            </value>
+            <value>
+                <fullName>Fiber</fullName>
+                <default>false</default>
+                <label>Fiber</label>
+            </value>
+            <value>
+                <fullName>tinifiber</fullName>
+                <default>false</default>
+                <label>Tinifiber</label>
+            </value>
+            <value>
+                <fullName>Caddy Datacom</fullName>
+                <default>false</default>
+                <label>Caddy Datacom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

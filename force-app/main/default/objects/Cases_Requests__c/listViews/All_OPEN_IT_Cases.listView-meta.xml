@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_OPEN_IT_Cases</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>Subject__c</columns>
+    <columns>Category__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Related_Project__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Cases_Requests__c.IT_Case</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <label>All OPEN IT Cases</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ITGroup</group>
+    </sharedTo>
+</ListView>

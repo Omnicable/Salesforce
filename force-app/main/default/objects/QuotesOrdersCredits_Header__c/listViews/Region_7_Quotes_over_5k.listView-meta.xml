@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_7_Quotes_over_5k</fullName>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Customer_Number__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Status__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <columns>GPpct__c</columns>
+    <columns>AM_1__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>AM_2__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>Outside_AM_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>TotalDollars__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>5000</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,Followed Up</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>7</value>
+    </filters>
+    <label>Region 7 Quotes over 5k</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>DistrictSalesManager7</role>
+        <role>RegionalManager7</role>
+    </sharedTo>
+</ListView>

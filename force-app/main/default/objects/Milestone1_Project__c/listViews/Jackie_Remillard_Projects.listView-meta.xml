@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jackie_Remillard_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Total_Potential__c</columns>
+    <columns>Probability__c</columns>
+    <columns>Kickoff__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Jackie Remillard</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Won,Lost</value>
+    </filters>
+    <label>Jackie Remillard Open Projects</label>
+    <sharedTo>
+        <role>DistrictSalesManager11</role>
+        <role>RegionalManager11</role>
+    </sharedTo>
+</ListView>

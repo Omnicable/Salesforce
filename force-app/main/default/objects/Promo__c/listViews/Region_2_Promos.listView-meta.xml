@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_2_Promos</fullName>
+    <columns>Status__c</columns>
+    <columns>NAME</columns>
+    <columns>User__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Promo_Tracking_Report__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Marketing_Budget__c</field>
+        <operation>contains</operation>
+        <value>Region 2</value>
+    </filters>
+    <filters>
+        <field>Start_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>Region 2 Promos</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Marketing</group>
+        <group>Region2RMs</group>
+        <role>COO</role>
+    </sharedTo>
+</ListView>

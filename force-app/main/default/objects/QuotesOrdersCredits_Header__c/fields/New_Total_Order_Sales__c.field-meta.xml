@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Total_Order_Sales__c</fullName>
+    <description>This is a portal field that I THINK was probably meant to be a summation of an order&apos;s total sales + OCC_RewardSubtotal, meaning it&apos;s the NEW total order sales amount to use for calculating points. It&apos;s not a formula field though, so I&apos;m not sure exactly where the calculation comes from. I may be full of crap on this one. - Stacy</description>
+    <label>New Total Order Sales (Portal)</label>
+    <precision>14</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

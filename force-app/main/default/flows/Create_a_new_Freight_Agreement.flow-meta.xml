@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Fault_email</name>
+        <label>Send Fault email</label>
+        <locationX>144</locationX>
+        <locationY>145</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>My Fault email</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>jdean@omnicable.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>jdean@omnicable.com</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <choices>
+        <description>This is a single customer location agreement</description>
+        <name>Branch</name>
+        <choiceText>Branch</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Branch</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>This is for a multi branch deal within one Omni Region</description>
+        <name>Corporate</name>
+        <choiceText>Corporate</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>Corporate</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <description>This is an agreement for all locations across multiple Omni Cable Regions</description>
+        <name>National</name>
+        <choiceText>National</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>National_Review</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <name>None</name>
+        <choiceText>None</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>None</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Agreement_TypeDecision</name>
+        <label>Agreement Type</label>
+        <locationX>454</locationX>
+        <locationY>13</locationY>
+        <defaultConnectorLabel>Branch Agreement</defaultConnectorLabel>
+        <rules>
+            <name>Corporate_Branch</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Corporate</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Congrats_you_did_it_0_0</targetReference>
+            </connector>
+            <label>Corporate Branch</label>
+        </rules>
+        <rules>
+            <name>Branch_Agreement</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Branch</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Congrats_you_did_it</targetReference>
+            </connector>
+            <label>Branch Agreement</label>
+        </rules>
+        <rules>
+            <name>National_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>National</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Congrats_you_did_it_1</targetReference>
+            </connector>
+            <label>National Review</label>
+        </rules>
+    </decisions>
+    <dynamicChoiceSets>
+        <name>CorporateChoices</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Company_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CorpNameList.Company_Name__c</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>AccountSObject.Account_Number__c</assignToReference>
+            <field>Account_Number__c</field>
+        </outputAssignments>
+        <sortField>Name</sortField>
+        <sortOrder>Asc</sortOrder>
+        <valueField>Name</valueField>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>CurrentYear</name>
+        <dataType>Number</dataType>
+        <expression>YEAR({!$Flow.CurrentDate})</expression>
+        <scale>4</scale>
+    </formulas>
+    <label>Create a new Freight Agreement version3</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Account_Lookup</name>
+        <label>Account Lookup</label>
+        <locationX>148</locationX>
+        <locationY>8</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Congrats_you_did_it_0_0_1</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Send_Fault_email</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account_Number__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Account_Number</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>AccountSObject</outputReference>
+        <queriedFields>Account_Number__c</queriedFields>
+        <queriedFields>Region_Number__c</queriedFields>
+        <queriedFields>Company_Name__c</queriedFields>
+        <queriedFields>Sales_Year_Prior__c</queriedFields>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Corporate_Lookup</name>
+        <label>Corporate Lookup</label>
+        <locationX>613</locationX>
+        <locationY>362</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Select_Corporate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Active__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>A</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Company_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AccountSObject.Company_Name__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Region_Number__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AccountSObject.Region_Number__c</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputAssignments>
+            <assignToReference>CorpNameList.Name</assignToReference>
+            <field>Name</field>
+        </outputAssignments>
+        <sortField>Name</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <screens>
+        <name>congrats</name>
+        <label>congrats</label>
+        <locationX>294</locationX>
+        <locationY>537</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>horray</name>
+            <fieldText>{!CorpNameList} will all get agreememtns horray</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Congrats_you_did_it</name>
+        <label>Congrats you did it</label>
+        <locationX>961</locationX>
+        <locationY>21</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>AccountName</name>
+            <fieldText>{!AccountSObject.Name} has a new Branch FFA Agreement for [place holder for the year]</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>dropdownpick</name>
+            <fieldText>{!Agreement_Type}
+
+{!AccountSObject.Account_Number__c}
+
+{!AccountSObject.Region_Number__c}
+
+{!AccountSObject.Company_Name__c}</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Congrats_you_did_it_0_0</name>
+        <label>Congrats you did it</label>
+        <locationX>419</locationX>
+        <locationY>194</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>AccountName_0_0</name>
+            <fieldText>{!AccountSObject.Name} has a new Corporate FFA Agreement for [place holder for the year]</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>dropdownpick_0_0</name>
+            <fieldText>{!Agreement_Type}
+
+{!Corporate_Branch}
+
+{!AccountSObject.Account_Number__c}
+
+{!AccountSObject.Region_Number__c}
+
+{!AccountSObject.Company_Name__c}</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Congrats_you_did_it_0_0_1</name>
+        <label>Congrats you did it</label>
+        <locationX>324</locationX>
+        <locationY>8</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Agreement_TypeDecision</targetReference>
+        </connector>
+        <fields>
+            <name>AccountName_0_0_1</name>
+            <fieldText>{!AccountSObject.Name} has a new Corporate FFA Agreement for [place holder for the year]</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>dropdownpick_0_0_1</name>
+            <fieldText>{!Agreement_Type}
+
+{!Corporate_Branch}
+
+{!AccountSObject.Account_Number__c}
+
+{!AccountSObject.Region_Number__c}
+
+{!AccountSObject.Company_Name__c}</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Congrats_you_did_it_1</name>
+        <label>Congrats you did it</label>
+        <locationX>669</locationX>
+        <locationY>149</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>AccountName_1</name>
+            <fieldText>{!AccountSObject.Name} has a new National FFA Agreement for [place holder for the year]</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>dropdownpick_1</name>
+            <fieldText>{!Agreement_Type}
+
+{!Branch}
+
+{!Corporate}
+
+{!Corporate_Branch}
+
+{!Branch_Agreement}</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Use this tool to create new Freight Agreements</description>
+        <name>Create_a_new_Freight_Agreement</name>
+        <label>Create a new Freight Agreement</label>
+        <locationX>14</locationX>
+        <locationY>9</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Account_Lookup</targetReference>
+        </connector>
+        <fields>
+            <name>Agreement_Type</name>
+            <choiceReferences>National</choiceReferences>
+            <choiceReferences>Branch</choiceReferences>
+            <choiceReferences>Corporate</choiceReferences>
+            <choiceReferences>None</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>Corporate</defaultSelectedChoiceReference>
+            <fieldText>Agreement Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <helpText>National Agreement: This is an agreement for all locations across multiple Omni Cable Regions
+
+Corporate: This is for a multi branch deal within one Omni Region
+
+Branch: This is a single customer location agreement</helpText>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>agreementhelp</name>
+            <fieldText>You will be  able to select multiple branches on the next page if this is a multi branch selection</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Account_Number</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>989800</stringValue>
+            </defaultValue>
+            <fieldText>Master Account Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>FFAYear</name>
+            <dataType>Number</dataType>
+            <defaultValue>
+                <elementReference>CurrentYear</elementReference>
+            </defaultValue>
+            <fieldText>Year</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>!FFAYear}!=({!CurrentYear}+1)</helpText>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <validationRule>
+                <errorMessage>You can only enter Freight Agreements for {!CurrentYear} or ({!CurrentYear}+1)</errorMessage>
+                <formulaExpression>{!FFAYear}={!CurrentYear}</formulaExpression>
+            </validationRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Select_Corporate</name>
+        <label>Select Corporate</label>
+        <locationX>305</locationX>
+        <locationY>429</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>congrats</targetReference>
+        </connector>
+        <fields>
+            <name>Select_additonal_Corporate_Locations</name>
+            <choiceReferences>CorporateChoices</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Select additonal Corporate Locations</fieldText>
+            <fieldType>MultiSelectPicklist</fieldType>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Create_a_new_Freight_Agreement</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>AccountSObject</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>AccoutnValidation</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>CorpNameList</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>SalesPriorYear</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+    </variables>
+</Flow>

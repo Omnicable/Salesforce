@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission set group for Market Development users providing access to team-specific sales functionality.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Market Development</label>
+    <permissionSets>Opportunities_User</permissionSets>
+    <permissionSets>Sales_Rep</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

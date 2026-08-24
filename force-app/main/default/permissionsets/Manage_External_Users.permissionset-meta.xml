@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Portal_Manage_External_Users</name>
+    </customPermissions>
+    <description>Allows users to sign up contacts for the portal --
+ RMs, BDRs, select SMs and AMs</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Portal: Manage External Users</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManagePartners</name>
+    </userPermissions>
+</PermissionSet>

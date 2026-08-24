@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inventory_Item__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Inventory Item</label>
+    <referenceTo>Inventory_Item__c</referenceTo>
+    <relationshipLabel>Reels</relationshipLabel>
+    <relationshipName>Reels</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

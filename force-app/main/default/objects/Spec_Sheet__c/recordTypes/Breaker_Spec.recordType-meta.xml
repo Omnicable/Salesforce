@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Breaker_Spec</fullName>
+    <active>true</active>
+    <description>For Circuit Breaker products</description>
+    <label>Breaker Spec</label>
+    <picklistValues>
+        <picklist>Cable_Type__c</picklist>
+        <values>
+            <fullName>--</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Aluminum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Armored</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bare %26 Tinned Copper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Building Wire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eaton Circuit Breaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fiber Optic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flexible %26 Portable Cord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Temp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hook-Up Wire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instrumentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Voltage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sound%2C Security %26 Alarm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Square D Circuit Breaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telephone %26 Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thermocouple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tray Cable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VFD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Conductor_Material_Search__c</picklist>
+        <values>
+            <fullName>Aluminum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bare Copper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tinned Copper</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Insulation_Search__c</picklist>
+        <values>
+            <fullName>EP - Ethylene Propylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EPDM - Ethylene Propylene Diene Monomer Rubber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EPR - Ethylene Propylene Rubber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FEP - Fluorinated Ethylene Propylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FFEP - Foam Fluorinated Ethylene Propylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FPE - Foam Polyethylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fiberglass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nylon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE - Polyethylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PO - Polyolefin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PP - Polypropylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PVC - Polyvinyl Chloride</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PVC%2FNylon - Polyvinyl Chloride%2FNylon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plenum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silicone%2FRubber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TFE - Tetrafluoroethylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TPE - Thermoplastic Elastomer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XLPE - Cross-Linked Polyethylene</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Jacket_Search__c</picklist>
+        <values>
+            <fullName>CPE - Chlorinated Polyethylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSPE - Chlorosulfonated Polyethylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EPDM - Ethylene Propylene Diene Monomer Rubber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FEP - Fluorinated Ethylene Propylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fiberglass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LSZH - Low Smoke Zero Halogen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neoprene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nylon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE - Polyethylene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PVC - Polyvinyl Chloride</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plenum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silicone%2FRubber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TPE - Thermoplastic Elastomer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shield_Search__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

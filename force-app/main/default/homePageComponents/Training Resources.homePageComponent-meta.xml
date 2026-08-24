@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;p&gt;&lt;a href=&quot;https://omnicable.my.salesforce.com/sfc/p/60000000JrJI/a/0d000000CwQp/lj01pU9PCUSwuCHT21QZhb2HTDmDTmG_Qdq5jv8GJSU&quot;&gt;&lt;span&gt;Add/Update/Deactivate/Move Contacts&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;&lt;a href=&quot;https://omnicable--c.na26.content.force.com/servlet/servlet.FileDownload?file=01560000000k65Z&quot;&gt;Log a Call&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;&lt;a href=&quot;https://omnicable--c.na26.content.force.com/servlet/servlet.FileDownload?file=01560000000k46a&quot;&gt;Create/Assign Tasks&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://omnicable--c.na26.content.force.com/servlet/servlet.FileDownload?file=01560000000k46k&quot;&gt;&lt;span&gt;Create/Assign Events&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;&lt;a href=&quot;https://omnicable--c.na26.content.force.com/servlet/servlet.FileDownload?file=01560000000k46u&quot;&gt;Update a Quote&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;&lt;a href=&quot;https://omnicable--c.na26.content.force.com/servlet/servlet.FileDownload?file=01560000000k46z&quot;&gt;Complete a Task&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

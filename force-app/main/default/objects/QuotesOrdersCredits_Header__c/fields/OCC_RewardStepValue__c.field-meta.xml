@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_RewardStepValue__c</fullName>
+    <description>How many points. Ex. A value of 1 means 1 point for every X dollars.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How many points</inlineHelpText>
+    <label>OCC_RewardStepValue (QOC)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

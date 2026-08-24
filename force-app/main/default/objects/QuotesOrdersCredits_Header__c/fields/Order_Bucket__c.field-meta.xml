@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &lt;= 1000, &quot;.$0 - $1000&quot;,
+IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &gt; 1000 &amp;&amp; TotalDollars__c &lt;= 2500, &quot;.$1000 - $2500&quot;,
+IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &gt; 2500 &amp;&amp; TotalDollars__c &lt;= 5000, &quot;.$2500 - $5000&quot;,
+IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &gt; 5000 &amp;&amp; TotalDollars__c &lt;= 10000, &quot;.$5000 - $10k&quot;,
+IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &gt; 10000 &amp;&amp; TotalDollars__c &lt;= 25000, &quot;$10k - $25k&quot;,
+IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &gt; 25000 &amp;&amp; TotalDollars__c &lt;= 74999, &quot;$25k - $75k&quot;,
+IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &gt; 74999 &amp;&amp; TotalDollars__c &lt;= 149999, &quot;$75k - $150k&quot;,
+IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &gt; 149999 &amp;&amp; TotalDollars__c &lt;= 249999, &quot;$150k - $250k&quot;,
+IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &gt; 249999 &amp;&amp; TotalDollars__c &lt;= 499999, &quot;$250k - $500k&quot;,
+IF( OR(ISPICKVAL(Type__c, &apos;Quote&apos;),ISPICKVAL(Type__c, &apos;Order&apos;),ISPICKVAL(Type__c, &apos;RFQ&apos;)) &amp;&amp; TotalDollars__c &gt; 499999, &quot;$500k +&quot;,
+
+
+IF( ISPICKVAL(Type__c, &apos;Release&apos;), &quot;Release&quot;,
+
+
+IF( ISPICKVAL(Type__c, &apos;Credit&apos;), &quot;Credit&quot;,
+
+
+
+
+&quot;Other&quot;))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Order Bucket</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

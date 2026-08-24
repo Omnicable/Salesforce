@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Completed_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>Priority__c</columns>
+    <columns>Subject__c</columns>
+    <columns>Requested_By__c</columns>
+    <columns>Desired_Due_Date__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Cases_Requests__c.Marketing_Request</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <label>My Requests In Progress</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

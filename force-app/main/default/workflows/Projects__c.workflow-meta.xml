@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>UpdateOwnerRoleField</fullName>
+        <field>OwnerProfile2__c</field>
+        <formula>&apos;Region Mgr Platform&apos;</formula>
+        <name>UpdateOwnerRoleField</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateOwnerRoleFieldMPU</fullName>
+        <field>OwnerProfile2__c</field>
+        <formula>&apos;Management Platform User&apos;</formula>
+        <name>UpdateOwnerRoleFieldMPU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateOwnerRoleFieldPurch</fullName>
+        <field>OwnerProfile2__c</field>
+        <formula>&apos;Purchasing Profile&apos;</formula>
+        <name>UpdateOwnerRoleFieldPurch</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>UpdateOwnerRoleFieldMPU</fullName>
+        <actions>
+            <name>UpdateOwnerRoleFieldMPU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Projects__c.OwnerProfile__c</field>
+            <operation>equals</operation>
+            <value>Management Platform User</value>
+        </criteriaItems>
+        <description>Update OwnerProfile2 field on Projects for Management Platform Users (field used so that Greg&apos;s projects with management are private).</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>UpdateOwnerRoleFieldPurch</fullName>
+        <actions>
+            <name>UpdateOwnerRoleFieldPurch</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Projects__c.OwnerProfile__c</field>
+            <operation>equals</operation>
+            <value>Purchasing Profile</value>
+        </criteriaItems>
+        <description>Update OwnerProfile2 field on Projects for Purchasing Users (field used so that Greg&apos;s projects with Darrin are private).</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>UpdateOwnerRoleFieldRM</fullName>
+        <actions>
+            <name>UpdateOwnerRoleField</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Projects__c.OwnerProfile__c</field>
+            <operation>equals</operation>
+            <value>Region Mgr Platform</value>
+        </criteriaItems>
+        <description>Update OwnerProfile2 field on Projects (field used so that Greg&apos;s projects with management are private).</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

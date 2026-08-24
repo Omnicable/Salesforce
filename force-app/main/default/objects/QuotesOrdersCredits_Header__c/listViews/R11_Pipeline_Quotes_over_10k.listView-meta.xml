@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R11_Pipeline_Quotes_over_10k</fullName>
+    <booleanFilter>(1 AND 2 AND 3 AND 5 AND (4 OR 6))</booleanFilter>
+    <columns>Date__c</columns>
+    <columns>Customer__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>NAME</columns>
+    <columns>Buyer__c</columns>
+    <columns>Job_Reference__c</columns>
+    <columns>Status__c</columns>
+    <columns>Followup_Date__c</columns>
+    <columns>Buy_Bid__c</columns>
+    <columns>Close_Probability__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TotalDollars__c</field>
+        <operation>greaterThan</operation>
+        <value>10000</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,Followd Up,Followed Up</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_90_DAYS</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>11</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Region 11 Pipeline Quotes over $10k</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>DistrictSalesManager11</role>
+        <role>RegionalManager11</role>
+    </sharedTo>
+</ListView>

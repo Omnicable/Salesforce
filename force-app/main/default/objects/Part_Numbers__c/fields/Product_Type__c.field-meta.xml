@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <label>Product Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ALBW</fullName>
+                <default>false</default>
+                <label>ALBW</label>
+            </value>
+            <value>
+                <fullName>Mining Cable</fullName>
+                <default>false</default>
+                <label>Mining Cable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

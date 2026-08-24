@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R6_Quotes_over_25K_not_closed</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Status__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Type__c</columns>
+    <columns>Buy_Bid__c</columns>
+    <columns>Quote_Lost_Reasons__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>6</value>
+    </filters>
+    <filters>
+        <field>TotalDollars__c</field>
+        <operation>greaterThan</operation>
+        <value>25000</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QuotesOrdersCredits_Header__c.Quotes</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>greaterThan</operation>
+        <value>12/31/2014</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>Buy_Bid__c</field>
+        <operation>equals</operation>
+        <value>Bid</value>
+    </filters>
+    <label>R6 Quotes over 25K not closed</label>
+    <sharedTo>
+        <group>Region6</group>
+    </sharedTo>
+</ListView>

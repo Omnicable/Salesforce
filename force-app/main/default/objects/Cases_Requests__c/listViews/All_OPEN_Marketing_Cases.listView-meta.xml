@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_OPEN_Marketing_Cases</fullName>
+    <columns>NAME</columns>
+    <columns>Requested_By__c</columns>
+    <columns>Subject__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>Category__c</columns>
+    <columns>Status__c</columns>
+    <columns>Desired_Due_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Cases_Requests__c.Marketing_Request</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed,Deferred</value>
+    </filters>
+    <label>All OPEN Marketing Cases</label>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

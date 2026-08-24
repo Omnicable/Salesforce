@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Belong_to_Spec_Sheet_0000</fullName>
+    <columns>NAME</columns>
+    <columns>Spec_Sheet_ExtID__c</columns>
+    <columns>Spec_Sheet__c</columns>
+    <columns>AWG__c</columns>
+    <columns>Conductors__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Spec_Sheet_ExtID__c</field>
+        <operation>equals</operation>
+        <value>0000</value>
+    </filters>
+    <label>Belong to Spec Sheet 0000</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SFDCAdministrators</group>
+    </sharedTo>
+</ListView>

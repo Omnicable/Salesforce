@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fixed_Reports</fullName>
+    <columns>NAME</columns>
+    <columns>Errors__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Record_Type__c</columns>
+    <columns>Total_Count__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Errors__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Error_Count__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Fixed Reports</label>
+</ListView>

@@ -1,0 +1,472 @@
+<apex:component >
+
+    <uib-accordion-heading ng-if="quote.header.Type__c == 'RFQ' " class="col-sm-12">
+        <div class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Release: </span>
+            <div class="header-text" style="font-weight:bold;">{{::quote.header.Name}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Date: </span>
+            <div class="header-text">{{::quote.header.Date__c}}</div>
+        </div>
+        <!-- <div ng-show="!isQuoteExpired(quote.header.Date__c)" class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Status: </span>
+            <div class="header-text">{{::quote.header.Status__c}}</div>
+        </div>
+        <div ng-show="isQuoteExpired(quote.header.Date__c)" class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Status: </span>
+            <div class="header-text">Expired</div>
+        </div> -->
+
+        <div class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Status: </span>
+            <div class="header-text">{{::quote.header.Status__c}}</div>
+        </div>
+
+        <div class="col-xs-8 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Job Reference: </span>
+            <div class="header-text">{{::quote.header.Job_Reference__c}}</div>
+        </div>
+        <!-- <div class="col-xs-4  col-sm-2 col-lg-2 col-lg-offset-0 header-row"> <span class="label-text">{{priceLabel}}: </span> <div class="header-text" style="font-weight:bold;"> {{::quote.header.TotalOrderSalesPortal__c}}</div></div> -->
+        <i ng-class="{'glyphicon-chevron-up': status.open, 'glyphicon-chevron-down': !status.open}" class="oc-caret glyphicon"></i>
+    </uib-accordion-heading>
+
+    <uib-accordion-heading ng-if="quote.header.Type__c == 'Release' || quote.header.Sub_Type__c == 'Change Order'" class="col-sm-12">
+        <div class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Release: </span>
+            <div class="header-text" style="font-weight:bold;">{{::quote.header.Name}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Date: </span>
+            <div class="header-text">{{::quote.header.Date__c}}</div>
+        </div>
+        <!-- <div ng-show="!isQuoteExpired(quote.header.Date__c)" class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Status: </span>
+            <div class="header-text">{{::quote.header.Status__c}}</div>
+        </div>
+        <div ng-show="isQuoteExpired(quote.header.Date__c)" class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Status: </span>
+            <div class="header-text">Expired</div>
+        </div> -->
+        <div class="col-xs-4 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Status: </span>
+            <div class="header-text">{{::quote.header.Status__c}}</div>
+        </div>
+        <div class="col-xs-8 col-sm-3 col-lg-3 header-row">
+            <span class="label-text">Job Reference: </span>
+            <div class="header-text">{{::quote.header.Job_Reference__c}}</div>
+        </div>
+        <!-- <div class="col-xs-4  col-sm-2 col-lg-2 col-lg-offset-0 header-row"> <span class="label-text">{{priceLabel}}: </span> <div class="header-text" style="font-weight:bold;"> {{::quote.header.TotalOrderSalesPortal__c}}</div></div> -->
+        <i ng-class="{'glyphicon-chevron-up': status.open, 'glyphicon-chevron-down': !status.open}" class="oc-caret glyphicon"></i>
+    </uib-accordion-heading>
+
+    <uib-accordion-heading ng-if="quote.header.Type__c == 'Order' && quote.header.Sub_Type__c != 'Change Order'" class="col-sm-12">
+        <div class="col-xs-4 col-sm-2 header-row">
+            <span class="label-text">Customer PO: </span>
+            <div class="header-text" style="font-weight:bold;">{{::quote.header.Customer_PO__c}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-2 header-row">
+            <span class="label-text">Order: </span>
+            <div class="header-text">{{::quote.header.Name}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-2 header-row">
+            <span class="label-text">Date: </span>
+            <div class="header-text">{{::quote.header.Date__c}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-3 header-row">
+            <span class="label-text">Status: </span>
+            <div class="header-text">{{::quote.header.Status__c}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-3 header-row">
+            <span class="label-text">Mark Number: </span>
+            <div class="header-text">{{::quote.header.Mark_Number__c}}</div>
+        </div>
+
+    
+        <!-- <div class="col-xs-4 col-sm-2 header-row"> <span class="label-text">{{priceLabel}}: </span> <div class="header-text" style="font-weight:bold;"> {{::quote.header.TotalOrderSalesPortal__c}}</div></div> -->
+        <i ng-class="{'glyphicon-chevron-up': status.open, 'glyphicon-chevron-down': !status.open}" class="oc-caret glyphicon"></i>
+    </uib-accordion-heading>
+
+    <uib-accordion-heading ng-if="quote.header.Type__c == 'Credit'" class="col-sm-12">
+        <div class="col-xs-4 col-sm-2 header-row">
+            <span class="label-text">Type: </span>
+            <div class="header-text" style="font-weight:bold;">{{::quote.header.Type__c}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-2 header-row">
+            <span class="label-text">Customer PO: </span>
+            <div class="header-text">{{::quote.header.Customer_PO__c}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-2 header-row">
+            <span class="label-text">Order: </span>
+            <div class="header-text">{{::quote.header.Name}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-2 header-row">
+            <span class="label-text">Date: </span>
+            <div class="header-text">{{::quote.header.Date__c}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-2 header-row">
+            <span class="label-text">Status: </span>
+            <div class="header-text">{{::quote.header.Status__c}}</div>
+        </div>
+        <div class="col-xs-4 col-sm-2 header-row">
+            <span class="label-text">{{priceLabel}}: </span>
+            <div class="header-text" style="font-weight:bold;"> {{::quote.header.TotalOrderSalesPortal__c}}</div>
+        </div>
+        <i ng-class="{'glyphicon-chevron-up': status.open, 'glyphicon-chevron-down': !status.open}" class="oc-caret glyphicon"></i>
+    </uib-accordion-heading>
+
+
+    <div class="more-header col-xs-12">
+        <div class="col-xs-12">
+            <h4 class="col-xs-6 more-title">{{::quote.header.Type__c}} Information:</h4>
+            <!-- <div style="float: right;">
+                <span >SELECTED:  </span>
+                <input ng-model="quote.header.selected" type="checkbox" ng-change="selectMasterOrder(quote)"></input>
+            </div> -->
+            <p ng-if="quote.header.Type__c == 'Credit'" style="margin-top: 10px; color:#F06522;">*This is for informational purposes only</p>
+        </div>
+
+        <div ng-if="quote.header.Type__c == 'RFQ'" class="col-xs-12">
+            <div ng-bind-html="escapeText(quote.header.RFQ_Text__c)"></div>
+        </div>
+
+        <div ng-if="quote.header.Type__c == 'Release' || quote.header.Sub_Type__c == 'Change Order'" class="col-xs-12">
+
+            <div class="col-md-2 col-sm-4 col-sm-offset-0 child-row">
+                <span class="label-text-details">Buyer:</span>
+                <div>{{::quote.header.Buyer__r.Name}}</div>
+            </div>
+            <div class="col-md-2 col-sm-5 col-sm-offset-0 child-row">
+                <span class="label-text-details">Billing Address:</span>
+                <div>{{::quote.header.Customer__r.BillingAddress.street}}</div>
+                <div>{{::quote.header.Customer__r.BillingAddress.city}}, {{::quote.header.Customer__r.BillingAddress.state}} {{::quote.header.Customer__r.BillingAddress.postalCode}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-sm-offset-0 child-row">
+                <span class="label-text-details">Payment Terms:</span>
+                <div>{{::quote.header.Payment_Terms__c}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-sm-offset-0 child-row">
+                <span class="label-text-details">Freight Terms:</span>
+                <div>{{::quote.details[0].Freight_Terms__c}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4 child-row">
+                <span class="label-text-details">Expiration Date:</span>
+                <div>{{::quote.header.ExpiredDate}}</div>
+            </div>
+
+        </div>
+
+        <div ng-if="quote.header.Type__c == 'Order' && quote.header.Sub_Type__c != 'Change Order'" class="col-xs-12">
+
+
+            <div class="col-md-2 child-row">
+                <span class="label-text-details">Buyer:</span>
+                <div>{{::quote.header.Buyer__r.Name}}</div>
+            </div>
+            <div class="col-md-2 child-row">
+                <span class="label-text-details">Entered By:</span>
+                <div>{{::quote.header.Entered_By__r.Name}}</div>
+            </div>
+            <div class="col-md-2 child-row">
+                <span class="label-text-details">Billing Address:</span>
+                <div>{{::quote.header.Customer__r.BillingAddress.street}}</div>
+                <div>{{::quote.header.Customer__r.BillingAddress.city}}, {{::quote.header.Customer__r.BillingAddress.state}} {{::quote.header.Customer__r.BillingAddress.postalCode}}</div>
+            </div>
+            <div class="col-md-2 child-row">
+                <span class="label-text-details">Shipping Address:</span>
+                <div>{{::quote.header.Ship_to_Address_1__c}}</div>
+                <div>{{::quote.header.Ship_to_City__c}}, {{::quote.header.Ship_to_State__c}} {{::quote.header.Ship_to_Zip_Code__c}}</div>
+            </div>
+            <div class="col-md-2 child-row">
+                <span class="label-text-details">Freight Terms:</span>
+                <div>{{::quote.details[0].Freight_Terms__c}}</div>
+            </div>
+            <div class="col-md-2 child-row">
+                <span class="label-text-details">Payment Terms:</span>
+                <div>{{::quote.header.Payment_Terms__c}}</div>
+            </div>
+            
+           
+            
+
+
+            <!-- <div class="col-xs-12" ng-if="quote.header.Type__c == 'Order'" style="padding-left:0px; padding-right:0px">
+                <div class="col-md-3 child-row">
+                    <span class="label-text-details">Entered By:</span>
+                    <div>{{::quote.header.Entered_By__r.Name}}</div>
+                </div>
+                <div class="col-md-3 child-row">
+                    <span class="label-text-details">Shipping Address:</span>
+                    <div>{{::quote.header.Ship_to_Address_1__c}}</div>
+                    <div>{{::quote.header.Ship_to_City__c}}, {{::quote.header.Ship_to_State__c}} {{::quote.header.Ship_to_Zip_Code__c}}</div>
+                </div>
+                <div class="col-md-3 child-row">
+                    <span class="label-text-details">Freight Terms:</span>
+                    <div>{{::quote.details[0].Freight_Terms__c}}</div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- <div class="col-xs-4 col-sm-3 col-md-2 points-container">
+
+            <div ng-if="quote.header.Type__c == 'Release'" class="col-xs-12" style="padding:0px;">
+                <div class="col-xs-12" style="background-color: white; border: 1px solid #DD6F19; padding-left: 0px; padding-right: 0px;">
+                    <div ng-if="Rewards == true" style="padding: 8px;">
+                        <span style="float: left; text-align: left;">Potential
+                            <br/> Reward Points </span>
+                        <span ng-if="quote.header.RewardOverride__c == undefined" class="reward-text">{{::quote.header.OCC_Rewards__c}}</span>
+                        <span ng-if="quote.header.RewardOverride__c != undefined" class="reward-text">{{::quote.header.RewardOverride__c}}</span>
+
+                    </div>
+                    <div ng-if="Rewards == false" style="padding: 8px; text-align:center;">
+                        Thank you for this Opportunity!
+                    </div>
+                    <button ng-show="!isQuoteExpired(quote.header.Date__c)" class="requote-btn" ng-click="buyNow(quote)">Place Order</button>
+                    <button ng-show="isQuoteExpired(quote.header.Date__c)" class="requote-btn" ng-click="addAllItems(quote, 'Quote-Requoted')">Requote</button>
+                </div>
+            </div>
+
+            <div ng-if="quote.header.Type__c == 'Order'" class="col-xs-12" style="padding:0px;">
+                <div class="col-xs-12" style="background-color: white; border: 1px solid #DD6F19; padding-left: 0px; padding-right: 0px;">
+
+                    <div ng-if="Rewards == true && quote.header.Status__c == 'Invoiced'" style="padding: 8px;">
+                        <span ng-if="quote.header.OCC_RewardRedeemed__c == 'false'" style="float: left; text-align: left;">Reward
+                            <br/> Points </span>
+                        <span ng-if="quote.header.OCC_RewardRedeemed__c == 'true'" style="float: left; text-align: left;">Redeemed
+                            <br/> Points </span>
+
+
+                        <span ng-if="quote.header.RewardOverride__c == undefined" class="reward-text">{{::quote.header.OCC_Rewards__c}}</span>
+                        <span ng-if="quote.header.RewardOverride__c != undefined" class="reward-text">{{::quote.header.RewardOverride__c}}</span>
+                    </div>
+
+                    <div ng-if="Rewards == true && quote.header.Status__c != 'Invoiced'" style="padding: 8px;">
+                        <span style="float: left; text-align: left;">Potential
+                            <br/> Reward Points </span>
+                        <span class="reward-text">{{::quote.header.OCC_Rewards__c}}</span>
+                    </div>
+
+                    <div ng-if="Rewards == false" style="padding: 8px; text-align:center;">
+                        Thank you for your business!
+                    </div>
+                    <button class="requote-btn" ng-click="addAllItems(quote , 'Order-Reordered')">Reorder*</button>
+
+                </div>
+
+                <div class="col-xs-12" style="padding:0px;">
+                    <span class="col-xs-12 pricing-text">*Pricing subject to change when reordering</span>
+                    <span class="col-xs-12 terms-text">
+                        <a href="http://go.omnicable.com/Terms%20and%20Conditions%20page.pdf" target="_blank">See Terms &amp; Conditions</a>
+                    </span>
+                </div>
+            </div>
+
+        </div> -->
+
+    </div>
+
+
+    <div ng-if="quote.header.Order_Number__c !== undefined" class="col-xs-12">
+        <h4 class="col-xs-12 more-title">Line Items</h4>
+        <div class="top-label-container">
+            <div class="col-xs-1 row-padding label-text-details">Line:</div>
+            <div class="col-xs-11 row-padding">
+                <span class="col-xs-2 label-text-details">Cable Code:</span>
+                <span class="col-xs-4 label-text-details">Item Description:</span>
+                <span class="col-xs-4 label-text-details">Qty:</span>
+                <span class="col-xs-2 label-text-details">Status:</span>
+                <!-- <span class="col-xs-2 label-text-details">Total:</span> -->
+            </div>
+        </div>
+
+    </div>
+    <div class="children-div col-xs-12" ng-repeat="detail in quote.details track by detail.Line_Number__c">
+        <div class="col-xs-12" style="padding:15px 0px 15px 0px; border-top:1px solid #1E253A;">
+            <div class="col-lg-1" style="margin-top:6px; padding-left:0px;">
+                <span class="line-text">{{::detail.Line_Number__c}}</span>
+            </div>
+            <div class="col-xs-12 col-lg-11 row-padding">
+                <div class="col-md-12 row-padding">
+                    <div class="col-md-2 child-row">
+                        <span class="label-text-details dynamic-detail-label">Cable Code:</span>
+                        <!-- <div> {{::detail.Cable_Code__c}}</div> -->
+                        <div> {{::detail.Item_Markings__c}}</div>
+
+                        <!-- <div  ng-if="quote.header.Type__c == 'Release'"> {{::detail.Customer_Item__c}}</div>
+                        <div  ng-if="quote.header.Type__c != 'Release'" > {{::detail.Cable_Code__c}}</div> -->
+                        
+                        <!-- <div style="font-weight:bold; color:#0074BF;">
+                            <a  ng-if="quote.header.Type__c == 'Release'" class="clickable" ng-href="{{::detail.Spec_Sheet__c}}" target="_blank"> {{::detail.Customer_Item__c}}</a>
+                            <a  ng-if="quote.header.Type__c != 'Release'" class="clickable" ng-href="{{::detail.Spec_Sheet__c}}" target="_blank"> {{::detail.Cable_Code__c}}</a>
+                        </div> -->
+                    </div>
+                    <div class="col-md-4 child-row">
+                        <span class="label-text-details dynamic-detail-label">Item Description:</span>
+                        <div>{{::detail.Item_Description__c}}</div>
+                    </div>
+                    <div class="col-md-4 child-row">
+                        <span class="label-text-details dynamic-detail-label">Qty:</span>
+                        <div>
+                            <span class="qty-label">Ordered: </span>{{::detail.Qty_Ordered__c}}</div>
+                        <div>
+                            <span class="qty-label">Shipped: </span>{{::detail.Qty_Shipped__c}}</div>
+                        <div>
+                            <span class="qty-label">Remaining: </span>{{::(detail.Qty_Ordered__c - detail.Qty_Shipped__c)}}</div>
+                    </div>
+                    <!-- <div class="col-md-2  child-row"><span class="label-text-details dynamic-detail-label">Price:</span> <div>{{::detail.SalesPricePortal__c}}</div></div> -->
+
+                    <div class="col-md-2 child-row">
+                        <span class="label-text-details dynamic-detail-label">Status:</span>
+                        <div>{{::detail.Line_Status__c}}</div>
+                    </div>
+
+
+                    <!-- <div class="col-md-2 row-padding child-row" ><div class="label-text-details dynamic-detail-label">Put-Ups:</div> 
+                        <span ng-repeat="putup in detail.putups track by $index" style="padding:0px;">
+                                {{::putup}}   
+                        </span>
+                    </div>  -->
+                    <!-- <div class="col-md-2 child-row"><span class="label-text-details dynamic-detail-label">{{priceLabel}}:</span> <div>{{::detail.TotalDollarsPortal__c}}</div></div>  -->
+                </div>
+
+                <div ng-if="quote.header.Type__c == 'Release' || quote.header.Sub_Type__c == 'Change Order'">
+                    <div class="col-md-12 row-padding">
+                        
+                        <div class="col-md-2 child-row">
+                            <span class="label-text-details">Cable #:</span>
+                            <div>{{::detail.Customer_Item__c}}</div>
+                            
+                            <!-- <div>{{::detail.cableNumber}}</div> -->
+                            <!-- <div style="font-weight:bold; color:#0074BF;">
+                                <a  class="clickable" ng-href="{{::detail.Spec_Sheet__c}}" target="_blank"> {{::detail.Line_Item__c}}</a>
+                            </div> -->
+                            <!-- <div>{{::detail.Line_Item__c}}</div> -->
+                        </div>
+                        
+                        <div class="col-md-4 row-padding child-row">
+                            <span class="label-text-details">Notes:</span>
+                            <div>{{::detail.NotesPortal__c}}</div>
+                        </div>
+
+                        <div ng-if="!detail.TrackingURL__c" class="col-md-4  child-row">
+                                <span class="label-text-details">Expected Ship Date:</span>
+                                <div>{{::detail.Expected_Date__c}}</div>
+                        </div>
+                        <div ng-if="detail.TrackingURL__c" class="col-md-4  child-row">
+                            <span class="label-text-details">Tracking No:</span>
+                            <div>
+                                <a href="{{::detail.TrackingURL__c}}" target="_blank">{{::detail.TrackingURL__c}}</a>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 child-row">
+                            <span class="label-text-details">Item #:</span>
+                            <div style="font-weight:bold; color:#0074BF;">
+                                <a  class="clickable" ng-href="{{::detail.Spec_Sheet__c}}" target="_blank"> {{::detail.Line_Item__c}}</a>
+                            </div>
+                            <!-- <div>{{::detail.Line_Item__c}}</div> -->
+                        </div>
+
+                        <!-- <div class="col-md-6 row-padding child-row" ><div class="label-text-details">Put-Ups:</div> 
+                            <span ng-repeat="putup in detail.putups track by $index" style="padding:0px;">
+                                    {{::putup}}   
+                            </span>
+                        </div>  -->
+                    </div>
+                </div>
+                <div ng-if="quote.header.Type__c == 'Order' && quote.header.Sub_Type__c != 'Change Order'">
+                    <div class="col-md-12 row-padding">
+
+                        <div class="col-md-2 child-row">
+                            <span class="label-text-details">Item #:</span>
+                            <div style="font-weight:bold; color:#0074BF;">
+                                <a  class="clickable" ng-href="{{::detail.Spec_Sheet__c}}" target="_blank"> {{::detail.Line_Item__c}}</a>
+                            </div>
+                            <!-- <div>{{::detail.Line_Item__c}}</div> -->
+                        </div>
+                        <div class="col-md-4 row-padding child-row">
+                            <span class="label-text-details">Notes:</span>
+                            <div>{{::detail.NotesPortal__c}}</div>
+                        </div>
+
+
+                        <!-- <div class="col-md-4 row-padding child-row">
+                            <div class="label-text-details">Put-Ups:</div>
+                            <span ng-repeat="putup in detail.putups track by $index" style="padding:0px;">
+                                {{::putup}}
+                            </span>
+                        </div> -->
+
+                    </div>
+                    <div class="col-md-12 row-padding">
+                        <div class="col-md-2 child-row">
+                            <span class="label-text-details">Freight Carrier:</span>
+                            <div>{{::detail.Freight_Carrier__c}}</div>
+                        </div>
+                        <div class="col-md-4  child-row">
+                            <span class="label-text-details">Freight Terms:</span>
+                            <div>{{::detail.Freight_Terms__c}}</div>
+                        </div>
+                        <div ng-if="!detail.TrackingURL__c" class="col-md-4  child-row">
+                            <span class="label-text-details">Expected Ship Date:</span>
+                            <div>{{::detail.Expected_Date__c}}</div>
+                        </div>
+                        <div ng-if="detail.TrackingURL__c" class="col-md-4  child-row">
+                            <span class="label-text-details">Tracking No:</span>
+                            <div>
+                                <a href="{{::detail.TrackingURL__c}}" target="_blank">{{::detail.TrackingURL__c}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Added icon for shipping  based on % left-->
+                <span ng-if="quote.header.Type__c == 'Order' && quote.header.Sub_Type__c != 'Change Order'">
+                    <i ng-if="1 - (detail.Qty_Shipped__c / detail.Qty_Ordered__c) >= .3" class="glyphicon glyphicon-ok-circle qty-status" style="color:green"></i>
+                    <i ng-if="1 - (detail.Qty_Shipped__c / detail.Qty_Ordered__c) < .3 && 1 - (detail.Qty_Shipped__c / detail.Qty_Ordered__c) != 0"
+                        class="glyphicon glyphicon-exclamation-sign qty-status" style="color:#f0ad4e"></i>
+                    <i ng-if="1 - (detail.Qty_Shipped__c / detail.Qty_Ordered__c) == 0" class="glyphicon glyphicon-ban-circle qty-status" style="color:red"></i>
+                </span>
+
+                <span ng-if="quote.header.Type__c == 'Release' || quote.header.Sub_Type__c == 'Change Order'">
+                    <div class="receive">
+                        <input ng-model="detail.Received_Complete__c" type="checkbox" style="float:left;" ng-change="receiveRequest(detail)" ng-true-value="'true'" ng-false-value="'false'"></input>
+                        <span class="checkbox-label">Received</span>
+
+
+                        <!-- <div class="checkbox-container">
+                            <label class="checkbox-label">
+                                <input type="checkbox"/>
+                                <span class="checkbox-custom rectangular"></span>
+                            </label>
+                            <div class="input-title">Rectangular</div>
+                        </div> -->
+
+                    </div>
+                   
+                    <!-- <button ng-if="detail.Received_Complete__c == 'false'" class="qty-status receive" ng-model="detail.Received_Complete__c">Mark as Received</button> -->
+
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="doc-slider-container col-xs-12" style="overflow-x:scroll;">
+        <ul class="images">
+            <div ng-repeat="attachment in quote.attachments" class="img-container">
+                <div class="col-xs-2" style="margin: 0px; padding: 0px;">
+                    <a href="{{::attachment.url}}" target="_blank" download="{{::attachment.title}}">
+                        <img ng-src="{{::attachment.image}}" width="110" height="110" target="_blank" style="vertical-align:middle; border: 1px solid #337ab7;"
+                        />
+                    </a>
+                    <span class="col-xs-12" style="text-align:center; margin-top:5px;">{{::attachment.title}}</span>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+    <div class="col-xs-12 row-padding" style="height:5px; background-color:#1E253A; margin-top:25px;"></div>
+
+</apex:component>

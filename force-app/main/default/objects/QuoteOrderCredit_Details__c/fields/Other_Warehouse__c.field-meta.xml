@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Warehouse__c</fullName>
+    <description>If the warehouse the item is shipping from is the same region as the account --&gt; 0 
+If the warehouse the item is shipping from is different from the region of the account --&gt; 1</description>
+    <formula>IF  (Warehouse__c = TEXT(Customer__r.RegionNumerical__c) , False, True)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Other Warehouse</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

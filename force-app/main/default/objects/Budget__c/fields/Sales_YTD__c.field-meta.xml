@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_YTD__c</fullName>
+    <inlineHelpText>Total Sales Year to date</inlineHelpText>
+    <label>Sales YTD</label>
+    <summarizedField>Budget_Month__c.Month_Sales__c</summarizedField>
+    <summaryFilterItems>
+        <field>Budget_Month__c.Month_Sales__c</field>
+        <operation>notEqual</operation>
+        <value></value>
+    </summaryFilterItems>
+    <summaryForeignKey>Budget_Month__c.Budget__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>S_D_Fields_Only_for_Orders</fullName>
+    <active>true</active>
+    <description>S&amp;D Not Eligible and Why Not S&amp;D Eligible? fields are for Orders only, not for Quotes or Credits.</description>
+    <errorConditionFormula>AND(
+    NOT(
+        ISPICKVAL(Order_Header__r.Type__c, &apos;Order&apos;)
+        ),
+        OR(
+           S_D_Not_Eligible__c = TRUE, 
+           NOT(
+               ISBLANK( Why_Not_S_D_Eligible__c)
+               )
+           )
+    )</errorConditionFormula>
+    <errorDisplayField>Why_Not_S_D_Eligible__c</errorDisplayField>
+    <errorMessage>S&amp;D Not Eligible and Why Not S&amp;D Eligible? fields are for Orders only, not for Quotes or Credits.</errorMessage>
+</ValidationRule>

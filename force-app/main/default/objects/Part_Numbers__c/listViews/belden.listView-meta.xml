@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>belden</fullName>
+    <columns>NAME</columns>
+    <columns>Spec_Sheet__c</columns>
+    <columns>Item_Number_OPUS__c</columns>
+    <columns>Belden_URL__c</columns>
+    <columns>Spec_Sheet_URL__c</columns>
+    <columns>Spec_Sheet_ExtID__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Nom_O_D__c</columns>
+    <columns>Nom_O_D_OPUS__c</columns>
+    <columns>AWG__c</columns>
+    <columns>Conductors__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Item_Number_OPUS__c</field>
+        <operation>startsWith</operation>
+        <value>BEL</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Part_Numbers__c.Part_Number</value>
+    </filters>
+    <label>Belden Part Numbers</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Administrator</role>
+    </sharedTo>
+</ListView>

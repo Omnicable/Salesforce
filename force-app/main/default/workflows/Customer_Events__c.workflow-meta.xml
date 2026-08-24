@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Customer_Event_Credit_Request_Approved_by_1st_Approver_RM_or_RVP</fullName>
+        <description>Customer Event Credit Request Approved by RM/RVP - to creator &amp; sfdc admin</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Credit_Request_Approved_by_Manager</template>
+    </alerts>
+    <alerts>
+        <fullName>Customer_Event_Credit_Request_Approved_by_1st_Approver_RM_or_RVP_to_creator_sfdc</fullName>
+        <description>Customer Event Credit Request Rejected  - to creator &amp; sfdc admin</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Credit_Request_Rejected_by_Manager</template>
+    </alerts>
+    <alerts>
+        <fullName>Customer_Event_Credit_Request_Approved_by_all</fullName>
+        <description>Customer Event Credit Request Approved by all required approvers - to creator, sfdc admin, &amp; marketing budget owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Credit_Request_Approved_by_all</template>
+    </alerts>
+    <alerts>
+        <fullName>Customer_Event_Request_Submitted_Notification_to_creator_and_Stacy</fullName>
+        <description>Customer Event Request Submitted Notification to creator and SFDC admin</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>sfromhold@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Customer_Event_Requested</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Change_Status_toapproved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Change Cust Status to &quot;Approved&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Pending_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>Update Cust Status to &quot;Pending Approval&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Cust Status to &quot;Rejected&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

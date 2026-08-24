@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Cost_Belden_S_D_Line_Items__c</fullName>
+    <description>Sum on Line Cost (Booked) for all Belden line items in an order with Belden S&amp;D Eligible Item? = True</description>
+    <inlineHelpText>Sum on Line Cost (Booked) for all Belden line items in an order with Belden S&amp;D Eligible Item? = True</inlineHelpText>
+    <label>Total Cost Belden S&amp;D Line Items</label>
+    <summarizedField>QuoteOrderCredit_Details__c.Line_Cost__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteOrderCredit_Details__c.Belden_S_D_Eligible_Line_Item__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteOrderCredit_Details__c.Order_Header__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

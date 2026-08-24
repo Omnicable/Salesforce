@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Monthly_Budget__c</fullName>
+    <label>Current Monthly Budget</label>
+    <summarizedField>Budget_Month__c.Budget_Amt__c</summarizedField>
+    <summaryFilterItems>
+        <field>Budget_Month__c.Budget_Date__c</field>
+        <operation>equals</operation>
+        <value>1/1/2020</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Budget_Month__c.Budget__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

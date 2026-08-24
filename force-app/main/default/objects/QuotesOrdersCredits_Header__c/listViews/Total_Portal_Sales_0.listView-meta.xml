@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Portal_Sales_0</fullName>
+    <columns>Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Buyer_s_Email_Address__c</columns>
+    <columns>New_Total_Order_Sales__c</columns>
+    <columns>Total_Order_Sales__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>New_Total_Order_Sales__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled,Closed</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_90_DAYS</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote,Order</value>
+    </filters>
+    <filters>
+        <field>Total_Order_Sales__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </filters>
+    <label>Total Portal Sales = 0</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

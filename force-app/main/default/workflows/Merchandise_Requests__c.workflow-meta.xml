@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_Merchandise_Request</fullName>
+        <description>New Merchandise Request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Marketing</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/New_Merchandise_Request</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Merchandise_Total</fullName>
+        <field>Request_Total__c</field>
+        <formula>Value__c</formula>
+        <name>Merchandise Total $</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Merchandise Request - Alert Marketing</fullName>
+        <actions>
+            <name>New_Merchandise_Request</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Merchandise_Catalog_Items__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Merchandise Total %24</fullName>
+        <actions>
+            <name>Merchandise_Total</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>b/c this field will be used to do a roll-up summary field on Marketing Budget called &quot;Merchandise Expenses&quot;</description>
+        <formula>Value__c &gt;= 0</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>AM__c</columns>
+    <columns>Branch__c</columns>
+    <columns>StatDate__c</columns>
+    <columns>Booked1000GP__c</columns>
+    <columns>Branchunder1000GP__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;DIV style=&quot;FONT-SIZE: 12px&quot; align=center width=&quot;210px&quot;&gt;&lt;IFRAME height=210 marginHeight=0 src=&quot;http://www.sanebull.com/widget_commodities.jsp?type=m&quot; frameBorder=0 width=210 marginWidth=0 scrolling=no&gt;
+&lt;/IFRAME&gt;&lt;BR&gt;&lt;A href=&quot;http://www.sanebull.com/widget_commodities.jsp?type=m&quot; target=_top&gt;Stock Market Finance Widgets&lt;/A&gt; &lt;/DIV&gt;&lt;!--DO NOT EDIT ABOVE!--&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>wide</width>
+</HomePageComponent>

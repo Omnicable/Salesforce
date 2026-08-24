@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Promo_Budget_Dollars__c</columns>
+    <columns>XPromo_Remaining__c</columns>
+    <columns>Promo_Spent__c</columns>
+    <columns>Budget_Owner__c</columns>
+    <columns>Region__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Marketing_Budget__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Marketing</group>
+        <role>Administrator</role>
+    </sharedTo>
+</ListView>

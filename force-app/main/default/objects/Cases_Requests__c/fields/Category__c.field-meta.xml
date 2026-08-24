@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Literature</fullName>
+                <default>false</default>
+                <label>Literature</label>
+            </value>
+            <value>
+                <fullName>Email Blast</fullName>
+                <default>false</default>
+                <label>Email Blast</label>
+            </value>
+            <value>
+                <fullName>Promotional Items</fullName>
+                <default>false</default>
+                <label>Promotional Items</label>
+            </value>
+            <value>
+                <fullName>Website/Spec Sheets</fullName>
+                <default>false</default>
+                <label>Website/Spec Sheets</label>
+            </value>
+            <value>
+                <fullName>Salesforce.com</fullName>
+                <default>false</default>
+                <label>Salesforce.com</label>
+            </value>
+            <value>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <label>Event</label>
+            </value>
+            <value>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+                <label>Presentation</label>
+            </value>
+            <value>
+                <fullName>Intranet</fullName>
+                <default>false</default>
+                <label>Intranet</label>
+            </value>
+            <value>
+                <fullName>Report Problem</fullName>
+                <default>false</default>
+                <label>Report Problem</label>
+            </value>
+            <value>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+                <label>Feature Request</label>
+            </value>
+            <value>
+                <fullName>Technical Support</fullName>
+                <default>false</default>
+                <label>Technical Support</label>
+            </value>
+            <value>
+                <fullName>HALO</fullName>
+                <default>false</default>
+                <label>HALO</label>
+            </value>
+            <value>
+                <fullName>OPUS</fullName>
+                <default>false</default>
+                <label>OPUS</label>
+            </value>
+            <value>
+                <fullName>Add EDI Customer</fullName>
+                <default>false</default>
+                <label>Add EDI Customer</label>
+            </value>
+            <value>
+                <fullName>Add EDI Vendor</fullName>
+                <default>false</default>
+                <label>Add EDI Vendor</label>
+            </value>
+            <value>
+                <fullName>Add EDI Frt</fullName>
+                <default>false</default>
+                <label>Add EDI Frt</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Tango Card Request</fullName>
+                <default>false</default>
+                <label>Tango Card Request</label>
+            </value>
+            <value>
+                <fullName>Account Assignment Change</fullName>
+                <default>false</default>
+                <label>Account Assignment Change</label>
+            </value>
+            <value>
+                <fullName>Budget Change</fullName>
+                <default>false</default>
+                <label>Budget Change</label>
+            </value>
+            <value>
+                <fullName>Sales Adjustment</fullName>
+                <default>false</default>
+                <label>Sales Adjustment</label>
+            </value>
+            <value>
+                <fullName>Employee</fullName>
+                <default>false</default>
+                <label>Employee</label>
+            </value>
+            <value>
+                <fullName>Bulk Change</fullName>
+                <default>false</default>
+                <label>Bulk Change</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

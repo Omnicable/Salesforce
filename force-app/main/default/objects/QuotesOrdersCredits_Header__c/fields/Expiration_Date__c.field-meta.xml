@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiration_Date__c</fullName>
+    <description>Used to display expiration date on portal. Formula = Date + 3 days</description>
+    <formula>IF( ISPICKVAL(Type__c, &quot;Quote&quot;),  Date__c + 3, null)</formula>
+    <label>Expiration Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

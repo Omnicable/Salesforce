@@ -1,0 +1,205 @@
+<!--
+  @description       : Visualforce page for rendering the Sales Report PDF
+  @author            : chrisw@launchdm.com
+  @group             : SalesBudgetReports
+  @last modified on  : 05-25-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<apex:page controller="SalesBudgetController" showHeader="false"  renderAs="PDF" readOnly="true" applyBodyTag="false"
+    applyHtmlTag="false">
+
+
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+
+    <head>
+        <style type="text/css" media="print">
+            @page {
+                @bottom-right {
+                    font-family: sans-serif;
+                    font-size: 80%;
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+
+                @top-center {
+                    content: element(header);
+                }
+
+            }
+
+            @page {
+                size: A4 landscape;
+            }
+
+            .report-cont .page-break:not(:last-child){
+                page-break-after: always;
+            }
+
+            div.header {
+                padding: 10px;
+                position: running(header);
+            }
+
+           
+            .report-title {
+                font-weight: bold;
+                font-size: 16px;
+                padding-bottom: 5px;
+            }
+
+
+            body {
+                font-size: 12px;
+            }
+
+
+            table.reportResults {
+                width: 100%;
+            }
+
+            .report-lines {
+                margin: 55px 20px 20px 20px;
+            }
+
+            .logo {
+                position: absolute;
+                max-height: 30px;
+                top: 10px;
+                left: 10px;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+
+            .logo p {
+                margin: 0px;
+            }
+
+            .slds-align_absolute-center {
+                text-align: center;
+
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            .total-row td {
+                border-top: 2px solid black;
+                border-style: solid none double none;
+            }
+
+            th {
+                white-space: nowrap;
+            }
+        </style>
+    </head>
+
+    <div class="header" >
+        <apex:outputText value="{!currentDate}" />
+     </div>
+
+    <body>
+        <div class="slds-scope">
+
+            <div styles="clear">
+                <div class="slds-text-heading_large slds-align_absolute-center">
+                    <h1>
+                        <span>{!results.title}</span>
+                    </h1>
+                </div>
+
+                <div class="logo">
+                    <apex:outputText value="{!logoLink}" escape="false" />
+                    <apex:image url="{!$Resource.chart + '/chart/omnicable-logo-color.png'}" width="auto" height="25"/>
+                </div>
+            </div>
+            <div class="report-lines">
+                <apex:outputPanel id="reportResults" layout="block">
+                    <apex:outputText value="Running..." rendered="{!reportIsRunning}" />
+                    <apex:outputPanel rendered="{!NOT(reportIsRunning)}">
+
+                        <div class="report-cont">
+                        <apex:repeat value="{!results.reports}" var="rep">
+                            <table class="reportResults gridtable">
+                                <caption class="report-title">
+                                    <apex:outputText value="{!rep.title}" />
+                                </caption>
+                                <thead>
+                                    <th> Date </th>
+                                    <th> Invoice Number </th>
+                                    <th> Dollar Amount </th>
+                                </thead>
+                                <tbody>
+                                    <apex:repeat value="{!rep.lineItems}" var="item">
+                                        <tr>
+                                            <td>
+                                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                                    <apex:param value="{!item.invoiceDate}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{!item.invoiceNumber}" />
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{0, Number, Currency}">
+                                                    <apex:param value="{!item.dollarAmount}" />
+                                                </apex:outputText>
+                                            </td>
+                                        </tr>
+                                    </apex:repeat>
+                                    <tr class="total-row">
+                                        <td>
+                                            <strong>Total</strong>
+                                        </td>
+                                        <td></td>
+                                   
+                                        <td>
+                                            <apex:outputText value="{0, Number, Currency}">
+                                                <apex:param value="{!rep.invoice}" />
+                                            </apex:outputText>
+                                        </td>
+                                    </tr>
+                                    <tr class="total-row">
+                                        <td>
+                                            <strong>Target</strong>
+                                        </td>
+                                        <td></td>
+                                     
+                                        <td>
+                                            <apex:outputText value="{0, Number, Currency}">
+                                                <apex:param value="{!rep.target}" />
+                                            </apex:outputText>
+                                        </td>
+                                    </tr>
+                                    <tr class="total-row">
+                                        <td>
+                                            <strong>Percentage of Target</strong>
+                                        </td>
+                                        <td></td>
+                                  
+                                        <td>
+                                            <apex:outputText value="{0,number,0.0}%">
+                                                <apex:param value="{!rep.percentage * 100 }" />
+                                            </apex:outputText>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="page-break" style="page-break-after: always;" />
+                        </apex:repeat>
+                        </div>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </div>
+        </div>
+    </body>
+    </html>
+
+</apex:page>

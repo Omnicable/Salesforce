@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approved_Email_Notification</fullName>
+        <description>Approved Email Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Price_Book_Request_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Price_Book_Approval_Rejected</fullName>
+        <description>Price Book Approval Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Price_Book_Request_Response</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Price_Book_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Price_Book_Denied</fullName>
+        <field>Status__c</field>
+        <literalValue>Denied</literalValue>
+        <name>Denied</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Price_Book_Request_Cancelled</fullName>
+        <field>Status__c</field>
+        <literalValue>Ready to Submit</literalValue>
+        <name>Price Book Request Cancelled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Expiration_Date</fullName>
+        <description>Set the expiration date when the request is approved</description>
+        <field>Expiration_Date__c</field>
+        <formula>CASE(Expiration__c,
+  &quot;30 Days&quot;, TODAY() + 31,
+  &quot;60 Days&quot;, TODAY() + 61,
+  &quot;90 Days&quot;, TODAY() + 91,
+TODAY() + 352)</formula>
+        <name>Set Expiration Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <tasks>
+        <fullName>Request_Approved</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Request Approved</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Request Approved</subject>
+    </tasks>
+    <tasks>
+        <fullName>Request_Recalled</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Request Recalled</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Request Recalled</subject>
+    </tasks>
+    <tasks>
+        <fullName>Request_Rejected</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Request Rejected</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Request Rejected</subject>
+    </tasks>
+    <tasks>
+        <fullName>Request_Submitted</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Request Submitted</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Request Submitted</subject>
+    </tasks>
+</Workflow>

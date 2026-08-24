@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_12</fullName>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Credit</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>12</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>LAST 30 DAYS</value>
+    </filters>
+    <label>Region 12 Credits</label>
+    <sharedTo>
+        <group>Region_12</group>
+    </sharedTo>
+</ListView>

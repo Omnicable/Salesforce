@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSC_CPI_Review</fullName>
+    <columns>NAME</columns>
+    <columns>Customer__c</columns>
+    <columns>CPI_Rank__c</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>Strategic_Goal__c</columns>
+    <columns>Strategic_Results__c</columns>
+    <columns>Strategic_Results_Trend__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AM_Number__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>111</value>
+    </filters>
+    <filters>
+        <field>AM_Number__c</field>
+        <operation>lessOrEqual</operation>
+        <value>150</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>AM_Number__c</field>
+        <operation>notEqual</operation>
+        <value>116,130</value>
+    </filters>
+    <filters>
+        <field>Area_of_Focus__c</field>
+        <operation>equals</operation>
+        <value>People,Product,Order Size Bucket</value>
+    </filters>
+    <label>SSC CPI Review</label>
+</ListView>

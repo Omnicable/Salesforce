@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_6_Quotes_25k50K</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <columns>GPpct__c</columns>
+    <columns>Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>TotalDollars__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>25000</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>6</value>
+    </filters>
+    <filters>
+        <field>TotalDollars__c</field>
+        <operation>lessOrEqual</operation>
+        <value>50000</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_WEEK</value>
+    </filters>
+    <label>Region 6 Quotes 25k-50K</label>
+    <sharedTo>
+        <group>Region6</group>
+        <role>DistrictSalesManager6</role>
+        <role>RegionalManager6</role>
+    </sharedTo>
+</ListView>

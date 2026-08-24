@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_8_LOD_Projects</fullName>
+    <columns>W_C_TSM__c</columns>
+    <columns>W_C_Account_Manager__c</columns>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Total_Potential__c</columns>
+    <columns>Probability__c</columns>
+    <columns>Kickoff__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Planning,On Hold,Quoted,Followed Up</value>
+    </filters>
+    <filters>
+        <field>Physical_Project_Region__c</field>
+        <operation>equals</operation>
+        <value>8</value>
+    </filters>
+    <filters>
+        <field>LOD__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Region 8 LOD Projects</label>
+    <sharedTo>
+        <group>Large_Order_Department</group>
+        <group>Region8</group>
+        <role>Territory_Sales_Manager</role>
+    </sharedTo>
+</ListView>

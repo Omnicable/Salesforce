@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Focus_Account_Quote_Follow_Ups</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 or 5 or 6)</booleanFilter>
+    <columns>Date__c</columns>
+    <columns>NAME</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Job_Reference__c</columns>
+    <columns>Status__c</columns>
+    <columns>Buy_Bid__c</columns>
+    <columns>Buyer__c</columns>
+    <columns>Buyer_s_Email_Address__c</columns>
+    <columns>Buyer_s_Phone2__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Followup_Date__c</columns>
+    <columns>Total_GPDollars__c</columns>
+    <columns>GPpct__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Followed Up</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <filters>
+        <field>Customer_Number__c</field>
+        <operation>equals</operation>
+        <value>,963590,963381,998551,998883,973415,968358,962840,962257,963005,968335,962500,986029,959644,982310,960510,955175,995005,998617,984180,968346</value>
+    </filters>
+    <filters>
+        <field>Customer_Number__c</field>
+        <operation>equals</operation>
+        <value>,811364,816466,993006,846090,993005,844007,811595,811461,848627,805565,843585,800980,811436,811650,992419,811447,800835,843782,813333,837368</value>
+    </filters>
+    <filters>
+        <field>Customer_Number__c</field>
+        <operation>equals</operation>
+        <value>805596,962771,816281,844518,827721,984600,811498,968501,847251,827643,808201,844517,986104,984168,828775,809342,902003,900812,981693,986139</value>
+    </filters>
+    <label>My Focus Account Quote Follow Ups</label>
+    <sharedTo>
+        <group>SSC</group>
+    </sharedTo>
+</ListView>

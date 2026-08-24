@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E_Commerce_Line_Item_Status__c</fullName>
+    <description>The Line Status field displayed to customers on E-Commerce platform.</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL (Line_Status__c, &quot;Open&quot;), &quot;Open&quot;, 
+IF(ISPICKVAL (Line_Status__c, &quot;In Process&quot;), &quot;Open&quot;, 
+IF(ISPICKVAL (Line_Status__c, &quot;Ready for Pickup&quot;), &quot;Open&quot;, 
+IF(ISPICKVAL (Line_Status__c, &quot;Backordered&quot;), &quot;Open&quot;, 
+IF(ISPICKVAL (Line_Status__c, &quot;Order Received&quot;), &quot;Open&quot;, 
+IF(ISPICKVAL (Line_Status__c, &quot;Shipping&quot;), &quot;Open&quot;, 
+IF(ISPICKVAL (Line_Status__c, &quot;Complete&quot;), &quot;Complete&quot;, 
+IF(ISPICKVAL (Line_Status__c, &quot;Cancelled&quot;), &quot;Cancelled&quot;, 
+&quot;-&quot;))))))))</formula>
+    <label>E-Commerce Line Item Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

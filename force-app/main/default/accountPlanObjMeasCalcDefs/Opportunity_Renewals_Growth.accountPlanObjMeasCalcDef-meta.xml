@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AccountPlanObjMeasCalcDef xmlns="http://soap.sforce.com/2006/04/metadata">
+    <conditions>
+        <fieldName>StageName</fieldName>
+        <operation>Equals</operation>
+        <value>Closed Won</value>
+    </conditions>
+    <conditions>
+        <fieldName>Type</fieldName>
+        <operation>Equals</operation>
+        <value>Renewals</value>
+    </conditions>
+    <description>Define renewal revenue goals. Current Value will be auto-calculated as the sum of your selected Opportunities Amount with  &apos;Renewals&apos; Type and &apos;Closed Won&apos; Stage.</description>
+    <developerName>Opportunity_Renewals_Growth</developerName>
+    <masterLabel>Opportunity Renewals Growth</masterLabel>
+    <rollupType>Sum</rollupType>
+    <status>Active</status>
+    <targetField>Amount</targetField>
+    <targetObject>Opportunity</targetObject>
+</AccountPlanObjMeasCalcDef>

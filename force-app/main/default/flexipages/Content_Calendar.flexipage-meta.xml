@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>configurationData</name>
+                    <value>{&quot;appBuilderConfig&quot;:{&quot;optionSelected&quot;:2},&quot;globalDocumentUrl&quot;:&quot;https://omnicable.quip.com/sk0BAhURixa9/Marketing-Content-Calendar-2020&quot;,&quot;componentTitle&quot;:&quot;Marketing Content Calendar&quot;}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>600</value>
+                </componentInstanceProperties>
+                <componentName>forceContent:embeddedQuipComponent</componentName>
+                <identifier>forceContent_embeddedQuipComponent</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Content Calendar</masterLabel>
+    <template>
+        <name>flexipage:defaultAppHomeTemplate</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

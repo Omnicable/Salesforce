@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesPricePortal__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* uncomment next and last 2 lines to handle negatives and denote them in accounting style -1234 == (1,234.00)  From - https://developer.salesforce.com/forums/?id=906F00000008utHIAQ */
+
+IF(Order_Type__c &lt;&gt;&apos;Credit&apos;,
+SUBSTITUTE(
+IF(VALUE(C2SPRC__c) &lt; 0, &quot;(&quot;, &quot;&quot;) &amp;
+/* uncomment and adjust currency sign */
+&quot;$&quot; &amp; 
+IF(ABS(VALUE(C2SPRC__c)) &gt;= 1000000, TEXT(FLOOR(VALUE(C2SPRC__c) / 1000000)) &amp; &quot;,&quot;, &quot;&quot;)
+&amp; IF(ABS(VALUE(C2SPRC__c)) &gt;= 1000, RIGHT(TEXT(FLOOR(VALUE(C2SPRC__c)/ 1000)), 3) &amp; &quot;,&quot;, &quot;&quot;)
+&amp; RIGHT(TEXT(FLOOR(VALUE(C2SPRC__c))), 3)
+/* multiplier x100 and 2 indicate number of decimal places */
+&amp; &quot;.&quot; &amp; RIGHT(TEXT(ROUND(VALUE(C2SPRC__c)* 100, 0)), 2)
+&amp; IF(VALUE(C2SPRC__c)&lt; 0, &quot;)&quot;, &quot;&quot;)
+,&quot;-&quot;,&quot;&quot;)
+,
+SUBSTITUTE(
+IF(VALUE(C2SPRC__c) &gt; 0, &quot;(&quot;, &quot;&quot;) &amp;
+/* uncomment and adjust currency sign */
+&quot;$&quot; &amp; 
+IF(ABS(VALUE(C2SPRC__c)) &gt;= 1000000, TEXT(FLOOR(VALUE(C2SPRC__c) / 1000000)) &amp; &quot;,&quot;, &quot;&quot;)
+&amp; IF(ABS(VALUE(C2SPRC__c)) &gt;= 1000, RIGHT(TEXT(FLOOR(VALUE(C2SPRC__c)/ 1000)), 3) &amp; &quot;,&quot;, &quot;&quot;)
+&amp; RIGHT(TEXT(FLOOR(VALUE(C2SPRC__c))), 3)
+/* multiplier x100 and 2 indicate number of decimal places */
+&amp; &quot;.&quot; &amp; RIGHT(TEXT(ROUND(VALUE(C2SPRC__c)* 100, 0)), 2)
+&amp; IF(VALUE(C2SPRC__c)&gt; 0, &quot;)&quot;, &quot;&quot;)
+,&quot;-&quot;,&quot;&quot;)
+)
++&apos;/&apos;+ IF(Unit_of_Measure__c =&apos;FT&apos;,&apos;Mft&apos;,Unit_of_Measure__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SalesPricePortal</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

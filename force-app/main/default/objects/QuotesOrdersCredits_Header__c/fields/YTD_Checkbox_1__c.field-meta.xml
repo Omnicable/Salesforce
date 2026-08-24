@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>YTD_Checkbox_1__c</fullName>
+    <formula>(Date__c - DATE(YEAR( Date__c ), 1, 1) + 1) 
+&lt;= 
+(TODAY() - DATE(YEAR( TODAY() ), 1, 1) + 1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>YTD Checkbox 1</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

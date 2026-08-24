@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area_of_Focus_Order_Buckets</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( Area_of_Focus__c , &quot;Order Size Bucket&quot;) &amp;&amp; ISBLANK(TEXT( Order_Size_Buckets__c ))</errorConditionFormula>
+    <errorDisplayField>Order_Size_Buckets__c</errorDisplayField>
+    <errorMessage>Select What Order Size  Bucket for this  area of focus</errorMessage>
+</ValidationRule>

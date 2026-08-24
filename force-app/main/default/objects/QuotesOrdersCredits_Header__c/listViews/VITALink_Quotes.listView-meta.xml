@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VITALink_Quotes</fullName>
+    <columns>Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Customer_Number__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Followup_Date__c</columns>
+    <columns>User_is_AM_or_DSM__c</columns>
+    <columns>Outside_AM_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled,Closed</value>
+    </filters>
+    <filters>
+        <field>VITALink__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>VITALink Quotes</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Corporate</role>
+    </sharedTo>
+</ListView>

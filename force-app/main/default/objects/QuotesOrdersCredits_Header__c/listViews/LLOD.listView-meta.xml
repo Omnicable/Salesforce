@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LLOD</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>LOD__c</columns>
+    <columns>LOD_Copy__c</columns>
+    <columns>Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Job_Reference__c</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Entered_By__c</columns>
+    <columns>Total_Order_Sales__c</columns>
+    <columns>Inside_AM_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Followup_Date__c</columns>
+    <columns>Region__c</columns>
+    <columns>VITALink__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>LOD_text__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LOD__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>LOD_Copy__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>QuotesOrdersCredits_Header__c.Quotes,QuotesOrdersCredits_Header__c.OrderCredits</value>
+    </filters>
+    <label>LOD + LOD Copy QOs</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Large_Order_Department</group>
+    </sharedTo>
+</ListView>

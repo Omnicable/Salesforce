@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>ActionCadence</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Report Type for Cadences and the associated steps. Allows reporting on information such as the engagement of each cadence by month.</description>
+    <join>
+        <outerJoin>true</outerJoin>
+        <relationship>ActionCadenceStep</relationship>
+    </join>
+    <label>Cadences &amp; Steps with Monthly Metrics</label>
+    <sections>
+        <masterLabel>Cadences</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Cadence Steps</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Cadence Step Monthly Metrics</masterLabel>
+    </sections>
+</ReportType>

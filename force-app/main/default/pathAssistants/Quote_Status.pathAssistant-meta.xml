@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <entityName>QuotesOrdersCredits_Header__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Quote Status</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;You&amp;#39;ve followed up. Did you get the order? If not, mark this quote closed and move on!&lt;/p&gt;</info>
+        <picklistValueName>Followed Up</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Have you followed up on this quote?&lt;/p&gt;</info>
+        <picklistValueName>Open</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Quotes</recordTypeName>
+</PathAssistant>

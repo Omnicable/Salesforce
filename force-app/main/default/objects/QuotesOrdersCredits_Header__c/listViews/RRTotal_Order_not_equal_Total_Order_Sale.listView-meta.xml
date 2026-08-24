@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RRTotal_Order_not_equal_Total_Order_Sale</fullName>
+    <columns>Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Buyer__c</columns>
+    <columns>OCC_RewardRedeemed__c</columns>
+    <columns>Total_Order_Sales__c</columns>
+    <columns>TotalDollars__c</columns>
+    <columns>New_Total_Order_Sales__c</columns>
+    <columns>NEW_OCC_Rewards_QOC__c</columns>
+    <columns>TotalOrderSalesPortal__c</columns>
+    <columns>Type__c</columns>
+    <columns>OCC_Rewards__c</columns>
+    <columns>Total_Order_Total_Order_Sales__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Total_Order_Total_Order_Sales__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>notEqual</operation>
+        <value>Credit</value>
+    </filters>
+    <filters>
+        <field>Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>OCC_RewardStep__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>RR &amp; Total Order $ &lt;&gt; Total Order Sale</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Administrator</role>
+    </sharedTo>
+</ListView>

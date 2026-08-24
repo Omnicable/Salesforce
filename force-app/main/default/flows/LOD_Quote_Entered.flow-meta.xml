@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the: LOD Quote Entered workflow rule
+Workflow rule description: Check LOD box when non-VITALink quote entered by LOD Department&quot;</description>
+    <environments>Default</environments>
+    <label>LOD Quote Entered</label>
+    <migratedFromWorkflowRuleName>LOD Quote Entered</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>mainUpdate</name>
+        <label>mainUpdate</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>LOD__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>mainUpdate</targetReference>
+        </connector>
+        <filterLogic>(1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12 OR 13) AND 14 AND 15</filterLogic>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Adam DeFord</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Chris Kennedy</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Aaron Shore</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doug Frederick</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Kim Lamb</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Emmett Mauer</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Gigi Kennedy</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Glenn Richardson</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Jack Donnelly</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Steven Carr</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Jim Turcich</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Dan Maturo</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Entered_By__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Sarah Keune</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>VITALink__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>QuotesOrdersCredits_Header__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

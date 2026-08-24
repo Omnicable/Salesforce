@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Molex_Line_Item__c</fullName>
+    <description>Identifies Molex Line Item</description>
+    <formula>OR(
+    BEGINS(Item_Class_Description__c, &quot;MOLEX&quot;),
+    Item_Class__c = &quot;CP933&quot;,
+    Item_Class__c = &quot;CP943&quot;,
+    Item_Class__c = &quot;FTWH3&quot;,
+    Item_Class__c = &quot;CNWA3&quot;,
+    Item_Class__c = &quot;CNWD3&quot;,
+    OR(
+        Vendor_Number__c = &quot;MOLEX, LLC&quot;,
+        Vendor_Number__c = &quot;34083&quot;
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Molex Line Item ?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

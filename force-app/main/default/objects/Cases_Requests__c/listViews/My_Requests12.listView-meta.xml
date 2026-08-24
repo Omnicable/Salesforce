@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Requests12</fullName>
+    <columns>NAME</columns>
+    <columns>Requested_By__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Subject__c</columns>
+    <columns>Desired_Due_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed,Deferred</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Cases_Requests__c.Marketing_Request</value>
+    </filters>
+    <filters>
+        <field>OWNER.LAST_NAME</field>
+        <operation>notContain</operation>
+        <value>brady,serio,schuhl,fromhold</value>
+    </filters>
+    <label>Unassigned Requests</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

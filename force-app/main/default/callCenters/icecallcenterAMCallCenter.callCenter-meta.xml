@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CallCenter xmlns="http://soap.sforce.com/2006/04/metadata">
+    <adapterUrl>/apex/ingenius__CTIRedirect</adapterUrl>
+    <customSettings>{&quot;reqSoftphoneHeight&quot;:&quot;0&quot;,&quot;reqUseApi&quot;:&quot;true&quot;}</customSettings>
+    <displayName>AM CallCenter</displayName>
+    <displayNameLabel>Display Name</displayNameLabel>
+    <internalNameLabel>Internal Name</internalNameLabel>
+    <sections>
+        <items>
+            <label>CTI Adapter URL</label>
+            <name>reqAdapterUrl</name>
+            <value>/apex/ingenius__CTIRedirect</value>
+        </items>
+        <items>
+            <label>Use CTI API</label>
+            <name>reqUseApi</name>
+            <value>true</value>
+        </items>
+        <items>
+            <label>Initial Softphone Height</label>
+            <name>reqSoftphoneHeight</name>
+            <value>0</value>
+        </items>
+        <label>General Information</label>
+        <name>reqGeneralInfo</name>
+    </sections>
+    <sections>
+        <items>
+            <label>Call Center Profile</label>
+            <name>profileName</name>
+            <value>AMCallCenter</value>
+        </items>
+        <label>Profile Configuration</label>
+        <name>profileConfiguration</name>
+    </sections>
+    <sections>
+        <items>
+            <label>Client IP Filter Pattern</label>
+            <name>ipRegex</name>
+            <value>.*</value>
+        </items>
+        <label>Availiability Configuration</label>
+        <name>availabilityConfiguration</name>
+    </sections>
+    <sections>
+        <items>
+            <label>Server Version</label>
+            <name>iceVersion</name>
+            <value>2</value>
+        </items>
+        <items>
+            <label>Server A URL</label>
+            <name>resiliencyIceUrlA</name>
+            <value>https://iceserver.omnicable.com/dbdfa0bd-ea02-46e3-bcc6-36b702c469c3/default.html</value>
+        </items>
+        <items>
+            <label>Heartbeat Interval</label>
+            <name>resiliencyHeartbeatTimeout</name>
+            <value>10</value>
+        </items>
+        <items>
+            <label>Base Retry Interval</label>
+            <name>resiliencyBaseRetryInterval</name>
+            <value>10</value>
+        </items>
+        <items>
+            <label>Max Retry Exponent</label>
+            <name>resiliencyMaxRetryShift</name>
+            <value>4</value>
+        </items>
+        <label>Resiliency Configuration</label>
+        <name>resiliencyConfiguration</name>
+    </sections>
+</CallCenter>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Line_item_and_Item_Number_match</fullName>
+    <columns>Line_Item_and_Item_Number_match__c</columns>
+    <columns>Line_Item__c</columns>
+    <columns>Item_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>Leadtime__c</columns>
+    <columns>NotesPortal__c</columns>
+    <columns>C2ACT__c</columns>
+    <columns>C2SPECV__c</columns>
+    <columns>Line_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Date_Line_Entered__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Line item and Item Number match</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>AccountManager3</role>
+    </sharedTo>
+</ListView>
