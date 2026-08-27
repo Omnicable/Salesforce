@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tango_Reward_Step_Value__c</fullName>
+    <description>The number of rewards gained per Tango Reward Step. I.E. a step of 200 and a value of 1 means the quote earns 1 reward for every 200 dollars.</description>
+    <externalId>false</externalId>
+    <label>Tango Reward Step Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
