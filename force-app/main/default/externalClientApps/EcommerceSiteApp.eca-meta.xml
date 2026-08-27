@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalClientApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>cwilliams@omnicable.com</contactEmail>
+    <distributionState>Packaged</distributionState>
+    <isProtected>false</isProtected>
+    <label>EcommerceSiteApp</label>
+    <orgScopedExternalApp>00DO300000WNjgL:EcommerceSiteApp</orgScopedExternalApp>
+</ExternalClientApplication>
