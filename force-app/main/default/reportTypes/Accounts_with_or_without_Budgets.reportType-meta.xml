@@ -346,11 +346,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Max_Date_Order__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
             <table>Account</table>
         </columns>
@@ -752,6 +747,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CSC_Transfer__c</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>test__c</field>
             <table>Account</table>
         </columns>
         <masterLabel>Accounts</masterLabel>
