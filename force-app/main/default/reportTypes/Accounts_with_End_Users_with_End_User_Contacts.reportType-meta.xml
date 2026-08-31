@@ -381,11 +381,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Max_Date_Order__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
             <table>Account</table>
         </columns>
@@ -522,11 +517,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Prior_YTD_Sales__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>QOC_YTD_SalesNonPolicy__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -917,6 +907,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CSC_Transfer__c</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>test__c</field>
             <table>Account</table>
         </columns>
         <masterLabel>Accounts</masterLabel>
