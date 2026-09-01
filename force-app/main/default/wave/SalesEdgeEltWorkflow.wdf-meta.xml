@@ -3,6 +3,6 @@
     <content xsi:nil="true"/>
     <application>WAVE_PUBLIC_DATAFLOWS</application>
     <dataflowType>User</dataflowType>
-    <description>Recipe Account_recipe</description>
-    <masterLabel>Account_recipe</masterLabel>
+    <description>This is the default Salesforce dataflow.</description>
+    <masterLabel>Default Salesforce Dataflow</masterLabel>
 </WaveDataflow>
