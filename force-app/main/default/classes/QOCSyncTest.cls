@@ -1,11 +1,23 @@
-@isTest
-public  class QOCSyncTest {
+/**
+ * @description Unit tests for QOC header, detail, and product sync: {@link OpportunityHeaderSyncBatch},
+ *              {@link OpportunityDetailSyncBatch}, {@link ProductSyncBatch}, {@link OpportunitySync},
+ *              {@link QuoteSync}, {@link OrderSync}, line syncs, {@link OrderContentDocumentLinkHandler},
+ *              {@link SyncBase}, schedulers, {@link OppSyncCleanErrorHandler}, {@link Notify_Region_Leads},
+ *              {@link SalesCloudPostDeployment}, and {@link PriceSheetController}.
+ * @group QOC Sync
+ * @see OpportunityHeaderSyncBatch
+ * @see OpportunityDetailSyncBatch
+ * @see OrderSync
+ * @see OrderContentDocumentLinkHandler
+ * @see SyncBase
+ */
+@IsTest
+public class QOCSyncTest {
     
-     /**
-     * @description
-     * @author chrisw@launchdm.com | 09-03-2022
-     * @param User user
-     **/
+    /**
+     * @description Returns the reusable QOC test Account ({@code Account_Number__c = QOC-TEST-ACCT}), inserting it if needed.
+     * @return Account used as Customer on QOC headers in this class.
+     */
     public static Account getTestAccount() {
         List<Account> accounts = [
             SELECT Id, Account_Number__c
@@ -27,6 +39,11 @@ public  class QOCSyncTest {
         return account;
     }
 
+    /**
+     * @description Inserts a buyer Contact on the given Account for QOC header tests.
+     * @param account Parent Account; {@link Contact#Ext_Id__c} is {@code Account_Number__c:0}.
+     * @return Inserted Contact.
+     */
     public static Contact getTestContact(Account account) {
         Contact contact = new Contact(
             LastName = 'QOC Buyer',
@@ -68,10 +85,9 @@ public  class QOCSyncTest {
     }
 
     /**
-     * @description create standard price book for testing
-     * @author chrisw@launchdm.com | 09-06-2022
-     * @return Pricebook2
-     **/
+     * @description Activates the org standard price book in tests via {@link Test#getStandardPricebookId}.
+     * @return Standard {@link Pricebook2} with {@code IsActive = true}.
+     */
     public static Pricebook2 createStandardPB() {
         Pricebook2 standardPricebook = new Pricebook2(Id = Test.getStandardPricebookId(), IsActive = true);
         update standardPricebook;
@@ -79,11 +95,10 @@ public  class QOCSyncTest {
     }
 
     /**
-     * @description create accounts for testing
-     * @author chrisw@launchdm.com | 09-06-2022
-     * @param Integer count
-     * @return Account
-     **/
+     * @description Inserts a Potential Distributor Account for price-sheet and related tests.
+     * @param count Unused; retained for call-site compatibility.
+     * @return Inserted Account.
+     */
     public static Account createAccount(Integer count) {
         Id stExam = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Potential Distributor').getRecordTypeId();
         Account account = new Account(
@@ -101,12 +116,11 @@ public  class QOCSyncTest {
     }
 
     /**
-     * @description create test contacts
-     * @author chrisw@launchdm.com | 09-03-2022
-     * @param Integer size
-     * @param String acountId
-     * @return List<Contact>
-     **/
+     * @description Inserts {@code size} Contacts on the given Account with sequential {@link Contact#Ext_Id__c} values.
+     * @param size Number of Contacts to insert.
+     * @param a Parent Account.
+     * @return Inserted Contacts.
+     */
     public static List<Contact> createContacts(Integer size, Account a) {
         List<Contact> contacts = new List<Contact>();
 
@@ -130,12 +144,11 @@ public  class QOCSyncTest {
     }
 
     /**
-     * @description create price book approvals for testing
-     * @author chrisw@launchdm.com | 09-06-2022
-     * @param Integer count
-     * @param List<Pricebook2> pbs
-     * @return List<Price_Book_Approval__c>
-     **/
+     * @description Inserts price book approval rows (and one expired approval) for the given price books.
+     * @param count Number of non-expired approvals to create (one per price book index).
+     * @param pbs Price books to attach; {@code pbs[i]} is used for the ith approval.
+     * @return Inserted {@link Price_Book_Approval__c} rows including the expired record.
+     */
     public static List<Price_Book_Approval__c> createPBAs(Integer count, List<Pricebook2> pbs) {
         User user = [SELECT Id FROM User LIMIT 1];
         List<String> statuses = new List<String>{ 'Approved', 'Ready to Submit', 'Not Ready', 'Pending' };
@@ -168,11 +181,10 @@ public  class QOCSyncTest {
     }
 
     /**
-     * @description create products for testing
-     * @author chrisw@launchdm.com | 09-06-2022
-     * @param Integer count
-     * @return List<Product2>
-     **/
+     * @description Inserts {@code count} {@link Product2} rows for price-sheet tests.
+     * @param count Number of products to insert.
+     * @return Inserted products.
+     */
     public static List<Product2> createProducts(Integer count) {
         List<Product2> records = new List<Product2>();
         List<PriceBookEntry> entries = new List<PriceBookEntry>();
@@ -200,13 +212,12 @@ public  class QOCSyncTest {
     }
 
     /**
-     * @description create price book entries for testing
-     * @author chrisw@launchdm.com | 09-06-2022
-     * @param Integer count
-     * @param List<Product2> prods
-     * @param List<PriceBook2> pbs
-     * @return List<PricebookEntry>
-     **/
+     * @description Inserts a {@link PricebookEntry} for each product and price book combination.
+     * @param count Unused; retained for call-site compatibility.
+     * @param prods Products to add to each price book.
+     * @param pbs Price books that receive entries.
+     * @return Inserted price book entries.
+     */
     public static List<PricebookEntry> createPriceBookEntries(Integer count, List<Product2> prods, List<PriceBook2> pbs) {
         List<PricebookEntry> records = new List<PricebookEntry>();
         for (Product2 prod : prods) {
@@ -225,11 +236,10 @@ public  class QOCSyncTest {
     }
 
     /**
-     * @description create parts for testing
-     * @author chrisw@launchdm.com | 09-06-2022
-     * @param Integer count
-     * @return List<Part_Numbers__c>
-     **/
+     * @description Inserts {@code count} {@link Part_Numbers__c} rows with matching Name and Item_Number__c.
+     * @param count Number of parts to insert.
+     * @return Inserted parts.
+     */
     public static List<Part_Numbers__c> createParts(Integer count) {
         List<Part_Numbers__c> records = new List<Part_Numbers__c>();
         for (Integer i = 0; i < count; i++) {
@@ -245,11 +255,10 @@ public  class QOCSyncTest {
 
 
     /**
-     * @description create base price books for testing
-     * @author chrisw@launchdm.com | 09-06-2022
-     * @param Integer count
-     * @return List<PriceBook2>
-     **/
+     * @description Inserts {@code count} active price books, alternating Base and Custom {@link Pricebook2#Type__c}.
+     * @param count Number of price books to insert.
+     * @return Inserted price books.
+     */
     public static List<PriceBook2> createPriceBooks(Integer count) {
         List<Pricebook2> records = new List<Pricebook2>();
         for (Integer i = 0; i < count; i++) {
@@ -262,11 +271,10 @@ public  class QOCSyncTest {
     }
 
     /**
-     * @description create custom price books for testing
-     * @author chrisw@launchdm.com | 09-06-2022
-     * @param List<Pricebook2> pbs
-     * @return List<PriceBook2>
-     **/
+     * @description Points Custom price books at the first list row as {@link Pricebook2#Base_Price_Book__c} and renames that base book.
+     * @param pbs Price books from {@link #createPriceBooks}.
+     * @return The same list after update.
+     */
     public static List<PriceBook2> setCustomPriceBooks(List<Pricebook2> pbs) {
         for (PriceBook2 pb : pbs) {
             if (pb.Type__c == 'Custom') {
@@ -285,6 +293,11 @@ public  class QOCSyncTest {
 
     /**
      * @description Creates a QOC header row for sync tests.
+     * @param customer Account set as {@link QuotesOrdersCredits_Header__c#Customer__c}.
+     * @param buyer Contact set as {@link QuotesOrdersCredits_Header__c#Buyer__c}; null leaves Buyer blank.
+     * @param typeValue {@link QuotesOrdersCredits_Header__c#Type__c} (Quote, Order, or Credit).
+     * @param orderNumber Value stored on Name and {@link QuotesOrdersCredits_Header__c#Order_Number__c}.
+     * @return Inserted header.
      */
     public static QuotesOrdersCredits_Header__c createQOCHeader(
         Account customer,
@@ -308,6 +321,10 @@ public  class QOCSyncTest {
 
     /**
      * @description Creates a QOC detail row linked to a header.
+     * @param headerId Parent {@link QuotesOrdersCredits_Header__c} Id.
+     * @param extId {@link QuoteOrderCredit_Details__c#Ext_Id__c} used for line-item matching.
+     * @param partNumberId Optional {@link Part_Numbers__c} Id for {@link QuoteOrderCredit_Details__c#Item_Number__c}.
+     * @return Inserted detail.
      */
     public static QuoteOrderCredit_Details__c createQOCDetail(
         Id headerId,
@@ -326,7 +343,9 @@ public  class QOCSyncTest {
     }
 
     /**
-     * @description Links a Product2 to a part for detail sync product resolution.
+     * @description Links a {@link Product2} to a part for detail sync product resolution.
+     * @param part Part that receives {@link Product2#Part_Number_Ref__c} and matching item number.
+     * @return Inserted product.
      */
     public static Product2 createProductForPart(Part_Numbers__c part) {
         createStandardPB();
@@ -343,6 +362,11 @@ public  class QOCSyncTest {
         return product;
     }
 
+    /**
+     * @description Queries accessible non-BASE64 fields on QOC headers for DataWeave header sync.
+     * @param headerIds Header Ids to load.
+     * @return Header rows with all accessible fields populated.
+     */
     public static List<QuotesOrdersCredits_Header__c> queryHeaders(Set<Id> headerIds) {
         Map<String, Schema.SObjectField> fieldMap = QuotesOrdersCredits_Header__c.SObjectType.getDescribe().fields.getMap();
         List<String> fieldNames = new List<String>();
@@ -361,6 +385,10 @@ public  class QOCSyncTest {
         return Database.query(soql);
     }
 
+    /**
+     * @description Runs {@link OpportunitySync}, {@link QuoteSync}, then {@link OrderSync} for one header.
+     * @param header Header to reload and sync.
+     */
     public static void runHeaderSyncChain(QuotesOrdersCredits_Header__c header) {
         List<QuotesOrdersCredits_Header__c> headers = queryHeaders(new Set<Id>{ header.Id });
         Id standardPricebookId = Test.getStandardPricebookId();
@@ -370,6 +398,11 @@ public  class QOCSyncTest {
         new OrderSync(headers, opportunitySync.standardPricebookId).runSync();
     }
 
+    /**
+     * @description Queries accessible non-BASE64 fields on QOC details for DataWeave line sync.
+     * @param detailIds Detail Ids to load.
+     * @return Detail rows with all accessible fields populated.
+     */
     public static List<QuoteOrderCredit_Details__c> queryDetails(Set<Id> detailIds) {
         Map<String, Schema.SObjectField> fieldMap = QuoteOrderCredit_Details__c.SObjectType.getDescribe().fields.getMap();
         List<String> fieldNames = new List<String>();
@@ -388,6 +421,10 @@ public  class QOCSyncTest {
         return Database.query(soql);
     }
 
+    /**
+     * @description Runs {@link OpportunityLineItemSync}, {@link QuoteLineSync}, then {@link OrderLineSync} for one detail.
+     * @param detail Detail to reload and sync.
+     */
     public static void runDetailSyncChain(QuoteOrderCredit_Details__c detail) {
         List<QuoteOrderCredit_Details__c> details = queryDetails(new Set<Id>{ detail.Id });
 
@@ -429,6 +466,11 @@ public  class QOCSyncTest {
         ).runSync();
     }
 
+    /**
+     * @description Invokes {@link OpportunityDetailSyncBatch#execute} with an explicit detail scope, then {@code finish}.
+     * @param detailIds Detail Ids loaded into the execute scope; empty skips execute.
+     * @param extIds External Ids passed to the batch constructor.
+     */
     public static void runDetailSyncBatch(Set<Id> detailIds, Set<String> extIds) {
         // start() always uses the watermark + open sync-error SOQL (constructor detailIds are unused).
         // Drive execute with an explicit scope so tests remain deterministic.
@@ -439,6 +481,10 @@ public  class QOCSyncTest {
         batch.finish(null);
     }
 
+    /**
+     * @description Runs {@link ProductSyncBatch} start, execute (for the given parts), and finish.
+     * @param partIds {@link Part_Numbers__c} Ids in execute scope.
+     */
     public static void runProductSyncBatch(Set<Id> partIds) {
         ProductSyncBatch batch = new ProductSyncBatch(partIds);
         batch.start(null);
@@ -453,6 +499,10 @@ public  class QOCSyncTest {
         batch.finish(null);
     }
 
+    /**
+     * @description Returns one org-seeded {@link Part_Numbers__c} row with an item number.
+     * @return A part required by product-sync tests that rely on existing org data.
+     */
     public static Part_Numbers__c getExistingPartForSync() {
         List<Part_Numbers__c> parts = [
             SELECT Id, Name, Item_Number__c, Active__c
@@ -464,6 +514,9 @@ public  class QOCSyncTest {
         return parts[0];
     }
 
+    /**
+     * @description Quote-type header batch sync inserts Opportunity, Quote, and Order for the header order number.
+     */
     @IsTest
     static void headerSyncBatch_insertsOpportunityQuoteAndOrder() {
         Account customer = getTestAccount();
@@ -480,6 +533,9 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM Quote WHERE Order_Number__c = :header.Order_Number__c]);
     }
 
+    /**
+     * @description Order-type header with Invoiced status syncs an {@link Order} row.
+     */
     @IsTest
     static void headerSyncBatch_orderTypeSyncsOrderRecord() {
         Account customer = getTestAccount();
@@ -497,6 +553,200 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM Order WHERE Order_Number__c = :header.Order_Number__c]);
     }
 
+    /**
+     * @description {@link OrderContentDocumentLinkHandler#copyFromQocHeaders} copies existing header files
+     *              onto an Order that references the header via {@link Order#Quote_Order_Credit__c}.
+     */
+    @IsTest
+    static void orderInsert_copiesHeaderContentDocumentLinksToOrder() {
+        Account customer = getTestAccount();
+        Contact buyer = getTestContact(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Order', 'QOC-H-CDL-001');
+
+        ContentVersion version = new ContentVersion(
+            Title = 'QOC Header Attachment',
+            PathOnClient = 'qoc-header.txt',
+            VersionData = Blob.valueOf('header file'),
+            IsMajorVersion = true
+        );
+        insert version;
+        Id contentDocumentId = [
+            SELECT ContentDocumentId
+            FROM ContentVersion
+            WHERE Id = :version.Id
+        ].ContentDocumentId;
+        insert new ContentDocumentLink(
+            ContentDocumentId = contentDocumentId,
+            LinkedEntityId = header.Id,
+            ShareType = 'V',
+            Visibility = 'AllUsers'
+        );
+
+        Order createdOrder = new Order(
+            AccountId = customer.Id,
+            EffectiveDate = Date.today(),
+            Status = 'Draft',
+            Pricebook2Id = Test.getStandardPricebookId(),
+            Quote_Order_Credit__c = header.Id,
+            Order_Number__c = header.Order_Number__c
+        );
+        insert createdOrder;
+
+        Test.startTest();
+        OrderContentDocumentLinkHandler.copyFromQocHeaders(new List<Order>{ createdOrder });
+        Test.stopTest();
+
+        System.assertEquals(
+            1,
+            [
+                SELECT COUNT()
+                FROM ContentDocumentLink
+                WHERE LinkedEntityId = :createdOrder.Id AND ContentDocumentId = :contentDocumentId
+            ]
+        );
+    }
+
+    /**
+     * @description Inserting a header {@link ContentDocumentLink} copies the file onto the related Order.
+     */
+    @IsTest
+    static void headerContentDocumentLinkInsert_copiesFileToRelatedOrder() {
+        Account customer = getTestAccount();
+        Contact buyer = getTestContact(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Order', 'QOC-H-CDL-INS-001');
+        Order relatedOrder = new Order(
+            AccountId = customer.Id,
+            EffectiveDate = Date.today(),
+            Status = 'Draft',
+            Pricebook2Id = Test.getStandardPricebookId(),
+            Quote_Order_Credit__c = header.Id,
+            Order_Number__c = header.Order_Number__c
+        );
+        insert relatedOrder;
+
+        Test.startTest();
+        Id contentDocumentId = insertHeaderFile(header.Id, 'qoc-header-insert.txt');
+        Test.stopTest();
+
+        System.assertEquals(
+            1,
+            [
+                SELECT COUNT()
+                FROM ContentDocumentLink
+                WHERE LinkedEntityId = :relatedOrder.Id AND ContentDocumentId = :contentDocumentId
+            ]
+        );
+    }
+
+    /**
+     * @description Updating header {@link ContentDocumentLink} Visibility copies that value onto the Order link.
+     */
+    @IsTest
+    static void headerContentDocumentLinkUpdate_copiesVisibilityToRelatedOrder() {
+        Account customer = getTestAccount();
+        Contact buyer = getTestContact(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Order', 'QOC-H-CDL-UPD-001');
+        Order relatedOrder = new Order(
+            AccountId = customer.Id,
+            EffectiveDate = Date.today(),
+            Status = 'Draft',
+            Pricebook2Id = Test.getStandardPricebookId(),
+            Quote_Order_Credit__c = header.Id,
+            Order_Number__c = header.Order_Number__c
+        );
+        insert relatedOrder;
+        Id contentDocumentId = insertHeaderFile(header.Id, 'qoc-header-update.txt');
+        ContentDocumentLink headerLink = [
+            SELECT Id, Visibility
+            FROM ContentDocumentLink
+            WHERE LinkedEntityId = :header.Id AND ContentDocumentId = :contentDocumentId
+            LIMIT 1
+        ];
+
+        Test.startTest();
+        headerLink.Visibility = 'InternalUsers';
+        update headerLink;
+        Test.stopTest();
+
+        ContentDocumentLink orderLink = [
+            SELECT Visibility
+            FROM ContentDocumentLink
+            WHERE LinkedEntityId = :relatedOrder.Id AND ContentDocumentId = :contentDocumentId
+            LIMIT 1
+        ];
+        System.assertEquals('InternalUsers', orderLink.Visibility);
+    }
+
+    /**
+     * @description Deleting a header {@link ContentDocumentLink} removes the matching Order file link.
+     */
+    @IsTest
+    static void headerContentDocumentLinkDelete_removesFileFromRelatedOrder() {
+        Account customer = getTestAccount();
+        Contact buyer = getTestContact(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Order', 'QOC-H-CDL-DEL-001');
+        Order relatedOrder = new Order(
+            AccountId = customer.Id,
+            EffectiveDate = Date.today(),
+            Status = 'Draft',
+            Pricebook2Id = Test.getStandardPricebookId(),
+            Quote_Order_Credit__c = header.Id,
+            Order_Number__c = header.Order_Number__c
+        );
+        insert relatedOrder;
+        Id contentDocumentId = insertHeaderFile(header.Id, 'qoc-header-delete.txt');
+        ContentDocumentLink headerLink = [
+            SELECT Id
+            FROM ContentDocumentLink
+            WHERE LinkedEntityId = :header.Id AND ContentDocumentId = :contentDocumentId
+            LIMIT 1
+        ];
+
+        Test.startTest();
+        delete headerLink;
+        Test.stopTest();
+
+        System.assertEquals(
+            0,
+            [
+                SELECT COUNT()
+                FROM ContentDocumentLink
+                WHERE LinkedEntityId = :relatedOrder.Id AND ContentDocumentId = :contentDocumentId
+            ]
+        );
+    }
+
+    /**
+     * @description Inserts a {@link ContentVersion} and links it to a QOC header.
+     * @param headerId {@link QuotesOrdersCredits_Header__c} Id to receive the file.
+     * @param pathOnClient File name used as Title and PathOnClient.
+     * @return {@link ContentVersion#ContentDocumentId} of the inserted file.
+     */
+    private static Id insertHeaderFile(Id headerId, String pathOnClient) {
+        ContentVersion version = new ContentVersion(
+            Title = pathOnClient,
+            PathOnClient = pathOnClient,
+            VersionData = Blob.valueOf('header file'),
+            IsMajorVersion = true
+        );
+        insert version;
+        Id contentDocumentId = [
+            SELECT ContentDocumentId
+            FROM ContentVersion
+            WHERE Id = :version.Id
+        ].ContentDocumentId;
+        insert new ContentDocumentLink(
+            ContentDocumentId = contentDocumentId,
+            LinkedEntityId = headerId,
+            ShareType = 'V',
+            Visibility = 'AllUsers'
+        );
+        return contentDocumentId;
+    }
+
+    /**
+     * @description Credit-type header sync creates an Order and does not create a Quote.
+     */
     @IsTest
     static void headerSyncBatch_creditTypeSyncsOrderWithoutQuote() {
         Account customer = getTestAccount();
@@ -513,6 +763,9 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM Order WHERE Order_Number__c = :header.Order_Number__c]);
     }
 
+    /**
+     * @description Header sync updates an existing Opportunity matched by order number.
+     */
     @IsTest
     static void headerSyncBatch_updatesExistingOpportunity() {
         Account customer = getTestAccount();
@@ -543,6 +796,9 @@ public  class QOCSyncTest {
         System.assertEquals('Negotiation/Review', updated.StageName);
     }
 
+    /**
+     * @description Header batch execute persists the {@link Opportunity_Sync__c} LastModifiedDate watermark.
+     */
     @IsTest
     static void headerSyncBatch_executeUpdatesWatermark() {
         Account customer = getTestAccount();
@@ -575,6 +831,9 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM Opportunity WHERE Order_Number__c = :orderNumber]);
     }
 
+    /**
+     * @description Header batch start/execute/finish completes when the query scope is empty.
+     */
     @IsTest
     static void headerSyncBatch_emptyScopeCompletes() {
         setHeaderSyncWatermark(Datetime.now().addDays(365));
@@ -593,6 +852,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description Direct {@link OpportunitySync}, {@link QuoteSync}, and {@link OrderSync} runSync no-ops on empty header lists.
+     */
     @IsTest
     static void headerSync_directRunSyncNoOpsOnEmptyScope() {
         Id standardPricebookId = Test.getStandardPricebookId();
@@ -603,6 +865,10 @@ public  class QOCSyncTest {
         Test.stopTest();
         System.assert(true, 'Empty scope should complete without error');
     }
+
+    /**
+     * @description Detail sync inserts an {@link OpportunityLineItem} for a non-stock detail.
+     */
 
    
     static void detailSyncBatch_insertsLineItemsForNonStockDetail() {
@@ -623,6 +889,10 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM OpportunityLineItem WHERE Ext_Id__c = :detail.Ext_Id__c]);
         System.assertEquals(1, [SELECT COUNT() FROM QuoteLineItem WHERE Ext_Id__c = :detail.Ext_Id__c]);
     }
+
+    /**
+     * @description Detail sync updates existing line items matched by external Id.
+     */
 
    
     static void detailSyncBatch_updatesExistingLineItems() {
@@ -649,6 +919,10 @@ public  class QOCSyncTest {
         System.assertEquals(250, oli.TotalPrice);
     }
 
+    /**
+     * @description Order-type header detail sync creates an {@link OrderItem}.
+     */
+
    
     static void detailSyncBatch_orderLineSyncForOrderHeader() {
         Account customer = getTestAccount();
@@ -662,6 +936,10 @@ public  class QOCSyncTest {
 
         System.assertEquals(1, [SELECT COUNT() FROM OrderItem WHERE Ext_Id__c = :detail.Ext_Id__c]);
     }
+
+    /**
+     * @description Detail batch execute resolves both item-number and non-stock product mappings.
+     */
 
    
     static void opportunityDetailSyncBatch_executeWithItemNumberAndNonStock() {
@@ -706,6 +984,10 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description Detail batch execute handles a non-stock-only detail scope.
+     */
+
    
     static void opportunityDetailSyncBatch_executeNonStockScope() {
         Account customer = getTestAccount();
@@ -729,6 +1011,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description Detail batch execute and finish complete with an empty scope.
+     */
     @IsTest
     static void opportunityDetailSyncBatch_executeEmptyScope() {
         setDetailSyncWatermark(Datetime.now().addDays(365));
@@ -761,6 +1046,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description Error-scoped detail start marks matching {@link Opportunity_Sync_Item__c} rows as fixed.
+     */
     @IsTest
     static void opportunityDetailSyncBatch_errorScopedStartMarksItemsFixed() {
         createStandardPB();
@@ -819,6 +1107,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description Header batch query includes order numbers from open sync-error items.
+     */
     @IsTest
     static void headerSyncBatch_includesOpenErrorOrderNumbersInQuery() {
         Account customer = getTestAccount();
@@ -860,6 +1151,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description Direct line-sync runSync no-ops on empty detail lists.
+     */
     @IsTest
     static void detailSync_directRunSyncNoOpsOnEmptyScope() {
         Test.startTest();
@@ -885,6 +1179,10 @@ public  class QOCSyncTest {
         System.assert(true, 'Empty detail scope should complete without error');
     }
 
+    /**
+     * @description {@link ProductSync} upsert inserts new products and updates existing rows linked to parts.
+     */
+
    
     static void productSync_upsertInsertsAndUpdates() {
         Part_Numbers__c part = getExistingPartForSync();
@@ -896,6 +1194,10 @@ public  class QOCSyncTest {
         Integer productCount = [SELECT COUNT() FROM Product2 WHERE Item_Number__c = :part.Item_Number__c];
         System.assert(productCount > 0, 'Product sync should create or update a product row');
     }
+
+    /**
+     * @description {@link ProductSync} delete removes products linked to the given parts.
+     */
 
    
     static void productSync_deleteRemovesLinkedProducts() {
@@ -926,6 +1228,9 @@ public  class QOCSyncTest {
         System.assert(!reports.isEmpty(), 'Delete sync should write a product sync report');
     }
 
+    /**
+     * @description {@link ProductSync} no-ops when the part list is empty.
+     */
     @IsTest
     static void productSync_emptyScopeNoOps() {
         Test.startTest();
@@ -934,6 +1239,10 @@ public  class QOCSyncTest {
         System.assert(true, 'Empty product scope should complete without error');
     }
 
+    /**
+     * @description {@link ProductSyncBatch} execute runs product sync for a part scope.
+     */
+
    
     static void productSyncBatch_runsForPartScope() {
         Part_Numbers__c part = getExistingPartForSync();
@@ -941,6 +1250,9 @@ public  class QOCSyncTest {
         System.assertNotEquals(null, ProductSyncBatch.buildQuery());
     }
 
+    /**
+     * @description {@link ProductSyncBatch} empty scope completes without error.
+     */
     @IsTest
     static void productSyncBatch_emptyScopeCompletes() {
         Test.startTest();
@@ -949,6 +1261,9 @@ public  class QOCSyncTest {
         System.assert(true, 'Empty part batch scope should complete without error');
     }
 
+    /**
+     * @description Inserting a QOC header publishes a platform event that enqueues header sync.
+     */
     @IsTest
     static void platformEvent_headerInsertTriggersBatch() {
         Account customer = getTestAccount();
@@ -964,6 +1279,10 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM Opportunity WHERE Order_Number__c = 'QOC-PE-H-001']);
     }
 
+    /**
+     * @description Inserting a part publishes a platform event that enqueues product sync.
+     */
+
    
     static void platformEvent_partInsertTriggersBatch() {
         Part_Numbers__c part = getExistingPartForSync();
@@ -971,6 +1290,25 @@ public  class QOCSyncTest {
         System.assert([SELECT COUNT() FROM Product2 WHERE Item_Number__c = :part.Item_Number__c] > 0);
     }
 
+    /**
+     * @description Runs queued async after {@link Test#startTest}.
+     *              {@link Notify_Region_Leads} futures call {@link Messaging#sendEmail}; orgs without
+     *              single-email permission throw {@link System.EmailException}.
+     */
+    private static void stopTestAllowingMissingSingleEmailPermission() {
+        try {
+            Test.stopTest();
+        } catch (System.EmailException e) {
+            System.assert(
+                e.getMessage().contains('NO_SINGLE_MAIL_PERMISSION'),
+                'Unexpected email failure: ' + e.getMessage()
+            );
+        }
+    }
+
+    /**
+     * @description {@link Notify_Region_Leads} invocable returns success for a valid Opportunity.
+     */
     @IsTest
     static void notifyRegionLeads_invocableMethod() {
         Account customer = getTestAccount();
@@ -991,12 +1329,15 @@ public  class QOCSyncTest {
             new List<Notify_Region_Leads.OpportunityInput>{ input }
         );
         Notify_Region_Leads.sendEmails(new List<Notify_Region_Leads.OpportunityInput>{ input });
-        Test.stopTest();
+        stopTestAllowingMissingSingleEmailPermission();
 
         System.assertEquals(1, outputs.size());
         System.assertEquals(true, outputs[0].success);
     }
 
+    /**
+     * @description {@link Notify_Region_Leads} handles null and empty invocable inputs.
+     */
     @IsTest
     static void notifyRegionLeads_nullAndEmptyInputs() {
         Test.startTest();
@@ -1018,22 +1359,49 @@ public  class QOCSyncTest {
      * @description Harness to exercise {@link SyncBase} protected helpers from tests.
      */
     private class SyncBaseHarness extends SyncBase {
+        /**
+         * @description Exposes {@link SyncBase#getStandardPricebookId}.
+         * @return Standard price book Id.
+         */
         public Id resolveStandardPricebookId() {
             return getStandardPricebookId();
         }
 
+        /**
+         * @description Exposes {@link SyncBase#getProducts}.
+         * @param partNumbers Item numbers to resolve.
+         * @return Map of item number to {@link Product2} Id.
+         */
         public Map<String, Id> resolveProducts(List<String> partNumbers) {
             return getProducts(partNumbers);
         }
 
+        /**
+         * @description Exposes {@link SyncBase#getNonStockProduct}.
+         * @param standardPricebookId Price book used when creating the non-stock product.
+         * @return Non-stock {@link Product2}.
+         */
         public Product2 resolveNonStockProduct(Id standardPricebookId) {
             return getNonStockProduct(standardPricebookId);
         }
 
+        /**
+         * @description Exposes {@link SyncBase#addMissingPricebookEntries}.
+         * @param product2Ids Products that need entries.
+         * @param standardPricebookId Price book that receives missing entries.
+         * @return Price book entries keyed by {@link Product2} Id.
+         */
         public Map<Id, PricebookEntry> resolveMissingEntries(List<Id> product2Ids, Id standardPricebookId) {
             return addMissingPricebookEntries(product2Ids, standardPricebookId);
         }
 
+        /**
+         * @description Exposes {@link SyncBase#resolvePricebookEntryId}.
+         * @param product2Id Product to resolve.
+         * @param standardPricebookId Price book to search.
+         * @param cache Existing entry cache.
+         * @return {@link PricebookEntry} Id.
+         */
         public Id resolvePricebookEntry(
             Id product2Id,
             Id standardPricebookId,
@@ -1042,6 +1410,9 @@ public  class QOCSyncTest {
             return resolvePricebookEntryId(product2Id, standardPricebookId, cache);
         }
 
+        /**
+         * @description Calls {@link SyncBase#saveRecords} with an Opportunity missing required fields to force DML errors.
+         */
         public void exerciseFailedSaveRecords() {
             Opportunity_Sync_Report__c report = new Opportunity_Sync_Report__c(
                 Is_Successful__c = true,
@@ -1057,6 +1428,10 @@ public  class QOCSyncTest {
             saveRecords(invalidRows, new List<SObject>(), report);
         }
     }
+
+    /**
+     * @description {@link SyncBase} helpers resolve the standard price book, products, and price book entries.
+     */
 
    
     static void syncBase_resolveHelpers() {
@@ -1106,6 +1481,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description {@link SyncBase#saveRecords} creates {@link Opportunity_Sync_Item__c} rows when DML fails.
+     */
     @IsTest
     static void syncBase_failedDmlCreatesSyncItems() {
         Test.startTest();
@@ -1118,6 +1496,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description {@link OpportunitySyncScheduler} enqueues {@link OpportunityHeaderSyncBatch}.
+     */
     @IsTest
     static void opportunitySyncScheduler_executesHeaderBatch() {
         setHeaderSyncWatermark(null);
@@ -1129,6 +1510,9 @@ public  class QOCSyncTest {
         System.assert(true, 'Scheduler should enqueue header sync batch');
     }
 
+    /**
+     * @description {@link OpportunityLineSyncScheduler} enqueues {@link OpportunityDetailSyncBatch}.
+     */
     @IsTest
     static void opportunityLineSyncScheduler_executesDetailBatch() {
         setDetailSyncWatermark(null);
@@ -1140,6 +1524,9 @@ public  class QOCSyncTest {
         System.assert(true, 'Scheduler should enqueue detail sync batch');
     }
 
+    /**
+     * @description Opportunity sync preserves a non-order quote stage and reassigns an inactive owner.
+     */
     @IsTest
     static void opportunitySync_contactRoleAndInactiveOwner() {
         Account customer = getTestAccount();
@@ -1200,6 +1587,9 @@ public  class QOCSyncTest {
         System.assertEquals(true, roles[0].IsPrimary);
     }
 
+    /**
+     * @description Opportunity insert creates a primary {@link OpportunityContactRole} for the header buyer.
+     */
     @IsTest
     static void opportunitySync_insertCreatesPrimaryContactRole() {
         Account customer = getTestAccount();
@@ -1232,6 +1622,9 @@ public  class QOCSyncTest {
         System.assertEquals(true, roles[0].IsPrimary);
     }
 
+    /**
+     * @description Changing {@link QuotesOrdersCredits_Header__c#Buyer__c} replaces the primary contact role.
+     */
     @IsTest
     static void opportunitySync_contactChangeReplacesPrimaryRole() {
         Account customer = getTestAccount();
@@ -1305,6 +1698,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description Order-type Opportunity update keeps an unchanged primary contact role.
+     */
     @IsTest
     static void opportunitySync_orderUpdateKeepsUnchangedContactRole() {
         Account customer = getTestAccount();
@@ -1355,6 +1751,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description Clearing {@link QuotesOrdersCredits_Header__c#Buyer__c} deletes the previous primary contact role.
+     */
     @IsTest
     static void opportunitySync_clearsBuyerRemovesPriorContactRole() {
         Account customer = getTestAccount();
@@ -1391,6 +1790,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description {@link OppSyncCleanErrorHandler} marks recognized sync errors as fixed and leaves others unfixed.
+     */
     @IsTest
     static void oppSyncCleanErrorHandler_processesSyncItems() {
         Account customer = getTestAccount();
@@ -1493,6 +1895,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description {@link OppSyncCleanErrorScheduler} enqueues {@link OppSyncCleanErrorHandler}.
+     */
     @IsTest
     static void oppSyncCleanErrorScheduler_executesCleanBatch() {
         Test.startTest();
@@ -1509,6 +1914,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description {@link OppSyncCleanErrorScheduler} does not enqueue a second batch when one is already pending.
+     */
     @IsTest
     static void oppSyncCleanErrorScheduler_skipsWhenBatchPending() {
         Test.startTest();
@@ -1534,6 +1942,9 @@ public  class QOCSyncTest {
         );
     }
 
+    /**
+     * @description {@link Notify_Region_Leads#sendEmails} future path completes for an Opportunity input.
+     */
     @IsTest
     static void notifyRegionLeads_futureEmailPath() {
         new Notify_Region_Leads();
@@ -1557,12 +1968,15 @@ public  class QOCSyncTest {
         );
         Notify_Region_Leads.sendEmails(new List<Notify_Region_Leads.OpportunityInput>{ input });
         Notify_Region_Leads.sendEmails(new List<Notify_Region_Leads.OpportunityInput>());
-        Test.stopTest();
+        stopTestAllowingMissingSingleEmailPermission();
 
         System.assertEquals(1, outputs.size());
         System.assertEquals(true, outputs[0].success);
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment} test action completes for a QOC header.
+     */
     @IsTest
     static void salesCloudPostDeployment_batchActions() {
         Account customer = getTestAccount();
@@ -1580,6 +1994,9 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM QuotesOrdersCredits_Header__c WHERE Id = :header.Id]);
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment} update action completes for a QOC detail.
+     */
     @IsTest
     static void salesCloudPostDeployment_detailUpdateAndDelete() {
         Account customer = getTestAccount();
@@ -1598,6 +2015,9 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM QuoteOrderCredit_Details__c WHERE Id = :detail.Id]);
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment} update action completes for a QOC header.
+     */
     @IsTest
     static void salesCloudPostDeployment_headerUpdateAction() {
         Account customer = getTestAccount();
@@ -1615,6 +2035,9 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM QuotesOrdersCredits_Header__c WHERE Id = :header.Id]);
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment} test action completes for an {@link Opportunity_Sync_Item__c}.
+     */
     @IsTest
     static void salesCloudPostDeployment_syncItemScope() {
         Date windowStart = Date.today().addDays(-1);
@@ -1645,6 +2068,9 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM Opportunity_Sync_Item__c WHERE Id = :item.Id]);
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment} completes without error for an unknown record type.
+     */
     @IsTest
     static void salesCloudPostDeployment_unknownTypeAndSyncItems() {
         Date windowStart = Date.today().addDays(-1);
@@ -1660,6 +2086,9 @@ public  class QOCSyncTest {
         System.assert(true, 'Unknown record type should complete without error');
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment#scheduleSync} registers schedulable jobs in tests.
+     */
     @IsTest
     static void salesCloudPostDeployment_scheduleSync() {
         Test.startTest();
@@ -1669,6 +2098,9 @@ public  class QOCSyncTest {
         System.assert(true, 'scheduleSync should register schedulable jobs in test context');
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment} addMembers action creates {@link OpportunityTeamMember} rows.
+     */
     @IsTest
     static void salesCloudPostDeployment_addOpportunityMembers() {
         Account customer = getTestAccount();
@@ -1703,6 +2135,10 @@ public  class QOCSyncTest {
         System.assertEquals('Edit', members[0].OpportunityAccessLevel);
     }
 
+    /**
+     * @description {@link SyncBase} creates the non-stock product and related price book entries.
+     */
+
    
     static void syncBase_createNonStockProductAndEntries() {
         Id standardPricebookId = Test.getStandardPricebookId();
@@ -1727,6 +2163,10 @@ public  class QOCSyncTest {
             ).containsKey(existingNonStock[0].Id)
         );
     }
+
+    /**
+     * @description {@link SyncBase} resolves the non-stock product and missing price book entries.
+     */
 
    
     static void syncBase_nonStockAndMissingEntries() {
@@ -1761,6 +2201,9 @@ public  class QOCSyncTest {
         }
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment} direct execute paths complete for header and related records.
+     */
     @IsTest
     static void salesCloudPostDeployment_directExecutePaths() {
         Account customer = getTestAccount();
@@ -1813,6 +2256,10 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM Opportunity_Sync_Item__c WHERE Id = :item.Id]);
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment} part start query path completes.
+     */
+
    
     static void salesCloudPostDeployment_partStartQuery() {
         List<Part_Numbers__c> parts = [
@@ -1831,6 +2278,10 @@ public  class QOCSyncTest {
         );
         System.assertNotEquals(null, partBatch.start(null));
     }
+
+    /**
+     * @description {@link PriceSheetController} static methods return results for seeded price book data.
+     */
 
    
     static void priceSheetController_staticMethods() {
@@ -1905,6 +2356,10 @@ public  class QOCSyncTest {
         Test.stopTest();
     }
 
+    /**
+     * @description {@link PriceSheetController} deletes a PB account link and handles duplicate-email save.
+     */
+
    
     static void priceSheetController_deleteLinkAndDuplicateEmail() {
         List<Price_Book_Approval__c> pbaRows = [
@@ -1947,6 +2402,10 @@ public  class QOCSyncTest {
         Test.stopTest();
     }
 
+    /**
+     * @description {@link PriceSheetController#saveCustomPriceBook} persists a custom price book.
+     */
+
    
     static void priceSheetController_saveCustomPriceBook() {
         List<Price_Book_Approval__c> pbaRows = [
@@ -1981,6 +2440,10 @@ public  class QOCSyncTest {
         System.assertNotEquals(null, saved.Id);
     }
 
+    /**
+     * @description {@link PriceSheetController} CSV page constructor populates CSV output.
+     */
+
    
     static void priceSheetController_constructorCsvPath() {
         List<Price_Book_Approval__c> pbaRows = [
@@ -2003,6 +2466,10 @@ public  class QOCSyncTest {
         System.assert(controller.csv.contains('Part #'));
     }
 
+    /**
+     * @description {@link PriceSheetController} PDF page constructor populates PDF output.
+     */
+
    
     static void priceSheetController_constructorPdfPath() {
         List<Price_Book_Approval__c> pbaRows = [
@@ -2024,6 +2491,10 @@ public  class QOCSyncTest {
         System.assertNotEquals(null, controller.entryCatMap);
     }
 
+    /**
+     * @description {@link PriceSheetController} getAvailableOptions returns picklist options.
+     */
+
    
     static void priceSheetController_getAvailableOptions() {
         List<PricebookEntry> entries = [
@@ -2035,6 +2506,10 @@ public  class QOCSyncTest {
         System.assert(!entries.isEmpty(), 'Org seed data must include attachment-visible price book entries');
         System.assert(PriceSheetController.getAvailableOptions(entries, 'Category__c').size() >= 0);
     }
+
+    /**
+     * @description {@link PriceSheetController} handleTypeChange updates controller state.
+     */
 
    
     static void priceSheetController_handleTypeChange() {
