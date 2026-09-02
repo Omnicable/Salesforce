@@ -3,6 +3,11 @@
  *              to {@link Order} records via DataWeave ({@code qocToOrder}). Matches existing rows by
  *              {@link Order#Order_Number__c}, applies insert/update routing with partial-success DML through
  *              {@link SyncBase}, and links new Orders to parent Opportunity and Quote stubs by order number.
+ *              After Orders are persisted, {@link OrderContentDocumentLinkHandler#copyFromQocHeaders} copies
+ *              header {@link ContentDocumentLink} rows onto related Orders (matched by
+ *              {@link Order#Quote_Order_Credit__c}). Later header file insert, update, or delete is synced to
+ *              those Orders by {@link OrderContentDocumentLinkHandler#syncFromQocHeaderLinks} from
+ *              {@link ContentDocumentLinkTrigger}.
  *              <p>
  *              Typically invoked from {@link OpportunityHeaderSyncBatch#execute} after {@link QuoteSync}.
  *              Only Order and Credit header types are in scope. {@link #standardPricebookId} is usually supplied
@@ -13,6 +18,7 @@
  * @see OpportunitySync
  * @see QuoteSync
  * @see OpportunityHeaderSyncBatch
+ * @see OrderContentDocumentLinkHandler
  */
 public  class OrderSync extends SyncBase {
     /**
@@ -66,7 +72,8 @@ public  class OrderSync extends SyncBase {
     
     /**
      * @description Runs the full Order sync for the current header scope: collect keys, load existing rows,
-     *              transform via DataWeave, route to insert/update lists, and persist Orders.
+     *              transform via DataWeave, route to insert/update lists, persist Orders, then copy QOC header
+     *              files onto those Orders via {@link OrderContentDocumentLinkHandler#copyFromQocHeaders}.
      */
     public void runSync() {
         if (headers == null || headers.isEmpty()) {
@@ -89,6 +96,7 @@ public  class OrderSync extends SyncBase {
         
         assignRecordsToUpdateAndInsert(orders);
         saveRecords(toInsert, toUpdate, report);
+        OrderContentDocumentLinkHandler.copyFromQocHeaders(orders);
     }
     
     /**
@@ -112,7 +120,7 @@ public  class OrderSync extends SyncBase {
                 }else{
                     o.Pricebook2Id = existingOrder.Pricebook2Id;
                 }
-               
+                
                 o.Id = existingOrder.Id;
                 o.Opportunity = null;
                 o.Quote = null;
