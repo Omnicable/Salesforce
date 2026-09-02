@@ -1291,6 +1291,22 @@ public class QOCSyncTest {
     }
 
     /**
+     * @description Runs queued async after {@link Test#startTest}.
+     *              {@link Notify_Region_Leads} futures call {@link Messaging#sendEmail}; orgs without
+     *              single-email permission throw {@link System.EmailException}.
+     */
+    private static void stopTestAllowingMissingSingleEmailPermission() {
+        try {
+            Test.stopTest();
+        } catch (System.EmailException e) {
+            System.assert(
+                e.getMessage().contains('NO_SINGLE_MAIL_PERMISSION'),
+                'Unexpected email failure: ' + e.getMessage()
+            );
+        }
+    }
+
+    /**
      * @description {@link Notify_Region_Leads} invocable returns success for a valid Opportunity.
      */
     @IsTest
@@ -1313,7 +1329,7 @@ public class QOCSyncTest {
             new List<Notify_Region_Leads.OpportunityInput>{ input }
         );
         Notify_Region_Leads.sendEmails(new List<Notify_Region_Leads.OpportunityInput>{ input });
-        Test.stopTest();
+        stopTestAllowingMissingSingleEmailPermission();
 
         System.assertEquals(1, outputs.size());
         System.assertEquals(true, outputs[0].success);
@@ -1952,7 +1968,7 @@ public class QOCSyncTest {
         );
         Notify_Region_Leads.sendEmails(new List<Notify_Region_Leads.OpportunityInput>{ input });
         Notify_Region_Leads.sendEmails(new List<Notify_Region_Leads.OpportunityInput>());
-        Test.stopTest();
+        stopTestAllowingMissingSingleEmailPermission();
 
         System.assertEquals(1, outputs.size());
         System.assertEquals(true, outputs[0].success);
