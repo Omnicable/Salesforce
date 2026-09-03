@@ -42,19 +42,6 @@
         <language>en_US</language>
     </filter>
     <format>Summary</format>
-    <formattingRules>
-        <columnName>FORMULA1</columnName>
-        <values>
-            <backgroundColor>#FF9897</backgroundColor>
-            <rangeUpperBound>50.0</rangeUpperBound>
-        </values>
-        <values>
-            <rangeUpperBound>99.0</rangeUpperBound>
-        </values>
-        <values>
-            <backgroundColor>#95FFAF</backgroundColor>
-        </values>
-    </formattingRules>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
         <field>USERS.NAME</field>
