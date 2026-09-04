@@ -82,7 +82,45 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
      * @return Query locator for headers, details, or parts; empty query when the type is unrecognized.
      */
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        if (recordType.getSObjectType() == Schema.QuotesOrdersCredits_Header__c.SObjectType) {
+
+        if(recordType.getSObjectType() == Schema.Order.SObjectType && action == 'SYNC_FILES') {
+            return Database.getQueryLocator([
+                SELECT Id, Name
+                FROM Order
+                WHERE Quote_Order_Credit__c != null
+            ]);
+
+        }else if(recordType.getSObjectType() == Schema.Order.SObjectType && action == 'SYNC_PORTAL_DATA') {
+            return Database.getQueryLocator([
+                SELECT Id, CreatedDate, Portal_Visibility__c, Tango_Redeemed__c, Tango_Reward_Step__c, Tango_Reward_Step_Value__c, Tango_Rewards_Override__c, Invoiced_Date_Time__c,
+                Quote_Order_Credit__r.Sent_to_Customer__c, Quote_Order_Credit__r.OCC_RewardRedeemed__c, Quote_Order_Credit__r.OCC_RewardStep__c, Quote_Order_Credit__r.OCC_RewardStepValue__c, Quote_Order_Credit__r.RewardOverride__c, Quote_Order_Credit__r.Invoiced_Date_Time__c
+                FROM Order
+                WHERE BillToContact.OCC_Rewards__c = true AND Quote_Order_Credit__c != null
+            ]);
+
+        } else if(recordType.getSObjectType() == Schema.Quote.SObjectType && action == 'SYNC_PORTAL_DATA') {
+            return Database.getQueryLocator([
+                SELECT Id, CreatedDate, Portal_Visibility__c, Tango_Redeemed__c, Tango_Reward_Step__c, Tango_Reward_Step_Value__c, Tango_Rewards_Override__c, Payment_Terms__c, Job_Reference__c, Total_Order_Sales__c, Status__c, ExpirationDate, Invoiced_Date_Time__c,
+                Quote_Order_Credit__r.Sent_to_Customer__c, Quote_Order_Credit__r.OCC_RewardRedeemed__c, Quote_Order_Credit__r.OCC_RewardStep__c, Quote_Order_Credit__r.OCC_RewardStepValue__c, Quote_Order_Credit__r.RewardOverride__c, Quote_Order_Credit__r.Expiration_Date__c, Quote_Order_Credit__r.Payment_Terms__c, Quote_Order_Credit__r.Job_Reference__c, Quote_Order_Credit__r.Total_Order_Sales__c, Quote_Order_Credit__r.Status__c, Quote_Order_Credit__r.Invoiced_Date_Time__c
+                FROM Quote
+                WHERE Contact.OCC_Rewards__c = true AND Quote_Order_Credit__c != null
+            ]);
+
+
+        }else if(recordType.getSObjectType() == Schema.OrderItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
+            return Database.getQueryLocator([
+                SELECT Id, CreatedDate, Expected_Date__c, Quote_Order_Credit_Detail__r.Expected_Date__c
+                FROM OrderItem
+                WHERE Quote_Order_Credit_Detail__r.Expected_Date__c != null
+            ]);
+
+        }else if(recordType.getSObjectType() == Schema.QuoteLineItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
+            return Database.getQueryLocator([
+                SELECT Id, CreatedDate, Putups__c, Dollars__c, Freight_Terms__c, C2SPRC__c, Unit_of_Measure__c, Quote_Order_Credit_Detail__r.Putups__c, Quote_Order_Credit_Detail__r.Dollars__c, Quote_Order_Credit_Detail__r.Freight_Terms__c, Quote_Order_Credit_Detail__r.C2SPRC__c, Quote_Order_Credit_Detail__r.Unit_of_Measure__c
+                FROM QuoteLineItem
+                //WHERE CreatedDate >= :startDate AND CreatedDate < :endDate
+            ]);
+        }else if (recordType.getSObjectType() == Schema.QuotesOrdersCredits_Header__c.SObjectType) {
             return Database.getQueryLocator([
                 SELECT Id, CreatedDate
                 FROM QuotesOrdersCredits_Header__c
@@ -134,6 +172,55 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
     public void execute(Database.BatchableContext bc, List<SObject> scope) {
         total += scope.size();
         
+        if(recordType.getSObjectType() == Schema.Order.SObjectType && action == 'SYNC_FILES') {
+            List<Order> orders = (List<Order>) scope;
+            OrderContentDocumentLinkHandler.copyFromQocHeaders(orders);
+        
+        }else if(recordType.getSObjectType() == Schema.Order.SObjectType && action == 'SYNC_PORTAL_DATA') {
+            for(Order o : (List<Order>) scope) {
+                o.Portal_Visibility__c = o.Quote_Order_Credit__r.Sent_to_Customer__c;
+                o.Tango_Redeemed__c = o.Quote_Order_Credit__r.OCC_RewardRedeemed__c;
+                o.Tango_Reward_Step__c = o.Quote_Order_Credit__r.OCC_RewardStep__c;
+                o.Tango_Reward_Step_Value__c = o.Quote_Order_Credit__r.OCC_RewardStepValue__c;
+                o.Tango_Rewards_Override__c = o.Quote_Order_Credit__r.RewardOverride__c;
+                o.Invoiced_Date_Time__c = o.Quote_Order_Credit__r.Invoiced_Date_Time__c;
+            }
+            System.debug('order scope: ' + scope);
+            update scope;
+        } else if(recordType.getSObjectType() == Schema.Quote.SObjectType && action == 'SYNC_PORTAL_DATA') {
+            for(Quote q : (List<Quote>) scope) {
+                q.Payment_Terms__c = q.Quote_Order_Credit__r.Payment_Terms__c;
+                q.Job_Reference__c = q.Quote_Order_Credit__r.Job_Reference__c;
+                q.Total_Order_Sales__c = q.Quote_Order_Credit__r.Total_Order_Sales__c;
+                q.Status__c = q.Quote_Order_Credit__r.Status__c;
+                q.Portal_Visibility__c = q.Quote_Order_Credit__r.Sent_to_Customer__c;
+                q.Tango_Redeemed__c = q.Quote_Order_Credit__r.OCC_RewardRedeemed__c;
+                q.Tango_Reward_Step__c = q.Quote_Order_Credit__r.OCC_RewardStep__c;
+                q.Tango_Reward_Step_Value__c = q.Quote_Order_Credit__r.OCC_RewardStepValue__c;
+                q.Tango_Rewards_Override__c = q.Quote_Order_Credit__r.RewardOverride__c;
+                q.ExpirationDate = q.Quote_Order_Credit__r.Expiration_Date__c;
+                q.Invoiced_Date_Time__c = q.Quote_Order_Credit__r.Invoiced_Date_Time__c;
+            }
+            System.debug('quote scope: ' + scope);
+            update scope;
+        } else if(recordType.getSObjectType() == Schema.OrderItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
+            for(OrderItem oi : (List<OrderItem>) scope) {
+                oi.Expected_Date__c = oi.Quote_Order_Credit_Detail__r.Expected_Date__c;
+            }
+            System.debug('order item scope: ' + scope);
+            update scope;
+        } else if(recordType.getSObjectType() == Schema.QuoteLineItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
+            for(QuoteLineItem qli : (List<QuoteLineItem>) scope) {
+                qli.Putups__c = qli.Quote_Order_Credit_Detail__r.Putups__c;
+                qli.Dollars__c = qli.Quote_Order_Credit_Detail__r.Dollars__c;
+                qli.Freight_Terms__c = qli.Quote_Order_Credit_Detail__r.Freight_Terms__c;
+                qli.C2SPRC__c = qli.Quote_Order_Credit_Detail__r.C2SPRC__c;
+                qli.Unit_of_Measure__c = qli.Quote_Order_Credit_Detail__r.Unit_of_Measure__c;
+                qli.Line_Number__c = qli.Quote_Order_Credit_Detail__r.Line_Number__c;
+            }
+            System.debug('quote line item scope: ' + scope);
+            update scope;
+        }
         if (action == 'update') {
             update scope;
         } else if (action == 'delete') {

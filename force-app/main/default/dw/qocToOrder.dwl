@@ -52,6 +52,7 @@ fun toOrder(h) = {
     Job_Reference__c: h.Job_Reference__c default null,
     Payment_Terms__c: h.Payment_Terms__c default null,
     Sent_to_Customer__c: toCheckbox(h.Sent_to_Customer__c),
+    Portal_Visibility__c: toCheckbox(h.Sent_to_Customer__c),
     Status__c: h.Status__c default null,
     Status_Code__c: h.Status_Code__c default null,
     Sub_Type__c: h.Sub_Type__c default null,
