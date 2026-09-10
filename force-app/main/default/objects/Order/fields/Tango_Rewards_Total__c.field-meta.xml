@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tango_Rewards_Total__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (Tango_Rewards_Override__c != 0, Tango_Rewards_Override__c, IF(BillToContact.OCC_Rewards__c = True,
+IF(BillToContact.OCC_RewardStep__c != 0 &amp;&amp; BillToContact.OCC_RewardStepValue__c != 0,
+IF(Tango_Reward_Step_Value__c != 0 || Tango_Reward_Step__c != 0, FLOOR( Total_Order_Sales__c / Tango_Reward_Step__c) * Tango_Reward_Step_Value__c, 0), 0), 0) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tango Rewards Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
