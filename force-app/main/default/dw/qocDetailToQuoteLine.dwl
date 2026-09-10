@@ -31,7 +31,13 @@ fun toQuoteLineItem(d) =
         Item_Number__c: d.Item_Number__c default null,
         Order_Type__c: d.Order_Type__c default null,
         ServiceDate: dateOnly(d.Expected_Date__c),
-        OrderNumber__c: d.OrderNumber__c default null
+        OrderNumber__c: d.OrderNumber__c default null,
+        Putups__c : d.Putups__c default null,
+        Dollars__c: d.Dollars__c default null,
+        Freight_Terms__c: d.Freight_Terms__c default null,
+        C2SPRC__c: d.C2SPRC__c default null,
+        Unit_of_Measure__c: d.Unit_of_Measure__c default null
+
     })
 
 ---
