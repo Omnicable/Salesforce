@@ -85,7 +85,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
 
         if(recordType.getSObjectType() == Schema.Order.SObjectType && action == 'SYNC_FILES') {
             return Database.getQueryLocator([
-                SELECT Id, Name
+                SELECT Id, Name, Quote_Order_Credit__c
                 FROM Order
                 WHERE Quote_Order_Credit__c != null
             ]);
@@ -116,7 +116,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
 
         }else if(recordType.getSObjectType() == Schema.QuoteLineItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
             return Database.getQueryLocator([
-                SELECT Id, CreatedDate, Putups__c, Dollars__c, Freight_Terms__c, C2SPRC__c, Unit_of_Measure__c, Quote_Order_Credit_Detail__r.Putups__c, Quote_Order_Credit_Detail__r.Dollars__c, Quote_Order_Credit_Detail__r.Freight_Terms__c, Quote_Order_Credit_Detail__r.C2SPRC__c, Quote_Order_Credit_Detail__r.Unit_of_Measure__c
+                SELECT Id, CreatedDate, Putups__c, Dollars__c, Freight_Terms__c, C2SPRC__c, Unit_of_Measure__c, Line_Number__c, Quote_Order_Credit_Detail__r.Putups__c, Quote_Order_Credit_Detail__r.Dollars__c, Quote_Order_Credit_Detail__r.Freight_Terms__c, Quote_Order_Credit_Detail__r.C2SPRC__c, Quote_Order_Credit_Detail__r.Unit_of_Measure__c, Quote_Order_Credit_Detail__r.Line_Number__c
                 FROM QuoteLineItem
                 //WHERE CreatedDate >= :startDate AND CreatedDate < :endDate
             ]);
@@ -220,8 +220,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
             }
             System.debug('quote line item scope: ' + scope);
             update scope;
-        }
-        if (action == 'update') {
+        } else if (action == 'update') {
             update scope;
         } else if (action == 'delete') {
             delete scope;
