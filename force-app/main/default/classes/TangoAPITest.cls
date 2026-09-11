@@ -97,15 +97,24 @@ private without sharing class TangoAPITest {
         noOrders.Sequence__c = 3;
         insert new List<Contact>{ eligible, pending, noOrders };
 
+        eligible.Tango_Start_Date__c = Date.today().addYears(-1);
+        eligible.Tango_End_Date__c = Date.today().addYears(1);
+        update eligible;
+
+        Datetime invoicedAt = Datetime.now();
         Order redeemable = newOrder(account.Id, eligible.Id, 'TangoRedeemable');
         redeemable.Tango_Rewards_Override__c = 25;
+        redeemable.Invoiced_Date_Time__c = invoicedAt;
         Order zeroTotal = newOrder(account.Id, eligible.Id, 'TangoZero');
+        zeroTotal.Invoiced_Date_Time__c = invoicedAt;
         Order cancelled = newOrder(account.Id, eligible.Id, 'TangoCancelled');
         cancelled.Status__c = 'Cancelled';
         cancelled.Tango_Rewards_Override__c = 100;
+        cancelled.Invoiced_Date_Time__c = invoicedAt;
         Order alreadyRedeemed = newOrder(account.Id, eligible.Id, 'TangoAlreadyRedeemed');
         alreadyRedeemed.Tango_Redeemed__c = true;
         alreadyRedeemed.Tango_Rewards_Override__c = 50;
+        alreadyRedeemed.Invoiced_Date_Time__c = invoicedAt;
         insert new List<Order>{ redeemable, zeroTotal, cancelled, alreadyRedeemed };
     }
 
@@ -243,12 +252,17 @@ private without sharing class TangoAPITest {
 
         TangoHttpMock mock = new TangoHttpMock(200, SUCCESS_BODY);
         Test.setMock(HttpCalloutMock.class, mock);
+        initRestContext();
 
         Test.startTest();
         TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, 'wrong-ext-id');
         Test.stopTest();
 
-        System.assertEquals(true, response.success, 'Contact Id should win over a mismatched external id');
+        System.assertEquals(
+            true,
+            response.success,
+            'Contact Id should win over a mismatched external id: ' + response.code + ' ' + response.message
+        );
         System.assertEquals(
             'Rewards redeemed successfully',
             response.message,
