@@ -240,6 +240,12 @@
                 <identifier>RecordE_Commerce_Status__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Tango_Redeem_Date__c</fieldItem>
+                <identifier>RecordRedeem_Date_Time__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e6d91e54-103f-4664-bae4-53bb4f4f8d5f</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -272,6 +278,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Status</fieldItem>
                 <identifier>RecordStatusField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Invoiced_Date_Time__c</fieldItem>
+                <identifier>RecordInvoiced_Date_Time__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
