@@ -188,7 +188,11 @@ global without sharing class TangoAPI {
                 );
             }
 
-            List<Order> orders = getUnredeemedOrders(contact.Id, contact.Tango_Start_Date__c, contact.Tango_End_Date__c);
+            List<Order> orders = getUnredeemedOrders(
+                contact.Id,
+                contact.Tango_Start_Date__c,
+                contact.Tango_End_Date__c
+            );
             Decimal rewardTotal = sumRewards(orders);
             response.oldValue = rewardTotal;
             response.newValue = rewardTotal;
@@ -297,18 +301,37 @@ global without sharing class TangoAPI {
 
     /**
      * @description Unredeemed, non-cancelled Orders for the contact, locked for update.
+     *              A blank Tango date window does not filter on invoiced datetime.
      * @param contactId Buyer Id.
+     * @param startDate Inclusive {@link Contact#Tango_Start_Date__c}; null means no lower bound.
+     * @param endDate Inclusive {@link Contact#Tango_End_Date__c}; null means no upper bound.
      * @return Orders whose Tango totals should be redeemed.
      */
-    private static List<Order> getUnredeemedOrders(Id contactId, DateTime startDate, DateTime endDate) {
+    private static List<Order> getUnredeemedOrders(Id contactId, Date startDate, Date endDate) {
+        if (startDate == null && endDate == null) {
+            return [
+                SELECT Id, Name, Tango_Rewards_Total__c, Tango_Rewards_Override__c
+                FROM Order
+                WHERE BillToContactId = :contactId
+                    AND Tango_Redeemed__c = FALSE
+                    AND Status__c != 'Cancelled'
+                FOR UPDATE
+            ];
+        }
+        Datetime startBound = startDate == null
+            ? Datetime.newInstanceGmt(1900, 1, 1)
+            : Datetime.newInstance(startDate, Time.newInstance(0, 0, 0, 0));
+        Datetime endBound = endDate == null
+            ? Datetime.newInstanceGmt(4000, 12, 31, 23, 59, 59)
+            : Datetime.newInstance(endDate.addDays(1), Time.newInstance(0, 0, 0, 0)).addSeconds(-1);
         return [
             SELECT Id, Name, Tango_Rewards_Total__c, Tango_Rewards_Override__c
             FROM Order
             WHERE BillToContactId = :contactId
                 AND Tango_Redeemed__c = FALSE
                 AND Status__c != 'Cancelled'
-                AND Invoiced_Date_Time__c >= :startDate
-                AND Invoiced_Date_Time__c <= :endDate
+                AND Invoiced_Date_Time__c >= :startBound
+                AND Invoiced_Date_Time__c <= :endBound
             FOR UPDATE
         ];
     }
