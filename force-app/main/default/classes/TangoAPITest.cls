@@ -86,7 +86,7 @@ private without sharing class TangoAPITest {
             Account_Number__c = 'TNG0001',
             Active__c = 'A'
         );
-        insert account;
+        insert as system account;
 
         Contact eligible = newContact(account.Id, LAST_ELIGIBLE, account.Account_Number__c + ':1');
         eligible.Sequence__c = 1;
@@ -95,11 +95,7 @@ private without sharing class TangoAPITest {
         pending.Sequence__c = 2;
         Contact noOrders = newContact(account.Id, LAST_NO_ORDERS, account.Account_Number__c + ':3');
         noOrders.Sequence__c = 3;
-        insert new List<Contact>{ eligible, pending, noOrders };
-
-        eligible.Tango_Start_Date__c = Date.today().addYears(-1);
-        eligible.Tango_End_Date__c = Date.today().addYears(1);
-        update eligible;
+        insert as system new List<Contact>{ eligible, pending, noOrders };
 
         Datetime invoicedAt = Datetime.now();
         Order redeemable = newOrder(account.Id, eligible.Id, 'TangoRedeemable');
@@ -115,7 +111,7 @@ private without sharing class TangoAPITest {
         alreadyRedeemed.Tango_Redeemed__c = true;
         alreadyRedeemed.Tango_Rewards_Override__c = 50;
         alreadyRedeemed.Invoiced_Date_Time__c = invoicedAt;
-        insert new List<Order>{ redeemable, zeroTotal, cancelled, alreadyRedeemed };
+        insert as system new List<Order>{ redeemable, zeroTotal, cancelled, alreadyRedeemed };
     }
 
     /**
