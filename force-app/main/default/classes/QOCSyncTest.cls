@@ -497,6 +497,287 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM Order WHERE Order_Number__c = :header.Order_Number__c]);
     }
 
+    /**
+     * @description Inserting a header {@link ContentDocumentLink} copies the file onto the related Order.
+     */
+    @IsTest
+    static void headerContentDocumentLinkInsert_copiesFileToRelatedOrder() {
+        Account customer = getTestAccount();
+        Contact buyer = getTestContact(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Order', 'QOC-H-CDL-INS-001');
+        Order relatedOrder = new Order(
+            AccountId = customer.Id,
+            EffectiveDate = Date.today(),
+            Status = 'Draft',
+            Pricebook2Id = Test.getStandardPricebookId(),
+            Quote_Order_Credit__c = header.Id,
+            Order_Number__c = header.Order_Number__c
+        );
+        insert relatedOrder;
+
+        Test.startTest();
+        Id contentDocumentId = insertHeaderFile(header.Id, 'qoc-header-insert.txt');
+        Test.stopTest();
+
+        System.assertEquals(
+            1,
+            [
+                SELECT COUNT()
+                FROM ContentDocumentLink
+                WHERE LinkedEntityId = :relatedOrder.Id AND ContentDocumentId = :contentDocumentId
+            ]
+        );
+    }
+
+    /**
+     * @description Updating header {@link ContentDocumentLink} Visibility copies that value onto the Order link.
+     */
+    @IsTest
+    static void headerContentDocumentLinkUpdate_copiesVisibilityToRelatedOrder() {
+        Account customer = getTestAccount();
+        Contact buyer = getTestContact(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Order', 'QOC-H-CDL-UPD-001');
+        Order relatedOrder = new Order(
+            AccountId = customer.Id,
+            EffectiveDate = Date.today(),
+            Status = 'Draft',
+            Pricebook2Id = Test.getStandardPricebookId(),
+            Quote_Order_Credit__c = header.Id,
+            Order_Number__c = header.Order_Number__c
+        );
+        insert relatedOrder;
+        Id contentDocumentId = insertHeaderFile(header.Id, 'qoc-header-update.txt');
+        ContentDocumentLink headerLink = [
+            SELECT Id, Visibility
+            FROM ContentDocumentLink
+            WHERE LinkedEntityId = :header.Id AND ContentDocumentId = :contentDocumentId
+            LIMIT 1
+        ];
+
+        Test.startTest();
+        headerLink.Visibility = 'InternalUsers';
+        update headerLink;
+        Test.stopTest();
+
+        ContentDocumentLink orderLink = [
+            SELECT Visibility
+            FROM ContentDocumentLink
+            WHERE LinkedEntityId = :relatedOrder.Id AND ContentDocumentId = :contentDocumentId
+            LIMIT 1
+        ];
+        System.assertEquals('InternalUsers', orderLink.Visibility);
+    }
+
+    /**
+     * @description Deleting a header {@link ContentDocumentLink} removes the matching Order file link.
+     */
+    @IsTest
+    static void headerContentDocumentLinkDelete_removesFileFromRelatedOrder() {
+        Account customer = getTestAccount();
+        Contact buyer = getTestContact(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Order', 'QOC-H-CDL-DEL-001');
+        Order relatedOrder = new Order(
+            AccountId = customer.Id,
+            EffectiveDate = Date.today(),
+            Status = 'Draft',
+            Pricebook2Id = Test.getStandardPricebookId(),
+            Quote_Order_Credit__c = header.Id,
+            Order_Number__c = header.Order_Number__c
+        );
+        insert relatedOrder;
+        Id contentDocumentId = insertHeaderFile(header.Id, 'qoc-header-delete.txt');
+        ContentDocumentLink headerLink = [
+            SELECT Id
+            FROM ContentDocumentLink
+            WHERE LinkedEntityId = :header.Id AND ContentDocumentId = :contentDocumentId
+            LIMIT 1
+        ];
+
+        Test.startTest();
+        delete headerLink;
+        Test.stopTest();
+
+        System.assertEquals(
+            0,
+            [
+                SELECT COUNT()
+                FROM ContentDocumentLink
+                WHERE LinkedEntityId = :relatedOrder.Id AND ContentDocumentId = :contentDocumentId
+            ]
+        );
+    }
+
+    /**
+     * @description Inserts a {@link ContentVersion} and links it to a QOC header.
+     * @param headerId {@link QuotesOrdersCredits_Header__c} Id to receive the file.
+     * @param pathOnClient File name used as Title and PathOnClient.
+     * @return {@link ContentVersion#ContentDocumentId} of the inserted file.
+     */
+    private static Id insertHeaderFile(Id headerId, String pathOnClient) {
+        ContentVersion version = new ContentVersion(
+            Title = pathOnClient,
+            PathOnClient = pathOnClient,
+            VersionData = Blob.valueOf('header file'),
+            IsMajorVersion = true
+        );
+        insert version;
+        Id contentDocumentId = [
+            SELECT ContentDocumentId
+            FROM ContentVersion
+            WHERE Id = :version.Id
+        ].ContentDocumentId;
+        insert new ContentDocumentLink(
+            ContentDocumentId = contentDocumentId,
+            LinkedEntityId = headerId,
+            ShareType = 'V',
+            Visibility = 'AllUsers'
+        );
+        return contentDocumentId;
+    }
+
+    /**
+     * @description Inserts a buyer Contact with OCC rewards enabled for {@code SYNC_PORTAL_DATA} tests.
+     * @param account Parent Account for the buyer.
+     * @return Inserted Contact with {@link Contact#OCC_Rewards__c} true.
+     */
+    private static Contact rewardsBuyer(Account account) {
+        Contact buyer = new Contact(
+            LastName = 'QOC Buyer',
+            FirstName = 'Test',
+            Email = 'qoc.test@omnicable.com',
+            AccountId = account.Id,
+            Sequence__c = 0,
+            Ext_Id__c = account.Account_Number__c + ':0',
+            Contact_Title__c = 'Accounting',
+            DSP_Purchaser__c = true,
+            OCC_Rewards__c = true,
+            OCC_RewardStep__c = 100,
+            OCC_RewardStepValue__c = 2
+        );
+        insert buyer;
+        return buyer;
+    }
+
+    /**
+     * @description Inserts a QOC header with portal and Tango fields populated for {@code SYNC_PORTAL_DATA} tests.
+     * @param customer Account set as {@link QuotesOrdersCredits_Header__c#Customer__c}.
+     * @param buyer Contact set as {@link QuotesOrdersCredits_Header__c#Buyer__c}.
+     * @param typeValue {@link QuotesOrdersCredits_Header__c#Type__c} (Quote or Order).
+     * @param orderNumber Value stored on Name and {@link QuotesOrdersCredits_Header__c#Order_Number__c}.
+     * @return Inserted header after portal field updates.
+     */
+    private static QuotesOrdersCredits_Header__c createPortalSyncHeader(
+        Account customer,
+        Contact buyer,
+        String typeValue,
+        String orderNumber
+    ) {
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, typeValue, orderNumber);
+        header.Sent_to_Customer__c = true;
+        header.OCC_RewardRedeemed__c = true;
+        header.OCC_RewardStep__c = 100;
+        header.OCC_RewardStepValue__c = 2;
+        header.RewardOverride__c = 15;
+        header.Invoiced_Date_Time__c = Datetime.newInstanceGmt(2026, 3, 15, 16, 0, 0);
+        header.Payment_Terms__c = 'Net 30';
+        header.Job_Reference__c = 'JOB-1';
+        header.Total_Order_Sales__c = 500;
+        header.Status__c = 'Open';
+        update header;
+        return header;
+    }
+
+    /**
+     * @description Inserts an Order linked to a QOC header for post-deployment sync tests.
+     * @param customer Account on the Order.
+     * @param buyer Bill-to Contact; null leaves {@link Order#BillToContactId} blank.
+     * @param header QOC header linked via {@link Order#Quote_Order_Credit__c}.
+     * @return Inserted Order.
+     */
+    private static Order insertOrderForHeader(Account customer, Contact buyer, QuotesOrdersCredits_Header__c header) {
+        Order relatedOrder = new Order(
+            AccountId = customer.Id,
+            BillToContactId = buyer != null ? buyer.Id : null,
+            EffectiveDate = Date.today(),
+            Status = 'Draft',
+            Pricebook2Id = Test.getStandardPricebookId(),
+            Quote_Order_Credit__c = header.Id,
+            Order_Number__c = header.Order_Number__c
+        );
+        insert relatedOrder;
+        return relatedOrder;
+    }
+
+    /**
+     * @description Inserts a Quote linked to a QOC header for post-deployment sync tests.
+     * @param customer Account on the parent Opportunity.
+     * @param buyer Quote contact; null leaves {@link Quote#ContactId} blank.
+     * @param header QOC header linked via {@link Quote#Quote_Order_Credit__c}.
+     * @return Inserted Quote.
+     */
+    private static Quote insertQuoteForHeader(Account customer, Contact buyer, QuotesOrdersCredits_Header__c header) {
+        Opportunity opportunity = new Opportunity(
+            Name = header.Order_Number__c,
+            AccountId = customer.Id,
+            StageName = 'Prospecting',
+            CloseDate = Date.today().addDays(30),
+            Pricebook2Id = Test.getStandardPricebookId()
+        );
+        insert opportunity;
+
+        Quote relatedQuote = new Quote(
+            Name = header.Order_Number__c,
+            OpportunityId = opportunity.Id,
+            Pricebook2Id = Test.getStandardPricebookId(),
+            Status = 'Draft',
+            ContactId = buyer != null ? buyer.Id : null,
+            Quote_Order_Credit__c = header.Id
+        );
+        insert relatedQuote;
+        return relatedQuote;
+    }
+
+    /**
+     * @description Inserts an active standard-price-book entry for OrderItem and QuoteLineItem tests.
+     * @return Active {@link PricebookEntry} on the standard price book.
+     */
+    private static PricebookEntry insertStandardPricebookEntry() {
+        createStandardPB();
+        String suffix = String.valueOf(Datetime.now().getTime());
+        Product2 product = new Product2(
+            Name = 'SCPD Prod ' + suffix,
+            ProductCode = 'SCPD-' + suffix,
+            Item_Number__c = 'SCPD-' + suffix,
+            Unit_Price__c = 1,
+            IsActive = true,
+            Category__c = 'Other'
+        );
+        insert product;
+
+        Id standardPricebookId = Test.getStandardPricebookId();
+        List<PricebookEntry> existing = [
+            SELECT Id
+            FROM PricebookEntry
+            WHERE Product2Id = :product.Id AND Pricebook2Id = :standardPricebookId
+            LIMIT 1
+        ];
+        if (!existing.isEmpty()) {
+            return existing[0];
+        }
+
+        PricebookEntry entry = new PricebookEntry(
+            Pricebook2Id = standardPricebookId,
+            Product2Id = product.Id,
+            UnitPrice = 1,
+            IsActive = true
+        );
+        insert entry;
+        return entry;
+    }
+
+    /**
+     * @description Credit-type header sync creates an Order and does not create a Quote.
+     */
     @IsTest
     static void headerSyncBatch_creditTypeSyncsOrderWithoutQuote() {
         Account customer = getTestAccount();
@@ -1615,6 +1896,208 @@ public  class QOCSyncTest {
         System.assertEquals(1, [SELECT COUNT() FROM QuotesOrdersCredits_Header__c WHERE Id = :header.Id]);
     }
 
+    /**
+     * @description {@link SalesCloudPostDeployment} {@code SYNC_FILES} copies QOC header files onto related Orders.
+     */
+    @IsTest
+    static void salesCloudPostDeployment_syncFilesCopiesHeaderFilesToOrder() {
+        Account customer = getTestAccount();
+        Contact buyer = getTestContact(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Order', 'QOC-SCPD-FILES-001');
+        Id contentDocumentId = insertHeaderFile(header.Id, 'qoc-scpd-files.txt');
+        Order relatedOrder = insertOrderForHeader(customer, buyer, header);
+
+        System.assertEquals(
+            0,
+            [
+                SELECT COUNT()
+                FROM ContentDocumentLink
+                WHERE LinkedEntityId = :relatedOrder.Id AND ContentDocumentId = :contentDocumentId
+            ],
+            'Order insert should not copy header files before SYNC_FILES'
+        );
+
+        Test.startTest();
+        Database.executeBatch(
+            new SalesCloudPostDeployment(Date.today().addDays(-1), Date.today().addDays(1), relatedOrder, 'SYNC_FILES'),
+            200
+        );
+        Test.stopTest();
+
+        System.assertEquals(
+            1,
+            [
+                SELECT COUNT()
+                FROM ContentDocumentLink
+                WHERE LinkedEntityId = :relatedOrder.Id AND ContentDocumentId = :contentDocumentId
+            ],
+            'SYNC_FILES should copy the header file onto the Order'
+        );
+    }
+
+    /**
+     * @description {@link SalesCloudPostDeployment} {@code SYNC_PORTAL_DATA} copies QOC header portal fields onto Order.
+     */
+    @IsTest
+    static void salesCloudPostDeployment_syncPortalDataOnOrder() {
+        Account customer = getTestAccount();
+        Contact buyer = rewardsBuyer(customer);
+        QuotesOrdersCredits_Header__c header = createPortalSyncHeader(customer, buyer, 'Order', 'QOC-SCPD-ORD-001');
+        Order relatedOrder = insertOrderForHeader(customer, buyer, header);
+
+        Test.startTest();
+        Database.executeBatch(
+            new SalesCloudPostDeployment(Date.today().addDays(-1), Date.today().addDays(1), relatedOrder, 'SYNC_PORTAL_DATA'),
+            200
+        );
+        Test.stopTest();
+
+        Order synced = [
+            SELECT Portal_Visibility__c, Tango_Redeemed__c, Tango_Reward_Step__c, Tango_Reward_Step_Value__c,
+                Tango_Rewards_Override__c, Invoiced_Date_Time__c
+            FROM Order
+            WHERE Id = :relatedOrder.Id
+        ];
+        System.assertEquals(true, synced.Portal_Visibility__c, 'Order portal visibility should copy Sent_to_Customer__c');
+        System.assertEquals(true, synced.Tango_Redeemed__c, 'Order Tango redeemed should copy OCC_RewardRedeemed__c');
+        System.assertEquals(100, synced.Tango_Reward_Step__c, 'Order reward step should copy from the header');
+        System.assertEquals(2, synced.Tango_Reward_Step_Value__c, 'Order reward step value should copy from the header');
+        System.assertEquals(15, synced.Tango_Rewards_Override__c, 'Order reward override should copy from the header');
+        System.assertEquals(
+            header.Invoiced_Date_Time__c,
+            synced.Invoiced_Date_Time__c,
+            'Order invoiced datetime should copy from the header'
+        );
+    }
+
+    /**
+     * @description {@link SalesCloudPostDeployment} {@code SYNC_PORTAL_DATA} copies QOC header portal fields onto Quote.
+     */
+    @IsTest
+    static void salesCloudPostDeployment_syncPortalDataOnQuote() {
+        Account customer = getTestAccount();
+        Contact buyer = rewardsBuyer(customer);
+        QuotesOrdersCredits_Header__c header = createPortalSyncHeader(customer, buyer, 'Quote', 'QOC-SCPD-QTE-001');
+        Quote relatedQuote = insertQuoteForHeader(customer, buyer, header);
+
+        Test.startTest();
+        Database.executeBatch(
+            new SalesCloudPostDeployment(Date.today().addDays(-1), Date.today().addDays(1), relatedQuote, 'SYNC_PORTAL_DATA'),
+            200
+        );
+        Test.stopTest();
+
+        Quote synced = [
+            SELECT Payment_Terms__c, Job_Reference__c, Total_Order_Sales__c, Status__c, Portal_Visibility__c,
+                Tango_Redeemed__c, Tango_Reward_Step__c, Tango_Reward_Step_Value__c, Tango_Rewards_Override__c,
+                Invoiced_Date_Time__c
+            FROM Quote
+            WHERE Id = :relatedQuote.Id
+        ];
+        System.assertEquals('Net 30', synced.Payment_Terms__c, 'Quote payment terms should copy from the header');
+        System.assertEquals('JOB-1', synced.Job_Reference__c, 'Quote job reference should copy from the header');
+        System.assertEquals(500, synced.Total_Order_Sales__c, 'Quote total sales should copy from the header');
+        System.assertEquals('Open', synced.Status__c, 'Quote status should copy from the header');
+        System.assertEquals(true, synced.Portal_Visibility__c, 'Quote portal visibility should copy Sent_to_Customer__c');
+        System.assertEquals(true, synced.Tango_Redeemed__c, 'Quote Tango redeemed should copy OCC_RewardRedeemed__c');
+        System.assertEquals(100, synced.Tango_Reward_Step__c, 'Quote reward step should copy from the header');
+        System.assertEquals(2, synced.Tango_Reward_Step_Value__c, 'Quote reward step value should copy from the header');
+        System.assertEquals(15, synced.Tango_Rewards_Override__c, 'Quote reward override should copy from the header');
+        System.assertEquals(
+            header.Invoiced_Date_Time__c,
+            synced.Invoiced_Date_Time__c,
+            'Quote invoiced datetime should copy from the header'
+        );
+    }
+
+    /**
+     * @description {@link SalesCloudPostDeployment} {@code SYNC_PORTAL_DATA} copies expected date onto OrderItem.
+     */
+    @IsTest
+    static void salesCloudPostDeployment_syncPortalDataOnOrderItem() {
+        Account customer = getTestAccount();
+        Contact buyer = rewardsBuyer(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Order', 'QOC-SCPD-OI-001');
+        Date expectedDate = Date.today().addDays(7);
+        QuoteOrderCredit_Details__c detail = createQOCDetail(header.Id, 'QOC-SCPD-OI-001-L1', null);
+        detail.Expected_Date__c = expectedDate;
+        update detail;
+
+        PricebookEntry entry = insertStandardPricebookEntry();
+        Order relatedOrder = insertOrderForHeader(customer, buyer, header);
+        OrderItem line = new OrderItem(
+            OrderId = relatedOrder.Id,
+            PricebookEntryId = entry.Id,
+            Quantity = 1,
+            UnitPrice = 10,
+            Quote_Order_Credit_Detail__c = detail.Id
+        );
+        insert line;
+
+        Test.startTest();
+        Database.executeBatch(
+            new SalesCloudPostDeployment(Date.today().addDays(-1), Date.today().addDays(1), line, 'SYNC_PORTAL_DATA'),
+            200
+        );
+        Test.stopTest();
+
+        System.assertEquals(
+            expectedDate,
+            [SELECT Expected_Date__c FROM OrderItem WHERE Id = :line.Id].Expected_Date__c,
+            'OrderItem expected date should copy from the QOC detail'
+        );
+    }
+
+    /**
+     * @description {@link SalesCloudPostDeployment} {@code SYNC_PORTAL_DATA} copies QOC detail fields onto QuoteLineItem.
+     */
+    @IsTest
+    static void salesCloudPostDeployment_syncPortalDataOnQuoteLineItem() {
+        Account customer = getTestAccount();
+        Contact buyer = rewardsBuyer(customer);
+        QuotesOrdersCredits_Header__c header = createQOCHeader(customer, buyer, 'Quote', 'QOC-SCPD-QLI-001');
+        QuoteOrderCredit_Details__c detail = createQOCDetail(header.Id, 'QOC-SCPD-QLI-001-L1', null);
+        detail.Put_up_1__c = 'PUT1';
+        detail.Freight_Terms__c = 'Prepaid';
+        detail.C2SPRC__c = 'C2S-1';
+        detail.Unit_of_Measure__c = 'EA';
+        detail.Line_Number__c = 3;
+        update detail;
+
+        PricebookEntry entry = insertStandardPricebookEntry();
+        Quote relatedQuote = insertQuoteForHeader(customer, buyer, header);
+        QuoteLineItem line = new QuoteLineItem(
+            QuoteId = relatedQuote.Id,
+            PricebookEntryId = entry.Id,
+            Quantity = 1,
+            UnitPrice = 10,
+            Quote_Order_Credit_Detail__c = detail.Id
+        );
+        insert line;
+
+        Test.startTest();
+        Database.executeBatch(
+            new SalesCloudPostDeployment(Date.today().addDays(-1), Date.today().addDays(1), line, 'SYNC_PORTAL_DATA'),
+            200
+        );
+        Test.stopTest();
+
+        QuoteLineItem synced = [
+            SELECT Putups__c, Dollars__c, Freight_Terms__c, C2SPRC__c, Unit_of_Measure__c, Line_Number__c
+            FROM QuoteLineItem
+            WHERE Id = :line.Id
+        ];
+        System.assertEquals('PUT1', synced.Putups__c, 'Quote line putups should copy from the QOC detail formula');
+        System.assertEquals(100, synced.Dollars__c, 'Quote line dollars should copy from the QOC detail');
+        System.assertEquals('Prepaid', synced.Freight_Terms__c, 'Quote line freight terms should copy from the QOC detail');
+        System.assertEquals('C2S-1', synced.C2SPRC__c, 'Quote line C2SPRC should copy from the QOC detail');
+        System.assertEquals('EA', synced.Unit_of_Measure__c, 'Quote line UOM should copy from the QOC detail');
+        System.assertEquals(3, synced.Line_Number__c, 'Quote line number should copy from the QOC detail');
+    }
+
+    /**
+     * @description {@link SalesCloudPostDeployment} test action completes for an {@link Opportunity_Sync_Item__c}.
+     */
     @IsTest
     static void salesCloudPostDeployment_syncItemScope() {
         Date windowStart = Date.today().addDays(-1);
