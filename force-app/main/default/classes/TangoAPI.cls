@@ -52,69 +52,7 @@ global without sharing class TangoAPI {
         /** @description Reward balance after redemption; {@code 0} on success. */
         public Decimal newValue { get; set; }
         /** @description Tango RaaS result; null when Tango was not called. */
-        public TangoResult tango { get; set; }
-    }
-
-    /**
-     * @description Tango RaaS create-order HTTP result.
-     */
-    global class TangoResult {
-        /** @description Tango HTTP status. */
-        public Integer httpStatus { get; set; }
-        /** @description Parsed order when Tango returns 2xx; otherwise null. */
-        public TangoOrderResult order { get; set; }
-        /** @description Parsed error when Tango returns non-2xx JSON; otherwise null. */
-        public TangoServiceError error { get; set; }
-    }
-
-    /**
-     * @description Tango RaaS v2 create-order success fields used by this API.
-     */
-    global class TangoOrderResult {
-        /** @description Tango {@code referenceOrderID}. */
-        public String referenceOrderID { get; set; }
-        /** @description Tango order status. */
-        public String status { get; set; }
-        /** @description Catalog {@code utid}. */
-        public String utid { get; set; }
-        /** @description Reward product name. */
-        public String rewardName { get; set; }
-    }
-
-    /**
-     * @description Tango RaaS v2 error body (HTTP 400 and other non-2xx JSON).
-     */
-    global class TangoServiceError {
-        /** @description Tango error timestamp. */
-        public String timestamp { get; set; }
-        /** @description Tango request identifier. */
-        public String requestId { get; set; }
-        /** @description Request path that failed. */
-        public String path { get; set; }
-        /** @description Tango HTTP status code. */
-        public Integer httpCode { get; set; }
-        /** @description Tango HTTP reason phrase. */
-        public String httpPhrase { get; set; }
-        /** @description Tango i18n key. */
-        public String i18nKey { get; set; }
-        /** @description Tango error message. */
-        public String message { get; set; }
-        /** @description Field or item-level errors from Tango. */
-        public List<TangoServiceErrorDetail> errors { get; set; }
-    }
-
-    /**
-     * @description One entry in {@link TangoServiceError#errors}.
-     */
-    global class TangoServiceErrorDetail {
-        /** @description JSON path of the invalid field. */
-        public String path { get; set; }
-        /** @description Tango error code. */
-        public String code { get; set; }
-        /** @description Tango i18n key. */
-        public String i18nKey { get; set; }
-        /** @description Detail message. */
-        public String message { get; set; }
+        public TangoAPIHelper.TangoResult tango { get; set; }
     }
 
     /**
@@ -206,7 +144,7 @@ global without sharing class TangoAPI {
     /**
      * @description Redeems Tango rewards for the given contact identifiers. Apex REST always
      *              returns HTTP 200 so DML commits; {@link TangoRewardResponse#httpStatus} carries
-     *              the logical status. {@link TangoResult} is present only when Tango was called.
+     *              the logical status. {@link TangoAPIHelper.TangoResult} is present only when Tango was called.
      * @param id Salesforce Contact Id.
      * @param externalId Contact {@code Ext_Id__c}.
      * @return {@link TangoRewardResponse} serialized as the HTTP JSON body.
@@ -364,7 +302,7 @@ global without sharing class TangoAPI {
      */
     private static List<Order> getUnredeemedOrders(Id contactId, DateTime startDate, DateTime endDate) {
         return [
-            SELECT Id, Tango_Rewards_Total__c, Tango_Rewards_Override__c
+            SELECT Id, Name, Tango_Rewards_Total__c, Tango_Rewards_Override__c
             FROM Order
             WHERE BillToContactId = :contactId
                 AND Tango_Redeemed__c = FALSE
@@ -540,7 +478,7 @@ global without sharing class TangoAPI {
 
     /**
      * @description Maps a failed Tango call onto {@link TangoRewardResponse} and the log.
-     * @param response Response whose {@link TangoResult} is already set.
+     * @param response Response whose {@link TangoAPIHelper.TangoResult} is already set.
      * @param log Log row to populate.
      * @return The same {@code response} instance.
      */
