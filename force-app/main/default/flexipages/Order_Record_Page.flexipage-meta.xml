@@ -230,16 +230,6 @@
                 <identifier>RecordOrder_Number__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.E_Commerce_Status__c</fieldItem>
-                <identifier>RecordE_Commerce_Status__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-e6d91e54-103f-4664-bae4-53bb4f4f8d5f</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -272,6 +262,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Status</fieldItem>
                 <identifier>RecordStatusField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Invoiced_Date_Time__c</fieldItem>
+                <identifier>RecordInvoiced_Date_Time__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -409,16 +409,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Total_Order_GP_Pct__c</fieldItem>
-                <identifier>RecordTotal_Order_GP_Pct_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Total_Order_GP_with_BSD__c</fieldItem>
                 <identifier>RecordTotal_Order_GP_with_BSD_cField</identifier>
             </fieldInstance>
@@ -431,16 +421,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Total_Order_Net_GP_w_BSD__c</fieldItem>
                 <identifier>RecordTotal_Order_Net_GP_w_BSD_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Total_Order_Net_GP_with_BSD__c</fieldItem>
-                <identifier>RecordTotal_Order_Net_GP_with_BSD_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-43341f48-8263-4580-beac-360cee04c7f0</name>
@@ -465,6 +445,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Total_Order_Cost__c</fieldItem>
                 <identifier>RecordTotal_Order_Cost_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Total_Order_GP_Pct__c</fieldItem>
+                <identifier>RecordTotal_Order_GP_Pct_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Total_Order_Net_GP_with_BSD__c</fieldItem>
+                <identifier>RecordTotal_Order_Net_GP_with_BSD_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-50b50c2b-9990-4760-92e9-029e172a6590</name>
@@ -675,8 +675,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Tango_Rewards_Override__c</fieldItem>
-                <identifier>RecordTango_Rewards_Override_cField</identifier>
+                <fieldItem>Record.Tango_Reward_Step__c</fieldItem>
+                <identifier>RecordTango_Reward_Step_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -685,8 +685,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.E_Commerce_Status__c</fieldItem>
-                <identifier>RecordE_Commerce_Status_cField</identifier>
+                <fieldItem>Record.Tango_Redeem_Date__c</fieldItem>
+                <identifier>RecordRedeem_Date_Time__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -709,18 +709,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Tango_Redeemed__c</fieldItem>
-                <identifier>RecordTango_Redeemed_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Tango_Reward_Step__c</fieldItem>
-                <identifier>RecordTango_Reward_Step_cField</identifier>
+                <fieldItem>Record.Tango_Rewards_Override__c</fieldItem>
+                <identifier>RecordTango_Rewards_Override_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -731,6 +721,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Tango_Reward_Step_Value__c</fieldItem>
                 <identifier>RecordTango_Reward_Step_Value_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Redeemed__c</fieldItem>
+                <identifier>RecordTango_Redeemed_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.E_Commerce_Status__c</fieldItem>
+                <identifier>RecordE_Commerce_Status_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e856732b-45d4-4f16-95c4-b699a7e2334f</name>
@@ -1126,7 +1136,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -1142,6 +1152,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>true</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>detailTabContent</value>
