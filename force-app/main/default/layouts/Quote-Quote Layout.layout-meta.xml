@@ -67,6 +67,10 @@
                 <behavior>Edit</behavior>
                 <field>Portal_Visibility__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Invoiced_Date_Time__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
