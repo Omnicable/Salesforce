@@ -81,7 +81,7 @@ fun toOrderItem(d) =
         OrderNumber__c: d.OrderNumber__c default null,
         CableCode__c: d.CableCode__c default null,
         Vendor__c: d.Vendor__c default null,
-        Expected_Date__c : d.Expected_Date__c default null
+        Expected_Date__c : dateOnly(d.Expected_Date__c)
     })
 
 ---
