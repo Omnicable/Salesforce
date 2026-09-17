@@ -119,7 +119,7 @@ private without sharing class TangoAPITest {
      */
     @IsTest
     static void testContactNotFoundWhenIdentifiersBlank() {
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(null, null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(null, null, null);
 
         assertFailure(response, 'contact_not_found', 404);
         System.assertEquals(null, response.tango, 'Tango should not be called when the contact is missing');
@@ -132,7 +132,7 @@ private without sharing class TangoAPITest {
     static void testContactNotFoundByUnknownId() {
         Id missingId = Contact.SObjectType.getDescribe().getKeyPrefix() + '000000000001';
 
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(missingId, null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(missingId, null, null);
 
         assertFailure(response, 'contact_not_found', 404);
         System.assertEquals(null, response.tango, 'Tango should not be called when the contact Id is unknown');
@@ -145,7 +145,7 @@ private without sharing class TangoAPITest {
     static void testPendingRedeemIssue() {
         Contact pending = getContactByLastName(LAST_PENDING);
 
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(pending.Id, null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(pending.Id, null, null);
 
         assertFailure(response, 'contact_pending_redeem_issue', 400);
         System.assertEquals(null, response.tango, 'Tango should not be called for a pending redeem issue');
@@ -159,7 +159,7 @@ private without sharing class TangoAPITest {
         Contact eligible = getContactByLastName(LAST_ELIGIBLE);
         upsertOrgSettings(false, 'Rewards redeemed successfully', 'testApiKey');
 
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null, null);
 
         assertFailure(response, 'rewards_unavailable', 503);
         System.assertEquals(null, response.tango, 'Tango should not be called when rewards are inactive');
@@ -172,7 +172,7 @@ private without sharing class TangoAPITest {
     static void testNoRewardsWhenContactHasNoOrders() {
         Contact noOrders = getContactByLastName(LAST_NO_ORDERS);
 
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(noOrders.Id, null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(noOrders.Id, null, null);
 
         assertFailure(response, 'no_rewards_available', 400);
         System.assertEquals(0, response.oldValue, 'Old value should be zero when no Orders exist');
@@ -189,7 +189,7 @@ private without sharing class TangoAPITest {
         initRestContext();
 
         Test.startTest();
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(null, getContactByLastName(LAST_ELIGIBLE).Ext_Id__c);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(null, getContactByLastName(LAST_ELIGIBLE).Ext_Id__c, null);
         Test.stopTest();
 
         System.assertEquals(
@@ -251,7 +251,7 @@ private without sharing class TangoAPITest {
         initRestContext();
 
         Test.startTest();
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, 'wrong-ext-id');
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, 'wrong-ext-id', null);
         Test.stopTest();
 
         System.assertEquals(
@@ -286,7 +286,7 @@ private without sharing class TangoAPITest {
         Test.setMock(HttpCalloutMock.class, new TangoHttpMock(400, INSUFFICIENT_FUNDS_BODY));
 
         Test.startTest();
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null, null);
         Test.stopTest();
 
         assertFailure(response, 'tango_order_failed', 400);
@@ -319,7 +319,7 @@ private without sharing class TangoAPITest {
         Test.setMock(HttpCalloutMock.class, new TangoHttpMock(502, 'not-json'));
 
         Test.startTest();
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null, null);
         Test.stopTest();
 
         assertFailure(response, 'tango_order_failed', 502);
@@ -340,7 +340,7 @@ private without sharing class TangoAPITest {
         Test.setMock(HttpCalloutMock.class, mock);
 
         Test.startTest();
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null, null);
         Test.stopTest();
 
         System.assertEquals(true, response.success, 'Redeem should succeed without an API key in tests');
@@ -356,7 +356,7 @@ private without sharing class TangoAPITest {
         Test.setMock(HttpCalloutMock.class, new ThrowingHttpMock());
 
         Test.startTest();
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(eligible.Id, null, null);
         Test.stopTest();
 
         assertFailure(response, 'internal_server_error', 500);
@@ -373,7 +373,7 @@ private without sharing class TangoAPITest {
      */
     @IsTest
     static void testNonIdStringReturnsContactNotFound() {
-        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards('not-an-id', null);
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards('not-an-id', null, null);
 
         assertFailure(response, 'contact_not_found', 404);
         System.assertNotEquals(null, response.message, 'Missing-contact responses should include a message');

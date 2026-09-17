@@ -115,6 +115,8 @@ global without sharing class TangoAPI {
         public Tango_Credentials__c credentials;
         /** @description Redemption amount. */
         public Decimal total;
+        /** @description email. */
+        public String email;
     }
 
     /**
@@ -150,7 +152,7 @@ global without sharing class TangoAPI {
      * @return {@link TangoRewardResponse} serialized as the HTTP JSON body.
      */
     @HttpPost
-    global static TangoRewardResponse redeemRewards(String id, String externalId) {
+    global static TangoRewardResponse redeemRewards(String id, String externalId, String email) {
         Tango_Reward_Log__c log = new Tango_Reward_Log__c();
         List<Tango_Reward_Item__c> items = new List<Tango_Reward_Item__c>();
         TangoRewardResponse response = new TangoRewardResponse();
@@ -201,7 +203,7 @@ global without sharing class TangoAPI {
                 return fail(response, log, new TangoFailDetail('no_rewards_available', 'No rewards available', 400));
             }
 
-            HttpResponse tangoHttp = createTangoOrder(newOrderContext(contact, rewardSettings, rewardTotal));
+            HttpResponse tangoHttp = createTangoOrder(newOrderContext(contact, rewardSettings, rewardTotal, email));
             System.debug('tangoHttp: ' + tangoHttp.getBody());
             response.tango = TangoAPIHelper.toTangoResult(tangoHttp);
             log.Status_Code__c = tangoHttp.getStatusCode();
@@ -391,13 +393,15 @@ global without sharing class TangoAPI {
     private static TangoOrderContext newOrderContext(
         Contact contact,
         Ecommerce_Rewards__c rewardSettings,
-        Decimal total
+        Decimal total,
+        String email
     ) {
         TangoOrderContext context = new TangoOrderContext();
         context.contact = contact;
         context.rewardSettings = rewardSettings;
         context.credentials = Tango_Credentials__c.getOrgDefaults();
         context.total = total;
+        context.email = email;
         return context;
     }
 
@@ -425,7 +429,7 @@ global without sharing class TangoAPI {
             payload.etid = firstNonBlank(credentials?.ETID__c, SANDBOX_DEFAULT_ETID);
             payload.utid = firstNonBlank(credentials?.UTID__c, SANDBOX_DEFAULT_UTID);
             payload.recipient = new TangoPerson(
-                SANDBOX_TEST_EMAIL,
+                context.email == null ? SANDBOX_TEST_EMAIL : context.email,
                 SANDBOX_TEST_FIRST_NAME,
                 SANDBOX_TEST_LAST_NAME
             );
@@ -433,7 +437,7 @@ global without sharing class TangoAPI {
             payload.etid = credentials?.ETID__c;
             payload.utid = credentials?.UTID__c;
             payload.recipient = new TangoPerson(
-                context.contact.Email,
+                context.email == null ? context.contact.Email : context.email,
                 context.contact.FirstName,
                 context.contact.LastName
             );
