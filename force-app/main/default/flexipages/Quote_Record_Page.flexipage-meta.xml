@@ -105,6 +105,12 @@
                 <identifier>RecordPayment_Terms__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Type__c</fieldItem>
+                <identifier>RecordType__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-a1113897-4137-4340-bc01-434e770720d0</name>
         <type>Facet</type>
     </flexiPageRegions>
