@@ -46,6 +46,7 @@ fun toOpportunity(h) =
         Total_Order_Sales__c: h.Total_Order_Sales__c default null,
         Status__c: h.Status__c default null,
         Portal_Visibility__c: h.Sent_to_Customer__c default null,
+        Type__c: h.Type__c default null,
         Status: h.Type__c match {
             case "Order" -> "Approved"
             else -> "Draft"
