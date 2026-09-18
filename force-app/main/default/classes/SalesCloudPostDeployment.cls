@@ -95,15 +95,15 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
                 SELECT Id, CreatedDate, Portal_Visibility__c, Tango_Redeemed__c, Tango_Reward_Step__c, Tango_Reward_Step_Value__c, Tango_Rewards_Override__c, Invoiced_Date_Time__c,
                 Quote_Order_Credit__r.Sent_to_Customer__c, Quote_Order_Credit__r.OCC_RewardRedeemed__c, Quote_Order_Credit__r.OCC_RewardStep__c, Quote_Order_Credit__r.OCC_RewardStepValue__c, Quote_Order_Credit__r.RewardOverride__c, Quote_Order_Credit__r.Invoiced_Date_Time__c
                 FROM Order
-                WHERE BillToContact.OCC_Rewards__c = true AND Quote_Order_Credit__c != null
+                WHERE BillToContact.OCC_Rewards__c = true AND Quote_Order_Credit__c != null AND Tango_Reward_Step__c = null AND Tango_Reward_Step_Value__c = null
             ]);
 
         } else if(recordType.getSObjectType() == Schema.Quote.SObjectType && action == 'SYNC_PORTAL_DATA') {
             return Database.getQueryLocator([
-                SELECT Id, CreatedDate, Portal_Visibility__c, Tango_Redeemed__c, Tango_Reward_Step__c, Tango_Reward_Step_Value__c, Tango_Rewards_Override__c, Payment_Terms__c, Job_Reference__c, Total_Order_Sales__c, Status__c, ExpirationDate, Invoiced_Date_Time__c,
-                Quote_Order_Credit__r.Sent_to_Customer__c, Quote_Order_Credit__r.OCC_RewardRedeemed__c, Quote_Order_Credit__r.OCC_RewardStep__c, Quote_Order_Credit__r.OCC_RewardStepValue__c, Quote_Order_Credit__r.RewardOverride__c, Quote_Order_Credit__r.Expiration_Date__c, Quote_Order_Credit__r.Payment_Terms__c, Quote_Order_Credit__r.Job_Reference__c, Quote_Order_Credit__r.Total_Order_Sales__c, Quote_Order_Credit__r.Status__c, Quote_Order_Credit__r.Invoiced_Date_Time__c
+                SELECT Id, CreatedDate, Portal_Visibility__c, Tango_Redeemed__c, Tango_Reward_Step__c, Tango_Reward_Step_Value__c, Tango_Rewards_Override__c, Payment_Terms__c, Job_Reference__c, Total_Order_Sales__c, Status__c, ExpirationDate, Invoiced_Date_Time__c, Type__c,
+                Quote_Order_Credit__r.Type__c, Quote_Order_Credit__r.Sent_to_Customer__c, Quote_Order_Credit__r.OCC_RewardRedeemed__c, Quote_Order_Credit__r.OCC_RewardStep__c, Quote_Order_Credit__r.OCC_RewardStepValue__c, Quote_Order_Credit__r.RewardOverride__c, Quote_Order_Credit__r.Expiration_Date__c, Quote_Order_Credit__r.Payment_Terms__c, Quote_Order_Credit__r.Job_Reference__c, Quote_Order_Credit__r.Total_Order_Sales__c, Quote_Order_Credit__r.Status__c, Quote_Order_Credit__r.Invoiced_Date_Time__c
                 FROM Quote
-                WHERE Contact.OCC_Rewards__c = true AND Quote_Order_Credit__c != null
+                WHERE Contact.OCC_Rewards__c = true AND Quote_Order_Credit__c != null AND Tango_Reward_Step__c = null AND Tango_Reward_Step_Value__c = null
             ]);
 
 
@@ -111,13 +111,13 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
             return Database.getQueryLocator([
                 SELECT Id, CreatedDate, Expected_Date__c, Quote_Order_Credit_Detail__r.Expected_Date__c
                 FROM OrderItem
-                WHERE Quote_Order_Credit_Detail__r.Expected_Date__c != null
+                WHERE Quote_Order_Credit_Detail__r.Expected_Date__c != null and Expected_Date__c = null
             ]);
 
         }else if(recordType.getSObjectType() == Schema.QuoteLineItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
             return Database.getQueryLocator([
                 SELECT Id, CreatedDate, Putups__c, Dollars__c, Freight_Terms__c, C2SPRC__c, Unit_of_Measure__c, Line_Number__c, Quote_Order_Credit_Detail__r.Putups__c, Quote_Order_Credit_Detail__r.Dollars__c, Quote_Order_Credit_Detail__r.Freight_Terms__c, Quote_Order_Credit_Detail__r.C2SPRC__c, Quote_Order_Credit_Detail__r.Unit_of_Measure__c, Quote_Order_Credit_Detail__r.Line_Number__c
-                FROM QuoteLineItem
+                FROM QuoteLineItem where Line_Number__c = null AND Quote_Order_Credit_Detail__r.Line_Number__c != null
                 //WHERE CreatedDate >= :startDate AND CreatedDate < :endDate
             ]);
         }else if (recordType.getSObjectType() == Schema.QuotesOrdersCredits_Header__c.SObjectType) {
@@ -200,6 +200,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
                 q.Tango_Rewards_Override__c = q.Quote_Order_Credit__r.RewardOverride__c;
                 q.ExpirationDate = q.Quote_Order_Credit__r.Expiration_Date__c;
                 q.Invoiced_Date_Time__c = q.Quote_Order_Credit__r.Invoiced_Date_Time__c;
+                q.Type__c = q.Quote_Order_Credit__r.Type__c;
             }
             System.debug('quote scope: ' + scope);
             update scope;
