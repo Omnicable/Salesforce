@@ -1,6 +1,8 @@
 /**
  * @description Unit tests for {@link TangoAPI} redeem outcomes: Salesforce validation, Tango
  *              callouts, Order updates, and {@link Tango_Reward_Log__c} persistence.
+ *              Redeemable Orders must have {@link Order#Tango_Reward_Eligible__c} true and
+ *              {@link Order#Status__c} {@code Invoiced}.
  * @group Tango
  * @see TangoAPI
  * @see TangoAPIHelper
@@ -76,6 +78,8 @@ private without sharing class TangoAPITest {
 
     /**
      * @description Inserts org defaults, contacts, and Orders used by redeem tests.
+     *              {@link OrderTrigger} stamps {@link Order#Tango_Reward_Eligible__c} from
+     *              {@link Order#EffectiveDate} and the Contact Tango window.
      */
     @TestSetup
     static void setup() {
@@ -100,8 +104,10 @@ private without sharing class TangoAPITest {
         Datetime invoicedAt = Datetime.now();
         Order redeemable = newOrder(account.Id, eligible.Id, 'TangoRedeemable');
         redeemable.Tango_Rewards_Override__c = 25;
+        redeemable.Status__c = 'Invoiced';
         redeemable.Invoiced_Date_Time__c = invoicedAt;
         Order zeroTotal = newOrder(account.Id, eligible.Id, 'TangoZero');
+        zeroTotal.Status__c = 'Invoiced';
         zeroTotal.Invoiced_Date_Time__c = invoicedAt;
         Order cancelled = newOrder(account.Id, eligible.Id, 'TangoCancelled');
         cancelled.Status__c = 'Cancelled';
@@ -110,8 +116,20 @@ private without sharing class TangoAPITest {
         Order alreadyRedeemed = newOrder(account.Id, eligible.Id, 'TangoAlreadyRedeemed');
         alreadyRedeemed.Tango_Redeemed__c = true;
         alreadyRedeemed.Tango_Rewards_Override__c = 50;
+        alreadyRedeemed.Status__c = 'Invoiced';
         alreadyRedeemed.Invoiced_Date_Time__c = invoicedAt;
-        insert as system new List<Order>{ redeemable, zeroTotal, cancelled, alreadyRedeemed };
+        Order ineligible = newOrder(account.Id, eligible.Id, 'TangoIneligible');
+        ineligible.EffectiveDate = Date.today().addYears(-2);
+        ineligible.Tango_Rewards_Override__c = 999;
+        ineligible.Status__c = 'Invoiced';
+        ineligible.Invoiced_Date_Time__c = invoicedAt;
+        insert as system new List<Order>{
+            redeemable,
+            zeroTotal,
+            cancelled,
+            alreadyRedeemed,
+            ineligible
+        };
     }
 
     /**
@@ -177,6 +195,61 @@ private without sharing class TangoAPITest {
         assertFailure(response, 'no_rewards_available', 400);
         System.assertEquals(0, response.oldValue, 'Old value should be zero when no Orders exist');
         System.assertEquals(null, response.tango, 'Tango should not be called when no rewards exist');
+    }
+
+    /**
+     * @description {@link OrderTrigger} stamps {@link Order#Tango_Reward_Eligible__c} from
+     *              {@link Order#EffectiveDate}. Orders outside the Contact Tango window are
+     *              excluded from redeem even when invoiced and unredeemed.
+     */
+    @IsTest
+    static void testIneligibleOrdersAreExcludedFromRedeem() {
+        Map<String, Order> ordersByName = new Map<String, Order>();
+        for (Order orderRecord : [
+            SELECT Name, Tango_Reward_Eligible__c, Tango_Redeemed__c
+            FROM Order
+            WHERE BillToContactId IN (SELECT Id FROM Contact WHERE LastName = :LAST_ELIGIBLE)
+        ]) {
+            ordersByName.put(orderRecord.Name, orderRecord);
+        }
+        System.assertEquals(
+            true,
+            ordersByName.get('TangoRedeemable').Tango_Reward_Eligible__c,
+            'Orders whose EffectiveDate is in the Contact Tango window should be eligible'
+        );
+        System.assertEquals(
+            false,
+            ordersByName.get('TangoIneligible').Tango_Reward_Eligible__c,
+            'Orders whose EffectiveDate is outside the Contact Tango window should not be eligible'
+        );
+
+        Test.setMock(HttpCalloutMock.class, new TangoHttpMock(201, SUCCESS_BODY));
+
+        Test.startTest();
+        TangoAPI.TangoRewardResponse response = TangoAPI.redeemRewards(
+            getContactByLastName(LAST_ELIGIBLE).Id,
+            null,
+            null
+        );
+        Test.stopTest();
+
+        System.assertEquals(true, response.success, 'Redeem should succeed using only eligible Orders');
+        System.assertEquals(
+            25,
+            response.oldValue,
+            'Ineligible Order override (999) should not be included in the redeem total'
+        );
+        System.assertEquals(
+            false,
+            [
+                SELECT Tango_Redeemed__c
+                FROM Order
+                WHERE Name = 'TangoIneligible'
+                LIMIT 1
+            ]
+            .Tango_Redeemed__c,
+            'Ineligible Orders should stay unredeemed'
+        );
     }
 
     /**
@@ -423,12 +496,16 @@ private without sharing class TangoAPITest {
             Ext_Id__c = externalId,
             Contact_Title__c = 'Accounting',
             OCC_Rewards__c = true,
-            OCC_PendingRedeemIssue__c = false
+            OCC_PendingRedeemIssue__c = false,
+            Tango_Start_Date__c = Date.today().addYears(-1),
+            Tango_End_Date__c = Date.today().addYears(1)
         );
     }
 
     /**
-     * @description Builds an Order for the given buyer.
+     * @description Builds an Order for the given buyer. {@link OrderTrigger} stamps
+     *              {@link Order#Tango_Reward_Eligible__c} from {@link Order#EffectiveDate}
+     *              and the Contact Tango window.
      * @param accountId Account Id.
      * @param contactId Bill-to Contact Id.
      * @param name Order name used as the test key.
@@ -510,7 +587,11 @@ private without sharing class TangoAPITest {
             System.assertEquals(true, orderRecord.Tango_Redeemed__c, 'Already redeemed Orders should stay redeemed');
             return;
         }
-        System.assertEquals(true, orderRecord.Tango_Redeemed__c, 'Unredeemed Orders in the query should be marked redeemed');
+        if (orderRecord.Name == 'TangoIneligible') {
+            System.assertEquals(false, orderRecord.Tango_Redeemed__c, 'Orders with Tango_Reward_Eligible__c false should not be redeemed');
+            return;
+        }
+        System.assertEquals(true, orderRecord.Tango_Redeemed__c, 'Unredeemed eligible invoiced Orders should be marked redeemed');
         System.assertNotEquals(null, orderRecord.Tango_Redeem_Date__c, 'Redeem date should be set');
     }
 
