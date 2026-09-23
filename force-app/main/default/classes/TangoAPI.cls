@@ -1,9 +1,12 @@
 /**
- * @description REST resource that redeems Tango rewards for a Contact. Looks up unredeemed Orders,
- *              creates a Tango RaaS v2 order, marks those Orders redeemed, and writes
- *              {@link Tango_Reward_Log__c} / {@link Tango_Reward_Item__c} rows. Sandbox orgs use a
- *              test recipient and catalog ids so live cards are not issued.
+ * @description REST resource that redeems Tango rewards for a Contact. Looks up unredeemed
+ *              Orders with {@link Order#Tango_Reward_Eligible__c} true (stamped by
+ *              {@link RewardEligibilityHandler}), creates a Tango RaaS v2 order, marks those
+ *              Orders redeemed, and writes {@link Tango_Reward_Log__c} /
+ *              {@link Tango_Reward_Item__c} rows. Sandbox orgs use a test recipient and catalog
+ *              ids so live cards are not issued.
  * @group Tango
+ * @see RewardEligibilityHandler
  * @see Tango_Credentials__c
  * @see Ecommerce_Rewards__c
  */
@@ -191,9 +194,7 @@ global without sharing class TangoAPI {
             }
 
             List<Order> orders = getUnredeemedOrders(
-                contact.Id,
-                contact.Tango_Start_Date__c,
-                contact.Tango_End_Date__c
+                contact.Id
             );
             Decimal rewardTotal = sumRewards(orders);
             response.oldValue = rewardTotal;
@@ -269,7 +270,7 @@ global without sharing class TangoAPI {
      */
     private static Contact queryContactById(String id) {
         List<Contact> contacts = [
-            SELECT Id, FirstName, LastName, Name, Email, Ext_Id__c, OCC_PendingRedeemIssue__c, Tango_Start_Date__c, Tango_End_Date__c
+            SELECT Id, FirstName, LastName, Name, Email, Ext_Id__c, OCC_PendingRedeemIssue__c
             FROM Contact
             WHERE Id = :id
             LIMIT 1
@@ -284,7 +285,7 @@ global without sharing class TangoAPI {
      */
     private static Contact queryContactByExternalId(String externalId) {
         List<Contact> contacts = [
-            SELECT Id, FirstName, LastName, Name, Email, Ext_Id__c, OCC_PendingRedeemIssue__c, Tango_Start_Date__c, Tango_End_Date__c
+            SELECT Id, FirstName, LastName, Name, Email, Ext_Id__c, OCC_PendingRedeemIssue__c
             FROM Contact
             WHERE Ext_Id__c = :externalId
             LIMIT 1
@@ -302,38 +303,19 @@ global without sharing class TangoAPI {
     }
 
     /**
-     * @description Unredeemed, non-cancelled Orders for the contact, locked for update.
-     *              A blank Tango date window does not filter on invoiced datetime.
+     * @description Unredeemed, non-cancelled, reward-eligible Orders for the contact,
+     *              locked for update. Eligibility is {@link Order#Tango_Reward_Eligible__c}
      * @param contactId Buyer Id.
-     * @param startDate Inclusive {@link Contact#Tango_Start_Date__c}; null means no lower bound.
-     * @param endDate Inclusive {@link Contact#Tango_End_Date__c}; null means no upper bound.
      * @return Orders whose Tango totals should be redeemed.
      */
-    private static List<Order> getUnredeemedOrders(Id contactId, Date startDate, Date endDate) {
-        if (startDate == null && endDate == null) {
-            return [
-                SELECT Id, Name, Tango_Rewards_Total__c, Tango_Rewards_Override__c
-                FROM Order
-                WHERE BillToContactId = :contactId
-                    AND Tango_Redeemed__c = FALSE
-                    AND Status__c != 'Cancelled'
-                FOR UPDATE
-            ];
-        }
-        Datetime startBound = startDate == null
-            ? Datetime.newInstanceGmt(1900, 1, 1)
-            : Datetime.newInstance(startDate, Time.newInstance(0, 0, 0, 0));
-        Datetime endBound = endDate == null
-            ? Datetime.newInstanceGmt(4000, 12, 31, 23, 59, 59)
-            : Datetime.newInstance(endDate.addDays(1), Time.newInstance(0, 0, 0, 0)).addSeconds(-1);
+    private static List<Order> getUnredeemedOrders(Id contactId) {
         return [
-            SELECT Id, Name, Tango_Rewards_Total__c, Tango_Rewards_Override__c
+            SELECT Id, Name, Tango_Rewards_Total__c, Tango_Rewards_Override__c, Tango_Reward_Eligible__c
             FROM Order
             WHERE BillToContactId = :contactId
                 AND Tango_Redeemed__c = FALSE
-                AND Status__c != 'Cancelled'
-                AND Invoiced_Date_Time__c >= :startBound
-                AND Invoiced_Date_Time__c <= :endBound
+                AND Status__c = 'Invoiced'
+                AND Tango_Reward_Eligible__c = TRUE
             FOR UPDATE
         ];
     }
