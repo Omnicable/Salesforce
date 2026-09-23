@@ -107,6 +107,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Type__c</fieldItem>
                 <identifier>RecordType__cField</identifier>
             </fieldInstance>
@@ -275,6 +279,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.E_Commerce_Status__c</fieldItem>
                 <identifier>RecordE_Commerce_Status__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Reward_Eligible__c</fieldItem>
+                <identifier>RecordTango_Reward_Eligible_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e9f608b9-0935-42f0-b6af-38d0f4bc3693</name>
