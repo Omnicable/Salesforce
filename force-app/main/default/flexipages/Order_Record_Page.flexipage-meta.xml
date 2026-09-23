@@ -665,6 +665,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Start_Date__c</fieldItem>
+                <identifier>RecordTango_Start_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Tango_Rewards_Total__c</fieldItem>
                 <identifier>RecordTango_Rewards_Total_cField</identifier>
             </fieldInstance>
@@ -699,10 +709,30 @@
                 <identifier>RecordPortal_Visibility_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Reward_Eligible__c</fieldItem>
+                <identifier>RecordTango_Reward_Eligible_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-64da90f8-6aca-4118-8760-76c4a1b90c20</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_End_Date__c</fieldItem>
+                <identifier>RecordTango_End_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
