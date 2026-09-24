@@ -3,24 +3,20 @@
     <fullName>E_Commerce_Status__c</fullName>
     <externalId>false</externalId>
     <formula>IF(
-  OR(
-    ISPICKVAL(Status__c, &quot;Open&quot;),
-    ISPICKVAL(Status__c, &quot;Followed Up&quot;)
-  ),
-  IF(TODAY() - EffectiveDate &lt;= 3, &quot;Open&quot;, &quot;Expired&quot;),
-  CASE(
-    TEXT(Status__c),
-    &quot;Closed&quot;, &quot;Expired&quot;,
-    &quot;In Process&quot;, &quot;In Process&quot;,
-    &quot;Shipping&quot;, &quot;In Process&quot;,
-    &quot;Printed&quot;, &quot;In Process&quot;,
-    &quot;Order Received&quot;, &quot;Order Received&quot;,
-    &quot;Entered&quot;, &quot;Order Received&quot;,
-    &quot;Invoiced&quot;, &quot;Invoiced&quot;,
-    &quot;Cancelled&quot;, &quot;Cancelled&quot;,
-    &quot;-&quot;
-  )
-)</formula>
+OR(
+ISPICKVAL(Status__c, &quot;Open&quot;),
+ISPICKVAL(Status__c, &quot;Followed Up&quot;)
+),
+IF(TODAY() - EffectiveDate &lt;= 3, &quot;Open&quot;, &quot;Expired&quot;),
+IF(ISPICKVAL(Status__c, &quot;Closed&quot;), &quot;Expired&quot;,
+IF(ISPICKVAL(Status__c, &quot;In Process&quot;), &quot;In Process&quot;,
+IF(ISPICKVAL(Status__c, &quot;Shipping&quot;), &quot;In Process&quot;,
+IF(ISPICKVAL(Status__c, &quot;Printed&quot;), &quot;In Process&quot;,
+IF(ISPICKVAL(Status__c, &quot;Order Received&quot;), &quot;Order Received&quot;,
+IF(ISPICKVAL(Status__c, &quot;Entered&quot;), &quot;Order Received&quot;,
+IF(ISPICKVAL(Status__c, &quot;Invoiced&quot;), &quot;Invoiced&quot;,
+IF(ISPICKVAL(Status__c, &quot;Cancelled&quot;), &quot;Cancelled&quot;,
+&quot;-&quot;)))))))))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>E-Commerce Status</label>
     <required>false</required>
