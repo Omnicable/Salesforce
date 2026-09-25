@@ -998,10 +998,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>PlatformWebIdeUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>PrivacyDataAccess</name>
     </userPermissions>
     <userPermissions>
