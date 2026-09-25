@@ -5,10 +5,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>OrderContentDocumentLinkHandler</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>OrderSync</apexClass>
         <enabled>false</enabled>
     </classAccesses>
