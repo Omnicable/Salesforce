@@ -9,6 +9,7 @@
     <columns>Tango_Order_Id__c</columns>
     <columns>Errors__c</columns>
     <columns>Fulfilled__c</columns>
+    <columns>API_Error_Message__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>
