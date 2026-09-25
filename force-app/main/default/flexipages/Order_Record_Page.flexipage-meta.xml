@@ -250,6 +250,66 @@
                 <identifier>RecordOrder_Number__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Redeemed__c</fieldItem>
+                <identifier>RecordTango_Redeemed__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Rewards_Override__c</fieldItem>
+                <identifier>RecordTango_Rewards_Override__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Rewards_Total__c</fieldItem>
+                <identifier>RecordTango_Rewards_Total__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Reward_Step_Value__c</fieldItem>
+                <identifier>RecordTango_Reward_Step_Value__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Reward_Step__c</fieldItem>
+                <identifier>RecordTango_Reward_Step__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.E_Commerce_Status__c</fieldItem>
+                <identifier>RecordE_Commerce_Status__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e6d91e54-103f-4664-bae4-53bb4f4f8d5f</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -501,6 +561,68 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Rewards_Total__c</fieldItem>
+                <identifier>RecordTango_Rewards_Total_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Rewards_Override__c</fieldItem>
+                <identifier>RecordTango_Rewards_Override_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-64da90f8-6aca-4118-8760-76c4a1b90c20</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Tango_Redeemed__c</fieldItem>
+                <identifier>RecordTango_Redeemed_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-e856732b-45d4-4f16-95c4-b699a7e2334f</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-64da90f8-6aca-4118-8760-76c4a1b90c20</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-e856732b-45d4-4f16-95c4-b699a7e2334f</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-87e70722-4ef8-4afa-9616-0874bbb25fed</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Ship_to_Name__c</fieldItem>
                 <identifier>RecordShip_to_Name_cField</identifier>
             </fieldInstance>
@@ -735,6 +857,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-87e70722-4ef8-4afa-9616-0874bbb25fed</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Rewards</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection6</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
