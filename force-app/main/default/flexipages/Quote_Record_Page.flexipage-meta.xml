@@ -20,6 +20,10 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>hideSlackAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>numVisibleActions</name>
                     <value>3</value>
                 </componentInstanceProperties>
@@ -93,12 +97,32 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Status__c</fieldItem>
                 <identifier>RecordStatus__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Date__c</fieldItem>
+                <identifier>RecordDate__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Job_Reference__c</fieldItem>
+                <identifier>RecordJob_Reference__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Payment_Terms__c</fieldItem>
+                <identifier>RecordPayment_Terms__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.E_Commerce_Status__c</fieldItem>
+                <identifier>RecordE_Commerce_Status__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a1113897-4137-4340-bc01-434e770720d0</name>
@@ -209,18 +233,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.E_Commerce_Status__c</fieldItem>
-                <identifier>RecordE_Commerce_Status__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Portal_Visibility__c</fieldItem>
-                <identifier>RecordPortal_Visibility_cField</identifier>
+                <fieldItem>Record.Tango_Redeemed__c</fieldItem>
+                <identifier>RecordTango_Redeemed_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-2acc9395-a721-4dd4-ad63-c1a3cb87232b</name>
@@ -245,16 +259,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Tango_Reward_Step_Value__c</fieldItem>
                 <identifier>RecordTango_Reward_Step_Value_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Tango_Redeemed__c</fieldItem>
-                <identifier>RecordTango_Redeemed_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e9f608b9-0935-42f0-b6af-38d0f4bc3693</name>
@@ -511,7 +515,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Rewards &amp; Portal</value>
+                    <value>Rewards</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection5</identifier>
