@@ -5,7 +5,6 @@
     <excludeButtons>Clone</excludeButtons>
     <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>EnableSelfService</excludeButtons>
-    <excludeButtons>GenerateKnowledge</excludeButtons>
     <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <excludeButtons>ViewSelfService</excludeButtons>
