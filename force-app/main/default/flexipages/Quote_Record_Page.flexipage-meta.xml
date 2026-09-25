@@ -103,24 +103,6 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Date__c</fieldItem>
-                <identifier>RecordDate__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Job_Reference__c</fieldItem>
-                <identifier>RecordJob_Reference__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Payment_Terms__c</fieldItem>
-                <identifier>RecordPayment_Terms__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
                 <fieldItem>Record.E_Commerce_Status__c</fieldItem>
                 <identifier>RecordE_Commerce_Status__cField</identifier>
             </fieldInstance>
