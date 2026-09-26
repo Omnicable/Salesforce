@@ -52,6 +52,7 @@ fun toOrder(h) = {
     Job_Reference__c: h.Job_Reference__c default null,
     Payment_Terms__c: h.Payment_Terms__c default null,
     Sent_to_Customer__c: toCheckbox(h.Sent_to_Customer__c),
+    Portal_Visibility__c: toCheckbox(h.Sent_to_Customer__c),
     Status__c: h.Status__c default null,
     Status_Code__c: h.Status_Code__c default null,
     Sub_Type__c: h.Sub_Type__c default null,
@@ -68,6 +69,11 @@ fun toOrder(h) = {
     Comms_Order__c: toCheckbox(h.Comms_Order__c),
     Sales_Notes__c: h.Sales_Notes__c default null,
     Source_System__c: h.Source_System__c default null,
+    Tango_Redeemed__c: h.OCC_RewardRedeemed__c default null,
+    Tango_Rewards_Override__c: h.RewardOverride__c default null,
+    Tango_Reward_Step_Value__c: h.OCC_RewardStepValue__c default null,
+    Tango_Reward_Step__c: h.OCC_RewardStep__c default null,
+    Portal_Visibility__c: h.Sent_to_Customer__c default null,
     Order_Number__c: h.Order_Number__c default h.Name default null,
         LOD__c: do {
         var total = (h.Total_Order_Sales__c default 0) as Number

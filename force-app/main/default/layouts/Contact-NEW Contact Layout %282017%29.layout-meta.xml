@@ -3,8 +3,9 @@
     <customButtons>Move_Contact</customButtons>
     <customButtons>pi__Send_to_Prospect_Insight</customButtons>
     <excludeButtons>Clone</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>EnableSelfService</excludeButtons>
-    <excludeButtons>RequestUseSfdc</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <excludeButtons>ViewSelfService</excludeButtons>
     <layoutSections>
@@ -313,6 +314,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Breaker_Rewards__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Tango_Start_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Tango_End_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -624,6 +633,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>OmniSync_Contact_Report__c.Contact__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Tango_Reward_Log__c.Contact__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
