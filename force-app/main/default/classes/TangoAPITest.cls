@@ -205,11 +205,7 @@ private without sharing class TangoAPITest {
     @IsTest
     static void testIneligibleOrdersAreExcludedFromRedeem() {
         Map<String, Order> ordersByName = new Map<String, Order>();
-        for (Order orderRecord : [
-            SELECT Name, Tango_Reward_Eligible__c, Tango_Redeemed__c
-            FROM Order
-            WHERE BillToContactId IN (SELECT Id FROM Contact WHERE LastName = :LAST_ELIGIBLE)
-        ]) {
+        for (Order orderRecord : ordersForEligibleContact()) {
             ordersByName.put(orderRecord.Name, orderRecord);
         }
         System.assertEquals(
@@ -523,11 +519,29 @@ private without sharing class TangoAPITest {
      * @return Matching Contact.
      */
     private static Contact getContactByLastName(String lastName) {
+        String contactLastName = lastName;
         return [
             SELECT Id, Ext_Id__c
             FROM Contact
-            WHERE LastName = :lastName
+            WHERE LastName = :contactLastName
             LIMIT 1
+        ];
+    }
+
+    /**
+     * @description Orders billed to the eligible test Contact. Contact Ids are queried first so the
+     *              Order filter is a simple bind (semi-join binds can throw {@code tmpVar1} at runtime).
+     * @return Orders for {@link #LAST_ELIGIBLE}.
+     */
+    private static List<Order> ordersForEligibleContact() {
+        String lastName = LAST_ELIGIBLE;
+        Set<Id> contactIds = new Map<Id, Contact>(
+            [SELECT Id FROM Contact WHERE LastName = :lastName]
+        ).keySet();
+        return [
+            SELECT Name, Tango_Reward_Eligible__c, Tango_Redeemed__c, Tango_Redeem_Date__c, Status__c
+            FROM Order
+            WHERE BillToContactId IN :contactIds
         ];
     }
 
@@ -559,11 +573,7 @@ private without sharing class TangoAPITest {
      * @description Asserts redeemable Orders were marked redeemed and excluded Orders were not updated.
      */
     private static void assertOrdersRedeemed() {
-        for (Order orderRecord : [
-            SELECT Name, Tango_Redeemed__c, Tango_Redeem_Date__c, Status__c
-            FROM Order
-            WHERE BillToContactId IN (SELECT Id FROM Contact WHERE LastName = :LAST_ELIGIBLE)
-        ]) {
+        for (Order orderRecord : ordersForEligibleContact()) {
             assertOrderRedeemState(orderRecord);
         }
     }
