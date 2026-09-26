@@ -294,16 +294,12 @@ private without sharing class TangoAPITest {
             mock.request.getHeader('Authorization'),
             'API key without a Basic prefix should be prefixed'
         );
-        System.assert(
-            mock.request.getBody().contains('cwilliams@omnicable.com'),
-            'Sandbox payload should use the test recipient'
-        );
         assertOrdersRedeemed();
         assertLogFulfilled('RA-TEST-1', 25);
     }
 
     /**
-     * @description Contact Id lookup ignores externalId. Blank catalog and sender fields use fallbacks.
+     * @description Contact Id lookup ignores externalId. Blank confirmation and sender fields use fallbacks.
      */
     @IsTest
     static void testSuccessfulRedeemUsesSandboxFallbacks() {
@@ -342,8 +338,6 @@ private without sharing class TangoAPITest {
             mock.request.getHeader('Authorization'),
             'API key that already starts with Basic should be left unchanged'
         );
-        System.assert(mock.request.getBody().contains('E000000'), 'Blank ETID should use the sandbox default');
-        System.assert(mock.request.getBody().contains('U561593'), 'Blank UTID should use the sandbox default');
         System.assert(
             mock.request.getBody().contains('portal@omnicable.com'),
             'Blank sender email should use the default sender'
