@@ -3,11 +3,10 @@
     <fullName>Conductors__c</fullName>
     <externalId>false</externalId>
     <label># Conductors</label>
-    <precision>4</precision>
+    <length>55</length>
     <required>false</required>
-    <scale>0</scale>
     <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
+    <type>Text</type>
     <unique>false</unique>
 </CustomField>
