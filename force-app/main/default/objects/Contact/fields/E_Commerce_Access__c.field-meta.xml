@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E_Commerce_Access__c</fullName>
+    <defaultValue>&apos;Buy Own&apos;</defaultValue>
+    <label>E-Commerce Access</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Buy Own</fullName>
+                <default>false</default>
+                <label>Buy Own</label>
+            </value>
+            <value>
+                <fullName>Buy Account</fullName>
+                <default>false</default>
+                <label>Buy Account</label>
+            </value>
+            <value>
+                <fullName>Buy Company</fullName>
+                <default>false</default>
+                <label>Buy Company</label>
+            </value>
+            <value>
+                <fullName>View Company</fullName>
+                <default>false</default>
+                <label>View Company</label>
+            </value>
+            <value>
+                <fullName>Admin</fullName>
+                <default>false</default>
+                <label>Admin</label>
+            </value>
+            <value>
+                <fullName>Super User</fullName>
+                <default>false</default>
+                <label>Super User</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
