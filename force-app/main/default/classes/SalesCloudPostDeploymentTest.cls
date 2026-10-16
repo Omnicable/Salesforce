@@ -30,10 +30,21 @@ private class SalesCloudPostDeploymentTest {
             Ext_Id__c = 'SCPD-D-' + String.valueOf(Datetime.now().getTime())
         );
 
+      
+
+        Spec_Sheet__c spec = new Spec_Sheet__c(
+            Name = 'SCPD Test Spec',
+            Description__c = 'SCPD Test Spec Description'
+        );
+
+        insert spec;
+
         Part_Numbers__c part = new Part_Numbers__c(
             Name = 'SCPD Test Part',
-            Item_Number__c = '123456'
+            Item_Number__c = '123456',
+            Spec_Sheet__c = spec.Id
         );
+
 
         insert part;
     }
