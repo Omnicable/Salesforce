@@ -184,6 +184,8 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
                 o.Tango_Reward_Step_Value__c = o.Quote_Order_Credit__r.OCC_RewardStepValue__c;
                 o.Tango_Rewards_Override__c = o.Quote_Order_Credit__r.RewardOverride__c;
                 o.Invoiced_Date_Time__c = o.Quote_Order_Credit__r.Invoiced_Date_Time__c;
+                o.Tango_Start_Date__c = Date.valueOf('2026-01-01');
+                o.Tango_End_Date__c = Date.valueOf('2026-12-31');
             }
             System.debug('order scope: ' + scope);
             update scope;
@@ -201,6 +203,8 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
                 q.ExpirationDate = q.Quote_Order_Credit__r.Expiration_Date__c;
                 q.Invoiced_Date_Time__c = q.Quote_Order_Credit__r.Invoiced_Date_Time__c;
                 q.Type__c = q.Quote_Order_Credit__r.Type__c;
+                q.Tango_Start_Date__c = Date.valueOf('2026-01-01');
+                q.Tango_End_Date__c = Date.valueOf('2026-12-31');
             }
             System.debug('quote scope: ' + scope);
             update scope;
@@ -374,6 +378,8 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
         System.schedule('OpportunitySyncScheduler 35' + suffix, '0 35 * * * ?', new OpportunitySyncScheduler());
         System.schedule('OpportunitySyncScheduler 40' + suffix, '0 40 * * * ?', new OpportunitySyncScheduler());
         System.schedule('OpportunitySyncScheduler 45' + suffix, '0 45 * * * ?', new OpportunitySyncScheduler());
+        System.schedule('OpportunitySyncScheduler 50' + suffix, '0 50 * * * ?', new OpportunitySyncScheduler());
+        System.schedule('OpportunitySyncScheduler 55' + suffix, '0 55 * * * ?', new OpportunitySyncScheduler());
         
         
         System.schedule('OpportunityDetailSyncScheduler 03' + suffix, '0 03 * * * ?', new OpportunityLineSyncScheduler());
@@ -386,5 +392,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
         System.schedule('OpportunityDetailSyncScheduler 38' + suffix, '0 38 * * * ?', new OpportunityLineSyncScheduler());
         System.schedule('OpportunityDetailSyncScheduler 43' + suffix, '0 43 * * * ?', new OpportunityLineSyncScheduler());
         System.schedule('OpportunityDetailSyncScheduler 48' + suffix, '0 48 * * * ?', new OpportunityLineSyncScheduler());
+        System.schedule('OpportunityDetailSyncScheduler 53' + suffix, '0 53 * * * ?', new OpportunityLineSyncScheduler());
+        System.schedule('OpportunityDetailSyncScheduler 58' + suffix, '0 58 * * * ?', new OpportunityLineSyncScheduler());
     }
 }
