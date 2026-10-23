@@ -36,6 +36,7 @@ fun toOrderItem(d) =
         Line_Number__c: d.Line_Number__c default null,
         Warehouse__c: d.Warehouse__c default null,
         GPDollars__c: d.GPDollars__c default null,
+        Dollars__c: d.Dollars__c default null,
         Line_Type__c: d.Line_Type__c default null,
         Qty_Shipped__c: d.Qty_Shipped__c default null,
         Unit_of_Measure__c: d.Unit_of_Measure__c default null,
