@@ -109,14 +109,14 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
 
         }else if(recordType.getSObjectType() == Schema.OrderItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
             return Database.getQueryLocator([
-                SELECT Id, CreatedDate, Expected_Date__c, Quote_Order_Credit_Detail__r.Expected_Date__c
+                SELECT Id, CreatedDate, Expected_Date__c, Quote_Order_Credit_Detail__r.Expected_Date__c, Quote_Order_Credit_Detail__r.Dollars__c
                 FROM OrderItem
                 WHERE Quote_Order_Credit_Detail__r.Expected_Date__c != null and Expected_Date__c = null
             ]);
 
         }else if(recordType.getSObjectType() == Schema.QuoteLineItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
             return Database.getQueryLocator([
-                SELECT Id, CreatedDate, Putups__c, Dollars__c, Freight_Terms__c, C2SPRC__c, Unit_of_Measure__c, Line_Number__c, Quote_Order_Credit_Detail__r.Putups__c, Quote_Order_Credit_Detail__r.Dollars__c, Quote_Order_Credit_Detail__r.Freight_Terms__c, Quote_Order_Credit_Detail__r.C2SPRC__c, Quote_Order_Credit_Detail__r.Unit_of_Measure__c, Quote_Order_Credit_Detail__r.Line_Number__c
+                SELECT Id, CreatedDate, Putups__c, Dollars__c, Freight_Terms__c, C2SPRC__c, Unit_of_Measure__c, Line_Number__c, Quote_Order_Credit_Detail__r.Putups__c, Quote_Order_Credit_Detail__r.Dollars__c, Quote_Order_Credit_Detail__r.Freight_Terms__c, Quote_Order_Credit_Detail__r.C2SPRC__c, Quote_Order_Credit_Detail__r.Unit_of_Measure__c, Quote_Order_Credit_Detail__r.Line_Number__c, Quote_Order_Credit_Detail__r.Line_Item__c, Line_Status__c, Quote_Order_Credit_Detail__r.Line_Status__c
                 FROM QuoteLineItem where Line_Number__c = null AND Quote_Order_Credit_Detail__r.Line_Number__c != null
                 //WHERE CreatedDate >= :startDate AND CreatedDate < :endDate
             ]);
@@ -211,6 +211,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
         } else if(recordType.getSObjectType() == Schema.OrderItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
             for(OrderItem oi : (List<OrderItem>) scope) {
                 oi.Expected_Date__c = oi.Quote_Order_Credit_Detail__r.Expected_Date__c;
+                oi.Dollars__c = oi.Quote_Order_Credit_Detail__r.Dollars__c;
             }
             System.debug('order item scope: ' + scope);
             update scope;
@@ -222,6 +223,8 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
                 qli.C2SPRC__c = qli.Quote_Order_Credit_Detail__r.C2SPRC__c;
                 qli.Unit_of_Measure__c = qli.Quote_Order_Credit_Detail__r.Unit_of_Measure__c;
                 qli.Line_Number__c = qli.Quote_Order_Credit_Detail__r.Line_Number__c;
+                qli.Line_Item__c = qli.Quote_Order_Credit_Detail__r.Line_Item__c;
+                qli.Line_Status__c = qli.Quote_Order_Credit_Detail__r.Line_Status__c;
             }
             System.debug('quote line item scope: ' + scope);
             update scope;
