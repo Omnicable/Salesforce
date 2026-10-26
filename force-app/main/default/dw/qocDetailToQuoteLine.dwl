@@ -36,7 +36,8 @@ fun toQuoteLineItem(d) =
         Dollars__c: d.Dollars__c default null,
         Freight_Terms__c: d.Freight_Terms__c default null,
         C2SPRC__c: d.C2SPRC__c default null,
-        Unit_of_Measure__c: d.Unit_of_Measure__c default null
+        Unit_of_Measure__c: d.Unit_of_Measure__c default null,
+        Line_Status__c: d.Line_Status__c default null,
 
     })
 
