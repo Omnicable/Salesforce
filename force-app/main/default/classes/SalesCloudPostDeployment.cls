@@ -211,6 +211,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
         } else if(recordType.getSObjectType() == Schema.OrderItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
             for(OrderItem oi : (List<OrderItem>) scope) {
                 oi.Expected_Date__c = oi.Quote_Order_Credit_Detail__r.Expected_Date__c;
+                oi.Dollars__c = oi.Quote_Order_Credit_Detail__r.Dollars__c;
             }
             System.debug('order item scope: ' + scope);
             update scope;
