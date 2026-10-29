@@ -95,7 +95,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
                 SELECT Id, CreatedDate, Portal_Visibility__c, Tango_Redeemed__c, Tango_Reward_Step__c, Tango_Reward_Step_Value__c, Tango_Rewards_Override__c, Invoiced_Date_Time__c,
                 Quote_Order_Credit__r.Sent_to_Customer__c, Quote_Order_Credit__r.OCC_RewardRedeemed__c, Quote_Order_Credit__r.OCC_RewardStep__c, Quote_Order_Credit__r.OCC_RewardStepValue__c, Quote_Order_Credit__r.RewardOverride__c, Quote_Order_Credit__r.Invoiced_Date_Time__c
                 FROM Order
-                WHERE Quote_Order_Credit__c != null AND Tango_Reward_Step__c = null AND Tango_Reward_Step_Value__c = null
+                WHERE Quote_Order_Credit__c != null AND Tango_Reward_Step__c = null AND Quote_Order_Credit__r.OCC_RewardStep__c != null
             ]);
 
         } else if(recordType.getSObjectType() == Schema.Quote.SObjectType && action == 'SYNC_PORTAL_DATA') {
@@ -103,7 +103,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
                 SELECT Id, CreatedDate, Portal_Visibility__c, Tango_Redeemed__c, Tango_Reward_Step__c, Tango_Reward_Step_Value__c, Tango_Rewards_Override__c, Payment_Terms__c, Job_Reference__c, Total_Order_Sales__c, Status__c, ExpirationDate, Invoiced_Date_Time__c, Type__c,
                 Quote_Order_Credit__r.Type__c, Quote_Order_Credit__r.Sent_to_Customer__c, Quote_Order_Credit__r.OCC_RewardRedeemed__c, Quote_Order_Credit__r.OCC_RewardStep__c, Quote_Order_Credit__r.OCC_RewardStepValue__c, Quote_Order_Credit__r.RewardOverride__c, Quote_Order_Credit__r.Expiration_Date__c, Quote_Order_Credit__r.Payment_Terms__c, Quote_Order_Credit__r.Job_Reference__c, Quote_Order_Credit__r.Total_Order_Sales__c, Quote_Order_Credit__r.Status__c, Quote_Order_Credit__r.Invoiced_Date_Time__c
                 FROM Quote
-                WHERE  Quote_Order_Credit__c != null AND Tango_Reward_Step__c = null AND Tango_Reward_Step_Value__c = null
+                WHERE  Quote_Order_Credit__c != null AND Payment_Terms__c = null AND Quote_Order_Credit__r.Payment_Terms__c != null
             ]);
 
 
