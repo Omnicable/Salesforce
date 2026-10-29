@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ABC_Segment__c</fullName>
+    <description>Identifies the account&apos;s A,B, or C classification for sales planning and reporting. Initially populated through a manual data load. Subsequent changes may be made by an Admin with Sales Enablement approval.</description>
+    <inlineHelpText>Indicates the Account&apos;s ABC classification for sales planning and reporting.</inlineHelpText>
+    <label>ABC Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A+</fullName>
+                <default>false</default>
+                <label>A+</label>
+            </value>
+            <value>
+                <fullName>A</fullName>
+                <default>false</default>
+                <label>A</label>
+            </value>
+            <value>
+                <fullName>B</fullName>
+                <default>false</default>
+                <label>B</label>
+            </value>
+            <value>
+                <fullName>C</fullName>
+                <default>false</default>
+                <label>C</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
