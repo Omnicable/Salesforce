@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>39.0</apiVersion>
+    <available>true</available>
+    <description>WORKS!!</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Breaker Quote/Order with line items listed</name>
+    <style>none</style>
+    <subject>Breaker  for</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

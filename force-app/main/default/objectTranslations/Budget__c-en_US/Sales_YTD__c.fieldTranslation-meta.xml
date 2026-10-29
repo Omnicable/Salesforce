@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Total Sales Year to date --></help>
+    <label><!-- Sales YTD --></label>
+    <name>Sales_YTD__c</name>
+</CustomFieldTranslation>

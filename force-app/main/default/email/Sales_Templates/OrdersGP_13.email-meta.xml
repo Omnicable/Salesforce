@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>OrdersGP_13</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>OrdersGP&lt;13%</name>
+    <style>freeForm</style>
+    <subject>Order {!QuotesOrdersCredits_Header__c.Order_Number__c}  entered at 12% or less</subject>
+    <textOnly>Ryan,
+
+
+{!QuotesOrdersCredits_Header__c.Entered_By__c} entered Order {!QuotesOrdersCredits_Header__c.Order_Number__c} for {!QuotesOrdersCredits_Header__c.Customer_Name__c} at 12% or less GP%.
+
+
+Please check this out ASAP. It is not on hold.
+
+
+Thanks</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

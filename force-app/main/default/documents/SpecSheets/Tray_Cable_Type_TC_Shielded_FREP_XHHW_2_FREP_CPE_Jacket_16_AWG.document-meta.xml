@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+AF21602 AF21603</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 280470 280490 280980 354800 305300 354810 354820 367120 354830 305360 367130 367140 367150 367160 367170 326650 367180 326660 367190 326640 326670 367200 367210 367220 311900 367230 311910 367240 367250 367260 367270</keywords>
+    <name>Tray Cable - Type TC - Shielded - FREP - XHHW-2 FREP / CPE Jacket 16 AWG</name>
+    <public>true</public>
+</Document>

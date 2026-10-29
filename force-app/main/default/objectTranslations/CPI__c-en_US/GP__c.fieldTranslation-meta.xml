@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is your starting gross profit percent when your quote/order is entered into OPUS. --></help>
+    <label><!-- GP % --></label>
+    <name>GP__c</name>
+</CustomFieldTranslation>

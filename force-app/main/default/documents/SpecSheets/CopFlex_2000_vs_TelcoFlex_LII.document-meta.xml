@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Comparison of Cobra&apos;s CopFlex 2000 product and Southwire&apos;s TelcoFlex LII physical properties and ratings.</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>OMNI PART #&apos;S TF208-XX TF206-XX TF204-XX TF202-XX TF21/0-XX TF22/0-XX TF24/0-XX TF2350-XX TF2500-XX TF2750-XX</keywords>
+    <name>CopFlex 2000 vs TelcoFlex LII</name>
+    <public>true</public>
+</Document>

@@ -1,0 +1,84 @@
+<messaging:emailTemplate subject="Omni Cable {!relatedTo.Type__c} #{!relatedTo.name}" recipientType="Contact" relatedToType="QuotesOrdersCredits_Header__c" replyTo="sfromhold@omnicable.com" >
+<messaging:htmlEmailBody >    
+<html>
+   
+    ****
+    <body>
+     <STYLE type="text/css">
+        TH {font-size: 14px; font-family:"Arial";background: #CCCCCC; border-width: 3;  text-align: center; padding: 10px}
+        TD  {font-size: 14px; font-family:"Arial"; text-align: right; cellpadding: 4px}
+        TABLE {font-size: 14px; font-family:"Arial"; border: solid #CCCCCC; border-width: 1; cellpadding: 4px}
+        TR {font-size: 14px; font-family:"Arial"; border: solid #CCCCCC; border-width: 4; padding: 10px}
+     </STYLE>
+
+     <table border="0">
+<tr>
+<td>{!relatedTo.Customer_Name__c}<br>
+Attn: {!relatedTo.Buyer__r.Name}</br><br>
+{!relatedTo.Type__c} #{!relatedTo.name}</br>
+Quote Issued: {!relatedTo.Date__c}<br>
+Expires: </br>
+Payment Terms: <br>
+Job Reference: {!relatedTo.Job_Reference__c}</br>
+Ship Via: <br>
+Freight Terms: </br></td>
+<td> <apex:image value="{!$Resource.Empower}" width="60%"/><br>
+West Chester, PA 19382</br>
+Phone: 610-701-0100<br>
+Toll Free: 800-292-6664</br>
+</td>
+<td>{!relatedTo.Customer_Name__c}<br>
+Attn: {!relatedTo.Buyer__r.Name}</br></td></tr>
+</table></body><body>
+**
+    <STYLE type="text/css">
+        TH {font-size: 14px; font-family:"Arial";background: #CCCCCC; border-width: 3;  text-align: center; padding: 10px}
+        TD  {font-size: 14px; font-family:"Arial"; text-align: right; cellpadding: 4px}
+        TABLE {font-size: 14px; font-family:"Arial"; border: solid #CCCCCC; border-width: 1; cellpadding: 4px}
+        TR {font-size: 14px; font-family:"Arial"; border: solid #CCCCCC; border-width: 4; padding: 10px}
+     </STYLE>
+     <font face="arial" size="2">
+
+    <apex:image value="{!$Resource.Empower}" width="30%"/>
+    
+<p>{!relatedTo.Customer_Name__c}<br>
+Attn: {!relatedTo.Buyer__r.Name}</br><br>
+{!relatedTo.Type__c} #{!relatedTo.name}</br>
+Quote Issued: {!relatedTo.Date__c}<br>
+Expires: </br>
+Payment Terms: <br>
+Job Reference: {!relatedTo.Job_Reference__c}</br>
+Ship Via: <br>
+Freight Terms: </br></p><br></br>
+<table border="0">
+
+    <tr >
+        <th>Line</th><th>Spec Sheet</th><th>Quantity</th><th>Product</th><th>Put-Up</th><th>Leadtime</th>
+    </tr>
+    <apex:repeat var="cx" value="{!relatedTo.Order_Details__r}">
+        <tr>            
+            <td>{!Floor(cx.Line_Number__c)}</td>
+            <td><a href="{!cx.Spec_Sheet__c}">View Product Spec</a></td>
+            <td>{!Floor(cx.Qty_Ordered__c)} {!cx.Unit_of_Measure__c}</td>
+            <td>{!cx.Line_Item__c}</td>
+            <td>{!cx.Put_up_1__c}    {!cx.Put_up_2__c}    {!cx.Put_up_3__c}    {!cx.Put_up_4__c}    {!cx.Put_up_5__c}    {!cx.Put_up_6__c}    {!cx.Put_up_7__c}</td>
+            <td>{!cx.Line_Type__c}</td>
+        </tr>
+    </apex:repeat>                
+</table>
+<p />
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<p>
+<a href="http://go.omnicable.com/Terms%20and%20Conditions%20page.pdf">Full Terms and Conditions available here</a><br>
+It is Omni Cable’s policy that all items eligible for a Return Material Authorization (RMA) must meet the following terms and conditions. Any request for a return must be made within 60 days of the item invoice date. Any material returned without Omni Cable RMA documentation cannot be processed and will remain the responsibility of the customer. Omni Cable is not responsible for any material damaged during transit. Damaged freight will be refused at our dock. All Value- Add items such as material striped, twisted, paralleled or lashed are considered processed and no longer eligible for return. Material cut to length or otherwise modified to customer specification, obsolete, discontinued or close out items and any material not passing Omni Cable inspection does not qualify for return credit. Omni Cable reserves the 
+ to change this policy at its discretion. 
+</br></p>
+
+ </font>
+        </body>
+    </html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

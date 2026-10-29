@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このタスクの完了期限日。デフォルトではマイルストーンの期限日が設定される。</help>
+    <label>期限日</label>
+    <name>Due_Date__c</name>
+</CustomFieldTranslation>

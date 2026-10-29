@@ -1,0 +1,7 @@
+FYI - {!Customer_Events__c.CreatedBy} has submitted a customer event credit.
+
+Click here to review the credit request in Salesforce
+https://cs18.salesforce.com/{!Customer_Events__c.Id}
+
+
+* Standard Procedure: Credits UNDER $1,500 must be approved by the RM & RVP; credits $1,500 and greater must be approved by the RM, RVP, & COO.

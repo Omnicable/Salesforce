@@ -1,0 +1,5 @@
+Thank you for submitting a request for the Marketing department. Your request will be updated within the time frame listed below. 
+
+Priority: {!Cases_Requests__c.Priority__c}
+
+You will receive an email when your request has been completed. To view the request, click here: https://omnicable.my.salesforce.com/{!Cases_Requests__c.Id}

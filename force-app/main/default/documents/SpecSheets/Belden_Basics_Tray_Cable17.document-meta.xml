@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>BELDEN SPEC SHEET
+A60603 28153C</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>A60603 28153C</keywords>
+    <name>Belden - Basics Tray Cable</name>
+    <public>true</public>
+</Document>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Measure --></label>
+    <name>Measure__c</name>
+    <picklistValues>
+        <masterLabel>Avg Order Size $</masterLabel>
+        <translation><!-- Avg Order Size $ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GP%</masterLabel>
+        <translation><!-- GP% --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quote to Order Ratio %</masterLabel>
+        <translation><!-- Quote to Order Ratio % --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales $</masterLabel>
+        <translation><!-- Sales $ --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

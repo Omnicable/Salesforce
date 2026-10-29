@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Uncheck this button when entering initial Price Sheet information. Only keep checked when entering additional updates.</inlineHelpText>
+    <label>Update</label>
+    <type>Checkbox</type>
+</CustomField>

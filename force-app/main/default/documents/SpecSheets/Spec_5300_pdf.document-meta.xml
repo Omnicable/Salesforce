@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+B81201 B81001 B80801 B80601 B80401 B80201 B80101 B81/001 B82/001 B83/001 B84/001 B82626 B83131 B83737 B84444 B85353 B86464 B87777</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART#s 5310.01014 5310.01012 5310.01010 5310.01008 5310.01006 5310.01004 5310.01002 5310.01001 5310.01110 5310.01210 5310.01310 5310.01410 5310.01262 5310.01313 5310.01373 5310.01444 5310.01535 5310.01646 5310.01777 5310.01929 5310.01111</keywords>
+    <name>Flexible and Portable Cord - Flexible and Portable Cord - DLO</name>
+    <public>true</public>
+</Document>

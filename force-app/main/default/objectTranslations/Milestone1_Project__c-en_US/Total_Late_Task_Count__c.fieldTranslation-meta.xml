@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- How many tasks associated with this project are late?  (Calculated) --></help>
+    <label><!-- Total Late Task Count --></label>
+    <name>Total_Late_Task_Count__c</name>
+</CustomFieldTranslation>

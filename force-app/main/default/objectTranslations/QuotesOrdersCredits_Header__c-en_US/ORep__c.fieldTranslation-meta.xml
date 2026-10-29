@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Used to track orders for reporting purposes. Tied to workflow --></help>
+    <label><!-- ORep --></label>
+    <name>ORep__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_Rewards__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Turn off/on communities reward for contacts</description>
+    <inlineHelpText>Contacts must be in an active promo to be enrolled in OmniPoints.</inlineHelpText>
+    <label>Omni Points (Contact)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

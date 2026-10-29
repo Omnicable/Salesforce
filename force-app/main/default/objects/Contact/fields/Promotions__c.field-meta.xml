@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promotions__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>A checked box means that this customer has opted into receiving announcements about Omni Cable Promotions.</description>
+    <inlineHelpText>A checked box means that this customer will receive announcements about Omni Cable Promotions.</inlineHelpText>
+    <label>Promotions</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

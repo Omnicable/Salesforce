@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Buying Group --></label>
+    <name>Buying_Group_Code__c</name>
+    <picklistValues>
+        <masterLabel>ACC</masterLabel>
+        <translation><!-- ACC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AD</masterLabel>
+        <translation><!-- AD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ADM</masterLabel>
+        <translation><!-- ADM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CED</masterLabel>
+        <translation><!-- CED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CES</masterLabel>
+        <translation><!-- CES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EDN</masterLabel>
+        <translation><!-- EDN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GRA</masterLabel>
+        <translation><!-- GRA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IM</masterLabel>
+        <translation><!-- IM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IND</masterLabel>
+        <translation><!-- IND --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LGP</masterLabel>
+        <translation><!-- LGP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NGR</masterLabel>
+        <translation><!-- NGR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NR</masterLabel>
+        <translation><!-- NR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NW</masterLabel>
+        <translation><!-- NW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SCR</masterLabel>
+        <translation><!-- SCR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SP</masterLabel>
+        <translation><!-- SP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UN</masterLabel>
+        <translation><!-- UN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>USI</masterLabel>
+        <translation><!-- USI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WIN</masterLabel>
+        <translation><!-- WIN --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

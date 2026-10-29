@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <available>true</available>
+    <description>Email alert when CED quote &gt; $50K or CED order &gt; $25K</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CED quote &gt; $50K or order &gt; $25K</name>
+    <style>none</style>
+    <subject>CSC Quote &lt;$2.5K &amp; GP &lt;30% for</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

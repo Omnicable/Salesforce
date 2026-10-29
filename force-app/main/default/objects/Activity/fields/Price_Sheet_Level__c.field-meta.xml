@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Sheet_Level__c</fullName>
+    <label>Price Sheet Level</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard Regional Pricing</fullName>
+                <default>false</default>
+                <label>Standard Regional Pricing</label>
+            </value>
+            <value>
+                <fullName>Discounted Entire Sheet</fullName>
+                <default>false</default>
+                <label>Discounted Entire Sheet</label>
+            </value>
+            <value>
+                <fullName>SKU Adjusted Pricing</fullName>
+                <default>false</default>
+                <label>SKU Adjusted Pricing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

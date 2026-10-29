@@ -1,0 +1,142 @@
+<!--
+  @description       : Account 
+  @author            : chrisw@launchdm.com
+  @group             : LaunchDM
+  @last modified on  : 12-05-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="Portal_ResourceController" access="global"
+	implements="forceCommunity:availableForAllPageTypes">
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" access="global" />
+	<aura:attribute name="contact" type="Contact" />
+	<aura:attribute name="accountManager" type="Object" />
+	<aura:attribute name="territorySalesManager" type="Object" />
+	<aura:attribute name="regionalManager" type="Object" />
+
+	<aura:attribute name="amEmail" type="String" />
+	<aura:attribute name="dsmEmail" type="String" />
+	<aura:attribute name="rmEmail" type="String" />
+	<aura:attribute name="filetype" type="List" default="['.png', '.jpg', '.jpeg']" />
+	<aura:attribute name="contactFileId" type="String" />
+
+
+
+
+
+	<aura:attribute name="loading" type="Boolean" default="true" />
+
+	<div class="slds-is-relative slds-var-p-around_large">
+		<div class="h1">
+			My Account
+		</div>
+
+		<div class="slds-grid slds-gutters slds-wrap">
+			<div class="slds-col">
+				<div class="h2">
+					Contact Information
+				</div>
+				<lightning:recordEditForm aura:id="contactForm" recordId="{!v.contact.Id}" objectApiName="Contact"
+					onsubmit="{!c.handleSubmit}" onsuccess="{!c.handleSuccess}" onerror="{!c.handleError}">
+					<lightning:messages />
+					<lightning:inputField fieldName="FirstName" />
+					<lightning:inputField fieldName="LastName" />
+					<lightning:inputField fieldName="Phone" />
+					<lightning:inputField fieldName="Email" />
+
+					<lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update"
+						label="Update" />
+				</lightning:recordEditForm>
+			</div>
+			<!-- <div class="slds-col slds">
+
+				<div class="slds-text-align_center">
+					<div class="slds-align_absolute-center">
+						<aura:if isTrue="{!v.contactFileId != null}">
+							<lightning:fileCard fileId="{!v.contactFileId}" description="Contact Photo" />
+
+						</aura:if>
+					</div>
+					<lightning:fileUpload label="Upload Your Picture" name="fileUploader" multiple="true"
+						accept=".png, .jpg, .jpeg" recordId="{!v.contact.Id}"
+						onuploadfinished="{!c.handleUploadFinished}" />
+				</div>
+			</div> -->
+			<div class="slds-col">
+				<div class="slds-var-p-top_medium">
+					<div class="account-cont slds-var-p-around_x-small">
+						<div class="h2 slds-p-top_none slds-m-top_none">Your Account Manager</div>
+						<div class="slds-grid slds-gutters">
+							<div class="slds-col slds-grow-none">
+								<img class="profile-img" src="{!v.accountManager.Photo__c}" height="70" width="auto" />
+							</div>
+							<div class="prof-text slds-col">
+								<div class="am-data">{!v.accountManager.Full_Name__c}
+								</div>
+								<div class="am-data">{!v.accountManager.Phone}</div>
+								<div class="am-data"><a class="clickable">{!v.amEmail}</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="slds-var-p-top_medium">
+					<div class="account-cont slds-var-p-around_x-small">
+						<div class="h2 slds-p-top_none slds-m-top_none">Territory Sales Manager</div>
+						<div class="slds-grid slds-gutters">
+							<div class="slds-col slds-grow-none">
+								<img class="profile-img" src="{!v.territorySalesManager.Photo__c}" height="70"
+									width="auto" />
+							</div>
+							<div class="prof-text slds-col">
+								<div class="am-data">{!v.territorySalesManager.Full_Name__c}
+								</div>
+								<div class="am-data">{!v.territorySalesManager.Phone}</div>
+								<div class="am-data"><a class="clickable">{!v.dsmEmail}</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="slds-var-p-top_medium">
+					<div class="account-cont slds-var-p-around_x-small">
+						<div class="h2 slds-p-top_none slds-m-top_none">Regional Sales Manager</div>
+						<div class="slds-grid slds-gutters">
+							<div class="slds-col slds-grow-none">
+
+								<aura:if isTrue="{!v.regionalManager.Photo__c != null}">
+									<img class="profile-img" src="{!v.regionalManager.Photo__c}" height="70"
+										width="auto"
+										onerror="this.onerror=null;this.src='default';this.classList.add('broken-img');" />
+									<aura:set attribute="else">
+										<img class="profile-img" src="{!v.regionalManager.FullPhotoUrl}" height="70"
+											width="auto"
+											onerror="this.onerror=null;this.src='default';this.classList.add('broken-img');" />
+									</aura:set>
+								</aura:if>
+
+
+							</div>
+							<div class="prof-text slds-col">
+								<div class="am-data">{!v.regionalManager.Full_Name__c}
+								</div>
+								<div class="am-data">{!v.regionalManager.Phone}</div>
+								<div class="am-data"><a class="clickable">{!v.rmEmail}</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<aura:if isTrue="{! v.loading }">
+			<lightning:spinner alternativeText="Loading" size="medium" />
+		</aura:if>
+
+		<lightning:notificationsLibrary aura:id="notifLib" />
+
+	</div>
+
+
+</aura:component>

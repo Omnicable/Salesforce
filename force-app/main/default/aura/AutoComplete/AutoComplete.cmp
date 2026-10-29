@@ -1,0 +1,153 @@
+<!--
+  @description       : 
+  @author            : chrisw@launchdm.com
+  @group             : 
+  @last modified on  : 10-12-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="PriceSheetController" extends="c:PriceSheetBaseComponent" implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <!-- attributes to be received from parent component-->
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="objectApiName" type="String" default="Account" />
+    <aura:attribute name="idFieldApiName" type="String" default="Id" />
+    <aura:attribute name="valueFieldApiName" type="String" />
+    <aura:attribute name="extendedWhereClause" type="String" default=" AND Active__c = 'A' " />
+    <aura:attribute name="maxRecords" type="Integer" default="10" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="pba" type="Price_Book_Approval__c" />
+    <aura:attribute name="isLoading" type="Boolean" />
+    <aura:attribute name="isSaved" type="Boolean" default="false" />
+    <aura:attribute name="isSearching" type="Boolean" default="false" />
+    <aura:attribute name="editDisabled" type="Boolean" />
+    <aura:attribute name="noResults" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+    <!-- Attributes specific to component-->
+    <aura:attribute name="results" type="List" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="openDropDown" type="Boolean" default="false" />
+    <aura:attribute name="selectedOption" type="String" />
+    <aura:attribute name="inputValue" type="String" />
+    <aura:attribute name="inputSearchFunction" type="Object" />
+    <aura:attribute name="selectedValue" type="String" default="" />
+    <aura:attribute name="typeLabel" type="String" />
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+    <aura:attribute name="errors" type="Object" default="[]"/>
+    <aura:attribute name="selectedAccounts" type="List" default="[]" />
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+	<aura:attribute name="defaultSortDirection" type="String" default="asc" />
+	<aura:attribute name="sortedBy" type="String" />
+
+    <lightning:card>
+        <aura:set attribute="actions">
+           
+            <lightning:button
+                disabled="{! v.typeLabel != 'Accounts' ? v.selectedValue == '' || v.isLoading || v.pba.Status__c == 'Pending' || v.pba.Status__c == 'Approved' : v.selectedAccounts.length == 0 || v.isLoading || v.pba.Status__c == 'Pending' || v.pba.Status__c == 'Approved'}"
+                class="slds-var-m-top_medium" variant="brand" label="{!'Save ' + v.typeLabel}"
+                onclick="{!c.setAccounts}" />
+        </aura:set>
+
+        <aura:set attribute="title">
+            <div class="slds-grid">
+                <div class="slds-p-right_xx-small slds-text-title_bold">STATUS: </div>
+                <div class="{!v.isLoading ? 'slds-hide ': 'slds-show slds-p-right_xx-small'}">
+                    <div
+                        class="{! and(v.selectedAccounts.length > 0, v.isSaved) ? 'success slds-text-title_bold' : 'error slds-text-title_bold'}">
+                        {! and(v.selectedAccounts.length > 0, v.isSaved) ? 'COMPLETE' : 'INCOMPLETE'}</div>
+                </div>
+            </div>
+        </aura:set>
+
+        <div class="cmp-container">
+            <div class="slds-grid header slds-var-p-around_medium">
+                <div class="slds-col slds-form-element slds-var-p-right_small">
+                    <div class="slds-form-element__control">
+                        <div class="slds-combobox_container">
+                            <div class="{! v.openDropDown ? 'slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open' : 'slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click'}"
+                                aria-expanded="true" aria-haspopup="listbox" role="combobox">
+                                <div onkeyup="{!c.searchHandler}">
+                                    <lightning:input aura:id="enter-search" name="enter-search" label="{!v.label}"
+                                        type="search" value="{!v.inputValue}" isLoading="{! v.isSearching }"
+                                        autocomplete="off" required="{!v.typeLabel != 'Accounts'}"
+                                        onchange="{!c.possibleClear}" disabled="{!v.pba.Status__c == 'Pending' || v.pba.Status__c == 'Approved'}"/>
+                                </div>
+                                <div id="listbox-id-11" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid"
+                                    role="listbox">
+                                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+
+                                        <aura:if isTrue="{!v.typeLabel != 'Accounts'}">
+
+                                            <aura:iteration items="{!v.results}" var="result">
+                                                <li role="presentation" class="slds-listbox__item"
+                                                    data-id="{!result.id}" data-value="{!result.value}"
+                                                    onclick="{!c.optionClickHandler}">
+                                                    <div id="{!result.id}"
+                                                        class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                                        role="option">
+                                                        <span
+                                                            class="slds-media__figure slds-listbox__option-icon"></span>
+                                                        <span class="slds-media__body">
+                                                            <span class="slds-truncate" title="All Opportunities">
+                                                                <span>{!result.value}</span>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                            </aura:iteration>
+
+                                            <aura:set attribute="else">
+                                                <aura:iteration items="{!v.results}" var="result">
+                                                    <li role="presentation" class="slds-listbox__item"
+                                                        data-id="{!result.id}" data-value="{!result.value}">
+                                                        <div class="slds-grid slds-grid_vertical-align-center">
+                                                            <div
+                                                                class="slds-var-p-horizontal_small slds-var-p-vertical_x-small slds-shrink">
+                                                                <lightning:buttonIconStateful iconName="utility:add"
+                                                                    selected="{!result.added }" value="{!result}"
+                                                                    onclick="{! c.addAccount }" alternativeText="Add" />
+                                                            </div>
+                                                            <div class="slds-col">
+                                                                {!result.Name} - {!result.Account_Number__c}
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </aura:iteration>
+
+                                            </aura:set>
+
+                                        </aura:if>
+                                    </ul>
+                                </div>
+                                <aura:if isTrue="{!v.noResults}">
+                                    No Results
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-var-p-bottom_medium">
+
+                <lightning:accordion aura:id="accordion" allowMultipleSectionsOpen="true" activeSectionName="A"
+                    onsectiontoggle="{! c.handleSectionToggle }">
+                    <lightning:accordionSection name="A" label="{! 'All Accounts (' + v.selectedAccounts.length + ')'}">
+                        <lightning:datatable keyField="Id" data="{! v.selectedAccounts }" columns="{! v.columns }"
+                        columnWidthsMode="auto"  hideCheckboxColumn="true" onrowaction="{! c.removeAccount }" draftValues="{! v.draftValues }" onsave="{! c.handleSave }"
+                        defaultSortDirection="{!v.defaultSortDirection}" sortedDirection="{!v.sortDirection}" errors="{! v.errors }"
+						sortedBy="{!v.sortedBy}" onsort="{!c.handleSort}">>
+                        </lightning:datatable>
+                    </lightning:accordionSection>
+                </lightning:accordion>
+
+            </div>
+        </div>
+
+        <lightning:spinner aura:id="mySpinner" class="{!v.isLoading ? 'slds-show': 'slds-hide'}"
+            alternativeText="Loading" variant="brand" size="medium" />
+        <lightning:notificationsLibrary aura:id="notifLib" />
+
+    </lightning:card>
+
+</aura:component>

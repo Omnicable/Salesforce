@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Promotion Request</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://omnicable.my.salesforce.com/a0h/e?CF00N60000002VY4a=2016+Promotions&amp;CF00N60000002VY4a_lkid=a0q32000009khBh&amp;retURL=%2Fa0q32000009khBh</url>
+</CustomPageWebLink>

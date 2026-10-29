@@ -1,0 +1,8 @@
+{!Contact.Full_Name__c} from {!Contact.Contact_s_Assigned_Account_Name__c}  has been signed up for Reel Rewards. 
+
+Is the contact a portal user: {!NullValue(Contact.PortalUser__c, "N")}
+
+**Customers cannot redeem any accumulated points if they are not signed up for the portal.**
+
+Contact Page:
+ https://omnicable.my.salesforce.com/{!Contact.Contact_ID__c}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CME SPEC SHEET
+MVX30201A MVX30101A MVX31/001A MVX32/001A MVX33/001A MVX34/001A</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>MVX30201A</keywords>
+    <name>CME - Medium Voltage Aluminum</name>
+    <public>true</public>
+</Document>

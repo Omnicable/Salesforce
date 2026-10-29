@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>General Spec Sheet
+BTJ1802-06,BTJ1803-06,BTJ1603-06,BTJ1403-06,BTJ1203-06</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>General Part# 86902,86903,86913,86923,86933</keywords>
+    <name>General Cable Type SJTOW and STOW 300 and 600 Volt UL/CSA Portable Cord</name>
+    <public>true</public>
+</Document>

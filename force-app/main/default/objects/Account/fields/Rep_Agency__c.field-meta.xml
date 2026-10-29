@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rep_Agency__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>To be used to track vendor rep agency&apos;s for Comms Division</description>
+    <label>Rep Agency</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

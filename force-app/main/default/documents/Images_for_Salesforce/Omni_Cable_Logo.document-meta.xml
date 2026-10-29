@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>&quot;Omni Cable&quot;</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>Omni Cable Logo</name>
+    <public>true</public>
+</Document>

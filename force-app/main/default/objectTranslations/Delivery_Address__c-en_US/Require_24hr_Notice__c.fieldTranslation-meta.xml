@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Require 24hr Notice --></label>
+    <name>Require_24hr_Notice__c</name>
+</CustomFieldTranslation>

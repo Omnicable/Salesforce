@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open__c</fullName>
+    <description>Sale Price of Quantity Open</description>
+    <formula>IF (Quantity&gt;0,(( Dollars__c / Quantity ) *  Qty_Open__c), 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Sale Price of Quantity Open</inlineHelpText>
+    <label>$ Open</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Currency</type>
+</CustomField>

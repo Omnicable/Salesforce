@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>S_D_Not_Eligible__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check box if Belden item and isn&apos;t eligible for S&amp;D</description>
+    <inlineHelpText>Check box if Belden item and isn&apos;t eligible for S&amp;D</inlineHelpText>
+    <label>S&amp;D Not Eligible</label>
+    <type>Checkbox</type>
+</CustomField>

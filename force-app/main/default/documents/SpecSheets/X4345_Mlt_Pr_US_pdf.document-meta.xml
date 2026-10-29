@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+D101802 D941802 D941803</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C6101 C6118  C6103 C6119 C6120 C6106 C6121 C6109 C6111</keywords>
+    <name>Multi Paired - Non Shielded - 18 AWG - 16x30 Stranded Tinned Copper</name>
+    <public>true</public>
+</Document>

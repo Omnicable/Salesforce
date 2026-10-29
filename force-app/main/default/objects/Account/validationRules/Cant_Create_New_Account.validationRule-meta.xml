@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Create_New_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>$User.Id &lt;&gt; &quot;005600000029Nfx&quot; &amp;&amp; $User.Id &lt;&gt; &quot;00532000003iFPk&quot; &amp;&amp; 
+$User.Id &lt;&gt; &quot;00560000001NDtn&quot; &amp;&amp; 
+$User.Id &lt;&gt; &quot;00532000004zRAf&quot; &amp;&amp;
+$User.Id &lt;&gt;&quot;005Po000004BWlR&quot; &amp;&amp; 
+$User.ProfileId &lt;&gt;&quot;00e60000001BUtM&quot; &amp;&amp; 
+$User.ProfileId &lt;&gt;&quot;00e60000001BWSc&quot; &amp;&amp;
+$User.ProfileId &lt;&gt;&quot;00e600000014f29&quot; &amp;&amp;
+
+( ISNEW()&amp;&amp; RecordType.Name &lt;&gt; &quot;Potential Distributor&quot;)</errorConditionFormula>
+    <errorMessage>You can&apos;t create a Vendor or Distributor account. Please select the correct record type.</errorMessage>
+</ValidationRule>

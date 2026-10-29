@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Circuit Breaker Line --></label>
+    <name>Circuit_Breaker_Line__c</name>
+    <picklistValues>
+        <masterLabel>Both</masterLabel>
+        <translation><!-- Both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eaton</masterLabel>
+        <translation><!-- Eaton --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Neither</masterLabel>
+        <translation><!-- Neither --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Square D</masterLabel>
+        <translation><!-- Square D --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

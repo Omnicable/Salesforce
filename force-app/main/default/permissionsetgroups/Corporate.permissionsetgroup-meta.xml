@@ -4,5 +4,6 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Corporate</label>
     <permissionSets>Basic_Salesforce_User</permissionSets>
+    <permissionSets>Corporate_Read_Only</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>

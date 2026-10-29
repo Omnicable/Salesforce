@@ -158,11 +158,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.Budget_2018__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Account.Business_Days_YTD__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -354,11 +349,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Credit_Limit__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Current_Monthly_Budget__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -563,11 +553,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.Max_Date_Order__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Account.Method_of_Invoicing__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -734,11 +719,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Projected_EOY_Sales__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.QOC_YTD_SalesNonPolicy__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

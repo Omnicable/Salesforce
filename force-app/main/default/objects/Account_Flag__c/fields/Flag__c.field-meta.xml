@@ -51,6 +51,16 @@
                 <default>false</default>
                 <label>AD IESD G2G</label>
             </value>
+            <value>
+                <fullName>EWS Fully Authorized</fullName>
+                <default>false</default>
+                <label>EWS Fully Authorized</label>
+            </value>
+            <value>
+                <fullName>EWS Authorized Reseller</fullName>
+                <default>false</default>
+                <label>EWS Authorized Reseller</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

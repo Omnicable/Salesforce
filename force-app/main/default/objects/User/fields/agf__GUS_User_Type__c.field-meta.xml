@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>agf__GUS_User_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Full Time Employee - This will be used to identify all FTEs in GUS
+Contractor - This will be used to identify all Contractors in GUS
+Team User - This will be used to identify all Team Users in GUS
+API user - This will be used to identify all API users in GUS</description>
+    <label>GUS User Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Time Employee</fullName>
+                <default>false</default>
+                <label>Full Time Employee</label>
+            </value>
+            <value>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+                <label>Contractor</label>
+            </value>
+            <value>
+                <fullName>Team User</fullName>
+                <default>false</default>
+                <label>Team User</label>
+            </value>
+            <value>
+                <fullName>API User</fullName>
+                <default>false</default>
+                <label>API User</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

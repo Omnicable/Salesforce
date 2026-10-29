@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email is sent when a price book is approved or deniged</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Price Book Request Response</name>
+    <style>freeForm</style>
+    <subject>Price Book Request for {!Price_Book_Approval__c.Name} : {!ApprovalRequest.Status}</subject>
+    <textOnly>Hi {!Price_Book_Approval__c.OwnerFullName},
+
+Your request for {!Price_Book_Approval__c.Name} has been {!ApprovalRequest.Status}.
+
+If your request has been approved, then you&apos;re good to go.  The selected price book will be sent to all approved accounts according to their respective email days.
+
+If your request was rejected, please review the comments below to address any issues and resubmit.
+
+Comments:
+{!ApprovalRequest.Comments}
+
+Thanks,
+{!ApprovalRequest.Process_Approver}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_WHRewardsRedeemed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Keeps track of whether or not Contact already received their instant Reward Bonus</description>
+    <label>OCC_WHRewardsRedeemed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,22 @@
+{!QuotesOrdersCredits_Header__c.Customer_Name__c}
+{!QuotesOrdersCredits_Header__c.Type__c} # {!QuotesOrdersCredits_Header__c.Order_Number__c} 
+Total: ${!QuotesOrdersCredits_Header__c.Total_Order_Sales__c}
+Job Reference: {!QuotesOrdersCredits_Header__c.Job_Reference__c}
+
+Sales Note 1: {!QuotesOrdersCredits_Header__c.SalesNote1__c} 
+
+Sales Note 2: {!QuotesOrdersCredits_Header__c.SalesNote2__c} 
+Sales Note 3: {!QuotesOrdersCredits_Header__c.SalesNote3__c}
+
+
+{!QuotesOrdersCredits_Header__c.Buyer__c}
+{!QuotesOrdersCredits_Header__c.Buyer_s_Email_Address__c} 
+Phone: {!QuotesOrdersCredits_Header__c.Buyer_s_Phone2__c} 
+
+Date: {!QuotesOrdersCredits_Header__c.Date__c}
+Follow-Up Date: {!QuotesOrdersCredits_Header__c.Followup_Date__c}
+Status: {!QuotesOrdersCredits_Header__c.Status__c}
+Entered By: {!QuotesOrdersCredits_Header__c.Entered_By__c}
+
+
+Click here to view the quote and follow up: https://omnicable.my.salesforce.com/{!QuotesOrdersCredits_Header__c.Id}

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Customer Buying Group Hierarchy --></help>
+    <label><!-- Region --></label>
+    <name>Region__c</name>
+    <picklistValues>
+        <masterLabel>Andrew Dawes</masterLabel>
+        <translation><!-- Andrew Dawes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assembly</masterLabel>
+        <translation><!-- Assembly --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blair Feidler</masterLabel>
+        <translation><!-- Blair Feidler --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boston</masterLabel>
+        <translation><!-- Boston --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>C-B Admin</masterLabel>
+        <translation><!-- C-B Admin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>C-B Alliance</masterLabel>
+        <translation><!-- C-B Alliance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>C-B Regions</masterLabel>
+        <translation><!-- C-B Regions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CES</masterLabel>
+        <translation><!-- CES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>California</masterLabel>
+        <translation><!-- California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central</masterLabel>
+        <translation><!-- Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colorado</masterLabel>
+        <translation><!-- Colorado --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Connecticut</masterLabel>
+        <translation><!-- Connecticut --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DC Admin &amp; Support</masterLabel>
+        <translation><!-- DC Admin &amp; Support --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dan Williams</masterLabel>
+        <translation><!-- Dan Williams --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EW Northern New England</masterLabel>
+        <translation><!-- EW Northern New England --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>East</masterLabel>
+        <translation><!-- East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>East Datacom</masterLabel>
+        <translation><!-- East Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>East Region</masterLabel>
+        <translation><!-- East Region --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eastern</masterLabel>
+        <translation><!-- Eastern --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eastern Datacom</masterLabel>
+        <translation><!-- Eastern Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eastern Region</masterLabel>
+        <translation><!-- Eastern Region --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eastern Utility</masterLabel>
+        <translation><!-- Eastern Utility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Electrical Wholesalers CT</masterLabel>
+        <translation><!-- Electrical Wholesalers CT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FLOR Florida</masterLabel>
+        <translation><!-- FLOR Florida --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Florida</masterLabel>
+        <translation><!-- Florida --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GULF Gulf Central</masterLabel>
+        <translation><!-- GULF Gulf Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gary Smith</masterLabel>
+        <translation><!-- Gary Smith --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gateway</masterLabel>
+        <translation><!-- Gateway --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Great Lakes</masterLabel>
+        <translation><!-- Great Lakes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greater Northern Il Region - EESCO</masterLabel>
+        <translation><!-- Greater Northern Il Region - EESCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech</masterLabel>
+        <translation><!-- Greentech --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gulf</masterLabel>
+        <translation><!-- Gulf --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gulf Region Capital Projects</masterLabel>
+        <translation><!-- Gulf Region Capital Projects --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HC Region</masterLabel>
+        <translation><!-- HC Region --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HZ Electric Supply</masterLabel>
+        <translation><!-- HZ Electric Supply --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>High Voltage</masterLabel>
+        <translation><!-- High Voltage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Industrial Solutions Network</masterLabel>
+        <translation><!-- Industrial Solutions Network --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jaime Marujo</masterLabel>
+        <translation><!-- Jaime Marujo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jim Lawson</masterLabel>
+        <translation><!-- Jim Lawson --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>John Nantz</masterLabel>
+        <translation><!-- John Nantz --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KMA</masterLabel>
+        <translation><!-- KMA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lade</masterLabel>
+        <translation><!-- Lade --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Louisiana &amp; Arkansas</masterLabel>
+        <translation><!-- Louisiana &amp; Arkansas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MS East</masterLabel>
+        <translation><!-- MS East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MS West</masterLabel>
+        <translation><!-- MS West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MTPN Mountain Plains</masterLabel>
+        <translation><!-- MTPN Mountain Plains --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MWST Midwest</masterLabel>
+        <translation><!-- MWST Midwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maurice Electric</masterLabel>
+        <translation><!-- Maurice Electric --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mayer</masterLabel>
+        <translation><!-- Mayer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mexico</masterLabel>
+        <translation><!-- Mexico --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Michigan Dist - EESCO</masterLabel>
+        <translation><!-- Michigan Dist - EESCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mid Atlantic</masterLabel>
+        <translation><!-- Mid Atlantic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Midwest</masterLabel>
+        <translation><!-- Midwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Minnesota Dist - EESCO</masterLabel>
+        <translation><!-- Minnesota Dist - EESCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Monarch Electric</masterLabel>
+        <translation><!-- Monarch Electric --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mountain</masterLabel>
+        <translation><!-- Mountain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mountain Central Region</masterLabel>
+        <translation><!-- Mountain Central Region --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mountain Plains</masterLabel>
+        <translation><!-- Mountain Plains --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NEDCO</masterLabel>
+        <translation><!-- NEDCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NEO, WNY, PITT</masterLabel>
+        <translation><!-- NEO, WNY, PITT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOCA Northern California</masterLabel>
+        <translation><!-- NOCA Northern California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NTHE Northeast</masterLabel>
+        <translation><!-- NTHE Northeast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NWPT Northwest Platt</masterLabel>
+        <translation><!-- NWPT Northwest Platt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Needham</masterLabel>
+        <translation><!-- Needham --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Neil Mallinson</masterLabel>
+        <translation><!-- Neil Mallinson --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Atlantic</masterLabel>
+        <translation><!-- North Atlantic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Central</masterLabel>
+        <translation><!-- North Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northeast</masterLabel>
+        <translation><!-- Northeast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northeast Texas</masterLabel>
+        <translation><!-- Northeast Texas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northwest</masterLabel>
+        <translation><!-- Northwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northwest/Platt</masterLabel>
+        <translation><!-- Northwest/Platt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pacific</masterLabel>
+        <translation><!-- Pacific --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Parrish Hare</masterLabel>
+        <translation><!-- Parrish Hare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Philadelphia</masterLabel>
+        <translation><!-- Philadelphia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Platt</masterLabel>
+        <translation><!-- Platt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REVERE ELEC</masterLabel>
+        <translation><!-- REVERE ELEC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REXEL CANADA</masterLabel>
+        <translation><!-- REXEL CANADA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rest Of World Region</masterLabel>
+        <translation><!-- Rest Of World Region --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Russ Swanson</masterLabel>
+        <translation><!-- Russ Swanson --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOCA Southern California</masterLabel>
+        <translation><!-- SOCA Southern California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STHE Southeast</masterLabel>
+        <translation><!-- STHE Southeast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Central</masterLabel>
+        <translation><!-- South Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South East - EESCO</masterLabel>
+        <translation><!-- South East - EESCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southeast</masterLabel>
+        <translation><!-- Southeast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southern Utility</masterLabel>
+        <translation><!-- Southern Utility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southwest</masterLabel>
+        <translation><!-- Southwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard Electric</masterLabel>
+        <translation><!-- Standard Electric --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stoneway</masterLabel>
+        <translation><!-- Stoneway --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Subsidiaries</masterLabel>
+        <translation><!-- Subsidiaries --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TVC</masterLabel>
+        <translation><!-- TVC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Texas</masterLabel>
+        <translation><!-- Texas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Texas Gulf</masterLabel>
+        <translation><!-- Texas Gulf --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>USESI CDC&apos;s</masterLabel>
+        <translation><!-- USESI CDC&apos;s --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vikimatic</masterLabel>
+        <translation><!-- Vikimatic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WESCO Express</masterLabel>
+        <translation><!-- WESCO Express --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WESTBURNE</masterLabel>
+        <translation><!-- WESTBURNE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WIS</masterLabel>
+        <translation><!-- WIS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WNC</masterLabel>
+        <translation><!-- WNC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Walters Wholesale Electric</masterLabel>
+        <translation><!-- Walters Wholesale Electric --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wesco SPS</masterLabel>
+        <translation><!-- Wesco SPS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>West</masterLabel>
+        <translation><!-- West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>West Region</masterLabel>
+        <translation><!-- West Region --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western</masterLabel>
+        <translation><!-- Western --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western Datacom</masterLabel>
+        <translation><!-- Western Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western Region</masterLabel>
+        <translation><!-- Western Region --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western Utility</masterLabel>
+        <translation><!-- Western Utility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wisconsin District - EESCO</masterLabel>
+        <translation><!-- Wisconsin District - EESCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Womack</masterLabel>
+        <translation><!-- Womack --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Yale Electric</masterLabel>
+        <translation><!-- Yale Electric --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>n/a</masterLabel>
+        <translation><!-- n/a --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

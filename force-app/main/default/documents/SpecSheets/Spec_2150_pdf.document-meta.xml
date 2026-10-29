@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+AF61802 AF61804 AF61808 AF61812 AF61820 AF61824 AF61602 AF61604 AF61606 AF61608 AF61612 AF61616 AF61624</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 279700 279710 279720 279730 279740 319270 279750 337240 337250 280500 280520 280530 280540 279760 280990 337260 279770 288260 288250</keywords>
+    <name>General Cable-Instrumentation Cable - Type TC - FREP - FR-EP/CPE - Multiple Pairs - Individual/Overall Shield</name>
+    <public>true</public>
+</Document>

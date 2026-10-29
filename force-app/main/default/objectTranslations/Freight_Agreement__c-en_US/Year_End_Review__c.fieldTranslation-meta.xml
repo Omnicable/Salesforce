@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please enter customer facing notes that will print on the emailed document for the customer --></help>
+    <label><!-- Year End Review --></label>
+    <name>Year_End_Review__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Graybar_Breaker_Promo_District_Accounts</fullName>
+    <columns>District__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Number__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>OCC_Rewards__c</columns>
+    <columns>ReelRewards_Promo__c</columns>
+    <columns>Region_Number__c</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>District__c</field>
+        <operation>equals</operation>
+        <value>Atlanta,Boston,California,Chicago,Phoenix,Richmond,Seattle</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Distributor</value>
+    </filters>
+    <filters>
+        <field>Company_Name__c</field>
+        <operation>equals</operation>
+        <value>Graybar</value>
+    </filters>
+    <label>Graybar Breaker Promo District Accounts</label>
+</ListView>

@@ -1,0 +1,4 @@
+Please check the following Account and create a customer ID and/or update status in billing.
+
+Account Name: {!Account.Name}
+Account Number: {!Account.AccountNumber}

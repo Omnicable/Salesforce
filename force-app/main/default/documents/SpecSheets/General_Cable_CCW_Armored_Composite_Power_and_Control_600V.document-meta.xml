@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+Spec 9625 CCW XAC30403 XAC30603 XAC30803 XAC31003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Spec 9625 CCW XAC30403 XAC30603 XAC30803 XAC31003</keywords>
+    <name>General Cable - CCW Armored Composite Power and Control 600V</name>
+    <public>true</public>
+</Document>

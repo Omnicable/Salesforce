@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Manager Lookup --></label>
+    <name>Manager_to_Approve__c</name>
+    <relationshipLabel><!-- Promos (Manager Lookup) --></relationshipLabel>
+</CustomFieldTranslation>

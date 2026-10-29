@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+MVH10601 MVH10401 MVH10201 MVH11/001 MVH14/001 MVH135001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 14901.410800 14901.410600 14901.410400 14901.410200 14901.410100 14901.415100 14901.415200 14901.415300 14901.415400 14901.416000 14901.416200 14901.416500 14901.417000 14901.417500</keywords>
+    <name>General Cable Medium Voltage - 2.4kV - DURASHEATH®, Nonshielded EPR/XL-CPE</name>
+    <public>true</public>
+</Document>

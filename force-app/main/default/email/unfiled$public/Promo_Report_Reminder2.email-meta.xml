@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminder email with promo report to run throughout the promo</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Promo Report Reminder</name>
+    <style>none</style>
+    <subject>{!Promo__c.Name} Promo Reminder</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

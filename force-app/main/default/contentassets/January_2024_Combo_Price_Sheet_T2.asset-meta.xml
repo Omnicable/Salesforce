@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>January_2024_Combo_Price_Sheet_T2</masterLabel>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>January 2024 Combo Price Sheet - T2.pdf</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

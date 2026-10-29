@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+M614ST-01 M612ST-01 M610ST-01 M608ST-01 M606ST-01 M604ST-01 M602ST-01 M61/0ST-01 M62/0ST-01 M64/0ST-01 M6250ST-01 M6350ST-01 M6500ST-01 M6750ST-01</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 364830 364840 364850 16602.210800 16602.210600 16602.210400 16602.210200 16602.215100 16602.215200 16602.215400 16602.216000 16602.216200 16602.216500 16602.21700 16602.217500</keywords>
+    <name>General Cable Building Wire - XLP/USE-2 - RHW-2 - RHH</name>
+    <public>true</public>
+</Document>

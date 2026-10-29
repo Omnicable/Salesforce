@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>XactlyExpress__XCDealAttribute__c$XactlyExpress__DisplayName__c</field>
+    </columns>
+    <columns>
+        <field>XactlyExpress__XCDealAttribute__c$XactlyExpress__DealColumnName__c</field>
+    </columns>
+    <description>Setup report to see Deal Attribute mappings to internal column name. Used for renaming deal attributes via Report Types.</description>
+    <format>Tabular</format>
+    <name>XCDealAttribute</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>XCDealAttribute__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>XactlyExpress__XCDealAttribute__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

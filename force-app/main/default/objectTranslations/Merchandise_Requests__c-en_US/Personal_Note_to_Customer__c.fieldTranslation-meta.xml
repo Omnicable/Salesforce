@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- A personal note to include with the customer gift. --></help>
+    <label><!-- Personal Note to Customer --></label>
+    <name>Personal_Note_to_Customer__c</name>
+</CustomFieldTranslation>

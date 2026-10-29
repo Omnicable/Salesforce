@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TESTING R6: For AM Follow-Up to BUY Quotes</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Follow-Up on BUY Quote2</name>
+    <style>none</style>
+    <subject>(ALTERNATE)  Pipeline Quote Follow-Up Due - Quote #{!QuotesOrdersCredits_Header__c.Order_Number__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

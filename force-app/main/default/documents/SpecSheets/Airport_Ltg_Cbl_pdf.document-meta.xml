@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+MVX10801 MVX10601 MVX10401</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>SW PART #&apos;S 551529 551528 551527 575345 569430 14723 14724 14726 19758 19761 19762 29579 12975 14727 24111 14728 14729 14730</keywords>
+    <name>Southwire Medium Voltage - 5 kV / 8 kV - 5kV - Nonshielded, XLP</name>
+    <public>true</public>
+</Document>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_is_AM_or_DSM__c</fullName>
+    <description>Captures the user ID of the AM and DSM on the account. 1 if the current user is one of those roles on a given account, 0 if not.</description>
+    <externalId>false</externalId>
+    <formula>IF((Account.Outside_Salesperson__r.Id = $User.Id || Account.Owner.Id = $User.Id  ||  Account.DSS__r.Id =  $User.Id ) ,1,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>User is AM or DSM</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

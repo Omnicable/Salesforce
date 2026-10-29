@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CME SPEC SHEET 
+MVX30201C MVX30101C MVX31/001C MVX32/001C MVX33/001C MVX34/001C</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>CME- Medium Voltage Power Cable - TR-XLPE</name>
+    <public>false</public>
+</Document>

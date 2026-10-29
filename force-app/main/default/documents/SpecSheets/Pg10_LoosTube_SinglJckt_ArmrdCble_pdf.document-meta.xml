@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+F6M06LAGO F6M12LAGO F8S06LAGO F8S12LAGO</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S CG0064M1F-DWB CG0124M1F-DWB AQ0064M1F-DWB AQ00124M1F-DWB</keywords>
+    <name>General Cable Fiber Optic Cable - Outdoor - Loose Tube Single Jacket Armored Cable</name>
+    <public>true</public>
+</Document>

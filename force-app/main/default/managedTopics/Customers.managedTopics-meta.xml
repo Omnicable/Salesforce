@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>Customers.Featured:Invoices</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Invoices</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Customers.Featured:Orders</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Orders</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Customers.Navigational:Invoices</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Invoices</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Customers.Navigational:Orders</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Orders</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+</ManagedTopics>

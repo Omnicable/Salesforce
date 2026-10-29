@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+B60803 B60603 B60403 B60203 B60103 B61/003 B62/003 B63/003 B64/003 B625003 B635003 B650003 B60804 B60604 B60404 B60204 B60104 B61/004 B62/004 B63/004 B64/004</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 82313 82623 82643 82663 82373 82383 82393 82403 82413 82423 82443 82473 82314 82624 82644 82664 82374 82384 82394 82404 82414</keywords>
+    <name>Flexible and Portable Cord - Mining Cable - Type G - 4 Conductor</name>
+    <public>true</public>
+</Document>

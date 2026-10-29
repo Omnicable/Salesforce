@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Sum of the Line Dollars (Booked) for non-cancelled line items where Item Class = ICK3, ICK4, ICL2, ICL3, ICL4, ICL5, and TCAF6 --></help>
+    <label><!-- Instrumentation Cable $ --></label>
+    <name>Instrumentation_Cable_dollars__c</name>
+</CustomFieldTranslation>

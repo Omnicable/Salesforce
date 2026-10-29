@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+H21802 H21804 H21806 H21602 H21604 H21402 H21404 H21202</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S E3482S E3484S E3502S E3503S E3504S E3506S E3512S E3514S E3522S E3524S E3532S E3534S C3200 C3201 C3210 C3211 C3220 C3223 C3224 C3225</keywords>
+    <name>General Cable FPLP - Plenum - Nonshielded</name>
+    <public>true</public>
+</Document>

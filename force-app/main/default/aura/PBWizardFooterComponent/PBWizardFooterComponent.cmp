@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : chrisw@launchdm.com
+  @group             : 
+  @last modified on  : 08-02-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="PriceSheetController">
+	
+	<aura:attribute name="parent" type="Aura.Component" />
+	<aura:attribute name="currentStep" type="String" />
+	<lightning:overlayLibrary aura:id="overlayLib" />
+
+	<div class="slds-grid slds-gutters slds-grid_align-end">
+		<div class="slds-col slds-grid-none">
+			<lightning:buttonGroup>
+				<lightning:buttonIcon disabled="{!v.currentStep == '1'}" iconName="utility:chevronleft"  variant="border-filled" alternativeText="Previous" title="Previous" onclick="{!c.previous}"/>
+				<lightning:buttonIcon disabled="{!v.currentStep == '3'}" iconName="utility:chevronright"  variant="border-filled" alternativeText="Next" title="Next" onclick="{!c.next}"/>
+			</lightning:buttonGroup>
+		</div>
+		<div class="slds-col slds-grow-none">
+			<lightning:button disabled="{!v.currentStep != '3'}" name="Save" label="Save" variant="brand" onclick="{!c.save}" />
+		</div>
+	</div>
+
+</aura:component>

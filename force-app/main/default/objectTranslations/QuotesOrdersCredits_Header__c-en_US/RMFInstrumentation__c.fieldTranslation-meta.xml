@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- RMFInstrumentation --></label>
+    <name>RMFInstrumentation__c</name>
+    <picklistValues>
+        <masterLabel>RMF - Instru</masterLabel>
+        <translation><!-- RMF - Instru --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RMF - Power</masterLabel>
+        <translation><!-- RMF - Power --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

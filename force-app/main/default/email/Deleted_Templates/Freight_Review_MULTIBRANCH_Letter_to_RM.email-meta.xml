@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>New June 2015 - Has Corporate Sales and Corporate Contact Name</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Omni_Cablenofoot</letterhead>
+    <name>Freight Review Multi-Branch Agreement Letter to RM</name>
+    <style>freeForm</style>
+    <subject>Review Freight Agreement with {!Freight_Agreement__c.Company_Name__c}</subject>
+    <textOnly>June 20, 2015
+
+{!Freight_Agreement__c.Contact__c}
+{!Freight_Agreement__c.Account__c}
+{!Account.ShippingAddress}
+
+Dear {!Freight_Agreement__c.Corporate_Contact_First_Name__c}:
+
+Thank you for being part of our Exclusive Freight Allowed Program (EFAP) again this year. We are proud to say your team has given us very positive and favorable feedback. Whereas many firms offer “free freight” when you reach a certain weight threshold or sales value threshold on product categories, our program allows truly “free” freight for being a partner with Omni Cable.
+
+Our program allows your team to use freight to be more competitive when generating a quote while providing them peace of mind that the order will be shipped correctly and on time each and every time. Our automated tracking information closes the loop with arrival date, shipment weight and status without the concern that a freight invoice will arrive after the customer receives the wire and cable. This separates your offering from the competition while strengthening the relationship between {!Freight_Agreement__c.Company_Name__c} and your customers.
+
+During the course of the year, you will receive an update midyear and again at the end of the year to provide you with a progress report on our EFAP and to announce exciting new products and service upgrades Omni Cable is offering.
+
+Your current sales this year are {!Freight_Agreement__c.CorpYTDSales__c}.
+
+We are here for your team before and after the sale, which is what being a partner with Omni Cable is all about. If you have any questions please let me know. In the meantime, let’s have a great year together.
+
+
+
+{!Freight_Agreement__c.AccountOwnerManager__c}
+Regional Manager</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

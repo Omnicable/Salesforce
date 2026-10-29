@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nick_Crescent</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Crescent Electric-Indianapolis,Crescent Electric-Milwaukee,Crescent Electric-Middleton,Crescent Electric-Wausau,Crescent Electric-Madison,Crescent Electric-Appleton</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Crescent Electric-Omaha,Crescent Electric-Lincoln,Crescent Electric-North Platte,Crescent Electric-Grand Island,Crescent Electric-Cedar Rapids,Crescent Electric-Waterloo,Crescent Electric-Davenport,Crescent Electric-Burlington</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Crescent Electric-Call Center,Crescent Electric-Mason City,Crescent Electric-Marshalltown,Crescent Electric-Dubuque,Crescent Electric-Sioux City,Crescent Electric-Iowa City,Crescent Electric-Urbandale</value>
+    </filters>
+    <label>Nick Crescent</label>
+    <sharedTo>
+        <group>CBU_Nick_Adam</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Milestone</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Milestones</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The Milestone Alias cannot contain spaces. --></errorMessage>
+        <name>Alias_must_not_contain_spaces</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can not add milestones to parent milestones with status completed. --></errorMessage>
+        <name>CanNotAddSubmilestoneToParentCompleted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot mark a milestone as complete if it has open tasks. --></errorMessage>
+        <name>CannotBeCompleteWithOpenTasks</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Deadline must be less than or equal to the project deadline. --></errorMessage>
+        <name>Deadline_within_project_boundaries</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Milestone Kickoff must not be earlier than Parent Kickoff and Milestone Deadline must not be later than Parent Deadline. --></errorMessage>
+        <name>KickoffDeadlineWithinParentBoundaries</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Milestone Kickoff must not be earlier than its Predecessor&apos;s Deadline. --></errorMessage>
+        <name>Kickoff_after_Predecessor_Deadline</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Kickoff must be less or equal than the deadline --></errorMessage>
+        <name>Kickoff_before_deadline</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Milestone kickoff must be grater or equal than project kickoff and milestone deadline must be less or equal than project deadline --></errorMessage>
+        <name>Milestone_between_Project_duration</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select a parent Project, a parent Milestone, or both. --></errorMessage>
+        <name>Milestone_must_have_parent_record</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Change_Project --></label>
+        <name>Change_Project</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Move_to_New_Project --></label>
+        <name>Move_to_New_Project</name>
+    </webLinks>
+</CustomObjectTranslation>

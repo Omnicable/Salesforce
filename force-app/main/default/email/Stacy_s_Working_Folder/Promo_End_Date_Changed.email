@@ -1,0 +1,4 @@
+FYI - {!Promo__c.LastModifiedBy} has changed the End Date for {!Promo__c.Name} Promo  to {!Promo__c.End_Date__c} 
+
+Promo Report: {!Promo__c.Promo_Tracking_Report__c}
+Promo Page: {!Promo__c.Link}

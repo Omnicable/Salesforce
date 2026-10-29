@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Richards_Reel_Rewards</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OCC_Rewards__c</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>OCC_RewardStepValue__c</columns>
+    <columns>OCC_RewardStep__c</columns>
+    <columns>MaxOrderQuoteDate__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>CONTACT.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>838700,838703</value>
+    </filters>
+    <filters>
+        <field>Full_Name__c</field>
+        <operation>notEqual</operation>
+        <value>Wanda Williams,Hannah Brooks</value>
+    </filters>
+    <filters>
+        <field>ReelRewards_Account__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Richards Reel Rewards</label>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

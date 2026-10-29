@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The task that is having time charged to it. --></help>
+    <label><!-- Project Task --></label>
+    <name>Project_Task__c</name>
+    <relationshipLabel><!-- Times --></relationshipLabel>
+</CustomFieldTranslation>

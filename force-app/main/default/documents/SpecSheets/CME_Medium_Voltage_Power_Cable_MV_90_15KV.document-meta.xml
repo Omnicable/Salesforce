@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CME SPEC 
+MU30201C MU31/001C MU32/001C MU34/001C MU325001C MU335001C MU350001C</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>CME- Medium Voltage Power Cable - ERP</name>
+    <public>false</public>
+</Document>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is where you would indicate the company / customer who is paying for shipment other than the customer. --></help>
+    <label><!-- LTL Third Party or Collect Co. --></label>
+    <name>Third_Party_Shipper__c</name>
+</CustomFieldTranslation>

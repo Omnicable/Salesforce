@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BirthdaysThisMonth</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CONTACT.BIRTHDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.BIRTHDATE</field>
+        <operation>equals</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <label>Birthdays This Month</label>
+    <sharedTo>
+        <group>AccountManagers</group>
+        <group>CorpSalesMgr</group>
+        <group>Region10RMs</group>
+        <group>Region11RMs</group>
+        <group>Region2RMs</group>
+        <group>Region3RMs</group>
+        <group>Region4RMs</group>
+        <group>Region5RMs</group>
+        <group>Region6RMs</group>
+        <group>Region7RMs</group>
+        <group>Region8RMs</group>
+        <group>Region9RMs</group>
+        <group>SSC</group>
+        <group>Sonepar</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>進行中と完了済みタスク（チャート）</label>
+    <name>Status_Image_OpenVComplete__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement__c</fullName>
+    <description>Engaged - 0 to less than average 
+Slightly engaged  average to average +7
+Slightly disengaged average + 7 
+Not engaged &gt; 45 days</description>
+    <label>Engagement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+                <label>Engaged</label>
+            </value>
+            <value>
+                <fullName>Slightly Engaged</fullName>
+                <default>false</default>
+                <label>Slightly Engaged</label>
+            </value>
+            <value>
+                <fullName>Slightly Disengaged</fullName>
+                <default>false</default>
+                <label>Slightly Disengaged</label>
+            </value>
+            <value>
+                <fullName>Not Engaged</fullName>
+                <default>false</default>
+                <label>Not Engaged</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

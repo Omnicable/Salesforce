@@ -1,0 +1,5 @@
+Someone has commented on your idea or the status of your idea has changed.
+
+{!Idea.Title}
+
+https://na4.salesforce.com/ideas/viewIdea.apexp?id={!Idea.Id} , please check it out!

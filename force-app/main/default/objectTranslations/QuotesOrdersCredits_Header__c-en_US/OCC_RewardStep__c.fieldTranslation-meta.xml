@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- How many $$$$ for points --></help>
+    <label><!-- OCC_RewardStep (QOC) --></label>
+    <name>OCC_RewardStep__c</name>
+</CustomFieldTranslation>

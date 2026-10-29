@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+T31402 T31403 T31404 T31407 T31410 T31412 T31415 T31420 T31425</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>T31402 T31403 T31404 T31407 T31410 T31412 T31415 T31420 T31425</keywords>
+    <name>General Cable - Teck 90 600V Power - 14 AWG</name>
+    <public>false</public>
+</Document>

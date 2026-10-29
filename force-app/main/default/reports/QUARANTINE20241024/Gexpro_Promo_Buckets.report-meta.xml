@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_74847264</developerName>
+        <masterLabel>A</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Account$Name</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Gexpro - Anchorage (140)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gexpro - Mt Vernon  (7756)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gexpro - Seattle (7845)</sourceValue>
+            </sourceValues>
+            <value>A</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Gexpro - Anaheim (7580)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gexpro - Hayward (141)</sourceValue>
+            </sourceValues>
+            <value>B</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Gexpro - Honolulu (126)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gexpro - Hilo (127)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gexpro - Kona (128)</sourceValue>
+            </sourceValues>
+            <value>C</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Gexpro - Bakersfield (7170)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gexpro - Las Vegas (7777)</sourceValue>
+            </sourceValues>
+            <value>D</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Gexpro - Sacramento (7775)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gexpro - San Diego (7861)</sourceValue>
+            </sourceValues>
+            <value>E</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Gexpro - Boise (7205)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gexpro - Salt Lake City (7805)</sourceValue>
+            </sourceValues>
+            <value>F</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r$TotalDollars__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account$Account_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>970611,970600,972866,972864,970605,818797,970606,970607,970617,972550,970616,970615,970603,970620</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>Account.Order_Header__r$Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_74847264</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Gexpro Promo Buckets</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_or_without_quotes_orders_credits__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r$Date__c</dateColumn>
+        <endDate>2014-08-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2014-07-01</startDate>
+    </timeFrameFilter>
+</Report>

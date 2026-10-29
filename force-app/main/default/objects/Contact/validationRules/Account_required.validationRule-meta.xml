@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_required</fullName>
+    <active>true</active>
+    <description>Can&apos;t add Contacts without Account # 
+Stacy added the API profile 00e60000001BWSc</description>
+    <errorConditionFormula>$User.Id &lt;&gt; &apos;00560000001NUBd&apos; &amp;&amp;
+$User.ProfileId &lt;&gt;&apos;00e60000001BUk5&apos; &amp;&amp;
+ $User.ProfileId &lt;&gt;&apos;00e60000001BUtM&apos; &amp;&amp;
+ $User.ProfileId &lt;&gt;&apos;00e600000014f29&apos; &amp;&amp;
+ $User.ProfileId &lt;&gt;&apos;00e60000001BWSc&apos;
+ 
+
+ &amp;&amp; (  ISBLANK( AccountId ) ||  ISBLANK(  Account.Name  ) )</errorConditionFormula>
+    <errorMessage>ALL CONTACTS MUST BE ADDED FROM AN ACCOUNT!!!</errorMessage>
+</ValidationRule>

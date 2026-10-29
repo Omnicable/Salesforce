@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Points awarded for this quote/order based on the order $ and reward step setup. If RewardOverride__c is populated, that will be the # of points awarded. --></help>
+    <label><!-- NEW OCC_Rewards (QOC) --></label>
+    <name>NEW_OCC_Rewards_QOC__c</name>
+</CustomFieldTranslation>

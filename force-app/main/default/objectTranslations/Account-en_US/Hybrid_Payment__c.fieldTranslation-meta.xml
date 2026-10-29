@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Hybrid Payment --></label>
+    <name>Hybrid_Payment__c</name>
+    <picklistValues>
+        <masterLabel>15</masterLabel>
+        <translation><!-- 15 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>30</masterLabel>
+        <translation><!-- 30 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>45</masterLabel>
+        <translation><!-- 45 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No</masterLabel>
+        <translation><!-- No --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

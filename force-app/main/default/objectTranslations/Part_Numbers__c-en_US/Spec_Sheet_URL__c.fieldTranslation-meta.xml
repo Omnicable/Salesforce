@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The URL from OPUS item master. Used for quote/order confirmations. --></help>
+    <label><!-- Spec Sheet URL --></label>
+    <name>Spec_Sheet_URL__c</name>
+</CustomFieldTranslation>

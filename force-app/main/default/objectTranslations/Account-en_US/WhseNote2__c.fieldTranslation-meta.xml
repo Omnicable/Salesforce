@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Continue here for more special instructions to the the warehouse on your order. --></help>
+    <label><!-- WhseNote2 --></label>
+    <name>WhseNote2__c</name>
+</CustomFieldTranslation>

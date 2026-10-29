@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email Updated Idea info</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Updated Idea to Owner</name>
+    <style>none</style>
+    <subject>Your Idea has be updated</subject>
+    <textOnly>Someone has posted a new or updated Idea here
+{!Contact.Description}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

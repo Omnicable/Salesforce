@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CPI</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CPI</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please delete Contacts if they are not the area of focus --></errorMessage>
+        <name>Area_of_Focus_Notpeople_Stillfilledout</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Select What Order Size  Bucket for this  area of focus --></errorMessage>
+        <name>Area_of_Focus_Order_Buckets</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Contact 1 is Required if People is an area of Focus --></errorMessage>
+        <name>Area_of_Focus_People</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Select a Product Group for this  area of focus --></errorMessage>
+        <name>Area_of_Focus_Product</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Strategic Targety must be greater than 1 --></errorMessage>
+        <name>Must_be_Positive_Number</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Customers --></label>
+        <name>Customers</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Order_Buckets --></label>
+        <name>Order_Buckets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Products2 --></label>
+        <name>Products2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Region_PP --></label>
+        <name>Region_PP</name>
+    </webLinks>
+</CustomObjectTranslation>

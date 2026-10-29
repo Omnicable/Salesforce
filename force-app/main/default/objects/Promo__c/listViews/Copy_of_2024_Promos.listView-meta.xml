@@ -19,7 +19,7 @@
         <operation>greaterThan</operation>
         <value>12/31/2025</value>
     </filters>
-    <label>2025 Promos</label>
+    <label>CY Promos</label>
     <sharedTo>
         <group>Marketing</group>
     </sharedTo>

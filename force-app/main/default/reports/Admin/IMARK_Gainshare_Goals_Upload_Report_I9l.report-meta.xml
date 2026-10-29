@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_47460280</developerName>
+        <masterLabel>Company Name</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account$Company_Name__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>FRANKLIN-GRI</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>FRANKLIN</sourceValue>
+            </sourceValues>
+            <value>FRANKLIN</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>NOLAND</sourceValue>
+            </sourceValues>
+            <value>WINLECTRIC</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>POWER &amp; TELE</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>POWER TELE</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>QUIK</sourceValue>
+            </sourceValues>
+            <value>POWER TELE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Q</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SHEPHERD ELE</sourceValue>
+            </sourceValues>
+            <value>SHEPHERD</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>SPRINGFIELD</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>TRI-STATE LT</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>VALLEY</sourceValue>
+            </sourceValues>
+            <value>SPRINGFIELD</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>WHOLESALE TX</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BENFIELD WHL</sourceValue>
+            </sourceValues>
+            <value>WHOLESALE TX</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CHANCELLOR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>REULET</sourceValue>
+            </sourceValues>
+            <value>CHANCELLOR</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DAVIS ELECT</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>TRI-BRO</sourceValue>
+            </sourceValues>
+            <value>DAVIS ELECT</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>USESI</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MAIN ELECT</sourceValue>
+            </sourceValues>
+            <value>USESI</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>IMPULSE ELEC</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>UNITED ELECP</sourceValue>
+            </sourceValues>
+            <value>UNITED ELECP</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>WOMACK</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CRESCENT ELE</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>STONEWAY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>LOWE</sourceValue>
+            </sourceValues>
+            <value>CRESCENT</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account$Id</field>
+    </columns>
+    <columns>
+        <field>Account$Region_Number__c</field>
+    </columns>
+    <columns>
+        <field>Account$Account_Number__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account$IMARK_Gainshare_Goal__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account$IMARK_Gainshare__c</field>
+    </columns>
+    <columns>
+        <field>Account$Customer_Account_Number__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3) AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <column>Account$Active__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Parent.IMARK_Gainshare__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$IMARK_Gainshare__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Company_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>JOPLIN</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$IMARK_Gainshare_Goal__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>IMARK Gainshare Goals Upload Report</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Accounts_custom__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

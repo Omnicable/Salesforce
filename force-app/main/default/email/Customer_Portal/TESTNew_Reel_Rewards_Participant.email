@@ -1,0 +1,9 @@
+{!Target_User.Name} from {!Target_User.Account__c}  has been signed up for myomnicable.com Reel Rewards. 
+
+User Page: 
+https://omnicable.my.salesforce.com/{!Target_User.Id} 
+
+<a href="https://omnicable.my.salesforce.com/{!Target_User.Id}">Click here</a>
+
+Contact Page:
+ https://omnicable.my.salesforce.com/{!Target_User.ContactId}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Part Numbers</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Part Numbers</value>
+    </caseValues>
+    <recordTypes>
+        <description><!-- Circuit Breaker part number --></description>
+        <label><!-- Circuit Breaker --></label>
+        <name>Circuit_Breaker</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- I created this so I can do online editing in list views --></description>
+        <label><!-- Part Number --></label>
+        <name>Part_Number</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- DON&apos;T LET THIS CHANGE THE SPEC SHEET NAME/EXTERNAL ID. --></errorMessage>
+        <name>Spec_Sheet_Error</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Delete_All --></label>
+        <name>Delete_All</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Email_Spec --></label>
+        <name>Email_Spec</name>
+    </webLinks>
+</CustomObjectTranslation>

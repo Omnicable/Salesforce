@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CMP_Purchaser__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Hi-Potential buyer that was sent a CMP gift box</description>
+    <inlineHelpText>Hi-Potential buyer that was sent a CMP gift box</inlineHelpText>
+    <label>CMP Purchaser</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

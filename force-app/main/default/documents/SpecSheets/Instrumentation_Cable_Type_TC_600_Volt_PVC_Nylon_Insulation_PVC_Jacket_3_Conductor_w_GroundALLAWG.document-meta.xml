@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+A31203 A31003 A30803 A30804 A30603 A30604 A30403 A30404 A30203 A30204  A31/003 A31/004 A32/003 A34/003 A34/004 A325003 A325004 A335003 A335004 A350003 A350004</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 383890 234250 234260 386700 236370 236380 226410 231980 236400 236410 236420 236430 236440 219580 243760 219610 221560 329240 222490 297050 226430 297060 219630 222510</keywords>
+    <name>Instrumentation Cable - Type TC - 600 Volt - PVC/Nylon Insulation - PVC Jacket - 3 Conductor w/GroundALLAWG</name>
+    <public>true</public>
+</Document>

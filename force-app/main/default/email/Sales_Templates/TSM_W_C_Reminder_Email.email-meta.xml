@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TSM W&amp;C Reminder Email</name>
+    <style>none</style>
+    <subject>REMINDER: Follow Up on W&amp;C Project for Quote: {!Milestone1_Project__c.Order_Number__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

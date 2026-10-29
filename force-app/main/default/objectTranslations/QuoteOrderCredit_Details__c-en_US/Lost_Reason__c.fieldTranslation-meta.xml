@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Breaker Lost Reason --></label>
+    <name>Lost_Reason__c</name>
+    <picklistValues>
+        <masterLabel>No Manufacturer Stock</masterLabel>
+        <translation><!-- No Manufacturer Stock --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Omni Stock</masterLabel>
+        <translation><!-- No Omni Stock --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price</masterLabel>
+        <translation><!-- Price --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

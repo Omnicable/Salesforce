@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Calculated field indicating if the task is complete, open, late, blocked or late and blocked. --></help>
+    <label><!-- Overall Status --></label>
+    <name>Overall_Status__c</name>
+</CustomFieldTranslation>

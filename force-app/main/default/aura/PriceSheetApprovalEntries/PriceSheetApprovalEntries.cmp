@@ -1,0 +1,50 @@
+<!--
+  @description       : shows all price entry overrides on approval page
+  @author            : chrisw@launchdm.com
+  @group             : PriceSheet
+  @last modified on  : 09-07-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="PriceSheetController" implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:attribute name="recordId" type="String" />
+	<aura:attribute name="entries" type="List" />
+	<aura:attribute name="accounts" type="List" />
+	<aura:attribute name="columns" type="List" />
+	<aura:attribute name="accountColumns" type="List" />
+	<aura:attribute name="discounts" type="List" />
+
+	<aura:attribute name="eSortDirection" type="String" default="asc" />
+    <aura:attribute name="eDefaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="eSortedBy" type="String" />
+
+	<aura:attribute name="aSortDirection" type="String" default="asc" />
+    <aura:attribute name="aDefaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="aSortedBy" type="String" />
+
+
+	<lightning:card aura:id="entry-container" title="Additional Details">
+		<div class="slds-var-p-around_large">
+			<lightning:tabset variant="scoped">
+				<lightning:tab label="Price Book Entries">
+					<p class="slds-var-p-horizontal_small">
+						<lightning:datatable keyField="Id" data="{! v.entries }" columns="{! v.columns }"
+							hideCheckboxColumn="true" defaultSortDirection="{!v.eDefaultSortDirection}"
+							sortedDirection="{!v.eSortDirection}" sortedBy="{!v.eSortedBy}" onsort="{!c.eHandleSort}">
+						</lightning:datatable>
+					</p>
+				</lightning:tab>
+				<lightning:tab label="Accounts">
+					<p class="slds-var-p-horizontal_small">
+						<lightning:datatable keyField="Id" data="{! v.accounts }" columns="{! v.accountColumns }"
+							hideCheckboxColumn="true" defaultSortDirection="{!v.aDefaultSortDirection}"
+							sortedDirection="{!v.aSortDirection}" sortedBy="{!v.aSortedBy}" onsort="{!c.aHandleSort}">
+						</lightning:datatable>
+					</p>
+				</lightning:tab>
+			</lightning:tabset>
+		</div>
+	</lightning:card>
+
+</aura:component>

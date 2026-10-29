@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>41.0</apiVersion>
+    <available>true</available>
+    <description>For Kevin Dantley &amp; Ryan Horrell email alert for belden orders &gt; $1800</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Belden Order over___</name>
+    <style>none</style>
+    <subject>Belden  for</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

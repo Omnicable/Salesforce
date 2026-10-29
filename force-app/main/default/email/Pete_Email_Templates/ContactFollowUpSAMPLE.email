@@ -1,0 +1,9 @@
+Dear {!Contact.FirstName},  
+
+Sorry I missed you today when I called today, just touching base to see how we are doing for you.
+
+I'll follow up in a few weeks, if you need to touch base with me on anything just drop me a line.
+
+Thanks,
+
+{!User.FirstName}

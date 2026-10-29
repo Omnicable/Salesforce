@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Report to use for showing my tasks by project.  pv0 = project id (15 char) and pv1 = Assign to name. --></help>
+    <label><!-- Report Id: My tasks by project --></label>
+    <name>Report_Id_My_tasks_by_project__c</name>
+</CustomFieldTranslation>

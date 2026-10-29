@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : chrisw@launchdm.com
+  @group             : 
+  @last modified on  : 07-28-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="PriceSheetController" extends="c:PriceSheetBaseComponent"
+	implements="force:lightningQuickAction,force:hasRecordId">
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:handler event="force:refreshView" action="{!c.doInit}" />
+	<aura:attribute name="recordId" type="String" />
+	<aura:attribute name="pba" type="Price_Book_Approval__c" />
+	<aura:attribute name="isLoading" type="Boolean" />
+
+	<div class="slds-is-relative">
+		<div class="slds-text-heading_medium ">{!v.pba.Name}</div>
+		<div class="slds-p-top_large">Are you sure you're ready to submit this request? Once submitted this request will be locked and you can only remove Accounts while the status is pending.  </div>
+
+		<div class="sds-grid slds-gutters slds-grid_align-end slds-p-top_large">
+			<lightning:button variant="brand" label="Submit Request for Approval" title="Submit Request for Approval" onclick="{! c.submit }"/>
+		</div>
+
+		<lightning:spinner aura:id="mySpinner" class="{!v.isLoading ? 'slds-show': 'slds-hide'}"
+		alternativeText="Loading" variant="brand" size="medium" />
+
+		<lightning:notificationsLibrary aura:id="notifLib" />
+
+	</div>
+
+</aura:component>

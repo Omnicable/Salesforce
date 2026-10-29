@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-family:Arial,Helvetica,sans-serif;">{{{Recipient.FirstName}}},<br />
+&nbsp;<br />
+Since 1977, OmniCable has been exclusively helping distributors like you overcome some of the daily challenges you encounter in your sales efforts. Here’s why partnering with us is the best decision for you:&nbsp;</span>
+<ul>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">Logistics Efficiencies: Orders placed before 3 PM ship the same day, ensuring prompt delivery to your customers.&nbsp;</span></li>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">Blind Shipping Options: Maintain your brand’s integrity with our blind shipping services, delivering directly to your customers under your name.&nbsp;</span></li>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">Extensive Inventory and No MOQs: Access our comprehensive inventory of fiber, category and low voltage cable, copper communications cable, and specialty wire and cable products; and suppliers such as Belden, Corning, CADDY, Hubbell, TiniFiber, Superior Essex, Lumberg, and many others. With no MOQs, you can use our inventory as if it were your own.&nbsp;</span></li>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">Speed and Reliability: We understand the market, move quickly to meet your needs, and always deliver fast quoting and response times.&nbsp;</span></li>
+</ul>
+<span style="font-family:Arial,Helvetica,sans-serif;">Experience how easy it is to do business with OmniCable. No longer do you have to ‘no quote,’ we are here to support your customer needs! &nbsp;Let’s discuss how we can support your growth and success.&nbsp;<br />
+<br />
+Best regards,&nbsp;<br />
+&nbsp;<br />
+{{{Sender.Name}}}<br />
+{{{Sender.Title}}}<br />
+OmniCable<br />
+{{{Sender.Phone}}}</span></body>
+</html>

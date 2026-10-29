@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- An Import ID used during the XML export/import process only. --></help>
+    <label><!-- Import ID --></label>
+    <name>ImportID__c</name>
+</CustomFieldTranslation>

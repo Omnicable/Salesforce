@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_RewardsValue__c</fullName>
+    <description>THIS DOES NOT REFER TO THE USERS&apos; REWARD POINTS BALANCE. This field allows you to manually add points to a customer&apos;s Reel Rewards account. If the field value is 0 and you change it to 10, 10 points will be added to the user&apos;s existing point balance.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field allows you to manually add points to a customer&apos;s Reel Rewards account.</inlineHelpText>
+    <label>OCC_RewardsValue (Contact)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

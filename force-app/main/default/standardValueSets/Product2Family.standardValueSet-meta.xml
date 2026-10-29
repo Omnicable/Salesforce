@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Instrumentation</fullName>
+        <default>false</default>
+        <label>Instrumentation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Portable Cord</fullName>
+        <default>false</default>
+        <label>Portable Cord</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Power &amp; Control</fullName>
+        <default>false</default>
+        <label>Power &amp; Control</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Flexible Cables</fullName>
+        <default>false</default>
+        <label>Flexible Cables</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hi Temp Leadwire</fullName>
+        <default>false</default>
+        <label>Hi Temp Leadwire</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hook-up Wire</fullName>
+        <default>false</default>
+        <label>Hook-up Wire</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aluminum Cable</fullName>
+        <default>false</default>
+        <label>Aluminum Cable</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bare &amp; Tinned</fullName>
+        <default>false</default>
+        <label>Bare &amp; Tinned</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Armored Cable</fullName>
+        <default>false</default>
+        <label>Armored Cable</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fiber Optics</fullName>
+        <default>false</default>
+        <label>Fiber Optics</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sound &amp; Security</fullName>
+        <default>false</default>
+        <label>Sound &amp; Security</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ALUMINUM THHN ALL COLORS</fullName>
+        <default>false</default>
+        <label>ALUMINUM THHN ALL COLORS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ALUMINUM SER</fullName>
+        <default>false</default>
+        <label>ALUMINUM SER</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ALUMINUM SEU</fullName>
+        <default>false</default>
+        <label>ALUMINUM SEU</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ALUMINUM MC 3C WITH GROUND</fullName>
+        <default>false</default>
+        <label>ALUMINUM MC 3C WITH GROUND</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ALUMINUM MC 4C WITH GROUD</fullName>
+        <default>false</default>
+        <label>ALUMINUM MC 4C WITH GROUD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MOBILE HOME FEEDER</fullName>
+        <default>false</default>
+        <label>MOBILE HOME FEEDER</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ALUMINUM SERVICE DROP</fullName>
+        <default>false</default>
+        <label>ALUMINUM SERVICE DROP</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ALUMINUM 1350 XLP UD</fullName>
+        <default>false</default>
+        <label>ALUMINUM 1350 XLP UD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1350 ALUMINUM URD</fullName>
+        <default>false</default>
+        <label>1350 ALUMINUM URD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>8000 ALUMINUM URD</fullName>
+        <default>false</default>
+        <label>8000 ALUMINUM URD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BLACK 300V SJOOW 90C UL</fullName>
+        <default>false</default>
+        <label>BLACK 300V SJOOW 90C UL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>YELLOW 300V SJOOW 90C UL</fullName>
+        <default>false</default>
+        <label>YELLOW 300V SJOOW 90C UL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ALUMINUM XHHW ALL COLORS</fullName>
+        <default>false</default>
+        <label>ALUMINUM XHHW ALL COLORS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BLACK 600V SOOW 90C UL 5C+</fullName>
+        <default>false</default>
+        <label>BLACK 600V SOOW 90C UL 5C+</label>
+    </standardValue>
+    <standardValue>
+        <fullName>YELLOW &amp; GRAY 300V SJTOW UL</fullName>
+        <default>false</default>
+        <label>YELLOW &amp; GRAY 300V SJTOW UL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>YELLOW &amp; GRAY 600V STOW UL</fullName>
+        <default>false</default>
+        <label>YELLOW &amp; GRAY 600V STOW UL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ALUMINUM XLP USE</fullName>
+        <default>false</default>
+        <label>ALUMINUM XLP USE</label>
+    </standardValue>
+    <standardValue>
+        <fullName>YELLOW 600V SOOW 90C UL</fullName>
+        <default>false</default>
+        <label>YELLOW 600V SOOW 90C UL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BLACK 600V SOOW 90C UL</fullName>
+        <default>false</default>
+        <label>BLACK 600V SOOW 90C UL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BLACK 600V SOOW 90C (NON-UL)</fullName>
+        <default>false</default>
+        <label>BLACK 600V SOOW 90C (NON-UL)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BUS DROP CABLE</fullName>
+        <default>false</default>
+        <label>BUS DROP CABLE</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BLACK 600V SEOOW 105C UL</fullName>
+        <default>false</default>
+        <label>BLACK 600V SEOOW 105C UL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>YELLOW OR WHITE 600V SEOOW 105C UL</fullName>
+        <default>false</default>
+        <label>YELLOW OR WHITE 600V SEOOW 105C UL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BLACK 300V SJEOOW 105C UL</fullName>
+        <default>false</default>
+        <label>BLACK 300V SJEOOW 105C UL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>YELLOW OR WHITE 300V SJEOOW 105C</fullName>
+        <default>false</default>
+        <label>YELLOW OR WHITE 300V SJEOOW 105C</label>
+    </standardValue>
+    <standardValue>
+        <fullName>WELDING CABLE</fullName>
+        <default>false</default>
+        <label>WELDING CABLE</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BROWN OR WHITE PVC THERMOSTAT WIRE</fullName>
+        <default>false</default>
+        <label>BROWN OR WHITE PVC THERMOSTAT WIRE</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BROWN OR WHITE PVC THERMOSTAT WITE</fullName>
+        <default>false</default>
+        <label>BROWN OR WHITE PVC THERMOSTAT WITE</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MTW STRANDED ALL COLORS</fullName>
+        <default>false</default>
+        <label>MTW STRANDED ALL COLORS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GENERATOR CABLE - COPPER</fullName>
+        <default>false</default>
+        <label>GENERATOR CABLE - COPPER</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GENERATOR CABLE - ALUMINUM</fullName>
+        <default>false</default>
+        <label>GENERATOR CABLE - ALUMINUM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MC CABLE SOLID THHN - 60/40 MIX</fullName>
+        <default>false</default>
+        <label>MC CABLE SOLID THHN - 60/40 MIX</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MC CABLE STRANDED THHN - 60/40 MIX</fullName>
+        <default>false</default>
+        <label>MC CABLE STRANDED THHN - 60/40 MIX</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MC CABLE STRANDED XHHW</fullName>
+        <default>false</default>
+        <label>MC CABLE STRANDED XHHW</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TFFN SOLID ALL COLORS</fullName>
+        <default>false</default>
+        <label>TFFN SOLID ALL COLORS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TFFN STRANDED ALL COLORS</fullName>
+        <default>false</default>
+        <label>TFFN STRANDED ALL COLORS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>THHN SOLID ALL COLORS</fullName>
+        <default>false</default>
+        <label>THHN SOLID ALL COLORS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>THHN STRANDED ALL COLORS</fullName>
+        <default>false</default>
+        <label>THHN STRANDED ALL COLORS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>COAX CABLES</fullName>
+        <default>false</default>
+        <label>COAX CABLES</label>
+    </standardValue>
+    <standardValue>
+        <fullName>LOW VOLTAGE LANDSCAPE WIRE</fullName>
+        <default>false</default>
+        <label>LOW VOLTAGE LANDSCAPE WIRE</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SECURITY STRANDED PVC CL3R</fullName>
+        <default>false</default>
+        <label>SECURITY STRANDED PVC CL3R</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SECURITY STRANDED PVC CL3R - SHIELDED</fullName>
+        <default>false</default>
+        <label>SECURITY STRANDED PVC CL3R - SHIELDED</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SECURITY STRANDED PLENUM CL3P</fullName>
+        <default>false</default>
+        <label>SECURITY STRANDED PLENUM CL3P</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SECURITY STRANDED PLENUM CL3P - SHIELDED</fullName>
+        <default>false</default>
+        <label>SECURITY STRANDED PLENUM CL3P - SHIELDED</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FIRE ALARM SOLID PVC FPLR</fullName>
+        <default>false</default>
+        <label>FIRE ALARM SOLID PVC FPLR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FIRE ALARM SOLID PVC FPLR - SHIELDED</fullName>
+        <default>false</default>
+        <label>FIRE ALARM SOLID PVC FPLR - SHIELDED</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FIRE ALARM SOLID PLENUM FPLP</fullName>
+        <default>false</default>
+        <label>FIRE ALARM SOLID PLENUM FPLP</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FIRE ALARM SOLID PLENUM FPLP - SHIELDED</fullName>
+        <default>false</default>
+        <label>FIRE ALARM SOLID PLENUM FPLP - SHIELDED</label>
+    </standardValue>
+    <standardValue>
+        <fullName>COPPER CLAD GROUND RODS</fullName>
+        <default>false</default>
+        <label>COPPER CLAD GROUND RODS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GALVANIZED GROUND RODS</fullName>
+        <default>false</default>
+        <label>GALVANIZED GROUND RODS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GROUND ROD ACCESSORIES</fullName>
+        <default>false</default>
+        <label>GROUND ROD ACCESSORIES</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SOFT DRAWN BARE COPPER - SOLID</fullName>
+        <default>false</default>
+        <label>SOFT DRAWN BARE COPPER - SOLID</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SOFT DRAWN BARE COPPER - STRANDED</fullName>
+        <default>false</default>
+        <label>SOFT DRAWN BARE COPPER - STRANDED</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SOFT DRAWN TINNED COPPER - SOLID</fullName>
+        <default>false</default>
+        <label>SOFT DRAWN TINNED COPPER - SOLID</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SOFT DRAWN TINNED COPPER - STRANDED</fullName>
+        <default>false</default>
+        <label>SOFT DRAWN TINNED COPPER - STRANDED</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RANGE &amp; DRYER CORD</fullName>
+        <default>false</default>
+        <label>RANGE &amp; DRYER CORD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>APPLIANCE CORD</fullName>
+        <default>false</default>
+        <label>APPLIANCE CORD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>POWER SUPPLY CORD</fullName>
+        <default>false</default>
+        <label>POWER SUPPLY CORD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SAFETY ORANGE EXTENSION CORD</fullName>
+        <default>false</default>
+        <label>SAFETY ORANGE EXTENSION CORD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>YELLOW SINGLE LIGHTED END EXTENSION CORD</fullName>
+        <default>false</default>
+        <label>YELLOW SINGLE LIGHTED END EXTENSION CORD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>YELLOW TRIPLE LIGHTED END EXTENSION CORD</fullName>
+        <default>false</default>
+        <label>YELLOW TRIPLE LIGHTED END EXTENSION CORD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>YELLOW GFCI TRIPLE LIGHTED END EXTENSION CORD</fullName>
+        <default>false</default>
+        <label>YELLOW GFCI TRIPLE LIGHTED END EXTENSION CORD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>XHHW STRANDED ALL COLORS</fullName>
+        <default>false</default>
+        <label>XHHW STRANDED ALL COLORS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>COPPER SER</fullName>
+        <default>false</default>
+        <label>COPPER SER</label>
+    </standardValue>
+    <standardValue>
+        <fullName>UL LISTED LIQUID TIGHT (UALT)</fullName>
+        <default>false</default>
+        <label>UL LISTED LIQUID TIGHT (UALT)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>EXTRA FLEXIBLE LIQUID TIGHT (EFLT)</fullName>
+        <default>false</default>
+        <label>EXTRA FLEXIBLE LIQUID TIGHT (EFLT)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NON-METALLIC LIQUID TIGHT (NMLT)</fullName>
+        <default>false</default>
+        <label>NON-METALLIC LIQUID TIGHT (NMLT)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>REDUCED WALL ALUMINUM (RWA)</fullName>
+        <default>false</default>
+        <label>REDUCED WALL ALUMINUM (RWA)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>REDUCED WALL STEEL (RWS)</fullName>
+        <default>false</default>
+        <label>REDUCED WALL STEEL (RWS)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MINI-SPLIT CABLE &amp; ACCESSORIES</fullName>
+        <default>false</default>
+        <label>MINI-SPLIT CABLE &amp; ACCESSORIES</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MINI-SPLIT ACCESSORIES</fullName>
+        <default>false</default>
+        <label>MINI-SPLIT ACCESSORIES</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CATEGORY CABLES</fullName>
+        <default>false</default>
+        <label>CATEGORY CABLES</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IMSA</fullName>
+        <default>false</default>
+        <label>IMSA</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Telephone &amp; Data</fullName>
+        <default>false</default>
+        <label>Telephone &amp; Data</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Building Wire</fullName>
+        <default>false</default>
+        <label>Building Wire</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Accessories</fullName>
+        <default>false</default>
+        <label>Accessories</label>
+    </standardValue>
+</StandardValueSet>

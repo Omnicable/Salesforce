@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このマイルストーンを開始するより前に完了する必要があるマイルストーン。前のマイルストーンの終了日は現在のマイルストーンの開始日より前である必要があります。</help>
+    <label>前のマイルストーン</label>
+    <name>Predecessor_Milestone__c</name>
+    <relationshipLabel>前のマイルストーン</relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hobbies__c</fullName>
+    <description>Please enter any hobbies. For example Fishing, Skiing, Baseball (Phillies).</description>
+    <inlineHelpText>Please enter any hobbies. For example Fishing, Skiing, Baseball (Phillies).</inlineHelpText>
+    <label>Hobbies</label>
+    <length>256</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

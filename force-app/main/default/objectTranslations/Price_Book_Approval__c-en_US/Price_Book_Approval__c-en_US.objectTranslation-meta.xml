@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Price Book Approval</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Price Book Approvals</value>
+    </caseValues>
+    <recordTypes>
+        <description><!-- Limits certain users to only account level price books --></description>
+        <label><!-- Account Level --></label>
+        <name>Account_Level</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Allows admins to create buying group and company price books --></description>
+        <label><!-- Admin Level --></label>
+        <name>Admin_Level</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Limits Regional Managers to Accounts and Region --></description>
+        <label><!-- Regional Access --></label>
+        <name>Regional_Access</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- From User is required --></errorMessage>
+        <name>From_User_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Price_Book_Preview --></label>
+        <name>Price_Book_Preview</name>
+    </webLinks>
+</CustomObjectTranslation>

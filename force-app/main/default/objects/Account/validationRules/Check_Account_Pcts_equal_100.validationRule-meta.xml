@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Account_Pcts_equal_100</fullName>
+    <active>true</active>
+    <description>Makes sure that Commercail, Resiential, and Industrial %&apos;s = 100%</description>
+    <errorConditionFormula>((Commercial__c  + Industrial__c + Residential__c) &lt;&gt; 1 &amp;&amp;
+(Commercial__c  + Industrial__c + Residential__c) &gt; 0)
+&amp;&amp; $User.Username &lt;&gt;&quot;integration@omnicable.com&quot;</errorConditionFormula>
+    <errorMessage>Commercial, Industrial, and Residential Percentages must add up to 100%</errorMessage>
+</ValidationRule>

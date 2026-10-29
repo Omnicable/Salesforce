@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Crescent_2</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4 OR 5)</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Crescent Electric-Fenton,Crescent Electric-Marshall,Crescent Electric-Kansas City,Ba Electric-Lees Summit,Crescent Electric-Fort Dodge</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Crescent Electric-Holland,Crescent Electric-Grand Rapids,Crescent Electric-Baxter,Crescent Electric-Minneapolis,Crescent Electric-Rochester,Crescent Electric-Albert Lea,Crescent Electric-Kirksville,Crescent Electric-Columbia</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Crescent Electric-East Peoria,Crescent Electric-Freeport,Crescent Electric-Cary,Crescent Electric-Sterling,Crescent Electric-Columbus,Crescent Electric- Franklin,Crescent Electric-Louisville,Crescent Electric-Louisville Dc</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Crescent Electric-Ottumwa,Crescent Electric-Bloomington,Crescent Electric-Rockford,Crescent Electric-Princeton,Crescent Electric-Dekalb,Crescent Electric-Quincy,Crescent Electric-Joliet,Crescent Electric-Elkgrovevill</value>
+    </filters>
+    <label>Nick Crescent 2</label>
+    <sharedTo>
+        <group>CBU_Nick_Adam</group>
+    </sharedTo>
+</ListView>

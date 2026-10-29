@@ -795,11 +795,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Budget_2018__c</field>
-            <table>Contact.AccountContactRelations</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>AccountContactRelationId</field>
             <table>Contact.AccountContactRelations</table>
         </columns>
@@ -1315,11 +1310,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Max_Date_Order__c</field>
-            <table>Contact.AccountContactRelations</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
             <table>Contact.AccountContactRelations</table>
         </columns>
@@ -1516,11 +1506,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Prior_YTD_Sales__c</field>
-            <table>Contact.AccountContactRelations</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>QOC_YTD_SalesNonPolicy__c</field>
             <table>Contact.AccountContactRelations</table>
         </columns>
         <columns>

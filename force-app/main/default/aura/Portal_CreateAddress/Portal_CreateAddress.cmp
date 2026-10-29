@@ -1,0 +1,44 @@
+<!--
+  @description       : Create new Delivery Addresses
+  @author            : chrisw@launchdm.com
+  @group             : LaunchDM
+  @last modified on  : 12-21-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="Portal_ResourceController">
+
+	<aura:attribute name="isloading" type="Boolean" default="true" />
+	<aura:attribute name="newAddress" type="Delivery_Address__c" />
+	<aura:attribute name="contactId" type="String" />
+	<lightning:overlayLibrary aura:id="overlayLib" />
+
+	<div class="slds-is-relative">
+		<lightning:recordEditForm aura:id="newAddressForm" objectApiName="Delivery_Address__c" onload="{!c.onload}"
+			onsubmit="{!c.onsubmit}" onsuccess="{!c.handleSuccess}">
+			<lightning:messages />
+			<lightning:inputField fieldName="Site_Contact_Name__c" />
+			<lightning:inputField fieldName="Phone_Number__c" />
+			<lightning:inputField fieldName="Street_Address__c" />
+			<lightning:inputField fieldName="City__c" />
+			<lightning:inputField fieldName="State__c" />
+			<lightning:inputField fieldName="Zip_Code__c" />
+			<lightning:inputField fieldName="Other_Instructions__c" />
+			<div class="slds-grid">
+				<div class="slds-col slds-size_1-of-3">
+					<lightning:inputField variant="standard" fieldName="Flatbed_Requirements__c" />
+				</div>
+				<div class="slds-col slds-size_1-of-3">
+					<lightning:inputField variant="standard" fieldName="Lift_Gate__c" />
+				</div>
+				<div class="slds-col slds-size_1-of-3">
+					<lightning:inputField variant="standard" fieldName="Require_24hr_Notice__c" />
+				</div>
+			</div>
+			<lightning:button class="slds-m-top_small" variant="brand" type="submit" name="save" label="Save" />
+		</lightning:recordEditForm>
+
+		<lightning:spinner aura:id="mySpinner" class="{!v.isloading ? 'slds-show': 'slds-hide'}"
+			alternativeText="Loading" variant="brand" size="medium" />
+
+	</div>
+</aura:component>

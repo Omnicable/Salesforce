@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LOD - For AM Follow-Up on Open LOD Quotes</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Follow-Up on Quote</name>
+    <style>none</style>
+    <subject>Reminder - Follow up on Quote #{!QuotesOrdersCredits_Header__c.Order_Number__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

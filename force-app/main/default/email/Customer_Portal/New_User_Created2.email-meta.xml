@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email alert when new Roc portal user is created</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>New Portal User Created 2018</name>
+    <style>none</style>
+    <subject>New Portal User - {!Contact.Full_Name__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

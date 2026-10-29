@@ -1,0 +1,35 @@
+<messaging:emailTemplate subject="Alert: Order GP% under threshold" recipientType="User" relatedToType="QuotesOrdersCredits_Header__c" replyTo="jdean@omnicable.com">
+<messaging:plainTextEmailBody >
+{!relatedTo.Customer_Name__c} 
+{!relatedTo.Type__c} #{!relatedTo.name} 
+Type: {!relatedTo.Type__c}
+Total Order Sales: ${!relatedTo.Total_Order_Sales__c} 
+GP% (Booked): {!relatedTo.Total_Order_GP_Pct__c}%
+Job Reference: {!relatedTo.Job_Reference__c}
+Entered By: {!relatedTo.Entered_By__r.Name} 
+Account Owner: {!relatedTo.Inside_AM_Name__r.Name} 
+
+Sales Notes: {!relatedTo.SalesNote1__c} {!relatedTo.SalesNote2__c} {!relatedTo.SalesNote3__c} 
+
+
+---------
+
+
+
+ <apex:repeat var="cx" value="{!relatedTo.Order_Details__r}">
+      
+Line: {!cx.Name}
+Item # {!cx.Line_Item__c} 
+Qty: {!Floor(cx.Qty_Ordered__c)} 
+Line type: {!cx.Line_Type__c} 
+Line total: ${!cx.Dollars__c} 
+GP: ${!cx.GPDollars__c} 
+GP: {!cx.GP_Pct__c}% 
+Line Status: {!cx.Line_Status__c}      
+      
+    </apex:repeat>
+
+
+To view in Salesforce, go to https://omnicable.my.salesforce.com/{!relatedTo.id}
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Projects</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Projects</value>
+    </caseValues>
+    <recordTypes>
+        <label><!-- IT Project --></label>
+        <name>IT_Project</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Marketing Email Calendar --></label>
+        <name>Marketing_Email_Calendar</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type used for RM&apos;s to track notes for national meetings with customers --></description>
+        <label><!-- Meeting Project --></label>
+        <name>Meeting_Project</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type created for On Call Schedule and basic projects --></description>
+        <label><!-- Basic Projects --></label>
+        <name>On_Call_Projects</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- TSM Files --></label>
+        <name>TSM_Files</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

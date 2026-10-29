@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- RMA Responsibility --></label>
+    <name>RMA_Responsibility__c</name>
+    <picklistValues>
+        <masterLabel>CUST</masterLabel>
+        <translation><!-- CUST --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FRT</masterLabel>
+        <translation><!-- FRT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OMNI</masterLabel>
+        <translation><!-- OMNI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALE</masterLabel>
+        <translation><!-- SALE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VEND</masterLabel>
+        <translation><!-- VEND --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WHSE</masterLabel>
+        <translation><!-- WHSE --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

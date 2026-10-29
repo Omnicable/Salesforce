@@ -1,0 +1,5 @@
+The account {!Account.Name} hasn't had any Quotes, Orders, or scheduled activities in the last 90 days. Please engage this customer.
+
+https://na4.salesforce.com/{!Account.Id}
+
+Thanks

@@ -1,0 +1,116 @@
+<!--
+  @description       : Modal for customizing price books
+  @author            : chrisw@launchdm.com
+  @group             : PriceSheet
+  @last modified on  : 11-30-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="PriceSheetController" extends="c:PriceSheetBaseComponent">
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:method name="next" action="{!c.next}" access="public"></aura:method>
+	<aura:method name="previous" action="{!c.previous}" access="public"></aura:method>
+	<aura:method name="save" action="{!c.save}" access="public"></aura:method>
+
+	<aura:attribute name="isLoading" type="Boolean" />
+	<aura:attribute name="loadMoreStatus" type="String" default="Scroll to the bottom to load more" />
+	<aura:attribute name="pba" type="Price_Book_Approval__c" />
+	<aura:attribute name="priceBook" type="PriceBook2" />
+	<aura:attribute name="familyOptions" type="List" default="[]" />
+	<aura:attribute name="categories" type="List" default="[]" />
+	<aura:attribute name="currentType" type="String" default="All" />
+	<aura:attribute name="discountTypes" type="List" default="[
+	{'label': 'All', 'value': 'All'},
+    {'label': 'Category', 'value': 'Category'},
+    {'label': 'Product Group', 'value': 'Family'}
+    ]" />
+	<aura:attribute name="discounts" type="List" default="[]" />
+	<aura:attribute name="currentStep" type="String" default="1" />
+	<aura:attribute name="entries" type="List" default="[]" />
+	<aura:attribute name="filteredEntries" type="List" default="[]" />
+	<aura:attribute name="loadOffset" type="Integer" default="200" />
+	<aura:attribute name="enableInfiniteLoading" type="Boolean" default="true" />
+	<aura:attribute name="columns" type="List" default="[]" />
+	<aura:attribute name="draftValues" type="List" default="[]" />
+	<aura:attribute name="shouldSave" type="Boolean" default="false" />
+	<aura:attribute name="sortDirection" type="String" default="asc" />
+	<aura:attribute name="defaultSortDirection" type="String" default="asc" />
+	<aura:attribute name="sortedBy" type="String" />
+
+	<div class="slds-is-relative">
+		<lightning:progressIndicator class="slds-var-p-bottom_xx-large" currentStep="{!v.currentStep}" type="path"
+			variant="base">
+			<lightning:progressStep label="Set Price Book Name" value="1" />
+			<lightning:progressStep label="Product Family Discounts" value="2" />
+			<lightning:progressStep label="Price Overrides" value="3" />
+		</lightning:progressIndicator>
+		<div class="slds-grid slds-gutters modal-cont">
+			<div class="slds-col slds-grow">
+				<aura:if isTrue="{!v.currentStep == '1'}">
+					<div class="slds-var-p-vertical_xx-large">
+						<lightning:input name="Custom Price Book Name" label="Custom Price Book Name"
+							value="{!v.priceBook.Name}" placeholder="{!v.priceBook.Name}" />
+					</div>
+				</aura:if>
+				<aura:if isTrue="{!v.currentStep == '2'}">
+					<div class="slds-var-p-around_xx-large">
+						<div class="slds-grid slds-gutters slds-var-p-bottom_xx-large">
+							<lightning:combobox aura:id="newType" class="slds-col slds-grow-none" name="Discount Type"
+								value="{!v.currentType}" label="Discount Type" placeholder="Discount Type"
+								options="{! v.discountTypes }" />
+							<lightning:combobox disabled="{!v.currentType == 'All'}" aura:id="newFamily"
+								class="slds-col" name="productFamily" label="Discount Category" placeholder="Choose"
+								options="{! v.currentType == 'Family' ? v.familyOptions : v.categories }" />
+							<lightning:input aura:id="newDiscount" class="" name="family" label="Discount"
+								placeholder="X%" />
+							<div aura:id="add-cont" class="slds-col slds-grow-none slds-align-bottom">
+								<lightning:buttonIcon iconName="utility:add" variant="border-filled"
+									alternativeText="Delete" title="Delete" onclick="{! c.addDiscount }" />
+							</div>
+						</div>
+						<hr />
+						<div class="slds-text-heading_small">Discounts</div>
+						<aura:iteration items="{!v.discounts}" var="discount" indexVar="index">
+							<div class="slds-grid slds-gutters">
+
+								<lightning:combobox class="slds-col slds-grow-none" name="Discount Type"
+									value="{!discount.Type__c}" label="Discount Type" placeholder="Discount Type"
+									options="{! v.discountTypes }" disabled="true" />
+
+								<lightning:combobox class="slds-col" name="Discount Category" label="Discount Category"
+									value="{!discount.Product_Family__c}" placeholder="{!discount.Product_Family__c}"
+									options="{!discount == 'Family' ? v.familyOptions : v.categories }"
+									disabled="true" />
+
+								<lightning:input class="slds-shrink-none" name="family" label="Discount"
+									value="{!discount.Percent_Discount__c}" placeholder="type here..." />
+
+								<div class="slds-col slds-grow-none slds-align-bottom slds-grid_align-end">
+									<lightning:buttonIcon class="delete" iconName="utility:delete"
+										variant="border-filled" alternativeText="Delete" title="Delete" value="{!index}"
+										onclick="{! c.removeDiscount }" />
+								</div>
+							</div>
+						</aura:iteration>
+					</div>
+				</aura:if>
+				<aura:if isTrue="{!v.currentStep == '3'}">
+					Total Entries: {!v.entries.length}
+					<div class="slds-var-p-vertical_large table-container" style="height: 300px; overflow:scroll">
+						<lightning:datatable hideCheckboxColumn="true" columns="{! v.columns }"
+							data="{! v.filteredEntries }" keyField="Id" errors="{! v.errors }"
+							draftValues="{! v.draftValues }" oncellchange="{!c.onValueChange}"
+							defaultSortDirection="{!v.defaultSortDirection}" sortedDirection="{!v.sortDirection}"
+							sortedBy="{!v.sortedBy}" onsort="{!c.handleSort}" suppressBottomBar="true"
+							enableInfiniteLoading="{! v.enableInfiniteLoading }" loadMoreOffset="{! v.loadOffset }"
+							onloadmore="{! c.loadMoreData }" />
+					</div>
+					<div class="slds-align_absolute-center">{! v.loadMoreStatus }</div>
+				</aura:if>
+			</div>
+		</div>
+		<lightning:spinner aura:id="mySpinner" class="{!v.isLoading ? 'slds-show': 'slds-hide'}"
+			alternativeText="Loading" variant="brand" size="medium" />
+	</div>
+	<lightning:overlayLibrary aura:id="modalOverlay" />
+	<lightning:notificationsLibrary aura:id="notifLib" />
+</aura:component>

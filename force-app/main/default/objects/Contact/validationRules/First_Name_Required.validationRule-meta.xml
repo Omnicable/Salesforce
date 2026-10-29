@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Name_Required</fullName>
+    <active>true</active>
+    <description>First Name required when creating/editing contact, except profile = Omni System Admin or API User</description>
+    <errorConditionFormula>$User.ProfileId &lt;&gt;&apos;00e60000001BUtM&apos; &amp;&amp; 
+$User.ProfileId &lt;&gt;&apos;00e60000001BWSc&apos; &amp;&amp; 
+ISPICKVAL ( Active__c ,&quot;A&quot;)&amp;&amp;
+( ISBLANK(  FirstName  ))</errorConditionFormula>
+    <errorDisplayField>FirstName</errorDisplayField>
+    <errorMessage>You must enter a first name for this contact.</errorMessage>
+</ValidationRule>

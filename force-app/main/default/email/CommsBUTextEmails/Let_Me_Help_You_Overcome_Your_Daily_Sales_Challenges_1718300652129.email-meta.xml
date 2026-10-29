@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Let Me Help You Overcome Your Daily Sales Challenges</name>
+    <style>none</style>
+    <subject>Let Me Help You Overcome Your Daily Sales Challenges</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

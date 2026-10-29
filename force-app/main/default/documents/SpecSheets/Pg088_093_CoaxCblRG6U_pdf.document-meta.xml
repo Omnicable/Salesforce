@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+E20601-B5 E20601-B E20601-5 E20601 E20601-WH E20601BULK E20607 E20617 E20606 E20609 E20604BULK E20604-B E20604-WHB E20604 E20604-WH E20605 E20605BULK</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C5760 C5761 C5775 C5886 C5776 395011 495035 495036 495025 C5778 C3523 C3521 C3524 C3525 C8029 C8031 C5814 C5822 C5785 C5889 C5777 C5802 C5804 395011-3 395011-4 395011-5</keywords>
+    <name>General Cable Coaxial Cable - RG 6/U</name>
+    <public>true</public>
+</Document>

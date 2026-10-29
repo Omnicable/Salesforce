@@ -1,0 +1,88 @@
+<!--
+  @description       : Lightning component shows the Sales Budget report on the home page based on user's role
+  @author            : chrisw@launchdm.com
+  @group             : SalesBudgetReports
+  @last modified on  : 06-10-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="SalesBudgetController" implements="flexipage:availableForAllPageTypes,force:appHostable"
+	access="global">
+
+	<aura:attribute name="isLoading" type="Boolean" default="false" />
+	<aura:attribute name="noResults" type="Boolean" default="false" />
+	<aura:attribute name="resizeTimer" type="Object" />
+	<aura:attribute name="lastRunDate" type="Date" />
+	<aura:attribute name="chartData" type="Object" />
+	<aura:attribute name="reportTitle" type="String" />
+	<aura:attribute name="showGrouping" type="Boolean" default="false" />
+	<aura:attribute name="dateMap" type="Map"
+		default="{'January': 1, 'February': 2, 'March': 3, 'April': 4, 'May': 5, 'June': 6, 'July': 7, 'August': 8, 'September': 9, 'October': 10, 'November': 11, 'December': 12}" />
+	<aura:attribute name="groupOptions" type="List" default="[
+    {'label': 'By Date', 'value': 'byDate'},
+    {'label': 'By AM', 'value': 'byUser'}
+    ]" />
+	<aura:attribute name="grouping" type="String" default="byUser" />
+
+	<ltng:require scripts="{!$Resource.chart + '/chart/d3.min.js'}" afterScriptsLoaded="{!c.runReport}" />
+
+	<lightning:card aura:id="chart-cont">
+		<aura:set attribute="title">
+			GP$ Budget Report
+		</aura:set>
+
+		<aura:set attribute="actions">
+			<div class="slds-grid slds-gutters actions">
+
+				<aura:if isTrue="{!v.showGrouping}">
+					<lightning:radioGroup aura:id="groupingId" variant="label-hidden" name="radioButtonGroup"
+						label="Group" options="{! v.groupOptions }" value="{! v.grouping }" type="button"
+						onchange="{! c.onGroupingChange}" />
+				</aura:if>
+
+				<lightning:select aura:id="view" class="slds-col no-label" variant="label-hidden" name="view"
+					onchange="{! c.onChange }">
+					<option value="THIS_MONTH">Current Month</option>
+					<option value="THIS_QUARTER">Current Quarter</option>
+					<option value="THIS_YEAR">Year to Date</option>
+				</lightning:select>
+				<lightning:buttonIcon class="slds-col" iconName="utility:refresh" disabled="{!v.isLoading}"
+					variant="border-filled" alternativeText="Refresh" title="Refresh" onclick="{!c.runReport}" />
+			</div>
+		</aura:set>
+
+		<lightning:spinner aura:id="mySpinner" class="{!v.isLoading ? 'slds-show': 'slds-hide'}"
+			alternativeText="Loading" variant="brand" size="medium" />
+
+		<div class="tooltip-cont slds-is-absolute" style="position: absolute;"></div>
+
+		<div class="slds-border_top">
+
+			<div class="slds-var-m-around_small slds-is-relative">
+				<div aura:id="barChart" id="barChart" width="500" height="500" />
+
+				<aura:if isTrue="{!v.noResults}">
+					<div class="no-results slds-align_absolute-center">
+						We can't draw this chart because there is no data.
+					</div>
+				</aura:if>
+
+			</div>
+		</div>
+		<div class="slds-grid slds-gutters slds-text-body_small">
+			<div class="slds-col slds-align_absolute-center">
+				<lightning:button label="View Report" variant="bare" onclick="{!c.viewReport}" />
+			</div>
+			<div class="slds-col slds-align_absolute-center ">
+				<span>As of </span>
+				<span class="slds-var-p-left_xx-small">
+					<lightning:formattedDateTime value="{!v.lastRunDate}" year="numeric" month="numeric" day="numeric"
+						hour="2-digit" minute="2-digit" timeZoneName="short" hour12="true" />
+				</span>
+			</div>
+		</div>
+
+
+
+	</lightning:card>
+
+</aura:component>

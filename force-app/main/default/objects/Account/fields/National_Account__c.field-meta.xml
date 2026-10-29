@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>National_Account__c</fullName>
+    <label>National Account</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Border States</fullName>
+                <default>false</default>
+                <label>Border States</label>
+            </value>
+            <value>
+                <fullName>CED</fullName>
+                <default>false</default>
+                <label>CED</label>
+            </value>
+            <value>
+                <fullName>CES</fullName>
+                <default>false</default>
+                <label>CES</label>
+            </value>
+            <value>
+                <fullName>Crescent Electric</fullName>
+                <default>false</default>
+                <label>Crescent Electric</label>
+            </value>
+            <value>
+                <fullName>Graybar</fullName>
+                <default>false</default>
+                <label>Graybar</label>
+            </value>
+            <value>
+                <fullName>Rexel</fullName>
+                <default>false</default>
+                <label>Rexel</label>
+            </value>
+            <value>
+                <fullName>Sonepar</fullName>
+                <default>false</default>
+                <label>Sonepar</label>
+            </value>
+            <value>
+                <fullName>Turtle</fullName>
+                <default>false</default>
+                <label>Turtle</label>
+            </value>
+            <value>
+                <fullName>Wesco</fullName>
+                <default>false</default>
+                <label>Wesco</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>DECA SPEC SHEET
+T30803 (71-0803)</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>T30803 71-0803</keywords>
+    <name>Deca - Teck90 1000V Power - 8 gauge - 3 conductor</name>
+    <public>false</public>
+</Document>

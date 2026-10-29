@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a PDF of a Power Point. If you would like to add or delete any slides email Lyndsay at LRosenlund@omnicable.com.</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>pdf, power point, McNaughton, McKay, Mc-Mc, Presentation, Partnership</keywords>
+    <name>Omni Cable/McNaughton-McKay Partnership Presentation</name>
+    <public>true</public>
+</Document>

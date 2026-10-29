@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SalesHistory__c.Total_Invoice_Dollars__c</field>
+    </columns>
+    <description>Report Type Sales History, not Budgets</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Account_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>997960,956681,963585,956682,962817,964650,997957,962797,900400,901800,986092,972050,998987,962774,900619,955340,901512,975455,904501,962709,981334,970607,986043,962808,955462,955463,963285,900404,986104,986106,955470,986046,986122,986038,962773,962770,962110,986103,962782,979736,997982,986136,986045,962814,989118,997986,975401,904001,984465,984424,984442,957208,986118,999001,984462,986073,992707,986080,956692,984443,975398,999003,998004,993375,968137,984421,984464,992712,984444,984461,984423,998996,962807,992721,992715,998003,997808,986063,992711,986096,975360,968119,984449,986088,984453,992708,968164,984467,996251,986119,962886,992722,984446,968121,992713,968138,986101,984448,984429,992714,962877,962112,962869,968123,968155,968475,970615,984463,992716,992717,992719,998919</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>SalesHistory__c.Invoice_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Region_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>R7 R13 Sales Data</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>AccountCustomEntity$SalesHistory__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SalesHistory__c.Invoice_Date__c</dateColumn>
+        <endDate>2015-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-01-01</startDate>
+    </timeFrameFilter>
+</Report>

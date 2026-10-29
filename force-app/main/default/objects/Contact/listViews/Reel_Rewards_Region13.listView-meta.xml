@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reel_Rewards_Region13</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OCC_Rewards__c</columns>
+    <columns>OCC_RewardStep__c</columns>
+    <columns>OCC_RewardStepValue__c</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>OCC_RewardsValue__c</columns>
+    <columns>OCC_ViewAll__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>MaxOrderQuoteDate__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>CONTACT.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Standard</value>
+    </filters>
+    <filters>
+        <field>OCC_Rewards__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>13</value>
+    </filters>
+    <label>Reel Rewards Region13</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Business_Innovation</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+AF61206 417420</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>AF61206 417420</keywords>
+    <name>General Cable - FREP Instrumentation</name>
+    <public>true</public>
+</Document>

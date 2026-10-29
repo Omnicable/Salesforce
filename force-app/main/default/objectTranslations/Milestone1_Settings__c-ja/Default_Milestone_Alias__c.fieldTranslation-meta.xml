@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>エイリアスがメールサブジェクトに設定されていない場合は、デフォルトではタスク作成のメールを受信した時に有効なエイリアスのマイルストーンを挿入します。</help>
+    <label>デフォルトマイルストーンエイリアス</label>
+    <name>Default_Milestone_Alias__c</name>
+</CustomFieldTranslation>

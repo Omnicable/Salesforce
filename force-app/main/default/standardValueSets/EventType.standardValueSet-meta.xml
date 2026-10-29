@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>DSM Activity - Choose One</fullName>
+        <default>true</default>
+        <label>Activity Type - Choose One</label>
+    </standardValue>
+    <standardValue>
+        <fullName>End User Training</fullName>
+        <default>false</default>
+        <label>End User Training</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lunch n Learn</fullName>
+        <default>false</default>
+        <label>Lunch n Learn</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Business Review</fullName>
+        <default>false</default>
+        <label>Business Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>General Visit</fullName>
+        <default>false</default>
+        <label>General Visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Golf Outing</fullName>
+        <default>false</default>
+        <label>Golf Outing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Meals</fullName>
+        <default>false</default>
+        <label>Meals</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+</StandardValueSet>

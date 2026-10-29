@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このマイルストーンと、紐付く子マイルストーンの未完了遅延タスク</help>
+    <label>総遅延タスク</label>
+    <name>Total_Late_Tasks__c</name>
+</CustomFieldTranslation>

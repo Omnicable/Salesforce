@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>July_2023_Combo_Price_Sheet_S3</masterLabel>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>July 2023 Combo Price Sheet - S3.pdf</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- All Omni regions involved with this project --></help>
+    <label><!-- Regions Involved --></label>
+    <name>Related_Regions__c</name>
+    <picklistValues>
+        <masterLabel>002</masterLabel>
+        <translation><!-- 002 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>003</masterLabel>
+        <translation><!-- 003 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>004</masterLabel>
+        <translation><!-- 004 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>005</masterLabel>
+        <translation><!-- 005 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>006</masterLabel>
+        <translation><!-- 006 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>007</masterLabel>
+        <translation><!-- 007 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>008</masterLabel>
+        <translation><!-- 008 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>009</masterLabel>
+        <translation><!-- 009 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>010</masterLabel>
+        <translation><!-- 010 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>011</masterLabel>
+        <translation><!-- 011 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>012</masterLabel>
+        <translation><!-- 012 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>013</masterLabel>
+        <translation><!-- 013 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>014</masterLabel>
+        <translation><!-- 014 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>015</masterLabel>
+        <translation><!-- 015 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>018</masterLabel>
+        <translation><!-- 018 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>020</masterLabel>
+        <translation><!-- 020 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>029</masterLabel>
+        <translation><!-- 029 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

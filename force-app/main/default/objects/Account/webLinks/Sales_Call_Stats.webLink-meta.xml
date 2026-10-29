@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Call_Stats</fullName>
+    <availability>online</availability>
+    <description>Link to Sales Call Stats</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Sales Call Stats</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://omnicable.my.salesforce.com/00O600000035OA6?pv0={!Account.Id}</url>
+</WebLink>

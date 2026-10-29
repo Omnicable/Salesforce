@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Permission set to edit ENTRELEC checkbox on Account</description>
+    <description>Permission set to edit ENTRELEC checkbox on Account, updated 9/24/26 to edit IA Target checkboxes</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.ENTRELEC__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.IA_Target__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>QuotesOrdersCredits_Header__c.Industrial_Automation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>

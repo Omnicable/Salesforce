@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to all Promotion approvers</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Email to Current Promo Request Approver</name>
+    <style>freeForm</style>
+    <subject>Promotion Request Requires your Approval</subject>
+    <textOnly>{!Promo__c.CreatedBy} has submitted a new promotion for your approval.
+
+Please click here to review the promotion request in Salesforce.
+https://omnicable.my.salesforce.com/{!Promo__c.Id}
+
+
+* Standard Procedure: All promotions must be approved in Salesforce by Marketing.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

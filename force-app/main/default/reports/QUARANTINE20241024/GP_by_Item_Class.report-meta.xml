@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>QuoteOrderCredit_Details__c.GPDollars__c:SUM/QuotesOrdersCredits_Header__c.TotalDollars__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Avg. GP% (Booked)</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_78211109</developerName>
+        <masterLabel>Qty Shipped</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Account.Order_Header__r.Order_Details__r$Qty_Shipped__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>249</to>
+            </sourceValues>
+            <value>Under 250</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>249</from>
+                <to>499</to>
+            </sourceValues>
+            <value>250 - 499</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>499</from>
+                <to>999</to>
+            </sourceValues>
+            <value>500 - 999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>999</from>
+                <to>2,499</to>
+            </sourceValues>
+            <value>1,000 - 2,499</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>2,499</from>
+                <to>4,999</to>
+            </sourceValues>
+            <value>2,500 - 4,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>4,999</from>
+                <to>9,999</to>
+            </sourceValues>
+            <value>5,000 - 9,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>9,999</from>
+                <to>24,999</to>
+            </sourceValues>
+            <value>10,000 - 24,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>24,999</from>
+                <to>49,999</to>
+            </sourceValues>
+            <value>25,000 - 49,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>49,999</from>
+                <to>149,999</to>
+            </sourceValues>
+            <value>50,000 - 149,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>149,999</from>
+            </sourceValues>
+            <value>150,000 +</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.Order_Header__r.Order_Details__r$Line_Item__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.Order_Details__r$Qty_Ordered__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.Order_Details__r$Dollars__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.Order_Details__r$GP_Pct__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.Order_Details__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Date__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <description>Qty Shipped Buckets</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$Id</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0016000000ZWqSR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.Order_Details__r$Line_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Distributor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.Order_Details__r$Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>PR</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Order_Header__r.Order_Details__r$Item_Class__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_78211109</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Item Class Quantities &amp; GP%</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Order_Header_with_Order_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.Order_Header__r.Order_Details__r$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r$Date__c</dateColumn>
+        <interval>INTERVAL_PREVCURY</interval>
+    </timeFrameFilter>
+</Report>

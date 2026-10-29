@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+PV21401 PV21201 PV21001 PV20801 PV20601 PV20401 PV20201 PV20101 PV21/001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 12221.711400 12221.711200 12221.711100 12221.710800 12221.710600 12221.710400 12221.710200 12221.710100 12221.715100 12221.715200 12221.715300 12221.715400</keywords>
+    <name>General Cable SunGen™ EPR/CPE, Photovoltaic Wire 2000V, UL Type PV/RHH or RHW-2 or 600V USE-2, 90°C</name>
+    <public>true</public>
+</Document>

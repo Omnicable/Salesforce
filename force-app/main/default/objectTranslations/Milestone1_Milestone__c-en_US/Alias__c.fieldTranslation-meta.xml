@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- An alias helps you associate a task to a milestone using the single line entry home page component. --></help>
+    <label><!-- Milestone Alias --></label>
+    <name>Alias__c</name>
+</CustomFieldTranslation>

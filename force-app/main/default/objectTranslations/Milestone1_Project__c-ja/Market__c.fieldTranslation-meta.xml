@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Market --></label>
+    <name>Market__c</name>
+    <picklistValues>
+        <masterLabel>Construction</masterLabel>
+        <translation><!-- Construction --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Energy</masterLabel>
+        <translation><!-- Energy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Food Processing</masterLabel>
+        <translation><!-- Food Processing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MRO</masterLabel>
+        <translation><!-- MRO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oil and Gas</masterLabel>
+        <translation><!-- Oil and Gas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Petrochemical</masterLabel>
+        <translation><!-- Petrochemical --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pulp/Paper</masterLabel>
+        <translation><!-- Pulp/Paper --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wastewater Treatment</masterLabel>
+        <translation><!-- Wastewater Treatment --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

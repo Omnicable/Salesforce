@@ -1860,6 +1860,13 @@
         <runAsUser>ridelconte@omnicable.com</runAsUser>
     </emailServicesAddresses>
     <emailServicesAddresses>
+        <authorizedSenders>ashepherd@omnicable.com</authorizedSenders>
+        <developerName>emailtosalesforce106</developerName>
+        <isActive>true</isActive>
+        <localPart>emailtosalesforce</localPart>
+        <runAsUser>ashepherd@omnicable.com</runAsUser>
+    </emailServicesAddresses>
+    <emailServicesAddresses>
         <authorizedSenders>tcook@omnicable.com</authorizedSenders>
         <developerName>emailtosalesforce11</developerName>
         <isActive>true</isActive>

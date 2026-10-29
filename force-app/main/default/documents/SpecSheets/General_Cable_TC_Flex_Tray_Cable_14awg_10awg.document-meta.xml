@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET - 4780
+AT11403 AT11404 AT11405 AT11407 AT11203 AT11204 AT11205 AT11003 AT11004 AT11005</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>4780 AT11403 AT11404 AT11405 AT11407 AT11203 AT11204 AT11205 AT11003 AT11004 AT11005</keywords>
+    <name>General Cable - TC-Flex Tray Cable 14awg-10awg</name>
+    <public>true</public>
+</Document>

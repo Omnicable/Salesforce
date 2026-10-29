@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_Purchased</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Products Purchased</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://omnicable.my.salesforce.com/00O60000002TNFF?pv0={!Account.Id}</url>
+</WebLink>

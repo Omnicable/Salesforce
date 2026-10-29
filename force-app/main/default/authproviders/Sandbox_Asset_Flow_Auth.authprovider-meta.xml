@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://test.salesforce.com/services/oauth2/authorize</authorizeUrl>
+    <consumerKey>3MVG9VTfpJmxg1ygEjImnP2lXJdrkOJp8e3KryUEO2NG6cyI0xSaK9x3WHX5YSvS7rbPfOIhHKZ_feXxqh7hX</consumerKey>
+    <consumerSecret>Placeholder_Value</consumerSecret>
+    <friendlyName>Sandbox Asset Flow Auth</friendlyName>
+    <includeOrgIdInIdentifier>true</includeOrgIdInIdentifier>
+    <isPkceEnabled>false</isPkceEnabled>
+    <providerType>Salesforce</providerType>
+    <requireMfa>false</requireMfa>
+    <sendAccessTokenInHeader>false</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <sendSecretInApis>true</sendSecretInApis>
+    <tokenUrl>https://test.salesforce.com/services/oauth2/token</tokenUrl>
+</AuthProvider>

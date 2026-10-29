@@ -2,7 +2,7 @@
 <ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
     <baseObject>Account</baseObject>
     <category>other</category>
-    <deployed>false</deployed>
+    <deployed>true</deployed>
     <description>Report Type for accounts, contacts and their engagements per day.</description>
     <join>
         <outerJoin>true</outerJoin>
@@ -233,6 +233,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>SicDesc</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OperatingHours</field>
+            <table>Account</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PersonActionCadenceState</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -1385,11 +1395,6 @@
             <field>CSC_Transfer__c</field>
             <table>Account</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>test__c</field>
-            <table>Account</table>
-        </columns>
         <masterLabel>Accounts</masterLabel>
     </sections>
     <sections>
@@ -1605,6 +1610,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>ActionCadenceState</field>
+            <table>Account.Contacts</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>CreatedDate</field>
             <table>Account.Contacts</table>
         </columns>
@@ -1661,6 +1671,16 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Individual</field>
+            <table>Account.Contacts</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FirstCallDateTime</field>
+            <table>Account.Contacts</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FirstEmailDateTime</field>
             <table>Account.Contacts</table>
         </columns>
         <columns>
@@ -2344,5 +2364,8 @@
             <table>Account.Contacts</table>
         </columns>
         <masterLabel>Contacts</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Contact Daily Metrics</masterLabel>
     </sections>
 </ReportType>

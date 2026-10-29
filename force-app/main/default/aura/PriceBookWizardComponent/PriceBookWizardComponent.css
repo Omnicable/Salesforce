@@ -1,0 +1,19 @@
+.THIS .header{
+	background-color: #f3f3f3;
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 8px;
+}
+.THIS .error{
+	color: #ba0517;
+}
+
+.THIS .success{
+	color: #2e844a;
+}
+
+
+.THIS .cmp-container{
+	border: 1px solid #e5e5e5;
+	border-radius: 5px 5px 0 0;
+
+}

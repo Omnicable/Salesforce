@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+A11802F-1M A11802F A11802R A11803 A11803-1M A11804 A11804-1M A11805 A11807 A11809 A11810 A11812 A11815  A11819 A11825 A11830 A11837</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 236090 318050 245920 236100 244680 244660 264570 233270 236120 244720 236130 236140 347140 236150 236090.00.77</keywords>
+    <name>Instrumentation Cable - Type TC - 600 Volt - PVC/Nylon Insulation - PVC Jacket - 18 AWG</name>
+    <public>true</public>
+</Document>

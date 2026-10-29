@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+X20203 X20403 X20603 X20803 X21003 X21203 X21403 X21/003 X22/003 X23/003 X24/003 X225003 X235003 X250003 X275003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>X20203 X20403 X20603 X20803 X21003 X21203 X21403 X21/003 X22/003 X23/003 X24/003 X225003 X235003 X250003 X275003</keywords>
+    <name>Southwire - Continuous Corrugated Armor VFD</name>
+    <public>true</public>
+</Document>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+D942201-SO D91602 D91605 D91607 D91608 D91609 D91612 D91619 D91404 D91405 D91407 D91202</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C4008A C4311A C2754A C3105 C3106 C3102 C3190 C3103 C3134 C3192 C3191 C3178 C3179 C3193 C3194 C3195 C3126 C3135 C8102 C2405A C2406A C2425A C2434A C2426A C2443A C2435A C2427A C2428A C2429A C2436A C2409A C2430A C2437A C2431A C2410A C2440A</keywords>
+    <name>General Cable MultiConductor Unshielded</name>
+    <public>true</public>
+</Document>

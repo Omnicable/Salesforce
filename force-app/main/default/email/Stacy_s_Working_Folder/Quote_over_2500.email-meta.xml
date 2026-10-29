@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For Brad Cook&apos;s Email Alert</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Quote over $10000</name>
+    <style>none</style>
+    <subject>Quote over $10000 for {!QuotesOrdersCredits_Header__c.Customer_Name__c} entered by {!QuotesOrdersCredits_Header__c.Entered_By__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

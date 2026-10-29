@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+6175 17101</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>6175 17101 MVEH2 Uniblend 5KV 8KV</keywords>
+    <name>General Cable - Uniblend</name>
+    <public>true</public>
+</Document>

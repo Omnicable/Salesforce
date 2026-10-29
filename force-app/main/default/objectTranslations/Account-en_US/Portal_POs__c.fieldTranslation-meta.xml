@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- All potential POs in Portal controlleed by other field --></help>
+    <label><!-- Portal POs --></label>
+    <name>Portal_POs__c</name>
+    <picklistValues>
+        <masterLabel>193108-1137-22000</masterLabel>
+        <translation><!-- 193108-1137-22000 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1001-20106</masterLabel>
+        <translation><!-- 193119-1001-20106 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1002-20206</masterLabel>
+        <translation><!-- 193119-1002-20206 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1003-20256</masterLabel>
+        <translation><!-- 193119-1003-20256 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1004-20306</masterLabel>
+        <translation><!-- 193119-1004-20306 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1005-20406</masterLabel>
+        <translation><!-- 193119-1005-20406 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1006-20506</masterLabel>
+        <translation><!-- 193119-1006-20506 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1007-20606</masterLabel>
+        <translation><!-- 193119-1007-20606 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1008-20706</masterLabel>
+        <translation><!-- 193119-1008-20706 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1009-20957</masterLabel>
+        <translation><!-- 193119-1009-20957 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1010-21701</masterLabel>
+        <translation><!-- 193119-1010-21701 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1011-20185</masterLabel>
+        <translation><!-- 193119-1011-20185 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>193119-1012-05026</masterLabel>
+        <translation><!-- 193119-1012-05026 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

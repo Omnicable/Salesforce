@@ -1189,11 +1189,6 @@
             <field>CSC_Transfer__c</field>
             <table>Account</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>test__c</field>
-            <table>Account</table>
-        </columns>
         <masterLabel>Accounts</masterLabel>
     </sections>
     <sections>
@@ -2080,6 +2075,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>EWS_dollars__c</field>
+            <table>Account.Order_Header__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Industrial_Automation__c</field>
             <table>Account.Order_Header__r</table>
         </columns>
         <masterLabel>Quotes/Orders/Credits</masterLabel>

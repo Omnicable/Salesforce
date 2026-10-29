@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Inside Account Manager (on order) --></label>
+    <name>Inside_Account_Manager__c</name>
+    <relationshipLabel><!-- Sales History (Inside Account Manager (on order)) --></relationshipLabel>
+</CustomFieldTranslation>

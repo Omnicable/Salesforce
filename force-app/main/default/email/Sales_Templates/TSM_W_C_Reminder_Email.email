@@ -1,0 +1,10 @@
+Please see quote information below and follow up with the customer contacts and input all follow up and feedback notes from customer back into the W&C project board.
+
+Order Number: {!Milestone1_Project__c.Order_Number__c}
+Account Name: {!Milestone1_Project__c.Project_Registration_Account__c}
+Contact: {!Milestone1_Project__c.Contact__c}
+Potential $: {!Milestone1_Project__c.Total_Potential__c}
+Potential GP$: {!Milestone1_Project__c.Potential_GP2__c}
+Potential GP%: {!Milestone1_Project__c.Total_Potential_GP__c}
+
+Click here to enter your follow up notes: {!Milestone1_Project__c.Link}

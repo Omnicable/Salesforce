@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Calculated from tasks on this milestone --></help>
+    <label><!-- Estimated Expense From Tasks --></label>
+    <name>Estimated_Expense_From_Tasks__c</name>
+</CustomFieldTranslation>

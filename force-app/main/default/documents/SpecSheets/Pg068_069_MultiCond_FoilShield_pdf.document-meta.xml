@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+D22204 D22206 D22208 D22210 D22006 D22405 D22407 D22409 D22415 D22425 D22440 D22450 D22204 D22206 D22208 D22210 D22006 D22008 D22015</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C0740A C0741A C0742A C0753A C0743A C0754A C0744A C0755A C0745A C0746A C0747A C0748A C0749A C0750A C0751A C0760A C0761A C0762A C0763A C0764A C0765A C0766A C0767A C0768A C0780A C0781A C0782A C0783A C0784 C0785A C0786 C0787A C0788A</keywords>
+    <name>General Cable Multi-Conductor - Shielded PVC - 7x32 Stranded Tinned Copper</name>
+    <public>true</public>
+</Document>

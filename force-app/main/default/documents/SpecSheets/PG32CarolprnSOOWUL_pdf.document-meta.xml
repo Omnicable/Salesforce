@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+B11802 B11803 B11804 B11602 B11603 B11604 B11402 B11403 B11404 B11202 B11203 B11204 B11002 B11003 B11004</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 02763 02769 02770 02722 02765 02766 02723 02762 02768 02724 02725 02726 02767 02728 02727 16063 16064 16065 16073 16074 16075 16083 16084 16085 16093 16094 16095</keywords>
+    <name>Flexible and Portable Cord - Flexible and Portable Cord - Type SO/SOOW - 2-18AWG</name>
+    <public>true</public>
+</Document>

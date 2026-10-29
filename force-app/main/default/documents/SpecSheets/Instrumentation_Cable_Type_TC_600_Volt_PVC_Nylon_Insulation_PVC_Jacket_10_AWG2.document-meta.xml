@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET 
+A11002F  A11002F-1M A11002R A11003 A31003-K2B A11004 A11004-1M  A11005  A11007 A11009 A11012</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 236300 243630 236310 255080 236320 236330 236340 243620 236350</keywords>
+    <name>Instrumentation Cable - Type TC - 600 Volt - PVC/Nylon Insulation - PVC Jacket - 10 AWG</name>
+    <public>true</public>
+</Document>

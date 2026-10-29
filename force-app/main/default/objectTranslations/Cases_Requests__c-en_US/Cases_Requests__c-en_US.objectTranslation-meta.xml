@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Cases &amp; Requests</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Cases &amp; Requests</value>
+    </caseValues>
+    <recordTypes>
+        <description><!-- Used by sales to request budget and account assignment changes to HR --></description>
+        <label><!-- Budgets Request --></label>
+        <name>Budgets_Request</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- IT Case --></label>
+        <name>IT_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Use this form for large opportunities for the LOD department --></description>
+        <label><!-- LOD Request Form --></label>
+        <name>LOD_Request_Form</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Marketing Request --></label>
+        <name>Marketing_Request</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used by RMs to upload notes for national meetings --></description>
+        <label><!-- Meeting Notes --></label>
+        <name>Meeting_Notes</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Requests for moving contacts to a different branch --></description>
+        <label><!-- Move Contact --></label>
+        <name>Move_Contact</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Portal RFQ --></label>
+        <name>Portal_RFQ</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Salesforce Request --></label>
+        <name>Salesforce_Request</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used by Sales to request a Tango Card to be sent to their customer --></description>
+        <label><!-- Tango Card Request --></label>
+        <name>Tango_Card_Request</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- This contact is already listed at this account. Please input a different account to switch the contact to. --></errorMessage>
+        <name>Contact_Same_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Contact can only be moved to another branch in the same company. 
+Contact omnisolutions@omnicable.com for assistance. -->
+        </errorMessage>
+        <name>Contact_move_to_same_company</name>
+    </validationRules>
+</CustomObjectTranslation>

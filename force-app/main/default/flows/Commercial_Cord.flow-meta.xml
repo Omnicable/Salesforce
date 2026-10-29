@@ -128,7 +128,7 @@
             <field>Full_Name__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Windy Fiore</stringValue>
+                <stringValue>Meenakshi Kumar</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>

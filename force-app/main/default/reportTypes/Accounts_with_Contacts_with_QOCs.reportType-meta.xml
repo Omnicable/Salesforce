@@ -376,11 +376,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Max_Date_Order__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
             <table>Account</table>
         </columns>
@@ -1683,6 +1678,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>EWS_dollars__c</field>
+            <table>Account.Contacts.Quotes_Orders_Credits__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Industrial_Automation__c</field>
             <table>Account.Contacts.Quotes_Orders_Credits__r</table>
         </columns>
         <masterLabel>Quotes/Orders/Credits</masterLabel>

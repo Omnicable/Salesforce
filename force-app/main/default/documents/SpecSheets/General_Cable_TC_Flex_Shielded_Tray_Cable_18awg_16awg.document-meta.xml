@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET - 4785
+AT21804 AT21604</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>4785 AT21804 AT21604</keywords>
+    <name>General Cable - TC-Flex Shielded Tray Cable 18awg-16awg</name>
+    <public>true</public>
+</Document>

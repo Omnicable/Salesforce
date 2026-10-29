@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Worksheet used to build Raychem Elbow Catalog Numbers. 
+User will need cable manufacturer&apos;s spec sheet - specifically the OD of Insulation and conductor strand type (Compressed / Compact).</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>raychem, elbow, te, deadbreak, dead break, AMP</keywords>
+    <name>Raychem 15kV, 600AMP Deadbreak Part Number Builder</name>
+    <public>true</public>
+</Document>

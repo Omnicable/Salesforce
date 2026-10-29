@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For Chris Emmett&apos;s Element #2 Email Alert</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Element 2 Quote GP &gt; 10%</name>
+    <style>none</style>
+    <subject>Element 2.1 Quote</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

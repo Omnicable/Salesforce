@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Belden_Line_Item__c</fullName>
+    <description>Identifes all non-cancelled Belden items</description>
+    <formula>AND(
+   OR(
+      BEGINS(Item_Class_Description__c,&apos;BELDE&apos;), Class__c = &apos;BE&apos;,Class__c = &apos;BL&apos;, Item_Class__c = &apos;NE912&apos;),
+   OR(Vendor_Number__c = &apos;31396&apos;,Vendor_Number__c =&apos;0&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Identifes all non-cancelled Belden items</inlineHelpText>
+    <label>Belden Line Item?</label>
+    <type>Checkbox</type>
+</CustomField>

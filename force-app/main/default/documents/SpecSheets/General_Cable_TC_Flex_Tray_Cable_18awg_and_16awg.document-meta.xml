@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET - 4775
+AT11803 AT11804 AT11805 AT11807 AT11812 AT11816 AT11819 AT11603 AT11604 AT11605 AT11607 AT11612 AT11616 AT11619 AT11625</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>4775 AT11803 AT11804 AT11805 AT11807 AT11812 AT11816 AT11819 AT11603 AT11604 AT11605 AT11607 AT11612 AT11616 AT11619 AT11625</keywords>
+    <name>General Cable - TC-Flex Tray Cable 18awg and 16awg</name>
+    <public>true</public>
+</Document>

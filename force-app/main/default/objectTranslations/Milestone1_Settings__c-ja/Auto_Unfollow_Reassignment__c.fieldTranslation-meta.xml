@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>別ユーザが割り当てられた時に自動的に現在のユーザの登録を解除します。</help>
+    <label>自動再割り当てフォロー解除</label>
+    <name>Auto_Unfollow_Reassignment__c</name>
+</CustomFieldTranslation>

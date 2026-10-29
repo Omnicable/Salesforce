@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+E85901 E85900 E55918-NS  E15901-B E15901 E15901BULK E55904 E55903 E55918</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C1102 C1104 C1142 C1103 C8030 C1106 C1135 395025-3 395025-4 395025-5 395025-10 395031-3 395031-5 395025 495023 C1158 495028 C3526 C3527 C3500 C8027 C8028 C5770 C5780 C5830 C5784 C1110 C1112 C8025 395035-3 395035-4 395035-5</keywords>
+    <name>General Cable Coaxial Cable RG59 &amp; RG 59/U</name>
+    <public>true</public>
+</Document>

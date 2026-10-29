@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Order to which this pending issue applies --></help>
+    <label><!-- Order --></label>
+    <name>Order__c</name>
+    <relationshipLabel><!-- Pending Issues --></relationshipLabel>
+</CustomFieldTranslation>

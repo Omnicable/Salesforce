@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Type__c</fullName>
+    <description>This is a completely redundant field that just capture the &quot;Type&quot; field on tasks. I had to create it because you cannot add the Type field to custom reports and I need that field for TSM Visit Touch report. See help article https://help.salesforce.com/articleView?id=000004232&amp;language=en_US&amp;type=1</description>
+    <externalId>false</externalId>
+    <label>Activity Type</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

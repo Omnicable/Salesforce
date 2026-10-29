@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>この時間を使うユーザ。デフォルトでは現在のユーザ。</help>
+    <label>作成者</label>
+    <name>Incurred_By__c</name>
+    <relationshipLabel>時間</relationshipLabel>
+</CustomFieldTranslation>

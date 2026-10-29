@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>親マイルストーンのタスクから算出した推定時間</help>
+    <label>タスクからの推定時間</label>
+    <name>Estimated_Hours_From_Tasks__c</name>
+</CustomFieldTranslation>

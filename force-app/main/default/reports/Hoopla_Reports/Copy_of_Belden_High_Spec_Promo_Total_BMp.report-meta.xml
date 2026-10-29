@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, 54718,
+IF (Account.RegionNumerical__c:MAX = 3, 63078,
+IF (Account.RegionNumerical__c:MAX = 4, 35156 ,
+IF (Account.RegionNumerical__c:MAX = 5, 72971 ,
+IF (Account.RegionNumerical__c:MAX = 6, 28400 ,
+IF (Account.RegionNumerical__c:MAX = 7, 36700 ,
+IF (Account.RegionNumerical__c:MAX = 8, 38758,
+IF (Account.RegionNumerical__c:MAX = 9, 59240 ,
+IF (Account.RegionNumerical__c:MAX = 10, 55739 ,
+IF (Account.RegionNumerical__c:MAX = 11, 58666 ,
+IF (Account.RegionNumerical__c:MAX = 12, 34774 ,
+IF (Account.RegionNumerical__c:MAX = 13, 27651 ,
+IF (Account.RegionNumerical__c:MAX = 14, 8782  ,
+IF (Account.RegionNumerical__c:MAX = 15, 57552 ,
+IF (Account.RegionNumerical__c:MAX = 17, 37335,
+IF (Account.RegionNumerical__c:MAX = 18, 15321 
+,0))))))))))))))))</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Daily Baseline</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, Sales_History_Line_Item__c.Line_Total__c:SUM /3886977.21,
+IF (Account.RegionNumerical__c:MAX = 3, Sales_History_Line_Item__c.Line_Total__c:SUM /3938832.18,
+IF (Account.RegionNumerical__c:MAX = 4, Sales_History_Line_Item__c.Line_Total__c:SUM /2203170,
+IF (Account.RegionNumerical__c:MAX = 5, Sales_History_Line_Item__c.Line_Total__c:SUM /2830359,
+IF (Account.RegionNumerical__c:MAX = 6, Sales_History_Line_Item__c.Line_Total__c:SUM /2629019,
+IF (Account.RegionNumerical__c:MAX = 7, Sales_History_Line_Item__c.Line_Total__c:SUM /1891226,
+IF (Account.RegionNumerical__c:MAX = 8, Sales_History_Line_Item__c.Line_Total__c:SUM /7636833.97,
+IF (Account.RegionNumerical__c:MAX = 9, Sales_History_Line_Item__c.Line_Total__c:SUM /3216388.34,
+IF (Account.RegionNumerical__c:MAX = 10, Sales_History_Line_Item__c.Line_Total__c:SUM/ 1471419.08,
+IF (Account.RegionNumerical__c:MAX = 11, Sales_History_Line_Item__c.Line_Total__c:SUM /5158078.76,
+IF (Account.RegionNumerical__c:MAX = 12, Sales_History_Line_Item__c.Line_Total__c:SUM /2533522.78,
+IF (Account.RegionNumerical__c:MAX = 13, Sales_History_Line_Item__c.Line_Total__c:SUM /1484705,
+IF (Account.RegionNumerical__c:MAX = 15, Sales_History_Line_Item__c.Line_Total__c:SUM /3053104,
+IF (Account.RegionNumerical__c:MAX = 18, Sales_History_Line_Item__c.Line_Total__c:SUM /1263748,0))))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Target</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 54718)/ 54718,
+IF (Account.RegionNumerical__c:MAX = 3, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 63078)/ 63078,
+IF (Account.RegionNumerical__c:MAX = 4, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 35156)/ 35156,
+IF (Account.RegionNumerical__c:MAX = 5, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 72971)/ 72971,
+IF (Account.RegionNumerical__c:MAX = 6, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 28400)/ 28400,
+IF (Account.RegionNumerical__c:MAX = 7, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 36700)/ 36700,
+IF (Account.RegionNumerical__c:MAX = 8, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 38758)/ 38758,
+IF (Account.RegionNumerical__c:MAX = 9, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 59240)/ 59240,
+IF (Account.RegionNumerical__c:MAX = 10, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 55739)/ 55739,
+IF (Account.RegionNumerical__c:MAX = 11, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 58666)/ 58666,
+IF (Account.RegionNumerical__c:MAX = 12, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 34774)/ 34774,
+IF (Account.RegionNumerical__c:MAX = 13, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 27651)/ 27651,
+IF (Account.RegionNumerical__c:MAX = 14, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 6545)/ 6545,
+IF (Account.RegionNumerical__c:MAX = 15, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 57552)/ 57552,
+IF (Account.RegionNumerical__c:MAX = 17, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 37335)/ 37335,
+IF (Account.RegionNumerical__c:MAX = 18, ((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)- 15321)/ 15321,0))))))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Growth</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA5</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Avg Daily Sales</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_59189830</developerName>
+        <masterLabel>Divisions</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account$Region_Number__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>005</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>008</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>017</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>009</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>011</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>003</sourceValue>
+            </sourceValues>
+            <value>Division 1</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>002</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>007</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>004</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>010</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>015</sourceValue>
+            </sourceValues>
+            <value>Division 2</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>012</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>013</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>006</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>018</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>014</sourceValue>
+            </sourceValues>
+            <value>Division 3</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Description__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Total__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$GPpct__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Buyer__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Job_Reference__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Class__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Item__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Item_Class__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Type__c</field>
+    </columns>
+    <columns>
+        <field>Account$Business_Days_QTD__c</field>
+    </columns>
+    <description>Region 8 &amp; 17 sales &amp; targets to be combined when deciding results.</description>
+    <filter>
+        <booleanFilter>(1 OR 2) AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>AL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Item_Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>FCDSP,FCB1,FCBJ1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Region_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>020</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Credit,Order,Release</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Stock</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Customer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>HWC,OMNI,BAY WIRE</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_59189830</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Region_Number__c</field>
+        <sortByName>FORMULA3</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>CustomSummaryFormula</sortType>
+    </groupingsDown>
+    <name>AL, Cord Volume Promo</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Accounts_Orders_SalesHistory_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r.SalesHistory__r$Invoice_Date__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- ZoomInfo Enrich Status --></label>
+    <name>DOZISF__ZoomInfo_Enrich_Status__c</name>
+    <picklistValues>
+        <masterLabel>Enriched</masterLabel>
+        <translation><!-- Enriched --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Error Occurred in Instant Enrich</masterLabel>
+        <translation><!-- Error Occurred in Instant Enrich --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Error Occurred in Scheduled Enrich</masterLabel>
+        <translation><!-- Error Occurred in Scheduled Enrich --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Insufficient Credits</masterLabel>
+        <translation><!-- Insufficient Credits --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Match</masterLabel>
+        <translation><!-- No Match --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Enriched - Not Under Management</masterLabel>
+        <translation><!-- Not Enriched - Not Under Management --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

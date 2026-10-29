@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>PV30101,PV30201,PV30401,PV30601,PV30801,PV31/001,PV31001,PV31201,PV31401,PV31601,PV31801,PV32/001,PV33/001,PV34/001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>318PV,316PV,314PV,310PV,308PV,306PV,304PV,303PV,302PV,301PV,3010PV,3020PV,3030PV,3040PV</keywords>
+    <name>ADVANCED DIGITAL CABLE (ADC), Solarlink - PV3</name>
+    <public>true</public>
+</Document>

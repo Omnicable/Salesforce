@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to Matt Brady when a Tango Card request is created</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Tango Card Request Created</name>
+    <style>none</style>
+    <subject>{!Cases_Requests__c.CreatedBy} created a Tango Card Request</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

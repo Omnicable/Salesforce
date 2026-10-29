@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Type --></label>
+    <name>Cable_Type__c</name>
+    <picklistValues>
+        <masterLabel>--</masterLabel>
+        <translation><!-- - -  --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aluminum</masterLabel>
+        <translation><!-- Aluminum --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Armored</masterLabel>
+        <translation><!-- Armored --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bare &amp; Tinned Copper</masterLabel>
+        <translation><!-- Bare &amp; Tinned Copper --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Building Wire</masterLabel>
+        <translation><!-- Building Wire --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eaton Circuit Breaker</masterLabel>
+        <translation><!-- Eaton Circuit Breaker --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fiber Optic</masterLabel>
+        <translation><!-- Fiber Optic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flexible &amp; Portable Cord</masterLabel>
+        <translation><!-- Flexible &amp; Portable Cord --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>High Temp</masterLabel>
+        <translation><!-- High Temp --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hook-Up Wire</masterLabel>
+        <translation><!-- Hook-Up Wire --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMSA</masterLabel>
+        <translation><!-- IMSA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Instrumentation</masterLabel>
+        <translation><!-- Instrumentation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medium Voltage</masterLabel>
+        <translation><!-- Medium Voltage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sound, Security &amp; Alarm</masterLabel>
+        <translation><!-- Sound, Security &amp; Alarm --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Square D Circuit Breaker</masterLabel>
+        <translation><!-- Square D Circuit Breaker --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Telephone &amp; Data</masterLabel>
+        <translation><!-- Telephone &amp; Data --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Thermocouple</masterLabel>
+        <translation><!-- Thermocouple --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tray Cable</masterLabel>
+        <translation><!-- Tray Cable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VFD</masterLabel>
+        <translation><!-- VFD --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

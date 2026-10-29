@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+a11403 a11404 a11405 a11407 a11409 a11412 a11419 a11425  a11430 a11437</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 235050 235060 235070 235080 235090 235110 235130 235150 235160* 235170</keywords>
+    <name>Instrumentation Cable - Type TC - 600 Volt - PVC/Nylon Insulation - PVC Jacket - 14 AWG</name>
+    <public>true</public>
+</Document>

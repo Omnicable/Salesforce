@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VIP_Contacts_Needing_Attention_14_days</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>MaxOrderQuoteDate__c</columns>
+    <columns>lastActivitydate__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.OWNERSHIP</columns>
+    <columns>Days_without_contact__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Account.Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>VIP_Contact__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Days_without_contact__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>14</value>
+    </filters>
+    <label>VIP Contacts Needing Attention &gt;14 days</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <group>SSC</group>
+        <role>AccountManager11</role>
+        <role>DistrictSalesManager11</role>
+        <role>RegionalManager11</role>
+    </sharedTo>
+</ListView>

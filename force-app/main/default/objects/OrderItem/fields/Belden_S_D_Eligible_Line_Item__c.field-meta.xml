@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Belden_S_D_Eligible_Line_Item__c</fullName>
+    <formula>AND(OR(BEGINS(Item_Class_Description__c,&apos;BELDE&apos;), Class__c = &apos;BE&apos;,Class__c = &apos;BL&apos;, Item_Class__c = &apos;NE912&apos;),OR( Vendor_Number__c = &apos;31396&apos;,Vendor_Number__c =&apos;0&apos;), ISPICKVAL(Line_Status__c, &apos;Complete&apos;), S_D_Not_Eligible__c = False, Line_Cost__c &gt; 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Belden S&amp;D Eligible Line Item?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+J221906 J221912</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 7527757 7527765 7527781 7527799 7527005 7527013 7527021 7527039 7527054 7527062 7527112 7527120 7527138 7527146 7527161 7527187 7527195 7527203 7527211</keywords>
+    <name>General Cable Air Core Cable</name>
+    <public>true</public>
+</Document>

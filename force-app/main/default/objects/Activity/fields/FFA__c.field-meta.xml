@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FFA__c</fullName>
+    <label>FFA</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Price_Sheet_Provided__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard 2,000lbs</fullName>
+                <default>false</default>
+                <label>Standard 2,000lbs</label>
+            </value>
+            <value>
+                <fullName>Standard $3,000</fullName>
+                <default>false</default>
+                <label>Standard $3,000</label>
+            </value>
+            <value>
+                <fullName>Everything FFA</fullName>
+                <default>false</default>
+                <label>Everything FFA</label>
+            </value>
+            <value>
+                <fullName>Special Agreement</fullName>
+                <default>false</default>
+                <label>Special Agreement</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>Standard 2,000lbs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>Everything FFA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>Special Agreement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>Standard $3,000</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

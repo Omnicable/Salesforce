@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExtID_account_number_matches_account</fullName>
+    <active>false</active>
+    <description>To make sure that the account name corresponds to the account number in the ExtID</description>
+    <errorConditionFormula>Account_Number__c  &lt;&gt;  Account.Account_Number__c</errorConditionFormula>
+    <errorMessage>The account number in the ExtID does not match the account name.</errorMessage>
+</ValidationRule>

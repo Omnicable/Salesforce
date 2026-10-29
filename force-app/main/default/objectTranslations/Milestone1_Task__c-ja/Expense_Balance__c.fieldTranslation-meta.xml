@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>推定される総費用</help>
+    <label>費用バランス</label>
+    <name>Expense_Balance__c</name>
+</CustomFieldTranslation>

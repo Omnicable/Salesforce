@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>タスクが割り当てられているマイルストーン</help>
+    <label>マイルストーン</label>
+    <name>Project_Milestone__c</name>
+    <relationshipLabel>タスク</relationshipLabel>
+</CustomFieldTranslation>

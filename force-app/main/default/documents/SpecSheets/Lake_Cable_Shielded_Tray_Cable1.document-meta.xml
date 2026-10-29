@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LAKE SPEC SHEET
+A21803 V183S</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>A21803 V183S</keywords>
+    <name>Lake Cable - Shielded Tray Cable</name>
+    <public>true</public>
+</Document>

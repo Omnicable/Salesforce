@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 2 x Quad-Shielded RG6/U Coaxials --></label>
+    <name>X2_x_Quad_Shielded_RG6_U_Coaxials__c</name>
+</CustomFieldTranslation>

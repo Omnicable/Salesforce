@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Delivery --></label>
+    <name>Delivery__c</name>
+    <picklistValues>
+        <masterLabel>Best Way Standard</masterLabel>
+        <translation><!-- Best Way Standard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cross Docks</masterLabel>
+        <translation><!-- Cross Docks --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Next Day</masterLabel>
+        <translation><!-- Next Day --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Three Day</masterLabel>
+        <translation><!-- Three Day --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Two Day</masterLabel>
+        <translation><!-- Two Day --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Will Call</masterLabel>
+        <translation><!-- Will Call --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

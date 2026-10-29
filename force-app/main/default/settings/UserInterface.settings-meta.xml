@@ -3,7 +3,7 @@
     <alternateAlohaListView>true</alternateAlohaListView>
     <dynamicMruActionsOff>false</dynamicMruActionsOff>
     <enableAsyncRelatedLists>false</enableAsyncRelatedLists>
-    <enableClickjackUserPageHeaderless>false</enableClickjackUserPageHeaderless>
+    <enableClickjackUserPageHeaderless>true</enableClickjackUserPageHeaderless>
     <enableCollapsibleSections>true</enableCollapsibleSections>
     <enableCollapsibleSideBar>true</enableCollapsibleSideBar>
     <enableCustomObjectTruncate>false</enableCustomObjectTruncate>
@@ -18,9 +18,10 @@
     <enableProfileCustomTabsets>true</enableProfileCustomTabsets>
     <enableQuickCreate>false</enableQuickCreate>
     <enableRelatedListHovers>true</enableRelatedListHovers>
-    <enableSldsV2>false</enableSldsV2>
     <enableSldsV2DarkModeInCosmos>false</enableSldsV2DarkModeInCosmos>
     <enableTabOrganizer>true</enableTabOrganizer>
+    <listViewIleBypassLayout>false</listViewIleBypassLayout>
+    <listViewIleMultiRecordType>false</listViewIleMultiRecordType>
     <multiColumnSort>false</multiColumnSort>
     <multiColumnSortLv>true</multiColumnSortLv>
     <multiColumnSortRl>true</multiColumnSortRl>

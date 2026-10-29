@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor</fullName>
+    <active>true</active>
+    <description>Specifiies Vendor Products opposed to Omni Products</description>
+    <label>Vendor</label>
+    <picklistValues>
+        <picklist>Family</picklist>
+        <values>
+            <fullName>Aluminum Cable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Armored Cable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bare %26 Tinned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fiber Optics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flexible Cables</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hi Temp Leadwire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hook-up Wire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instrumentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portable Cord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power %26 Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sound %26 Security</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reel_Rewards_Checkbox_Restriction</fullName>
+    <active>false</active>
+    <description>Reel Rewards can only be enabled by Marketing</description>
+    <errorConditionFormula>$User.ProfileId &lt;&gt;&apos;00e60000001BUtM&apos; &amp;&amp;
+$User.ProfileId &lt;&gt;&apos;00e60000001BWSc&apos; &amp;&amp;
+ ISCHANGED( OCC_Rewards__c )</errorConditionFormula>
+    <errorMessage>Reel Rewards has ended for 2019. Talk to your RM about adding a contact to Reel Rewards in 2020.</errorMessage>
+</ValidationRule>

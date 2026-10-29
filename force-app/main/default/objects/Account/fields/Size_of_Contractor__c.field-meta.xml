@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Size_of_Contractor__c</fullName>
+    <label>Size of Contractor</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0 - 50</fullName>
+                <default>false</default>
+                <label>0 - 50</label>
+            </value>
+            <value>
+                <fullName>50 - 100</fullName>
+                <default>false</default>
+                <label>50 - 100</label>
+            </value>
+            <value>
+                <fullName>100 - 500</fullName>
+                <default>false</default>
+                <label>100 - 500</label>
+            </value>
+            <value>
+                <fullName>500+</fullName>
+                <default>false</default>
+                <label>500+</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

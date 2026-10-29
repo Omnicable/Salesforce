@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>最後のメールを受信した日時。タスクはメール経由でも作成可能で、タスクのメモ＆添付ファイルに保存される。</help>
+    <label>最終メール受信日時</label>
+    <name>Last_Email_Received__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is your warehouse operating cost.  It is based on the amount of time we spend processing their orders.  A higher than average Whse OP typically means that this customer makes purchases with a high number of put-ups, or has a small average order size. --></help>
+    <label><!-- WHSE OP Cost --></label>
+    <name>WHSE_OP_Cost__c</name>
+</CustomFieldTranslation>

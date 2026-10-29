@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+A30803 A30403 A30603 A30203 A30103 OL602003 A31/003 A32/003 A33/003 A34/003 A325003 A335003 A350003 A375003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>SW PART #&apos;S 569415 569417 443432 443424 602003 443440 443457 443465 443473 443481 443507 443523 602094</keywords>
+    <name>Southwire Instrumentation Cable - Type TC - 600 Volt - PVC/Nylon Insulation - PVC Jacket - 3 Conductor w/Ground</name>
+    <public>true</public>
+</Document>

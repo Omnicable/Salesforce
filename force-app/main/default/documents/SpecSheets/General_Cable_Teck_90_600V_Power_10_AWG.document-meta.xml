@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+T31002 T31003 T31004 T13006 T31008</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>T31002 T31003 T31004 T13006 T31008</keywords>
+    <name>General Cable - Teck 90 600V Power - 10 AWG</name>
+    <public>false</public>
+</Document>

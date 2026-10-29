@@ -1,0 +1,16 @@
+ALTERNATE - FOLLOW UP ON QUOTE 2
+
+{!QuotesOrdersCredits_Header__c.Type__c} # {!QuotesOrdersCredits_Header__c.Order_Number__c} 
+{!QuotesOrdersCredits_Header__c.Customer_Name__c} 
+Total: ${!QuotesOrdersCredits_Header__c.Total_Order_Sales__c} 
+Job Reference: {!QuotesOrdersCredits_Header__c.Job_Reference__c} 
+
+{!QuotesOrdersCredits_Header__c.Buyer__c} 
+{!QuotesOrdersCredits_Header__c.Buyer_s_Email_Address__c} 
+Phone: {!QuotesOrdersCredits_Header__c.00N32000003FIGO} 
+
+Click here to view the quote: https://omnicable.my.salesforce.com/{!QuotesOrdersCredits_Header__c.Id} 
+
+
+Date: {!QuotesOrdersCredits_Header__c.Date__c} 
+Follow-Up Date: {!QuotesOrdersCredits_Header__c.Followup_Date__c}

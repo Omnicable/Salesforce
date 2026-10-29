@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Graybar_St_Louis_Contacts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>OCC_Rewards__c</columns>
+    <columns>OCC_RewardStepValue__c</columns>
+    <columns>OCC_RewardStep__c</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.DEPARTMENT</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>MaxOrderQuoteDate__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>CONTACT.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Standard</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>820045,822693,974444,822687,974211,974250,974480,991576,991584,975311,975314,974230,822256,822261,822685,822252,975352</value>
+    </filters>
+    <filters>
+        <field>OCC_Rewards__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Graybar St. Louis Contacts</label>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

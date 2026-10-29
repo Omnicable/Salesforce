@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ROC_Title__c</fullName>
+    <defaultValue>IF(
+BEGINS($UserRole.Name, &quot;Account Manager&quot;),&quot;Account Manager&quot;,
+IF (
+BEGINS($UserRole.Name, &quot;District Sales Manager&quot;), &quot;Territory Sales Manager&quot;,
+IF (
+BEGINS($UserRole.Name, &quot;Sales Manager&quot;), &quot;Account Manager&quot;,
+IF (
+BEGINS($UserRole.Name, &quot;SSC Sales&quot;), &quot;Account Manager&quot;, &quot;&quot;))))</defaultValue>
+    <description>This is the title to display for the account owner/outside salesperson on the new website. This allows the flexibility if the title of our outside salespeople changes, we can easily update this field.</description>
+    <externalId>false</externalId>
+    <label>ROC Title</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

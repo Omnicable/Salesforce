@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QuoteDollars_CY__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>QuoteDollars_CY</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>QuotesOrdersCredits_Header__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Quotes</value>
+        </filterItems>
+        <filterItems>
+            <field>$Source.Id</field>
+            <operation>equals</operation>
+            <valueField>QuotesOrdersCredits_Header__c.Buyer__r.Id</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>QuotesOrdersCredits_Header__c</referenceTo>
+    <relationshipLabel>Contacts (QuoteDollars_CY)</relationshipLabel>
+    <relationshipName>Contacts1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>BELDEN SPEC SHEET
+L62016 YM57945</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>L62016 YM57945</keywords>
+    <name>Belden - Generic Instrumentation</name>
+    <public>true</public>
+</Document>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This quote or order contains RT1, RT2, or RT3 --></help>
+    <label><!-- RT1 / RT2 / RT3 --></label>
+    <name>R123_MV__c</name>
+</CustomFieldTranslation>

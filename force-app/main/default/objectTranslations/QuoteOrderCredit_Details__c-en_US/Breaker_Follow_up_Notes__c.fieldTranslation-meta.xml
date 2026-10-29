@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- What feedback did you get from the customer regarding breaker products? --></help>
+    <label><!-- Breaker Follow-up Notes --></label>
+    <name>Breaker_Follow_up_Notes__c</name>
+</CustomFieldTranslation>

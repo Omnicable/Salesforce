@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- No orders below this $ value. --></help>
+    <label><!-- Vendor Order Minimum --></label>
+    <name>Vendor_Order_Minimum__c</name>
+</CustomFieldTranslation>

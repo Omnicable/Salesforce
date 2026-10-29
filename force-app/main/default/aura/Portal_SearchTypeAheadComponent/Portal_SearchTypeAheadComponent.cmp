@@ -1,0 +1,67 @@
+<!--
+  @description       : Custom type-ahead searching
+  @author            : chrisw@launchdm.com
+  @group             : LaunchDM
+  @last modified on  : 11-30-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="Portal_ResourceController">
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:method name="clearSearchValue" action="{!c.clearSearchValue}" description="Clear search value" />
+	<aura:attribute name="newRelease" type="Object" />
+
+	<aura:attribute name="object" type="String" default="Alternative_Part_Number__c" />
+	<aura:attribute name="field" type="String" default="Name" />
+	<aura:attribute name="limit" type="Integer" default="20" />
+	<aura:attribute name="label" type="String" default="Search" />
+	<aura:attribute name="isSearching" type="Boolean" default="false" />
+	<aura:attribute name="inputTimer" type="Object" />
+	<aura:attribute name="openDropDown" type="Boolean" default="false" />
+	<aura:attribute name="searchValue" type="String" />
+	<aura:attribute name="results" type="List" default="[]" />
+	<aura:attribute name="defaultParts" type="List" default="[]" />
+
+	<div>
+		<div class="slds-form-element">
+			<div class="slds-form-element__control">
+				<div class="slds-combobox_container">
+					<div
+						class="{!v.openDropDown ? 'slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open' : ' slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click'}">
+						<div onkeyup="{!c.searchHandler}">
+							<lightning:input aura:id="enter-search" name="enter-search" label="{!v.label}" type="search"
+								class="search-input" isLoading="{! v.isSearching }" autocomplete="off"
+								onchange="{!c.possibleClear}" value="{!v.searchValue}" onfocus="{!c.onFocus}"
+								onblur="{!c.onBlur}" placeholder="{!v.label}" />
+						</div>
+						<div id="listbox-id-9" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid"
+							role="listbox">
+							<ul class="slds-listbox slds-listbox_vertical slds-is-relative" role="presentation">
+								<aura:iteration items="{!v.results}" var="item" indexVar="index">
+
+									<li role="presentation" class="slds-listbox__item"
+										data-description="{!item.Part_Numbers__r.Item_Description_OPUS__c}"
+										data-number="{!item.Part_Numbers__r.Name}" data-name="{!item.Name}"
+										onclick="{!c.setCable}">
+										<div id="{!item.Id}"
+											class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+											role="option">
+											<span class="slds-media__body">
+												<span class="slds-truncate"
+													title="Burlington Textiles Corp of America">{!item.Name}</span>
+											</span>
+										</div>
+									</li>
+								</aura:iteration>
+								<aura:if isTrue="{!v.isSearching}">
+									<lightning:spinner alternativeText="Loading" size="small" />
+								</aura:if>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</aura:component>

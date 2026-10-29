@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a brief guide about  the types of reports you can create in salesforce and sample reports to check out</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>Reports in Salesforce</name>
+    <public>true</public>
+</Document>

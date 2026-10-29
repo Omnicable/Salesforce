@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wire &amp; Cable Projects</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wire &amp; Cable Projects</value>
+    </caseValues>
+    <recordTypes>
+        <description><!-- Record Type used by the Large Order Department --></description>
+        <label><!-- Large Order Department --></label>
+        <name>Large_Order_Department</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- VITALink Projects --></description>
+        <label><!-- VITALink --></label>
+        <name>VITALink</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- VITALink Project --></label>
+        <name>VITALink_Project</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Kickoff must be less or equal than the deadline --></errorMessage>
+        <name>Kickoff_before_deadline</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This value should be a positive number --></errorMessage>
+        <name>Total_Expense_Budget_Negative_Numbers</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This value should be a positive number --></errorMessage>
+        <name>Total_Hours_Budget_Negative_Numbers</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_New_End_User --></label>
+        <name>Create_New_End_User</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_New_End_User_Contact --></label>
+        <name>Create_New_End_User_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Export_Template --></label>
+        <name>Export_Template</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Import_Template --></label>
+        <name>Import_Template</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Update --></label>
+        <name>Update</name>
+    </webLinks>
+</CustomObjectTranslation>

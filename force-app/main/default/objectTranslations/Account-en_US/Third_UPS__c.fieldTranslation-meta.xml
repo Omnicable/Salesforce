@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Customers default Third Party Bill or Collect information (ie UPS or Fedex Ground) --></help>
+    <label><!-- Collect or Third Party Parcel Acct --></label>
+    <name>Third_UPS__c</name>
+</CustomFieldTranslation>

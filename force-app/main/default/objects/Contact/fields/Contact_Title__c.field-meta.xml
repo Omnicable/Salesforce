@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Title__c</fullName>
+    <inlineHelpText>Please select correct title. Type first letter or use the mouse.</inlineHelpText>
+    <label>Contact Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+                <label>Accounting</label>
+            </value>
+            <value>
+                <fullName>Asst. Branch Manager</fullName>
+                <default>false</default>
+                <label>Asst. Branch Manager</label>
+            </value>
+            <value>
+                <fullName>Automation Specialist</fullName>
+                <default>false</default>
+                <label>Automation Specialist</label>
+            </value>
+            <value>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+                <label>Branch Manager</label>
+            </value>
+            <value>
+                <fullName>CEO</fullName>
+                <default>false</default>
+                <label>CEO</label>
+            </value>
+            <value>
+                <fullName>CFO</fullName>
+                <default>false</default>
+                <label>CFO</label>
+            </value>
+            <value>
+                <fullName>Commercial Sales</fullName>
+                <default>false</default>
+                <label>Commercial Sales</label>
+            </value>
+            <value>
+                <fullName>Construction Sales</fullName>
+                <default>false</default>
+                <label>Construction Sales</label>
+            </value>
+            <value>
+                <fullName>Counter sales</fullName>
+                <default>false</default>
+                <label>Counter Sales</label>
+            </value>
+            <value>
+                <fullName>Credit Manager</fullName>
+                <default>false</default>
+                <label>Credit Manager</label>
+            </value>
+            <value>
+                <fullName>CSR</fullName>
+                <default>false</default>
+                <label>CSR</label>
+            </value>
+            <value>
+                <fullName>District Manager</fullName>
+                <default>false</default>
+                <label>District Manager</label>
+            </value>
+            <value>
+                <fullName>Division Manager</fullName>
+                <default>false</default>
+                <label>Division Manager</label>
+            </value>
+            <value>
+                <fullName>Gear Specialist</fullName>
+                <default>false</default>
+                <label>Gear Specialist</label>
+            </value>
+            <value>
+                <fullName>Industrial Sales</fullName>
+                <default>false</default>
+                <label>Industrial Sales</label>
+            </value>
+            <value>
+                <fullName>Inside Construction Sales</fullName>
+                <default>false</default>
+                <label>Inside Construction Sales</label>
+            </value>
+            <value>
+                <fullName>Inside Industrial Sales</fullName>
+                <default>false</default>
+                <label>Inside Industrial Sales</label>
+            </value>
+            <value>
+                <fullName>Inside Sales</fullName>
+                <default>false</default>
+                <label>Inside Sales</label>
+            </value>
+            <value>
+                <fullName>Marketing Manager</fullName>
+                <default>false</default>
+                <label>Marketing Manager</label>
+            </value>
+            <value>
+                <fullName>Operations Manager</fullName>
+                <default>false</default>
+                <label>Operations Manager</label>
+            </value>
+            <value>
+                <fullName>Outside Construction Sales</fullName>
+                <default>false</default>
+                <label>Outside Construction Sales</label>
+            </value>
+            <value>
+                <fullName>Outside Industrial Sales</fullName>
+                <default>false</default>
+                <label>Outside Industrial Sales</label>
+            </value>
+            <value>
+                <fullName>Outside sales</fullName>
+                <default>false</default>
+                <label>Outside Sales</label>
+            </value>
+            <value>
+                <fullName>Owner</fullName>
+                <default>false</default>
+                <label>Owner</label>
+            </value>
+            <value>
+                <fullName>President</fullName>
+                <default>false</default>
+                <label>President</label>
+            </value>
+            <value>
+                <fullName>Principal</fullName>
+                <default>false</default>
+                <label>Principal</label>
+            </value>
+            <value>
+                <fullName>Profit Center Manager</fullName>
+                <default>false</default>
+                <label>Profit Center Manager</label>
+            </value>
+            <value>
+                <fullName>Projects Dept.</fullName>
+                <default>false</default>
+                <label>Projects Dept.</label>
+            </value>
+            <value>
+                <fullName>Purchasing agent</fullName>
+                <default>false</default>
+                <label>Purchasing Agent</label>
+            </value>
+            <value>
+                <fullName>Purchasing Manager</fullName>
+                <default>false</default>
+                <label>Purchasing Manager</label>
+            </value>
+            <value>
+                <fullName>Quotation specialist</fullName>
+                <default>false</default>
+                <label>Quotation specialist</label>
+            </value>
+            <value>
+                <fullName>Receptionist</fullName>
+                <default>false</default>
+                <label>Receptionist</label>
+            </value>
+            <value>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+                <label>Regional Manager</label>
+            </value>
+            <value>
+                <fullName>Sales Manager</fullName>
+                <default>false</default>
+                <label>Sales Manager</label>
+            </value>
+            <value>
+                <fullName>Sales Support</fullName>
+                <default>false</default>
+                <label>Sales Support</label>
+            </value>
+            <value>
+                <fullName>Specialist</fullName>
+                <default>false</default>
+                <label>Specialist</label>
+            </value>
+            <value>
+                <fullName>Utility Sales</fullName>
+                <default>false</default>
+                <label>Utility Sales</label>
+            </value>
+            <value>
+                <fullName>V.P. Operations</fullName>
+                <default>false</default>
+                <label>V.P. Operations</label>
+            </value>
+            <value>
+                <fullName>V.P. Sales</fullName>
+                <default>false</default>
+                <label>V.P. Sales</label>
+            </value>
+            <value>
+                <fullName>Warehouse Manager</fullName>
+                <default>false</default>
+                <label>Warehouse Manager</label>
+            </value>
+            <value>
+                <fullName>Estimator</fullName>
+                <default>false</default>
+                <label>Estimator</label>
+            </value>
+            <value>
+                <fullName>Area Superintendent</fullName>
+                <default>false</default>
+                <label>Area Superintendent</label>
+            </value>
+            <value>
+                <fullName>Senior Leadership</fullName>
+                <default>false</default>
+                <label>Senior Leadership</label>
+            </value>
+            <value>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+                <label>Business Development</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

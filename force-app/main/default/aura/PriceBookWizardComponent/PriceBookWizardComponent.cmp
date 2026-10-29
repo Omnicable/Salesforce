@@ -1,0 +1,76 @@
+<!--
+  @description       : Walks user through creating/selecting price books for price book approvals
+  @author            : chrisw@launchdm.com
+  @group             : Price Sheet
+  @last modified on  : 10-06-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="PriceSheetController" implements="flexipage:availableForAllPageTypes,force:hasRecordId"
+	extends="c:PriceSheetBaseComponent">
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+	<aura:attribute name="recordId" type="String" />
+	<aura:attribute name="pba" type="Price_Book_Approval__c" />
+	<aura:attribute name="priceBooks" type="List" />
+	<aura:attribute name="priceBookOptions" type="List" />
+	<aura:attribute name="entries" type="List" />
+	<aura:attribute name="columns" type="List" />
+	<aura:attribute name="isLoading" type="Boolean" default="true" />
+	<aura:attribute name="isSaved" type="Boolean" default="false" />
+	<aura:attribute name="sortDirection" type="String" default="asc" />
+	<aura:attribute name="defaultSortDirection" type="String" default="asc" />
+	<aura:attribute name="sortedBy" type="String" />
+	<aura:attribute name="selectedPriceBook" type="PriceBook2" default="{ 'sobjectType': 'PriceBook2' }" />
+
+	<lightning:card>
+		<aura:set attribute="actions">
+			<lightning:button disabled="{!v.selectedPriceBook.Id == null || v.pba.Status__c == 'Pending' || v.pba.Status__c == 'Approved'}" variant="brand" label="Save" title="Save"
+				onclick="{! c.priceBookSet }" />
+		</aura:set>
+		<aura:set attribute="title">
+			<div class="slds-grid">
+				<div class="slds-p-right_xx-small slds-text-title_bold">STATUS: </div>
+				<div class="{!v.isLoading ? 'slds-hide ': 'slds-show slds-p-right_xx-small'}">
+
+					<div
+						class="{! and(v.pba.Price_Book__c != null, v.isSaved) ? 'success slds-text-title_bold' : 'error slds-text-title_bold'}">
+						{! and(v.pba.Price_Book__c != null, v.isSaved) ? 'COMPLETE' : 'INCOMPLETE'}</div>
+
+				</div>
+			</div>
+		</aura:set>
+		<div class="cmp-container">
+			<div class="slds-grid header slds-var-p-around_medium">
+				<lightning:combobox class="slds-col  slds-var-p-right_small" name="priceBook" label="Choose Price Book"
+					value="{!v.pba.Price_Book__c}" placeholder="Choose Price Book" options="{! v.priceBookOptions }"
+					onchange="{! c.handleChange }" required="true" disabled="{!v.pba.Status__c == 'Pending' || v.pba.Status__c == 'Approved'}"/>
+
+				<div class="slds-col slds-grow-none slds-align-bottom">
+					<lightning:button disabled="{!v.pba.Price_Book__c == null || v.pba.Status__c == 'Pending' || v.pba.Status__c == 'Approved'}" variant="brand" label="Customize"
+						title="Customize" onclick="{! c.customizePriceBook }" />
+				</div>
+
+			</div>
+			<lightning:accordion aura:id="accordion" allowMultipleSectionsOpen="true"
+				onsectiontoggle="{! c.handleSectionToggle }">
+				<lightning:accordionSection name="A" label="{! 'Price Book Entries (' + v.entries.length + ')'}">
+
+					<lightning:datatable keyField="Id" data="{! v.entries }" columns="{! v.columns }"
+						hideCheckboxColumn="true" showRowNumberColumn="true" columnWidthsMode="auto" defaultSortDirection="{!v.defaultSortDirection}" sortedDirection="{!v.sortDirection}"
+						sortedBy="{!v.sortedBy}" onsort="{!c.handleSort}">
+					</lightning:datatable>
+				</lightning:accordionSection>
+			</lightning:accordion>
+		</div>
+
+		<lightning:spinner aura:id="mySpinner" class="{!v.isLoading ? 'slds-show': 'slds-hide'}"
+			alternativeText="Loading" variant="brand" size="medium" />
+
+		<lightning:notificationsLibrary aura:id="notifLib" />
+		<lightning:overlayLibrary aura:id="modalOverlay" />
+
+	</lightning:card>
+
+</aura:component>

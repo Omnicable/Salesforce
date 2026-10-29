@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- When you check this, you will receive the personalized email with your action plan filled in --></help>
+    <label><!-- Send Finalized Agreement --></label>
+    <name>Send_Finalized_Agreement__c</name>
+</CustomFieldTranslation>

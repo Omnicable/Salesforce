@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOD__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Determine if the opportunity meets the criteria for Large Orders / Capital Projects</description>
+    <label>LOD</label>
+    <type>Checkbox</type>
+</CustomField>

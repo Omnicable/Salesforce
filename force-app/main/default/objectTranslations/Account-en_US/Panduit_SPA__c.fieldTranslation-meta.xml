@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- For customers approved to utilize the Panduit SPA --></help>
+    <label><!-- Panduit SPA --></label>
+    <name>Panduit_SPA__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_50590821</developerName>
+        <masterLabel>Created by ROLE</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Contact.Contact_Modifications__r$CreatedBy.UserRole</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>District Sales Manager 10</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>District Sales Manager 12</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>District Sales Manager 2</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>District Sales Manager 3</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>District Sales Manager 4</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>District Sales Manager 5</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>District Sales Manager 6</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>District Sales Manager 7</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>District Sales Manager 8</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>District Sales Manager 9</sourceValue>
+            </sourceValues>
+            <value>BDR</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Account Manager 10</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 11</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 12</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 13</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 2</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 3</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 4</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 5</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 6</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 7</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 8</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Account Manager 9</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager 2</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager 4</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager 7</sourceValue>
+            </sourceValues>
+            <value>Inside Sales</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Regional Manager 10</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Regional Manager 11</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Regional Manager 12</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Regional Manager 2</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Regional Manager 4</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Regional Manager 5</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Regional Manager 7</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Regional Manager 8</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Regional Manager 9</sourceValue>
+            </sourceValues>
+            <value>RM</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>SSC Manager</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SSC Sales</sourceValue>
+            </sourceValues>
+            <value>CSC</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$Account</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Modifications__r$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Modifications__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Modifications__r$CreatedBy.UserRole</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Contact$ContactCount__c</field>
+    </columns>
+    <crossFilters>
+        <operation>with</operation>
+        <primaryTableColumn>Contact$Id</primaryTableColumn>
+        <relatedTable>Contact_Modifications__c</relatedTable>
+        <relatedTableJoinColumn>Modified_Contact__c</relatedTableJoinColumn>
+    </crossFilters>
+    <description>Custom report type</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.Contact_Modifications__r$CreatedBy.UserRole</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Customer User</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_50590821</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Contact_Modifications__r$CreatedBy</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Contact Modifications</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contact_Modifications__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contact.Contact_Modifications__r$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

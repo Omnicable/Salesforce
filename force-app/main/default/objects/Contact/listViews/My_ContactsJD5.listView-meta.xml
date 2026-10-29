@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_ContactsJD5</fullName>
+    <columns>Active__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>SOCIAL_PERSONA_LINKED_IN</columns>
+    <columns>SOCIAL_PERSONA_TWITTER</columns>
+    <columns>SOCIAL_PERSONA_FACEBOOK</columns>
+    <columns>Phone_Extension__c</columns>
+    <columns>Stay_In_Touch__c</columns>
+    <columns>X800_Phone_for_ICE__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.PHONE2</columns>
+    <columns>CONTACT.PHONE3</columns>
+    <columns>CONTACT.PHONE4</columns>
+    <columns>CONTACT.PHONE5</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <label>My ContactsJD5</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SFDCAdministrators</group>
+    </sharedTo>
+</ListView>

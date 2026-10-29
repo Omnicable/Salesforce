@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Contact Move Error</masterLabel>
+        <translation><!-- Contact Move Error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dashboard Request</masterLabel>
+        <translation><!-- Dashboard Request --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Feature Request</masterLabel>
+        <translation><!-- Feature Request --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Report Problem</masterLabel>
+        <translation><!-- Report Problem --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Report Request</masterLabel>
+        <translation><!-- Report Request --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

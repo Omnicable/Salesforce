@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Manager_Users</fullName>
+    <columns>ROC_Title__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USERS.TITLE</columns>
+    <columns>MANAGER</columns>
+    <columns>CORE.USERS.LAST_LOGIN</columns>
+    <columns>Sales_Number__c</columns>
+    <columns>CORE.USER_ROLE.NAME</columns>
+    <columns>CORE.PROFILE.NAME</columns>
+    <columns>Region__c</columns>
+    <columns>CORE.USERS.ACTIVE</columns>
+    <columns>IS_FROZEN</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CORE.PROFILE.USERTYPE</columns>
+    <columns>CORE.USERS.EMAIL</columns>
+    <columns>TIMEZONE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CORE.PROFILE.NAME</field>
+        <operation>notContain</operation>
+        <value>Plus,community,portal</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.TITLE</field>
+        <operation>equals</operation>
+        <value>Sales Manager</value>
+    </filters>
+    <filters>
+        <field>CORE.PROFILE.USERTYPE</field>
+        <operation>notEqual</operation>
+        <value>C,c,G</value>
+    </filters>
+    <label>Sales Manager Users</label>
+    <language>en_US</language>
+</ListView>

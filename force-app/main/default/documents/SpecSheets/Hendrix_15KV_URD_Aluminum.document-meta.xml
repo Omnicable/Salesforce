@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>HENDRIX SPEC SHEET
+MVX61/001A</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>MVX61/001A</keywords>
+    <name>Hendrix - 15KV URD Aluminum</name>
+    <public>true</public>
+</Document>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+T31202 T31203 T31204 T31205 T31207 T31212</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>T31202 T31203 T31204 T31205 T31207 T31212</keywords>
+    <name>General Cable - Teck 90 600V Power - 12 AWG</name>
+    <public>false</public>
+</Document>

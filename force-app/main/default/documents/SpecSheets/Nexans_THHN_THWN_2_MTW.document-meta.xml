@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>M514SO-XX, M512SO-XX, M510SO-XX, M514ST-XX, M512ST-XX, M510ST-XX, M508ST-XX, M508ST-XX, M506ST-XX, M504ST-XX, M502ST-XX, M501ST-XX, M51/0ST-XX, M52/0ST-XX, M53/0ST-XX, M54/0ST-XX,</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>M5250ST-XX, M5300ST-XX, M5350ST-XX, M5400ST-XX, M5500ST-XX, M5600ST-XX, M57</keywords>
+    <name>NEXANS THHN THWN-2 MTW</name>
+    <public>true</public>
+</Document>

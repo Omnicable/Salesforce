@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quarterly_Updates__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>A checked box means that this customer will receive Omni Cable&apos;s quarterly regional update emails.</description>
+    <inlineHelpText>A checked box means that this customer will receive Omni Cable&apos;s quarterly regional update emails.</inlineHelpText>
+    <label>Quarterly Updates</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

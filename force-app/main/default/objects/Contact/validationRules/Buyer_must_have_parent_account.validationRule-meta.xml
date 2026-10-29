@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyer_must_have_parent_account</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( Buyer__c  ,&apos;Y&apos;) &amp;&amp; Account.ParentAccount__c = &apos;0&apos;</errorConditionFormula>
+    <errorMessage>Can&apos;t be a buyer if there isn&apos;t a parent account. What other accounts do they buy for? Fix or call IT at x6105</errorMessage>
+</ValidationRule>

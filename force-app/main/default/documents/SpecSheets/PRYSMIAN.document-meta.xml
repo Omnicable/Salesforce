@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>PRYSMIAN SPEC SHEET
+MUP31/001A</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>MUP31/001A</keywords>
+    <name>PRYSMIAN - Medium Voltage - 35 Kv - 35kV 1/0 URD TR-XLPE</name>
+    <public>true</public>
+</Document>

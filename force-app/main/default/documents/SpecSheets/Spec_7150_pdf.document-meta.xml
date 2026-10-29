@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+Y135003A Y150003A</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 11298.036000 11298.046000 11298.036200 11298.046200 11298.036500 11298.046500 11298.037000 11298.047000 11298.037500 11298.047500</keywords>
+    <name>General Cable Armored Cables - Aluminum Interlocked Armor - 600 Volt - Type MC - 3 Conductor</name>
+    <public>true</public>
+</Document>

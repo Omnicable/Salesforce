@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_No_change_to_Account_Name</fullName>
+    <active>true</active>
+    <description>Account name cannot be changed on a Distributor or Vendor Record.</description>
+    <errorConditionFormula>$User.Id  &lt;&gt; &quot;005600000029Nfx&quot;  &amp;&amp;  $User.Id  &lt;&gt; &quot;00532000003iFPk&quot; &amp;&amp; $User.Id  &lt;&gt; &quot;00532000004zRAf&quot; &amp;&amp;  
+$User.Id  &lt;&gt; &quot;00560000001NDtn&quot;  &amp;&amp;
+$User.Id &lt;&gt;&quot;005Po000004BWlR&quot; &amp;&amp; 
+$User.ProfileId &lt;&gt;&quot;00e60000001BUtM&quot; &amp;&amp; 
+$User.ProfileId &lt;&gt;&quot;00e60000001BWSc&quot; &amp;&amp; 
+
+ ISCHANGED( Name ) &amp;&amp;
+ (ISPICKVAL(Type,&quot;Distributor&quot;) ||  ISPICKVAL(Type,&quot;Vendor&quot;))</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>The Account Name field cannot be changed in Salesforce for Distributors or Vendors</errorMessage>
+</ValidationRule>

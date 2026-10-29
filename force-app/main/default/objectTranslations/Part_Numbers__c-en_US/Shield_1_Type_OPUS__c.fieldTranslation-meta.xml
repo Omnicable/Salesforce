@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Shield 1 Type OPUS --></label>
+    <name>Shield_1_Type_OPUS__c</name>
+</CustomFieldTranslation>

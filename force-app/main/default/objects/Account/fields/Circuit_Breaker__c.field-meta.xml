@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Circuit_Breaker__c</fullName>
+    <description>API field used to link to Roc Commerce</description>
+    <externalId>false</externalId>
+    <formula>Online_Product_Segment__c</formula>
+    <label>Online Product Segment API</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

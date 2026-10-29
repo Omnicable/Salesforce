@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+F11002C F17812C F115002C</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C8000 C8001 C8014</keywords>
+    <name>General Cable Coaxial Cable - Twinaxial Cable</name>
+    <public>true</public>
+</Document>

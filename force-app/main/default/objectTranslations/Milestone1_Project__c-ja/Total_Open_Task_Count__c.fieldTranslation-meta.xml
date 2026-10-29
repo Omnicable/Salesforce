@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このプロジェクトの進行中タスク数（遅延とブロックを含む）</help>
+    <label>総進行中タスク数</label>
+    <name>Total_Open_Task_Count__c</name>
+</CustomFieldTranslation>

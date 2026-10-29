@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>NEXANS SPEC SHEET
+DuPont Spec Tray Cable A141003 A141004 A141202 A141203 A141204 A141207 A141402 A141403 A141404 A141405 A141407 A141409 A141419</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>DuPont Spec Tray Cable A141003 A141004 A141202 A141203 A141204 A141207 A141402 A141403 A141404 A141405 A141407 A141409 A141419</keywords>
+    <name>Nexans - DuPont Construction Tray Cable</name>
+    <public>true</public>
+</Document>

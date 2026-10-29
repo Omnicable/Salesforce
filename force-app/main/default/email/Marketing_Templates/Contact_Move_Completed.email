@@ -1,0 +1,4 @@
+{!Cases_Requests__c.Contact__c} has been moved to {!Cases_Requests__c.Move_to_Account__c}.
+
+
+{!Cases_Requests__c.Contact__c}'s contact page:  https://omnicable.my.salesforce.com/{!Cases_Requests__c.ContactId__c}

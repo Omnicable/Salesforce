@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Personal_Info__c</fullName>
+    <description>Any other info that is not already listed.</description>
+    <inlineHelpText>Any other info that is not already listed.</inlineHelpText>
+    <label>Other Personal Info</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

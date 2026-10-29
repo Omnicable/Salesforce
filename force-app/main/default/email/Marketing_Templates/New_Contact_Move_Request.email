@@ -1,0 +1,10 @@
+{!Cases_Requests__c.CreatedBy} requested to move {!Cases_Requests__c.Contact__c} to {!Cases_Requests__c.Move_to_Account__c}
+
+
+{!Cases_Requests__c.Contact__c}:  https://omnicable.my.salesforce.com/{!Cases_Requests__c.ContactId__c}
+Move to {!Cases_Requests__c.Move_to_Account__c}: https://omnicable.my.salesforce.com/{!Cases_Requests__c.Move_to_AccountId__c}
+
+
+----
+
+Click here to view the request: https://omnicable.my.salesforce.com/{!Cases_Requests__c.Id}

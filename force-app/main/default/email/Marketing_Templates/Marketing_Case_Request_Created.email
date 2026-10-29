@@ -1,0 +1,7 @@
+Category: {!Cases_Requests__c.Category__c} 
+Title: {!Cases_Requests__c.Subject__c}
+Details: {!Cases_Requests__c.Details__c} 
+Priority: {!Cases_Requests__c.Priority__c} 
+Desired Due Date: {!Cases_Requests__c.Desired_Due_Date__c} 
+
+To view the request, click here https://omnicable.my.salesforce.com/{!Cases_Requests__c.Id}

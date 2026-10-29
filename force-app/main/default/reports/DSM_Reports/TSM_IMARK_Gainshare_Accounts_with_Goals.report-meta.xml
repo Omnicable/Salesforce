@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Account.IMARK_Gainshare_Goal__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>IMARK Gainshare Goal</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Account.Sales_Current_Year__c:SUM/Account.IMARK_Gainshare_Goal__c:MAX</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA4</developerName>
+        <downGroupingContext>BucketField_47460280</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% of Goal</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_47460280</developerName>
+        <masterLabel>Company Name</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account$Company_Name__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>FRANKLIN-GRI</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>FRANKLIN</sourceValue>
+            </sourceValues>
+            <value>FRANKLIN</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>NOLAND</sourceValue>
+            </sourceValues>
+            <value>WINLECTRIC</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>POWER &amp; TELE</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>POWER TELE</sourceValue>
+            </sourceValues>
+            <value>POWER TELE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Q</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SHEPHERD ELE</sourceValue>
+            </sourceValues>
+            <value>SHEPHERD</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account$Region_Number__c</field>
+    </columns>
+    <columns>
+        <field>Account$Account_Number__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account$Sales_Current_Year__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account$Sales_Year_Prior__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND (2 OR 3)) AND 4</booleanFilter>
+        <criteriaItems>
+            <column>Account$Active__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Parent.IMARK_Gainshare__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$IMARK_Gainshare__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_47460280</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>CED,CLINEH,ESCO,HELD ELECT,JOPLIN</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_47460280</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>TSM_IMARK Gainshare Accounts with Goals</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_custom__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account$Sales_Current_Year__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

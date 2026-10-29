@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReelRewards_Promo__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when an account is currently running a promo through Reel Rewards.</description>
+    <label>RR Promo Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

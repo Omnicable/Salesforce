@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+15kV Shielded MV-105 EPR/PVC XMVE30203 XMVE31/003 XMVE32/003 XMVE34/003 XMVE325003 XMVE335003 XMVE350003 XMVE375003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>15kV Shielded MV-105 EPR/PVC XMVE30203 XMVE31/003 XMVE32/003 XMVE34/003 XMVE325003 XMVE335003 XMVE350003 XMVE375003</keywords>
+    <name>Southwire - Continuous Corrugated Armor 15kV Shielded MV105 EPR/PVC</name>
+    <public>true</public>
+</Document>

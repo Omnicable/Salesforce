@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+G112202 G112206 G112208 G112002 G111802 G111803 G111804 G111806 G111808 G111602 G111604 G111402</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S E2100S E2102S E2103S E2103S E2106S E2108S E2122S E2122S E2124S E2124S E2202S E2203S E2204S E2206S E2208S E2242S E2243S E2244S E2252S E2254S E2262S E2264S</keywords>
+    <name>General Cable Plenum Control Cable - Shielded - Plenum - 12-22AWG</name>
+    <public>true</public>
+</Document>

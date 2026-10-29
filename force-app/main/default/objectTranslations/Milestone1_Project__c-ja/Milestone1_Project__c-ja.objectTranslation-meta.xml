@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project</value>
+    </caseValues>
+    <nameFieldLabel><!-- Job Reference/Project Name --></nameFieldLabel>
+    <recordTypes>
+        <description><!-- Record Type used by the Large Order Department --></description>
+        <label><!-- Large Order Department --></label>
+        <name>Large_Order_Department</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- VITALink Projects --></description>
+        <label><!-- VITALink --></label>
+        <name>VITALink</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- VITALink Project --></label>
+        <name>VITALink_Project</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>開始日は期限日より前である必要があります。</errorMessage>
+        <name>Kickoff_before_deadline</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>正数を入力して下さい。</errorMessage>
+        <name>Total_Expense_Budget_Negative_Numbers</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>正数を入力して下さい。</errorMessage>
+        <name>Total_Hours_Budget_Negative_Numbers</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_New_End_User --></label>
+        <name>Create_New_End_User</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_New_End_User_Contact --></label>
+        <name>Create_New_End_User_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label>テンプレートエクスポート</label>
+        <name>Export_Template</name>
+    </webLinks>
+    <webLinks>
+        <label>テンプレートインポート</label>
+        <name>Import_Template</name>
+    </webLinks>
+    <webLinks>
+        <label>更新</label>
+        <name>Update</name>
+    </webLinks>
+</CustomObjectTranslation>

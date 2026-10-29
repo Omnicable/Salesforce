@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Address_can_only_be_one_line</fullName>
+    <active>false</active>
+    <description>Shipping Street address can only be one line</description>
+    <errorConditionFormula>NOT 
+( 
+OR 
+( 
+REGEX(ShippingStreet, &quot;(.){0,20}&quot;), 
+REGEX(ShippingStreet, &quot;(.){0,20}\r\n(.){0,20}&quot;), 
+REGEX(ShippingStreet, &quot;(.){0,20}\n(.){0,20}&quot;), 
+REGEX(ShippingStreet, &quot;(.){0,20}\r(.){0,20}&quot;) 
+) 
+)</errorConditionFormula>
+    <errorDisplayField>ShippingStreet</errorDisplayField>
+    <errorMessage>Shipping Street must be one line.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+XLTC 4 Conductor A60104 A60204 A60404 A60604 A60804 A61/004 A62/004 A63/004 A64/004 A625004 A635004 A650004</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>XLTC 4 Conductor A60104 A60204 A60404 A60604 A60804 A61/004 A62/004 A63/004 A64/004 A625004 A635004 A650004</keywords>
+    <name>Southwire - XLTC Power with 4 Conductors and Ground</name>
+    <public>true</public>
+</Document>

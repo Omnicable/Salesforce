@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is the Omni Variable Cost.  This number reflects all of the costs of doing business that aren’t directly related to an order, such as corporate costs, utilities, taxes and downtime. --></help>
+    <label><!-- Omni Fixed Cost --></label>
+    <name>Omni_Fixed_Cost__c</name>
+</CustomFieldTranslation>

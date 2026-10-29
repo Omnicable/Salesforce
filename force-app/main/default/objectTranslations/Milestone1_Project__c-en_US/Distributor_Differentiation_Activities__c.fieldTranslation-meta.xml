@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Distributor Differentiation Activities --></label>
+    <name>Distributor_Differentiation_Activities__c</name>
+    <picklistValues>
+        <masterLabel>BoM specified as MI Cable, changed order</masterLabel>
+        <translation><!-- BoM specified as MI Cable, changed order --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Presentation with Electrical Contractor</masterLabel>
+        <translation><!-- Presentation with Electrical Contractor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Presentation with Engineer</masterLabel>
+        <translation><!-- Presentation with Engineer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RFQ for Vitalink as result of the work</masterLabel>
+        <translation><!-- RFQ for Vitalink as result of the work --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

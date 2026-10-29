@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PortalAccount_docs__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if this account&apos;s order documents should be available on the portal.</description>
+    <inlineHelpText>Checked means that the order documents for this account are available on the portal.</inlineHelpText>
+    <label>PortalAccount (docs)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X800_Phone_for_ICE__c</fullName>
+    <description>Wanted to remove from page layout 12/19/17 because the ICE-specific fields were removed from task layouts. Ended up not because I&apos;m not sure if the field still has value.</description>
+    <inlineHelpText>This is the 800 number the contact calls in on that hides their DID #. Fill this in if you want them to appear in ICE when they call on  the 800 #</inlineHelpText>
+    <label>800 Phone # for ICE</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Phone</type>
+</CustomField>

@@ -1,0 +1,6 @@
+Hello Purchasing,
+
+Please click this link to approve the contact {!Contact.Name} from {!Account.Name}.
+
+
+{!ApprovalRequest.Internal_URL}

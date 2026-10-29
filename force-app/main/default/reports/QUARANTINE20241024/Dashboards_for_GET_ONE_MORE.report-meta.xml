@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_58351333</developerName>
+        <masterLabel>Role</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Dashboard$Title</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>R10 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R11 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R12 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R2 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R3 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R4 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R5 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 AM - Sarah Keune</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R7 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R8 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R13 AM Dashboard 2.0</sourceValue>
+            </sourceValues>
+            <value>AM</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>R10 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R11 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R12 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R2 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R3 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R4 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R5 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 RM - Adam&apos;s Temp DB</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R7 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R8 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R9 RM</sourceValue>
+            </sourceValues>
+            <value>RM</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>R2 DSM - Bethany</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R2 DSM - Bob</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R2 DSM - Mike</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R3 DSM - Bill</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R3 DSM - Nathan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R4 DSM - John L</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R4 DSM - Rick</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R4 DSM - Tom</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R5 DSM - Beattie</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R5 DSM - Chad</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 DSM - JJ</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 DSM - Vicki</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R7 DSM - David Bonine</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R7 DSM - Mike Doupe</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R7 DSM - Steve Azzopardi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R8 DSM - Brad</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R8 DSM - Ryan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R9 DSM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R10 DSM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R11 DSM</sourceValue>
+            </sourceValues>
+            <value>DSM</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Dashboard$Title</field>
+    </columns>
+    <columns>
+        <field>Dashboard$Folder</field>
+    </columns>
+    <columns>
+        <field>Dashboard$LeftSize</field>
+    </columns>
+    <columns>
+        <field>Dashboard$MiddleSize</field>
+    </columns>
+    <columns>
+        <field>Dashboard$RightSize</field>
+    </columns>
+    <columns>
+        <field>Dashboard$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Dashboard$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Dashboard$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>Dashboard$Type</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>BucketField_58351333</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>am,rm,dsm,rvp</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_58351333</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Dashboards</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Dashboards_Types__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Dashboard$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

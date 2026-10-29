@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Returns the SubClass based on Item Class depending on the length of the Item Class --></help>
+    <label><!-- Class Detail --></label>
+    <name>Class_Detail__c</name>
+</CustomFieldTranslation>

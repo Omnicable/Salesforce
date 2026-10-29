@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Omni P/N - I91601-EX 
+Lake Cable P/N - T6EXH162S</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>I91601-EX T6EXH162S EX THERMOCOUPLE</keywords>
+    <name>Lake Cable - EX LSZH Thermocouple</name>
+    <public>true</public>
+</Document>

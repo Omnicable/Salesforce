@@ -1,0 +1,43 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;mso-cellspacing:0in;background:white;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0in 0in 0in 0in">
+ <tbody><tr>
+  <td width="100%" style="width:100.0%;padding:0in 0in 0in 0in">
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;mso-cellspacing:0in;mso-yfti-tbllook:1184;mso-padding-alt:
+   7.5pt 7.5pt 7.5pt 7.5pt">
+   <tbody><tr>
+    <td style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 7.5pt;">
+    <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0">
+     <tbody><tr>
+      <td style="padding:0in 0in 0in 0in">
+      <p class="MsoNormal"><b><span style="font-size: 13.5pt; color: rgb(0, 102, 204);"><font face="Verdana, Helvetica, sans-serif">Task<o:p></o:p></font></span></b></p>
+      </td>
+     </tr>
+    </tbody></table>
+    </td>
+   </tr>
+  </tbody></table>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:3.75pt">
+  <td style="padding:0in 0in 0in 0in;height:3.75pt"></td>
+ </tr>
+ <tr>
+  <td style="padding:0in 7.5pt 0in 7.5pt">
+  <p class="main"><font size="2"><font face="Verdana, Helvetica, sans-serif">To:&nbsp;</font><span style="font-family: Verdana, Helvetica, sans-serif;">{!Task.Assigned_User__c}</span></font><font face="Verdana, Helvetica, sans-serif"><font size="2"><br>
+  <br>
+  {!Task.CreatedBy} has assigned you the following new task:</font></font></p><p class="main"><font face="Verdana, Helvetica, sans-serif"><font size="2"><br></font></font></p><p class="main"><font face="Verdana, Helvetica, sans-serif"><font size="2">Subject: {!Task.Subject}</font></font><font face="Verdana, Helvetica, sans-serif" style="font-size: 12pt;"><font size="2">&nbsp;</font></font><font face="Verdana, Helvetica, sans-serif" size="2">{!QuotesOrdersCredits_Header__c.Name}</font></p><p class="main"><font face="Verdana, Helvetica, sans-serif"><font size="2">Account: {!Account.Name}<br>Contact: {!Contact.Name}<br></font></font><font face="Verdana, Helvetica, sans-serif"><font size="2">Due Date: {!Task.ActivityDate}<br>
+  Priority: {!Task.Priority}<br>
+  Comments: {!Task.Description}<br>
+  <br>
+  For more details, click the following link:<br>
+  <br>
+  <a href="https://omnicable.my.salesforce.com/{!Task.Id}">https://omnicable.my.salesforce.com/{!Task.Id}</a></font>
+  </font></p>
+  </td>
+ </tr>
+</tbody></table>]]></td>
+</tr>
+</table>

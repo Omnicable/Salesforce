@@ -1,0 +1,9 @@
+{!User.Name} created a new Omni user.
+
+{!Target_User.Name}
+{!Target_User.Email}
+{!Target_User.Title}
+
+
+User Page: 
+https://omnicable.my.salesforce.com/{!Target_User.Id}

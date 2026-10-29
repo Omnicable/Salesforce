@@ -1,0 +1,265 @@
+<!--
+  @description       : Request release component
+  @author            : chrisw@launchdm.com
+  @group             : LaunchDM
+  @last modified on  : 01-12-2023
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="Portal_ResourceController" access="global"
+	implements="forceCommunity:availableForAllPageTypes">
+
+	<lightning:overlayLibrary aura:id="overlayLib" />
+	<aura:attribute name="newAddress" type="Delivery_Address__c" />
+
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:attribute name="altParts" type="List" />
+	<aura:attribute name="filteredAltParts" type="List" default="[]" />
+	<aura:attribute name="deliveryAddresses" type="List" />
+	<aura:attribute name="deliveryContacts" type="List" />
+	<!-- <aura:attribute name="rmfPOValues" type="List" /> -->
+	<aura:attribute name="contact" type="sObject" />
+	<aura:attribute name="jobAreas" type="List" />
+	<aura:attribute name="loading" type="Boolean" default="false" />
+	<lightning:notificationsLibrary aura:id="notifLib" />
+	<aura:attribute name="deliveryAddress" type="String" />
+	<aura:attribute name="deliveryContact" type="String" default="" />
+	<aura:attribute name="totalWeight" type="Integer" default="0" />
+
+
+	<aura:attribute name="attachments" type="List" default="[]" />
+	<aura:attribute name="addresses" type="List" default="['-- Choose One --', '123', '456']" />
+	<aura:attribute name="newRelease" type="Map"
+		default="{'qty':'', 'lengthValue':'', 'cableNumber':'', 'description':'', 'itemNumber':'', 'info':'', 'area':'', 'paralleling':false, 'pullingHeads':'none'}" />
+	<aura:attribute name="releaseItems" type="List" default="[]" />
+	<aura:attribute name="pullingHead" type="String" default="none" />
+	<aura:attribute name="pullingHeadOptions" type="List" default="[
+    {'label': 'Attach Pulling Heads (*Pulling heads 2# and larger Tray CableAdditional Lead-time)', 'value': 'attach'},
+    {'label': 'Include Pulling Heads (*NOT Attached No additional Lead-Time)', 'value': 'include'},
+	{'label': 'None', 'value': 'none'},
+    ]" />
+
+
+	<aura:import library="lightning:confirm" property="LightningConfirm" />
+	<aura:import library="lightning:prompt" property="LightningPrompt" />
+
+
+	<div class="slds-is-relative  slds-var-p-around_large">
+
+		<lightning:card class="slds-var-m-bottom_large " title="Submit Release Request">
+
+			<aura:set attribute="actions">
+				<lightning:button variant="brand" label="Submit" title="Submit" onclick="{! c.submitRFQ }"
+					disabled="{!v.releaseItems.length == 0}" />
+			</aura:set>
+
+
+			<div class="slds-grid slds-gutters slds-wrap  slds-var-p-around_large">
+				<lightning:input aura:id="deliveryDate" dateStyle="medium" class="slds-col slds-medium-size_4-of-12"
+					type="date" name="input1" label="Delivery Requirements" required="true" />
+
+				<lightning:select aura:id="deliveryAddress" class="slds-col slds-medium-size_4-of-12" name="addresses"
+					label="Delivery Address" required="true" value="{!v.deliveryAddress}" onchange="{!c.addressChange}">
+					<option text="-- Choose One --" value="" />
+					<aura:iteration items="{!v.deliveryAddresses}" var="option">
+						<option text="{!option.Display_Name__c}" value="{!option.Id}"
+							selected="{!option.Id==v.deliveryAddress}" />
+					</aura:iteration>
+					<option text="+ Add New Address" value="new" />
+				</lightning:select>
+
+				<lightning:select aura:id="deliveryContact" class="slds-col slds-medium-size_4-of-12"
+					label="Best Way to Contact Me" required="true">
+					<option text="-- Choose One --" value="" />
+					<aura:iteration items="{!v.deliveryContacts}" var="option">
+						<option text="{!option}" value="{!option}" />
+					</aura:iteration>
+				</lightning:select>
+
+				<lightning:input aura:id="jobReference" class="slds-col slds-medium-size_4-of-12" type="String"
+					name="jobReference" label="Distributor P.O. #" />
+
+				<lightning:input aura:id="rmfPO" class="slds-col slds-medium-size_4-of-12" type="String"
+					name="customerPO" label="Customer P.O. #" required="true" />
+
+				<!-- <lightning:select aura:id="rmfPO" class="slds-col slds-medium-size_4-of-12" name="addresses"
+					label="Customer PO#" required="true">
+					<option text="- Choose One -" value="" />
+					<aura:iteration items="{!v.rmfPOValues}" var="option">
+						<option text="{!option}" value="{!option}" />
+					</aura:iteration>
+				</lightning:select> -->
+				<!-- <div class="slds-col slds-medium-size_4-of-12">
+					<lightning:fileUpload label="Add Attachment" name="fileUploader" multiple="true"
+						onuploadfinished="{!c.handleUploadFinished}" />
+					<aura:iteration items="{!v.attachments}" var="attachment" indexVar="index">
+						<div class="slds-grid">
+							<div class="slds-col slds-grow-none">{!attachment.name}</div>
+							<lightning:buttonIcon class="slds-col slds-grow-none" size="small" iconName="utility:delete"
+								variant="bare" name="{!index}" alternativeText="Delete" title="Delete"
+								onclick="{!c.removeFile}" />
+						</div>
+					</aura:iteration>
+				</div> -->
+				<lightning:input aura:id="specialInstructions" class="slds-col slds-medium-size_4-of-12" type="String"
+					name="Special Instructions" label="Special Instructions / Job Reference" />
+			</div>
+
+		</lightning:card>
+
+
+
+		<lightning:card class=" slds-var-m-bottom_large">
+
+			<aura:set attribute="title">
+				<span class="slds-text-heading_small"> All Request </span>
+				<span class="slds-text-body_regular" style="color:#014486">(Max 150 Line Items)</span>
+			</aura:set>
+			<aura:set attribute="actions">
+
+				<lightning:buttonIcon class="remove" iconName="utility:clear" alternativeText="Clear" title="Clear"
+					onclick="{!c.clearReleaseItems}" disabled="{!v.releaseItems.length == 0}" />
+			</aura:set>
+
+			<aura:if isTrue="{!v.releaseItems.length == 0}">
+				<div class="h3 slds-text-align_center">
+					No Items Added
+				</div>
+			</aura:if>
+			<aura:iteration items="{!v.releaseItems}" var="release" indexVar="index">
+				<div class="{!release.error == true ? 'error-border' : ''}">
+
+
+					<div class="{!mod(index,2)==0 ? 'even slds-is-relative':' odd slds-is-relative'}">
+						<div class="line-text slds-is-absolute">{!index + 1}</div>
+						<div class="slds-grid slds-wrap slds-gutters_direct slds-var-m-horizontal_large">
+							<div class="slds-grid slds-grid_align-end slds-size_1-of-1 slds-var-p-top_medium">
+								<div class="slds-col slds-grow-none">
+									<lightning:buttonIcon class="slds-col slds-grow-none danger" size="medium"
+										iconName="utility:delete" name="{!index}" alternativeText="Delete"
+										title="Delete" onclick="{!c.removeReleaseItem}" />
+								</div>
+							</div>
+							<div
+								class=" slds-grid slds-col slds-size_1-of-3 slds-medium-size_4-of-12  slds-var-p-bottom_small">
+								<lightning:input class="slds-col" value="{!release.qty}" type="number" name="Qty"
+									placeholder="Qty: 2" label="Qty:" required="true"
+									onchange="{!c.recalculateTotalWeight}" />
+								<div
+									class="slds-grow-none slds-col slds-align-bottom slds-var-m-horizontal_small slds-var-p-bottom_xx-small">
+									X</div>
+								<lightning:input class="slds-col" type="number" name="Length" label="Length:"
+									placeholder="Length: 500" value="{!release.lengthValue}" required="true"
+									onchange="{!c.recalculateTotalWeight}" step="any" />
+							</div>
+							<lightning:input class="slds-col slds-medium-size_2-of-12 slds-var-p-bottom_small"
+								type="text" name="Customer Part #" label="Customer Part #:" placeholder="Search"
+								value="{!release.cableNumber}" required="true" disabled="true" />
+
+							<lightning:input class="slds-col slds-medium-size_2-of-12 slds-var-p-bottom_small"
+								type="text" name="Description" label="Description:"
+								placeholder="Item Description 12/4c tray" value="{!release.description}"
+								disabled="true" />
+
+							<lightning:input class="slds-col slds-medium-size_3-of-12 slds-var-p-bottom_small"
+								type="text" name="Additional Info" label="Additional Info:"
+								placeholder="Please ship on plastic reels" value="{!release.info}" />
+
+							<lightning:input class="slds-col slds-medium-size_1-of-12 slds-var-p-bottom_small"
+								type="text" name="Total" label="Total Length:" disabled="true"
+								value="{!release.qty * release.lengthValue}" />
+
+							<lightning:input class="slds-col slds-medium-size_4-of-12 slds-var-p-bottom_small"
+								type="text" name="Mark#" label="Mark #" placeholder="Mark #" value="{!release.area}" />
+
+							<lightning:input
+								class="slds-col slds-medium-size_2-of-12 slds-align-bottom slds-var-p-bottom_large slds-col_bump-right"
+								type="checkbox" name="Paralleling" label="Paralleling" placeholder="Paralleling"
+								checked="{!release.paralleling}" />
+
+							<aura:if isTrue="{!release.weight != null}">
+								<lightning:input
+									class="slds-col slds-medium-size_2-of-12 slds-align-middle slds-var-p-bottom_large "
+									type="text" name="Est. Total Lbs." label="Est. Total Lbs."
+									placeholder="Est. Total Lbs."
+									value="{!(release.qty * release.lengthValue) * release.weight}" disabled="true" />
+
+								<aura:set attribute="else">
+									<div
+										class="slds-col slds-medium-size_4-of-12 slds-align-bottom slds-var-p-bottom_large slds-col_bump-right ">
+										* Total inventory weight is not affected by additional release request items
+									</div>
+								</aura:set>
+
+							</aura:if>
+
+							<!-- <div class="slds-col slds-medium-size_6-of-12 slds-var-p-bottom_small">
+								<lightning:radioGroup name="{!'pullingHead' + index}" label="Pulling Heads"
+									options="{! v.pullingHeadOptions }" title="This should show tooltip" type="radio"
+									value="{!release.pullingHeads}" />
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</aura:iteration>
+
+
+		</lightning:card>
+
+		<lightning:card class=" slds-var-m-bottom_large" title="Additional Release Request">
+			<aura:set attribute="actions">
+				<lightning:buttonIcon iconName="utility:add" variant="brand" alternativeText="Add" title="Add"
+					onclick="{!c.addReleaseItem}" />
+
+
+			</aura:set>
+			<div class="slds-grid slds-wrap slds-gutters_direct slds-var-m-around_large">
+				<div class=" slds-grid slds-col slds-size_1-of-3 slds-medium-size_4-of-12  slds-var-p-bottom_small">
+					<lightning:input class="slds-col" type="number" name="Qty" label="Qty:" placeholder="Qty: 2"
+						value="{!v.newRelease.qty}" required="true" />
+					<div
+						class="slds-grow-none slds-col slds-align-bottom slds-var-m-horizontal_small slds-var-p-bottom_xx-small">
+						X</div>
+					<lightning:input class="slds-col" type="number" name="Length" label="Length:"
+						placeholder="Length: 500" value="{!v.newRelease.lengthValue}" required="true" step="any" />
+				</div>
+
+				<c:Portal_SearchTypeAheadComponent aura:id="searchTypeAhead" label="Search Customer Part #" field=""
+					object="" results="" newRelease="{!v.newRelease}" />
+
+				<lightning:input class="slds-col slds-medium-size_2-of-12 slds-var-p-bottom_small" type="text"
+					name="Description" label="Description:" placeholder="Item Description 12/4c tray"
+					value="{!v.newRelease.description}" disabled="true" />
+
+				<lightning:input class="slds-col slds-medium-size_4-of-12 slds-var-p-bottom_small" type="text"
+					name="Special Instructions" label="Special Instructions / Job Reference:"
+					placeholder="Please ship on plastic reels" value="{!v.newRelease.info}" />
+
+
+				<lightning:input aura:id="jobArea" class="slds-col slds-medium-size_4-of-12 slds-var-p-bottom_small"
+					type="text" name="Mark #" label="Mark #:" value="{!v.newRelease.area}" />
+
+				<lightning:input class="slds-col slds-medium-size_2-of-12 slds-align-bottom slds-var-p-bottom_medium"
+					type="checkbox" name="Paralleling" label="Paralleling" placeholder="Paralleling"
+					checked="{!v.newRelease.paralleling}" />
+
+				<div
+					class="slds-col slds-medium-size_4-of-12 slds-align-bottom slds-var-p-bottom_large slds-col_bump-right ">
+					* Total inventory weight is not affected by additional release request items
+				</div>
+			</div>
+		</lightning:card>
+
+		<aura:if isTrue="{! v.loading }">
+			<lightning:spinner alternativeText="Loading" size="medium" />
+		</aura:if>
+
+		<div aura:id="cart" class="cart h4">
+			Total Estimated Weight:
+			<lightning:formattedNumber value="{!v.totalWeight}" maximumFractionDigits="4" />
+
+		</div>
+
+	</div>
+
+</aura:component>

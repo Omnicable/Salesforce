@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- New Total Order Sales (Portal) --></label>
+    <name>New_Total_Order_Sales__c</name>
+</CustomFieldTranslation>

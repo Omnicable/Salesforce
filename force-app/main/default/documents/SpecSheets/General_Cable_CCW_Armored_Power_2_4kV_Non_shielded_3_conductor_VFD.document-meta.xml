@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+Spec 9700 CCW XMVE10203 XMVE10403 XMVE11/003 XMVE12/003 XMVE125003 XMVE135003 XMVE14/003 XMVE150003 XMVE175003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Spec 9700 CCW XMVE10203 XMVE10403 XMVE11/003 XMVE12/003 XMVE125003 XMVE135003 XMVE14/003 XMVE150003 XMVE175003</keywords>
+    <name>General Cable - CCW Armored Power, 2.4kV, Non-shielded 3 conductor VFD</name>
+    <public>true</public>
+</Document>

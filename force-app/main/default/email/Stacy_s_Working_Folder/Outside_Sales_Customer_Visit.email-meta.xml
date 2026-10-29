@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Outside Sales Customer Visit</name>
+    <style>freeForm</style>
+    <subject>Customer Visit by Outside Sales</subject>
+    <textOnly>Hi {!Account.OwnerFullName},
+
+Your branches outside sales just visited {!Account.Account_Number__c} - {!Account.AccountNumber}.
+
+This is a reminder to please touch base with the customer.
+
+https://na4.salesforce.com/{!Account.Id}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

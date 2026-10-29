@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+E46201 E96201</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C1162 C1164 C3520</keywords>
+    <name>General Cable Coaxial Cable - RG 62/U</name>
+    <public>true</public>
+</Document>

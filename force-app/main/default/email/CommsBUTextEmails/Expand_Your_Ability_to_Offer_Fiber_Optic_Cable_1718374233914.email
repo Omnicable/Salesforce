@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-family:Arial,Helvetica,sans-serif;">{{{Recipient.FirstName}}},<br />
+<br />
+Since 1977, OmniCable has been an industry-leader in selling communications and electrical products EXCLUSIVELY to distributors. Today, we have built the industry’s largest inventory of fiber cable and launched a new program designed specifically to help distributors grow their communications business.<br />
+<br />
+Our new fiber program is designed to exceed your fiber sourcing and fulfillment requirements. You can now leverage our extensive stock of cable from leading manufacturers in diverse counts and sizes, with additional value-added services such as custom cutting and project management capabilities tailored to exceed your customer needs.<br />
+<br />
+It features:</span>
+<ul>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">Largest stock of fiber cable inventory in the industry with more than 200 SKUs of indoor, indoor/outdoor, and outside plant cable.</span></li>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">No MOQ, material management, 2M square feet of stocking capacity, and unmatched industry expertise and training.</span></li>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">Rapid quoting and response times.</span></li>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">No reel or cutting charges with blind drop and same-day shipping available.</span></li>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">Corning glass fiber on master reels from world-class manufacturers such as Belden, Corning, Superior Essex, Tinifiber, and more. &nbsp;</span></li>
+</ul>
+<span style="font-family:Arial,Helvetica,sans-serif;">For fast fiber cable quoting, cutting, and shipping capabilities, contact us today to learn how you can take the guesswork out of managing multiple manufacturers and lead times. &nbsp;<br />
+<br />
+Best regards,<br />
+{{{Sender.Name}}}<br />
+{{{Sender.Title}}}<br />
+OmniCable<br />
+{{{Sender.Phone}}}</span></body>
+</html>

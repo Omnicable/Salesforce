@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_8_accts_ns</fullName>
+    <columns>Company_Name__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OCC_Rewards__c</columns>
+    <columns>Buying_Group__c</columns>
+    <columns>Sales_Current_Year__c</columns>
+    <columns>Sales_Year_Prior__c</columns>
+    <columns>Sales_2_Yrs_Prior__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Outside_Salesperson__c</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>OCC_Rewards__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Distributor</value>
+    </filters>
+    <label>Reel Rewards Potential Accounts</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>DSMs</group>
+        <group>Marketing</group>
+        <group>RMs_Only</group>
+        <group>Sales_Managers</group>
+    </sharedTo>
+</ListView>

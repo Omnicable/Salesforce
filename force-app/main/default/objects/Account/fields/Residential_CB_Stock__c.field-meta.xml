@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Residential_CB_Stock__c</fullName>
+    <description>Does the location stock circuit breakers of non-authorized CB manufacturers?</description>
+    <label>Residential CB Stock</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes - stock NA CBs via Gray Market</fullName>
+                <default>false</default>
+                <label>Yes - stock NA CBs via Gray Market</label>
+            </value>
+            <value>
+                <fullName>No - only stock CBs they are authorized for</fullName>
+                <default>false</default>
+                <label>No - only stock CBs they are authorized for</label>
+            </value>
+            <value>
+                <fullName>Yes - stock NA CBs via authorized sources (ie Home Depot)</fullName>
+                <default>false</default>
+                <label>Yes - stock NA CBs via authorized sources (ie Home Depot)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

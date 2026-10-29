@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Ex. Eaton POA or Square D Premier program --></help>
+    <label><!-- MCCB Stocking Program --></label>
+    <name>MCCB_Stocking_Program__c</name>
+    <picklistValues>
+        <masterLabel>Eaton POA</masterLabel>
+        <translation><!-- Eaton POA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sq.D Premier</masterLabel>
+        <translation><!-- Sq.D Premier --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>n/a</masterLabel>
+        <translation><!-- n/a --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

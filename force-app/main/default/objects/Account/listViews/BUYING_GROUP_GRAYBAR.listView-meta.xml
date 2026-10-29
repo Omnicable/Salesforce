@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BUYING_GROUP_GRAYBAR</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Region__c</columns>
+    <columns>District__c</columns>
+    <columns>Branch__c</columns>
+    <columns>Account_Number__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Sales_Current_Year__c</columns>
+    <columns>Sales_Year_Prior__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>National_Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Buying_Group__c</field>
+        <operation>equals</operation>
+        <value>GRAYBAR ELECTRIC</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Distributor</value>
+    </filters>
+    <label>BUYING GROUP: GRAYBAR</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Marketing</group>
+        <role>COO</role>
+        <role>Corporate</role>
+        <role>CorporateSales</role>
+        <role>National_Account_Manager</role>
+        <role>SoneparSales</role>
+        <role>Sonepar_Manager</role>
+    </sharedTo>
+</ListView>

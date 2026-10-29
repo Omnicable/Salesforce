@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The number of hours charged. Note: This cannot be more than 1 day (24 hours). --></help>
+    <label><!-- Hours --></label>
+    <name>Hours__c</name>
+</CustomFieldTranslation>

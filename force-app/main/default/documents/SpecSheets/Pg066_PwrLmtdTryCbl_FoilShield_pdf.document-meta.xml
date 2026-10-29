@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+D51802 KT61802 KT61803 KT61804</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C0550A C0551A C0552A C0553A C0554A C0555A C0556A C0560A C0561A C0562A C0563A C0564A C0566A C7112A C7114A C7116A</keywords>
+    <name>General Cable Multi Paired - Overall Shield - 18 &amp; 22 AWG - Stranded Tinned Copper - 3 Conductor</name>
+    <public>true</public>
+</Document>

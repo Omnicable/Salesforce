@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+Bus Drop Cable A80203 A80403 A80603 A80803 A81003 A81203 A81403</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Bus Drop Cable A80203 A80403 A80603 A80803 A81003 A81203 A81403</keywords>
+    <name>Southwire - Bus Drop Cable</name>
+    <public>true</public>
+</Document>

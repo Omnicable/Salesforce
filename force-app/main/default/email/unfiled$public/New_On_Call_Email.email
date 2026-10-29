@@ -1,0 +1,40 @@
+</tbody>
+						</table>
+						<!-- // END HEADER --></td>
+					</tr>
+					<tr>
+						<td align="center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign="top"><!-- BEGIN BODY // -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateBody" style="border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(204, 204, 204); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; border-collapse: collapse !important; -ms-text-size-adjust: 100%; background-color: rgb(255, 255, 255); -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+							<tbody>
+								<tr style="">
+									<td align="left" class="bodyContent" pardot-data="line-height:20px;" pardot-region="body_content" style="padding: 20px; text-align: left; color: rgb(80, 80, 80); line-height: 20px; font-family: Helvetica; font-size: 16px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign="top"><p><span style="color:#0075c9;"><strong><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="background:white">You're on call next week for After-Hours Emergency calls.&nbsp; Thank you for your service!</span></span></span></strong></span></p>
+
+<ul>
+	<li style="margin-left:8px"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="background:white"><span style="color:black">You will cover from {!Event.Start_Date_Day_of_Week__c}, {!MONTH(Event.Start_Date__c)}/{!DAY(Event.Start_Date__c)} at 12PM until the following {!Event.End_Date_Day_of_Week__c}, {!MONTH(Event.END_Date__c)}/{!DAY(Event.END_Date__c)} at 12PM, unless otherwise specified on the schedule. </span></span></span>
+	<ul style="list-style-type:circle">
+		<li><a 
+href="https://omnicable.lightning.force.com/lightning/r/Projects__c/a1wPo0000085qFtIAI/view"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">Click here to see the full year schedule.</span></span></a></li>
+	</ul>
+	</li>
+	<li style="margin-left:8px"><span style="font-size:11pt"><span style="color:black"><span style="tab-stops:list .5in"><span style="font-family:Calibri,sans-serif">Not sure what to do, for any questions, please click below to review the Emergency On-Call Procedures document.</span></span></span>
+	<ul style="list-style-type:circle">
+		<li><a href="https://omnicable0.sharepoint.com/:w:/r/sites/omnicable/_layouts/15/Doc.aspx?sourcedoc={E8AE6012-C5E4-43EF-90D6-3694E9F6436C}&file=2023-Emergency-On-Call-Procedures-and-Pricing-Guidelines---Update.docx">Click here to review procedures.</span></span></a></li>
+	</ul>
+	</li>
+	<li style="margin-left:8px"><span style="font-size:11pt"><span style="color:black"><span style="tab-stops:list .5in"><span style="font-family:Calibri,sans-serif">For After-Hours Emergency DC On-Call support, please refer to the DC After-Hours On-Call Contact list.</span></span></span>
+	<ul style="list-style-type:circle">
+		<li><span style="font-size:11pt"><span style="color:black"><span style="tab-stops:list 1.0in"><span style="font-family:Calibri,sans-serif">Please note that some sites have a dedicated <b>DC ON-CALL CELL PHONE. </b>Please call this number first before calling the DC Leaders directly. </span></span></span></span></li>
+		<li><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="background:yellow"><span style="color:black">Please follow the designated after-hours contact list rather than reaching out to standard weekday contacts.</span></span> </span></span></li>
+		<li><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><a href="https://omnicable0-my.sharepoint.com/:x:/g/personal/kmurphy_omnicable_com/Ed_9kQtsNgtFjhBC-lqEpbUBXIA2S6HP_c4EFEzZWACrbg?e=4b8nfm">Click here for OPS roster.</a></span></span></li>
+	</ul>
+	</li>
+	<li style="margin-left:8px"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="background:white"><span style="color:black">In order to receive the $100 salary compensation for on-call service, you must fill out the On-Call PAF request (located in Paycom) during or upon completion of the weekly assignment.</span></span></span></span></li>
+	<li style="margin-left:8px"><span style="font-size:11pt"><span style="color:black"><span style="tab-stops:list .5in"><span style="font-family:Calibri,sans-serif">For more information, please visit the <a href="https://omnicable0.sharepoint.com/sites/omnicable/SitePages/after-hours-emergency-orders.aspx">Emergency On Call</a> page on the Intranet.</span></span></span></span></li>
+</ul>
+
+<div style="margin-left:8px"><span style="color:#0075c9;"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><b>If the above resources do not provide the answer you are looking for,&nbsp;</b></span></span><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><b>please contact your Sales Manager or Regional Manager for direction.</b></span></span></span><br>
+<br>
+<em><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">*This generated email was created by the RVPs. Please do not contact Meenakshi Kumar for On-Call related topics unless it is to update a confirmed and approved change on the schedule.*</span></span></em><span style="color:#0075c9;"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><b></b></span></span></span></div>
+</td>
+								</tr>
+							</tbody>

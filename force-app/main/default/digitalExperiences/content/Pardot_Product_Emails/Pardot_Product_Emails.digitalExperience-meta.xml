@@ -5,6 +5,10 @@
     <label>Pardot Product Emails</label>
     <modules>
         <module>
+            <fullyQualifiedName>sfdc_cms__brand</fullyQualifiedName>
+            <status>ENABLED</status>
+        </module>
+        <module>
             <fullyQualifiedName>sfdc_cms__orchestrator</fullyQualifiedName>
             <status>ENABLED</status>
         </module>

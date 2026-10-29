@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>タスクから算出された推定費用</help>
+    <label>推定費用</label>
+    <name>Estimated_Expense__c</name>
+</CustomFieldTranslation>

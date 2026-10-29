@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- * Tango Card: For every $100 in sales, the customer earns a $1 tango card. --></help>
+    <label><!-- Promo Format --></label>
+    <name>Promo_Format__c</name>
+    <picklistValues>
+        <masterLabel>AD Rewards - Double points for AD customers</masterLabel>
+        <translation><!-- AD Rewards - Double points for AD customers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OmniCable Points Program - $1 for every $250</masterLabel>
+        <translation><!-- OmniCable Points Program - $1 for every $250 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

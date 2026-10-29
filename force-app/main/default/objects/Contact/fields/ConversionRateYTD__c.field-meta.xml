@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConversionRateYTD__c</fullName>
+    <description>HALO - not quite working yet as of 4.26.17...I believe it&apos;s set up for conversion according to COUNT, not dollar, which is good.</description>
+    <label>Conversion Rate YTD</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

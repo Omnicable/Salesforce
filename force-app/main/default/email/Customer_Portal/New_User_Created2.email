@@ -1,0 +1,10 @@
+{!Contact.Full_Name__c} from {!Account.Name} has signed up and verified their email for the portal.
+
+Email: {!Contact.Email}
+Contact Role: {!Contact.Contact_Title__c}
+
+Contact Page: 
+https://omnicable.my.salesforce.com/{!Contact.Id}
+
+** ALL PORTAL USERS MUST HAVE CONTACT ROLES IN SALESFORCE! 
+TO UPDATE, CLICK CONTACT PAGE LINK ABOVE  **

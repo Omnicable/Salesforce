@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Salesforce usage guidelines for District Sales Managers</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>SFDC usage outline DSM</name>
+    <public>true</public>
+</Document>

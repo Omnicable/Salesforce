@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$QuotesOrdersCredits_Header__c.Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SalesHistory__c.Total_Invoice_Dollars__c</field>
+    </columns>
+    <description>DASHBOARD</description>
+    <filter>
+        <criteriaItems>
+            <column>SalesHistory__c.Inside_Account_Manager__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Mike Kazanjian,Toye Bland,Shun Ross,Dylan Strauser,Philipp Stocker,Michael Claybon,CSC Sales,Blanca Macias,Andrew Gomez,Mason Finnen,Rayah Elhindi</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SalesHistory__c.Inside_Account_Manager__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CSC Yesterday&apos;s Billed</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$SalesHistory__c@SalesHistory__c.Order__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SalesHistory__c.Invoice_Date__c</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

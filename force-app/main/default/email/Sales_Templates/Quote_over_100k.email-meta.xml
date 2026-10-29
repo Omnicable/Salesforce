@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email Alert</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Quote over $100k</name>
+    <style>none</style>
+    <subject>Quote over $100k</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

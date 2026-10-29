@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Phone_Length</fullName>
+    <active>true</active>
+    <description>Match OmniSync&apos;s max phone length of 16</description>
+    <errorConditionFormula>LEN(Phone) &gt; 16</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Phone length cannot exceed 16 characters.  Place any extension in the Phone Extension field.</errorMessage>
+</ValidationRule>

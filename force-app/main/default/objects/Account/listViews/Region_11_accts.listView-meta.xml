@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_11_accts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Outside_Salesperson__c</columns>
+    <columns>Sales_Current_Year__c</columns>
+    <columns>Sales_Year_Prior__c</columns>
+    <columns>ACCOUNT.ADDRESS2_STATE</columns>
+    <columns>Target_Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region_Number__c</field>
+        <operation>equals</operation>
+        <value>11</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <label>Region 11 Accounts</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Region11</group>
+        <group>Region11RMs</group>
+        <role>RVP_NorthEast_Central</role>
+    </sharedTo>
+</ListView>

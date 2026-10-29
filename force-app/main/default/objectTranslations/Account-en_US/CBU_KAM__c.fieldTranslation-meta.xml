@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Comms Team Key Account Manager --></help>
+    <label><!-- CBU KAM --></label>
+    <name>CBU_KAM__c</name>
+    <relationshipLabel><!-- Accounts (CBU KAM) --></relationshipLabel>
+</CustomFieldTranslation>

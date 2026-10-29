@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET 
+D12402 D11602</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C2513A C2514A C2524A C2534A C2526A C2528A C2525A C2535A C2523A C2555A C2536A C2538A C2539A C2537A C2540A C2515A C2516A C2517A C3154 C3310 C3155 C3311 C3320 C3321 C3322 C3162 C3164 C3163 C3166 C3180 C3181 C3182 C3169 C3340 C3341 C8106 C8114</keywords>
+    <name>General Cable MultiConductor Foil Shield</name>
+    <public>true</public>
+</Document>

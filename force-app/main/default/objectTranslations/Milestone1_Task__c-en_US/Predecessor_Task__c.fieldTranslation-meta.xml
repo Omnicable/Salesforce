@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The predecessor task for this task if applicable. --></help>
+    <label><!-- Predecessor Task --></label>
+    <name>Predecessor_Task__c</name>
+    <relationshipLabel><!-- Successor Tasks --></relationshipLabel>
+</CustomFieldTranslation>

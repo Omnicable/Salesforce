@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BUYING_GROUP_CES</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Buying_Group__c</field>
+        <operation>equals</operation>
+        <value>CES</value>
+    </filters>
+    <label>BUYING GROUP: CES</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

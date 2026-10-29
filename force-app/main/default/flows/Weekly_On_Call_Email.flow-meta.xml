@@ -18,7 +18,7 @@
             <name>recipients</name>
             <value>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
-                <stringValue>dvanbelle@omnicable.com</stringValue>
+                <stringValue>dvanbelle@omnicable.com,mkumar@omnicable.com</stringValue>
             </value>
         </inputParameters>
         <nameSegment>WeeklyOnCallNotification</nameSegment>

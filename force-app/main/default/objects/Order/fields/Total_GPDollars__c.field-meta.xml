@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_GPDollars__c</fullName>
+    <label>Total GP$ (Booked)</label>
+    <summarizedField>OrderItem.GPDollars__c</summarizedField>
+    <summaryFilterItems>
+        <field>OrderItem.Is_Active__c</field>
+        <operation>notEqual</operation>
+        <value>D</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OrderItem.OrderId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,6 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p>Ryan,</p><p>&nbsp;</p><p>{!QuotesOrdersCredits_Header__c.Entered_By__c} entered Order {!QuotesOrdersCredits_Header__c.Order_Number__c} for {!QuotesOrdersCredits_Header__c.Customer_Name__c} at 12% or less GP%.</p><p>&nbsp;</p><p>Please check this out ASAP. It is not on hold.</p><p>&nbsp;</p><p>Thanks</p>]]></td>
+</tr>
+</table>

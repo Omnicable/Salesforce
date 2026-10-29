@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>BELDEN SPEC SHEET
+YL41601A 123090A</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>YL41601A 123090A</keywords>
+    <name>Belden - Aluminum Interlocked Armor</name>
+    <public>true</public>
+</Document>

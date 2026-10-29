@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="arial"><span style="font-size: 12pt;">{!Promo__c.CreatedBy}'s promotion "</span>{!Promo__c.Name}"&nbsp;<span style="font-size: 12pt;">has been approved.&nbsp;</span></font><div><br><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="font-size: 12pt;" face="arial">Comments:&nbsp;</font><font face="arial">{!ApprovalRequest.Comments}<br><br></font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="arial">Click here to&nbsp;view promotion details in Salesforce&nbsp;</font><font style="font-size: 12pt;" face="arial">https://omnicable.my.salesforce.com/</font><font style="font-size: 12pt;" face="arial">{!Promo__c.Id} <br></font></div></div>]]></td>
+</tr>
+</table>

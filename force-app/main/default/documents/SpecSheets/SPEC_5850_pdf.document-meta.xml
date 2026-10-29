@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+PV41801 PV41601 PV41401 PV41201 PV41001 PV40801 PV40601 PV40401 PV40201 PV40101 PV41/001 PV42/001 PV43/001 PV44/001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 12421.711800 12421.711600 12421.711400 12421.711200 12421.711100 12421.710800 12421.710600 12421.710400 12421.710200 12421.710100 12421.715100 12421.715200 12421.715300 12421.715400</keywords>
+    <name>General Cable SunGen™ XLPE, Photovoltaic Wire 2000V, UL Type PV/RHH or RHW-2 or 600V USE-2, 90°C</name>
+    <public>true</public>
+</Document>

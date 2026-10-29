@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+K32002 K42003 K31802 K41803 K31602 K41603</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 325900 325910 325920 325940 339620 348090 334630 348100 759610 339650 339660 325830 325840 325850 325880 348020 348030 348040 339670 339680 791720 339690 325770 325780 325790 325810 339700 298830 760530 339710 339720 339730 339740</keywords>
+    <name>General Cable Instrumentation Cable - Type PLTC - 300 Volt - Single Pair/Triad - Shielded/Nonshielded - 105°C</name>
+    <public>true</public>
+</Document>

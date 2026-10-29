@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Number of complete tasks related to this milestone --></help>
+    <label><!-- Complete Tasks (in Tasks) --></label>
+    <name>Complete_Tasks_in_Tasks__c</name>
+</CustomFieldTranslation>

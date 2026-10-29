@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+L32002 L32004 L32008 L32012 L32016 L32020 L32024 L32036 L31802 L31804 L31808 L31812 L31824 L31836 L31602 L31604 L31636</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 325930 325950 339750 339760 348110 339770 339780 348120 341790 325860 325890 348060 348070 760420 339800 339810 339820 339830 325800 325820 298880 298890 759770 339840 759780 339850 339860</keywords>
+    <name>General Cable Instrumentation Cable - Type PLTC - 300 Volt - Multipair - Individual and Overall Shield - 105°C - 16 &amp; 18 &amp; 20 AWG</name>
+    <public>true</public>
+</Document>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>agf__ADM_Epic__c.agf__Work__r$Name</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Epic__c.agf__Work__r.agf__Tasks__r$Name</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Epic__c.agf__Work__r.agf__Tasks__r$agf__Subject__c</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Epic__c.agf__Work__r.agf__Tasks__r$agf__Status__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>agf__ADM_Epic__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>agf__ADM_Epic__c.agf__Work__r$agf__Subject__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>agf__ADM_Epic__c.agf__Work__r$agf__Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Salesforce Work &amp; Tasks</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Epics_with_Work_with_Tasks__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>agf__ADM_Epic__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

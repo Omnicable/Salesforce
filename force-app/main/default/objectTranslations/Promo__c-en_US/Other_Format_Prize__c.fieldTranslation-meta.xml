@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- You must fill out this field if you chose &quot;Other&quot; --></help>
+    <label><!-- &quot;Other&quot; Format/Reward --></label>
+    <name>Other_Format_Prize__c</name>
+</CustomFieldTranslation>

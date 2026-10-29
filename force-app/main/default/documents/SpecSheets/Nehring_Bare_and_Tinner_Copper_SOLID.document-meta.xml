@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Q10401, Q10601, Q10801, Q11001, Q11201, Q20201</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Q10401, Q10601, Q10801, Q11001, Q11201, Q20201</keywords>
+    <name>NEHRING Bare and Tinner Copper SOLID</name>
+    <public>true</public>
+</Document>

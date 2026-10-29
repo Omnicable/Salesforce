@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Choose Pages to Hide --></label>
+    <name>Hidden_Pages__c</name>
+    <picklistValues>
+        <masterLabel>ALUMINUM PRODUCTS</masterLabel>
+        <translation><!-- ALUMINUM PRODUCTS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>COMMUNICATION &amp; ELECTRONIC PRODUCTS</masterLabel>
+        <translation><!-- COMMUNICATION &amp; ELECTRONIC PRODUCTS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GROUNDING PRODUCTS, EXTENSION CORDS</masterLabel>
+        <translation><!-- GROUNDING PRODUCTS, EXTENSION CORDS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MC CABLE, COPPER BUILDING WIRE, FLEXIBLE CONDUIT</masterLabel>
+        <translation><!-- MC CABLE, COPPER BUILDING WIRE, FLEXIBLE CONDUIT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PORTABLE CORD PRODUCTS</masterLabel>
+        <translation><!-- PORTABLE CORD PRODUCTS --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

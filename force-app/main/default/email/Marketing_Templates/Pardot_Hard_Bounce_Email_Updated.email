@@ -1,0 +1,7 @@
+A Pardot hard bounced email address was updated in salesforce. Please make prospect mailable again in Pardot.
+
+Account Owner: {!Contact.OwnerFullName} 
+Name: {!Contact.FirstName} {!Contact.LastName}
+Email: {!Contact.Email}
+
+Contact page in salesforce: https://omnicable.my.salesforce.com/{!Contact.Id}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Sales Leader - Region 5</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>Vice_President_Midwest</parentRole>
+</Role>

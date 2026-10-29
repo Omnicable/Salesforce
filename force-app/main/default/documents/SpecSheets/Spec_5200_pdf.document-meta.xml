@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+ M710ST-01 M710ST-02 M710ST-03 M710ST-07 M710ST-08 M710ST-04 M710ST-05 M710ST-10 M710ST-06 M708ST-01 M706ST-01 M704ST-01 M702ST-01 M701ST-01</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 391090 798751 496517 358172 760698 769641</keywords>
+    <name>General Cable Building Wire - XHHW-2 - 1-10 AWG</name>
+    <public>true</public>
+</Document>

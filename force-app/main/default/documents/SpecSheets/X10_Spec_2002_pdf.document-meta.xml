@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+J081906 J081912 J081925 J082206 J082212 J082225 J082450</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 7524507 7524515 7524523 7524556 7524564 7524572 7524580 7524598 7524606 7524614 7524622 7524648 7524655 7524663 7524671 7524689 7524697 7524705 7524713 7524721 7524739 7524960</keywords>
+    <name>General Cable Outside Plant Telephone Cable - Outside Plant Telephone Cable - PE89</name>
+    <public>true</public>
+</Document>

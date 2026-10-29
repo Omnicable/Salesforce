@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET - 4790
+AT21404 AT21204 AT21004 AT20804 AT20604 AT20404 AT20204</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>4790 AT21404 AT21204 AT21004 AT20804 AT20604 AT20404 AT20204</keywords>
+    <name>General Cable - TC-Flex Shielded Tray Cable 14awg-2awg</name>
+    <public>true</public>
+</Document>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>Phone/Email Touch</fullName>
+        <default>false</default>
+        <label>Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Joint Sales Call</fullName>
+        <default>false</default>
+        <label>Joint Sales Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outbound Sales Call</fullName>
+        <default>false</default>
+        <label>Outbound Sales Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outside Sales Call</fullName>
+        <default>false</default>
+        <label>Outside Sales Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Phone Call</fullName>
+        <default>false</default>
+        <label>Phone Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Phone Call – Call Completed</fullName>
+        <default>false</default>
+        <label>Phone Call – Call Completed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Phone Call – Follow Up </fullName>
+        <default>false</default>
+        <label>Phone Call – Follow Up </label>
+    </standardValue>
+    <standardValue>
+        <fullName>Phone Call – Left Voicemail</fullName>
+        <default>false</default>
+        <label>Phone Call – Left Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Price Sheet Tracker</fullName>
+        <default>false</default>
+        <label>Price Sheet Tracker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Quote Follow Up</fullName>
+        <default>false</default>
+        <label>Quote Follow Up</label>
+    </standardValue>
+</StandardValueSet>

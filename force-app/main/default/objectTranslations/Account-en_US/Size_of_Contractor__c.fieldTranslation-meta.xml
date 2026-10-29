@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Size of Contractor --></label>
+    <name>Size_of_Contractor__c</name>
+    <picklistValues>
+        <masterLabel>0 - 50</masterLabel>
+        <translation><!-- 0 - 50 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>100 - 500</masterLabel>
+        <translation><!-- 100 - 500 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>50 - 100</masterLabel>
+        <translation><!-- 50 - 100 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>500+</masterLabel>
+        <translation><!-- 500+ --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

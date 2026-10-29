@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Afghanistan</masterLabel>
+        <translation>아프가니스탄</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Aland Islands</masterLabel>
+        <translation>올란드 제도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Albania</masterLabel>
+        <translation>알바니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Algeria</masterLabel>
+        <translation>알제리</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Andorra</masterLabel>
+        <translation>안도라</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Angola</masterLabel>
+        <translation>앙골라</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Anguilla</masterLabel>
+        <translation>앵귈라</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Antarctica</masterLabel>
+        <translation>남극</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Antigua and Barbuda</masterLabel>
+        <translation>앤티가 바부다</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Argentina</masterLabel>
+        <translation>아르헨티나</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Armenia</masterLabel>
+        <translation>아르메니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Aruba</masterLabel>
+        <translation>아루바</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Australia</masterLabel>
+        <translation>오스트레일리아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Austria</masterLabel>
+        <translation>오스트리아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Azerbaijan</masterLabel>
+        <translation>아제르바이잔</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bahamas</masterLabel>
+        <translation>바하마</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bahrain</masterLabel>
+        <translation>바레인</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bangladesh</masterLabel>
+        <translation>방글라데시</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Barbados</masterLabel>
+        <translation>바베이도스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Belarus</masterLabel>
+        <translation>벨로루시</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Belgium</masterLabel>
+        <translation>벨기에</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Belize</masterLabel>
+        <translation>벨리즈</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Benin</masterLabel>
+        <translation>베냉</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bermuda</masterLabel>
+        <translation>버뮤다</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bhutan</masterLabel>
+        <translation>부탄</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bolivia, Plurinational State of</masterLabel>
+        <translation>볼리비아 다민족 공화국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bonaire, Sint Eustatius and Saba</masterLabel>
+        <translation>보네르, 신트 유스타시우스, 사바</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bosnia and Herzegovina</masterLabel>
+        <translation>보스니아헤르체고비나</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Botswana</masterLabel>
+        <translation>보츠와나</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bouvet Island</masterLabel>
+        <translation>부베 섬</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Brazil</masterLabel>
+        <translation>브라질</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>British Indian Ocean Territory</masterLabel>
+        <translation>영인도 제도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Brunei Darussalam</masterLabel>
+        <translation>브루나이</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bulgaria</masterLabel>
+        <translation>불가리아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Burkina Faso</masterLabel>
+        <translation>부르키나파소</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Burundi</masterLabel>
+        <translation>부룬디</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cambodia</masterLabel>
+        <translation>캄보디아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cameroon</masterLabel>
+        <translation>카메룬</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Canada</masterLabel>
+        <translation>캐나다</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cape Verde</masterLabel>
+        <translation>카보베르데</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cayman Islands</masterLabel>
+        <translation>케이맨 제도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Central African Republic</masterLabel>
+        <translation>중앙아프리카공화국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Chad</masterLabel>
+        <translation>차드</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Chile</masterLabel>
+        <translation>칠레</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>China</masterLabel>
+        <translation>중국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Christmas Island</masterLabel>
+        <translation>크리스마스 섬</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cocos (Keeling) Islands</masterLabel>
+        <translation>코코스 제도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Colombia</masterLabel>
+        <translation>콜롬비아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Comoros</masterLabel>
+        <translation>코모로</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Congo</masterLabel>
+        <translation>콩고</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Congo, the Democratic Republic of the</masterLabel>
+        <translation>콩고, 민주공화국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cook Islands</masterLabel>
+        <translation>쿡 제도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Costa Rica</masterLabel>
+        <translation>코스타리카</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cote d&apos;Ivoire</masterLabel>
+        <translation>코트디부아르</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Croatia</masterLabel>
+        <translation>크로아티아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Curaçao</masterLabel>
+        <translation>쿠라사오</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cyprus</masterLabel>
+        <translation>키프로스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Czechia</masterLabel>
+        <translation>체코</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Denmark</masterLabel>
+        <translation>덴마크</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Djibouti</masterLabel>
+        <translation>지부티</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dominica</masterLabel>
+        <translation>도미니카</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Dominican Republic</masterLabel>
+        <translation>도미니카 공화국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ecuador</masterLabel>
+        <translation>에콰도르</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Egypt</masterLabel>
+        <translation>이집트</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>El Salvador</masterLabel>
+        <translation>엘살바도르</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Equatorial Guinea</masterLabel>
+        <translation>적도기니</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Eritrea</masterLabel>
+        <translation>에리트레아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Estonia</masterLabel>
+        <translation>에스토니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Eswatini</masterLabel>
+        <translation>에스와티니</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ethiopia</masterLabel>
+        <translation>에티오피아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Falkland Islands (Malvinas)</masterLabel>
+        <translation>포클랜드 제도(말비나스)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Faroe Islands</masterLabel>
+        <translation>페로 제도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Fiji</masterLabel>
+        <translation>피지</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Finland</masterLabel>
+        <translation>핀란드</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>France</masterLabel>
+        <translation>프랑스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>French Guiana</masterLabel>
+        <translation>프랑스령 기아나</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>French Polynesia</masterLabel>
+        <translation>프랑스령 폴리네시아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>French Southern Territories</masterLabel>
+        <translation>프랑스 남부 지방</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gabon</masterLabel>
+        <translation>가봉</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gambia</masterLabel>
+        <translation>감비아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Georgia</masterLabel>
+        <translation>그루지야</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Germany</masterLabel>
+        <translation>독일</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ghana</masterLabel>
+        <translation>가나</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gibraltar</masterLabel>
+        <translation>지브롤터</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Greece</masterLabel>
+        <translation>그리스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Greenland</masterLabel>
+        <translation>그린란드</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Grenada</masterLabel>
+        <translation>그레나다</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Guadeloupe</masterLabel>
+        <translation>과들루프</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Guam</masterLabel>
+        <translation><!-- Guam --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Guatemala</masterLabel>
+        <translation>과테말라</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Guernsey</masterLabel>
+        <translation>건지</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Guinea</masterLabel>
+        <translation>기니</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Guinea-Bissau</masterLabel>
+        <translation>기니비사우</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Guyana</masterLabel>
+        <translation>가이아나</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Haiti</masterLabel>
+        <translation>아이티</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Heard Island and McDonald Islands</masterLabel>
+        <translation>허드 섬 및 맥도날드 군도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Holy See (Vatican City State)</masterLabel>
+        <translation>교황청(바티칸시국)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Honduras</masterLabel>
+        <translation>온두라스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hungary</masterLabel>
+        <translation>헝가리</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Iceland</masterLabel>
+        <translation>아이슬란드</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>India</masterLabel>
+        <translation>인도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Indonesia</masterLabel>
+        <translation>인도네시아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Iran</masterLabel>
+        <translation><!-- Iran --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Iraq</masterLabel>
+        <translation>이라크</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ireland</masterLabel>
+        <translation>아일랜드</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Isle of Man</masterLabel>
+        <translation>맨섬</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Israel</masterLabel>
+        <translation>이스라엘</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Italy</masterLabel>
+        <translation>이탈리아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Jamaica</masterLabel>
+        <translation>자메이카</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Japan</masterLabel>
+        <translation>일본</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Jersey</masterLabel>
+        <translation>저지</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Jordan</masterLabel>
+        <translation>요르단</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kazakhstan</masterLabel>
+        <translation>카자흐스탄</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kenya</masterLabel>
+        <translation>케냐</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kiribati</masterLabel>
+        <translation>키리바시</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Korea, Republic of</masterLabel>
+        <translation>대한민국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kosovo</masterLabel>
+        <translation>코소보</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kuwait</masterLabel>
+        <translation>쿠웨이트</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kyrgyzstan</masterLabel>
+        <translation>키르기스스탄</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lao People&apos;s Democratic Republic</masterLabel>
+        <translation>라오스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Latvia</masterLabel>
+        <translation>라트비아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lebanon</masterLabel>
+        <translation>레바논</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lesotho</masterLabel>
+        <translation>레소토</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Liberia</masterLabel>
+        <translation>라이베리아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Libya</masterLabel>
+        <translation>리비아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Liechtenstein</masterLabel>
+        <translation>리히텐슈타인</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lithuania</masterLabel>
+        <translation>리투아니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Luxembourg</masterLabel>
+        <translation>룩셈부르크</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Macao</masterLabel>
+        <translation>마카오</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Madagascar</masterLabel>
+        <translation>마다가스카르</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Malawi</masterLabel>
+        <translation>말라위</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Malaysia</masterLabel>
+        <translation>말레이시아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Maldives</masterLabel>
+        <translation>몰디브</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mali</masterLabel>
+        <translation>말리</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Malta</masterLabel>
+        <translation>몰타</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Martinique</masterLabel>
+        <translation>마르티니크</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mauritania</masterLabel>
+        <translation>모리타니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mauritius</masterLabel>
+        <translation>모리셔스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mayotte</masterLabel>
+        <translation>마요트</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mexico</masterLabel>
+        <translation>멕시코</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Moldova, Republic of</masterLabel>
+        <translation>몰도바</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Monaco</masterLabel>
+        <translation>모나코</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mongolia</masterLabel>
+        <translation>몽골</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Montenegro</masterLabel>
+        <translation>몬테네그로</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Montserrat</masterLabel>
+        <translation>몬세라트</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Morocco</masterLabel>
+        <translation>모로코</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mozambique</masterLabel>
+        <translation>모잠비크</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Myanmar</masterLabel>
+        <translation>미얀마</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Namibia</masterLabel>
+        <translation>나미비아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nauru</masterLabel>
+        <translation>나우루</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nepal</masterLabel>
+        <translation>네팔</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Netherlands</masterLabel>
+        <translation>네덜란드</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New Caledonia</masterLabel>
+        <translation>뉴칼레도니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New Zealand</masterLabel>
+        <translation>뉴질랜드</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nicaragua</masterLabel>
+        <translation>니카라과</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Niger</masterLabel>
+        <translation>니제르</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nigeria</masterLabel>
+        <translation>나이지리아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Niue</masterLabel>
+        <translation>니우에</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Norfolk Island</masterLabel>
+        <translation>노퍽 섬</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>North Macedonia</masterLabel>
+        <translation>북마케도니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Norway</masterLabel>
+        <translation>노르웨이</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Oman</masterLabel>
+        <translation>오만</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pakistan</masterLabel>
+        <translation>파키스탄</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Palestine</masterLabel>
+        <translation>팔레스타인</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Panama</masterLabel>
+        <translation>파나마</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Papua New Guinea</masterLabel>
+        <translation>파푸아뉴기니</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Paraguay</masterLabel>
+        <translation>파라과이</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Peru</masterLabel>
+        <translation>페루</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Philippines</masterLabel>
+        <translation>필리핀</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pitcairn</masterLabel>
+        <translation>핏케언 섬</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Poland</masterLabel>
+        <translation>폴란드</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Portugal</masterLabel>
+        <translation>포르투갈</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Puerto Rico</masterLabel>
+        <translation><!-- Puerto Rico --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Qatar</masterLabel>
+        <translation>카타르</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Reunion</masterLabel>
+        <translation>레위니옹</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Romania</masterLabel>
+        <translation>루마니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Russian Federation</masterLabel>
+        <translation>러시아 연방</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rwanda</masterLabel>
+        <translation>르완다</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Saint Barthélemy</masterLabel>
+        <translation>생 바르텔레미</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Saint Helena, Ascension and Tristan da Cunha</masterLabel>
+        <translation>세인트 헬레나, 어센션 트리스탄다쿠냐</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Saint Kitts and Nevis</masterLabel>
+        <translation>세인트키츠 네비스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Saint Lucia</masterLabel>
+        <translation>세인트 루시아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Saint Martin (French part)</masterLabel>
+        <translation>세인트마틴섬(프랑스령)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Saint Pierre and Miquelon</masterLabel>
+        <translation>생피에르 미클롱</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Saint Vincent and the Grenadines</masterLabel>
+        <translation>세인트 빈센트 그레나딘스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Samoa</masterLabel>
+        <translation>사모아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>San Marino</masterLabel>
+        <translation>산마리노</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sao Tome and Principe</masterLabel>
+        <translation>상투메프린시페</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Saudi Arabia</masterLabel>
+        <translation>사우디아라비아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Senegal</masterLabel>
+        <translation>세네갈</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Serbia</masterLabel>
+        <translation>세르비아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Seychelles</masterLabel>
+        <translation>세이쉘</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sierra Leone</masterLabel>
+        <translation>시에라리온</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Singapore</masterLabel>
+        <translation>싱가포르</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sint Maarten (Dutch part)</masterLabel>
+        <translation>신트마르텐(네덜란드령)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Slovakia</masterLabel>
+        <translation>슬로바키아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Slovenia</masterLabel>
+        <translation>슬로베니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Solomon Islands</masterLabel>
+        <translation>솔로몬 제도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Somalia</masterLabel>
+        <translation>소말리아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>South Africa</masterLabel>
+        <translation>남아프리카 공화국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>South Georgia and the South Sandwich Islands</masterLabel>
+        <translation>사우스 조지아 및 사우스 샌드위치 군도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>South Sudan</masterLabel>
+        <translation>남수단</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Spain</masterLabel>
+        <translation>스페인</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sri Lanka</masterLabel>
+        <translation>스리랑카</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Suriname</masterLabel>
+        <translation>수리남</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Svalbard and Jan Mayen</masterLabel>
+        <translation>스발바르드 얀마이옌</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sweden</masterLabel>
+        <translation>스웨덴</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Switzerland</masterLabel>
+        <translation>스위스</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Taiwan</masterLabel>
+        <translation>대만</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tajikistan</masterLabel>
+        <translation>타지키스탄</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tanzania, United Republic of</masterLabel>
+        <translation>탄자니아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Thailand</masterLabel>
+        <translation>태국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Timor-Leste</masterLabel>
+        <translation>동티모르</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Togo</masterLabel>
+        <translation>토고</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tokelau</masterLabel>
+        <translation>토케라우</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tonga</masterLabel>
+        <translation>통가</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Trinidad and Tobago</masterLabel>
+        <translation>트리니다드토바고</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tunisia</masterLabel>
+        <translation>튀니지</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Turkmenistan</masterLabel>
+        <translation>투르크메니스탄</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Turks and Caicos Islands</masterLabel>
+        <translation>터커스 케이커스 제도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tuvalu</masterLabel>
+        <translation>투발루</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Türkiye</masterLabel>
+        <translation>터키</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>UN</masterLabel>
+        <translation><!-- UN --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>USA</masterLabel>
+        <translation><!-- USA --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Uganda</masterLabel>
+        <translation>우간다</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ukraine</masterLabel>
+        <translation>우크라이나</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>United Arab Emirates</masterLabel>
+        <translation>아랍에미리트</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>United Kingdom</masterLabel>
+        <translation>영국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>United States</masterLabel>
+        <translation>미국</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unknown</masterLabel>
+        <translation><!-- Unknown --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Uruguay</masterLabel>
+        <translation>우루과이</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Uzbekistan</masterLabel>
+        <translation>우즈베키스탄</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Vanuatu</masterLabel>
+        <translation>바누아투</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Venezuela, Bolivarian Republic of</masterLabel>
+        <translation>베네수엘라</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Vietnam</masterLabel>
+        <translation>베트남</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Virgin Islands, British</masterLabel>
+        <translation>버진 제도(영국령)</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Wallis and Futuna</masterLabel>
+        <translation>월리스 푸투나 제도</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Western Sahara</masterLabel>
+        <translation>서사하라</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Yemen</masterLabel>
+        <translation>예멘</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Zambia</masterLabel>
+        <translation>잠비아</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Zimbabwe</masterLabel>
+        <translation>짐바브웨</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

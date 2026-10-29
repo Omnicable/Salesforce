@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Topics__c</fullName>
+    <label>Product Topics</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aluminum</fullName>
+                <default>false</default>
+                <label>Aluminum</label>
+            </value>
+            <value>
+                <fullName>Breakers (MCCBs)</fullName>
+                <default>false</default>
+                <label>Breakers (CBs)</label>
+            </value>
+            <value>
+                <fullName>Belden</fullName>
+                <default>false</default>
+                <label>Belden</label>
+            </value>
+            <value>
+                <fullName>Berk-Tek</fullName>
+                <default>false</default>
+                <label>Berk-Tek</label>
+            </value>
+            <value>
+                <fullName>Industrial Products</fullName>
+                <default>false</default>
+                <label>Industrial Products</label>
+            </value>
+            <value>
+                <fullName>LOD</fullName>
+                <default>false</default>
+                <label>LOD</label>
+            </value>
+            <value>
+                <fullName>Medium Voltage</fullName>
+                <default>false</default>
+                <label>Medium Voltage</label>
+            </value>
+            <value>
+                <fullName>Portable Cord</fullName>
+                <default>false</default>
+                <label>Portable Cord</label>
+            </value>
+            <value>
+                <fullName>Tray Cable</fullName>
+                <default>false</default>
+                <label>Tray Cable</label>
+            </value>
+            <value>
+                <fullName>Tyco/Raychem</fullName>
+                <default>false</default>
+                <label>Tyco/Raychem</label>
+            </value>
+            <value>
+                <fullName>VITALink</fullName>
+                <default>false</default>
+                <label>VITALink</label>
+            </value>
+            <value>
+                <fullName>VFD</fullName>
+                <default>false</default>
+                <label>VFD</label>
+            </value>
+            <value>
+                <fullName>Panduit</fullName>
+                <default>false</default>
+                <label>Panduit</label>
+            </value>
+            <value>
+                <fullName>Fiber Optic</fullName>
+                <default>false</default>
+                <label>Fiber Optic</label>
+            </value>
+            <value>
+                <fullName>CMP</fullName>
+                <default>false</default>
+                <label>CMP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MCCB_Stocking_Program__c</fullName>
+    <inlineHelpText>Ex. Eaton POA or Square D Premier program</inlineHelpText>
+    <label>MCCB Stocking Program</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Eaton POA</fullName>
+                <default>false</default>
+                <label>Eaton POA</label>
+            </value>
+            <value>
+                <fullName>Sq.D Premier</fullName>
+                <default>false</default>
+                <label>Sq.D Premier</label>
+            </value>
+            <value>
+                <fullName>n/a</fullName>
+                <default>true</default>
+                <label>n/a</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

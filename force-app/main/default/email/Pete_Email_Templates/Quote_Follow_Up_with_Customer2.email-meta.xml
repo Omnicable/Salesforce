@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send email from Quote page to merge buyer name and quote #</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Quote Follow Up with Customer</name>
+    <style>none</style>
+    <subject>Following up on Quote #{!QuotesOrdersCredits_Header__c.Name}</subject>
+    <textOnly>Hi {!QuotesOrdersCredits_Header__c.Buyer_First_Name__c},  
+
+Thank you for the quote opportunity. In regards to quote #{!QuotesOrdersCredits_Header__c.Name}, do you have any additional feedback or job information (I.E. For bid or buy, date required, pricing feedback, etc.)?  
+
+Any and all information would be greatly appreciated.  Please let me know if there is anything else I can do for you.   
+
+
+Have a great day,  
+
+{!User.Full_Name__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

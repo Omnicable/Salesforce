@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Box is checked for every line in R29 orders, as well as for any non‑R29 line whose item class and vendor combination qualifies as Broadband. --></help>
+    <label><!-- Broadband Line Item? --></label>
+    <name>Broadband_Line_Item__c</name>
+</CustomFieldTranslation>

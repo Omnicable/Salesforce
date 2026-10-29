@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_w_o_contact_freq__c</fullName>
+    <formula>IF (Days_without_contact__c   &gt; VIP_Follow_Up_Frequency__c, TRUE, FALSE)</formula>
+    <label>Days w/o contact &gt; freq</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

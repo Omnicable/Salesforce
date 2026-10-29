@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_58351333</developerName>
+        <masterLabel>Role</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Dashboard$Title</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>R10 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R11 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R12 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R2 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R3 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R4 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R5 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 AM - Sarah Keune</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R7 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R8 AM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R13 AM Dashboard 2.0</sourceValue>
+            </sourceValues>
+            <value>AM</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>R10 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R11 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R12 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R2 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R3 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R4 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R5 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 RM - Adam&apos;s Temp DB</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R7 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R8 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R9 RM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R13 Sales Manager - Bell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R13 RM</sourceValue>
+            </sourceValues>
+            <value>RM</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>R2 TSM - Mike</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R2 TSM - PJ</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R2 TSM - Bethany</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R3 TSM - Bill</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R4 TSM - Rick</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R4 TSM - Tom</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R5 TSM - Chris Reed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R5 TSM - Shane O&apos;Keefe</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 TSM - Craig</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 TSM - Jacob</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R6 TSM - Vicki</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R7 TSM - Steve Azzopardi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R8 TSM - Brad</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R8 TSM - Ryan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R9 TSM - Patrick</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R9 TSM - Rachel</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R9 TSM - Tom Fitz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R10 TSM - Bruce</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R11 TSM - Jackie</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R13 TSM</sourceValue>
+            </sourceValues>
+            <value>TSM</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>R12 TSM - Michael Duggan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>R12 TSM - TJ Mahan</sourceValue>
+            </sourceValues>
+            <value>TSM cont&apos;d</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Dashboard$Title</field>
+    </columns>
+    <columns>
+        <field>Dashboard$Folder</field>
+    </columns>
+    <columns>
+        <field>Dashboard$LeftSize</field>
+    </columns>
+    <columns>
+        <field>Dashboard$MiddleSize</field>
+    </columns>
+    <columns>
+        <field>Dashboard$RightSize</field>
+    </columns>
+    <columns>
+        <field>Dashboard$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Dashboard$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Dashboard$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>Dashboard$Type</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>BucketField_58351333</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>am,rm,Tsm,tsm cont&apos;d</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_58351333</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>AM,TSM,RM Dashboards</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Dashboards_Types__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Dashboard$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

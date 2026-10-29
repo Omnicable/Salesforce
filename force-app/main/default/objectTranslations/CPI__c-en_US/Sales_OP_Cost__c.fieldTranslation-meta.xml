@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is the sales operating cost.  It is the time spent servicing a customer from a sales standpoint.  A higher than average Sales OP typically means that your quote to order ratio is high. --></help>
+    <label><!-- Sales OP Cost --></label>
+    <name>Sales_OP_Cost__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is a sum of your Sales OP Cost and WHSE OP cost. --></help>
+    <label><!-- Net OP Cost --></label>
+    <name>Net_OP_Cost__c</name>
+</CustomFieldTranslation>

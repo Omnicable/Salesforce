@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- What level of freight agreement is this? --></help>
+    <label><!-- Agreement Type --></label>
+    <name>Review_Type__c</name>
+    <picklistValues>
+        <masterLabel>Branch Agreement</masterLabel>
+        <translation><!-- Branch Agreement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multi-Branch Agreement</masterLabel>
+        <translation><!-- Multi-Branch Agreement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>National Agreement</masterLabel>
+        <translation><!-- National Agreement --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

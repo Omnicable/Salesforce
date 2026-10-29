@@ -1,0 +1,15 @@
+Hi {!Receiving_User.FirstName},
+
+Welcome to OmniCable's Customer Portal!
+
+To get started, click here {!Community_Url}
+
+In the future, please go to https://myomnicable.com and log in with username {!Receiving_User.Username}.
+
+{!Receiving_User.Email}.
+
+
+
+Thank you,
+
+OmniCable

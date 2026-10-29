@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Quote/Order/Credit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Quotes/Orders/Credits</value>
+    </caseValues>
+    <nameFieldLabel>Order Number</nameFieldLabel>
+    <recordTypes>
+        <description><!-- Used for Orders and Credits --></description>
+        <label><!-- Order/Credits --></label>
+        <name>OrderCredits</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for Quotes --></description>
+        <label><!-- Quotes --></label>
+        <name>Quotes</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RFQ --></label>
+        <name>RFQ</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please use the Quote Follow Up button to enter notes. When you save the quote follow up, the Notes field will automatically populate. --></errorMessage>
+        <name>FollowedUp_Notes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the order number --></errorMessage>
+        <name>Order_number_Cannot_be_changed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Other competitor is required if you select &quot;Other:&quot; for whom we lost the quote to. --></errorMessage>
+        <name>Other_Competitor</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Status &quot;RFQ No Quote&quot; is only for RFQs requested through the portal. --></errorMessage>
+        <name>Status_RFQ_No_Quote_only_for_type_RFQ</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only System Administrators can choose System Closed. Please choose Closed or another reason and leave notes. It helps everyone. --></errorMessage>
+        <name>Sys_Closed_Admin_only</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Quote_Follow_Up --></label>
+        <name>Quote_Follow_Up</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Schedule_Followup --></label>
+        <name>Schedule_Followup</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Priceless_Quote --></label>
+        <name>Send_Priceless_Quote</name>
+    </webLinks>
+</CustomObjectTranslation>

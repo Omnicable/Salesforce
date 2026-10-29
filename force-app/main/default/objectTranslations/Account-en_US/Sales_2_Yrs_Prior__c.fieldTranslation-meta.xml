@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sales 2 Yrs Prior --></label>
+    <name>Sales_2_Yrs_Prior__c</name>
+</CustomFieldTranslation>

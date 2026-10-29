@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>HVM1, hvm2, hvm3, hvm4, hvm5, hvm7</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>HVM1, hvm2, hvm3, hvm4, hvm5, hvm7, fire rated, 2 hour, rockbestos, vitalink</keywords>
+    <name>Rockbestos VITALink 2-Hour Fire Rated Cable</name>
+    <public>false</public>
+</Document>

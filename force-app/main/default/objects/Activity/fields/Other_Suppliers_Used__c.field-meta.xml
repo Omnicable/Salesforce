@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Suppliers_Used__c</fullName>
+    <label>Other Suppliers Used</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>General Cable / Prysmian</fullName>
+                <default>false</default>
+                <label>General Cable / Prysmian</label>
+            </value>
+            <value>
+                <fullName>Southwire</fullName>
+                <default>false</default>
+                <label>Southwire</label>
+            </value>
+            <value>
+                <fullName>Priority</fullName>
+                <default>false</default>
+                <label>Priority</label>
+            </value>
+            <value>
+                <fullName>HWC</fullName>
+                <default>false</default>
+                <label>HWC</label>
+            </value>
+            <value>
+                <fullName>DWC</fullName>
+                <default>false</default>
+                <label>DWC</label>
+            </value>
+            <value>
+                <fullName>King</fullName>
+                <default>false</default>
+                <label>King</label>
+            </value>
+            <value>
+                <fullName>Encore</fullName>
+                <default>false</default>
+                <label>Encore</label>
+            </value>
+            <value>
+                <fullName>Remmy</fullName>
+                <default>false</default>
+                <label>Remmy</label>
+            </value>
+            <value>
+                <fullName>Cameron</fullName>
+                <default>false</default>
+                <label>Cameron</label>
+            </value>
+            <value>
+                <fullName>Anixter</fullName>
+                <default>false</default>
+                <label>Anixter</label>
+            </value>
+            <value>
+                <fullName>WireXpress</fullName>
+                <default>false</default>
+                <label>WireXpress</label>
+            </value>
+            <value>
+                <fullName>A to Z</fullName>
+                <default>false</default>
+                <label>A to Z</label>
+            </value>
+            <value>
+                <fullName>Hardware Specialties</fullName>
+                <default>false</default>
+                <label>Hardware Specialties</label>
+            </value>
+            <value>
+                <fullName>Charlotte Wire</fullName>
+                <default>false</default>
+                <label>Charlotte Wire</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

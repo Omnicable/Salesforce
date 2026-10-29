@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Lake Cable data sheet. 16AWG 1 pair, shielded, Teck 90 style Type MC cable</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>T61601P, MC, Teck90, Teck type, 16AWG 1PS, Lake MCVX162S-16DR-M1</keywords>
+    <name>T61601P Lake Cable MCVX162S-16DR-M1</name>
+    <public>true</public>
+</Document>

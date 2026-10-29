@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+E31103 E31105 E31105BULK E31108</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C1160 C5011 C5025 C5029 C5034 C3529 C5043 C5039 C5044 C3528 395058 395029 495015 495016 495027</keywords>
+    <name>General Cable Coaxial Cable - RG 11/U</name>
+    <public>true</public>
+</Document>

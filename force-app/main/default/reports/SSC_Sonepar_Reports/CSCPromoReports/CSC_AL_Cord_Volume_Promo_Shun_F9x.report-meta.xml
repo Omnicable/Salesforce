@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula> 303</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Daily Baseline</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, Sales_History_Line_Item__c.Line_Total__c:SUM /3886977.21,
+IF (Account.RegionNumerical__c:MAX = 3, Sales_History_Line_Item__c.Line_Total__c:SUM /3938832.18,
+IF (Account.RegionNumerical__c:MAX = 4, Sales_History_Line_Item__c.Line_Total__c:SUM /2203170,
+IF (Account.RegionNumerical__c:MAX = 5, Sales_History_Line_Item__c.Line_Total__c:SUM /2830359,
+IF (Account.RegionNumerical__c:MAX = 6, Sales_History_Line_Item__c.Line_Total__c:SUM /2629019,
+IF (Account.RegionNumerical__c:MAX = 7, Sales_History_Line_Item__c.Line_Total__c:SUM /1891226,
+IF (Account.RegionNumerical__c:MAX = 8, Sales_History_Line_Item__c.Line_Total__c:SUM /7636833.97,
+IF (Account.RegionNumerical__c:MAX = 9, Sales_History_Line_Item__c.Line_Total__c:SUM /3216388.34,
+IF (Account.RegionNumerical__c:MAX = 10, Sales_History_Line_Item__c.Line_Total__c:SUM/ 1471419.08,
+IF (Account.RegionNumerical__c:MAX = 11, Sales_History_Line_Item__c.Line_Total__c:SUM /5158078.76,
+IF (Account.RegionNumerical__c:MAX = 12, Sales_History_Line_Item__c.Line_Total__c:SUM /2533522.78,
+IF (Account.RegionNumerical__c:MAX = 13, Sales_History_Line_Item__c.Line_Total__c:SUM /1484705,
+IF (Account.RegionNumerical__c:MAX = 15, Sales_History_Line_Item__c.Line_Total__c:SUM /3053104,
+IF (Account.RegionNumerical__c:MAX = 18, Sales_History_Line_Item__c.Line_Total__c:SUM /1263748,0))))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Target</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>((Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX) -303)/303</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Growth</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(Sales_History_Line_Item__c.Line_Total__c:SUM/Account.Business_Days_QTD__c:MAX)</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA5</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Avg Daily Sales</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_59189830</developerName>
+        <masterLabel>CSC AM</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account$Owner</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Brad Wilson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>James Knight</sourceValue>
+            </sourceValues>
+            <value>Shun Ross</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Description__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Total__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$GPpct__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Buyer__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Job_Reference__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Class__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Item__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 6) AND 5 AND 7 AND (8 OR 9)</booleanFilter>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Region_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>020</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Item_Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>FCB1,FCBJ1,FCDSP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Stock</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Shun Ross</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Account_Owner_2__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Shun Ross</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_59189830</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CSC AL, Cord Volume Promo - Shun</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Accounts_Orders_SalesHistory_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r$Date__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

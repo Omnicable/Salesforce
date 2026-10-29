@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Insulation Search --></label>
+    <name>Insulation_Search__c</name>
+    <picklistValues>
+        <masterLabel>EP - Ethylene Propylene</masterLabel>
+        <translation><!-- EP - Ethylene Propylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EPDM - Ethylene Propylene Diene Monomer Rubber</masterLabel>
+        <translation><!-- EPDM - Ethylene Propylene Diene Monomer Rubber --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EPR - Ethylene Propylene Rubber</masterLabel>
+        <translation><!-- EPR - Ethylene Propylene Rubber --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FEP - Fluorinated Ethylene Propylene</masterLabel>
+        <translation><!-- FEP - Fluorinated Ethylene Propylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FFEP - Foam Fluorinated Ethylene Propylene</masterLabel>
+        <translation><!-- FFEP - Foam Fluorinated Ethylene Propylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FPE - Foam Polyethylene</masterLabel>
+        <translation><!-- FPE - Foam Polyethylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fiberglass</masterLabel>
+        <translation><!-- Fiberglass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nylon</masterLabel>
+        <translation><!-- Nylon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PE - Polyethylene</masterLabel>
+        <translation><!-- PE - Polyethylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PO - Polyolefin</masterLabel>
+        <translation><!-- PO - Polyolefin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PP - Polypropylene</masterLabel>
+        <translation><!-- PP - Polypropylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PVC - Polyvinyl Chloride</masterLabel>
+        <translation><!-- PVC - Polyvinyl Chloride --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PVC/Nylon - Polyvinyl Chloride/Nylon</masterLabel>
+        <translation><!-- PVC/Nylon - Polyvinyl Chloride/Nylon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plenum</masterLabel>
+        <translation><!-- Plenum --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Silicone/Rubber</masterLabel>
+        <translation><!-- Silicone/Rubber --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TFE - Tetrafluoroethylene</masterLabel>
+        <translation><!-- TFE - Tetrafluoroethylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TPE - Thermoplastic Elastomer</masterLabel>
+        <translation><!-- TPE - Thermoplastic Elastomer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XLPE - Cross-Linked Polyethylene</masterLabel>
+        <translation><!-- XLPE - Cross-Linked Polyethylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XLPO - Cross-Linked Polyolefin</masterLabel>
+        <translation><!-- XLPO - Cross-Linked Polyolefin --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

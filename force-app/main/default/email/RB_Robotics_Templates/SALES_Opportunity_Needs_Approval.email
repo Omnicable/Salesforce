@@ -1,0 +1,10 @@
+The following Opportunity Needs your Approval:
+
+Account Name: {!Opportunity.Account}
+Opportunity Name: {!Opportunity.Name}
+
+Amount: {!Opportunity.Amount}
+
+Opportunity Owner: {!Opportunity.OwnerFullName}
+
+Link to Opportunity: {!Opportunity.Link}

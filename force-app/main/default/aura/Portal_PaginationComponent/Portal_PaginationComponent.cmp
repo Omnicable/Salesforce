@@ -1,0 +1,52 @@
+<!--
+  @description       : Pagination control for qoc list
+  @author            : chrisw@launchdm.com
+  @group             : LaunchDM
+  @last modified on  : 01-12-2023
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component>
+
+	<!-- <aura:handler name="change" value="{!v.paginationData}" action="{!c.paginationChange}" /> -->
+	<aura:registerEvent name="paginationChange" type="c:Portal_PaginationEvent" />
+	<aura:method name="clear" action="{!c.onClear}" access="PUBLIC" />
+
+	<aura:handler name="change" value="{!v.total}" action="{!c.doInit}" />
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+
+	<aura:attribute name="paginationData" type="Object" />
+	<aura:attribute name="tab" type="String" />
+	<aura:attribute name="offset" type="Integer" />
+	<aura:attribute name="total" type="integer" default="1" />
+	<aura:attribute name="itemsPerPage" type="integer" default="10" />
+	<aura:attribute name="selected" type="integer" default="1" />
+	<aura:attribute name="maxVisualPages" type="integer" default="7" />
+	<aura:attribute name="pages" type="List" default="[]" />
+
+	<div class="pagination-container">
+		<aura:if isTrue="{!v.total > 0}">
+			<div class="slds-grid">
+				<lightning:buttonGroup>
+					<lightning:buttonIcon iconName="utility:jump_to_left" variant="border-filled"
+						alternativeText="First" title="First" onclick="{!c.first}" disabled="{!v.selected ==  1}" />
+					<lightning:buttonIcon iconName="utility:chevronleft" variant="border-filled"
+						alternativeText="Previous" title="Previous" onclick="{!c.previous}"
+						disabled="{!v.selected ==  1}" />
+					<aura:iteration items="{!v.pages}" var="page" indexVar="index">
+						<lightning:button label="{!page}" value="{!page}" disabled="{!v.pages.length == 1}"
+							variant="{!v.selected == page ? 'brand' : 'neutral'}" onclick="{!c.pageSelected}" />
+					</aura:iteration>
+					<lightning:buttonIcon iconName="utility:chevronright" variant="border-filled" alternativeText="next"
+						title="Next" onclick="{!c.next}" disabled="{!v.selected ==  v.pages.length}" />
+					<lightning:buttonIcon iconName="utility:jump_to_right" variant="border-filled"
+						alternativeText="last" title="Last" onclick="{!c.last}"
+						disabled="{!v.selected ==  v.pages.length}" />
+
+				</lightning:buttonGroup>
+			</div>
+		</aura:if>
+	</div>
+
+
+</aura:component>

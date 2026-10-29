@@ -427,7 +427,7 @@
         <fullName>Medium_Voltage_order_over_50k</fullName>
         <ccEmails>pbingham@omnicable.com</ccEmails>
         <ccEmails>jurban@omnicable.com</ccEmails>
-        <description>Medium Voltage order over $5k</description>
+        <description>Medium Voltage order over $50k</description>
         <protected>false</protected>
         <recipients>
             <recipient>emauer@omnicable.com</recipient>
@@ -435,6 +435,17 @@
         </recipients>
         <recipients>
             <recipient>mthomason@omnicable.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Stacy_s_Working_Folder/Med_Voltage_Email_alert_with_line_items</template>
+    </alerts>
+    <alerts>
+        <fullName>Medium_Voltage_order_over_5k</fullName>
+        <description>Medium Voltage order over $5k</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mkumar@omnicable.com</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -604,17 +615,6 @@
         <template>Sales_Templates/Quote_over_15k</template>
     </alerts>
     <alerts>
-        <fullName>Region15_Email_to_Alert_Quote_over_25k</fullName>
-        <description>Region 15 - Email to Alert Quote over $25k</description>
-        <protected>false</protected>
-        <recipients>
-            <recipient>wfiore@omnicable.com</recipient>
-            <type>user</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Sales_Templates/Quote_over_15k</template>
-    </alerts>
-    <alerts>
         <fullName>Region2_Email_to_Alert_Quote_over_25k</fullName>
         <description>Region 2 - Email to Alert Quote over $25k</description>
         <protected>false</protected>
@@ -661,17 +661,6 @@
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>Sales_Templates/Quote_over_15k</template>
-    </alerts>
-    <alerts>
-        <fullName>Region_14_Email_to_Alert_Quote_over_75k</fullName>
-        <description>Region 14 - Email to Alert Quote over $75k</description>
-        <protected>false</protected>
-        <recipients>
-            <recipient>wfiore@omnicable.com</recipient>
-            <type>user</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Sales_Templates/Quote_over_75k</template>
     </alerts>
     <alerts>
         <fullName>Region_5_Email_to_Alert_Order_over_10K</fullName>
@@ -1972,15 +1961,15 @@ OR(Customer__r.Buying_Group__c = &quot;IMARK&quot;, Customer__r.Buying_Group__c 
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
-        <fullName>Medium Voltage products total over %245K</fullName>
+        <fullName>Medium Voltage products total over %2450K</fullName>
         <actions>
             <name>Medium_Voltage_order_over_50k</name>
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <description>Orders with Medium Voltage products total over $5K</description>
+        <description>Orders with Medium Voltage products total over $50K</description>
         <formula>AND(
-  MV_dollars__c &gt;= 5000,
+  MV_dollars__c &gt;= 50000,
   OR(
     ISPICKVAL(Type__c, &quot;Quote&quot;),
     ISPICKVAL(Type__c, &quot;Order&quot;)
@@ -1995,7 +1984,7 @@ OR(Customer__r.Buying_Group__c = &quot;IMARK&quot;, Customer__r.Buying_Group__c 
     /* 2. Record was previously unqualified, now qualifies */
     AND(
       ISCHANGED(MV_dollars__c),
-      PRIORVALUE(MV_dollars__c) &lt; 5000
+      PRIORVALUE(MV_dollars__c) &lt; 50000
     ),
     /* 3. Qualified Quote changes to Order */
     AND(
@@ -2004,6 +1993,49 @@ OR(Customer__r.Buying_Group__c = &quot;IMARK&quot;, Customer__r.Buying_Group__c 
       ISPICKVAL(PRIORVALUE(Type__c), &quot;Quote&quot;)
     )
   )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Medium Voltage products total over %245K</fullName>
+        <actions>
+            <name>Medium_Voltage_order_over_5k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Orders with Medium Voltage products total over $5K and Region 2</description>
+        <formula>AND(
+    MV_dollars__c &gt;= 5000,
+ Region__c = &quot;002&quot;,
+
+    OR(
+        ISPICKVAL(Type__c, &quot;Quote&quot;),
+        ISPICKVAL(Type__c, &quot;Order&quot;)
+        
+    ),
+
+    OR(
+        NOT(ISPICKVAL(Status__c, &quot;Closed&quot;)),
+        NOT(ISPICKVAL(Status__c, &quot;Cancelled&quot;))
+    ),
+
+    OR(
+        /* 1. New record that qualifies */
+        ISNEW(),
+
+        /* 2. Record was previously unqualified, now qualifies */
+        AND(
+            ISCHANGED(MV_dollars__c),
+            PRIORVALUE(MV_dollars__c) &lt; 5000
+        ),
+
+        /* 3. Qualified Quote changes to Order */
+        AND(
+            ISCHANGED(Type__c),
+            ISPICKVAL(Type__c, &quot;Order&quot;),
+            ISPICKVAL(PRIORVALUE(Type__c), &quot;Quote&quot;)
+        )
+    )
 )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -2664,10 +2696,6 @@ ISPICKVAL (Customer__r.Region_Number__c,&quot;13&quot;))</formula>
     </rules>
     <rules>
         <fullName>Region 14 - Quote over %2475k</fullName>
-        <actions>
-            <name>Region_14_Email_to_Alert_Quote_over_75k</name>
-            <type>Alert</type>
-        </actions>
         <active>false</active>
         <description>Email alert to Ian Rand when quote &gt; $75,000 entered for a region 14 account
 5/29/25 made myself (Windy Fiore) the Email Alert Recipient so I could deactivate Ian&apos;s user account and free up his user license.</description>
@@ -2679,10 +2707,6 @@ ISPICKVAL (Customer__r.Region_Number__c,&quot;14&quot;))</formula>
     </rules>
     <rules>
         <fullName>Region 15 - Quote over %2425k</fullName>
-        <actions>
-            <name>Region15_Email_to_Alert_Quote_over_25k</name>
-            <type>Alert</type>
-        </actions>
         <active>false</active>
         <description>Email alert to Rob Orio &amp; Steve Reber when quote &gt; $25,000 entered for a region 15 account</description>
         <formula>AND( 

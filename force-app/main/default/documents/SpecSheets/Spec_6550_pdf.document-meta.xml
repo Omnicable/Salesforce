@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+MVE41/001 MVE44/001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 17061.135100 17061.135200 17061.135300 17061.135400 17061.136000 17061.136200 17061.136500 17061.137000 17061.137500</keywords>
+    <name>General Cable Medium Voltage - 35 Kv - 25kV/35kV - Shielded, EPR/PVC, 100%/133% Insulation</name>
+    <public>true</public>
+</Document>

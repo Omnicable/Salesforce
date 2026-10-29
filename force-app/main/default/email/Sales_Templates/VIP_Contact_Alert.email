@@ -1,0 +1,13 @@
+Please reach out to your VIP contact below --
+
+{!Contact.Name}
+{!Account.Name}
+{!Contact.Email}
+Phone: {!Contact.Phone}
+
+Last Quote or Order: {!Contact.Last_Quote_Order__c}
+Last Activitiy:  {!Contact.LastActivityDate}
+
+VIP Follow-Up Frequency: {!Contact.VIP_Follow_Up_Frequency__c} days (you can adjust the  frequency on contact page) 
+
+Click here to view the contact in Salesforce https://omnicable.my.salesforce.com/{!Contact.Id}

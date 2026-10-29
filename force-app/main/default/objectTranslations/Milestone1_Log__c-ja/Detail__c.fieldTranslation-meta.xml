@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>ログの詳細情報。記録をとりたい情報に対して自由に入力できる。</help>
+    <label>詳細</label>
+    <name>Detail__c</name>
+</CustomFieldTranslation>

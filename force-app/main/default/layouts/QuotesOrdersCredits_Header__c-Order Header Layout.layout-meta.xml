@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <excludeButtons>Delete</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -277,6 +276,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>CBU_Hoopla__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Industrial_Automation__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

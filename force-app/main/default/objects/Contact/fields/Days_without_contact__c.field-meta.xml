@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_without_contact__c</fullName>
+    <description>The number of days since the last Quote/Order or Task/Event (whichever is more recent)</description>
+    <externalId>false</externalId>
+    <formula>IF( lastActivitydate__c &gt; Last_Quote_Order__c  || ISBLANK(Last_Quote_Order__c), 
+TODAY()  -  lastActivitydate__c, 
+IF( lastActivitydate__c &lt; Last_Quote_Order__c  || ISBLANK(lastActivitydate__c), 
+TODAY()  -  Last_Quote_Order__c, 0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Days since last contact</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

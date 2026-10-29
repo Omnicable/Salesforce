@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a presentation meant for your customer&apos;s customer the &apos;End User&apos;. The Power Point associated with this pdf is located on the laptop and can be played in the background on a loop for people to view at your table while you are at a Trade Show.</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>Omni Cable Product Highlights for the End User</name>
+    <public>true</public>
+</Document>

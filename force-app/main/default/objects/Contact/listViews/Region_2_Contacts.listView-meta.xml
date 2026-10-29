@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_2_Contacts</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Active__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Phone_Extension__c</columns>
+    <columns>CONTACT.PHONE3</columns>
+    <columns>CONTACT.PHONE5</columns>
+    <columns>X800_Phone_for_ICE__c</columns>
+    <columns>Other_Main_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>2</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Standard</value>
+    </filters>
+    <label>Region 2 Contacts</label>
+    <sharedTo>
+        <group>Region2</group>
+        <group>Region2RMs</group>
+    </sharedTo>
+</ListView>

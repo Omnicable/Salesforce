@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <recordTypes>
+        <label><!-- Distributor --></label>
+        <name>Distributor</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- End User --></label>
+        <name>End_User</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Read only for Omni Account --></description>
+        <label><!-- Omni Cable --></label>
+        <name>Omni_Cable</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for entry of prospective accounts in Canada --></description>
+        <label><!-- Potential Distributor --></label>
+        <name>Potential_Distributor</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Vendor --></label>
+        <name>Vendor</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- The Account Name field cannot be changed in Salesforce for Distributors or Vendors --></errorMessage>
+        <name>Account_No_change_to_Account_Name</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t create a Vendor or Distributor account. Please select the correct record type. --></errorMessage>
+        <name>Cant_Create_New_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Commercial, Industrial, and Residential Percentages must add up to 100% --></errorMessage>
+        <name>Check_Account_Pcts_equal_100</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Only Purchasing can edit Vendor Accounts. 
+
+Please call extension x602 to have the Vendor changed. -->
+        </errorMessage>
+        <name>No_Vendor_Edit_for_Sales</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Shipping Street must be one line. --></errorMessage>
+        <name>Shipping_Address_can_only_be_one_line</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Shipping Street Address can not be longer than 60 --></errorMessage>
+        <name>ShipppingStreetAddress</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- AltavistaNews --></label>
+        <name>AltavistaNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_AD_IESD_Scorecard --></label>
+        <name>Conga_Composer_AD_IESD_Scorecard</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_Composer_SP_Account_Brief --></label>
+        <name>Conga_Composer_Composer_SP_Account_Brief</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_NAM_Visit_Plannner_Company_Level --></label>
+        <name>Conga_Composer_NAM_Visit_Plannner_Company_Level</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_TESTNAMUSETHIS --></label>
+        <name>Conga_Composer_TESTNAMUSETHIS</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_TSMNAM_Branch_Visit_Planner --></label>
+        <name>Conga_Composer_TSMNAM_Branch_Visit_Planner</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_TSMNAM_Branch_Visit_Planner1 --></label>
+        <name>Conga_Composer_TSMNAM_Branch_Visit_Planner1</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_TSM_Branch_Visit_Planner --></label>
+        <name>Conga_Composer_TSM_Branch_Visit_Planner</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Customer_Stats --></label>
+        <name>Customer_Stats</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- HooversProfile --></label>
+        <name>HooversProfile</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Products_Purchased --></label>
+        <name>Products_Purchased</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Sales_Call_Stats --></label>
+        <name>Sales_Call_Stats</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooMaps --></label>
+        <name>YahooMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Pardot_Emails --></label>
+        <name>pi__Send_Pardot_Emails</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Single_Pardot_Email --></label>
+        <name>pi__Send_Single_Pardot_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_To_Prospect_Insight --></label>
+        <name>pi__Send_To_Prospect_Insight</name>
+    </webLinks>
+</CustomObjectTranslation>

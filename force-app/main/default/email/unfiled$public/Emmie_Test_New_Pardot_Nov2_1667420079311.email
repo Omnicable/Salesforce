@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initialscale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <style type="text/css">/*<![CDATA[*/
+@media screen and (max-width: 480px) {slot[style] {margin-right: 0 !important;}.columnDiv {margin-right: 0 !important;}}@media screen and (min-width: 480px) {slot[style] {margin-bottom: 0 !important;}.columnDiv {margin-bottom: 0 !important;}}
+/*]]>*/</style>
+  <style type="text/css">/*<![CDATA[*/
+@media screen and (max-width: 480px) {.contentbuilderBaseColumnRow .columnCell {display:inline-block;width:100%}}
+/*]]>*/</style>
+  <style type="text/css">/*<![CDATA[*/
+.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 600px;}@media only screen and (max-width: 480px) {.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 320px;}}
+/*]]>*/</style>
+ </head>
+ <body>
+  <div style="display:none;visibility:hidden;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family:sans-serif;" id="contentpage_emailTemplatePreheader">Testing out the new Pardot email drag and drop builder.&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌&#xa0;‌</div>
+  <table class="contentpageDefaultEmailTemplatePageTemplate" style="background-color: #0075c9;" role="presentation" id="contentpage_emailTemplateBodyContent" width="100%" cellpadding="0" cellspacing="0">
+   <tbody>
+    <tr>
+     <td width="100%" align="center">
+      <table class="contentRoot" style="background-color: #FFFFFF;" role="presentation" width="600" cellpadding="0" cellspacing="0">
+       <tbody>
+        <tr>
+         <td style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
+          <table class="contentbuilderBaseColumnRow" style="background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="100%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+               <tbody>
+                <tr>
+                 <td>
+                  <table style="width:100%; border-collapse: collapse; word-break:break-word;" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                   <tbody>
+                    <tr>
+                     <td align="Center"><img style="width: 100%; display: block; border: none; max-width: 45%;" src="{[devName:OMNICABLE_LOGOS_HOLIDAY_150_2]}" alt="" width="270" /></td>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </td>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table class="contentbuilderBaseColumnRow" style="background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="100%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+               <tbody>
+                <tr>
+                 <td>
+                  <table style="width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                   <tbody>
+                    <tr>
+                     <td style="font-family: Arial, Helvetica, sans-serif;">
+                      <div style="text-align: center;">
+                       <span style="font-size:20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&#xa0;</span>
+                      </div>
+                     </td>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </td>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table class="contentbuilderBaseColumnRow" style="background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="33.33%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <div class="columnDiv" style="margin-right: 5px;margin-bottom: 5px;">
+               <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table style="width:100%; border-collapse: collapse; word-break:break-word;" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                    <tbody>
+                     <tr>
+                      <td align="Center"><img style="width: 100%; display: block; border: none; max-width: 60%;" src="{[devName:astro_binoculars]}" alt="" width="116" /></td>
+                     </tr>
+                    </tbody>
+                   </table>
+                  </td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+             </td>
+             <td width="66.66%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+               <tbody>
+                <tr>
+                 <td>
+                  <table style="width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                   <tbody>
+                    <tr>
+                     <td style="font-family: Arial, Helvetica, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      <br />
+                      <br />
+                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </td>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table class="contentbuilderBaseColumnRow" style="background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="66.66%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <div class="columnDiv" style="margin-right: 5px;margin-bottom: 5px;">
+               <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table style="width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                    <tbody>
+                     <tr>
+                      <td style="font-family: Arial, Helvetica, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                       <br />
+                       <br />
+                       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                     </tr>
+                    </tbody>
+                   </table>
+                  </td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+             </td>
+             <td width="33.33%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+               <tbody>
+                <tr>
+                 <td>
+                  <table style="width:100%; border-collapse: collapse; word-break:break-word;" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                   <tbody>
+                    <tr>
+                     <td align="center"><img style="width: 100%; display: block; border: none; max-width: 60%;" src="{[devName:astro_binoculars]}" alt="" width="119" /></td>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </td>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table class="contentbuilderBaseColumnRow" style="background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="100%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+               <tbody>
+                <tr>
+                 <td>
+                  <table style="border: 0; width: 100%; border-collapse: collapse; mso-table-lspace:0pt;mso-table-rspace:0pt;" locked="0">
+                   <tbody>
+                    <tr>
+                     <td style="mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <div style="word-break:break-word; border: 0; mso-border-alt: 0; text-align:center; ">
+                       <div style="display: inline-block; border: 0; mso-border-alt: 0; ">
+                        <a style="direction:ltr;display:block;text-align:center;margin:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; padding-top: 10px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px; color:#ffffff;font-weight:normal;font-style:normal;text-decoration:none;border:0;background-color:#000000;border-radius:0px;mso-padding-alt:0;" href="https://" target="_blank"><!--[if mso]><i style="background-color:#000000; letter-spacing: 20px; mso-text-raise: 10px; mso-font-width: -100%;">&nbsp;</i><![endif]--><span>Button Name</span><!--[if mso]><i style="background-color:#000000; letter-spacing: 20px; mso-text-raise: -10px; mso-font-width: -100%;">&nbsp;</i><![endif]--></a>
+                       </div>
+                      </div>
+                     </td>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </td>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table class="contentbuilderBaseColumnRow" style="background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="100%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+               <tbody>
+                <tr>
+                 <td>
+                  <table style="width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px" id="contentRegion" role="presentation" cellspacing="0" cellpadding="0" locked="0">
+                   <tbody>
+                    <tr>
+                     <td style="font-family: Arial, Helvetica, sans-serif;">
+                      <div style="text-align: center;">
+                       Contact Info #1
+                       <br />
+                       Contact Info #2
+                       <br />
+                       Contact Info #3
+                       <br />
+                       Contact Info #4
+                      </div>
+                     </td>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </td>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table class="contentbuilderBaseColumnRow" style="background-color:;" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+           <tbody>
+            <tr valign="top">
+             <td width="25%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <div class="columnDiv" style="margin-right: 5px;margin-bottom: 5px;">
+               <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table style="font-size:14px; width: 100%; border-collapse: collapse; word-break: break-word;" role="presentation" cellspacing="0" cellpadding="0" id="contentregion" locked="0">
+                    <tbody>
+                     <tr>
+                      <td class="contentbuilder-html" style="padding: 0;">Insert HTML Here</td>
+                     </tr>
+                    </tbody>
+                   </table>
+                  </td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+             </td>
+             <td width="25%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <div class="columnDiv" style="margin-right: 5px;margin-bottom: 5px;">
+               <table style="width: 100%; border-collapse: collapse; word-break:break-word;">
+                <tbody>
+                 <tr>
+                  <td>
+                   <table style="border: 0; width: 100%; border-collapse: collapse; mso-table-lspace:0pt;mso-table-rspace:0pt;" locked="0">
+                    <tbody>
+                     <tr>
+                      <td style="mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                       <div style="word-break:break-word; border: 0; mso-border-alt: 0; text-align:center; ">
+                        <div style="display: inline-block; border: 0; mso-border-alt: 0; ">
+                         <a style="direction:ltr;display:block;text-align:center;margin:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; padding-top: 10px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px; color:#ffffff;font-weight:normal;font-style:normal;text-decoration:none;border:0;background-color:#000000;border-radius:0px;mso-padding-alt:0;" href="https://" target="_blank"><!--[if mso]><i style="background-color:#000000; letter-spacing: 20px; mso-text-raise: 10px; mso-font-width: -100%;">&nbsp;</i><![endif]--><span>Button Name</span><!--[if mso]><i style="background-color:#000000; letter-spacing: 20px; mso-text-raise: -10px; mso-font-width: -100%;">&nbsp;</i><![endif]--></a>
+                        </div>
+                       </div>
+                      </td>
+                     </tr>
+                    </tbody>
+                   </table>
+                  </td>
+                 </tr>
+                </tbody>
+               </table>
+              </div>
+             </td>
+             <td width="25%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <div class="columnDiv" style="margin-right: 5px;margin-bottom: 5px;">
+               <table style="width: 100%; border-collapse: collapse; word-break:break-word;"></table>
+              </div>
+             </td>
+             <td width="25%" class="columnCell" style="vertical-align: top;display: inline-block">
+              <table style="width: 100%; border-collapse: collapse; word-break:break-word;"></table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

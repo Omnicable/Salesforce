@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FIRST CAPITOL SPEC SHEET 
+C61001-01 C61001-02 C61001-03 C61001-04 C61001-05 C61201-01 C61201-02 C61201-03 C61201-04 C61201-05 C61201-08 C61401-01 C61401-02 C61401-03 C61401-04 C61401-05</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>FC PART #&apos;S 10521000 10530500 10531000 10531500 10532500 10510000 10510500 10511000 10511500 10512500 10514000 10490000 10490500 10491000 10491500 10492500</keywords>
+    <name>First Capitol Appliance and Fixture Wire - SRML - SFF-2 - 10,12 &amp;14AWG</name>
+    <public>true</public>
+</Document>

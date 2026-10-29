@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>ユーザがタスクに割り当てられた時に、自動的にユーザにタスクをフォローさせます。</help>
+    <label>自動タスクフォロー</label>
+    <name>Auto_Follow_Task__c</name>
+</CustomFieldTranslation>

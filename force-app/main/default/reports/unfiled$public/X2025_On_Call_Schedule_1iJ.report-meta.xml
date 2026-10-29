@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Projects__c.Activities$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>Projects__c.Activities$Owner</field>
+    </columns>
+    <columns>
+        <field>Projects__c.Activities$Who</field>
+    </columns>
+    <columns>
+        <field>Projects__c.Activities$Name_2__c</field>
+    </columns>
+    <columns>
+        <field>Projects__c.Activities$Subject</field>
+    </columns>
+    <format>Tabular</format>
+    <name>2025 On Call Schedule</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Projects__c.Activities$ActivityDate</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Projects__c.Activities$ActivityDate</dateColumn>
+        <endDate>2025-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2025-01-01</startDate>
+    </timeFrameFilter>
+</Report>

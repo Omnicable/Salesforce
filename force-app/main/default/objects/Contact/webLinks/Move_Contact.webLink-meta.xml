@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Move_Contact</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Move Contact</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/a2S/e?RecordType=0120d000000YLDA&amp;ent=01I32000000Mwut&amp;CF00N32000002pA5t={!Contact.Name}&amp;owner=00532000003iFPkAAM&amp;saveURL=/{!Contact.Id}&amp;cancelURL=/{!Contact.Id}</url>
+</WebLink>

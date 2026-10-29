@@ -641,16 +641,6 @@
             <field>agf__Initials__c</field>
             <table>User</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>sf_devops__Bitbucket_Primary_Email_Address__c</field>
-            <table>User</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>sf_devops__GitHub_Primary_Email_Address__c</field>
-            <table>User</table>
-        </columns>
         <masterLabel>Users</masterLabel>
     </sections>
     <sections>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- GP% Goal --></help>
+    <label><!-- GP% Goal --></label>
+    <name>GP_Goal__c</name>
+</CustomFieldTranslation>

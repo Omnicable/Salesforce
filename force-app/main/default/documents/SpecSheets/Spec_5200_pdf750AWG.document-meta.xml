@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+M71/0ST-01 M72/0ST-01 M73/0ST-01 M74/0ST-01 M7250ST-01 M7350ST-01 M7400ST-01 M7500ST-01 M7600ST-01 M7600ST-01 M7750ST-01</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 288411 629439 687473 321736 309824 935802 840671 592915 369093 878916</keywords>
+    <name>General Cable Building Wire - XHHW-2  1/0-750AWG</name>
+    <public>true</public>
+</Document>

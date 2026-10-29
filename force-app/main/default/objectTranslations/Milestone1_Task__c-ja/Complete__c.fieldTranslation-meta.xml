@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このタスクの完了状態。</help>
+    <label>完了</label>
+    <name>Complete__c</name>
+</CustomFieldTranslation>

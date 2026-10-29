@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Phone/Email Touch</fullName>
+        <default>true</default>
+        <label>Phone/Email Touch</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Visit Touch</fullName>
+        <default>false</default>
+        <label>Visit Touch</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+</StandardValueSet>

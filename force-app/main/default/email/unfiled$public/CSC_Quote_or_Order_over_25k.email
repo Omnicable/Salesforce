@@ -1,0 +1,11 @@
+{!QuotesOrdersCredits_Header__c.Type__c} over $25k has been entered by {!QuotesOrdersCredits_Header__c.Entered_By__c}
+
+{!QuotesOrdersCredits_Header__c.Type__c} # {!QuotesOrdersCredits_Header__c.Name}
+Customer: {!QuotesOrdersCredits_Header__c.Customer_Name__c}
+Buyer: {!QuotesOrdersCredits_Header__c.Buyer__c}
+Total: ${!QuotesOrdersCredits_Header__c.Total_Order_Sales__c}
+Job Reference: {!QuotesOrdersCredits_Header__c.Job_Reference__c}
+
+Account Owner: {!QuotesOrdersCredits_Header__c.Inside_AM_Name__c}
+
+Click here to view the order in Salesforce: https://omnicable.my.salesforce.com/{!QuotesOrdersCredits_Header__c.Id}

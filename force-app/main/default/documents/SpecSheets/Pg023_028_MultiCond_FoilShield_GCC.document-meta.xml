@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+G111810 G111812</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C2543A C2518A C2519A C2521A C2520A C3158 C3159 C3060 C3061 C3062 C3064 C3063 C3065 C3183 C3184 C3068</keywords>
+    <name>General Cable Plenum Control Cable - Shielded - Plenum - 16-22AWG</name>
+    <public>true</public>
+</Document>

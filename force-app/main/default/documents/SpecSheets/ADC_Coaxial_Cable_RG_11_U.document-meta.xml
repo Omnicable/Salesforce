@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>ADC SPEC SHEET
+ADC # 4111PE, Omni # E31105</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>ADC # 4111PE, Omni # E31105</keywords>
+    <name>ADC - Coaxial Cable - RG 11/U</name>
+    <public>true</public>
+</Document>

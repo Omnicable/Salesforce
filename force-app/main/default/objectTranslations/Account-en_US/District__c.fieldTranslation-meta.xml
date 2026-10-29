@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Customer Buying Group Hierarchy --></help>
+    <label><!-- District --></label>
+    <name>District__c</name>
+    <picklistValues>
+        <masterLabel>Alabama / Tennessee</masterLabel>
+        <translation><!-- Alabama / Tennessee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Alaska</masterLabel>
+        <translation><!-- Alaska --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Amarillo</masterLabel>
+        <translation><!-- Amarillo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>American Electric Supply</masterLabel>
+        <translation><!-- American Electric Supply --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Arizona</masterLabel>
+        <translation><!-- Arizona --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Arkansas</masterLabel>
+        <translation><!-- Arkansas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assembly</masterLabel>
+        <translation><!-- Assembly --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Atlanta</masterLabel>
+        <translation><!-- Atlanta --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Atlanta Metro</masterLabel>
+        <translation><!-- Atlanta Metro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Atlanta North East</masterLabel>
+        <translation><!-- Atlanta North East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Atlanta North West</masterLabel>
+        <translation><!-- Atlanta North West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Atlanta South</masterLabel>
+        <translation><!-- Atlanta South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Austin</masterLabel>
+        <translation><!-- Austin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Austin East</masterLabel>
+        <translation><!-- Austin East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Austin West</masterLabel>
+        <translation><!-- Austin West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Birmingham</masterLabel>
+        <translation><!-- Birmingham --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blazer</masterLabel>
+        <translation><!-- Blazer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boston</masterLabel>
+        <translation><!-- Boston --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boston North</masterLabel>
+        <translation><!-- Boston North --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boston Northwest</masterLabel>
+        <translation><!-- Boston Northwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boston South</masterLabel>
+        <translation><!-- Boston South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Broken Arrow Electric Supply</masterLabel>
+        <translation><!-- Broken Arrow Electric Supply --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Broward</masterLabel>
+        <translation><!-- Broward --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>C-b East</masterLabel>
+        <translation><!-- C-b East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>C-b West</masterLabel>
+        <translation><!-- C-b West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CES Online</masterLabel>
+        <translation><!-- CES Online --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CO/UT</masterLabel>
+        <translation><!-- CO/UT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CO/UT/MT/WY</masterLabel>
+        <translation><!-- CO/UT/MT/WY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CSC Central Upper</masterLabel>
+        <translation><!-- CSC Central Upper --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>California</masterLabel>
+        <translation><!-- California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Calvert</masterLabel>
+        <translation><!-- Calvert --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cape</masterLabel>
+        <translation><!-- Cape --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cape &amp; Islands</masterLabel>
+        <translation><!-- Cape &amp; Islands --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Capital Projects</masterLabel>
+        <translation><!-- Capital Projects --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Carlton-Bates</masterLabel>
+        <translation><!-- Carlton-Bates --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Carolinas</masterLabel>
+        <translation><!-- Carolinas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central / East TX</masterLabel>
+        <translation><!-- Central / East TX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central California</masterLabel>
+        <translation><!-- Central California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central Datacom</masterLabel>
+        <translation><!-- Central Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central East</masterLabel>
+        <translation><!-- Central East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central Illinois</masterLabel>
+        <translation><!-- Central Illinois --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central Louisiana</masterLabel>
+        <translation><!-- Central Louisiana --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central Piedmont</masterLabel>
+        <translation><!-- Central Piedmont --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central West</masterLabel>
+        <translation><!-- Central West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Charleston</masterLabel>
+        <translation><!-- Charleston --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Charleston South</masterLabel>
+        <translation><!-- Charleston South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Charlotte</masterLabel>
+        <translation><!-- Charlotte --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chicago</masterLabel>
+        <translation><!-- Chicago --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chicago North</masterLabel>
+        <translation><!-- Chicago North --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chicago South</masterLabel>
+        <translation><!-- Chicago South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chicago West</masterLabel>
+        <translation><!-- Chicago West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cincinnati</masterLabel>
+        <translation><!-- Cincinnati --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colorado</masterLabel>
+        <translation><!-- Colorado --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colorado Mountain</masterLabel>
+        <translation><!-- Colorado Mountain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colorado North</masterLabel>
+        <translation><!-- Colorado North --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colorado South</masterLabel>
+        <translation><!-- Colorado South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colorado-Utah</masterLabel>
+        <translation><!-- Colorado-Utah --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Columbia</masterLabel>
+        <translation><!-- Columbia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Columbus</masterLabel>
+        <translation><!-- Columbus --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Connexion</masterLabel>
+        <translation><!-- Connexion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate</masterLabel>
+        <translation><!-- Corporate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate Solutions</masterLabel>
+        <translation><!-- Corporate Solutions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dallas</masterLabel>
+        <translation><!-- Dallas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dallas North</masterLabel>
+        <translation><!-- Dallas North --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dallas/Ft Worth</masterLabel>
+        <translation><!-- Dallas/Ft Worth --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Datacom Florida</masterLabel>
+        <translation><!-- Datacom Florida --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Daytona Beach</masterLabel>
+        <translation><!-- Daytona Beach --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delaware/New Jersey</masterLabel>
+        <translation><!-- Delaware/New Jersey --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delta (MS, LA, AR)</masterLabel>
+        <translation><!-- Delta (MS, LA, AR) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Denver</masterLabel>
+        <translation><!-- Denver --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Detroit</masterLabel>
+        <translation><!-- Detroit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>East</masterLabel>
+        <translation><!-- East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Elmhurst</masterLabel>
+        <translation><!-- Elmhurst --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fargo</masterLabel>
+        <translation><!-- Fargo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Florida - EESCO</masterLabel>
+        <translation><!-- Florida - EESCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Florida / Georgia</masterLabel>
+        <translation><!-- Florida / Georgia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fort Myers</masterLabel>
+        <translation><!-- Fort Myers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fort Worth</masterLabel>
+        <translation><!-- Fort Worth --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Georgia District - EESCO</masterLabel>
+        <translation><!-- Georgia District - EESCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Government Solutions</masterLabel>
+        <translation><!-- Government Solutions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Great Lakes</masterLabel>
+        <translation><!-- Great Lakes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Great Lakes Datacom</masterLabel>
+        <translation><!-- Great Lakes Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greenville</masterLabel>
+        <translation><!-- Greenville --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gulf Coast</masterLabel>
+        <translation><!-- Gulf Coast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gulf Datacom</masterLabel>
+        <translation><!-- Gulf Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HC Austin</masterLabel>
+        <translation><!-- HC Austin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HC San Antonio</masterLabel>
+        <translation><!-- HC San Antonio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hamby-Young</masterLabel>
+        <translation><!-- Hamby-Young --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hammond - Eesco</masterLabel>
+        <translation><!-- Hammond - Eesco --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hawaii</masterLabel>
+        <translation><!-- Hawaii --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hickory</masterLabel>
+        <translation><!-- Hickory --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hill Country</masterLabel>
+        <translation><!-- Hill Country --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Houston</masterLabel>
+        <translation><!-- Houston --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Houston District</masterLabel>
+        <translation><!-- Houston District --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Houston North</masterLabel>
+        <translation><!-- Houston North --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Houston Project District</masterLabel>
+        <translation><!-- Houston Project District --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Houston South</masterLabel>
+        <translation><!-- Houston South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IA/NE/MN</masterLabel>
+        <translation><!-- IA/NE/MN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ignore</masterLabel>
+        <translation><!-- Ignore --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Indiana</masterLabel>
+        <translation><!-- Indiana --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Indianapolis</masterLabel>
+        <translation><!-- Indianapolis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Infrastructure Solutions</masterLabel>
+        <translation><!-- Infrastructure Solutions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inland Empire</masterLabel>
+        <translation><!-- Inland Empire --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jacksonville</masterLabel>
+        <translation><!-- Jacksonville --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jacksonville Central</masterLabel>
+        <translation><!-- Jacksonville Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jacksonville East</masterLabel>
+        <translation><!-- Jacksonville East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kansas City</masterLabel>
+        <translation><!-- Kansas City --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kansas City East</masterLabel>
+        <translation><!-- Kansas City East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kansas City West</masterLabel>
+        <translation><!-- Kansas City West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Knoxville</masterLabel>
+        <translation><!-- Knoxville --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LA Gulf Coast</masterLabel>
+        <translation><!-- LA Gulf Coast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lafayette</masterLabel>
+        <translation><!-- Lafayette --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake City</masterLabel>
+        <translation><!-- Lake City --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Land O&apos;Lakes</masterLabel>
+        <translation><!-- Land O&apos;Lakes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Las Vegas</masterLabel>
+        <translation><!-- Las Vegas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Los Angeles</masterLabel>
+        <translation><!-- Los Angeles --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MT/WY</masterLabel>
+        <translation><!-- MT/WY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manufactured Structures</masterLabel>
+        <translation><!-- Manufactured Structures --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marine Solutions</masterLabel>
+        <translation><!-- Marine Solutions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Media Marketing</masterLabel>
+        <translation><!-- Media Marketing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Memphis</masterLabel>
+        <translation><!-- Memphis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Metro</masterLabel>
+        <translation><!-- Metro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Metro New York</masterLabel>
+        <translation><!-- Metro New York --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mex Undefined</masterLabel>
+        <translation><!-- Mex Undefined --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miami Central</masterLabel>
+        <translation><!-- Miami Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miami East</masterLabel>
+        <translation><!-- Miami East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miami West</masterLabel>
+        <translation><!-- Miami West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Michigan</masterLabel>
+        <translation><!-- Michigan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Michigan East</masterLabel>
+        <translation><!-- Michigan East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mid Atlantic</masterLabel>
+        <translation><!-- Mid Atlantic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mid-Atlantic</masterLabel>
+        <translation><!-- Mid-Atlantic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mid-South East</masterLabel>
+        <translation><!-- Mid-South East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Midwest Datacom</masterLabel>
+        <translation><!-- Midwest Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Milwaukee</masterLabel>
+        <translation><!-- Milwaukee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Minneapolis</masterLabel>
+        <translation><!-- Minneapolis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Minnesota</masterLabel>
+        <translation><!-- Minnesota --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Missouri</masterLabel>
+        <translation><!-- Missouri --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mokan</masterLabel>
+        <translation><!-- Mokan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Montana-Wyoming</masterLabel>
+        <translation><!-- Montana-Wyoming --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mountain</masterLabel>
+        <translation><!-- Mountain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NE Datacom</masterLabel>
+        <translation><!-- NE Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nashville</masterLabel>
+        <translation><!-- Nashville --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nashville East</masterLabel>
+        <translation><!-- Nashville East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nashville North</masterLabel>
+        <translation><!-- Nashville North --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nashville South</masterLabel>
+        <translation><!-- Nashville South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nashville West</masterLabel>
+        <translation><!-- Nashville West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nebraska</masterLabel>
+        <translation><!-- Nebraska --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Needham</masterLabel>
+        <translation><!-- Needham --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Needham North</masterLabel>
+        <translation><!-- Needham North --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Needham South</masterLabel>
+        <translation><!-- Needham South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New England</masterLabel>
+        <translation><!-- New England --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New York</masterLabel>
+        <translation><!-- New York --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No California</masterLabel>
+        <translation><!-- No California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Central</masterLabel>
+        <translation><!-- North Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Georgia</masterLabel>
+        <translation><!-- North Georgia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Miami</masterLabel>
+        <translation><!-- North Miami --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Palm Beach</masterLabel>
+        <translation><!-- North Palm Beach --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Texas</masterLabel>
+        <translation><!-- North Texas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North West</masterLabel>
+        <translation><!-- North West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern</masterLabel>
+        <translation><!-- Northern --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern California</masterLabel>
+        <translation><!-- Northern California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern Indiana</masterLabel>
+        <translation><!-- Northern Indiana --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern Louisiana</masterLabel>
+        <translation><!-- Northern Louisiana --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern Mexico</masterLabel>
+        <translation><!-- Northern Mexico --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern Ohio</masterLabel>
+        <translation><!-- Northern Ohio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northwest</masterLabel>
+        <translation><!-- Northwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northwest Datacom</masterLabel>
+        <translation><!-- Northwest Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ocala</masterLabel>
+        <translation><!-- Ocala --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ohio</masterLabel>
+        <translation><!-- Ohio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oklahoma</masterLabel>
+        <translation><!-- Oklahoma --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orlando</masterLabel>
+        <translation><!-- Orlando --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orlando East</masterLabel>
+        <translation><!-- Orlando East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ozark</masterLabel>
+        <translation><!-- Ozark --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pacific NW</masterLabel>
+        <translation><!-- Pacific NW --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palm Beach</masterLabel>
+        <translation><!-- Palm Beach --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pennsylvania</masterLabel>
+        <translation><!-- Pennsylvania --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pensacola</masterLabel>
+        <translation><!-- Pensacola --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Philadelphia</masterLabel>
+        <translation><!-- Philadelphia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Philadelphia West</masterLabel>
+        <translation><!-- Philadelphia West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Phoenix</masterLabel>
+        <translation><!-- Phoenix --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Phoenix East</masterLabel>
+        <translation><!-- Phoenix East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Phoenix West</masterLabel>
+        <translation><!-- Phoenix West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Piedmont</masterLabel>
+        <translation><!-- Piedmont --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pittsburgh</masterLabel>
+        <translation><!-- Pittsburgh --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plains</masterLabel>
+        <translation><!-- Plains --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Portland</masterLabel>
+        <translation><!-- Portland --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Puerto Rico</masterLabel>
+        <translation><!-- Puerto Rico --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Raleigh Central</masterLabel>
+        <translation><!-- Raleigh Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Raleigh East</masterLabel>
+        <translation><!-- Raleigh East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Raleigh West</masterLabel>
+        <translation><!-- Raleigh West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reco</masterLabel>
+        <translation><!-- Reco --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reco West</masterLabel>
+        <translation><!-- Reco West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Richmond</masterLabel>
+        <translation><!-- Richmond --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roanoke Valley</masterLabel>
+        <translation><!-- Roanoke Valley --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rockford - EESCO</masterLabel>
+        <translation><!-- Rockford - EESCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SE Datacom</masterLabel>
+        <translation><!-- SE Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>San Antonio</masterLabel>
+        <translation><!-- San Antonio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>San Diego</masterLabel>
+        <translation><!-- San Diego --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sandhills</masterLabel>
+        <translation><!-- Sandhills --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Savannah</masterLabel>
+        <translation><!-- Savannah --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seattle</masterLabel>
+        <translation><!-- Seattle --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shepherd</masterLabel>
+        <translation><!-- Shepherd --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sioux City</masterLabel>
+        <translation><!-- Sioux City --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Smoky Mountain</masterLabel>
+        <translation><!-- Smoky Mountain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Carolina - EESCO</masterLabel>
+        <translation><!-- South Carolina - EESCO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Central</masterLabel>
+        <translation><!-- South Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Georgia</masterLabel>
+        <translation><!-- South Georgia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Miami</masterLabel>
+        <translation><!-- South Miami --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Palm Beach</masterLabel>
+        <translation><!-- South Palm Beach --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South-Costal</masterLabel>
+        <translation><!-- South-Costal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South-East</masterLabel>
+        <translation><!-- South-East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southeast</masterLabel>
+        <translation><!-- Southeast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southeast Piedmont</masterLabel>
+        <translation><!-- Southeast Piedmont --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southeast Texas</masterLabel>
+        <translation><!-- Southeast Texas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southern</masterLabel>
+        <translation><!-- Southern --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southern California</masterLabel>
+        <translation><!-- Southern California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southern Louisiana</masterLabel>
+        <translation><!-- Southern Louisiana --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southern Mexico</masterLabel>
+        <translation><!-- Southern Mexico --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southern Ohio</masterLabel>
+        <translation><!-- Southern Ohio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southwest</masterLabel>
+        <translation><!-- Southwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southwest Datacom</masterLabel>
+        <translation><!-- Southwest Datacom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spartanburg</masterLabel>
+        <translation><!-- Spartanburg --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>St. Louis</masterLabel>
+        <translation><!-- St. Louis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Strategic Accounts</masterLabel>
+        <translation><!-- Strategic Accounts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suncoast</masterLabel>
+        <translation><!-- Suncoast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TVC Corporate</masterLabel>
+        <translation><!-- TVC Corporate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tampa</masterLabel>
+        <translation><!-- Tampa --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Treasure Coast</masterLabel>
+        <translation><!-- Treasure Coast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Triad</masterLabel>
+        <translation><!-- Triad --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tucson</masterLabel>
+        <translation><!-- Tucson --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Undefined</masterLabel>
+        <translation><!-- Undefined --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vikimatic</masterLabel>
+        <translation><!-- Vikimatic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Virginia Central</masterLabel>
+        <translation><!-- Virginia Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Virginia East</masterLabel>
+        <translation><!-- Virginia East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>W. PA / WV</masterLabel>
+        <translation><!-- W. PA / WV --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WDM USA Branches</masterLabel>
+        <translation><!-- WDM USA Branches --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WI/C. Il</masterLabel>
+        <translation><!-- WI/C. Il --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washington</masterLabel>
+        <translation><!-- Washington --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washington South</masterLabel>
+        <translation><!-- Washington South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Washington/Oregon/Idaho</masterLabel>
+        <translation><!-- Washington/Oregon/Idaho --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>West Texas</masterLabel>
+        <translation><!-- West Texas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western</masterLabel>
+        <translation><!-- Western --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western Mountain</masterLabel>
+        <translation><!-- Western Mountain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western NY</masterLabel>
+        <translation><!-- Western NY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western New York</masterLabel>
+        <translation><!-- Western New York --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wisconsin</masterLabel>
+        <translation><!-- Wisconsin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>n/a (Crescent)</masterLabel>
+        <translation><!-- n/a (Crescent) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

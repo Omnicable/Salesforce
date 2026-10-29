@@ -1,0 +1,3 @@
+<design:component label="QOC Tabs">
+	<design:attribute name="type" datasource="Release,Order,Inventory" description="Type of QOC used in this tab" />
+</design:component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is your starting gross profit when your quote/order is entered into OPUS.  Consider all of the factors below before quoting your customer to ensure that you are covering all costs. --></help>
+    <label><!-- GP Dollars --></label>
+    <name>GP_Dollars__c</name>
+</CustomFieldTranslation>

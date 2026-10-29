@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Capital_Project__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox to determine if the opportunity qualifies as a capital project, generally over 1 million</description>
+    <label>Capital Project</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dont_Allow_Enabling_Users</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT($Permission.Portal_Manage_External_Users)&amp;&amp;
+$User.UserRoleId &lt;&gt; &apos;00E600000017k9b&apos; &amp;&amp;
+$User.ProfileId &lt;&gt; &apos;00e60000001BUtM&apos;</errorConditionFormula>
+    <errorMessage>You are currently blocked from enabling or disabling portal users. If you would like to be able to create new portal users, please email portal@omnicable.com.</errorMessage>
+</ValidationRule>

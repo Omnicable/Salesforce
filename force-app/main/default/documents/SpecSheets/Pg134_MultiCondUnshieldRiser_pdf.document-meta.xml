@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+DS92202 DS92203 DS92204 DS92206 DS92208 DS92002 DS91802 DS91803 DS91804 DS91806 DS91602 DS91604 DS91402 DS91404 DS91202</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S E1000S E1001S E1002S E1003S E1003S E1006S E1008S E1010S E1012S E1022S E1023S E1024S E1030S E1032S E1033S E1034S E1036S E1038S E1040S E1041S E1042S E1043S E1044S E1052S E1054S E1062S E1064S</keywords>
+    <name>Security and Alarm Cable - Nonshielded - PVC - 12-22AWG</name>
+    <public>true</public>
+</Document>

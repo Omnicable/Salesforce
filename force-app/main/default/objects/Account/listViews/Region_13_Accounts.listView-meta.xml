@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_13_Accounts</fullName>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Number__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Sales_Current_Year__c</columns>
+    <columns>Sales_Year_Prior__c</columns>
+    <columns>Wire_Cable_Potential__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Outside_Salesperson__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region_Number__c</field>
+        <operation>equals</operation>
+        <value>13</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <label>Region 13 Accounts</label>
+    <sharedTo>
+        <group>Region7</group>
+        <group>Region7RMs</group>
+        <group>Region_13</group>
+        <group>Region_13_RMs</group>
+        <role>Administrator</role>
+    </sharedTo>
+</ListView>

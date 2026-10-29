@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>親マイルストーンのタスクから算出した推定費用</help>
+    <label>タスクからの推定費用</label>
+    <name>Estimated_Expense_From_Tasks__c</name>
+</CustomFieldTranslation>

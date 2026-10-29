@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Used to show which PO&apos;s to display on Request Release page --></help>
+    <label><!-- Portal PO Selector --></label>
+    <name>Portal_PO_Selector__c</name>
+    <picklistValues>
+        <masterLabel>979602</masterLabel>
+        <translation><!-- 979602 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>979603</masterLabel>
+        <translation><!-- 979603 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

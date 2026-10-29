@@ -1,0 +1,8 @@
+Name: {!Cases_Requests__c.Contact__c}
+Reason: {!Cases_Requests__c.Reason__c}
+Amount: {!Cases_Requests__c.Tango_Card_Amount__c}
+
+Status: {!Cases_Requests__c.Status__c}
+Completion Date: {!Cases_Requests__c.Completion_Date_Time__c}
+
+To view your request, click here https://omnicable.my.salesforce.com/{!Cases_Requests__c.Id}

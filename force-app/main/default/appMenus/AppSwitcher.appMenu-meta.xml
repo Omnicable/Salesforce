@@ -412,4 +412,20 @@
         <name>Ecom_Integration_API</name>
         <type>ExternalClientApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>standard__IndustriesEpc</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>standard__IndustriesEcm</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>EcommerceSiteApp</name>
+        <type>ExternalClientApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>CoPilot_for_Salesforce</name>
+        <type>ExternalClientApplication</type>
+    </appMenuItems>
 </AppMenu>

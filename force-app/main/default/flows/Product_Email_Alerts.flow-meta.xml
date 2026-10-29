@@ -134,7 +134,7 @@
                 <targetReference>Get_Header_Record_Field_Values</targetReference>
             </connector>
             <label>Delay for Product Rollup Fields Calculation</label>
-            <offsetNumber>5</offsetNumber>
+            <offsetNumber>3</offsetNumber>
             <offsetUnit>Minutes</offsetUnit>
             <timeSource>RecordTriggerEvent</timeSource>
         </scheduledPaths>

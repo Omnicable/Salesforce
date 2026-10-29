@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><font face="arial" size="2">A quote has been entered for {!QuotesOrdersCredits_Header__c.Customer_Name__c}</font></div><div style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><font face="arial" size="2"><br></font></div><div style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><font face="arial" size="2">Quote # {!QuotesOrdersCredits_Header__c.Order_Number__c}</font></div><div style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><font face="arial" size="2">{!QuotesOrdersCredits_Header__c.TotalDollars__c}</font></div><div style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><font face="arial" size="2">{!QuotesOrdersCredits_Header__c.Buyer__c}</font></div><div style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><font face="arial" size="2"><br></font></div><div><font face="arial" size="2">Click here to view the quote: https://omnicable.my.salesforce.com/{!QuotesOrdersCredits_Header__c.Id}</font></div>]]></td>
+</tr>
+</table>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>ブロックされているこのプロジェクトのタスク数</help>
+    <label>総ブロックタスク数</label>
+    <name>Total_Blocked_Task_Count__c</name>
+</CustomFieldTranslation>

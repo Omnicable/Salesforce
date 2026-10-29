@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>TFC # T10500JB, Omni # EP3500</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>TFC # T10500JB, Omni # EP3500</keywords>
+    <name>TFC - Coaxial Cable - Underground Trunk Cable</name>
+    <public>true</public>
+</Document>

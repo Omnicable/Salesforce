@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Responsibility --></label>
+    <name>Responsibility__c</name>
+    <picklistValues>
+        <masterLabel>Cust</masterLabel>
+        <translation><!-- Cust --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Frt</masterLabel>
+        <translation><!-- Frt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sale</masterLabel>
+        <translation><!-- Sale --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unk</masterLabel>
+        <translation><!-- Unk --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vndr</masterLabel>
+        <translation><!-- Vndr --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Whse</masterLabel>
+        <translation><!-- Whse --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

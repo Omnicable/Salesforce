@@ -1,0 +1,2253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>District__c</fullName>
+    <description>Customer Buying Group Hierarchy</description>
+    <inlineHelpText>Customer Buying Group Hierarchy</inlineHelpText>
+    <label>District</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Region__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Alabama / Tennessee</fullName>
+                <default>false</default>
+                <label>Alabama / Tennessee</label>
+            </value>
+            <value>
+                <fullName>Alaska</fullName>
+                <default>false</default>
+                <label>Alaska</label>
+            </value>
+            <value>
+                <fullName>Amarillo</fullName>
+                <default>false</default>
+                <label>Amarillo</label>
+            </value>
+            <value>
+                <fullName>American Electric Supply</fullName>
+                <default>false</default>
+                <label>American Electric Supply</label>
+            </value>
+            <value>
+                <fullName>Arizona</fullName>
+                <default>false</default>
+                <label>Arizona</label>
+            </value>
+            <value>
+                <fullName>Arkansas</fullName>
+                <default>false</default>
+                <label>Arkansas</label>
+            </value>
+            <value>
+                <fullName>Assembly</fullName>
+                <default>false</default>
+                <label>Assembly</label>
+            </value>
+            <value>
+                <fullName>Atlanta</fullName>
+                <default>false</default>
+                <label>Atlanta</label>
+            </value>
+            <value>
+                <fullName>Atlanta Metro</fullName>
+                <default>false</default>
+                <label>Atlanta Metro</label>
+            </value>
+            <value>
+                <fullName>Atlanta North East</fullName>
+                <default>false</default>
+                <label>Atlanta North East</label>
+            </value>
+            <value>
+                <fullName>Atlanta North West</fullName>
+                <default>false</default>
+                <label>Atlanta North West</label>
+            </value>
+            <value>
+                <fullName>Atlanta South</fullName>
+                <default>false</default>
+                <label>Atlanta South</label>
+            </value>
+            <value>
+                <fullName>Austin</fullName>
+                <default>false</default>
+                <label>Austin</label>
+            </value>
+            <value>
+                <fullName>Austin East</fullName>
+                <default>false</default>
+                <label>Austin East</label>
+            </value>
+            <value>
+                <fullName>Austin West</fullName>
+                <default>false</default>
+                <label>Austin West</label>
+            </value>
+            <value>
+                <fullName>Birmingham</fullName>
+                <default>false</default>
+                <label>Birmingham</label>
+            </value>
+            <value>
+                <fullName>Blazer</fullName>
+                <default>false</default>
+                <label>Blazer</label>
+            </value>
+            <value>
+                <fullName>Boston</fullName>
+                <default>false</default>
+                <label>Boston</label>
+            </value>
+            <value>
+                <fullName>Boston North</fullName>
+                <default>false</default>
+                <label>Boston North</label>
+            </value>
+            <value>
+                <fullName>Boston Northwest</fullName>
+                <default>false</default>
+                <label>Boston Northwest</label>
+            </value>
+            <value>
+                <fullName>Boston South</fullName>
+                <default>false</default>
+                <label>Boston South</label>
+            </value>
+            <value>
+                <fullName>Broken Arrow Electric Supply</fullName>
+                <default>false</default>
+                <label>Broken Arrow Electric Supply</label>
+            </value>
+            <value>
+                <fullName>Broward</fullName>
+                <default>false</default>
+                <label>Broward</label>
+            </value>
+            <value>
+                <fullName>California</fullName>
+                <default>false</default>
+                <label>California</label>
+            </value>
+            <value>
+                <fullName>Calvert</fullName>
+                <default>false</default>
+                <label>Calvert</label>
+            </value>
+            <value>
+                <fullName>Cape</fullName>
+                <default>false</default>
+                <label>Cape</label>
+            </value>
+            <value>
+                <fullName>Cape &amp; Islands</fullName>
+                <default>false</default>
+                <label>Cape &amp; Islands</label>
+            </value>
+            <value>
+                <fullName>Capital Projects</fullName>
+                <default>false</default>
+                <label>Capital Projects</label>
+            </value>
+            <value>
+                <fullName>Carlton-Bates</fullName>
+                <default>false</default>
+                <label>Carlton-Bates</label>
+            </value>
+            <value>
+                <fullName>Carolinas</fullName>
+                <default>false</default>
+                <label>Carolinas</label>
+            </value>
+            <value>
+                <fullName>C-b East</fullName>
+                <default>false</default>
+                <label>C-b East</label>
+            </value>
+            <value>
+                <fullName>C-b West</fullName>
+                <default>false</default>
+                <label>C-b West</label>
+            </value>
+            <value>
+                <fullName>Central / East TX</fullName>
+                <default>false</default>
+                <label>Central / East TX</label>
+            </value>
+            <value>
+                <fullName>Central California</fullName>
+                <default>false</default>
+                <label>Central California</label>
+            </value>
+            <value>
+                <fullName>Central Datacom</fullName>
+                <default>false</default>
+                <label>Central Datacom</label>
+            </value>
+            <value>
+                <fullName>Central East</fullName>
+                <default>false</default>
+                <label>Central East</label>
+            </value>
+            <value>
+                <fullName>Central Illinois</fullName>
+                <default>false</default>
+                <label>Central Illinois</label>
+            </value>
+            <value>
+                <fullName>Central Louisiana</fullName>
+                <default>false</default>
+                <label>Central Louisiana</label>
+            </value>
+            <value>
+                <fullName>Central Piedmont</fullName>
+                <default>false</default>
+                <label>Central Piedmont</label>
+            </value>
+            <value>
+                <fullName>Central West</fullName>
+                <default>false</default>
+                <label>Central West</label>
+            </value>
+            <value>
+                <fullName>CES Online</fullName>
+                <default>false</default>
+                <label>CES Online</label>
+            </value>
+            <value>
+                <fullName>Charleston</fullName>
+                <default>false</default>
+                <label>Charleston</label>
+            </value>
+            <value>
+                <fullName>Charleston South</fullName>
+                <default>false</default>
+                <label>Charleston South</label>
+            </value>
+            <value>
+                <fullName>Charlotte</fullName>
+                <default>false</default>
+                <label>Charlotte</label>
+            </value>
+            <value>
+                <fullName>Chicago</fullName>
+                <default>false</default>
+                <label>Chicago</label>
+            </value>
+            <value>
+                <fullName>Chicago North</fullName>
+                <default>false</default>
+                <label>Chicago North</label>
+            </value>
+            <value>
+                <fullName>Chicago South</fullName>
+                <default>false</default>
+                <label>Chicago South</label>
+            </value>
+            <value>
+                <fullName>Chicago West</fullName>
+                <default>false</default>
+                <label>Chicago West</label>
+            </value>
+            <value>
+                <fullName>Cincinnati</fullName>
+                <default>false</default>
+                <label>Cincinnati</label>
+            </value>
+            <value>
+                <fullName>CO/UT</fullName>
+                <default>false</default>
+                <label>CO/UT</label>
+            </value>
+            <value>
+                <fullName>CO/UT/MT/WY</fullName>
+                <default>false</default>
+                <label>CO/UT/MT/WY</label>
+            </value>
+            <value>
+                <fullName>Colorado</fullName>
+                <default>false</default>
+                <label>Colorado</label>
+            </value>
+            <value>
+                <fullName>Colorado Mountain</fullName>
+                <default>false</default>
+                <label>Colorado Mountain</label>
+            </value>
+            <value>
+                <fullName>Colorado North</fullName>
+                <default>false</default>
+                <label>Colorado North</label>
+            </value>
+            <value>
+                <fullName>Colorado South</fullName>
+                <default>false</default>
+                <label>Colorado South</label>
+            </value>
+            <value>
+                <fullName>Colorado-Utah</fullName>
+                <default>false</default>
+                <label>Colorado-Utah</label>
+            </value>
+            <value>
+                <fullName>Columbia</fullName>
+                <default>false</default>
+                <label>Columbia</label>
+            </value>
+            <value>
+                <fullName>Columbus</fullName>
+                <default>false</default>
+                <label>Columbus</label>
+            </value>
+            <value>
+                <fullName>Connexion</fullName>
+                <default>false</default>
+                <label>Connexion</label>
+            </value>
+            <value>
+                <fullName>National Call Center</fullName>
+                <default>false</default>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>Corporate Solutions</fullName>
+                <default>false</default>
+                <label>Corporate Solutions</label>
+            </value>
+            <value>
+                <fullName>CSC Central Upper</fullName>
+                <default>false</default>
+                <label>CSC Central Upper</label>
+            </value>
+            <value>
+                <fullName>Dallas</fullName>
+                <default>false</default>
+                <label>Dallas</label>
+            </value>
+            <value>
+                <fullName>Dallas/Ft Worth</fullName>
+                <default>false</default>
+                <label>Dallas/Ft Worth</label>
+            </value>
+            <value>
+                <fullName>Dallas North</fullName>
+                <default>false</default>
+                <label>Dallas North</label>
+            </value>
+            <value>
+                <fullName>Datacom Florida</fullName>
+                <default>false</default>
+                <label>Datacom Florida</label>
+            </value>
+            <value>
+                <fullName>Daytona Beach</fullName>
+                <default>false</default>
+                <label>Daytona Beach</label>
+            </value>
+            <value>
+                <fullName>Delaware/New Jersey</fullName>
+                <default>false</default>
+                <label>Delaware/New Jersey</label>
+            </value>
+            <value>
+                <fullName>Delta (MS, LA, AR)</fullName>
+                <default>false</default>
+                <label>Delta (MS, LA, AR)</label>
+            </value>
+            <value>
+                <fullName>Denver</fullName>
+                <default>false</default>
+                <label>Denver</label>
+            </value>
+            <value>
+                <fullName>Detroit</fullName>
+                <default>false</default>
+                <label>Detroit</label>
+            </value>
+            <value>
+                <fullName>East</fullName>
+                <default>false</default>
+                <label>East</label>
+            </value>
+            <value>
+                <fullName>Elmhurst</fullName>
+                <default>false</default>
+                <label>Elmhurst</label>
+            </value>
+            <value>
+                <fullName>Fargo</fullName>
+                <default>false</default>
+                <label>Fargo</label>
+            </value>
+            <value>
+                <fullName>Florida / Georgia</fullName>
+                <default>false</default>
+                <label>Florida / Georgia</label>
+            </value>
+            <value>
+                <fullName>Florida - EESCO</fullName>
+                <default>false</default>
+                <label>Florida - EESCO</label>
+            </value>
+            <value>
+                <fullName>Fort Myers</fullName>
+                <default>false</default>
+                <label>Fort Myers</label>
+            </value>
+            <value>
+                <fullName>Fort Worth</fullName>
+                <default>false</default>
+                <label>Fort Worth</label>
+            </value>
+            <value>
+                <fullName>Georgia District - EESCO</fullName>
+                <default>false</default>
+                <label>Georgia District - EESCO</label>
+            </value>
+            <value>
+                <fullName>Government Solutions</fullName>
+                <default>false</default>
+                <label>Government Solutions</label>
+            </value>
+            <value>
+                <fullName>Great Lakes</fullName>
+                <default>false</default>
+                <label>Great Lakes</label>
+            </value>
+            <value>
+                <fullName>Great Lakes Datacom</fullName>
+                <default>false</default>
+                <label>Great Lakes Datacom</label>
+            </value>
+            <value>
+                <fullName>Greenville</fullName>
+                <default>false</default>
+                <label>Greenville</label>
+            </value>
+            <value>
+                <fullName>Gulf Coast</fullName>
+                <default>false</default>
+                <label>Gulf Coast</label>
+            </value>
+            <value>
+                <fullName>Gulf Datacom</fullName>
+                <default>false</default>
+                <label>Gulf Datacom</label>
+            </value>
+            <value>
+                <fullName>Hamby-Young</fullName>
+                <default>false</default>
+                <label>Hamby-Young</label>
+            </value>
+            <value>
+                <fullName>Hammond - Eesco</fullName>
+                <default>false</default>
+                <label>Hammond - Eesco</label>
+            </value>
+            <value>
+                <fullName>Hawaii</fullName>
+                <default>false</default>
+                <label>Hawaii</label>
+            </value>
+            <value>
+                <fullName>HC Austin</fullName>
+                <default>false</default>
+                <label>HC Austin</label>
+            </value>
+            <value>
+                <fullName>HC San Antonio</fullName>
+                <default>false</default>
+                <label>HC San Antonio</label>
+            </value>
+            <value>
+                <fullName>Hickory</fullName>
+                <default>false</default>
+                <label>Hickory</label>
+            </value>
+            <value>
+                <fullName>Hill Country</fullName>
+                <default>false</default>
+                <label>Hill Country</label>
+            </value>
+            <value>
+                <fullName>Houston</fullName>
+                <default>false</default>
+                <label>Houston</label>
+            </value>
+            <value>
+                <fullName>Houston District</fullName>
+                <default>false</default>
+                <label>Houston District</label>
+            </value>
+            <value>
+                <fullName>Houston North</fullName>
+                <default>false</default>
+                <label>Houston North</label>
+            </value>
+            <value>
+                <fullName>Houston Project District</fullName>
+                <default>false</default>
+                <label>Houston Project District</label>
+            </value>
+            <value>
+                <fullName>Houston South</fullName>
+                <default>false</default>
+                <label>Houston South</label>
+            </value>
+            <value>
+                <fullName>IA/NE/MN</fullName>
+                <default>false</default>
+                <label>IA/NE/MN</label>
+            </value>
+            <value>
+                <fullName>Ignore</fullName>
+                <default>false</default>
+                <label>Ignore</label>
+            </value>
+            <value>
+                <fullName>Indiana</fullName>
+                <default>false</default>
+                <label>Indiana</label>
+            </value>
+            <value>
+                <fullName>Indianapolis</fullName>
+                <default>false</default>
+                <label>Indianapolis</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Solutions</fullName>
+                <default>false</default>
+                <label>Infrastructure Solutions</label>
+            </value>
+            <value>
+                <fullName>Inland Empire</fullName>
+                <default>false</default>
+                <label>Inland Empire</label>
+            </value>
+            <value>
+                <fullName>Jacksonville</fullName>
+                <default>false</default>
+                <label>Jacksonville</label>
+            </value>
+            <value>
+                <fullName>Jacksonville Central</fullName>
+                <default>false</default>
+                <label>Jacksonville Central</label>
+            </value>
+            <value>
+                <fullName>Jacksonville East</fullName>
+                <default>false</default>
+                <label>Jacksonville East</label>
+            </value>
+            <value>
+                <fullName>Kansas City</fullName>
+                <default>false</default>
+                <label>Kansas City</label>
+            </value>
+            <value>
+                <fullName>Kansas City East</fullName>
+                <default>false</default>
+                <label>Kansas City East</label>
+            </value>
+            <value>
+                <fullName>Kansas City West</fullName>
+                <default>false</default>
+                <label>Kansas City West</label>
+            </value>
+            <value>
+                <fullName>Knoxville</fullName>
+                <default>false</default>
+                <label>Knoxville</label>
+            </value>
+            <value>
+                <fullName>Lafayette</fullName>
+                <default>false</default>
+                <label>Lafayette</label>
+            </value>
+            <value>
+                <fullName>LA Gulf Coast</fullName>
+                <default>false</default>
+                <label>LA Gulf Coast</label>
+            </value>
+            <value>
+                <fullName>Lake City</fullName>
+                <default>false</default>
+                <label>Lake City</label>
+            </value>
+            <value>
+                <fullName>Land O&apos;Lakes</fullName>
+                <default>false</default>
+                <label>Land O&apos;Lakes</label>
+            </value>
+            <value>
+                <fullName>Las Vegas</fullName>
+                <default>false</default>
+                <label>Las Vegas</label>
+            </value>
+            <value>
+                <fullName>Los Angeles</fullName>
+                <default>false</default>
+                <label>Los Angeles</label>
+            </value>
+            <value>
+                <fullName>Manufactured Structures</fullName>
+                <default>false</default>
+                <label>Manufactured Structures</label>
+            </value>
+            <value>
+                <fullName>Marine Solutions</fullName>
+                <default>false</default>
+                <label>Marine Solutions</label>
+            </value>
+            <value>
+                <fullName>Media Marketing</fullName>
+                <default>false</default>
+                <label>Media Marketing</label>
+            </value>
+            <value>
+                <fullName>Memphis</fullName>
+                <default>false</default>
+                <label>Memphis</label>
+            </value>
+            <value>
+                <fullName>Metro</fullName>
+                <default>false</default>
+                <label>Metro</label>
+            </value>
+            <value>
+                <fullName>Metro New York</fullName>
+                <default>false</default>
+                <label>Metro New York</label>
+            </value>
+            <value>
+                <fullName>Mex Undefined</fullName>
+                <default>false</default>
+                <label>Mex Undefined</label>
+            </value>
+            <value>
+                <fullName>Miami Central</fullName>
+                <default>false</default>
+                <label>Miami Central</label>
+            </value>
+            <value>
+                <fullName>Miami East</fullName>
+                <default>false</default>
+                <label>Miami East</label>
+            </value>
+            <value>
+                <fullName>Miami West</fullName>
+                <default>false</default>
+                <label>Miami West</label>
+            </value>
+            <value>
+                <fullName>Michigan</fullName>
+                <default>false</default>
+                <label>Michigan</label>
+            </value>
+            <value>
+                <fullName>Michigan East</fullName>
+                <default>false</default>
+                <label>Michigan East</label>
+            </value>
+            <value>
+                <fullName>Mid Atlantic</fullName>
+                <default>false</default>
+                <label>Mid Atlantic</label>
+            </value>
+            <value>
+                <fullName>Mid-Atlantic</fullName>
+                <default>false</default>
+                <label>Mid-Atlantic</label>
+            </value>
+            <value>
+                <fullName>Mid-South East</fullName>
+                <default>false</default>
+                <label>Mid-South East</label>
+            </value>
+            <value>
+                <fullName>Midwest Datacom</fullName>
+                <default>false</default>
+                <label>Midwest Datacom</label>
+            </value>
+            <value>
+                <fullName>Milwaukee</fullName>
+                <default>false</default>
+                <label>Milwaukee</label>
+            </value>
+            <value>
+                <fullName>Minneapolis</fullName>
+                <default>false</default>
+                <label>Minneapolis</label>
+            </value>
+            <value>
+                <fullName>Minnesota</fullName>
+                <default>false</default>
+                <label>Minnesota</label>
+            </value>
+            <value>
+                <fullName>Missouri</fullName>
+                <default>false</default>
+                <label>Missouri</label>
+            </value>
+            <value>
+                <fullName>Mokan</fullName>
+                <default>false</default>
+                <label>Mokan</label>
+            </value>
+            <value>
+                <fullName>Montana-Wyoming</fullName>
+                <default>false</default>
+                <label>Montana-Wyoming</label>
+            </value>
+            <value>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+                <label>Mountain</label>
+            </value>
+            <value>
+                <fullName>MT/WY</fullName>
+                <default>false</default>
+                <label>MT/WY</label>
+            </value>
+            <value>
+                <fullName>n/a (Crescent)</fullName>
+                <default>false</default>
+                <label>n/a (Crescent)</label>
+            </value>
+            <value>
+                <fullName>Nashville</fullName>
+                <default>false</default>
+                <label>Nashville</label>
+            </value>
+            <value>
+                <fullName>Nashville East</fullName>
+                <default>false</default>
+                <label>Nashville East</label>
+            </value>
+            <value>
+                <fullName>Nashville North</fullName>
+                <default>false</default>
+                <label>Nashville North</label>
+            </value>
+            <value>
+                <fullName>Nashville South</fullName>
+                <default>false</default>
+                <label>Nashville South</label>
+            </value>
+            <value>
+                <fullName>Nashville West</fullName>
+                <default>false</default>
+                <label>Nashville West</label>
+            </value>
+            <value>
+                <fullName>Nebraska</fullName>
+                <default>false</default>
+                <label>Nebraska</label>
+            </value>
+            <value>
+                <fullName>NE Datacom</fullName>
+                <default>false</default>
+                <label>NE Datacom</label>
+            </value>
+            <value>
+                <fullName>Needham</fullName>
+                <default>false</default>
+                <label>Needham</label>
+            </value>
+            <value>
+                <fullName>Needham North</fullName>
+                <default>false</default>
+                <label>Needham North</label>
+            </value>
+            <value>
+                <fullName>Needham South</fullName>
+                <default>false</default>
+                <label>Needham South</label>
+            </value>
+            <value>
+                <fullName>New England</fullName>
+                <default>false</default>
+                <label>New England</label>
+            </value>
+            <value>
+                <fullName>New York</fullName>
+                <default>false</default>
+                <label>New York</label>
+            </value>
+            <value>
+                <fullName>No California</fullName>
+                <default>false</default>
+                <label>No California</label>
+            </value>
+            <value>
+                <fullName>North Central</fullName>
+                <default>false</default>
+                <label>North Central</label>
+            </value>
+            <value>
+                <fullName>Northern</fullName>
+                <default>false</default>
+                <label>Northern</label>
+            </value>
+            <value>
+                <fullName>Northern California</fullName>
+                <default>false</default>
+                <label>Northern California</label>
+            </value>
+            <value>
+                <fullName>Northern Indiana</fullName>
+                <default>false</default>
+                <label>Northern Indiana</label>
+            </value>
+            <value>
+                <fullName>Northern Louisiana</fullName>
+                <default>false</default>
+                <label>Northern Louisiana</label>
+            </value>
+            <value>
+                <fullName>Northern Mexico</fullName>
+                <default>false</default>
+                <label>Northern Mexico</label>
+            </value>
+            <value>
+                <fullName>Northern Ohio</fullName>
+                <default>false</default>
+                <label>Northern Ohio</label>
+            </value>
+            <value>
+                <fullName>North Georgia</fullName>
+                <default>false</default>
+                <label>North Georgia</label>
+            </value>
+            <value>
+                <fullName>North Miami</fullName>
+                <default>false</default>
+                <label>North Miami</label>
+            </value>
+            <value>
+                <fullName>North Palm Beach</fullName>
+                <default>false</default>
+                <label>North Palm Beach</label>
+            </value>
+            <value>
+                <fullName>North Texas</fullName>
+                <default>false</default>
+                <label>North Texas</label>
+            </value>
+            <value>
+                <fullName>Northwest</fullName>
+                <default>false</default>
+                <label>Northwest</label>
+            </value>
+            <value>
+                <fullName>North West</fullName>
+                <default>false</default>
+                <label>North West</label>
+            </value>
+            <value>
+                <fullName>Northwest Datacom</fullName>
+                <default>false</default>
+                <label>Northwest Datacom</label>
+            </value>
+            <value>
+                <fullName>Ocala</fullName>
+                <default>false</default>
+                <label>Ocala</label>
+            </value>
+            <value>
+                <fullName>Ohio</fullName>
+                <default>false</default>
+                <label>Ohio</label>
+            </value>
+            <value>
+                <fullName>Oklahoma</fullName>
+                <default>false</default>
+                <label>Oklahoma</label>
+            </value>
+            <value>
+                <fullName>Orlando</fullName>
+                <default>false</default>
+                <label>Orlando</label>
+            </value>
+            <value>
+                <fullName>Orlando East</fullName>
+                <default>false</default>
+                <label>Orlando East</label>
+            </value>
+            <value>
+                <fullName>Ozark</fullName>
+                <default>false</default>
+                <label>Ozark</label>
+            </value>
+            <value>
+                <fullName>Pacific NW</fullName>
+                <default>false</default>
+                <label>Pacific NW</label>
+            </value>
+            <value>
+                <fullName>Palm Beach</fullName>
+                <default>false</default>
+                <label>Palm Beach</label>
+            </value>
+            <value>
+                <fullName>Pennsylvania</fullName>
+                <default>false</default>
+                <label>Pennsylvania</label>
+            </value>
+            <value>
+                <fullName>Pensacola</fullName>
+                <default>false</default>
+                <label>Pensacola</label>
+            </value>
+            <value>
+                <fullName>Philadelphia</fullName>
+                <default>false</default>
+                <label>Philadelphia</label>
+            </value>
+            <value>
+                <fullName>Philadelphia West</fullName>
+                <default>false</default>
+                <label>Philadelphia West</label>
+            </value>
+            <value>
+                <fullName>Phoenix</fullName>
+                <default>false</default>
+                <label>Phoenix</label>
+            </value>
+            <value>
+                <fullName>Phoenix East</fullName>
+                <default>false</default>
+                <label>Phoenix East</label>
+            </value>
+            <value>
+                <fullName>Phoenix West</fullName>
+                <default>false</default>
+                <label>Phoenix West</label>
+            </value>
+            <value>
+                <fullName>Piedmont</fullName>
+                <default>false</default>
+                <label>Piedmont</label>
+            </value>
+            <value>
+                <fullName>Pittsburgh</fullName>
+                <default>false</default>
+                <label>Pittsburgh</label>
+            </value>
+            <value>
+                <fullName>Plains</fullName>
+                <default>false</default>
+                <label>Plains</label>
+            </value>
+            <value>
+                <fullName>Portland</fullName>
+                <default>false</default>
+                <label>Portland</label>
+            </value>
+            <value>
+                <fullName>Puerto Rico</fullName>
+                <default>false</default>
+                <label>Puerto Rico</label>
+            </value>
+            <value>
+                <fullName>Raleigh Central</fullName>
+                <default>false</default>
+                <label>Raleigh Central</label>
+            </value>
+            <value>
+                <fullName>Raleigh East</fullName>
+                <default>false</default>
+                <label>Raleigh East</label>
+            </value>
+            <value>
+                <fullName>Raleigh West</fullName>
+                <default>false</default>
+                <label>Raleigh West</label>
+            </value>
+            <value>
+                <fullName>Reco</fullName>
+                <default>false</default>
+                <label>Reco</label>
+            </value>
+            <value>
+                <fullName>Reco West</fullName>
+                <default>false</default>
+                <label>Reco West</label>
+            </value>
+            <value>
+                <fullName>Richmond</fullName>
+                <default>false</default>
+                <label>Richmond</label>
+            </value>
+            <value>
+                <fullName>Roanoke Valley</fullName>
+                <default>false</default>
+                <label>Roanoke Valley</label>
+            </value>
+            <value>
+                <fullName>Rockford - EESCO</fullName>
+                <default>false</default>
+                <label>Rockford - EESCO</label>
+            </value>
+            <value>
+                <fullName>San Antonio</fullName>
+                <default>false</default>
+                <label>San Antonio</label>
+            </value>
+            <value>
+                <fullName>Sandhills</fullName>
+                <default>false</default>
+                <label>Sandhills</label>
+            </value>
+            <value>
+                <fullName>San Diego</fullName>
+                <default>false</default>
+                <label>San Diego</label>
+            </value>
+            <value>
+                <fullName>Savannah</fullName>
+                <default>false</default>
+                <label>Savannah</label>
+            </value>
+            <value>
+                <fullName>Seattle</fullName>
+                <default>false</default>
+                <label>Seattle</label>
+            </value>
+            <value>
+                <fullName>Se Datacom</fullName>
+                <default>false</default>
+                <label>SE Datacom</label>
+            </value>
+            <value>
+                <fullName>Shepherd</fullName>
+                <default>false</default>
+                <label>Shepherd</label>
+            </value>
+            <value>
+                <fullName>Sioux City</fullName>
+                <default>false</default>
+                <label>Sioux City</label>
+            </value>
+            <value>
+                <fullName>Smoky Mountain</fullName>
+                <default>false</default>
+                <label>Smoky Mountain</label>
+            </value>
+            <value>
+                <fullName>South Carolina - EESCO</fullName>
+                <default>false</default>
+                <label>South Carolina - EESCO</label>
+            </value>
+            <value>
+                <fullName>South Central</fullName>
+                <default>false</default>
+                <label>South Central</label>
+            </value>
+            <value>
+                <fullName>South-Costal</fullName>
+                <default>false</default>
+                <label>South-Costal</label>
+            </value>
+            <value>
+                <fullName>Southeast</fullName>
+                <default>false</default>
+                <label>Southeast</label>
+            </value>
+            <value>
+                <fullName>South-East</fullName>
+                <default>false</default>
+                <label>South-East</label>
+            </value>
+            <value>
+                <fullName>Southeast Piedmont</fullName>
+                <default>false</default>
+                <label>Southeast Piedmont</label>
+            </value>
+            <value>
+                <fullName>Southeast Texas</fullName>
+                <default>false</default>
+                <label>Southeast Texas</label>
+            </value>
+            <value>
+                <fullName>Southern</fullName>
+                <default>false</default>
+                <label>Southern</label>
+            </value>
+            <value>
+                <fullName>Southern California</fullName>
+                <default>false</default>
+                <label>Southern California</label>
+            </value>
+            <value>
+                <fullName>Southern Louisiana</fullName>
+                <default>false</default>
+                <label>Southern Louisiana</label>
+            </value>
+            <value>
+                <fullName>Southern Mexico</fullName>
+                <default>false</default>
+                <label>Southern Mexico</label>
+            </value>
+            <value>
+                <fullName>Southern Ohio</fullName>
+                <default>false</default>
+                <label>Southern Ohio</label>
+            </value>
+            <value>
+                <fullName>South Georgia</fullName>
+                <default>false</default>
+                <label>South Georgia</label>
+            </value>
+            <value>
+                <fullName>South Miami</fullName>
+                <default>false</default>
+                <label>South Miami</label>
+            </value>
+            <value>
+                <fullName>South Palm Beach</fullName>
+                <default>false</default>
+                <label>South Palm Beach</label>
+            </value>
+            <value>
+                <fullName>Southwest</fullName>
+                <default>false</default>
+                <label>Southwest</label>
+            </value>
+            <value>
+                <fullName>Southwest Datacom</fullName>
+                <default>false</default>
+                <label>Southwest Datacom</label>
+            </value>
+            <value>
+                <fullName>Spartanburg</fullName>
+                <default>false</default>
+                <label>Spartanburg</label>
+            </value>
+            <value>
+                <fullName>St. Louis</fullName>
+                <default>false</default>
+                <label>St. Louis</label>
+            </value>
+            <value>
+                <fullName>Strategic Accounts</fullName>
+                <default>false</default>
+                <label>Strategic Accounts</label>
+            </value>
+            <value>
+                <fullName>Suncoast</fullName>
+                <default>false</default>
+                <label>Suncoast</label>
+            </value>
+            <value>
+                <fullName>Tampa</fullName>
+                <default>false</default>
+                <label>Tampa</label>
+            </value>
+            <value>
+                <fullName>Treasure Coast</fullName>
+                <default>false</default>
+                <label>Treasure Coast</label>
+            </value>
+            <value>
+                <fullName>Triad</fullName>
+                <default>false</default>
+                <label>Triad</label>
+            </value>
+            <value>
+                <fullName>Tucson</fullName>
+                <default>false</default>
+                <label>Tucson</label>
+            </value>
+            <value>
+                <fullName>TVC Corporate</fullName>
+                <default>false</default>
+                <label>TVC Corporate</label>
+            </value>
+            <value>
+                <fullName>Undefined</fullName>
+                <default>false</default>
+                <label>Undefined</label>
+            </value>
+            <value>
+                <fullName>Vikimatic</fullName>
+                <default>false</default>
+                <label>Vikimatic</label>
+            </value>
+            <value>
+                <fullName>Virginia Central</fullName>
+                <default>false</default>
+                <label>Virginia Central</label>
+            </value>
+            <value>
+                <fullName>Virginia East</fullName>
+                <default>false</default>
+                <label>Virginia East</label>
+            </value>
+            <value>
+                <fullName>W. PA / WV</fullName>
+                <default>false</default>
+                <label>W. PA / WV</label>
+            </value>
+            <value>
+                <fullName>Washington</fullName>
+                <default>false</default>
+                <label>Washington</label>
+            </value>
+            <value>
+                <fullName>Washington/Oregon/Idaho</fullName>
+                <default>false</default>
+                <label>Washington/Oregon/Idaho</label>
+            </value>
+            <value>
+                <fullName>Washington South</fullName>
+                <default>false</default>
+                <label>Washington South</label>
+            </value>
+            <value>
+                <fullName>WDM USA Branches</fullName>
+                <default>false</default>
+                <label>WDM USA Branches</label>
+            </value>
+            <value>
+                <fullName>Western</fullName>
+                <default>false</default>
+                <label>Western</label>
+            </value>
+            <value>
+                <fullName>Western Mountain</fullName>
+                <default>false</default>
+                <label>Western Mountain</label>
+            </value>
+            <value>
+                <fullName>Western New York</fullName>
+                <default>false</default>
+                <label>Western New York</label>
+            </value>
+            <value>
+                <fullName>Western NY</fullName>
+                <default>false</default>
+                <label>Western NY</label>
+            </value>
+            <value>
+                <fullName>West Texas</fullName>
+                <default>false</default>
+                <label>West Texas</label>
+            </value>
+            <value>
+                <fullName>WI/C. Il</fullName>
+                <default>false</default>
+                <label>WI/C. Il</label>
+            </value>
+            <value>
+                <fullName>Wisconsin</fullName>
+                <default>false</default>
+                <label>Wisconsin</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Assembly</controllingFieldValue>
+            <valueName>Assembly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needham</controllingFieldValue>
+            <valueName>Needham North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needham</controllingFieldValue>
+            <valueName>Needham South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C-B Regions</controllingFieldValue>
+            <valueName>C-b East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C-B Regions</controllingFieldValue>
+            <valueName>C-b West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eastern Utility</controllingFieldValue>
+            <valueName>Great Lakes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eastern Utility</controllingFieldValue>
+            <valueName>Mid-Atlantic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eastern Utility</controllingFieldValue>
+            <controllingFieldValue>Northeast</controllingFieldValue>
+            <valueName>New England</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eastern Utility</controllingFieldValue>
+            <valueName>South Central</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Greater Northern Il Region - EESCO</controllingFieldValue>
+            <controllingFieldValue>Jaime Marujo</controllingFieldValue>
+            <controllingFieldValue>East Region</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Chicago</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Greater Northern Il Region - EESCO</controllingFieldValue>
+            <valueName>Hammond - Eesco</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Greater Northern Il Region - EESCO</controllingFieldValue>
+            <valueName>Rockford - EESCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Broward</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Daytona Beach</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Land O&apos;Lakes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>Miami East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>Miami West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <controllingFieldValue>East</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Orlando</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>Palm Beach</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Suncoast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <controllingFieldValue>East Region</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Tampa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Treasure Coast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gulf Region Capital Projects</controllingFieldValue>
+            <valueName>Capital Projects</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HC Region</controllingFieldValue>
+            <valueName>HC Austin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HC Region</controllingFieldValue>
+            <valueName>HC San Antonio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <controllingFieldValue>Jaime Marujo</controllingFieldValue>
+            <controllingFieldValue>East Region</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Boston</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Columbia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <valueName>Elmhurst</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <controllingFieldValue>East Region</controllingFieldValue>
+            <valueName>New York</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <controllingFieldValue>East Region</controllingFieldValue>
+            <valueName>Richmond</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Voltage</controllingFieldValue>
+            <valueName>Hamby-Young</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southwest</controllingFieldValue>
+            <valueName>Arizona</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southwest</controllingFieldValue>
+            <valueName>Central California</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southwest</controllingFieldValue>
+            <controllingFieldValue>Northwest</controllingFieldValue>
+            <valueName>Hawaii</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southwest</controllingFieldValue>
+            <valueName>Northern California</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southwest</controllingFieldValue>
+            <valueName>Southern California</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northeast</controllingFieldValue>
+            <valueName>Metro New York</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northeast</controllingFieldValue>
+            <valueName>Pennsylvania</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northeast</controllingFieldValue>
+            <valueName>Western New York</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West</controllingFieldValue>
+            <valueName>Denver</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West</controllingFieldValue>
+            <controllingFieldValue>Neil Mallinson</controllingFieldValue>
+            <controllingFieldValue>Dan Williams</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Los Angeles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West</controllingFieldValue>
+            <valueName>Portland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>South Central</controllingFieldValue>
+            <valueName>Houston District</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>South Central</controllingFieldValue>
+            <valueName>Houston Project District</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>South Central</controllingFieldValue>
+            <controllingFieldValue>GULF Gulf Central</controllingFieldValue>
+            <valueName>LA Gulf Coast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>South Central</controllingFieldValue>
+            <valueName>North Texas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>South Central</controllingFieldValue>
+            <controllingFieldValue>GULF Gulf Central</controllingFieldValue>
+            <valueName>West Texas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mexico</controllingFieldValue>
+            <valueName>Mex Undefined</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mexico</controllingFieldValue>
+            <valueName>Northern Mexico</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mexico</controllingFieldValue>
+            <valueName>Southern Mexico</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mexico</controllingFieldValue>
+            <valueName>WDM USA Branches</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northwest</controllingFieldValue>
+            <valueName>Alaska</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northwest</controllingFieldValue>
+            <valueName>CO/UT/MT/WY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northwest</controllingFieldValue>
+            <valueName>Colorado-Utah</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northwest</controllingFieldValue>
+            <valueName>Montana-Wyoming</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northwest</controllingFieldValue>
+            <valueName>No California</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northwest</controllingFieldValue>
+            <valueName>Pacific NW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northwest</controllingFieldValue>
+            <valueName>Washington/Oregon/Idaho</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northwest</controllingFieldValue>
+            <valueName>Western Mountain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central</controllingFieldValue>
+            <valueName>Amarillo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central</controllingFieldValue>
+            <valueName>Fargo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central</controllingFieldValue>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <valueName>Kansas City</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central</controllingFieldValue>
+            <valueName>Lafayette</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central</controllingFieldValue>
+            <valueName>Milwaukee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central</controllingFieldValue>
+            <valueName>n/a (Crescent)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central</controllingFieldValue>
+            <valueName>Nashville</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central</controllingFieldValue>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>San Antonio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central</controllingFieldValue>
+            <valueName>Sioux City</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <valueName>Austin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <controllingFieldValue>Southeast</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Charlotte</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <controllingFieldValue>GULF Gulf Central</controllingFieldValue>
+            <valueName>Dallas/Ft Worth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Dallas North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Houston North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Houston South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <valueName>Missouri</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Nashville North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <valueName>Nashville South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <controllingFieldValue>GULF Gulf Central</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Oklahoma</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blair Feidler</controllingFieldValue>
+            <valueName>Ozark</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Cincinnati</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Columbus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Indianapolis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Michigan East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Raleigh Central</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Raleigh East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <valueName>Raleigh West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Roanoke Valley</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Sandhills</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Virginia Central</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gary Smith</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Virginia East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jaime Marujo</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Boston North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jaime Marujo</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Boston South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jaime Marujo</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Chicago West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jaime Marujo</controllingFieldValue>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Northern Indiana</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jaime Marujo</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Philadelphia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jaime Marujo</controllingFieldValue>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Wisconsin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WESCO Express</controllingFieldValue>
+            <valueName>Undefined</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Atlanta Metro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Atlanta North East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Atlanta South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Birmingham</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Charleston</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <valueName>Jacksonville</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <valueName>Lake City</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <valueName>North Georgia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Pensacola</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Savannah</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>South Georgia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Jim Lawson</controllingFieldValue>
+            <valueName>Spartanburg</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East Region</controllingFieldValue>
+            <valueName>Atlanta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East Region</controllingFieldValue>
+            <valueName>National Call Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East Region</controllingFieldValue>
+            <valueName>Pittsburgh</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>John Nantz</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Hickory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>John Nantz</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Piedmont</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>John Nantz</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Smoky Mountain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>John Nantz</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Southeast Piedmont</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>John Nantz</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Triad</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>John Nantz</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Washington</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West Region</controllingFieldValue>
+            <controllingFieldValue>Western Utility</controllingFieldValue>
+            <valueName>California</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West Region</controllingFieldValue>
+            <controllingFieldValue>Gulf Central</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Dallas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West Region</controllingFieldValue>
+            <valueName>Minneapolis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West Region</controllingFieldValue>
+            <valueName>Phoenix</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West Region</controllingFieldValue>
+            <valueName>Seattle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West Region</controllingFieldValue>
+            <valueName>Southwest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West Region</controllingFieldValue>
+            <valueName>St. Louis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Neil Mallinson</controllingFieldValue>
+            <controllingFieldValue>Dan Williams</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Colorado North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Neil Mallinson</controllingFieldValue>
+            <controllingFieldValue>Dan Williams</controllingFieldValue>
+            <controllingFieldValue>Colorado</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Colorado South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Neil Mallinson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Las Vegas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Neil Mallinson</controllingFieldValue>
+            <controllingFieldValue>Dan Williams</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Phoenix East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Neil Mallinson</controllingFieldValue>
+            <controllingFieldValue>Dan Williams</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Phoenix West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Neil Mallinson</controllingFieldValue>
+            <controllingFieldValue>Dan Williams</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>San Diego</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Neil Mallinson</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Tucson</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gulf Central</controllingFieldValue>
+            <valueName>Arkansas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gulf Central</controllingFieldValue>
+            <valueName>Central Louisiana</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gulf Central</controllingFieldValue>
+            <controllingFieldValue>GULF Gulf Central</controllingFieldValue>
+            <valueName>Houston</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gulf Central</controllingFieldValue>
+            <valueName>Northern Louisiana</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gulf Central</controllingFieldValue>
+            <valueName>Southeast Texas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gulf Central</controllingFieldValue>
+            <valueName>Southern Louisiana</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southeast</controllingFieldValue>
+            <valueName>Alabama / Tennessee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southeast</controllingFieldValue>
+            <valueName>Carolinas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southeast</controllingFieldValue>
+            <valueName>Florida / Georgia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southeast</controllingFieldValue>
+            <valueName>Florida - EESCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southeast</controllingFieldValue>
+            <valueName>Georgia District - EESCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southeast</controllingFieldValue>
+            <valueName>Mid Atlantic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southeast</controllingFieldValue>
+            <valueName>South Carolina - EESCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southeast</controllingFieldValue>
+            <controllingFieldValue>MS East</controllingFieldValue>
+            <valueName>Southern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GULF Gulf Central</controllingFieldValue>
+            <valueName>Central / East TX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dan Williams</controllingFieldValue>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Colorado Mountain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Calvert</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Central Illinois</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Detroit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Indiana</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Michigan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Minnesota</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Northern Ohio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Ohio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Plains</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Reco</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Reco West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>Southern Ohio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Great Lakes</controllingFieldValue>
+            <valueName>WI/C. Il</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Subsidiaries</controllingFieldValue>
+            <valueName>American Electric Supply</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Subsidiaries</controllingFieldValue>
+            <valueName>Blazer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Subsidiaries</controllingFieldValue>
+            <valueName>Broken Arrow Electric Supply</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Subsidiaries</controllingFieldValue>
+            <valueName>Cape</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Subsidiaries</controllingFieldValue>
+            <valueName>Connexion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Subsidiaries</controllingFieldValue>
+            <valueName>Metro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Subsidiaries</controllingFieldValue>
+            <valueName>Shepherd</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MS West</controllingFieldValue>
+            <valueName>Northern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MS West</controllingFieldValue>
+            <valueName>Western</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southern Utility</controllingFieldValue>
+            <valueName>Delta (MS, LA, AR)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southern Utility</controllingFieldValue>
+            <valueName>Mid-South East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southern Utility</controllingFieldValue>
+            <valueName>South-Costal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Southern Utility</controllingFieldValue>
+            <valueName>South-East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TVC</controllingFieldValue>
+            <valueName>TVC Corporate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vikimatic</controllingFieldValue>
+            <valueName>Vikimatic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Colorado</controllingFieldValue>
+            <valueName>Colorado</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Western Utility</controllingFieldValue>
+            <valueName>North Central</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Western Utility</controllingFieldValue>
+            <valueName>North West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>North Central</controllingFieldValue>
+            <valueName>CO/UT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>North Central</controllingFieldValue>
+            <valueName>IA/NE/MN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>North Central</controllingFieldValue>
+            <valueName>Mokan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>North Central</controllingFieldValue>
+            <valueName>MT/WY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Atlanta North West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Austin East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Austin West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Boston Northwest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Cape &amp; Islands</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Central Piedmont</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Charleston South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Corporate Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Delaware/New Jersey</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Fort Myers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Fort Worth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Government Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Greenville</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Gulf Coast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Infrastructure Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Inland Empire</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Jacksonville Central</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Jacksonville East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Kansas City East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Kansas City West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Knoxville</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Marine Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Media Marketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Memphis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Miami Central</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Nashville East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>North Miami</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>North Palm Beach</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Ocala</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Orlando East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Philadelphia West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Puerto Rico</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>South Miami</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>South Palm Beach</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Strategic Accounts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CES</controllingFieldValue>
+            <valueName>Washington South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eastern Datacom</controllingFieldValue>
+            <valueName>Datacom Florida</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eastern Datacom</controllingFieldValue>
+            <valueName>Gulf Datacom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eastern Datacom</controllingFieldValue>
+            <valueName>NE Datacom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eastern Datacom</controllingFieldValue>
+            <valueName>Se Datacom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Western Datacom</controllingFieldValue>
+            <valueName>Central Datacom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Western Datacom</controllingFieldValue>
+            <valueName>Great Lakes Datacom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Western Datacom</controllingFieldValue>
+            <valueName>Midwest Datacom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Western Datacom</controllingFieldValue>
+            <valueName>Northwest Datacom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Western Datacom</controllingFieldValue>
+            <valueName>Southwest Datacom</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

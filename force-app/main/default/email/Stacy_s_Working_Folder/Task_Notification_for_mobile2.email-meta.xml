@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email notification for tasks assigned on mobile app</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>Email Notification for Mobile Tasks</name>
+    <style>freeForm</style>
+    <subject>{!Task.Subject}</subject>
+    <textOnly>Task
+
+To: {!Task.Assigned_User__c}
+
+{!Task.CreatedBy} has assigned you the following new task:
+
+Subject: {!Task.Subject} {!QuotesOrdersCredits_Header__c.Name}
+
+Account: {!Account.Name}
+Contact: {!Contact.Name}
+Due Date: {!Task.ActivityDate}
+Priority: {!Task.Priority}
+Comments: {!Task.Description}
+
+For more details, click the following link:
+
+https://omnicable.my.salesforce.com/{!Task.Id}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

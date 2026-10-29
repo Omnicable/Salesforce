@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>NEC Code Book ampacity charts: 150°C Type Z (Tefzel), 200°C FEP, PFA, SA (Silicone), 250°C PFA, TFE</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>NEC Code Book ampacity charts 150C Type Z (Tefzel) 200C FEP PFA SA (Silicone) SRML SF-2 SRG SRGML 250C PFA TFE TGGT</keywords>
+    <name>NEC 310.15(B)(18), 310.15(B)(19), 310.15(B)(2)(b)</name>
+    <public>true</public>
+</Document>

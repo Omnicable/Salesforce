@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Line_Item_Compact</fullName>
+    <fields>Name</fields>
+    <fields>Product2Id</fields>
+    <fields>Ext_Id__c</fields>
+    <fields>Quantity</fields>
+    <fields>UnitPrice</fields>
+    <label>Opportunity Line Item Compact</label>
+</CompactLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Ampacity guidlines for 150°C, 200°C, 250°C, &amp; 450°C material</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>ampacity charts 150C SRGML SRML SRG SF-2 200C FEP PFA TFE 250C TGGT 450C MG MGT</keywords>
+    <name>NEMA WC 73-2000 Sections 4-5</name>
+    <public>true</public>
+</Document>

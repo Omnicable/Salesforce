@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_type_for_community_09a60000000HfQiAAK_entity_Question</fullName>
+    <active>true</active>
+    <description>Record type used to associate Question with a specific community</description>
+    <label>Internal Community: Question Record Type</label>
+</RecordType>

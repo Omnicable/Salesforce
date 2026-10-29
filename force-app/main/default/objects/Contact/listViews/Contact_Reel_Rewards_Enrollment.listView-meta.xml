@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Reel_Rewards_Enrollment</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>OCC_Rewards__c</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>PortalUser__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>OCC_RewardStepValue__c</columns>
+    <columns>OCC_RewardStep__c</columns>
+    <columns>MaxOrderQuoteDate__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>OCC_RewardsTotal__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>CONTACT.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Standard</value>
+    </filters>
+    <filters>
+        <field>Contact_Title__c</field>
+        <operation>notEqual</operation>
+        <value>Purchasing agent,Purchasing Manager</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>978550</value>
+    </filters>
+    <label>Contact Reel Rewards Enrollment</label>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

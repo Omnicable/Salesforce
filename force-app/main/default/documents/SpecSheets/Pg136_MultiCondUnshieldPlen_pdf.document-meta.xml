@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+G122202 G122204 G122206 G122208 G122002 G121802 G121803 G121804 G121806 G121808 G121602 G121604 G121402 G121202</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S E3000S E3001S E3002S E3003S E3003S E3006S E3008S E3010S E3012S E3022S E3023S E3024S E3030S E3032S E3033S E3034S E3036S E3038S E3042S E3043S E3044S E3052S E3054S E3062S E3064S</keywords>
+    <name>General Cable Plenum Control Cable - Nonshielded - Plenum -12-22AWG</name>
+    <public>true</public>
+</Document>

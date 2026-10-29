@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- When a Task is Assigned to a User, automatically subscribe the user to follow the task. --></help>
+    <label><!-- Auto Follow A Task --></label>
+    <name>Auto_Follow_Task__c</name>
+</CustomFieldTranslation>

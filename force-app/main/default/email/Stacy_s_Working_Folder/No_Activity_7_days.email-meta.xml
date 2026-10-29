@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>No Target Account Activity 7 days</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>No Activity 7 days</name>
+    <style>none</style>
+    <subject>No Target  Account Activity in 7 days</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

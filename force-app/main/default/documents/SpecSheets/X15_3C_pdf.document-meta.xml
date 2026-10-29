@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+Y10803A Y10603A Y10403A Y10203A Y11/003A Y12/003A Y14/003A Y125003A Y135003A Y150003A</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>SW PART #&apos;S 555149 568458 606939 606947 606954 560466 574455 560474 560482 574469 383679 601377 383646 380618 552598 890405</keywords>
+    <name>Southwire Armored Cables - Aluminum Interlocked Armor - 105°C - 600 Volt - Type MC - 3 Conductor</name>
+    <public>true</public>
+</Document>

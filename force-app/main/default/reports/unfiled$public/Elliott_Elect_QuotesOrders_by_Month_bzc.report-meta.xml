@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount/CDF1:AVG</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average # QO/Day (Month)</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>COLUMN_GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>(RowCount/Account.Business_Days_YTD__c:MAX) * CDF1:AVG</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>ROW_GRAND_SUMMARY</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average # QO/Month (Year)</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>COLUMN_GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>RowCount/Account.Business_Days_YTD__c:MAX</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA5</developerName>
+        <downGroupingContext>ROW_GRAND_SUMMARY</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average # QO/Day (Year)</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>QuotesOrdersCredits_Header__c.TotalDollars__c</field>
+    </columns>
+    <columns>
+        <field>QuotesOrdersCredits_Header__c.GPpct__c</field>
+    </columns>
+    <columns>
+        <field>QuotesOrdersCredits_Header__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Account.RegionNumerical__c</field>
+    </columns>
+    <columns>
+        <field>QuotesOrdersCredits_Header__c.Customer_Number__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>QuotesOrdersCredits_Header__c.OrderCount__c</field>
+    </columns>
+    <columns>
+        <field>CDF1</field>
+    </columns>
+    <customDetailFormulas>
+        <calculatedFormula>(CASE(WEEKDAY(DATE(YEAR(QuotesOrdersCredits_Header__c.Date__c), MONTH(QuotesOrdersCredits_Header__c.Date__c), 1)),1,0,2,5,3,4,4,3,5,2,6,1,7,0,0)+((((((ADDMONTHS(DATE(YEAR(QuotesOrdersCredits_Header__c.Date__c), MONTH(QuotesOrdersCredits_Header__c.Date__c), 1), 1) - 1) - CASE(WEEKDAY((ADDMONTHS(DATE(YEAR(QuotesOrdersCredits_Header__c.Date__c), MONTH(QuotesOrdersCredits_Header__c.Date__c), 1), 1) - 1)),1,1,2,2,3,3,4,4,5,5,6,6,7,0,0)) - ((DATE(YEAR(QuotesOrdersCredits_Header__c.Date__c), MONTH(QuotesOrdersCredits_Header__c.Date__c), 1)) + CASE(WEEKDAY((DATE(YEAR(QuotesOrdersCredits_Header__c.Date__c), MONTH(QuotesOrdersCredits_Header__c.Date__c), 1))),1,0,2,6,3,5,4,4,5,3,6,2,7,1,0))) + 1) / 7) * 5)+CASE(WEEKDAY(ADDMONTHS(DATE(YEAR(QuotesOrdersCredits_Header__c.Date__c), MONTH(QuotesOrdersCredits_Header__c.Date__c), 1), 1) - 1),1,0,2,1,3,2,4,3,5,4,6,5,7,0,0)
+-
+CASE(MONTH(QuotesOrdersCredits_Header__c.Date__c),
+1,1,
+5,1,
+7,1,
+9,1,
+11,2,
+12,1,
+0))</calculatedFormula>
+        <dataType>Double</dataType>
+        <developerName>CDF1</developerName>
+        <label># Biz Days per Month</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <filter>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Distributor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Elliott Electric</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QuotesOrdersCredits_Header__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled,Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QuotesOrdersCredits_Header__c.Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Order,Quote</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>QuotesOrdersCredits_Header__c.Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Elliott Elect Quotes/Orders by Month</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>AccountCustomEntity$QuotesOrdersCredits_Header__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>QuotesOrdersCredits_Header__c.Date__c</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

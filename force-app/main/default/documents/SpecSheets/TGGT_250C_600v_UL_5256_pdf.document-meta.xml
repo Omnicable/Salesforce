@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FIRST CAPITOL SPEC SHEET
+C40201 C40401 C40601 C40801 C41/001 C41001 C41201 C41401 C41601 C41801 C44/001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>FC PART #&apos;S 11086100 11085100 11084100 11068100 11103100 11082100 11081100 11065100 11064100 11063100 11106100</keywords>
+    <name>First Capitol Appliance and Lead Wire - Type TGGT</name>
+    <public>true</public>
+</Document>

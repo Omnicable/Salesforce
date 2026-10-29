@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The status of this task. A task is either in-complete or complete. --></help>
+    <label><!-- Complete --></label>
+    <name>Complete__c</name>
+</CustomFieldTranslation>

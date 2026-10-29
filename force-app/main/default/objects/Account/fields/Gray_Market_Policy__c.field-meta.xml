@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gray_Market_Policy__c</fullName>
+    <description>Distributor’s CB Gray Market Policy</description>
+    <label>Gray Market Policy</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No written policy, &amp; purchase from brokers.</fullName>
+                <default>false</default>
+                <label>No written policy &amp; purchase from brokers.</label>
+            </value>
+            <value>
+                <fullName>No written policy, but do not buy from brokers.</fullName>
+                <default>false</default>
+                <label>No written policy but do not buy from brokers.</label>
+            </value>
+            <value>
+                <fullName>A written policy in place not allowing the purchase of CBs from brokers.</fullName>
+                <default>false</default>
+                <label>A written policy not allowing the purchase of CBs from brokers.</label>
+            </value>
+            <value>
+                <fullName>A written policy in place that includes a limited # of authorized CB Brokers from owner or management.</fullName>
+                <default>false</default>
+                <label>A written policy for a limited # of authorized CB Brokers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

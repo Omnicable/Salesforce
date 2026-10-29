@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShipppingStreetAddress</fullName>
+    <active>false</active>
+    <errorConditionFormula>Len(ShippingStreet) &gt;60</errorConditionFormula>
+    <errorMessage>Shipping Street Address can not be longer than 60</errorMessage>
+</ValidationRule>

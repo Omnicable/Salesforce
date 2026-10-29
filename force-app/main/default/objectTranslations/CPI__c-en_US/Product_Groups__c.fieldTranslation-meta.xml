@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Groups --></label>
+    <name>Product_Groups__c</name>
+    <picklistValues>
+        <masterLabel>AI    | ALUMINUM INTERLOCKED ARMOR</masterLabel>
+        <translation><!-- AI    | ALUMINUM INTERLOCKED ARMOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AL    | DISTRIBUTION ALUMINUM CABLES</masterLabel>
+        <translation><!-- AL    | DISTRIBUTION ALUMINUM CABLES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BC    | BARE COPPER</masterLabel>
+        <translation><!-- BC    | BARE COPPER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BE    | BELDEN ITEM</masterLabel>
+        <translation><!-- BE    | BELDEN ITEM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CC    | CONTINUOUS CORRUGATED ARMOR</masterLabel>
+        <translation><!-- CC    | CONTINUOUS CORRUGATED ARMOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CT    | CALTRAN TRAFFIC CONTROL CABLE</masterLabel>
+        <translation><!-- CT    | CALTRAN TRAFFIC CONTROL CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CX    | COAXIAL CABLE</masterLabel>
+        <translation><!-- CX    | COAXIAL CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DC    | DATA CABLES-LOOP-POS-LAN-TWAX</masterLabel>
+        <translation><!-- DC    | DATA CABLES-LOOP-POS-LAN-TWAX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EC    | ELECTRICAL CABLE</masterLabel>
+        <translation><!-- EC    | ELECTRICAL CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FA    | FIRE ALARM</masterLabel>
+        <translation><!-- FA    | FIRE ALARM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FC    | 600-2KV PORT CORD,WELD,DLO,W,G</masterLabel>
+        <translation><!-- FC    | 600-2KV PORT CORD,WELD,DLO,W,G --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FO    | FIBER OPTIC</masterLabel>
+        <translation><!-- FO    | FIBER OPTIC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HT    | HIGH TEMP CABLE 150-538 DEG C.</masterLabel>
+        <translation><!-- HT    | HIGH TEMP CABLE 150-538 DEG C. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HU    | HOOK UP WIRE</masterLabel>
+        <translation><!-- HU    | HOOK UP WIRE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IC    | INSTR CABLE PVC 600-300V UL</masterLabel>
+        <translation><!-- IC    | INSTR CABLE PVC 600-300V UL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LT    | LUTRON CABLES</masterLabel>
+        <translation><!-- LT    | LUTRON CABLES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LU    | LUTZE - SILFLEX</masterLabel>
+        <translation><!-- LU    | LUTZE - SILFLEX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LV    | LOW VOLTAGE LIGHTING 150V 60C</masterLabel>
+        <translation><!-- LV    | LOW VOLTAGE LIGHTING 150V 60C --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MC    | METAL CLAD POWER AND CONTROL</masterLabel>
+        <translation><!-- MC    | METAL CLAD POWER AND CONTROL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MO    | MONTROSE/M CABLE</masterLabel>
+        <translation><!-- MO    | MONTROSE/M CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MU    | MEDIUM VOLTAGE URD CABLES</masterLabel>
+        <translation><!-- MU    | MEDIUM VOLTAGE URD CABLES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MV    | MED VOLTAGE 5-15KV CABLE</masterLabel>
+        <translation><!-- MV    | MED VOLTAGE 5-15KV CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OL    | OLFLEX ITEMS</masterLabel>
+        <translation><!-- OL    | OLFLEX ITEMS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PC    | TELEPHONE COMMUNICATION CABLE</masterLabel>
+        <translation><!-- PC    | TELEPHONE COMMUNICATION CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PL    | PLENUM CONTROL CABLE</masterLabel>
+        <translation><!-- PL    | PLENUM CONTROL CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PV    | PVC-AUDIO VIDEO COMM CABLE</masterLabel>
+        <translation><!-- PV    | PVC-AUDIO VIDEO COMM CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>QR    | QUAD RATED: TC,PLTC,NPLF,FPL</masterLabel>
+        <translation><!-- QR    | QUAD RATED: TC,PLTC,NPLF,FPL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RT    | TE/RAYCHEM ITEMS</masterLabel>
+        <translation><!-- RT    | TE/RAYCHEM ITEMS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SA    | SAB ITEMS</masterLabel>
+        <translation><!-- SA    | SAB ITEMS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SC    | UL1015 600V PVC</masterLabel>
+        <translation><!-- SC    | UL1015 600V PVC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SP    | 600V UL SUBMERSIBLE PUMP 75C</masterLabel>
+        <translation><!-- SP    | 600V UL SUBMERSIBLE PUMP 75C --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TC    | 600V UL TRAY CABLE 90C DB</masterLabel>
+        <translation><!-- TC    | 600V UL TRAY CABLE 90C DB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TH    | THERMOCOUPLE EXTENSION WIRE</masterLabel>
+        <translation><!-- TH    | THERMOCOUPLE EXTENSION WIRE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TK    | TECK 90 CABLES</masterLabel>
+        <translation><!-- TK    | TECK 90 CABLES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TP    | TYPE-P MARINE SHIPBOARD CABLE</masterLabel>
+        <translation><!-- TP    | TYPE-P MARINE SHIPBOARD CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TS    | TRAFFIC SIGNAL CABLE</masterLabel>
+        <translation><!-- TS    | TRAFFIC SIGNAL CABLE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VL    | VITALINK</masterLabel>
+        <translation><!-- VL    | VITALINK --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

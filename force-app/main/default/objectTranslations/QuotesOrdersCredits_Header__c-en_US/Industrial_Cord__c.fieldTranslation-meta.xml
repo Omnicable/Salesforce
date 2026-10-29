@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Quote &amp; Order dollars summed up from line items where Item Class = FCB2,FCB3,FCB4,FCB5,FCB6,FCB8,FCF1 --></help>
+    <label><!-- Industrial Cord $ --></label>
+    <name>Industrial_Cord__c</name>
+</CustomFieldTranslation>

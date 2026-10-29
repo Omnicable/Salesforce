@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Quote &amp; Order dollars summed up from line items where class = AI, TK, CC, and MC --></help>
+    <label><!-- Armor $ --></label>
+    <name>Armor_dollars__c</name>
+</CustomFieldTranslation>

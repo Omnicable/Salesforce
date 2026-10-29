@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_TESTNAMUSETHIS</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://omnicable.my.salesforce.com/a54Po00000pDzgDIAS
+21-Oct-2025 09:52:20 AM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>TESTNAMUSETHIS</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!Account.Id}
+
+&amp;QueryId=[companycyNEW]0Q_027EA0077641%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[CYQ2]0Q_028EA0465416%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[CYQ3]0Q_029EA0839452%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[CYQ4]0Q_030EA0469717%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[CompanyPYq1]0Q_031EA0627437%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[CompanyPYq2]0Q_032EA0175449%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[CompanyPYq3]0Q_033EA0759817%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[CompanyPYq4]0Q_035EA0617914%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[companycyproduct]0Q_046EA0376929%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[companyproductpy]0Q_047EA0094966%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c},
+[companyproductpytd]0Q_049EA0619123%3Fpv0%3D{!Account.Account_ID_18__c}~pv1%3D{!Account.Company_Name__c}
+
+&amp;TemplateId=0T_003EA0942835</url>
+    <width>900</width>
+</WebLink>

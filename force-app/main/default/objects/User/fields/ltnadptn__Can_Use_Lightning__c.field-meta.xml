@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ltnadptn__Can_Use_Lightning__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This field contains a copy of the value of the user permission PermissionslightningExperienceUser.  If TRUE, this user sees a link in the profile menu to switch to Lightning or back to Classic.  If FALSE, this user cannot navigate to Lightning.</description>
+    <inlineHelpText>This field contains a copy of the value of the user permission PermissionslightningExperienceUser.  If TRUE, this user sees a link in the profile menu to switch to Lightning or back to Classic.  If FALSE, this user cannot navigate to Lightning.</inlineHelpText>
+    <label>Can Use Lightning</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

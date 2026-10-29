@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>マイルストーンの予定時間</help>
+    <label>マイルストーン予定時間</label>
+    <name>Hours_Budget__c</name>
+</CustomFieldTranslation>

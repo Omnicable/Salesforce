@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2_Potential_Reestl_Recwards_Contacts</fullName>
+    <columns>OCC_Rewards__c</columns>
+    <columns>PortalUser__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>pi__score__c</columns>
+    <columns>OCC_RewardStep__c</columns>
+    <columns>OCC_RewardStepValue__c</columns>
+    <columns>OCC_ViewAll__c</columns>
+    <columns>CONTACT.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>5</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>998875,998896,997901,998934,962715,962712,827635,962711,972870,997971,962809</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Standard</value>
+    </filters>
+    <label>CED Potential Reel Rewards Contacts</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Region5</group>
+        <group>SFDCAdministrators</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_ViewAll__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Determines if contact can view all QOC data or just their own</description>
+    <label>OCC_ViewAll</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

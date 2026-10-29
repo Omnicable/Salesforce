@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Panduit_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Number__c</columns>
+    <columns>Region_Number__c</columns>
+    <columns>X2019_Panduit_Sales__c</columns>
+    <columns>ACCOUNT.ADDRESS2_CITY</columns>
+    <columns>ACCOUNT.ADDRESS2_STATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Outside_Salesperson__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Panduit_SPA__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Buying_Group__c</field>
+        <operation>equals</operation>
+        <value>sonepar</value>
+    </filters>
+    <label>All Panduit Accounts</label>
+</ListView>

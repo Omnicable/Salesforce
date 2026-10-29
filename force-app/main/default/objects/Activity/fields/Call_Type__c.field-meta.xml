@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Type__c</fullName>
+    <description>TSM Call Type</description>
+    <label>Call Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>-</fullName>
+                <default>false</default>
+                <label>-</label>
+            </value>
+            <value>
+                <fullName>End User Training</fullName>
+                <default>false</default>
+                <label>End User Training</label>
+            </value>
+            <value>
+                <fullName>Lunch n Learn</fullName>
+                <default>false</default>
+                <label>Lunch n Learn</label>
+            </value>
+            <value>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+                <label>Business Review</label>
+            </value>
+            <value>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+                <label>Customer Event</label>
+            </value>
+            <value>
+                <fullName>General Visit</fullName>
+                <default>false</default>
+                <label>General Visit</label>
+            </value>
+            <value>
+                <fullName>Golf Outing</fullName>
+                <default>false</default>
+                <label>Golf Outing</label>
+            </value>
+            <value>
+                <fullName>Meals</fullName>
+                <default>false</default>
+                <label>Meals</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Quote Follow Up</fullName>
+                <default>false</default>
+                <label>Quote Follow Up</label>
+            </value>
+            <value>
+                <fullName>Discussion Summary</fullName>
+                <default>false</default>
+                <label>Discussion Summary</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

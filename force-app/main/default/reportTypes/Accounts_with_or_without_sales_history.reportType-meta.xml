@@ -182,11 +182,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Current_Monthly_Budget__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>CY_Q1_GP_Pct__c</field>
             <table>Account</table>
         </columns>
@@ -343,11 +338,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastActivityDate</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Max_Date_Order__c</field>
             <table>Account</table>
         </columns>
         <columns>

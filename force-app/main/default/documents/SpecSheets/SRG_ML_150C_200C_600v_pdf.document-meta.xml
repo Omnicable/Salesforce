@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FIRST CAPITOL SPEC SHEET
+C50101 C50201 C50401 C50601 C50801 C51/001 C52/001 C525001 C53/001 C535001 C54/001 C550001 C575001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>FC PART #&apos;S 10548100 10546100 10544100 10542100 10540100 10550100 10552100 10602400 10554100 10602500 10556100 10602600 10602700</keywords>
+    <name>First Capitol Motor Lead Wire - SRML</name>
+    <public>true</public>
+</Document>

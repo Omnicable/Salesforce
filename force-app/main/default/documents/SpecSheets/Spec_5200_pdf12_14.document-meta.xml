@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+M714ST-01 M714ST-02 M714ST-03 M714ST-07 M714ST-08 M714ST-04 M714ST-05 M714ST-10 M714ST-06 M712ST-01 M712ST-02 M712ST-03 M712ST-07 M712ST-08 M712ST-04 M712ST-05 M712ST-10 M712ST-06</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 391070 391080</keywords>
+    <name>General Cable Building Wire - XHHW-2 - 12&amp;14 AWG</name>
+    <public>true</public>
+</Document>

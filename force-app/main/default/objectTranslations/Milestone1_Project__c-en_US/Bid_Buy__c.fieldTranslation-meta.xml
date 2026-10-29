@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Is this a bid or a buy? --></help>
+    <label><!-- Bid/Buy --></label>
+    <name>Bid_Buy__c</name>
+    <picklistValues>
+        <masterLabel>Bid</masterLabel>
+        <translation><!-- Bid --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Buy</masterLabel>
+        <translation><!-- Buy --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

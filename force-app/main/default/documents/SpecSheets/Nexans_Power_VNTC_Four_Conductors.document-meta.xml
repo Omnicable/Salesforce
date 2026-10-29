@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>NEXANS SPEC SHEET
+A30104 A30204 A30404 A30604 A30804 A31/004 A32/004 A33/004 A34/004 A325004 A335004 A350004</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>A30104 A30204 A30404 A30604 A30804 A31/004 A32/004 A33/004 A34/004 A325004 A335004 A350004</keywords>
+    <name>Nexans - Power VNTC Four Conductors</name>
+    <public>true</public>
+</Document>

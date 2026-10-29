@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>For admins for easy user lookup</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>SETUP | USERS</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://omnicable.my.salesforce.com/005?isUserEntityOverride=1&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DUsers&amp;setupid=ManageUsers</url>
+</CustomPageWebLink>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>NEXANS SPEC SHEET
+Shielded VNTC 10AWG A21002 A21003 A21004 A21005</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Shielded VNTC 10AWG A21002 A21003 A21004 A21005</keywords>
+    <name>Nexans - Shileded Tray Cable 10AWG</name>
+    <public>true</public>
+</Document>

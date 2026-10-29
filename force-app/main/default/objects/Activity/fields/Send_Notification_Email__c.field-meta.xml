@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Notification_Email__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This mimics the Send Notification Email button on standard tasks</description>
+    <label>Send Notification Email</label>
+    <type>Checkbox</type>
+</CustomField>

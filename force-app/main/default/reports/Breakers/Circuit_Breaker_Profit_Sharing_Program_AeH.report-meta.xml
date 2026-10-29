@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(Account.RegionNumerical__c:MAX = 2, 510462.32, 
+IF(Account.RegionNumerical__c:MAX = 3, 357895.67, 
+IF(Account.RegionNumerical__c:MAX = 4, 308900.11, 
+IF(Account.RegionNumerical__c:MAX = 5, 272183.83, 
+IF(Account.RegionNumerical__c:MAX = 6, 340694.61, 
+IF(Account.RegionNumerical__c:MAX = 7, 82555.03, 
+IF(Account.RegionNumerical__c:MAX = 8, 305701.37, 
+IF(Account.RegionNumerical__c:MAX = 9, 204383.65, 
+IF(Account.RegionNumerical__c:MAX = 10, 304558.97, 
+IF(Account.RegionNumerical__c:MAX = 11, 249941.51, 
+IF(Account.RegionNumerical__c:MAX = 12, 313159.50, 
+IF(Account.RegionNumerical__c:MAX = 13, 349563.45, 0))))))))))))</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Region Budget</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(Account.RegionNumerical__c:MAX = 2, Sales_History_Line_Item__c.Line_Total__c:SUM/510462.32, 
+IF(Account.RegionNumerical__c:MAX = 3, Sales_History_Line_Item__c.Line_Total__c:SUM/357895.67, 
+IF(Account.RegionNumerical__c:MAX = 4, Sales_History_Line_Item__c.Line_Total__c:SUM/308900.11, 
+IF(Account.RegionNumerical__c:MAX = 5, Sales_History_Line_Item__c.Line_Total__c:SUM/272183.83, 
+IF(Account.RegionNumerical__c:MAX = 6, Sales_History_Line_Item__c.Line_Total__c:SUM/340694.61, 
+IF(Account.RegionNumerical__c:MAX = 7, Sales_History_Line_Item__c.Line_Total__c:SUM/82555.03, 
+IF(Account.RegionNumerical__c:MAX = 8, Sales_History_Line_Item__c.Line_Total__c:SUM/305701.37, 
+IF(Account.RegionNumerical__c:MAX = 9, Sales_History_Line_Item__c.Line_Total__c:SUM/204383.65, 
+IF(Account.RegionNumerical__c:MAX = 10, Sales_History_Line_Item__c.Line_Total__c:SUM/304558.97, 
+IF(Account.RegionNumerical__c:MAX = 11, Sales_History_Line_Item__c.Line_Total__c:SUM/249941.51, 
+IF(Account.RegionNumerical__c:MAX = 12, Sales_History_Line_Item__c.Line_Total__c:SUM/313159.50, 
+IF(Account.RegionNumerical__c:MAX = 13, Sales_History_Line_Item__c.Line_Total__c:SUM/349563.45, 0))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Region Budget</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(Account.RegionNumerical__c:MAX = 2, Sales_History_Line_Item__c.Line_Total__c:SUM/((510462.32/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 3, Sales_History_Line_Item__c.Line_Total__c:SUM/((357895.67/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 4, Sales_History_Line_Item__c.Line_Total__c:SUM/((308900.11/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 5, Sales_History_Line_Item__c.Line_Total__c:SUM/((272183.83/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 6, Sales_History_Line_Item__c.Line_Total__c:SUM/((340694.61/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 7, Sales_History_Line_Item__c.Line_Total__c:SUM/((82555.03/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 8, Sales_History_Line_Item__c.Line_Total__c:SUM/((305701.37/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 9, Sales_History_Line_Item__c.Line_Total__c:SUM/((204383.65/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 10, Sales_History_Line_Item__c.Line_Total__c:SUM/((304558.97/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 11, Sales_History_Line_Item__c.Line_Total__c:SUM/((249941.51/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 12, Sales_History_Line_Item__c.Line_Total__c:SUM/((313159.50/254)*Account.Business_Days_YTD__c:MAX), 
+IF(Account.RegionNumerical__c:MAX = 13, Sales_History_Line_Item__c.Line_Total__c:SUM/((349563.45/254)*Account.Business_Days_YTD__c:MAX), 0))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Region YTD Budget</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Sales_History_Line_Item__c.Line_Total__c:SUM/3600000</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA4</developerName>
+        <downGroupingContext>GRAND_SUMMARY</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Total Budget</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Sales_History_Line_Item__c.Line_Total__c:SUM/((3600000/254)*Account.Business_Days_YTD__c:MAX)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA5</developerName>
+        <downGroupingContext>GRAND_SUMMARY</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to YTD Total Budget</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Item__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Description__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Total__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Major_Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>SE,SM,EA</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Region_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Circuit Breaker Profit Sharing Promotion</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Accounts_Orders_SalesHistory_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r.SalesHistory__r$Invoice_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

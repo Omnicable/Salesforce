@@ -1,0 +1,6 @@
+This is a reminder that the {!Promo__c.Name} promo that you are running is ending in 14 days on {!Promo__c.End_Date__c} . 
+
+You can access the report for the promo here: {!Promo__c.Promo_Tracking_Report__c}
+
+If you want to extend this promo, please click here to update the end date: {!Promo__c.Link}. 
+Otherwise, the promo will end on the originally scheduled date.

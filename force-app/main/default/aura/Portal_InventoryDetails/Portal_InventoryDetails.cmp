@@ -1,0 +1,36 @@
+<!--
+  @description       : Shows list of inventory reels for a particular OmniCable product
+  @author            : chrisw@launchdm.com
+  @group             : LaunchDM
+  @last modified on  : 11-30-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component>
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	<aura:attribute name="inventoryDetails" type="List" default="[]" />
+	<aura:attribute name="reels" type="List" default="[]" />
+	<aura:attribute name="columns" type="List" default="[]" />
+
+
+	<div>
+		<!-- <aura:iteration items="{!v.reels}" var="reel">
+			<div class="slds-grid slds-wrap">
+				<div class="slds-col">
+					{!reel.Name}
+				</div>
+				<div class="slds-col">
+					{!reel.Lot_Number__c}
+				</div>
+				<div class="slds-col">
+					{!reel.Putup__c}
+				</div>
+			</div>
+		</aura:iteration> -->
+
+		<div>
+			<lightning:datatable keyField="id" data="{! v.reels }" columns="{! v.columns }" hideCheckboxColumn="true" />
+		</div>
+
+	</div>
+
+</aura:component>

@@ -4,11 +4,17 @@
     <columns>ORDER.NAME</columns>
     <columns>ORDERS.ORDER_NUMBER</columns>
     <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>ORDERS.CREATED_DATE</columns>
+    <columns>ORDERS.LAST_UPDATE</columns>
     <columns>ORDERS.TOTAL_AMOUNT</columns>
     <columns>ORDERS.EFFECTIVE_DATE</columns>
     <columns>ORDERS.STATUS</columns>
-    <columns>CONTRACT.CONTRACT_NUMBER</columns>
     <columns>Quote_Order_Credit__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>ORDERS.STATUS</field>
+        <operation>equals</operation>
+        <value>Invoiced</value>
+    </filters>
     <label>All Orders</label>
 </ListView>

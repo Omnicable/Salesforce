@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Composer_SP_Account_Brief</fullName>
+    <availability>online</availability>
+    <description>Created by Conga Solution Manager. Record link: https://omnicable.my.salesforce.com/a54Po00000PznNCIAZ.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Composer SP Account Brief</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!Account.Id}
+
+&amp;QueryId=[Opptys]0Q_000EA0888560,
+[Contacts]0Q_001EA0888560,
+[Cases]0Q_002EA0888561,
+[Activities]0Q_003EA0888561
+
+&amp;TemplateId=0T_000EA0630082
+
+&amp;OFN=Account Brief - {!Account.Name} - {!Today}
+&amp;AC0=1
+&amp;AC1=Account Brief Created By {!User.Name}
+&amp;SC0=1
+&amp;SC1=Attachments
+&amp;DefaultPDF=1
+&amp;TemplateGroup=Account</url>
+    <width>900</width>
+</WebLink>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Items_Requested_for_Stock__c</fullName>
+    <label>Product Feedback</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bus Drop</fullName>
+                <default>false</default>
+                <label>Bus Drop</label>
+            </value>
+            <value>
+                <fullName>Category Cables</fullName>
+                <default>false</default>
+                <label>Category Cables</label>
+            </value>
+            <value>
+                <fullName>Clamps</fullName>
+                <default>false</default>
+                <label>Clamps</label>
+            </value>
+            <value>
+                <fullName>Coax</fullName>
+                <default>false</default>
+                <label>Coax</label>
+            </value>
+            <value>
+                <fullName>Flexible Conduit</fullName>
+                <default>false</default>
+                <label>Flexible Conduit</label>
+            </value>
+            <value>
+                <fullName>Copper MC</fullName>
+                <default>false</default>
+                <label>Copper MC</label>
+            </value>
+            <value>
+                <fullName>Copper SER</fullName>
+                <default>false</default>
+                <label>Copper SER</label>
+            </value>
+            <value>
+                <fullName>DLO</fullName>
+                <default>false</default>
+                <label>DLO</label>
+            </value>
+            <value>
+                <fullName>Dryer Cords</fullName>
+                <default>false</default>
+                <label>Dryer Cords</label>
+            </value>
+            <value>
+                <fullName>Extension Cords</fullName>
+                <default>false</default>
+                <label>Extension Cords</label>
+            </value>
+            <value>
+                <fullName>Fire Alarm</fullName>
+                <default>false</default>
+                <label>Fire Alarm</label>
+            </value>
+            <value>
+                <fullName>Ground Rods</fullName>
+                <default>false</default>
+                <label>Ground Rods</label>
+            </value>
+            <value>
+                <fullName>Landscape Lighting</fullName>
+                <default>false</default>
+                <label>Landscape Lighting</label>
+            </value>
+            <value>
+                <fullName>MTW</fullName>
+                <default>false</default>
+                <label>MTW</label>
+            </value>
+            <value>
+                <fullName>Plenum Cables</fullName>
+                <default>false</default>
+                <label>Plenum Cables</label>
+            </value>
+            <value>
+                <fullName>PV Wire</fullName>
+                <default>false</default>
+                <label>PV Wire</label>
+            </value>
+            <value>
+                <fullName>Riser Cables</fullName>
+                <default>false</default>
+                <label>Riser Cables</label>
+            </value>
+            <value>
+                <fullName>Tray Cable</fullName>
+                <default>false</default>
+                <label>Tray Cable</label>
+            </value>
+            <value>
+                <fullName>Thermostat</fullName>
+                <default>false</default>
+                <label>Thermostat</label>
+            </value>
+            <value>
+                <fullName>Type G</fullName>
+                <default>false</default>
+                <label>Type G</label>
+            </value>
+            <value>
+                <fullName>Type GGC</fullName>
+                <default>false</default>
+                <label>Type GGC</label>
+            </value>
+            <value>
+                <fullName>Type W</fullName>
+                <default>false</default>
+                <label>Type W</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

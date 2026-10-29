@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Max D.C. Res. @ 20°C (Ohms/M’) --></label>
+    <name>Max_D_C_Res_20_C_Ohms_M__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Expiration --></label>
+    <name>Expiration__c</name>
+    <picklistValues>
+        <masterLabel>30 Days</masterLabel>
+        <translation><!-- 30 Days --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>60 Days</masterLabel>
+        <translation><!-- 60 Days --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>90 Days</masterLabel>
+        <translation><!-- 90 Days --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Indefinite</masterLabel>
+        <translation><!-- Indefinite --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

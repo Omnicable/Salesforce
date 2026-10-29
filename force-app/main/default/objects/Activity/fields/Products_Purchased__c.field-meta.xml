@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_Purchased__c</fullName>
+    <label>Products Purchased</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Price_Sheet_Provided__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AL XHHW</fullName>
+                <default>false</default>
+                <label>AL XHHW</label>
+            </value>
+            <value>
+                <fullName>SER</fullName>
+                <default>false</default>
+                <label>SER</label>
+            </value>
+            <value>
+                <fullName>SEU</fullName>
+                <default>false</default>
+                <label>SEU</label>
+            </value>
+            <value>
+                <fullName>MCA</fullName>
+                <default>false</default>
+                <label>MCA</label>
+            </value>
+            <value>
+                <fullName>MHF</fullName>
+                <default>false</default>
+                <label>MHF</label>
+            </value>
+            <value>
+                <fullName>Triplex Service Drop</fullName>
+                <default>false</default>
+                <label>Triplex Service Drop</label>
+            </value>
+            <value>
+                <fullName>Quad Service Drop</fullName>
+                <default>false</default>
+                <label>Quad Service Drop</label>
+            </value>
+            <value>
+                <fullName>Triplex URD</fullName>
+                <default>false</default>
+                <label>Triplex URD</label>
+            </value>
+            <value>
+                <fullName>Quad URD</fullName>
+                <default>false</default>
+                <label>Quad URD</label>
+            </value>
+            <value>
+                <fullName>8000 Series URD</fullName>
+                <default>false</default>
+                <label>8000 Series URD</label>
+            </value>
+            <value>
+                <fullName>AL THHN</fullName>
+                <default>false</default>
+                <label>AL THHN</label>
+            </value>
+            <value>
+                <fullName>AL USE-2</fullName>
+                <default>false</default>
+                <label>AL USE-2</label>
+            </value>
+            <value>
+                <fullName>SOOW</fullName>
+                <default>false</default>
+                <label>SOOW</label>
+            </value>
+            <value>
+                <fullName>SJOOW</fullName>
+                <default>false</default>
+                <label>SJOOW</label>
+            </value>
+            <value>
+                <fullName>SEOOW</fullName>
+                <default>false</default>
+                <label>SEOOW</label>
+            </value>
+            <value>
+                <fullName>SEOOW Colors</fullName>
+                <default>false</default>
+                <label>SEOOW Colors</label>
+            </value>
+            <value>
+                <fullName>SJEOOW</fullName>
+                <default>false</default>
+                <label>SJEOOW</label>
+            </value>
+            <value>
+                <fullName>SJEOOW Colors</fullName>
+                <default>false</default>
+                <label>SJEOOW Colors</label>
+            </value>
+            <value>
+                <fullName>Welding Cable</fullName>
+                <default>false</default>
+                <label>Welding Cable</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>AL XHHW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>SER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>SEU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>MCA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>MHF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>Triplex Service Drop</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>Quad Service Drop</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>Triplex URD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>Quad URD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>8000 Series URD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>AL THHN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aluminum</controllingFieldValue>
+            <valueName>AL USE-2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>SOOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>SJOOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>SEOOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>SEOOW Colors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>SJEOOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>SJEOOW Colors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Portable Cord</controllingFieldValue>
+            <valueName>Welding Cable</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The details about the log. This is freeform text for user to capture whatever data they want to keep track of in the log. --></help>
+    <label><!-- Detail --></label>
+    <name>Detail__c</name>
+</CustomFieldTranslation>

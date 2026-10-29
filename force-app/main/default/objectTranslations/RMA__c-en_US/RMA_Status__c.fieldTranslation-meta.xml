@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- RMA Status --></label>
+    <name>RMA_Status__c</name>
+    <picklistValues>
+        <masterLabel>APPROVED</masterLabel>
+        <translation><!-- APPROVED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AWAITING RECEIPT</masterLabel>
+        <translation><!-- AWAITING RECEIPT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BEING RECEIVED</masterLabel>
+        <translation><!-- BEING RECEIVED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CANCELLED</masterLabel>
+        <translation><!-- CANCELLED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CLOSED</masterLabel>
+        <translation><!-- CLOSED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CREDITED</masterLabel>
+        <translation><!-- CREDITED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EXPIRED</masterLabel>
+        <translation><!-- EXPIRED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FRT RESEARCH</masterLabel>
+        <translation><!-- FRT RESEARCH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WHSE REC</masterLabel>
+        <translation><!-- WHSE REC --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

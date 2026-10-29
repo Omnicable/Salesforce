@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Continental Wire and Cable Catalog
+Lead Wire, RHH/RHW-2 USE-2, SIS, XHHW-2, Thermocouple FREP/CPE, EX, JX, KX, TX, Instrumentation, Shielded Pairs Triads, AF71603, XLP/PVC, Power, Control,</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Lead Wire, RHH/RHW-2 USE-2, SIS, XHHW-2, Thermocouple FREP/CPE, EX, JX, KX, TX, Instrumentation, Shielded Pairs Triads, AF71603, XLP/PVC, Power, Control,</keywords>
+    <name>Continental - Catalog</name>
+    <public>true</public>
+</Document>

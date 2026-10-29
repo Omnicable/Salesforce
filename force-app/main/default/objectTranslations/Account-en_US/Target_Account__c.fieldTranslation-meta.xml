@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Target Account --></label>
+    <name>Target_Account__c</name>
+    <picklistValues>
+        <masterLabel>AM Target</masterLabel>
+        <translation><!-- AM Target --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BDR Growth</masterLabel>
+        <translation><!-- BDR Growth --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BDR Maintenance</masterLabel>
+        <translation><!-- BDR Maintenance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Target Acct</masterLabel>
+        <translation><!-- No Target Acct --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

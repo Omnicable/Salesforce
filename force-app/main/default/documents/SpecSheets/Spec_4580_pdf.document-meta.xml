@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+AV11403 AV11203 AV11003 AV10803 AV10603 AV10403 AV10203 AV11/003 AV12/003 AV13/003 AV14/003 AV125003 AV135003 AV150003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 395070V 395080V 395090V 395100V 395110V 395120V 395130V 395140V 395150V 395160V 395170V 395180V 395190V 395200V</keywords>
+    <name>VFD Cable - vfd TC-ER - VFD</name>
+    <public>true</public>
+</Document>

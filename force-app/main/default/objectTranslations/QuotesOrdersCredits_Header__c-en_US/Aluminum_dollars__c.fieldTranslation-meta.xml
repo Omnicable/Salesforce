@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Sum of the Line Dollars (Booked) for non-cancelled line items where Class = AL or Item Class = CSAL --></help>
+    <label><!-- Aluminum $ --></label>
+    <name>Aluminum_dollars__c</name>
+</CustomFieldTranslation>

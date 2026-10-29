@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_Users_All</fullName>
+    <columns>Active__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Region__c</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>Last_Quote_Order__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>pi__score__c</columns>
+    <columns>CONTACT.RECORDTYPE</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>OCC_Photo__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Standard</value>
+    </filters>
+    <filters>
+        <field>PortalUser__c</field>
+        <operation>equals</operation>
+        <value>Y</value>
+    </filters>
+    <label>Portal Users: All</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Business_Innovation</group>
+    </sharedTo>
+</ListView>

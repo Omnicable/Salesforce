@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+KT32202 KT32002 KT31802 KT41803 KT31602 KT41603</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C0450A C0451A C0452 C0453A C0454 C0455 C0456 C0457 C0458A C0459A C0460A</keywords>
+    <name>General Cable Power-Limited Tray Cable - Type PLTC - Foil Shield</name>
+    <public>true</public>
+</Document>

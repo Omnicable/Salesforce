@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Vendors who have transferred customers to us or a general account tracking flag (e.g., AD IESD) --></help>
+    <label><!-- Flag --></label>
+    <name>Flag__c</name>
+    <picklistValues>
+        <masterLabel>AD IESD G2G</masterLabel>
+        <translation><!-- AD IESD G2G --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corning</masterLabel>
+        <translation><!-- Corning --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duraline</masterLabel>
+        <translation><!-- Duraline --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EWS Authorized Reseller</masterLabel>
+        <translation><!-- EWS Authorized Reseller --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EWS Fully Authorized</masterLabel>
+        <translation><!-- EWS Fully Authorized --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HS Springsteen</masterLabel>
+        <translation><!-- HS Springsteen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hubbell Lenoir City</masterLabel>
+        <translation><!-- Hubbell Lenoir City --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hubbell Power Systems</masterLabel>
+        <translation><!-- Hubbell Power Systems --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PPC</masterLabel>
+        <translation><!-- PPC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Utility Plastics</masterLabel>
+        <translation><!-- Utility Plastics --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

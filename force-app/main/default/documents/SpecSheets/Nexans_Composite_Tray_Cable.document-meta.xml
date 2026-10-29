@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>NEXANS SPEC SHEET
+AC30203 AC30403 AC30603 AC30803 AC31003 AC31203</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>AC30203 AC30403 AC30603 AC30803 AC31003 AC31203</keywords>
+    <name>Nexans - Composite Tray Cable</name>
+    <public>true</public>
+</Document>

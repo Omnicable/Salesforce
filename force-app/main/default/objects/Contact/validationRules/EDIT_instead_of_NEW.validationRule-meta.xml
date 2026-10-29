@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EDIT_instead_of_NEW</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISCHANGED(Email) , ISCHANGED( FirstName ) , ISCHANGED( LastName ), $User.Username &lt;&gt; &quot;integration@omnicable.com.full&quot;, $User.Username &lt;&gt; &quot;svcdwh@omnicable.com.full&quot;)</errorConditionFormula>
+    <errorMessage>If you are changing the First Name, Last Name, and Email address, you should probably enter a new contact. If this is NOT a different person then contact Windy Fiore.</errorMessage>
+</ValidationRule>

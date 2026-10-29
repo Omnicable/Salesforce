@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_IEC_Users</fullName>
+    <active>false</active>
+    <errorConditionFormula>UserRoleId =&apos;00E32000001xULZ&apos;</errorConditionFormula>
+    <errorMessage>Per  Carol Candelaria carol.candelaria@iecsupply.com she is the only approved portal user</errorMessage>
+</ValidationRule>

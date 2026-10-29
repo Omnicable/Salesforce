@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+AF30803 AF30804 AF30603 AF30604 AF30403 AF30404 AF30203 AF30204 AF31/003 AF32/003 AF34/003 AF335003 AF350003 AF375003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GC PART #&apos;S 383830 383840 296440 279660 279670 283210 300380 283200 295390 293600 295890 297730 356740 283220 294530 284560 295360 325700 365750 325110 346980 300780 346990 325120 347000 298020 14407.546500 14407.247000 14407.547000</keywords>
+    <name>Instrumentation Cable - Type TC - 600 Volt - FREP - XHHW-2 FR-EP/ CPE Jacket - 3 Conductor w/Ground-All-AWG</name>
+    <public>true</public>
+</Document>

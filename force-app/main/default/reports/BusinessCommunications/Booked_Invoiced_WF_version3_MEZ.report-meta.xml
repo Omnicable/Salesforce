@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_49798038</developerName>
+        <masterLabel>BB Sales Specialist</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account$Broadband_Sales_Specialist__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Adam Blackley</sourceValue>
+            </sourceValues>
+            <value>Adam Blackley</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Natalie Bourlotos</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Natalie Bourlotos - CAN</sourceValue>
+            </sourceValues>
+            <value>Natalie Bourlotos</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Richard Del Conte</sourceValue>
+            </sourceValues>
+            <value>Richard Del Conte</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account$Broadband_Sales_Specialist__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Broadband__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Inside_AM_Name__c</field>
+    </columns>
+    <columns>
+        <field>Account$Owner</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Order_Number__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r$OrderCount__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r$TotalDollars__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r$Total_GPDollars__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r.SalesHistory__r$Total_Invoice_Dollars__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r.SalesHistory__r$NetGP__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Account.Order_Header__r$Total_Order_Net_GP_with_BSD__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Broadband__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Order_Header__r$Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Order_Header__r$Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$CBU_OSM__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Booked &amp; Invoiced - WF version3</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Accounts_w_QOCs_w_w_o_Sales_History__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r$Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

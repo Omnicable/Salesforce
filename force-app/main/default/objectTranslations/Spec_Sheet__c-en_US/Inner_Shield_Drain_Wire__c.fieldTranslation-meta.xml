@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Inner Shield Drain Wire --></label>
+    <name>Inner_Shield_Drain_Wire__c</name>
+</CustomFieldTranslation>

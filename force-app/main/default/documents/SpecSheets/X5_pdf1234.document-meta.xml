@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE CABLE SPEC SHEET
+A51002 A51003 A51004 A51005 A51007 A51012</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>SW PART #&apos;S 569396 952861 952879 952895 952887 952911 952937 952952 952960 952978 955831 955930 955948 955955 955963</keywords>
+    <name>Southwire Instrumentation Cable - Type TC - 600 Volt - CVTC - XHHW Insulation - PVC Jacket - 10 AWG</name>
+    <public>true</public>
+</Document>

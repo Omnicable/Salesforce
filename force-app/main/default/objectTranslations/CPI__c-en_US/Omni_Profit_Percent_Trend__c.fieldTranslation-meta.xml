@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Omni Profit Percent Trend --></label>
+    <name>Omni_Profit_Percent_Trend__c</name>
+    <picklistValues>
+        <masterLabel>Down</masterLabel>
+        <translation><!-- Down --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Up</masterLabel>
+        <translation><!-- Up --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

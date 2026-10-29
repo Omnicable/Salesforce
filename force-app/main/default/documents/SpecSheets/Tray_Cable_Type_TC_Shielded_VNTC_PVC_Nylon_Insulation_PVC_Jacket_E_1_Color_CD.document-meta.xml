@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+A171602 A171603  L21602 L21604 L21612 L21616 L21624 L21650</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 230830 230840 238410 239200 230790 336870 336880 244590 244610 336890 230780 230820 230810 237490</keywords>
+    <name>General Cable Tray Cable - Type TC - Shielded - VNTC - PVC/Nylon Insulation - PVC Jacket - E-1 Color Code16&amp;14AWG</name>
+    <public>true</public>
+</Document>

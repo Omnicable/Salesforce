@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>費用が発生した日付。デフォルトでは今日の日付が入る。</help>
+    <label>発生日</label>
+    <name>Date_Incurred__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supply_Chain</fullName>
+    <active>true</active>
+    <label>Supply Chain</label>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Waiting on someone else</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Joint Sales Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Sales Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outside Sales Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone%2FEmail Touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price Sheet Tracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Follow Up</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone%2FEmail Touch</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Visit Touch</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

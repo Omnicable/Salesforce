@@ -1,0 +1,243 @@
+.THIS .show-border{
+	border: 1px solid #0074BF;
+}
+
+
+.THIS .accordion{
+	overflow: hidden;
+}
+
+.THIS .header-text {
+	color: #0074BF;
+	/* word-break: break-all; */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0;
+
+}
+
+.THIS .receive {
+	font-size: 14px;
+	right: 0px;
+	top: 10px;
+	position: absolute;
+}
+
+.THIS .slds-accordion__summary-heading{
+	flex-grow: 0;
+}
+
+.THIS .accordion-collapse{
+	transition: all .5s;
+}
+
+.THIS .label-text-details {
+	font-weight: bold;
+	font-size: 14px;
+	padding-left: 0px;
+	margin-bottom: 5px;
+}
+
+.THIS .label-text {
+	font-size: 17px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.THIS .label-text-details {
+	font-weight: bold;
+	font-size: 14px;
+	padding-left: 0px;
+	margin-bottom: 5px;
+}
+
+.THIS .more-header {
+	background-color: #f1f2f2;
+}
+
+.THIS .more-title {
+	font-weight: bold;
+	padding-left: 0px;
+}
+
+.THIS li :hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.THIS .omni-btn {
+	background-color: #0875BC;
+	color: white;
+	border: 0px;
+}
+
+.THIS .omni-btn:hover {
+	background-color: #1E253A;
+}
+
+.THIS .omni-btn-dark {
+	background-color: #1E253A;
+	color: white;
+	border: 0px;
+}
+
+.THIS .omni-btn-dark:hover {
+	background-color: #323e65;
+}
+
+.THIS .omni-del-btn {
+	background-color: #ED4337;
+	color: white;
+	border: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px
+}
+
+.THIS .omni-del-btn:hover {
+	background-color: #9f2a22;
+}
+
+.THIS .cb-row {
+	text-align: left;
+	font-size: 12px;
+}
+
+.THIS .cb-div {
+	margin-top: 25px;
+}
+
+.THIS .request-row {
+	margin-top: 8px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.THIS .line-text {
+	background-color: black;
+	padding: 1px 7px;
+	color: white;
+	font-size: 16px;
+}
+
+.THIS .qty-label{
+	font-weight: bold;
+}
+
+.THIS .accordion-header.even .accordion-button{
+	background-color: #e2e3e4;
+}
+
+.THIS .open-active {
+	background: #1E253A !important;
+	color: white !important;
+}
+
+.THIS .open-active .header-text{
+	color: white !important;
+}
+
+
+.THIS h1, .THIS h2, .THIS h3, .THIS h4, .THIS h5 {
+	color: #337ab7;
+	margin-top: 10px;
+}
+
+.THIS .show{
+	max-height: 100000px !important;
+}
+
+.THIS .collapse{
+	max-height: 0;
+	overflow: hidden;
+}
+
+.THIS .clickable{
+	cursor: pointer;
+}
+
+.THIS .up{
+	display: block;
+	fill: #0875BC;
+}
+.THIS .down{
+	display: none;
+}
+
+.THIS .open-active .up{
+	display: none;
+}
+
+.THIS .open-active .down{
+	display: block;
+}
+
+.THIS .open-active .down svg{
+	fill: white;
+}
+
+.THIS .qty-status {
+	right: 10px;
+	top: 10px;
+	position: absolute;
+}
+
+.THIS .dynamic-detail-label{
+	display:none;
+}
+
+.THIS ul.images {
+	margin: 0;
+	padding: 0;
+	word-wrap: break-word;
+	overflow-x: auto;
+	overflow-y: hidden;
+	text-align: center;
+}
+
+.THIS ul.images > * {
+	display: inline;
+	width: 120px;
+	/* height: 110px; */
+	margin: 5px;
+	display: inline-block;
+}
+
+.THIS .doc-slider-container {
+	overflow-x: scroll;
+	padding: 0px;
+	margin-bottom: 0px;
+}
+
+.THIS .img-container {
+	vertical-align: top;
+	/* height: 140px !important; */
+	display: inline-block;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.THIS .scrolling-wrapper-flexbox {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+  
+
+  }
+
+.THIS .scrolling-wrapper-flexbox .card {
+	flex: 0 0 auto;
+  }
+
+@media only screen and (max-width : 1200px) {
+
+	.THIS .dynamic-detail-label{
+		display:block !important;
+	}
+
+	.THIS .top-label-container{
+		display: none;
+	}
+	
+}

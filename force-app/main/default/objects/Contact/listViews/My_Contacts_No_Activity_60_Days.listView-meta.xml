@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Contacts_No_Activity_60_Days</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 OR 5) AND (6 OR 7)</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>MaxOrderQuoteDate__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Active__c</columns>
+    <columns>VIP_Contact__c</columns>
+    <columns>CONTACT.RECORDTYPE</columns>
+    <columns>pi__pardot_hard_bounced__c</columns>
+    <columns>CONTACT.EMAIL_BOUNCED_DATE</columns>
+    <columns>CONTACT.EMAIL_BOUNCED_REASON</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Standard</value>
+    </filters>
+    <filters>
+        <field>User_is_AM_or_DSM__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>MaxOrderQuoteDate__c</field>
+        <operation>lessThan</operation>
+        <value>LAST_N_DAYS:60</value>
+    </filters>
+    <filters>
+        <field>MaxOrderQuoteDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>CONTACT.LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>LAST_N_DAYS:60</value>
+    </filters>
+    <filters>
+        <field>CONTACT.LAST_ACTIVITY</field>
+        <operation>equals</operation>
+    </filters>
+    <label>My Contacts No Activity 60 Days</label>
+</ListView>

@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">{{{Recipient.FirstName}}},</span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">As someone who understands the demands of your role, I wanted to reach out and let you know we can help with your fiber, cable, wire, and electrical and communications connectivity product needs.</span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">We have over $400M of inventory in 18 North American locations that is for you…our distributor customer.&nbsp; OmniCable is your inventory, your solution for cut cable, drop shipments, small orders (no MOQ or MOV), next day service, with a four decade plus reputation as a reliable and trusted partner.</span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">The best part – as a redistributor exclusively selling to distributors, you’re never ordering from your competitors.&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">Enhance your service delivery with our speed and reliability. Contact us today to learn how to put our inventory to work for you.</span></span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;">Best regards,<br />
+{{{Sender.Name}}}<br />
+{{{Sender.Title}}}<br />
+OmniCable<br />
+{{{Sender.Phone}}}</span></span></p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For DSM Quote Email Alerts</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank</letterhead>
+    <name>DSM Quote Email Alert</name>
+    <style>freeForm</style>
+    <subject>{!QuotesOrdersCredits_Header__c.Customer_Name__c}  {!QuotesOrdersCredits_Header__c.Type__c} # {!QuotesOrdersCredits_Header__c.Order_Number__c} {!QuotesOrdersCredits_Header__c.TotalDollars__c} {!QuotesOrdersCredi</subject>
+    <textOnly>A quote has been entered for {!QuotesOrdersCredits_Header__c.Customer_Name__c}
+
+Quote # {!QuotesOrdersCredits_Header__c.Order_Number__c}
+{!QuotesOrdersCredits_Header__c.TotalDollars__c}
+{!QuotesOrdersCredits_Header__c.Buyer__c}
+
+Click here to view the quote: https://omnicable.my.salesforce.com/{!QuotesOrdersCredits_Header__c.Id}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

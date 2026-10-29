@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 2 x FDDI Fibers --></label>
+    <name>X2_x_FDDI_Fibers__c</name>
+</CustomFieldTranslation>

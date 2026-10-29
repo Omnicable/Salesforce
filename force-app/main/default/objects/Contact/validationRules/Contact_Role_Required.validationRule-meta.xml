@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Role_Required</fullName>
+    <active>true</active>
+    <description>Contact Title required when creating/editing contact, except profile = Omni System Admin or API User</description>
+    <errorConditionFormula>$User.ProfileId &lt;&gt;&apos;00e60000001BUtM&apos; &amp;&amp; 
+$User.ProfileId &lt;&gt;&apos;00e60000001BWSc&apos; &amp;&amp; 
+ISPICKVAL(Contact_Title__c,&quot;&quot; ) &amp;&amp;
+ISPICKVAL ( Active__c ,&quot;A&quot;)</errorConditionFormula>
+    <errorDisplayField>Contact_Title__c</errorDisplayField>
+    <errorMessage>You must select a Contact Role</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+Spec 9350 XL41602 XL41604 XL51604 XL41608 XL51608 XL41612 XL51612 XL41624 XL41636</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Spec 9350 XL41602 XL41604 XL51604 XL41608 XL51608 XL41612 XL51612 XL41624 XL41636</keywords>
+    <name>General Cable - CCW Armored Instrumentation, Pairs and Triads, Individual and Overall Shield 600V</name>
+    <public>true</public>
+</Document>

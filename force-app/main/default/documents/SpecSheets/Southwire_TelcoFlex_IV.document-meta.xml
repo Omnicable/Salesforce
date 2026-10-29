@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>OMNI PART #&apos;S TF408-XX TF406-XX TF404-XX TF402-XX TF41/0-XX TF42/0-XX TF44/0-XX TF4350-XX TF4500-XX TF4750-XX</keywords>
+    <name>Southwire TelcoFlex IV</name>
+    <public>true</public>
+</Document>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+MVU20201 MVU24/001 MVU250001 MVU250001 MVU275001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 19161.660200 19161.675100 19161.675200 19161.665300 19161.675400 19161.686000 19161.686200 19161.686500 19161.697000 19161.307500</keywords>
+    <name>General Cable Medium Voltage - 15kV - UNISHIELD®, EPR/CPE, 133% Insulation Level</name>
+    <public>true</public>
+</Document>

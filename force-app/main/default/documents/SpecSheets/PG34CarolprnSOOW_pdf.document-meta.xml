@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+B10803 B10804 B10805 B10603 B10604 B10605 B10403 B10404 B10405 B10203 B10204 B10205</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 01811 01812 01827 98267 01825 01824 98270 01823 01822 01821 98463 01819 01818 98187</keywords>
+    <name>Flexible and Portable Cord - Flexible and Portable Cord - Type SO/SOOW - 2-8 AWG</name>
+    <public>true</public>
+</Document>

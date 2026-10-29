@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Gray Market Policy --></label>
+    <name>Gray_Market_Policy__c</name>
+    <picklistValues>
+        <masterLabel>A written policy for a limited # of authorized CB Brokers</masterLabel>
+        <translation><!-- A written policy for a limited # of authorized CB Brokers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>A written policy not allowing the purchase of CBs from brokers.</masterLabel>
+        <translation><!-- A written policy not allowing the purchase of CBs from brokers. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No written policy &amp; purchase from brokers.</masterLabel>
+        <translation><!-- No written policy &amp; purchase from brokers. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No written policy but do not buy from brokers.</masterLabel>
+        <translation><!-- No written policy but do not buy from brokers. --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

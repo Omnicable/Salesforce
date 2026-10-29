@@ -1,0 +1,15 @@
+{!User.Name} created a new portal user. 
+
+{!Target_User.Name}
+{!Target_User.Account__c}
+{!Target_User.Email}
+
+User Page: 
+https://omnicable.my.salesforce.com/{!Target_User.Id}
+
+Contact Page: 
+https://omnicable.my.salesforce.com/{!Target_User.ContactId}
+
+
+** ALL PORTAL USERS MUST HAVE CONTACT ROLES IN SALESFORCE! 
+TO UPDATE, CLICK CONTACT PAGE LINK ABOVE  **

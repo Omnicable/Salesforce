@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OCC_ContactSlider__c$Name</field>
+    </columns>
+    <columns>
+        <field>OCC_ContactSlider__c$Index__c</field>
+    </columns>
+    <columns>
+        <field>OCC_ContactSlider__c$LinkUrl__c</field>
+    </columns>
+    <columns>
+        <field>OCC_ContactSlider__c$Id</field>
+    </columns>
+    <columns>
+        <field>OCC_ContactSlider__c$URL__c</field>
+    </columns>
+    <columns>
+        <field>OCC_ContactSlider__c$Contact__c</field>
+    </columns>
+    <columns>
+        <field>OCC_ContactSlider__c$Owner</field>
+    </columns>
+    <columns>
+        <field>OCC_ContactSlider__c$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>OCC_ContactSlider__c$CreatedDate</field>
+    </columns>
+    <format>Tabular</format>
+    <name>OCC_ContactSliders &amp; portal users</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OCC_ContactSliders__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>OCC_ContactSlider__c$Index__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>OCC_ContactSlider__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

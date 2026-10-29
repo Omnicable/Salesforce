@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+MVE20603 MVE20403 MVE20203 MVE21/003 MVE22/003 MVE24/003 MVE235003 MVE250003 MVE275003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 15493.400605 15493.400405 15493.400205 15493.405105 15493.405205 15493.405405 15493.406005 15493.406205 15493.406505 15493.407005 15493.407505</keywords>
+    <name>General Cable Medium Voltage - 5 kV / 8 kV - 5kV/8kV - 3 Conductor, Shielded, EPR/PVC</name>
+    <public>true</public>
+</Document>

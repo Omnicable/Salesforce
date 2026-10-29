@@ -1,0 +1,5 @@
+This is a reminder that {!Promo__c.Name} that you requested is still currently active and scheduled to expire on {!Promo__c.End_Date__c}. If this is incorrect or has changed, please reach out to marketing@omnicable.com.
+
+You can access the report for the promo here: {!Promo__c.Promo_Tracking_Report__c}
+
+To access this report at any time during this promo, use the Promo Tracker in Salesforce.

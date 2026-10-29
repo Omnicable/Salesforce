@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Part_Numbers__c$Name</field>
+    </columns>
+    <columns>
+        <field>Part_Numbers__c$Id</field>
+    </columns>
+    <columns>
+        <field>Part_Numbers__c$Item_Class_Description_OPUS__c</field>
+    </columns>
+    <description>For Paul to send to OPUS</description>
+    <filter>
+        <criteriaItems>
+            <column>Part_Numbers__c$Item_Class_OPUS__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>EA,SE</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Breaker Part Numbers with ID</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Part_Numbers__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Part_Numbers__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

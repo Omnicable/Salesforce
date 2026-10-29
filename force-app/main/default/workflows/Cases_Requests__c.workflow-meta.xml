@@ -35,10 +35,6 @@
             <recipient>nbabcock@omnicable.com</recipient>
             <type>user</type>
         </recipients>
-        <recipients>
-            <recipient>wfiore@omnicable.com</recipient>
-            <type>user</type>
-        </recipients>
         <senderType>CurrentUser</senderType>
         <template>Marketing_Templates/New_Contact_Move_Request</template>
     </alerts>
@@ -139,19 +135,6 @@
         <senderType>CurrentUser</senderType>
         <template>Marketing_Templates/Tango_Card_Request_Completed</template>
     </alerts>
-    <fieldUpdates>
-        <fullName>Change_Owner_to_Glenn</fullName>
-        <description>Used for commission requests
-*9/9/25 replaced Philip DeAngelis&apos; name with my name (Windy Fiore) so I could deactive Phil&apos;s account and reassign his license. Shouldn&apos;t matter. Doesn&apos;t look like this field update is live anymore.*</description>
-        <field>OwnerId</field>
-        <lookupValue>wfiore@omnicable.com</lookupValue>
-        <lookupValueType>User</lookupValueType>
-        <name>Change Owner to Glenn</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>LookupValue</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
     <fieldUpdates>
         <fullName>Change_Owner_to_Nikki</fullName>
         <description>For contact move requests</description>

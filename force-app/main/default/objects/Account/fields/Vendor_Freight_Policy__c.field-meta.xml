@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor_Freight_Policy__c</fullName>
+    <description>Freight Policy for this Vendor</description>
+    <inlineHelpText>Freight Policy for this Vendor</inlineHelpText>
+    <label>Vendor Freight Policy</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

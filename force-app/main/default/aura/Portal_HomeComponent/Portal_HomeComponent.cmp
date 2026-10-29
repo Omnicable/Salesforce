@@ -1,0 +1,43 @@
+<!--
+  @description       : OmniCable Portal 2.0 Home Page
+  @author            : chrisw@launchdm.com
+  @group             : LaunchDM
+  @last modified on  : 11-30-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="Portal_ResourceController" access="global"
+	implements="forceCommunity:availableForAllPageTypes">
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" access="global" />
+	<aura:attribute name="carouselImages" type="OCC_ContactSlider__c[]" />
+	<aura:attribute name="recentReleases" type="sObject[]" />
+	<aura:attribute name="loading" type="Boolean" />
+
+	<lightning:notificationsLibrary aura:id="notifLib" />
+
+	<div class="portal-full-width">
+		<div class="content-container main-content">
+			<lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+				<aura:iteration items="{!v.carouselImages}" var="image">
+					<lightning:carouselImage src="{!image.URL__c}" alternativeText="{!image.Name}"
+						href="{!image.LinkUrl__c}">
+					</lightning:carouselImage>
+				</aura:iteration>
+
+			</lightning:carousel>
+			<div class="slds-var-p-around_large">
+				<div class="h3 slds-text-align_center">Recent Releases</div>
+				<div class="recent-content">
+					<c:Portal_QOCAccordionComponent records="{! v.recentReleases }" />
+				</div>
+				<button onclick="{!c.openRelease}" class="omni-btn-recent">View All Releases</button>
+			</div>
+		</div>
+
+
+		<aura:if isTrue="{!v.loading}">
+			<lightning:spinner alternativeText="Loading" size="medium" />
+		</aura:if>
+	</div>
+
+</aura:component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FIRST CAPITOL SPEC SHEET
+C61601-01 C61601-02 C61601-03 C61601-04 C61601-05 C61801-01 C61801-02 C61801-03 C61801-04 C61801-05</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>FC PART #&apos;S 10470000 10470500 10471000 10471500 10472500 10450000 10450500 10451000 10451500 10452500</keywords>
+    <name>First Capitol Appliance and Fixture Wire - SRML - SFF-2 16&amp;18AWG</name>
+    <public>true</public>
+</Document>

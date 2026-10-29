@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+F6M06TAPI F6M12TAPI F8S12TAPI F8S06TAPI</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S BI0061PNU-ILPA BI0121PNU-ILPA BE0061PNU-ILPA BE0121PNU-ILPA CG0061PNU-ILPA CG0121PNU-ILPA AP0121PNU-ILPA AP0061PNU-ILPA</keywords>
+    <name>General Cable Fiber Optic Cable - Tight Buffer Distribution Interlock Armored Plenum Cable</name>
+    <public>true</public>
+</Document>

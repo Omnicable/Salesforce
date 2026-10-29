@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Where else are they getting their CBs? --></help>
+    <label><!-- Current OmniCable CB Compeititor --></label>
+    <name>Current_Omni_Cable_MCCB_Compeititor__c</name>
+</CustomFieldTranslation>

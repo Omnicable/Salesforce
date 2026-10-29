@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>X202307_DSP_Price_Sheet_S1</masterLabel>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>2023.07 DSP Price Sheet S1.pdf</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

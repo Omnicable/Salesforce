@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Category --></label>
+    <name>Category__c</name>
+    <picklistValues>
+        <masterLabel>Account Assignment Change</masterLabel>
+        <translation><!-- Account Assignment Change --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Add EDI Customer</masterLabel>
+        <translation><!-- Add EDI Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Add EDI Frt</masterLabel>
+        <translation><!-- Add EDI Frt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Add EDI Vendor</masterLabel>
+        <translation><!-- Add EDI Vendor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Budget Change</masterLabel>
+        <translation><!-- Budget Change --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bulk Change</masterLabel>
+        <translation><!-- Bulk Change --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Email Blast</masterLabel>
+        <translation><!-- Email Blast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Employee</masterLabel>
+        <translation><!-- Employee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Event</masterLabel>
+        <translation><!-- Event --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Feature Request</masterLabel>
+        <translation><!-- Feature Request --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HALO</masterLabel>
+        <translation><!-- HALO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Intranet</masterLabel>
+        <translation><!-- Intranet --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Literature</masterLabel>
+        <translation><!-- Literature --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OPUS</masterLabel>
+        <translation><!-- OPUS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Presentation</masterLabel>
+        <translation><!-- Presentation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Promotional Items</masterLabel>
+        <translation><!-- Promotional Items --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Report Problem</masterLabel>
+        <translation><!-- Report Problem --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Adjustment</masterLabel>
+        <translation><!-- Sales Adjustment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Salesforce.com</masterLabel>
+        <translation><!-- Salesforce.com --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tango Card Request</masterLabel>
+        <translation><!-- Tango Card Request --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technical Support</masterLabel>
+        <translation><!-- Technical Support --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Training</masterLabel>
+        <translation><!-- Training --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Website/Spec Sheets</masterLabel>
+        <translation><!-- Website/Spec Sheets --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

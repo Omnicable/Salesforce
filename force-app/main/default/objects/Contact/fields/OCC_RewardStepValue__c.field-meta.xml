@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_RewardStepValue__c</fullName>
+    <description>How many points for every Reward Step $</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How many points for every Reward Step $</inlineHelpText>
+    <label>OCC_RewardStepValue (Contact)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

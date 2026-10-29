@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Number__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Wire_Cable_Potential__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Sales_Current_Year__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Sales_Year_Prior__c</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <description>SHOWS ALL ACCOUNTS IN CA</description>
+    <filter>
+        <booleanFilter>(1 or 2)</booleanFilter>
+        <criteriaItems>
+            <column>Account.Account_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>969126,969237,998987,998528,998521,997997,997991,997989,997988,997986,997982,997977,997975,962795,962794,962793,962776,962774,962773,962771,962770,962769,962768,969303,969145,969227,969224,962915,986122,969222,957328,969188,975346,969209,969219,995775,816506,969232,961530,968151,955470,955469,955468,955467,974246,975335,975336,975337,975338,975339,962797,962798,962808,962812,962813,962814,962817,962819,962857,975341,975380,975383,975401,975455,976090,977074,977256,977350,977520,977526,971186,972050,972051,972052,973250,973251,973252,973256,962781,962782,962785,962787,962788,962789,962790,962792,816476,900100,900150,900200,900202,900204,979735,979736,981331,981332,981333,981334,981336,981337,981338,981343,981400,981689,981690,981691,981692,981693,900400,900402,900403,900404,900405,900406,900800,900801,900802,900803,900805,901500,901501,901502,901504,901505,901507</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Account_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>901508,901509,901510,901512,901800,901950,902001,902003,962980,963285,963480,963585,964650,966312,966465,966500,966575,966576,968136,984510,984520,984600,986038,986041,986042,986043,986044,986045,986046,986047,986056,986063,986071,986072,986075,968280,968281,968282,968345,968420,968421,968815,969164,969167,969169,970550,970599,970600,970603,970607,986092,986097,986103,986104,986106,989118,989814,904500,904501,935919,955200,955340,955460,955461,955462,955463,955464,955760,956678,956679,956680,956681,956682,956997,957185,959305,959650,959651,959940,989855,991563,991750,991800,992900,993200,993750,996025,996251,997943,997956,997957,997960,959941,960190,960752,962110,962111,962689,962709,962765,962767</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>POTENTIAL: CALIFORNIA ACCOUNTS</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.Sales_Year_Prior__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

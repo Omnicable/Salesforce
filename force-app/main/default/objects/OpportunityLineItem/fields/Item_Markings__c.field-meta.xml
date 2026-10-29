@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Markings__c</fullName>
+    <description>AMs use this when a customer needs to have a specific note/mark number on each item. This information is unique to the specific line</description>
+    <externalId>false</externalId>
+    <label>Item Markings</label>
+    <length>50</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

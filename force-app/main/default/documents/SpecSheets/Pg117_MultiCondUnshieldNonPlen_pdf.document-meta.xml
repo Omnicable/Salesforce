@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+H41802 H41806 H41808 H41602 H41402 H41404 H41202</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S E1482S E1484S E1486S E1502S E1503S E1504S E1505S E1506S E1508S E1512S E1514S E1522S E1524S E1532S E1534S</keywords>
+    <name>General Cable Fire Alarm Cable - Flat Zip, FPLR - Non Plenum - Nonshielded</name>
+    <public>true</public>
+</Document>

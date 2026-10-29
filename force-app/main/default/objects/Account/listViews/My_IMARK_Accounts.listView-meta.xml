@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_IMARK_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Sales_Current_Year__c</columns>
+    <columns>Sales_Year_Prior__c</columns>
+    <columns>Sales_2_Yrs_Prior__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Outside_Salesperson__c</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Buying_Group__c</field>
+        <operation>equals</operation>
+        <value>IMARK,EDN SALES,EQUITY SALES</value>
+    </filters>
+    <label>My IMARK Accounts</label>
+    <language>en_US</language>
+</ListView>

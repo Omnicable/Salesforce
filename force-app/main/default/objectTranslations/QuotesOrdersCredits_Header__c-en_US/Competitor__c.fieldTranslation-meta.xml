@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Competitor --></label>
+    <name>Competitor__c</name>
+    <picklistValues>
+        <masterLabel>AZ Wire &amp; Cable</masterLabel>
+        <translation><!-- AZ Wire &amp; Cable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Charlotte Wire &amp; Cable</masterLabel>
+        <translation><!-- Charlotte Wire &amp; Cable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Classic Wire &amp; Cable</masterLabel>
+        <translation><!-- Classic Wire &amp; Cable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Commodity Cable</masterLabel>
+        <translation><!-- Commodity Cable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Distributor Wire &amp; Cable</masterLabel>
+        <translation><!-- Distributor Wire &amp; Cable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>King Wire</masterLabel>
+        <translation><!-- King Wire --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LS Cable/Superior Essex</masterLabel>
+        <translation><!-- LS Cable/Superior Essex --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Applicable</masterLabel>
+        <translation><!-- Not Applicable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Priority Wire &amp; Cable</masterLabel>
+        <translation><!-- Priority Wire &amp; Cable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prysmian/Encore Wire</masterLabel>
+        <translation><!-- Prysmian/Encore Wire --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Wire</masterLabel>
+        <translation><!-- Service Wire --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southwire</masterLabel>
+        <translation><!-- Southwire --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xpress Connect</masterLabel>
+        <translation><!-- Xpress Connect --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

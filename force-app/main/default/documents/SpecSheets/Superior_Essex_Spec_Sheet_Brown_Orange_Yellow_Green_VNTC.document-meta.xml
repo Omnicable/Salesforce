@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SUPERIOR ESSEX SPEC SHEET
+A151004, A151204, A151404</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>A151004, A151204, A151404</keywords>
+    <name>Superior Essex Spec Sheet - Brown/Orange/Yellow/Green VNTC</name>
+    <public>true</public>
+</Document>

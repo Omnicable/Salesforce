@@ -1,0 +1,5 @@
+{!Account.Name}'s quote {!QuotesOrdersCredits_Header__c.Order_Number__c} for {!QuotesOrdersCredits_Header__c.TotalDollars__c} needs follow-up. Access to this quote can be made by clicking on the following link {!QuotesOrdersCredits_Header__c.Link}
+
+If you have already followed up, please disregard this email.
+
+The current status is {!QuotesOrdersCredits_Header__c.Status__c}

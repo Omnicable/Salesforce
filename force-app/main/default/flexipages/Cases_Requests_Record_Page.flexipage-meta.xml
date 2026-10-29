@@ -15,6 +15,10 @@
                     <name>hideChatterActions</name>
                     <value>false</value>
                 </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSlackAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
                 <identifier>force_highlightsPanel</identifier>
             </componentInstance>
@@ -74,7 +78,7 @@
                     <criteria>
                         <leftValue>{!Record.Contact__r.Region__c}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>14</rightValue>
+                        <rightValue>014</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>

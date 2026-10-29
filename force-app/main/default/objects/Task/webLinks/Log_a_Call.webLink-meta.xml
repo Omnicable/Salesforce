@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Log_a_Call</fullName>
+    <availability>online</availability>
+    <description>The new functionality</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Log a Call</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/00T/e?title=Phone/Email Touch&amp;who_id={!Contact.Id}&amp;followup=1&amp;tsk5=Call&amp;retURL={!Contact.Id}&amp;tsk3_mlktp=001&amp;what_id={!Account.Id}</url>
+</WebLink>

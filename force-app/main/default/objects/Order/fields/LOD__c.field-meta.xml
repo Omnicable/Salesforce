@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOD__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Identifies orders that qualify as a LOD order</description>
+    <label>LOD</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

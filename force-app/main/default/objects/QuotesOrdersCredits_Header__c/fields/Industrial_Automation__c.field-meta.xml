@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_Automation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox used to flag quotes and orders that are Industrial Automation pipeline opportunities. This field maintained by the Category Management team.</description>
+    <label>Industrial Automation</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

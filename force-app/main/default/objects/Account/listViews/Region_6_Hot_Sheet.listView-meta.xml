@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_6_Hot_Sheet</fullName>
+    <booleanFilter>1 AND (2 or 3 or 4 or 5 or 6 or 7 or 8)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS2_CITY</columns>
+    <columns>ACCOUNT.ADDRESS2_STATE</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Outside_Salesperson__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Region_Number__c</field>
+        <operation>equals</operation>
+        <value>6</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>979821,998523,988861,979828,979823,862810,979835,972848,991575,979829,979824</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>972858,974211,979825,979820,956695,956694,956676,956070,956030,956377,956050</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>956696,956382,956605,956442,991576,988853,985146,971180,979700</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>979710,975311,983151,983905,965605,989229,977950,962843,962906,962858,979918</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>976055,992200,992212,992223,992220,998623,998220,998217</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>998224,989841,971182,963505,992255,962972,979925</value>
+    </filters>
+    <filters>
+        <field>Account_Number__c</field>
+        <operation>equals</operation>
+        <value>992218,992213,992222,992220</value>
+    </filters>
+    <label>Region 6 Hot Sheet</label>
+    <sharedTo>
+        <group>Region6</group>
+    </sharedTo>
+</ListView>

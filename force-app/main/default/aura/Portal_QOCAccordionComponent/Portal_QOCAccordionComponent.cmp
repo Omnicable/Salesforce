@@ -1,0 +1,433 @@
+<!--
+  @description       : Quote Order Credit Accordion View
+  @author            : chrisw@launchdm.com
+  @group             : LaunchDM
+  @last modified on  : 01-12-2023
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="Portal_ResourceController" access="global"
+	implements="forceCommunity:availableForAllPageTypes">
+
+	<aura:handler name="change" value="{!v.records}" action="{!c.doInit}" />
+	<aura:import library="lightning:confirm" property="LightningConfirm" />
+	<aura:attribute name="records" type="sObject[]" access="global" />
+	<aura:attribute name="type" type="String" access="global" />
+	<aura:attribute name="tabName" type="String" access="global" />
+	<aura:attribute name="loading" type="Boolean" access="global" default="true" />
+	<aura:attribute name="showBorder" type="Boolean" access="global" default="true" />
+
+	<div>
+		<aura:if isTrue="{! and(v.records.length == 0, v.loading == false) }">
+			<div class="slds-align_absolute-center">
+				<div class="h2">
+					No Results Found
+				</div>
+			</div>
+		</aura:if>
+		<div class="{!v.showBorder ? 'accordion show-border' : 'accordion'}" id="qocAccordion">
+			<aura:iteration items="{!v.records}" var="release" indexVar="index">
+				<div class="accordion-item">
+					<div class="{!mod(index,2)==0 ? 'accordion-header even':'accordion-header odd'}" id="headingThree">
+						<div class="accordion-button slds-var-p-around_small collapsed slds-grid clickable"
+							type="button" data-bs-toggle="collapse" data-index="{!index}"
+							data-bs-target="{!release.Name + v.tabName}" aria-expanded="false"
+							aria-controls="collapseThree" onclick="{!c.toggle}">
+
+
+							<aura:if
+								isTrue="{!release.Type__c == 'Release' || release.Sub_Type__c == 'Change Order'|| release.Type__c == 'RFQ'}">
+
+								<div class="slds-col slds-grid">
+									<div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-5 ">
+										<span class="label-text">Release: </span>
+										<div class="header-text h3" style="font-weight:bold;">{!release.Name}</div>
+									</div>
+									<div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-5 ">
+										<span class="label-text">Date: </span>
+										<div class="header-text h3">
+											<lightning:formattedDateTime value="{!release.Date__c}" />
+										</div>
+									</div>
+									<div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-5 ">
+										<span class="label-text">Status: </span>
+										<div class="header-text h3">{!release.Status__c}</div>
+									</div>
+									<div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-5 ">
+										<span class="label-text">Job Reference: </span>
+										<div class="header-text h3">{!release.Job_Reference__c}</div>
+									</div>
+									<div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-5 ">
+										<span class="label-text">Customer PO: </span>
+										<div class="header-text h3">{!release.Customer_PO__c}</div>
+									</div>
+								</div>
+
+
+								<aura:set attribute="else">
+									<div class="slds-col slds-grid">
+										<div
+											class="slds-col slds-size_1-of-3 slds-medium-size_1-of-4 slds-large-size_1-of-5">
+											<span class="label-text">Customer PO: </span>
+											<div class="header-text h2" style="font-weight:bold;">
+												{!release.Customer_PO__c}
+											</div>
+										</div>
+
+										<div
+											class="slds-col slds-size_1-of-3 slds-medium-size_1-of-4 slds-large-size_1-of-5">
+											<span class="label-text">Release: </span>
+											<div class="header-text h2">{!release.Name}</div>
+										</div>
+										<div
+											class="slds-col slds-size_1-of-3 slds-medium-size_1-of-4 slds-large-size_1-of-5">
+											<span class="label-text">Date: </span>
+											<div class="header-text h2">
+												<lightning:formattedDateTime value="{!release.Date__c}" />
+											</div>
+										</div>
+
+										<div
+											class="slds-col slds-size_1-of-3 slds-medium-size_1-of-4 slds-large-size_1-of-5">
+											<span class="label-text">Status: </span>
+											<div class="header-text h2">{!release.Status__c}</div>
+										</div>
+
+										<div
+											class="slds-col slds-size_1-of-3 slds-medium-size_1-of-4 slds-large-size_1-of-5">
+											<span class="label-text">Mark Number: </span>
+											<div class="header-text h2">{!release.Mark_Number__c}</div>
+										</div>
+									</div>
+
+
+								</aura:set>
+
+							</aura:if>
+
+							<div class="slds-col slds-grow-none slds-align_absolute-center">
+								<lightning:icon class="chev-icon up" iconName="utility:chevronup"
+									alternativeText="Closed" size="small" />
+								<lightning:icon class="chev-icon down" iconName="utility:chevrondown"
+									alternativeText="Closed" size="small" />
+							</div>
+						</div>
+					</div>
+					<div id="{!release.Name + v.tabName}" class="accordion-collapse collapse"
+						aria-labelledby="headingThree" data-bs-parent="#qocAccordion">
+						<div class="accordion-body slds-p-around_none">
+							<div class="more-header slds-var-p-around_large">
+
+								{!release.Type__c}
+								<div class="h4 slds-m-top_none">{!release.Type__c == 'RFQ' ? 'Release' :
+									release.Type__c} Information</div>
+
+								<aura:if isTrue="{!release.Type__c == 'RFQ'}">
+									<aura:unescapedHtml value="{!release.RFQ_Text__c}" />
+								</aura:if>
+
+								<aura:if
+									isTrue="{!release.Type__c == 'Release' || release.Sub_Type__c == 'Change Order'}">
+
+									<div class="slds-grid slds-wrap">
+										<div class="slds-col">
+											<div class="label-text-details">Buyer:</div>
+											<div>{!release.Buyer__r.Name}</div>
+										</div>
+										<div class="slds-col">
+											<div class="label-text-details">Shipping Address:</div>
+											<div>{!release.Ship_to_Address_1__c}</div>
+											<div>{!release.Ship_to_City__c + ', ' +
+												release.Ship_to_State__c + ' ' +
+												release.Ship_to_Zip_Code__c}</div>
+										</div>
+
+										<aura:if
+											isTrue="{!release.Type__c == 'Order' &amp;&amp;	 release.Sub_Type__c != 'Change Order'}">
+											<div class="slds-col">
+												<div class="label-text-details">Shipping Address:</div>
+												<div>{!release.Ship_to_Address_1__c}</div>
+												<div>{!release.Ship_to_City__c + ', ' +
+													release.Ship_to_State__c + ' ' +
+													release.Ship_to_Zip_Code__c}</div>
+											</div>
+										</aura:if>
+
+										<div class="slds-col">
+											<div class="label-text-details">Payment Terms:</div>
+											<div>{!release.Payment_Terms__c}</div>
+										</div>
+										<div class="slds-col">
+											<div class="label-text-details">Freight Terms:</div>
+											<div>{!release.Order_Details__r[0].Freight_Terms__c}</div>
+										</div>
+
+										<aura:if isTrue="{!release.Delivery_Address__c != null}">
+											<div class="slds-col">
+												<div class="label-text-details">Delivery Info:</div>
+												<button type="button" class="slds-button slds-button_neutral"
+													data-date="{!release.Requested_Delivery_Date__c}"
+													data-address="{!release.Delivery_Address__c}"
+													onclick="{!c.showDeliveryInfo}">See Delivery Details</button>
+											</div>
+										</aura:if>
+									</div>
+								</aura:if>
+
+								<aura:if
+									isTrue="{!and(release.Type__c == 'Order', release.Sub_Type__c != 'Change Order')}">
+									<div class="slds-grid slds-wrap">
+										<div class="slds-col">
+											<div class="label-text-details">Buyer:</div>
+											<div>{!release.Buyer__r.Name}</div>
+										</div>
+										<div class="slds-col">
+											<div class="label-text-details">Entered By:</div>
+											<div>{!release.Entered_By__r.Name}</div>
+										</div>
+										<div class="slds-col">
+											<div class="label-text-details">Billing Address:</div>
+											<div>{!release.Customer__r.BillingAddress.street}</div>
+											<div>{!release.Customer__r.BillingAddress.city + ', ' +
+												release.Customer__r.BillingAddress.state + ' ' +
+												release.Customer__r.BillingAddress.postalCode}</div>
+										</div>
+
+										<aura:if
+											isTrue="{!release.Type__c == 'Order' &amp;&amp;	 release.Sub_Type__c != 'Change Order'}">
+											<div class="slds-col">
+												<div class="label-text-details">Shipping Address:</div>
+												<div>{!release.Ship_to_Address_1__c}</div>
+												<div>{!release.Ship_to_City__c + ', ' +
+													release.Ship_to_State__c + ' ' +
+													release.Ship_to_Zip_Code__c}</div>
+											</div>
+										</aura:if>
+
+										<div class="slds-col">
+											<div class="label-text-details">Freight Terms:</div>
+											<div>{!release.Order_Details__r[0].Freight_Terms__c}</div>
+										</div>
+
+										<div class="slds-col">
+											<div class="label-text-details">Payment Terms:</div>
+											<div>{!release.Payment_Terms__c}</div>
+										</div>
+
+
+									</div>
+								</aura:if>
+
+							</div>
+							<div class="slds-var-p-around_large">
+
+								<aura:if isTrue="{!release.Order_Number__c != undefined}">
+									<h4 class="h4 slds-m-top_none">Line Items</h4>
+									<div class="slds-grid slds-wrap top-label-container">
+										<div
+											class="slds-col slds-size_1-of-1 slds-large-size_1-of-12 label-text-details">
+											Line:</div>
+										<div
+											class="slds-col slds-size_1-of-1 slds-large-size_2-of-12 label-text-details">
+											Part Number:</div>
+										<div
+											class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 label-text-details">
+											Item Description:</div>
+										<div
+											class="slds-col slds-size_1-of-1 slds-large-size_2-of-12 label-text-details">
+											Qty:</div>
+										<div
+											class="slds-col slds-size_1-of-1 slds-large-size_3-of-12 label-text-details">
+											Status:</div>
+									</div>
+
+								</aura:if>
+
+
+								<aura:iteration items="{!release.Order_Details__r}" var="detail">
+									<div class="children-div col-xs-12 slds-is-relative slds-p-bottom_medium">
+
+										<div class="slds-grid slds-wrap"
+											style="padding:15px 0px 15px 0px; border-top:1px solid #1E253A;">
+
+											<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-12">
+												<span class="line-text">{!detail.Line_Number__c}</span>
+											</div>
+											<div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+												<span class="label-text-details dynamic-detail-label">Part
+													Number:</span>
+												<div> {!detail.Item_Markings__c}</div>
+											</div>
+											<div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 ">
+												<span class="label-text-details dynamic-detail-label">Item
+													Description</span>
+												<div> {!detail.Item_Description__c}</div>
+											</div>
+											<div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12 ">
+												<span class="label-text-details dynamic-detail-label">Qty:</span>
+												<div>
+													<span class="qty-label">Ordered:
+													</span>{!detail.Qty_Ordered__c}
+												</div>
+												<div>
+													<span class="qty-label">Shipped:
+													</span>{!detail.Qty_Shipped__c}
+												</div>
+												<div>
+													<span class="qty-label">Remaining:
+													</span>{!(detail.Qty_Ordered__c - detail.Qty_Shipped__c)}
+												</div>
+											</div>
+											<div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12 ">
+												<span class="label-text-details dynamic-detail-label">Status:</span>
+												<div>{!detail.Line_Status__c}</div>
+											</div>
+										</div>
+
+										<aura:if
+											isTrue="{!release.Type__c == 'Release' || release.Sub_Type__c == 'Change Order'}">
+											<div class="slds-grid slds-wrap">
+												<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-12"
+													style="margin-top:6px; padding-left:0px;">
+
+												</div>
+												<div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+													<span class="label-text-details">Customer Part #:</span>
+													<div>{!detail.Customer_Item__c}</div>
+												</div>
+												<div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+													<span class="label-text-details">Notes:</span>
+													<div>{!detail.NotesPortal__c}</div>
+												</div>
+
+												<div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+													<span class="label-text-details">Put-ups</span>
+													<div>{!detail.Putups__c}</div>
+												</div>
+												<aura:if isTrue="{!detail.TrackingURL__c != null}">
+													<div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+														<span class="label-text-details">Tracking No:</span>
+														<div>
+															<a href="{!detail.TrackingURL__c}"
+																target="_blank">{!detail.TrackingURL__c}</a>
+														</div>
+													</div>
+												</aura:if>
+											</div>
+											<div class="slds-grid slds-wrap">
+												<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-12 label-text-details"
+													style="margin-top:6px; padding-left:0px;">
+
+												</div>
+												<div class="child-row slds-col">
+													<span class="label-text-details">Item #:</span>
+													<div style="font-weight:bold; color:#0074BF;">
+														<a class="clickable" data-link="{!detail.Spec_Sheet__c}"
+															target="_blank" onclick="{!c.openLink}">
+															{!detail.Line_Item__c}</a>
+													</div>
+												</div>
+											</div>
+										</aura:if>
+
+										<aura:if
+											isTrue="{!release.Type__c == 'Order' &amp;&amp; release.Sub_Type__c != 'Change Order'}">
+
+											<div class="slds-grid slds-wrap slds-var-p-bottom_small">
+												<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-12"
+													style="margin-top:6px; padding-left:0px;">
+
+												</div>
+												<div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+													<span class="label-text-details">Item #:</span>
+													<div style="font-weight:bold; color:#0074BF;">
+														<a class="clickable" data-link="{!detail.Spec_Sheet__c}"
+															target="_blank" onclick="{!c.openLink}">
+															{!detail.Line_Item__c}</a>
+													</div>
+												</div>
+												<div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 ">
+													<span class="label-text-details">Notes:</span>
+													<div>{!detail.NotesPortal__c}</div>
+												</div>
+
+											</div>
+											<div class="slds-grid slds-wrap slds-var-p-bottom_small">
+												<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-12 "
+													style="margin-top:6px; padding-left:0px;">
+												</div>
+												<div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+													<span class="label-text-details">Freight Carrier:</span>
+													<div>{!detail.Freight_Carrier__c}</div>
+												</div>
+												<div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+													<span class="label-text-details">Freight Terms:</span>
+													<div>{!detail.Freight_Terms__c}</div>
+												</div>
+												<div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+													<span class="label-text-details">Expected Ship
+														Date:</span>
+													<div>{!detail.Expected_Date__c}</div>
+												</div>
+
+
+											</div>
+
+										</aura:if>
+
+										<aura:if
+											isTrue="{!and(release.Type__c == 'Order', release.Sub_Type__c != 'Change Order')}">
+											<div class="qty-status">
+												<lightning:dynamicIcon class="" type="trend" option="{!detail.trend}"
+													alternativeText="{! 'Trending ' + detail.trend}" />
+
+											</div>
+										</aura:if>
+
+										<!-- NOTE: Removed  -->
+										<!-- <aura:if
+											isTrue="{!release.Type__c == 'Release' || release.Sub_Type__c == 'Change Order'}">
+											<span>
+												<div class="receive">
+
+													<lightning:input checked="{!detail.Received_Complete__c}"
+														type="checkbox" label="Received" name="{!detail.Id}"
+														onchange="{!c.receiveRequest}" />
+												</div>
+											</span>
+										</aura:if> -->
+
+									</div>
+
+
+								</aura:iteration>
+
+								<aura:if isTrue="{!release.ContentDocumentLinks.length > 0}">
+									<div>
+										<div class="h4 slds-wrap slds-var-p-top_large ">Attachments</div>
+
+										<div class="slds-grid slds-gutters"
+											style="overflow:auto !important; height:180px">
+
+											<aura:iteration var="link" items="{!release.ContentDocumentLinks}">
+
+												<div class="slds-col slds-grow-none slds-var-m-bottom_medium">
+													<lightning:fileCard fileId="{!link.ContentDocumentId}" />
+												</div>
+											</aura:iteration>
+
+										</div>
+									</div>
+								</aura:if>
+								<div class="col-xs-12 row-padding"
+									style="height:5px; background-color:#1E253A; margin-top:25px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aura:iteration>
+		</div>
+	</div>
+
+	<lightning:overlayLibrary aura:id="overlayLib" />
+
+</aura:component>

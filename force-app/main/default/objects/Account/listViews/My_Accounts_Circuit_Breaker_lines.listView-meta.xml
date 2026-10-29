@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Accounts_Circuit_Breaker_lines</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Number__c</columns>
+    <columns>Circuit_Breaker_new__c</columns>
+    <columns>Breaker_Account_Priority__c</columns>
+    <columns>Gray_Market_Policy__c</columns>
+    <columns>CB_Program_Details__c</columns>
+    <columns>Current_Omni_Cable_MCCB_Compeititor__c</columns>
+    <columns>Residential_CB_Stock__c</columns>
+    <columns>Is_OmniCable_a_preferred_vendor__c</columns>
+    <columns>ACCOUNT.ADDRESS2_CITY</columns>
+    <columns>ACCOUNT.ADDRESS2_STATE</columns>
+    <columns>Outside_Salesperson__c</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Distributor</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Distributor</value>
+    </filters>
+    <label>My Accounts Circuit Breaker Lines</label>
+</ListView>

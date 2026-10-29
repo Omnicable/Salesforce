@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CME SPEC SHEET
+Primary UD EPR 5KV 15KV ALUMINUM CONCENTRIC NEUTRAL</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Primary UD EPR 5KV 15KV ALUMINUM CONCENTRIC NEUTRAL</keywords>
+    <name>CME - Primary UD Aluminum</name>
+    <public>true</public>
+</Document>

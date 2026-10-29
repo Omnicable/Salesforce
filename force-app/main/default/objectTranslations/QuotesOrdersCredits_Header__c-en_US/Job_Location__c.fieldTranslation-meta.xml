@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Used when the job site is different from the ED location --></help>
+    <label><!-- Job Location --></label>
+    <name>Job_Location__c</name>
+</CustomFieldTranslation>

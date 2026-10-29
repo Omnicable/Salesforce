@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Calculated as total estimated hours - total actual hours --></help>
+    <label><!-- Total Hours Balance --></label>
+    <name>Total_Hours_Balance__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor_Contact</fullName>
+    <active>true</active>
+    <description>Limit Vendor Contacts to only Purchasing</description>
+    <errorConditionFormula>ISPICKVAL(Account.Type, &quot;Vendor&quot;) &amp;&amp; 
+( $User.ProfileId  &lt;&gt; &apos;00e60000001BWT6&apos; &amp;&amp;
+ $User.ProfileId  &lt;&gt; &apos;00e60000001BUtM&apos;)</errorConditionFormula>
+    <errorMessage>Vendor Contacts can only be entered by Purchasing. 
+Please call extension x602 to have the contact added.</errorMessage>
+</ValidationRule>

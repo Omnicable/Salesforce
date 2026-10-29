@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_User_for_Reel_Rewards</fullName>
+    <active>false</active>
+    <description>PortalUser_must_=_Y_to_be_in_Reel_Rewards</description>
+    <errorConditionFormula>$User.ProfileId &lt;&gt;&apos;00e60000001BUtM&apos; &amp;&amp; 
+$User.ProfileId &lt;&gt;&apos;00e600000014f29&apos; &amp;&amp; 
+$User.ProfileId &lt;&gt;&apos;00e60000001BWSc&apos; &amp;&amp;
+
+NOT(ISPICKVAL(PortalUser__c , &quot;Y&quot;)) &amp;&amp;  
+ ISCHANGED(OCC_Rewards__c )</errorConditionFormula>
+    <errorMessage>Can&apos;t be in Reel Rewards if they are not a Portal User. Customer must sign up for portal on the website.</errorMessage>
+</ValidationRule>

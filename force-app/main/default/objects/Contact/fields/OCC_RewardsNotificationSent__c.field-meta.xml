@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_RewardsNotificationSent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Determines whether the Rewards notification popup was shown to the user</description>
+    <label>OCC_RewardsNotificationSent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Raychem Loadbreak Elbow Data Sheet</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>FG1886-000, FG1887-000, FG1885-000, FG1283-000, FG1888-000, FG1280-000, raychem, elbow, te, loadbreak, load break</keywords>
+    <name>Raychem Loadbreak Elbow Data Sheet</name>
+    <public>true</public>
+</Document>

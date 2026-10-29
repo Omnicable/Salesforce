@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>タスクが完了、進行中、遅延、ブロックまたは、遅延ブロックされていることを示す</help>
+    <label>全体の状態</label>
+    <name>Overall_Status__c</name>
+</CustomFieldTranslation>

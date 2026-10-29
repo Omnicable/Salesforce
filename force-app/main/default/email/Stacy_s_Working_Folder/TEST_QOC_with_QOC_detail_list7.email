@@ -1,0 +1,30 @@
+<messaging:emailTemplate subject="Breaker {!relatedTo.Type__c} for {!relatedTo.Customer_Name__c}" recipientType="User" relatedToType="QuotesOrdersCredits_Header__c" replyTo="sfromhold@omnicable.com">
+<messaging:plainTextEmailBody >
+{!relatedTo.Customer_Name__c} 
+{!relatedTo.Type__c} #{!relatedTo.name} 
+Total Order Sales: ${!relatedTo.Total_Order_Sales__c} 
+Account Owner: {!relatedTo.Inside_AM_Name__r.Name} 
+Entered By: {!relatedTo.Entered_By__r.Name} 
+
+---------
+
+
+
+ <apex:repeat var="cx" value="{!relatedTo.Order_Details__r}">
+      
+Item # {!cx.Line_Item__c} 
+Class: {!cx.Class__c}
+Qty: {!FLOOR(cx.Qty_Ordered__c)} 
+Line type: {!cx.Line_Type__c} 
+Line total: ${!cx.Dollars__c} 
+GP: ${!cx.GPDollars__c} 
+GP: {!cx.GP_Pct__c}% 
+Line Status: {!cx.Line_Status__c}
+      
+      
+    </apex:repeat>
+
+
+To view in Salesforce, go to https://omnicable.my.salesforce.com/{!relatedTo.id}
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

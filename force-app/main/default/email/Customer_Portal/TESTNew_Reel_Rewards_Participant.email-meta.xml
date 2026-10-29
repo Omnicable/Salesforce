@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Test href in text template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TEST HREFNew Reel Rewards Participant</name>
+    <style>none</style>
+    <subject>New Reel Rewards Participant - {!Target_User.Name}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

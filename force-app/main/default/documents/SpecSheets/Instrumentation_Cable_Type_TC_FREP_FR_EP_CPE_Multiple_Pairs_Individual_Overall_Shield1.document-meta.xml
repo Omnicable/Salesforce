@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+AF61601 AF71601</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 287650 325250 337010 337020 337030 337040 294580 337050 337060 337070 337080 314960 279690 283170 283180 337090 283190 337100 337110 337120 337130 337140</keywords>
+    <name>Instrumentation Cable - Type TC - FREP - FR-EP/CPE - Multiple Pairs - Individual/Overall Shield1</name>
+    <public>true</public>
+</Document>

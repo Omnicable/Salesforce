@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SAB SPEC SHEET
+SA02041812,SA02041818,SA02041825,SA02042002,SA02042003,SA02042004,SA02042005,SA02042007,SA02042009,SA02042012,SA02042025</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>SAB # 02041812,02041818,02041825,02042002,02042003,02042004,02042005,02042007,02042009,02042012,02042025</keywords>
+    <name>SAB CC600 600V 90°C</name>
+    <public>true</public>
+</Document>

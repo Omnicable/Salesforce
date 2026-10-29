@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_Username__c</fullName>
+    <description>If contact is a portal user, will be populated when the user is FIRST created with their portal username. It will not dynamically update if the contact&apos;s email or username is manually updated.</description>
+    <externalId>false</externalId>
+    <label>Portal Username</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

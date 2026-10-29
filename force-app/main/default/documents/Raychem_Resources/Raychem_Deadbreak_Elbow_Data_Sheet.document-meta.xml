@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Raychem Deadbreak Elbow Data Sheet</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>EB8571-000, EF8082-000, EB8580-000, EF8089-000, EB8586-000, EF8090-000, EB8607-000, EF8092-000, EB8610-000, EF8093-000, EB8637-000, EF8094-000, EB8643-000, EF8095-000, EB8676-000, EF8097-000, raychem, elbow, te, deadbreak, dead break, AMP</keywords>
+    <name>Raychem Deadbreak Elbow Data Sheet</name>
+    <public>true</public>
+</Document>

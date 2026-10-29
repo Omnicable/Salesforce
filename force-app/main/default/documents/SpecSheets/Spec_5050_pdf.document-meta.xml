@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+AF80101 AF81201 AF81001 AF80801 AF80601 AF80401 AF80201 AF81/001 AF82/001 AF84/001 AF825001 AF835001 AF850001 AF875001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 14511.411400  14511.411200 14511.411000 14511.410800 14511.410600 14511.410400 14511.710200 14511.715100 14511.715200 14511.715400 14511.716000 14511.716200 14511.716500 14511.717000 14511.717500</keywords>
+    <name>General Cable Aluminum Wire and Cable - 600V - DURASHEATH®, EPR/Hypalon, USE-2</name>
+    <public>true</public>
+</Document>

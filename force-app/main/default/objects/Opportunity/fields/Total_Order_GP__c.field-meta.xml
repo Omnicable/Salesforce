@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Order_GP__c</fullName>
+    <description>Total_Order_Sales__c - Total_Order_Cost__c post calculation sent from DWH.  Salesforce is receiving as is.</description>
+    <label>Total Order GP</label>
+    <precision>14</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- End User --></label>
+    <lookupFilter>
+        <errorMessage><!-- End User does not exist as account. Please create a new end user account and try again. --></errorMessage>
+        <informationalMessage><!-- Select an existing end user account in Salesforce. --></informationalMessage>
+    </lookupFilter>
+    <name>End_User__c</name>
+    <relationshipLabel><!-- Wire &amp; Cable Projects (End User) --></relationshipLabel>
+</CustomFieldTranslation>

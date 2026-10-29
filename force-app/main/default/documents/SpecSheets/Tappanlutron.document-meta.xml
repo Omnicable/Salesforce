@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>TAPPAN SPEC SHEET
+Tappan # T50061.1, Omni # LT2-216-CL</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Tappan # T50061.1, Omni # LT2-216-CL</keywords>
+    <name>Tappan - LUTRON ECOSYSTEM BUS PLENUM 200C CLEAR 2C 16 NS CMP</name>
+    <public>true</public>
+</Document>

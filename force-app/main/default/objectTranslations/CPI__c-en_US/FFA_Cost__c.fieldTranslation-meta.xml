@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is the customer’s revenue that is spent on freight.  This figure may be higher for FFA accounts, of if your customer typically makes purchases that meet our freight allowed policy. --></help>
+    <label><!-- FFA Cost --></label>
+    <name>FFA_Cost__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Re_Followup</fullName>
+    <availability>online</availability>
+    <description>refollowup on this quote</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Re-Followup</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/00T/e?title=Quote Follow Up&amp;who_id={!QuotesOrdersCredits_Header__c.Buyer__c}&amp;followup=1&amp;tsk5=Quote Follow Up&amp;retURL={!Contact.Id}&amp;tsk3_mlktp=001&amp;what_id={!QuotesOrdersCredits_Header__c.Id}</url>
+</WebLink>

@@ -1,0 +1,14 @@
+.THIS .cont{
+	min-height: 300px;
+}
+.THIS .delete svg{
+	fill: #8e030f;
+}
+.THIS .table-container{
+	min-height: 300px;
+	overflow-y: scroll;
+}
+
+.THIS .modal-cont{
+	overflow-x: scroll;
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_29465712</developerName>
+        <masterLabel>Order Bucket</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Order_Header__r$Order_Bucket__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>.$0 - $1000</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>.$1000 - $2500</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>.$2500 - $5000</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>.$5000 - $10k</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>$10k - $25k</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>$25k - $75k</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>$75k - $150k</sourceValue>
+            </sourceValues>
+            <value>$0 - $150K</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>$150k - $250k</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>$250k - $500k</sourceValue>
+            </sourceValues>
+            <value>$150K - $500K</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>$500k +</sourceValue>
+            </sourceValues>
+            <value>$500K +</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Belden SD</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Credit</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Release</sourceValue>
+            </sourceValues>
+            <value>Other</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.Order_Header__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Region__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Status__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r$Total_Order_GP_with_BSD__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r$TotalDollars__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Entered_By__c</field>
+    </columns>
+    <columns>
+        <field>Account$LastActivityDate</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Notes__c</field>
+    </columns>
+    <description>All time Open Quotes</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Broadband__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Open,Followed Up</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Broadband_Sales_Specialist__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$CBU_OSM__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_29465712</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Dashboard Open Quote Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Quotes_Orders_Credits__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r$Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

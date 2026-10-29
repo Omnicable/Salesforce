@@ -1,0 +1,89 @@
+.THIS #barChart{
+	height:600px;
+	width: 100%;
+  overflow: scroll;
+}
+
+.THIS .trend{
+	padding: 5px;
+}
+
+/*Rectangle bar class styling*/
+
+.THIS .bar {
+	fill: #03a1e0;
+  }
+  
+/* .THIS .bar:hover {
+	fill: #0176d3;
+  } */
+
+
+  
+  /*Text class styling*/
+  
+.THIS  .text {
+	fill: white;
+	font-family: sans-serif
+  }
+
+  .THIS .chart-sect{
+	  margin-top: 20px;
+  }
+
+  /* .THIS path.target{
+	  stroke: #68ceee;
+	  stroke-width: 3;
+	  stroke-dasharray: 3;
+  } */
+
+  .THIS rect.target{
+    fill: #68ceee;
+  }
+
+  /* .THIS .target:hover{
+    fill: #4991a7;
+  } */
+
+  /* .THIS .chart-sect .bar-cont:last-child > .bar {
+	fill: #77B9F1 !important;
+  } */
+
+  .THIS .no-label .slds-form-element__label{
+	display: none;
+  }
+
+  .THIS .actions{
+	  margin-right: 5px;
+  }
+
+  .THIS line{
+	  stroke: #ededed ;
+  }
+
+  .THIS .red{
+    fill: red !important;
+  }
+
+  .THIS .tooltip{
+    z-index: 99;
+    background-color: #cce2f6;
+    padding: 12px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .THIS .tooltip div:not(:last-child){
+    padding-bottom: 8px;
+  }
+
+  .THIS .no-results{
+    min-width: 100%;
+    min-height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }

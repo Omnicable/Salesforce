@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The customer contact you planned this promotion with --></help>
+    <label><!-- Customer Contact --></label>
+    <name>Promo_Customer_Contact__c</name>
+    <relationshipLabel><!-- Promos (Customer Contact) --></relationshipLabel>
+</CustomFieldTranslation>

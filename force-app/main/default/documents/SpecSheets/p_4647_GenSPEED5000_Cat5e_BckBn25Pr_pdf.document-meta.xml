@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+J162425</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 2133694E 2133781E 2133269E 2131753E 2131550E 2131752E</keywords>
+    <name>General Cable Data/Voice Cable - Lan Cables Cat 5 - PVC, Plenum &amp; Non-Plenum</name>
+    <public>true</public>
+</Document>

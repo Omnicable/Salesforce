@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>RMA__c.RMA_Amount__c</field>
+    </columns>
+    <columns>
+        <field>RMA__c.RMA_Date__c</field>
+    </columns>
+    <columns>
+        <field>RMA__c.RMA_Responsibility__c</field>
+    </columns>
+    <description>RMA&apos;s with one of the following status  APPROVED, AWAITING RECEIPT, BEING RECEIVED, WHSE REC, FRT RESEARCH</description>
+    <filter>
+        <criteriaItems>
+            <column>RMA__c.RMA_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>APPROVED,AWAITING RECEIPT,BEING RECEIVED,WHSE REC,FRT RESEARCH</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>RMA__c.RMA_Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Pending RMA&apos;s</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$RMA__c@RMA__c.Order__c</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>RMA__c.RMA_Date__c</dateColumn>
+        <interval>INTERVAL_PREVCURY</interval>
+    </timeFrameFilter>
+</Report>

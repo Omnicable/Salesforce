@@ -1,0 +1,17 @@
+A non-policy freight allowed order has been entered by {!QuotesOrdersCredits_Header__c.Entered_By__c}.
+
+Order #{!QuotesOrdersCredits_Header__c.Order_Number__c} 
+{!QuotesOrdersCredits_Header__c.Customer_Name__c} 
+Total $:  {!QuotesOrdersCredits_Header__c.Total_Order_Sales__c} 
+Total GP$ {!QuotesOrdersCredits_Header__c.Total_Order_GP__c}
+FFA $:  {!QuotesOrdersCredits_Header__c.FFA__c}
+
+Sales Notes: {!QuotesOrdersCredits_Header__c.SalesNote1__c}
+{!QuotesOrdersCredits_Header__c.SalesNote2__c}
+{!QuotesOrdersCredits_Header__c.SalesNote3__c}
+
+Industrial Lbs: {!QuotesOrdersCredits_Header__c.Industrial_LBS__c}
+Electronic $: {!QuotesOrdersCredits_Header__c.Electronic__c}
+ALR $: {!QuotesOrdersCredits_Header__c.ALR__c}
+
+Click here to view the order: https://omnicable.my.salesforce.com/{!QuotesOrdersCredits_Header__c.Id}

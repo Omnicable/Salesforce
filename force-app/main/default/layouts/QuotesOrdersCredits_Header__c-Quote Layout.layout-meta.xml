@@ -4,6 +4,7 @@
     <customButtons>Quote_Follow_Up</customButtons>
     <excludeButtons>Delete</excludeButtons>
     <excludeButtons>Edit</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -281,6 +282,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>CBU_Hoopla__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Industrial_Automation__c</field>
             </layoutItems>
             <layoutItems>
                 <emptySpace>true</emptySpace>

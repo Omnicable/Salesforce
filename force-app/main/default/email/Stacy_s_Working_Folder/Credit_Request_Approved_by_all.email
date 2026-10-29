@@ -1,0 +1,9 @@
+{!Customer_Events__c.CreatedBy}'s request "{!Customer_Events__c.Name}" has been approved by all required approvers.
+
+Comments: {!ApprovalRequest.Comments}
+
+Click here to view request details in Salesforce https://cs18.salesforce.com/{!Customer_Events__c.Id}
+
+
+
+* Standard Procedure: Credits UNDER $1,500 must be approved by the RM & RVP; credits OVER $1,500 must be approved by the RM, RVP, & COO.

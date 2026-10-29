@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- CPSS Involvement --></label>
+    <name>CPSS_Involvement__c</name>
+    <picklistValues>
+        <masterLabel>Pipeline Sales</masterLabel>
+        <translation><!-- Pipeline Sales --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Project Assistance</masterLabel>
+        <translation><!-- Project Assistance --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

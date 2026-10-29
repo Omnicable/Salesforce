@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Customer Buying Group Hierarchy --></help>
+    <label><!-- Division --></label>
+    <name>Division__c</name>
+    <picklistValues>
+        <masterLabel>3E</masterLabel>
+        <translation><!-- 3E --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Albuquerque</masterLabel>
+        <translation><!-- Albuquerque --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Atlanta</masterLabel>
+        <translation><!-- Atlanta --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bay Area</masterLabel>
+        <translation><!-- Bay Area --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Big Sky</masterLabel>
+        <translation><!-- Big Sky --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blue Ridge</masterLabel>
+        <translation><!-- Blue Ridge --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CED Elevator &amp; Electrical</masterLabel>
+        <translation><!-- CED Elevator &amp; Electrical --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cain Electric</masterLabel>
+        <translation><!-- Cain Electric --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>California Gold</masterLabel>
+        <translation><!-- California Gold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Capitol District</masterLabel>
+        <translation><!-- Capitol District --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Carolina</masterLabel>
+        <translation><!-- Carolina --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cascade</masterLabel>
+        <translation><!-- Cascade --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central East</masterLabel>
+        <translation><!-- Central East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central Industrial</masterLabel>
+        <translation><!-- Central Industrial --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central West</masterLabel>
+        <translation><!-- Central West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chicago</masterLabel>
+        <translation><!-- Chicago --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Columbia</masterLabel>
+        <translation><!-- Columbia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contractors</masterLabel>
+        <translation><!-- Contractors --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Crossroads</masterLabel>
+        <translation><!-- Crossroads --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Datacom &amp; Security</masterLabel>
+        <translation><!-- Datacom &amp; Security --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dauphin</masterLabel>
+        <translation><!-- Dauphin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Denver</masterLabel>
+        <translation><!-- Denver --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dubuque</masterLabel>
+        <translation><!-- Dubuque --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EESCO Group</masterLabel>
+        <translation><!-- EESCO Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>East</masterLabel>
+        <translation><!-- East --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>East I/C Group</masterLabel>
+        <translation><!-- East I/C Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eastern</masterLabel>
+        <translation><!-- Eastern --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eastern Industrial</masterLabel>
+        <translation><!-- Eastern Industrial --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Frost</masterLabel>
+        <translation><!-- Frost --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Global Accounts</masterLabel>
+        <translation><!-- Global Accounts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gold Coast</masterLabel>
+        <translation><!-- Gold Coast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grand Canyon</masterLabel>
+        <translation><!-- Grand Canyon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Great Lakes</masterLabel>
+        <translation><!-- Great Lakes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Great Plains</masterLabel>
+        <translation><!-- Great Plains --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech Central</masterLabel>
+        <translation><!-- Greentech Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech Colorado</masterLabel>
+        <translation><!-- Greentech Colorado --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech Mid-Atlantic</masterLabel>
+        <translation><!-- Greentech Mid-Atlantic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech Midwest</masterLabel>
+        <translation><!-- Greentech Midwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech New England</masterLabel>
+        <translation><!-- Greentech New England --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech New York Metro</masterLabel>
+        <translation><!-- Greentech New York Metro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech NorCal/Hawaii</masterLabel>
+        <translation><!-- Greentech NorCal/Hawaii --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech North</masterLabel>
+        <translation><!-- Greentech North --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech SoCal</masterLabel>
+        <translation><!-- Greentech SoCal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech Southeast</masterLabel>
+        <translation><!-- Greentech Southeast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech Southwest</masterLabel>
+        <translation><!-- Greentech Southwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greentech West</masterLabel>
+        <translation><!-- Greentech West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Houston</masterLabel>
+        <translation><!-- Houston --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ignore</masterLabel>
+        <translation><!-- Ignore --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Industrial</masterLabel>
+        <translation><!-- Industrial --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inland Empire District</masterLabel>
+        <translation><!-- Inland Empire District --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Integrated Supply</masterLabel>
+        <translation><!-- Integrated Supply --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>International Group</masterLabel>
+        <translation><!-- International Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kansas</masterLabel>
+        <translation><!-- Kansas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lakeshore</masterLabel>
+        <translation><!-- Lakeshore --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lone Star</masterLabel>
+        <translation><!-- Lone Star --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lowe</masterLabel>
+        <translation><!-- Lowe --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Magnolia</masterLabel>
+        <translation><!-- Magnolia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manufactured Structures</masterLabel>
+        <translation><!-- Manufactured Structures --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mid - Continent</masterLabel>
+        <translation><!-- Mid - Continent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mid-Atlantic</masterLabel>
+        <translation><!-- Mid-Atlantic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mid-South</masterLabel>
+        <translation><!-- Mid-South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mountain</masterLabel>
+        <translation><!-- Mountain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mountain Plains</masterLabel>
+        <translation><!-- Mountain Plains --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nebraska</masterLabel>
+        <translation><!-- Nebraska --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New England</masterLabel>
+        <translation><!-- New England --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New York Metro</masterLabel>
+        <translation><!-- New York Metro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Central</masterLabel>
+        <translation><!-- North Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Colorado</masterLabel>
+        <translation><!-- North Colorado --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Pacific</masterLabel>
+        <translation><!-- North Pacific --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Texas</masterLabel>
+        <translation><!-- North Texas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern Plains</masterLabel>
+        <translation><!-- Northern Plains --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northwest</masterLabel>
+        <translation><!-- Northwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nu-Lite</masterLabel>
+        <translation><!-- Nu-Lite --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OEM &amp; Electronics Group</masterLabel>
+        <translation><!-- OEM &amp; Electronics Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pacific Ind.</masterLabel>
+        <translation><!-- Pacific Ind. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Patriot</masterLabel>
+        <translation><!-- Patriot --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Platt</masterLabel>
+        <translation><!-- Platt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Puget Sound</masterLabel>
+        <translation><!-- Puget Sound --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Red River</masterLabel>
+        <translation><!-- Red River --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rexel Automation</masterLabel>
+        <translation><!-- Rexel Automation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rexel C&amp;I</masterLabel>
+        <translation><!-- Rexel C&amp;I --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>River Valley</masterLabel>
+        <translation><!-- River Valley --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Riverfront</masterLabel>
+        <translation><!-- Riverfront --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rocky Mountain</masterLabel>
+        <translation><!-- Rocky Mountain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SO California</masterLabel>
+        <translation><!-- SO California --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Salt Lake</masterLabel>
+        <translation><!-- Salt Lake --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Salt Lake City</masterLabel>
+        <translation><!-- Salt Lake City --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Florida</masterLabel>
+        <translation><!-- South Florida --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Texas</masterLabel>
+        <translation><!-- South Texas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South-Central</masterLabel>
+        <translation><!-- South-Central --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southern</masterLabel>
+        <translation><!-- Southern --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southwest</masterLabel>
+        <translation><!-- Southwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stusser Metro</masterLabel>
+        <translation><!-- Stusser Metro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sunbelt</masterLabel>
+        <translation><!-- Sunbelt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TSS</masterLabel>
+        <translation><!-- TSS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tennessee Valley</masterLabel>
+        <translation><!-- Tennessee Valley --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tri County</masterLabel>
+        <translation><!-- Tri County --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tri-State District</masterLabel>
+        <translation><!-- Tri-State District --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>US Broadband</masterLabel>
+        <translation><!-- US Broadband --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>US Distribution</masterLabel>
+        <translation><!-- US Distribution --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Utility</masterLabel>
+        <translation><!-- Utility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Utility Group</masterLabel>
+        <translation><!-- Utility Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valley</masterLabel>
+        <translation><!-- Valley --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Virtual Sales</masterLabel>
+        <translation><!-- Virtual Sales --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wesco Integrated Supply Group</masterLabel>
+        <translation><!-- Wesco Integrated Supply Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>West</masterLabel>
+        <translation><!-- West --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>West I/C Group</masterLabel>
+        <translation><!-- West I/C Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wichita</masterLabel>
+        <translation><!-- Wichita --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wisconsin</masterLabel>
+        <translation><!-- Wisconsin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Yankee</masterLabel>
+        <translation><!-- Yankee --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

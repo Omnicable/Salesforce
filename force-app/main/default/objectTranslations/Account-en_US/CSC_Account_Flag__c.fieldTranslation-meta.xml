@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- CSC Account Flag --></label>
+    <name>CSC_Account_Flag__c</name>
+    <picklistValues>
+        <masterLabel>A - Gold</masterLabel>
+        <translation><!-- A - Gold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>B - Silver</masterLabel>
+        <translation><!-- B - Silver --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>C - Bronze</masterLabel>
+        <translation><!-- C - Bronze --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

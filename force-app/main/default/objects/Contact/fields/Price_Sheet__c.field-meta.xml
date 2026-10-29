@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Sheet__c</fullName>
+    <inlineHelpText>What price sheet is being sent to your customer</inlineHelpText>
+    <label>Price Sheet</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aluminum</fullName>
+                <default>false</default>
+                <label>Aluminum</label>
+            </value>
+            <value>
+                <fullName>Portable Cord</fullName>
+                <default>false</default>
+                <label>Portable Cord</label>
+            </value>
+            <value>
+                <fullName>Both</fullName>
+                <default>false</default>
+                <label>Both</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

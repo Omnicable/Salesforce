@@ -127,39 +127,6 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <rules>
-        <fullName>Account - No Activity Last 90 Days SSC</fullName>
-        <active>false</active>
-        <formula>ISPICKVAL(Active__c , &quot;A&quot;) &amp;&amp; 
-((TODAY() -  LastActivityDate  &gt;  9 || ISNULL(LastActivityDate)) &amp;&amp;
-(TODAY() - Max_Date_Order__c  &gt;  9 || ISNULL( Max_Date_Order__c))) &amp;&amp;
-NOT(CONTAINS(Name, &quot;Omni Cable&quot;)) &amp;&amp;
-OwnerId &lt;&gt; &quot;00560000001NBPM&quot; &amp;&amp;
-$User.UserRoleId = &quot;00E600000017kt5&quot;</formula>
-        <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
-        <fullName>Account - SSC No Activity Last 60 Days</fullName>
-        <active>true</active>
-        <description>You&apos;ll receive a task if your account has had no activity in 60 days.</description>
-        <formula>((TODAY() - LastActivityDate &gt; 60 || ISNULL(LastActivityDate)) &amp;&amp;
-(TODAY() - Max_Date_Order__c &gt; 60 || ISNULL( Max_Date_Order__c))) &amp;&amp; 
-ISPICKVAL(Active__c , &quot;A&quot;) &amp;&amp;
-NOT(CONTAINS(Name, &quot;Omni Cable&quot;)) &amp;&amp;
-ISPICKVAL( Type , &quot;Distributor&quot;) &amp;&amp;
-$User.UserRoleId = &quot;00E600000017kt5&quot; ||
-$Profile.Id =&quot;00e60000001BUuj&quot;</formula>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-        <workflowTimeTriggers>
-            <actions>
-                <name>No_Acitivity_60_Days</name>
-                <type>Task</type>
-            </actions>
-            <offsetFromField>Account.Max_Date_Order__c</offsetFromField>
-            <timeLength>60</timeLength>
-            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
-        </workflowTimeTriggers>
-    </rules>
-    <rules>
         <fullName>Account Manager Extension</fullName>
         <actions>
             <name>Update_Account_Manager_Extension</name>
@@ -182,31 +149,6 @@ $Profile.Id =&quot;00e60000001BUuj&quot;</formula>
             <value>D</value>
         </criteriaItems>
         <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
-        <fullName>FL Sales - No Activity for 30 Days</fullName>
-        <actions>
-            <name>Account_No_Activity_30_days</name>
-            <type>Alert</type>
-        </actions>
-        <actions>
-            <name>No_Activity_for_300_Days</name>
-            <type>Task</type>
-        </actions>
-        <active>true</active>
-        <description>Sends task to account manager if account has had no activity in 30 days</description>
-        <formula>ISPICKVAL(Active__c , &quot;A&quot;) &amp;&amp;
-((TODAY() - Max_Date_Order__c  &gt;  30 || ISNULL( Max_Date_Order__c))) &amp;&amp;
-NOT(CONTAINS(Name, &quot;Omni Cable&quot;)) &amp;&amp;
-(CONTAINS(Salesperson_Code__c, &quot;343&quot;)) &amp;&amp;
-(CONTAINS(Salesperson_Code__c, &quot;342&quot;)) &amp;&amp;
-(CONTAINS(Salesperson_Code__c, &quot;340&quot;)) &amp;&amp;
-(CONTAINS(Salesperson_Code__c, &quot;339&quot;)) &amp;&amp;
-(CONTAINS(Salesperson_Code__c, &quot;344&quot;)) &amp;&amp;
-OwnerId &lt;&gt; &quot;00560000001NBPM&quot; &amp;&amp; 
-OwnerId &lt;&gt; &quot;00560000001NoXZ&quot; &amp;&amp; 
-( DATEVALUE(CreatedDate) &lt;&gt; TODAY())</formula>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
         <fullName>Initial Task</fullName>

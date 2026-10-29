@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_ViewApproved__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When checked user will have access to all Accounts determined by OCC_ApprovedAccountLinks</description>
+    <label>OCC_ViewApproved</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

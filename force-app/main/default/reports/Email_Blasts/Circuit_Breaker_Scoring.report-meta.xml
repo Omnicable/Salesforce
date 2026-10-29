@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_29144300</developerName>
+        <masterLabel>Score Buckets</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Contact.pi__Category_Contact_Scores__r$pi__Score__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>24</to>
+            </sourceValues>
+            <value>Other</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>24</from>
+                <to>25</to>
+            </sourceValues>
+            <value>Opened Circuit Breaker Email</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>25</from>
+            </sourceValues>
+            <value>Opened &amp; Viewed Circuit Breaker Literature</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Contact$ContactCount__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Owner</field>
+    </columns>
+    <columns>
+        <field>Contact$Account</field>
+    </columns>
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$Contact_Title__c</field>
+    </columns>
+    <columns>
+        <field>Contact.pi__Category_Contact_Scores__r$pi__Scoring_Category_Name__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Contact.pi__Category_Contact_Scores__r$pi__Score__c</field>
+    </columns>
+    <columns>
+        <field>Contact.pi__Category_Contact_Scores__r$LastModifiedDate</field>
+    </columns>
+    <description>Pardot Scoring based on interactions with breaker literature</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.pi__Category_Contact_Scores__r$pi__Scoring_Category_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Circuit Breakers</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_29144300</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$Region__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Circuit Breaker Scoring</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Pardot_Scoring_Categories__c</reportType>
+    <scope>team</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Contact.pi__Category_Contact_Scores__r$pi__Score__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

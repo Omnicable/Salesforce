@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>プロジェクト開始日からの経過日数</help>
+    <label>プロジェクト開始オフセット</label>
+    <name>Project_Kickoff_Offset__c</name>
+</CustomFieldTranslation>

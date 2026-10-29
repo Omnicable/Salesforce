@@ -1,0 +1,5 @@
+Your marketing request "{!Cases_Requests__c.Subject__c}" has been completed. 
+
+Comments from Marketing: {!Cases_Requests__c.Comments__c}
+
+To view your completed request, click here: https://omnicable.my.salesforce.com/{!Cases_Requests__c.Id}

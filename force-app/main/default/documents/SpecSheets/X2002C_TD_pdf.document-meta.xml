@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>M CABLE SPEC SHEET
+D11603, M Cable 2002C</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>D11603, M Cable # 2002C</keywords>
+    <name>M Cable Multi-Conductor - Shielded PVC - 16 AWG - 19x29 Stranded Tinned Copper - 3 conductor</name>
+    <public>true</public>
+</Document>

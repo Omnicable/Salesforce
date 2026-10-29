@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cable OD Complete Cable inches --></label>
+    <name>CAble_OD_Complete_Cable_inches__c</name>
+</CustomFieldTranslation>

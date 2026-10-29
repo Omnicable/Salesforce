@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <available>true</available>
+    <description>Commercial Cord  for</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Commercial Cord Email Alert</name>
+    <style>none</style>
+    <subject>Type P  for</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1090,11 +1090,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Budget_2018__c</field>
-            <table>Contact.Accounts__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>AccountCount__c</field>
             <table>Contact.Accounts__r</table>
         </columns>
@@ -1366,11 +1361,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CMGPPCT__c</field>
-            <table>Contact.Accounts__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Current_Monthly_Budget__c</field>
             <table>Contact.Accounts__r</table>
         </columns>
         <columns>
@@ -1650,11 +1640,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Max_Date_Order__c</field>
-            <table>Contact.Accounts__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
             <table>Contact.Accounts__r</table>
         </columns>
@@ -1871,11 +1856,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Projected_EOY_Sales__c</field>
-            <table>Contact.Accounts__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>QOC_YTD_SalesNonPolicy__c</field>
             <table>Contact.Accounts__r</table>
         </columns>
         <columns>

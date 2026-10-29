@@ -1,0 +1,8 @@
+Category: {!Cases_Requests__c.Category__c} 
+Contact: {!Cases_Requests__c.Contact__c}
+Tango Card Amount: {!Cases_Requests__c.Tango_Card_Amount__c}
+Related Order: {!Cases_Requests__c.Related_Order_if_applicable__c}
+Reason: {!Cases_Requests__c.Reason__c}
+External Notes: {!Cases_Requests__c.External_Notes__c}
+
+To view the request in Salesforce, click here https://omnicable.my.salesforce.com/{!Cases_Requests__c.Id}

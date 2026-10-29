@@ -1,0 +1,10 @@
+{!Customer_Events__c.CreatedBy}'s request "{!Customer_Events__c.Name}" has been rejected.
+
+Comments: {!ApprovalRequest.Comments}
+
+Click here to view the credit request in Salesforce https://cs18.salesforce.com/{!Customer_Events__c.Id}
+
+
+If you would like to revise your request, you may edit and resubmit it for approval.
+
+* Standard Procedure: Credits UNDER $1,500 must be approved by the RM & RVP; credits OVER $1,500 must be approved by the RM, RVP, & COO.

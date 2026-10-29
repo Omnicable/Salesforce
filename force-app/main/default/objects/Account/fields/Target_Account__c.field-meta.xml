@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Account__c</fullName>
+    <label>Target Account</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Target Acct</fullName>
+                <default>false</default>
+                <label>No Target Acct</label>
+            </value>
+            <value>
+                <fullName>BDR Growth</fullName>
+                <default>false</default>
+                <label>BDR Growth</label>
+            </value>
+            <value>
+                <fullName>BDR Maintenance</fullName>
+                <default>false</default>
+                <label>BDR Maintenance</label>
+            </value>
+            <value>
+                <fullName>AM Target</fullName>
+                <default>false</default>
+                <label>AM Target</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

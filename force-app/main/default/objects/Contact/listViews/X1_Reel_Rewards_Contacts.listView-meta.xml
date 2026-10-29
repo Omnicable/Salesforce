@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1_Reel_Rewards_Contacts</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>OCC_Rewards__c</columns>
+    <columns>OCC_RewardsTotal__c</columns>
+    <columns>PortalUser__c</columns>
+    <columns>OCC_RewardStep__c</columns>
+    <columns>MaxOrderQuoteDate__c</columns>
+    <columns>Region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OCC_Rewards__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>OCC_RewardsTotal__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Standard</value>
+    </filters>
+    <label>1.) Reel Rewards Contacts</label>
+    <sharedTo>
+        <group>Region5RMs</group>
+        <group>SFDCAdministrators</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Use this field for any additional details about an account&apos;s CB program. --></help>
+    <label><!-- CB Details --></label>
+    <name>CB_Program_Details__c</name>
+</CustomFieldTranslation>

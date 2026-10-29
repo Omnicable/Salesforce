@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LAKE SPEC SHEET
+A81204 VG124(19)/3G/X18</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>A81204 VG124(19)/3G/X18 BUS DROP</keywords>
+    <name>Lake Cable - Bus Drop</name>
+    <public>true</public>
+</Document>

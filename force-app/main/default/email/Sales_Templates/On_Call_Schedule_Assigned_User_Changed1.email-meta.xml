@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email Alert</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>On Call 1 Week Reminder Email</name>
+    <style>none</style>
+    <subject>On Call Next Week  ({!Event.Start_Date__c} - {!Event.END_Date__c})</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

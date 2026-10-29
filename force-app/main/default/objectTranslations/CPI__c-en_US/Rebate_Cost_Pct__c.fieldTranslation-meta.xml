@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Rolling 12 Months --></help>
+    <label><!-- Rebate Cost Pct --></label>
+    <name>Rebate_Cost_Pct__c</name>
+</CustomFieldTranslation>

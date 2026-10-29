@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSC_Transfer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to identify and track regional transfers to CSC.</description>
+    <inlineHelpText>Used to identify and track regional transfers to CSC.</inlineHelpText>
+    <label>CSC Transfer</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

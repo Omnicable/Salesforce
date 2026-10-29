@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+Teck 90 1000V Control T31003 T31004 T31202 T31203 T31204 T31212 T31402 T31403 T31404 T31405 T31407 T31410 T31415 T31420 T31425</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Teck 90 1000V Control T31003 T31004 T31202 T31203 T31204 T31212 T31402 T31403 T31404 T31405 T31407 T31410 T31415 T31420 T31425</keywords>
+    <name>Southwire - Teck 90 1000V Control</name>
+    <public>true</public>
+</Document>

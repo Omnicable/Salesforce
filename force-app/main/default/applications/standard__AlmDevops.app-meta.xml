@@ -6,7 +6,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
-    <label>DevOps Center</label>
+    <label>Lifecycle Center (DevOps Center)</label>
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
     <tabs>standard-DevopsProject</tabs>

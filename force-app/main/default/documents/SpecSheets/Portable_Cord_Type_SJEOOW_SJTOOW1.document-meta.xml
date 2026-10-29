@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>COLEMAN SPEC SHEET
+Omni part # BEJ1802,BEJ1803,BEJ1804,BEJ1602,BEJ1603,BEJ1604,BEJ1402,BEJ1403,BEJ1404,BEJ1202,BEJ1203,BEJ1204, Coleman part # 23225,23325,23425,23226,23326,23426,23227,23327,23427,23228,23328,23428</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>Portable Cord - Type SJEOOW/SJTOOW</name>
+    <public>false</public>
+</Document>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <acrossGroupingContext>Account.Order_Header__r$Date__c</acrossGroupingContext>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, 3886977.21/5,
+IF (Account.RegionNumerical__c:MAX = 3, 3938832.18/5,
+IF (Account.RegionNumerical__c:MAX = 4, 2203170/5,
+IF (Account.RegionNumerical__c:MAX = 5, 2830359/5,
+IF (Account.RegionNumerical__c:MAX = 6, 2629019/5,
+IF (Account.RegionNumerical__c:MAX = 7, 1891226/5,
+IF (Account.RegionNumerical__c:MAX = 8, 7636833.97/5,
+IF (Account.RegionNumerical__c:MAX = 9, 3216388.34/5,
+IF (Account.RegionNumerical__c:MAX = 10, 1471419.08/5,
+IF (Account.RegionNumerical__c:MAX = 11, 5158078.76/5,
+IF (Account.RegionNumerical__c:MAX = 12, 2533522.78/5,
+IF (Account.RegionNumerical__c:MAX = 13, 1484705/5,
+IF (Account.RegionNumerical__c:MAX = 15, 3053104/5,
+IF (Account.RegionNumerical__c:MAX = 18, 1263748/5,0))))))))))))))</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Monthly Target</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>Account.Order_Header__r$Date__c</acrossGroupingContext>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, Sales_History_Line_Item__c.Line_Total__c:SUM /(3886977.21/5),
+IF (Account.RegionNumerical__c:MAX = 3, Sales_History_Line_Item__c.Line_Total__c:SUM /(3938832.18/5),
+IF (Account.RegionNumerical__c:MAX = 4, Sales_History_Line_Item__c.Line_Total__c:SUM /(2203170/5),
+IF (Account.RegionNumerical__c:MAX = 5, Sales_History_Line_Item__c.Line_Total__c:SUM /(2830359/5),
+IF (Account.RegionNumerical__c:MAX = 6, Sales_History_Line_Item__c.Line_Total__c:SUM /(2629019/5),
+IF (Account.RegionNumerical__c:MAX = 7, Sales_History_Line_Item__c.Line_Total__c:SUM /(1891226/5),
+IF (Account.RegionNumerical__c:MAX = 8, Sales_History_Line_Item__c.Line_Total__c:SUM /(7636833.97/5),
+IF (Account.RegionNumerical__c:MAX = 9, Sales_History_Line_Item__c.Line_Total__c:SUM /(3216388.34/5),
+IF (Account.RegionNumerical__c:MAX = 10, Sales_History_Line_Item__c.Line_Total__c:SUM/ (1471419.08/5),
+IF (Account.RegionNumerical__c:MAX = 11, Sales_History_Line_Item__c.Line_Total__c:SUM /(5158078.76/5),
+IF (Account.RegionNumerical__c:MAX = 12, Sales_History_Line_Item__c.Line_Total__c:SUM /(2533522.78/5),
+IF (Account.RegionNumerical__c:MAX = 13, Sales_History_Line_Item__c.Line_Total__c:SUM /(1484705/5),
+IF (Account.RegionNumerical__c:MAX = 15, Sales_History_Line_Item__c.Line_Total__c:SUM /(3053104/5),
+IF (Account.RegionNumerical__c:MAX = 18, Sales_History_Line_Item__c.Line_Total__c:SUM /(1263748/5),0))))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Target</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>Account.Order_Header__r$Date__c</acrossGroupingContext>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, (Sales_History_Line_Item__c.Line_Total__c:SUM - 777395.442)/ 777395.442,
+IF (Account.RegionNumerical__c:MAX = 3, (Sales_History_Line_Item__c.Line_Total__c:SUM - 787766.436)/ 787766.436,
+IF (Account.RegionNumerical__c:MAX = 4, (Sales_History_Line_Item__c.Line_Total__c:SUM - 440634)/ 440634,
+IF (Account.RegionNumerical__c:MAX = 5, (Sales_History_Line_Item__c.Line_Total__c:SUM - 566071.8)/ 566071.8,
+IF (Account.RegionNumerical__c:MAX = 6, (Sales_History_Line_Item__c.Line_Total__c:SUM - 525803.8)/ 525803.8,
+IF (Account.RegionNumerical__c:MAX = 7, (Sales_History_Line_Item__c.Line_Total__c:SUM - 378245.2)/ 378245.2,
+IF (Account.RegionNumerical__c:MAX = 8, (Sales_History_Line_Item__c.Line_Total__c:SUM - 1527366.794)/ 1527366.794,
+IF (Account.RegionNumerical__c:MAX = 9, (Sales_History_Line_Item__c.Line_Total__c:SUM - 643277.668)/ 643277.668,
+IF (Account.RegionNumerical__c:MAX = 10, (Sales_History_Line_Item__c.Line_Total__c:SUM- 294283.416)/ 294283.416,
+IF (Account.RegionNumerical__c:MAX = 11, (Sales_History_Line_Item__c.Line_Total__c:SUM- 1031615.752)/ 1031615.752,
+IF (Account.RegionNumerical__c:MAX = 12, (Sales_History_Line_Item__c.Line_Total__c:SUM - 506704.556)/ 506704.556,
+IF (Account.RegionNumerical__c:MAX = 13, (Sales_History_Line_Item__c.Line_Total__c:SUM - 296941)/ 296941,
+IF (Account.RegionNumerical__c:MAX = 15, (Sales_History_Line_Item__c.Line_Total__c:SUM - 610620.8)/ 610620.8,
+IF (Account.RegionNumerical__c:MAX = 18, (Sales_History_Line_Item__c.Line_Total__c:SUM - 252749.6)/ 252749.6,0))))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Growth</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Sales_History_Line_Item__c.Line_Total__c:SUM/5</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA5</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Avg Monthly Sales</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_59189830</developerName>
+        <masterLabel>Branch Battles</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account$Region_Number__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>002</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>003</sourceValue>
+            </sourceValues>
+            <value>PA vs GA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>012</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>010</sourceValue>
+            </sourceValues>
+            <value>NC vs FL</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>004</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>006</sourceValue>
+            </sourceValues>
+            <value>MO vs MA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>008</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>011</sourceValue>
+            </sourceValues>
+            <value>TX vs IL</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>009</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>005</sourceValue>
+            </sourceValues>
+            <value>LA vs CO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>013</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>007</sourceValue>
+            </sourceValues>
+            <value>WA vs SF</value>
+        </values>
+    </buckets>
+    <colorRanges>
+        <columnName>FORMULA3</columnName>
+        <highBreakpoint>14.99</highBreakpoint>
+        <highColor>#006714</highColor>
+        <lowBreakpoint>9.99</lowBreakpoint>
+        <lowColor>#FF9897</lowColor>
+        <midColor>#95FFAF</midColor>
+    </colorRanges>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Description__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Total__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$GPpct__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Buyer__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Job_Reference__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Class__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Item__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BE,LB</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Region_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>008</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <formattingRules>
+        <columnName>FORMULA3</columnName>
+        <values>
+            <backgroundColor>#FF9897</backgroundColor>
+            <rangeUpperBound>9.99</rangeUpperBound>
+        </values>
+        <values>
+            <backgroundColor>#95FFAF</backgroundColor>
+            <rangeUpperBound>14.99</rangeUpperBound>
+        </values>
+        <values>
+            <backgroundColor>#006714</backgroundColor>
+        </values>
+    </formattingRules>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>Account.Order_Header__r$Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Region_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Order_Header__r$Inside_AM_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>R8 Belden High Spec Promo by Month</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Accounts_Orders_SalesHistory_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r$Date__c</dateColumn>
+        <endDate>2023-03-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2022-11-01</startDate>
+    </timeFrameFilter>
+</Report>

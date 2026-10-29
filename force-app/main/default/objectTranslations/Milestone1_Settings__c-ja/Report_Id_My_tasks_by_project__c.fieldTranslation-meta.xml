@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>プロジェクト順に私のタスクをレポートします。pv0 = プロジェクトID（15文字）、pv1 = 割り当て名</help>
+    <label>レポートID：プロジェクト順タスク</label>
+    <name>Report_Id_My_tasks_by_project__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ltnadptn__Using_Lightning__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If true, this user&apos;s next login or clicks will load Lightning.  If false, the user&apos;s next login or clicks will load Classic.  This is updated using scheduled code, so the values may lag if users have switched to Classic or Lightning from their profile menu recently.</description>
+    <inlineHelpText>If true, this user&apos;s next login or clicks will load Lightning.  If false, the user&apos;s next login or clicks will load Classic.  This is updated using scheduled code, so the values may lag if users have switched to Classic or Lightning from their profile men</inlineHelpText>
+    <label>Using Lightning?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

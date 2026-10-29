@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>レポートID：優先度、プロジェクト順　私のタスク</label>
+    <name>Report_Id_My_Tasks_By_Priority_Project__c</name>
+</CustomFieldTranslation>

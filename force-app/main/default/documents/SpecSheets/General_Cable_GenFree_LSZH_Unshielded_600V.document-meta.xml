@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+AZ10201</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;s 14311.011400,14311.011200,14311.011000,14311.010800,14311.010600,14311.010400,14311.010200,14311.010100,14311.015100,14311.015200,14311.015300,14311.015400,14311.016000,14311.016200,14311.016500,14311.017000</keywords>
+    <name>General Cable - GenFree LSZH Unshielded 600V</name>
+    <public>true</public>
+</Document>

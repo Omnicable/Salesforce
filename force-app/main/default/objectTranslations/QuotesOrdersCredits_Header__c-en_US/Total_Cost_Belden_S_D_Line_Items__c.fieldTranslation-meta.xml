@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Sum on Line Cost (Booked) for all Belden line items in an order with Belden S&amp;D Eligible Item? = True --></help>
+    <label><!-- Total Cost Belden S&amp;D Line Items --></label>
+    <name>Total_Cost_Belden_S_D_Line_Items__c</name>
+</CustomFieldTranslation>

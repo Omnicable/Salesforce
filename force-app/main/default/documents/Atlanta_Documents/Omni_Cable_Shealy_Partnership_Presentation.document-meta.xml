@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a PDF of a Power Point. If you would like to add or delete any slides contact Lyndsay at Lrosenlund@omnicable.com.</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>PDF, Power Point, Shealy, Partnership, Presentation</keywords>
+    <name>Omni Cable Shealy Partnership Presentation</name>
+    <public>true</public>
+</Document>

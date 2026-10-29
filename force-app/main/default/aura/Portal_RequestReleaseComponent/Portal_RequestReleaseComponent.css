@@ -1,0 +1,50 @@
+.THIS .radio-combo-inline .slds-form-element__control .slds-radio
+{
+    display: inline-block !important;
+}
+
+.THIS .even {
+	background-color: #e2e3e4;
+}
+
+.THIS .odd{
+	background-color: white;
+}
+
+
+.THIS .line-text {
+	background-color: black;
+	padding: 1px 7px;
+	color: white;
+	font-size: 16px;
+	top: 0;
+	left: 0;
+}
+
+.THIS .error-border{
+	border: 1px solid #ba0517
+	;
+}
+
+.THIS .remove {
+	background-color: #ba0517;
+}
+
+.THIS .remove svg{
+	fill: white;
+}
+
+.THIS .cart{
+	position: Fixed;
+	bottom: 10px;
+	opacity: 90%;
+	background-color: white;
+	border-radius: 10px;
+	border: #dddbda 1px solid;
+	padding: 20px;
+	left: 45%;
+}
+
+.THIS ::placeholder {
+    color:rgb(193, 193, 193);
+}

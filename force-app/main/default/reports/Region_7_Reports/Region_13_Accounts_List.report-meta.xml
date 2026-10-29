@@ -32,7 +32,7 @@
         </criteriaItems>
         <language>en_US</language>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
     <name>Region 13 Accounts List</name>
     <params>
         <name>co</name>

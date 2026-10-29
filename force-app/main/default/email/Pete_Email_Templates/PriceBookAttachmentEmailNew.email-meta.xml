@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Email for custom price books sent to clients monthly</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PriceBookAttachmentEmailNew</name>
+    <style>none</style>
+    <subject>{!DATETIMEVALUE(Today())} Price Sheet</subject>
+    <textOnly>To Our Valued Customers,
+
+Please see the attachments for the monthly price sheet updates for {!Account.Company_Name__c}, {!Account.ShippingCity}. Pricing is active as of today. Pricing is subject to change at any time without notice.
+
+This is a noreply mailbox and cannot receive orders. Please contact your sales team with questions and orders.
+
+{!Account.Outside_Salesperson__c}
+
+Thank you for considering OmniCable HWC for your stock buy.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

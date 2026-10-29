@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FIRST CAPITOL SPEC SHEET
+C71001-01 C71201-01 C71201-02 C71201-03 C71401-01 C71401-02 C71401-03 C71401-04 C71601-02 C71801-03</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>FC PART #&apos;S 10410000 10390000 10390500 10391000 10370000 10370500 10371000 10371500 10350500 10331000</keywords>
+    <name>First Capitol Appliance and Fixture Wire - SF-2</name>
+    <public>true</public>
+</Document>

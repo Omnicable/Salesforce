@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LAKE SPEC SHEET
+L21801 V182S/M1</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>L21801 V182S/M1</keywords>
+    <name>Lake Cable - 600V Instrumentation Cable</name>
+    <public>true</public>
+</Document>

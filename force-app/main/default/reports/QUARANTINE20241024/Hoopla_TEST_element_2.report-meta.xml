@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>QuotesOrdersCredits_Header__c.Total_Order_GP__c:SUM/QuotesOrdersCredits_Header__c.Total_Order_Sales__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Avg. GP%</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>QuotesOrdersCredits_Header__c.OrderCount__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Order Count</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, 1190,
+IF (Account.RegionNumerical__c:MAX = 3, 953,
+IF (Account.RegionNumerical__c:MAX = 4, 643,
+IF (Account.RegionNumerical__c:MAX = 5, 519,
+IF (Account.RegionNumerical__c:MAX = 6, 806,
+IF (Account.RegionNumerical__c:MAX = 7, 313,
+IF (Account.RegionNumerical__c:MAX = 8, 1014,
+IF (Account.RegionNumerical__c:MAX = 9, 578,
+IF (Account.RegionNumerical__c:MAX = 10, 422,
+IF (Account.RegionNumerical__c:MAX = 11, 643,
+IF (Account.RegionNumerical__c:MAX = 12, 453,
+IF (Account.RegionNumerical__c:MAX = 13, 160,0))))))))))))</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>Account.Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Quarterly Goal</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/1190,
+IF (Account.RegionNumerical__c:MAX = 3, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/953,
+IF (Account.RegionNumerical__c:MAX = 4, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/643,
+IF (Account.RegionNumerical__c:MAX = 5, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/519,
+IF (Account.RegionNumerical__c:MAX = 6, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/806,
+IF (Account.RegionNumerical__c:MAX = 7, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/313,
+IF (Account.RegionNumerical__c:MAX = 8, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/1014,
+IF (Account.RegionNumerical__c:MAX = 9, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/578,
+IF (Account.RegionNumerical__c:MAX = 10, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/422,
+IF (Account.RegionNumerical__c:MAX = 11, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/643,
+IF (Account.RegionNumerical__c:MAX = 12, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/453,
+IF (Account.RegionNumerical__c:MAX = 13, QuotesOrdersCredits_Header__c.OrderCount__c:SUM/160,0))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA5</developerName>
+        <downGroupingContext>Account.Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Qtrly Goal</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_67681285</developerName>
+        <masterLabel>Region</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Account.Region_Number__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>002</sourceValue>
+            </sourceValues>
+            <value>Philadelphia</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>003</sourceValue>
+            </sourceValues>
+            <value>Atlanta</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>004</sourceValue>
+            </sourceValues>
+            <value>Boston</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>005</sourceValue>
+            </sourceValues>
+            <value>Denver</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>006</sourceValue>
+            </sourceValues>
+            <value>St. Louis</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>007</sourceValue>
+            </sourceValues>
+            <value>San Francisco</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>008</sourceValue>
+            </sourceValues>
+            <value>Houston</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>009</sourceValue>
+            </sourceValues>
+            <value>Los Angeles</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>010</sourceValue>
+            </sourceValues>
+            <value>Tampa</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>011</sourceValue>
+            </sourceValues>
+            <value>Chicago</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>012</sourceValue>
+            </sourceValues>
+            <value>Charlotte</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>013</sourceValue>
+            </sourceValues>
+            <value>Seattle</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_78291340</developerName>
+        <masterLabel>Total Order Sales (Booked)</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>4,999</to>
+            </sourceValues>
+            <value>$2,500 - $4,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>4,999</from>
+            </sourceValues>
+            <value>$5,000 - $9,999</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartType>LineCumulative</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Account.Region_Number__c</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Small</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>QuotesOrdersCredits_Header__c.Total_Order_GP_Pct__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>QuotesOrdersCredits_Header__c.Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>2500</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QuotesOrdersCredits_Header__c.Total_Order_Sales__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessThan</operator>
+            <value>25000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QuotesOrdersCredits_Header__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Distributor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QuotesOrdersCredits_Header__c.Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Region_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>001</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Region_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Hoopla All Regions Element #2 Order Coun</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$QuotesOrdersCredits_Header__c@QuotesOrdersCredits_Header__c.Buyer__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>QuotesOrdersCredits_Header__c.Date__c</dateColumn>
+        <interval>INTERVAL_CURRENTQ</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,86 @@
+<!--
+  @description       : Reusable QOC portal component
+  @author            : chrisw@launchdm.com
+  @group             : LaunchDM
+  @last modified on  : 11-26-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="Portal_ResourceController" access="global"
+	implements="forceCommunity:availableForAllPageTypes">
+
+	<!-- <ltng:require styles="{!$Resource.bootstrappagination  + '/bootstrappagination/css/bootstrap.min.css'}"
+		scripts="{!$Resource.bootstrappagination + '/bootstrappagination/js/bootstrap.min.js'}"
+		afterScriptsLoaded="{!c.doInit}" /> -->
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" access="global" />
+	<aura:attribute name="label" type="String" />
+	<aura:attribute name="type" type="String" default="Release" />
+	<aura:attribute name="loading" type="Boolean" default="true" />
+	<aura:handler name="paginationChange" event="c:Portal_PaginationEvent" action="{!c.onPaginationChange}" />
+
+	<aura:attribute name="myPagination" type="Object" />
+	<aura:attribute name="otherPagination" type="Object" />
+	<aura:attribute name="myRecords" type="sObject[]" />
+	<aura:attribute name="otherRecords" type="sObject[]" />
+	<aura:attribute name="myCount" type="Integer" />
+	<aura:attribute name="otherCount" type="Integer" />
+	<aura:attribute name="showOthers" type="Boolean" default="true" />
+	<lightning:notificationsLibrary aura:id="notifLib" />
+	<aura:attribute name="issearching" type="Boolean" />
+	<aura:attribute name="searchTerm" type="String" default="" />
+
+
+	<div class="slds-is-relative">
+
+		<div class="slds-grid slds-var-p-around_large" onkeyup="{! c.handleKeyUp }">
+			<lightning:input class="slds-col" aura:id="enter-search" name="enter-search" label="{! 'Search ' + v.type}"
+				isLoading="{! v.issearching }" type="search" oncommit="{!c.onClear}" />
+		</div>
+
+		<aura:if isTrue="{!v.type == 'Release'}">
+
+			<lightning:tabset selectedTabId="mine" variant="scoped">
+				<lightning:tab label="{! 'My ' + v.type + 's'}" id="mine">
+					<div>
+						<c:Portal_QOCAccordionComponent records="{!v.myRecords}" tabName="mine" />
+					</div>
+					<div class="slds-grid slds-var-p-top_medium">
+						<c:Portal_PaginationComponent aura:id="my" tab="my" total="{!v.myCount}" />
+					</div>
+				</lightning:tab>
+
+				<aura:if isTrue="{! v.showOthers }">
+					<lightning:tab label="{! 'Other ' + v.type + 's'}" id="other">
+						<c:Portal_QOCAccordionComponent records="{!v.otherRecords}" tabName="other" />
+						<div class="slds-grid slds-var-p-top_medium">
+							<c:Portal_PaginationComponent aura:id="other" tab="other" total="{!v.otherCount}" />
+						</div>
+					</lightning:tab>
+
+				</aura:if>
+
+			</lightning:tabset>
+
+			<aura:set attribute="else">
+				<lightning:tabset selectedTabId="all" variant="scoped">
+					<lightning:tab label="All Master Orders" id="all">
+						<c:Portal_QOCAccordionComponent records="{!v.myRecords}" tabName="all" />
+						<div class="slds-grid slds-var-p-top_medium">
+							<c:Portal_PaginationComponent aura:id="masterOrder" tab="masterOrder"
+								total="{!v.myCount}" />
+						</div>
+					</lightning:tab>
+				</lightning:tabset>
+			</aura:set>
+		</aura:if>
+
+
+
+		<aura:if isTrue="{! v.loading }">
+			<lightning:spinner alternativeText="Loading" size="medium" />
+		</aura:if>
+
+	</div>
+
+
+</aura:component>

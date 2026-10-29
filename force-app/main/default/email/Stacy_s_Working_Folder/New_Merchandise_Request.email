@@ -1,0 +1,12 @@
+A new merchandise request has been submitted by {!Merchandise_Requests__c.CreatedBy}.
+To view the merchandise request in Salesforce, click here https://cs18.salesforce.com/{!Merchandise_Requests__c.Id}
+
+
+Item: {!Merchandise_Requests__c.Merchandise_Item__c}
+Quantity: {!Merchandise_Requests__c.Quantity__c}
+Total Value: {!Merchandise_Requests__c.Value__c}
+Contact: {!Merchandise_Requests__c.Contact__c}
+
+Related Order #: {!Merchandise_Requests__c.Related_Order__c}
+
+Personal Note: {!Merchandise_Requests__c.Personal_Note_to_Customer__c}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+Y10803A Y10804A Y10603A Y10604A Y10403A Y10404A Y10203A Y10204A Y10103A Y10104A Y11/003A Y11/004A Y12/003A Y12/004A Y13/003A Y13/004A Y14/003A Y14/004A</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Y10803A Y10804A Y10603A Y10604A Y10403A Y10404A Y10203A Y10204A Y10103A Y10104A Y11/003A Y11/004A Y12/003A Y12/004A Y13/003A Y13/004A Y14/003A Y14/004A</keywords>
+    <name>General Cable - Aluminum Interlocked Armor - 600V - 3 and 4 Conductor - 8 thru 4/0 AWG</name>
+    <public>false</public>
+</Document>

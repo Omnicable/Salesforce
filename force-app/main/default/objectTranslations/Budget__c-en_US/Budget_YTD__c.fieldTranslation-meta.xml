@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Total Budget Year to Date --></help>
+    <label><!-- Yearly Budget $ --></label>
+    <name>Budget_YTD__c</name>
+</CustomFieldTranslation>

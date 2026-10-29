@@ -1,0 +1,42 @@
+<aura:component>
+	<aura:attribute name="recordId" type="String" access="global" />
+	<aura:attribute name="deliveryDate" type="String" access="global" />
+
+
+	<div>
+		<div class="slds-var-m-bottom_small">
+			<div class="slds-form-element__label">Delivery Date:</div>
+			<div>
+				<lightning:formattedDateTime value="{!v.deliveryDate}" year="2-digit" month="short" day="2-digit"
+					weekday="long" />
+			</div>
+		</div>
+		<lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Delivery_Address__c">
+
+
+			<div class="slds-var-m-bottom_small">
+				<div class="slds-form-element__label">Address</div>
+				<lightning:outputField fieldName="Display_Name__c" variant="label-hidden" />
+			</div>
+
+			<div class="slds-var-m-bottom_small">
+				<lightning:outputField fieldName="Other_Instructions__c" />
+			</div>
+
+			<div class="slds-grid">
+				<div class="slds-col">
+					<lightning:outputField fieldName="Flatbed_Requirements__c" />
+				</div>
+				<div class="slds-col">
+					<lightning:outputField fieldName="Lift_Gate__c" />
+				</div>
+				<div class="slds-col">
+					<lightning:outputField fieldName="Require_24hr_Notice__c" />
+				</div>
+
+			</div>
+
+		</lightning:recordViewForm>
+	</div>
+
+</aura:component>

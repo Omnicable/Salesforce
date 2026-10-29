@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Named_Users_unless_John_or_Stacy</fullName>
+    <active>true</active>
+    <description>Stop Dantley and others from createing the wrong users</description>
+    <errorConditionFormula>AND($User.UserRoleId &lt;&gt; &apos;00E600000017k9b&apos;,  OR(ProfileId =&apos;00e60000001FVF2&apos;, ProfileId =&apos;00e320000016Bpa&apos;,User_License__c =&apos;Customer Community Plus&apos;))</errorConditionFormula>
+    <errorMessage>Make sure the User license is &quot;Customer Community Plus Login&quot; and Profile is  &quot;** Customer Portal Login&quot;</errorMessage>
+</ValidationRule>

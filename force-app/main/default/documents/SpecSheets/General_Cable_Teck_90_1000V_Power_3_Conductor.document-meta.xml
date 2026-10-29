@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+T30803 T30603 T30403 T30203 T31/003 T32/003 T33/003 T34/003 T325003 T335003 T350003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>T30803 T30603 T30403 T30203 T31/003 T32/003 T33/003 T34/003 T325003 T335003 T350003</keywords>
+    <name>General Cable - Teck 90 1000V Power - 3 Conductor</name>
+    <public>false</public>
+</Document>

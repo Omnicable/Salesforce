@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>agf__PPM_Project__c.agf__Epics__r.agf__Work__r$agf__Assignee__c</field>
+    </columns>
+    <columns>
+        <field>agf__PPM_Project__c.agf__Epics__r.agf__Work__r$Name</field>
+    </columns>
+    <columns>
+        <field>agf__PPM_Project__c.agf__Epics__r.agf__Work__r$agf__Status__c</field>
+    </columns>
+    <columns>
+        <field>agf__PPM_Project__c.agf__Epics__r.agf__Work__r$agf__Subject__c</field>
+    </columns>
+    <columns>
+        <field>agf__PPM_Project__c.agf__Epics__r.agf__Work__r$agf__Details__c</field>
+    </columns>
+    <columns>
+        <field>agf__PPM_Project__c.agf__Epics__r$Requested_By__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>agf__PPM_Project__c.agf__Epics__r.agf__Work__r$agf__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>In Progress,New,Pending Release,Ready for Review,Testing,Triaged,Waiting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>agf__PPM_Project__c.agf__Epics__r$agf__Health__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>On Track</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <field>agf__PPM_Project__c.agf__Epics__r.agf__Work__r$agf__Due_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>agf__PPM_Project__c.agf__Epics__r$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Open Work</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Project_with_Epic_with_Work__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>agf__PPM_Project__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

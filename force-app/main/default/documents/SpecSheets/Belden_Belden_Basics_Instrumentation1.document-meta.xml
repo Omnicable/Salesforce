@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>BELDEN SPEC SHEET
+61P1604</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>61P1604 L21604</keywords>
+    <name>Belden - Belden Basics Instrumentation</name>
+    <public>true</public>
+</Document>

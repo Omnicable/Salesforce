@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(Account.RegionNumerical__c:MAX = 2, 510462.32, 
+IF(Account.RegionNumerical__c:MAX = 3, 357895.67, 
+IF(Account.RegionNumerical__c:MAX = 4, 308900.11, 
+IF(Account.RegionNumerical__c:MAX = 5, 272183.83, 
+IF(Account.RegionNumerical__c:MAX = 6, 340694.61, 
+IF(Account.RegionNumerical__c:MAX = 7, 82555.03, 
+IF(Account.RegionNumerical__c:MAX = 8, 305701.37, 
+IF(Account.RegionNumerical__c:MAX = 9, 204383.65, 
+IF(Account.RegionNumerical__c:MAX = 10, 304558.97, 
+IF(Account.RegionNumerical__c:MAX = 11, 249941.51, 
+IF(Account.RegionNumerical__c:MAX = 12, 313159.50, 
+IF(Account.RegionNumerical__c:MAX = 13, 349563.45, 0))))))))))))</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Budget</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(Account.RegionNumerical__c:MAX = 2, Sales_History_Line_Item__c.Line_Total__c:SUM/510462.32, 
+IF(Account.RegionNumerical__c:MAX = 3, Sales_History_Line_Item__c.Line_Total__c:SUM/357895.67, 
+IF(Account.RegionNumerical__c:MAX = 4, Sales_History_Line_Item__c.Line_Total__c:SUM/308900.11, 
+IF(Account.RegionNumerical__c:MAX = 5, Sales_History_Line_Item__c.Line_Total__c:SUM/272183.83, 
+IF(Account.RegionNumerical__c:MAX = 6, Sales_History_Line_Item__c.Line_Total__c:SUM/340694.61, 
+IF(Account.RegionNumerical__c:MAX = 7, Sales_History_Line_Item__c.Line_Total__c:SUM/82555.03, 
+IF(Account.RegionNumerical__c:MAX = 8, Sales_History_Line_Item__c.Line_Total__c:SUM/305701.37, 
+IF(Account.RegionNumerical__c:MAX = 9, Sales_History_Line_Item__c.Line_Total__c:SUM/204383.65, 
+IF(Account.RegionNumerical__c:MAX = 10, Sales_History_Line_Item__c.Line_Total__c:SUM/304558.97, 
+IF(Account.RegionNumerical__c:MAX = 11, Sales_History_Line_Item__c.Line_Total__c:SUM/249941.51, 
+IF(Account.RegionNumerical__c:MAX = 12, Sales_History_Line_Item__c.Line_Total__c:SUM/313159.50, 
+IF(Account.RegionNumerical__c:MAX = 13, Sales_History_Line_Item__c.Line_Total__c:SUM/349563.45, 0))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Budget</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_20611183</developerName>
+        <masterLabel>Region</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account$Region_Number__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>002</sourceValue>
+            </sourceValues>
+            <value>Philadelphia</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>003</sourceValue>
+            </sourceValues>
+            <value>Atlanta</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>004</sourceValue>
+            </sourceValues>
+            <value>Boston</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>005</sourceValue>
+            </sourceValues>
+            <value>Denver</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>006</sourceValue>
+            </sourceValues>
+            <value>St. Louis</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>007</sourceValue>
+            </sourceValues>
+            <value>San Francisco</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>008</sourceValue>
+            </sourceValues>
+            <value>Houston</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>009</sourceValue>
+            </sourceValues>
+            <value>Los Angeles</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>010</sourceValue>
+            </sourceValues>
+            <value>Tampa</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>011</sourceValue>
+            </sourceValues>
+            <value>Chicago</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>012</sourceValue>
+            </sourceValues>
+            <value>Charlotte</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>013</sourceValue>
+            </sourceValues>
+            <value>Seattle</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Item__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Description__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Total__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Line_Number__c.Line_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.SalesHistory__r.Sales_History_Line_Items__r$Major_Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>SE,SM,EA</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_20611183</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Circuit Breaker Profit Sharing HOOPLA</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Accounts_Orders_SalesHistory_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r.SalesHistory__r$Invoice_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

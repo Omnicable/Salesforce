@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send approved email to contact owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Vendor Contact Approved</name>
+    <style>none</style>
+    <subject>Congrats your vendor contact has been approved.</subject>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

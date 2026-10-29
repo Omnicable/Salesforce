@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>FLOOR((QuotesOrdersCredits_Header__c.TotalDollars__c:SUM/1000)) * 10</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>Account.Order_Header__r$Buyer__c</downGroupingContext>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Reward Points</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA4</developerName>
+        <downGroupingContext>Account.Order_Header__r$Buyer__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel># Orders</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>QuotesOrdersCredits_Header__c.TotalDollars__c:SUM</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA5</developerName>
+        <downGroupingContext>Account.Order_Header__r$Buyer__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Sales</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_79509354</developerName>
+        <masterLabel>Group</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account$Name</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Codale Electric - Casper</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Electric - Cedar City</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Electric - Elko</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Electric - Logan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Energy - Las Vegas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Electric - Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Electric - Rock Springs</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Electric - St George</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Electric - Naples</sourceValue>
+            </sourceValues>
+            <value>Group 1</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Codale Electric - Ogden</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Electric - Orem</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Codale Electric - Salt Lake</sourceValue>
+            </sourceValues>
+            <value>Group 2</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.Order_Header__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$TotalDollars__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Buyer__c.Email</field>
+    </columns>
+    <columns>
+        <field>Account$Owner</field>
+    </columns>
+    <columns>
+        <field>Account$Outside_Salesperson__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Buyer__c.Contact_Title__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account$Active__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Buyer__c.Active__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Account_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>973250,973257</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Order_Header__r$Buyer__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Edges Elect Promo</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Quotes_Orders_Credits__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r$Date__c</dateColumn>
+        <endDate>2016-04-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-02-12</startDate>
+    </timeFrameFilter>
+</Report>

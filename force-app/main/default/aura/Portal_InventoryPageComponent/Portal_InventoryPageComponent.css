@@ -1,0 +1,22 @@
+.THIS .warning{
+	color: #8e030f;
+}
+
+.THIS .warning:disabled{
+	color: #dddbda;
+}
+
+.THIS.main-cont{
+	padding-bottom: 90px;
+}
+
+.THIS .cart{
+	position: Fixed;
+	bottom: 10px;
+	opacity: 90%;
+	background-color: white;
+	border-radius: 10px;
+	border: #dddbda 1px solid;
+	padding: 20px;
+	left: 45%;
+}

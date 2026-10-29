@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, 33258,
+IF (Account.RegionNumerical__c:MAX = 3, 34208,
+IF (Account.RegionNumerical__c:MAX = 4, 26010,
+IF (Account.RegionNumerical__c:MAX = 5, 18272,
+IF (Account.RegionNumerical__c:MAX = 6, 23276,
+IF (Account.RegionNumerical__c:MAX = 7, 21236,
+IF (Account.RegionNumerical__c:MAX = 8, 51022,
+IF (Account.RegionNumerical__c:MAX = 9, 23669,
+IF (Account.RegionNumerical__c:MAX = 10, 15431,
+IF (Account.RegionNumerical__c:MAX = 11, 38736,
+IF (Account.RegionNumerical__c:MAX = 12, 26584,
+IF (Account.RegionNumerical__c:MAX = 13, 11218,
+IF (Account.RegionNumerical__c:MAX = 15, 27079,0)))))))))))))</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Region Daily Goal</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF (Account.RegionNumerical__c:MAX = 2, QuoteOrderCredit_Details__c.Dollars__c:SUM/33258,
+IF (Account.RegionNumerical__c:MAX = 3, QuoteOrderCredit_Details__c.Dollars__c:SUM/34208,
+IF (Account.RegionNumerical__c:MAX = 4, QuoteOrderCredit_Details__c.Dollars__c:SUM/26010,
+IF (Account.RegionNumerical__c:MAX = 5, QuoteOrderCredit_Details__c.Dollars__c:SUM/18272,
+IF (Account.RegionNumerical__c:MAX = 6, QuoteOrderCredit_Details__c.Dollars__c:SUM/23276,
+IF (Account.RegionNumerical__c:MAX = 7, QuoteOrderCredit_Details__c.Dollars__c:SUM/21236,
+IF (Account.RegionNumerical__c:MAX = 8, QuoteOrderCredit_Details__c.Dollars__c:SUM/51022,
+IF (Account.RegionNumerical__c:MAX = 9, QuoteOrderCredit_Details__c.Dollars__c:SUM/23669,
+IF (Account.RegionNumerical__c:MAX = 10,QuoteOrderCredit_Details__c.Dollars__c:SUM/ 15431,
+IF (Account.RegionNumerical__c:MAX = 11, QuoteOrderCredit_Details__c.Dollars__c:SUM/38736,
+IF (Account.RegionNumerical__c:MAX = 12, QuoteOrderCredit_Details__c.Dollars__c:SUM/26584,
+IF (Account.RegionNumerical__c:MAX = 13, QuoteOrderCredit_Details__c.Dollars__c:SUM/11218,
+IF (Account.RegionNumerical__c:MAX = 15, QuoteOrderCredit_Details__c.Dollars__c:SUM/27079,0)))))))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Account$Region_Number__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Region Daily Goal</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>350000</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>GRAND_SUMMARY</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Daily Goal</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>QuoteOrderCredit_Details__c.Dollars__c:SUM/350000</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA4</developerName>
+        <downGroupingContext>GRAND_SUMMARY</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% to Total Daily Goal</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_63640271</developerName>
+        <masterLabel>Regions</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account$Region_Number__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>002</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>003</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>004</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>010</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>012</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>015</sourceValue>
+            </sourceValues>
+            <value>Eastern</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>006</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>008</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>011</sourceValue>
+            </sourceValues>
+            <value>Central</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>005</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>007</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>009</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>013</sourceValue>
+            </sourceValues>
+            <value>Western</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Account.Order_Header__r.Order_Details__r$Dollars__c</column>
+        </chartSummaries>
+        <chartType>Donut</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Account$Region_Number__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>true</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Account$Owner</field>
+    </columns>
+    <columns>
+        <field>Account$Outside_Salesperson__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Buyer__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Job_Reference__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.Order_Details__r$Line_Item__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.Order_Details__r$Class__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r.Order_Details__r$Item_Description__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Order_Header__r.Order_Details__r$Dollars__c</field>
+    </columns>
+    <columns>
+        <field>Account.Order_Header__r$Total_Order_GP_with_BSD__c</field>
+    </columns>
+    <description>Minimum company daily sales to qualify: $280,000</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <column>Account.Order_Header__r.Order_Details__r$Class__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r$Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Order_Header__r.Order_Details__r$Line_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Region_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>014</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_63640271</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Region_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Order_Header__r$Inside_AM_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>2021 Q2 Belden Internal Promo - Daily $</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Accounts_with_Order_Header_with_Order_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Order_Header__r$Date__c</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

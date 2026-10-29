@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- We believe this gets auto-filled upon part number creation. --></help>
+    <label><!-- ExtID (part number) --></label>
+    <name>ExtID__c</name>
+</CustomFieldTranslation>

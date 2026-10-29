@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Quote Lost Reasons --></label>
+    <name>Quote_Lost_Reasons__c</name>
+    <picklistValues>
+        <masterLabel>Delivery Time</masterLabel>
+        <translation><!-- Delivery Time --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Freight</masterLabel>
+        <translation><!-- Freight --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Insufficient Local Inventory</masterLabel>
+        <translation><!-- Insufficient Local Inventory --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Followup</masterLabel>
+        <translation><!-- No Followup --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price</masterLabel>
+        <translation><!-- Price --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

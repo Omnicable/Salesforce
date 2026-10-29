@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Inside Account Manager Name based on Sales Number --></help>
+    <label><!-- Inside AM Name (on order) --></label>
+    <name>Inside_AM_Name__c</name>
+    <relationshipLabel><!-- Quotes/Orders/Credits (Inside AM Name (on order)) --></relationshipLabel>
+</CustomFieldTranslation>

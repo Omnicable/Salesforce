@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>QuotesOrdersCredits_Header__c.Total_GPDollars__c:SUM/QuotesOrdersCredits_Header__c.TotalDollars__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average GP%</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>QuotesOrdersCredits_Header__c.Type__c</acrossGroupingContext>
+        <calculatedFormula>RowCount/PARENTGROUPVAL(RowCount, BucketField_19249779, COLUMN_GRAND_SUMMARY)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>BucketField_19249779</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% of Q/O Count</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_19249779</developerName>
+        <masterLabel>Order Value</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>QuotesOrdersCredits_Header__c.TotalDollars__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>999</to>
+            </sourceValues>
+            <value>Under $1000</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>999</from>
+                <to>2,499</to>
+            </sourceValues>
+            <value>$1,000 - $2,499</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>2,499</from>
+                <to>4,999</to>
+            </sourceValues>
+            <value>$2,500 - $4,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>4,999</from>
+                <to>9,999</to>
+            </sourceValues>
+            <value>$5,000 - $9,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>9,999</from>
+                <to>24,999</to>
+            </sourceValues>
+            <value>$10,000 - $24,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>24,999</from>
+                <to>49,999</to>
+            </sourceValues>
+            <value>$25,000 - $49,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>49,999</from>
+                <to>150,000</to>
+            </sourceValues>
+            <value>$50,000 to $150,000</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>150,000</from>
+            </sourceValues>
+            <value>Over $150,000</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>QuotesOrdersCredits_Header__c.TotalDollars__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>QuotesOrdersCredits_Header__c.Total_GPDollars__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>QuotesOrdersCredits_Header__c.GPpct__c</field>
+    </columns>
+    <columns>
+        <field>QuotesOrdersCredits_Header__c.Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>QuotesOrdersCredits_Header__c.Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Order,Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QuotesOrdersCredits_Header__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Salesperson_Code__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>111,114,118,119,120,121,124,125,127,130</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>QuotesOrdersCredits_Header__c.Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>USERS.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_19249779</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>SSC Order Buckets</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$QuotesOrdersCredits_Header__c@QuotesOrdersCredits_Header__c.Buyer__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>QuotesOrdersCredits_Header__c.Date__c</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Outside_Salesperson__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_LINE1</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_STATE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_ZIP</field>
+    </columns>
+    <description>ACCOUNT LIST W/ SHIPPING ADDRESSES</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Account_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>962886,965621,997984,975398,984457,984458,998996,956000,900160,900163,900637,997962,984422,968806,968804,965634,998997,984447,902012,975360,984454,986073,968805,968813,986080,986096,975334,968810,984461,968809,968138,984446,968137,984444,984421,968801,998004,984443,962913,968148,968812,986089,986093,986111,834356,962883,968132,968133,968134,975430,968808,984463,986094,986110,998936,986078,986081,900640,968160,968816,984448,984453,986061,986082,986085,986086,986087,986091,986098,986124,986600,995776,997987,984427,997914,984434,968803,986105,986076,968807,984428,962807,986074,984468,999003,984465,986123</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ADDRESS2_CITY</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>TSM Accounts grouped by Shipping City</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

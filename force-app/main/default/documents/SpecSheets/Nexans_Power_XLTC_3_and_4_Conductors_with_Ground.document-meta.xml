@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>NEXANS SPEC SHEET
+A60103 A60203 A60204 A60403 A60404 A60603 A60604 A60803 A60804 A61/003 A61/004 A61003 A61203 A62/003 A62/004 A625003 A63/003 A635003 A64/003 A64/004 A650003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>A60103 A60203 A60204 A60403 A60404 A60603 A60604 A60803 A60804 A61/003 A61/004 A61003 A61203 A62/003 A62/004 A625003 A63/003 A635003 A64/003 A64/004 A650003</keywords>
+    <name>Nexans - Power XLTC 3 and 4 Conductors with Ground</name>
+    <public>true</public>
+</Document>

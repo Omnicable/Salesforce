@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+E20801</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C1108A C1154 C1198 C1180 397001 497001</keywords>
+    <name>General Cable Coaxial Cable - RG 8/U</name>
+    <public>true</public>
+</Document>

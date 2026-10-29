@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CED_SSC</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Region_Number__c</columns>
+    <columns>Account_Number__c</columns>
+    <columns>Sales_Current_Year__c</columns>
+    <columns>Sales_Year_Prior__c</columns>
+    <columns>ACCOUNT.ADDRESS2_STATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Outside_Salesperson__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Buying_Group__c</field>
+        <operation>equals</operation>
+        <value>CED</value>
+    </filters>
+    <filters>
+        <field>Salesperson_Code__c</field>
+        <operation>lessThan</operation>
+        <value>200</value>
+    </filters>
+    <label>CED - SSC</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SSC</group>
+        <role>National_Account_Manager</role>
+    </sharedTo>
+</ListView>

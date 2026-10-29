@@ -372,11 +372,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Max_Date_Order__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Sales_Year_Prior__c</field>
             <table>Account</table>
         </columns>
@@ -548,11 +543,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RS_Accounts__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Current_Monthly_Budget__c</field>
             <table>Account</table>
         </columns>
         <columns>
@@ -832,11 +822,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>QOC_YTD_SalesNonPolicy__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Freight_Agreement_Year__c</field>
             <table>Account</table>
         </columns>
@@ -948,11 +933,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Freight_Agreement__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Budget_2018__c</field>
             <table>Account</table>
         </columns>
         <columns>

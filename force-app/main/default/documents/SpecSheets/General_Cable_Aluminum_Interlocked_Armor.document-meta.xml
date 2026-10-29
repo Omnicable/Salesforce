@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+Y11003A Y11004A Y11203A Y11204A Y11212A Y11219A Y11402A Y11403A Y11404A Y11405A Y11407A Y11409A Y11412A Y11419A</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Y11003A Y11004A Y11203A Y11204A Y11212A Y11219A Y11402A Y11403A Y11404A Y11405A Y11407A Y11409A Y11412A Y11419A</keywords>
+    <name>General Cable - Aluminum Interlocked Armor</name>
+    <public>true</public>
+</Document>

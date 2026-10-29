@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check to allow contacts from this account to be signed up for Reel Rewards. Note: This does not mean that all contacts for the accounts are in the Reel Rewards program. --></help>
+    <label><!-- OCC_Rewards (Account) --></label>
+    <name>OCC_Rewards__c</name>
+</CustomFieldTranslation>

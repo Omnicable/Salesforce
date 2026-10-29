@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>NEC Code Book ampacity charts: 60°C TW, UF, 75°C RHW, THHW, THW, THWN(MTW), USE, ZW, 90°C SA(Silicone), SIS, MI, RHH, RHW-2, THHN, USE-2, XHHW-2 XHH, ZW-2, THW-2, bare copper, aluminum</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>AMPACITY CHART NEC Code Book ampacity charts 60C TW UF 75C RHW THHW THW THWN(MTW) USE ZW 90C SA(Silicone) SIS MI RHH RHW-2 THHN USE-2 XHHW-2 THW-2 bare copper, aluminum</keywords>
+    <name>NEC 310.15(B)(3)(a), 310.15(B)(16), 310.15(B)(17), 310.15(B)(20), 310.15(B)(21), 310.60(C)(4)</name>
+    <public>true</public>
+</Document>

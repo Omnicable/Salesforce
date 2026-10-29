@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Main_Number__c</fullName>
+    <description>Enter main office number. Not their direct dial number</description>
+    <inlineHelpText>Enter main office number. Not their direct dial number</inlineHelpText>
+    <label>Branch Number</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Phone</type>
+</CustomField>

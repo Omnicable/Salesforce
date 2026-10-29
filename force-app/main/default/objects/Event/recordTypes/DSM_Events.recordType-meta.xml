@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DSM_Events</fullName>
+    <active>true</active>
+    <label>DSM Events</label>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PTO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Business Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DSM Activity - Choose One</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>End User Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Golf Outing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lunch n Learn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

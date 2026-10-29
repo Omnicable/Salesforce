@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>PV30101,PV30201,PV30401,PV30601,PV30801,PV31/001,PV31001,PV31201,PV31401,PV31601,PV31801,PV32/001,PV33/001,PV34/001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>12411.711800,12411.711600,12411.711400,12411.711200,12411.711100,12411.710800,12411.710600,12411.710400,12411.710200,12411.710100,12411.715100,12411.715200,12411.715300,12411.715400</keywords>
+    <name>GENERAL CABLE, SunGen - PV3</name>
+    <public>true</public>
+</Document>

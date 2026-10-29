@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LAKE CABLE SPEC SHEET
+A21202, A21203, A21204, A21402, A21403, A21404, A21405, A21407, A21602, A21603, A21604, A21605, A21607</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>LC PART #  V122S, V123S, V124S, V142S-QR, V143S, V144S-QR, V145S, V147S, V162S-QR, V163S, V164S-QR, V165S, V167S</keywords>
+    <name>Lake Cable - Tray Cable - Type TC - Shielded - VNTC - PVC/Nylon Insulation - PVC Jacket - 16 AWG - 12 AWG</name>
+    <public>true</public>
+</Document>

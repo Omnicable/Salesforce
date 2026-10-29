@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LAKE CABLE SPEC SHEET
+Teck 90 Type Instrumentation
+T61624P</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Teck 90 Type Instrumentation T61624P</keywords>
+    <name>Lake Cable - Teck Type Instrumentation</name>
+    <public>true</public>
+</Document>

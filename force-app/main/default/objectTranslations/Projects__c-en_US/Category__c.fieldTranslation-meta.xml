@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Category --></label>
+    <name>Category__c</name>
+    <picklistValues>
+        <masterLabel>Add EDI Customer</masterLabel>
+        <translation><!-- Add EDI Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Add EDI Frt</masterLabel>
+        <translation><!-- Add EDI Frt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Add EDI Vendor</masterLabel>
+        <translation><!-- Add EDI Vendor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Feature Request</masterLabel>
+        <translation><!-- Feature Request --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HALO</masterLabel>
+        <translation><!-- HALO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OPUS</masterLabel>
+        <translation><!-- OPUS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Report Problem</masterLabel>
+        <translation><!-- Report Problem --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Salesforce.com</masterLabel>
+        <translation><!-- Salesforce.com --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technical Support</masterLabel>
+        <translation><!-- Technical Support --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+Spec 9800 CCW XMVE20203 XMVE20403 XMVE20603 XMVE21/003 XMVE22/003 XMVE225003 XMVE235003 XMVE24/003 XMVE250003 XMVE275003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Spec 9800 CCW XMVE20203 XMVE20403 XMVE20603 XMVE21/003 XMVE22/003 XMVE225003 XMVE235003 XMVE24/003 XMVE250003 XMVE275003</keywords>
+    <name>General Cable - CCW Armored Power, 5kV 133%, 8kV 100% Shielded 3 conductor VFD</name>
+    <public>true</public>
+</Document>

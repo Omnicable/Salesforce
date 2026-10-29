@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Freight Agreement</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Freight Agreements</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Company_Report --></label>
+        <name>Company_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Quarterly_Email --></label>
+        <name>Send_Quarterly_Email</name>
+    </webLinks>
+</CustomObjectTranslation>

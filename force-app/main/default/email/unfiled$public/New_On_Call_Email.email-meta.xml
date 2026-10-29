@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>New On Call Email</name>
+    <style>none</style>
+    <subject>After Hours Emergency On-Call Preparation</subject>
+    <textOnly>You&apos;re on call next week for After-Hours Emergency calls.  Thank you for your service!
+
+You will cover from Monday at 12PM until the following Monday at 12PM, unless otherwise specified on the schedule.
+
+Click here to see the full year schedule.  ​​​​​
+
+Not sure what to do, for any questions, please click below to review the Emergency On-Call Procedures document.
+
+Click here to review procedures.
+
+For After-Hours Emergency DC On-Call support, please refer to the DC After-Hours On-Call Contact list.
+
+Please note that some sites have a dedicated DC ON-CALL CELL PHONE. Please call this number first before calling the DC Leaders directly.
+Please follow the designated after-hours contact list rather than reaching out to standard weekday contacts.
+
+Click here for OPS roster.
+
+In order to receive the $100 salary compensation for on-call service, you must fill out the On-Call PAF request (located in Paycom) during or upon completion of the weekly assignment.
+For more information, please visit the Emergency On Call page on the Intranet.
+
+If the above resources do not provide the answer you are looking for, please contact your Sales Manager or Regional Manager for direction.
+
+*This generated email was created by the RVPs. Please do not contact Meenakshi Kumar for On-Call related topics unless it is to update a confirmed and approved change on the schedule.*​</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

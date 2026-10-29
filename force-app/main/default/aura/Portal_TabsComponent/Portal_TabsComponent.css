@@ -1,0 +1,12 @@
+.THIS .slds-tabs_scoped__nav li{
+	font-size: 18px;
+}
+
+.THIS .slds-active .slds-tabs_scoped__link, .THIS .slds-active .slds-tabs--scoped__link, .THIS .slds-is-active .slds-tabs_scoped__link, .THIS .slds-is-active .slds-tabs--scoped__link{
+	color: #337ab7;
+	font-weight: bold;
+}
+
+.THIS .slds-tabs_scoped__content{
+	min-height: calc(100vh - 200px);
+}

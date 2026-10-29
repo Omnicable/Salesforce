@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>User.User_Unique__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Counts the Number of Unique Users</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Unique Users</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <columns>
+        <field>User$Profile</field>
+    </columns>
+    <columns>
+        <field>User$UserRole</field>
+    </columns>
+    <columns>
+        <field>User$State</field>
+    </columns>
+    <columns>
+        <field>User.IdpEventLog$UserId$App</field>
+    </columns>
+    <columns>
+        <field>User.IdpEventLog$UserId$ErrorCode</field>
+    </columns>
+    <columns>
+        <field>User.IdpEventLog$UserId$Timestamp</field>
+    </columns>
+    <columns>
+        <field>User.IdpEventLog$UserId$InitiatedBy</field>
+    </columns>
+    <columns>
+        <field>User$UserType</field>
+    </columns>
+    <description>Shows overall Salesforce1 Login for today</description>
+    <filter>
+        <criteriaItems>
+            <column>User.IdpEventLog$UserId$App</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Salesforce1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$IsActive</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Overall Login - Today</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Connected_Application_Custom_Report_Types__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>User.IdpEventLog$UserId$Timestamp</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

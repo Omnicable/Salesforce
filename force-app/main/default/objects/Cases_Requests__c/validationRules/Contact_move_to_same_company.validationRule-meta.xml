@@ -4,7 +4,13 @@
     <active>true</active>
     <description>The moving contact and the move to account must have the same parent account.</description>
     <errorConditionFormula>AND(
-NOT($Profile.Name = &quot;Omni System Admin&quot;),
+NOT(
+OR($Profile.Name = &quot;Omni System Admin&quot;,
+   $Profile.Name = &quot;System Administrator&quot;,
+   $Profile.Name = &quot;Standard Base Profile&quot;
+
+)
+    ),
 RecordType.Name =&quot;Move Contact&quot; &amp;&amp;    Contact__r.RecordType.DeveloperName = &apos;Standard&apos; &amp;&amp;
 
  Contact__r.Account.ParentAccount__c &lt;&gt;  Move_to_Account__r.ParentAccount__c

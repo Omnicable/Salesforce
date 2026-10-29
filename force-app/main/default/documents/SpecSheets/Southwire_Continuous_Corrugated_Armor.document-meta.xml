@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+X11004 X11008 X11011 X11204 X11206 X11211 X11218 X11404 X11406 X11411 X11412</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>X11004 X11008 X11011 X11204 X11206 X11211 X11218 X11404 X11406 X11411 X11412</keywords>
+    <name>Southwire - Continuous Corrugated Armor</name>
+    <public>true</public>
+</Document>

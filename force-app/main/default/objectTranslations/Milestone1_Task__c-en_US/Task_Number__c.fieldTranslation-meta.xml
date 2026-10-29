@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Unique number for each task and across all projects. --></help>
+    <label><!-- Task Short ID --></label>
+    <name>Task_Number__c</name>
+</CustomFieldTranslation>

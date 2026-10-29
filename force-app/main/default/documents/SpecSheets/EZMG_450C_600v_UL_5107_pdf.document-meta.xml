@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FIRST CAPITOL SPEC SHEET
+C30201 C30401 C30601 C30801 C31/001 C31001 C31201 C31401 C31601 C31801</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>FC PART #&apos;S 12111100 12110100 12109100 12108100 12251520 12107100 12106100 12105100 12104100 12103100</keywords>
+    <name>First Capitol Appliance and Lead Wire - Type MG</name>
+    <public>true</public>
+</Document>

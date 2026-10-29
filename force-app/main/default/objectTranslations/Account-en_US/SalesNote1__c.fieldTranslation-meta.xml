@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Type here for permanent notes on the account for your orders. --></help>
+    <label><!-- OPUS Sales Note 1 --></label>
+    <name>SalesNote1__c</name>
+</CustomFieldTranslation>

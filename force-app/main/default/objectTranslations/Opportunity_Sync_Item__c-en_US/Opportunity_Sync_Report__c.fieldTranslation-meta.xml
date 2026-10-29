@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Opportunity Sync Report --></label>
+    <name>Opportunity_Sync_Report__c</name>
+    <relationshipLabel><!-- Opportunity Sync Items --></relationshipLabel>
+</CustomFieldTranslation>

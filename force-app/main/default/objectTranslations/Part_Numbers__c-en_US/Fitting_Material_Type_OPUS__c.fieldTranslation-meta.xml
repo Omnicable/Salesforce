@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Fitting Material Type OPUS --></label>
+    <name>Fitting_Material_Type_OPUS__c</name>
+</CustomFieldTranslation>

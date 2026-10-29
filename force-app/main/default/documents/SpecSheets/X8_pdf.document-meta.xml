@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+MVE20201 MVE21/001 MVE24/001 MVE225001 MVE235001 MVE250001 MVE275001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>SW PART #&apos;S 954636 954644 955005 955013 955021 955088 955039 955047 955054 955096 955070 552012</keywords>
+    <name>Southwire Medium Voltage - 5 kV / 8 kV - 5kV/8kV - Shielded, EPR/PVC, 100% or 133%</name>
+    <public>true</public>
+</Document>

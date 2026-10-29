@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Page_URL_del__c</fullName>
+    <inlineHelpText>For the portal so that the DSM can get into the contact&apos;s record page on the full site directly from Salesforce1 and enable them as an external customer user.</inlineHelpText>
+    <label>Contact Page URL</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Url</type>
+</CustomField>

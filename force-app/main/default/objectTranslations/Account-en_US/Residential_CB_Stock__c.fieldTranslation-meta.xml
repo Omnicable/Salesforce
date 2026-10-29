@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Residential CB Stock --></label>
+    <name>Residential_CB_Stock__c</name>
+    <picklistValues>
+        <masterLabel>No - only stock CBs they are authorized for</masterLabel>
+        <translation><!-- No - only stock CBs they are authorized for --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Yes - stock NA CBs via Gray Market</masterLabel>
+        <translation><!-- Yes - stock NA CBs via Gray Market --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Yes - stock NA CBs via authorized sources (ie Home Depot)</masterLabel>
+        <translation><!-- Yes - stock NA CBs via authorized sources (ie Home Depot) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

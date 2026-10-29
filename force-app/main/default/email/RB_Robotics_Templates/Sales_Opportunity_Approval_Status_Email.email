@@ -1,0 +1,12 @@
+Opportunity Approval update:
+
+Account Name: {!Opportunity.Account}
+Opportunity Name: {!Opportunity.Name}
+
+Amount: {!Opportunity.Amount}
+Approval Step Status: {!ApprovalRequest.Status}
+Approval Step Approver: {!ApprovalRequest.Process_Approver}
+
+Opportunity Owner: {!Opportunity.OwnerFullName}
+
+Link to Opportunity: {!Opportunity.Link}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>M CABLE SPEC SHEET
+D92202, M Cable # 2012C</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>D92202, M Cable # 2012C</keywords>
+    <name>M Cable Multi-Conductor - Nonshielded PVC - 22 AWG - 7x30 Stranded Tinned Copper</name>
+    <public>true</public>
+</Document>

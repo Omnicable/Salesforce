@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Continuous Current per Conductor @30°C --></label>
+    <name>Continuous_Current_per_Conductor_30_C__c</name>
+</CustomFieldTranslation>

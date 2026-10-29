@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Change_for_Admin_only</fullName>
+    <active>true</active>
+    <description>Status_Change_for_Admin_only</description>
+    <errorConditionFormula>NOT(ISPICKVAL( Status , &apos;New&apos;)) &amp;&amp;
+ $User.ProfileId &lt;&gt; &apos;00e60000001BUtM&apos;</errorConditionFormula>
+    <errorMessage>You do not have permission to change the Status.</errorMessage>
+</ValidationRule>

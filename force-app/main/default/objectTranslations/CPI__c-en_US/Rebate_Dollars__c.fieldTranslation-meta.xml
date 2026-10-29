@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This is the projected rebate for this customer.  This number shows what is projected for the end of the year, and includes any supplemental rebates. --></help>
+    <label><!-- Rebate Dollars --></label>
+    <name>Rebate_Dollars__c</name>
+</CustomFieldTranslation>

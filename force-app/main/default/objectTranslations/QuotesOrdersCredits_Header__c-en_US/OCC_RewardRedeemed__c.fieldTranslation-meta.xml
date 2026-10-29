@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Checked means that the points for this order have been redeemed --></help>
+    <label><!-- OCC_RewardRedeemed --></label>
+    <name>OCC_RewardRedeemed__c</name>
+</CustomFieldTranslation>

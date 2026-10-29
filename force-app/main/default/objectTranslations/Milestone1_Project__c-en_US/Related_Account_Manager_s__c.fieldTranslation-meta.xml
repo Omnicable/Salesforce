@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Who else has seen this large order? --></help>
+    <label><!-- Related Account Manager(s) --></label>
+    <name>Related_Account_Manager_s__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+L41802 L41804 L41812 L41816 L41824 L41850 L41602 L41603 L41604 L41608 L41612 L41616 L41620 L41624 L41636 L41650</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 235970 336900 235900 336910 336920 241020 336930 336940 241030 243880 256300 237180 235990 237160 336950 336960 235750 242870 237130 277820 242860 243890 244600</keywords>
+    <name>General Cable Tray Cable - 600 Volt - Multipair - Individual and Overall Shield - 90°C - 16 &amp; 18 AWG</name>
+    <public>true</public>
+</Document>

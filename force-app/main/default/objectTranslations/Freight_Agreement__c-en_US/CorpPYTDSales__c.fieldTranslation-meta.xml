@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- CorpPYTDSales --></label>
+    <name>CorpPYTDSales__c</name>
+</CustomFieldTranslation>

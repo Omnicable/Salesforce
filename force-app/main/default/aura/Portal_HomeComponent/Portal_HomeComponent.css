@@ -1,0 +1,47 @@
+.THIS {
+}
+
+.THIS .slds-carousel__image{
+    border-radius: 0;
+}
+
+.THIS .slds-carousel__panel-action{
+    border: none;
+}
+
+
+
+
+.THIS .slds-carousel__content{
+    display: none;
+}
+
+.THIS .slds-carousel__autoplay {
+    position: absolute;
+    left: 20px;
+    bottom: 1px;
+    z-index: 99;
+}
+
+.THIS .slds-carousel__indicators{
+    bottom: 0px;
+    position: absolute;
+}
+
+.THIS .omni-btn-recent {
+    background-color: #0875BC;
+    height: 35px;
+    font-size: 120%;
+    color: white;
+    border: 0px none;
+    width: 100%;
+    text-align: center;
+}
+
+.THIS .omni-btn-recent:hover {
+    background-color: #055990;
+}
+
+.THIS .recent-content{
+    border: 1px solid #055990;
+}

@@ -1,0 +1,9 @@
+{!Event.LastModifiedBy} has edited the assigned user, start date, or end date of the following On Call Schedule calendar event:
+https://omnicable.my.salesforce.com/{!Event.Id}
+
+Assigned: {!Event.Assigned_User__c} 
+Start Date: {!Event.StartDateTime} 
+End Date: {!Event.EndDateTime}
+
+Any changes to the On Call Schedule must be communicated to your RM to ensure that there is continuous coverage.  
+Click here to view the full 2019 On Call Schedule https://omnicable.my.salesforce.com/a1w0d000000zkOV

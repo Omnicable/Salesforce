@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.AccountContactRelations$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.AccountContactRelations*Account$Region_Number__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contact$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>jon walker,joe cubillas,Alex Albers,Andy Akers,Bob Chase,Brandon Page,Bryan Mccormick,Chris Siddoway,Chris Tiller,Darrell Fuller,Garrett Copp,Glenn Smith,Joseph Natale,Josh Kukich,Josh Pew,Josh Saltsgaver,Justin Maxwell,Keith Waters,Kyle Schwan,Larry Richard,Mark Harkins,Michelle Tribble,Mike Seeber,Nate Payne,Ryan Head,Ryan Pachniak,Stan Parsons,Steve Blazer,Ted Workman,Thomas Hauser,Tony Medina</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.AccountContactRelations*Account$Region_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>005</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Related Accounts Price Sheets</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_with_Related_Accounts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Contact$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

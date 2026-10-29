@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>M516ST-XX, M516SO-XX, M518ST-XX, M518SO-XX</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>M516ST-XX, M516SO-XX, M518ST-XX, M518SO-XX</keywords>
+    <name>NEXANS TFN and TFFN</name>
+    <public>true</public>
+</Document>

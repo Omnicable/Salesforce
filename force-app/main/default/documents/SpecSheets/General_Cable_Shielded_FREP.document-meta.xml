@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+AF21802 280060</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>AF21802 280060</keywords>
+    <name>General Cable - Shielded FREP</name>
+    <public>true</public>
+</Document>

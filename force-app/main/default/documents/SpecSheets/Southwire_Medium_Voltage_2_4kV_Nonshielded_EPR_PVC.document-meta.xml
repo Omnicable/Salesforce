@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+MVE10401 MVE10201</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>SW PART #&apos;S 607440 607457 607465 607226 607234 607242 607259 607267 607283 607309 607119 607325</keywords>
+    <name>Southwire Medium Voltage - 2.4kV - Nonshielded - EPR/PVC</name>
+    <public>true</public>
+</Document>

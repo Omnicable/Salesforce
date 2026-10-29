@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nicks_marketing_list</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Price_Sheet_List__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Cable Plus,Cablemaster,Dee Electronics,brogav,Gold com</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Falcon Tech,Best Enterprises,Mercommbe,Electronic Parts Specialists,Alarm Products Distributors,Agility,MTE,Onsite,Via photon,Diversified Wire</value>
+    </filters>
+    <filters>
+        <field>Price_Sheet_List__c</field>
+        <operation>equals</operation>
+        <value>Nicks Marketing List</value>
+    </filters>
+    <label>Nick R29 - 1</label>
+    <sharedTo>
+        <group>CBU_Nick_Adam</group>
+    </sharedTo>
+</ListView>

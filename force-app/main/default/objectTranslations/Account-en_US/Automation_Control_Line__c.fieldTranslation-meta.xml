@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Automation/Control Line --></label>
+    <name>Automation_Control_Line__c</name>
+    <picklistValues>
+        <masterLabel>ABB</masterLabel>
+        <translation><!-- ABB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cutler-Hammer</masterLabel>
+        <translation><!-- Cutler-Hammer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eaton</masterLabel>
+        <translation><!-- Eaton --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>G.E.</masterLabel>
+        <translation><!-- G.E. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ITE Electrical Products</masterLabel>
+        <translation><!-- ITE Electrical Products --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other (specify below)</masterLabel>
+        <translation><!-- Other (specify below) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rockwell/Allen Bradley</masterLabel>
+        <translation><!-- Rockwell/Allen Bradley --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Schneider/Square D</masterLabel>
+        <translation><!-- Schneider/Square D --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Siemens</masterLabel>
+        <translation><!-- Siemens --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Square D</masterLabel>
+        <translation><!-- Square D --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

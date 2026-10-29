@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sent_to_Customer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Marks if the quote has been sent to the customer</description>
+    <label>Sent to Customer</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

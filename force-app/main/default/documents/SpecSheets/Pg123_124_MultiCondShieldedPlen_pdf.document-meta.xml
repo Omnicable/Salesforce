@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+H11802 H11804 H11806 H11602 H11604 H11402 H11404 H11202</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S E3542S E3602S E3603S E3604S E3606S E3612S E3614S E3622S E3624S E3632S E3634S C3260 C3261 C3270 C3271 C3280 C3284 C3282 C3283</keywords>
+    <name>General Cable FPLP - Plenum - Shielded</name>
+    <public>true</public>
+</Document>

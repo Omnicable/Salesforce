@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-family:Arial,Helvetica,sans-serif;">{{{Recipient.FirstName}}},<br />
+<br />
+With over four decades of experience exclusively serving distributors, OmniCable is your trusted partner in the industry.&nbsp;<br />
+<br />
+Our extensive inventory of more than 100,000 SKUs, coupled with hundreds of strategic manufacturing partnerships, enables us to provide technical expertise and reliable service from our experienced team of professional that ensure you receive the best solutions tailored to your customer’s needs.&nbsp;<br />
+<br />
+We stock products from Belden, Superior, Essex, Corning, Prysmian, Hubbell, CADDY, Lumberg, SABB, and many other world-class suppliers across our 18 North American locations. In addition, we have innovative cable and fiber solutions including TiniFiber, Paige Datacom, and others.&nbsp;<br />
+<br />
+With OmniCable as your redistributor partner, you can rest assured knowing that you have access to a reliable and diversified source of products, minimizing downtime and maximizing your productivity. Let’s connect.&nbsp;<br />
+<br />
+Best regards,<br />
+{{{Sender.Name}}}<br />
+{{{Sender.Title}}}<br />
+OmniCable<br />
+{{{Sender.Phone}}}</span></body>
+</html>

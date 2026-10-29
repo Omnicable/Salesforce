@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to all Customer Event Approvers</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Customer Event Request Initial Submission</name>
+    <style>none</style>
+    <subject>Customer Event Credit Request Requires your Approval</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

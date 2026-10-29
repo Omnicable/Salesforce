@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Price per 1000 --></help>
+    <label><!-- Competitive Pricing --></label>
+    <name>Competitive_Pricing__c</name>
+</CustomFieldTranslation>

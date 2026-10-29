@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type Code --></label>
+    <name>Type_Code__c</name>
+    <picklistValues>
+        <masterLabel>C</masterLabel>
+        <translation><!-- C --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EDI</masterLabel>
+        <translation><!-- EDI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LOD</masterLabel>
+        <translation><!-- LOD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>N</masterLabel>
+        <translation><!-- N --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOR</masterLabel>
+        <translation><!-- NOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Q</masterLabel>
+        <translation><!-- Q --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>R</masterLabel>
+        <translation><!-- R --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RM2</masterLabel>
+        <translation><!-- RM2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RMA</masterLabel>
+        <translation><!-- RMA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOE</masterLabel>
+        <translation><!-- SOE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>T</masterLabel>
+        <translation><!-- T --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>W</masterLabel>
+        <translation><!-- W --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

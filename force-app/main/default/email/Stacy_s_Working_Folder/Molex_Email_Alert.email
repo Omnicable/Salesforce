@@ -1,0 +1,58 @@
+<messaging:emailTemplate subject="Molex {!relatedTo.Type__c} for {!relatedTo.Customer_Name__c}" 
+    recipientType="User" 
+    relatedToType="QuotesOrdersCredits_Header__c" 
+    replyTo="wfiore@omnicable.com">
+
+    <messaging:htmlEmailBody >
+        <html>
+            <body style="font-family: Arial, sans-serif; font-size: 14px;">
+
+                <p><strong>{!relatedTo.Type__c} #{!relatedTo.Name}</strong></p>
+                <p>
+                    <strong>Total Order Sales:</strong> ${!relatedTo.Total_Order_Sales__c}<br/>
+                    <strong>Molex Line$Booked:</strong> ${!relatedTo.Molex_Total_line__c}<br/>
+                    <strong>GP Booked:</strong> {!relatedTo.Total_Order_GP_Pct__c}%<br/>
+                    <strong>FFA $ Booked:</strong> ${!relatedTo.FFA__c}<br/>
+                    <strong>GP Booked after freight:</strong> {!relatedTo.GP_after_freight_Booked__c}%<br/>
+                    <strong>Job Reference:</strong> {!relatedTo.Job_Reference__c}
+                </p>
+<!--
+                <p>
+                    <strong>Buyer:</strong> {!relatedTo.buyer__r.Name}<br/>
+                    {!relatedTo.Buyer_s_Email_Address__c}
+                </p>
+-->
+                <p>
+                    <strong>Customer:</strong> {!relatedTo.Customer_Name__c}<br/>
+                    <strong>Inside AM Name (on Order):</strong> {!relatedTo.Inside_AM_Name__r.Name}<br/>
+                    <strong>Entered by:</strong> {!relatedTo.Entered_By__r.Name}
+                </p>
+
+                <hr/>
+
+                <h4>Order Details</h4>
+                <apex:repeat var="cx" value="{!relatedTo.Order_Details__r}">
+                    <apex:outputPanel rendered="{!AND(cx.Line_Status__c != 'Cancelled', OR(cx.Class__c = 'FT',cx.Class__c = 'CN',cx.Class__c = 'CP'))}">                             
+                        <p>
+                            <strong>Item #:</strong> {!cx.Line_Item__c}<br/>
+                            <strong>Item Class:</strong> {!cx.Item_Class__c}<br/>
+                            <strong>Qty:</strong> {!FLOOR(cx.Qty_Ordered__c)}<br/>
+                            <strong>Line Number: </strong>{!FLOOR(cx.Line_Number__c)}<br/>
+                            <strong>Line Type:</strong> {!cx.Line_Type__c}<br/>
+                            <strong>Line Total:</strong> ${!cx.Dollars__c}<br/>
+                            <strong>GP:</strong> ${!cx.GPDollars__c}<br/>
+                            <strong>GP %:</strong> {!cx.GP_Pct__c}%<br/>
+                            <strong>Line Status:</strong> {!cx.Line_Status__c}
+                        </p>
+                        <hr/>
+                    </apex:outputPanel>
+                </apex:repeat>
+
+                <p>
+                    https://omnicable.my.salesforce.com/{!relatedTo.Id}
+                </p>
+
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

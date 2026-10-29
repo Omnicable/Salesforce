@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET
+Teck 90 Power Cable 1000V T30203 T30204 T30403 T30404 T30603 T30604 T30803 T30804 T31/003 T32/003 T325003 T33/003 T335003 T34/003 T350003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Teck 90 Power Cable 1000V T30203 T30204 T30403 T30404 T30603 T30604 T30803 T30804 T31/003 T32/003 T325003 T33/003 T335003 T34/003 T350003</keywords>
+    <name>Southwire - Teck 90 1000V Power</name>
+    <public>true</public>
+</Document>

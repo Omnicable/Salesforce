@@ -1,0 +1,6 @@
+{!Promo__c.CreatedBy}'s promotion "{!Promo__c.Name}" has been rejected.
+
+Comments: {!ApprovalRequest.Comments}
+
+
+Click here to view promotion details in Salesforce https://omnicable.my.salesforce.com/{!Promo__c.Id}

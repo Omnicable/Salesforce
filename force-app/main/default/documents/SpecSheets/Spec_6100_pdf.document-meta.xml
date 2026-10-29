@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+MVU10201 MVU14/001 MVU150001</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 19101.650200 19101.655100 19101.665200 19101.665300 19101.665400 19101.665400 19101.676000 19101.676200 19101.686500 19101.687000 19101.667500</keywords>
+    <name>General Cable Medium Voltage - 15kV - 5kV/15kV - UNISHIELD®, EPR/CPE, 100% or 133%</name>
+    <public>true</public>
+</Document>

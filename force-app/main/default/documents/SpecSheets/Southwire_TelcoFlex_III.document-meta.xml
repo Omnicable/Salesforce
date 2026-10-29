@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SOUTHWIRE SPEC SHEET</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>OMNI PART #&apos;S TF314-XX TF312-XX TF310-XX TF308-XX TF306-XX TF304-XX TF302-XX TF31/0-XX TF32/0-XX TF34/0-XX TF3350-XX TF3500-XX TF3750-XX</keywords>
+    <name>Southwire TelcoFlex III</name>
+    <public>true</public>
+</Document>

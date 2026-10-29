@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LAPP SPEC SHEET
+OL601004,OL601403,OL601404,OL601603,OL601604,OL601612,OL601625,OL601802,OL601803,OL601804,OL601809,OL601812,OL601825</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Lapp Part # 601004,601403,601404,601603,601604,601612,601625,601802,601803,601804,601809,601812,601825</keywords>
+    <name>Lapp Olflex 190 / 190 CY</name>
+    <public>true</public>
+</Document>

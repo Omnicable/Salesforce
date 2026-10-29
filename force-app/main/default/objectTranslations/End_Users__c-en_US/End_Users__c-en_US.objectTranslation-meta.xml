@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>End Users</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>End Users</value>
+    </caseValues>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please specify the &quot;Other&quot; Industry. --></errorMessage>
+        <name>Other_Industry</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please specify the &quot;Other&quot; Market Focus. Thank you. --></errorMessage>
+        <name>Other_Market_Focus</name>
+    </validationRules>
+</CustomObjectTranslation>

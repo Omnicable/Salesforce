@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-family:Arial,Helvetica,sans-serif;">{{{Recipient.FirstName}}},<br />
+<br />
+At OmniCable, we prioritize making your ability to serve customers quickly and efficiently. Whether your customers are contractors, end users, or integrators, we enable you to meet their requirements with ease.<br />
+&nbsp;<br />
+For more than 45 years, we have been exclusively committed to serving the needs of distributors – that means you can always rely on us without worrying about enabling your greatest competitor.<br />
+&nbsp;<br />
+From same-day or drop-ship options to no minimum order quantities, from technical and product expertise gleamed over 45+ years to custom cutting of fiber, wire, and cable with no reel charges, OmniCable is a true differentiator for your daily sales needs. &nbsp;<br />
+&nbsp;<br />
+Discover the ease and speed of doing business with OmniCable and improve your service delivery today.<br />
+<br />
+Best regards,<br />
+{{{Sender.Name}}}<br />
+{{{Sender.Title}}}<br />
+OmniCable<br />
+{{{Sender.Phone}}}</span></body>
+</html>

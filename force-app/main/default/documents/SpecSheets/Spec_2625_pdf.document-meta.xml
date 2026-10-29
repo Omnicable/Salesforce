@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+LZ41802 LZ41804 LZ41602 LZ41604 LZ41606 LZ41608 LZ41612</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 393930 393940 393950 393960 393970 393980 393990 394000 394010 394020 394030 394040 394050 394060 394070 394080 394090 394100 394110</keywords>
+    <name>General Cable Instrumentation Cable - Type TC - Low Smoke - Multipair - Low Smoke - SPOS</name>
+    <public>true</public>
+</Document>

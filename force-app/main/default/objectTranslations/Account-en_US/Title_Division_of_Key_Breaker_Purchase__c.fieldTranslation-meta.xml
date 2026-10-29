@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Ex. Inside Sales, Gear Division, National Accounts MRO, etc. --></help>
+    <label><!-- Title/Divisions of Key Breaker Purchase --></label>
+    <name>Title_Division_of_Key_Breaker_Purchase__c</name>
+</CustomFieldTranslation>

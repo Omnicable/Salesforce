@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+F5106TNPI F5112TNPI F5306TNPI F5312TNPI F6M06TNPI F6M12TNPI F6M24TNPI F8S06TNPI F8S12TNPI</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S BI0061PNU BI0121PNU BE0061PNU BE0121PNU CG0061PNU CG0121PNU CG0241PNU AP0061PNU AP0121PNU</keywords>
+    <name>General Cable Fiber Optic Cable - Tight Buffer Distribution Plenum Cable</name>
+    <public>true</public>
+</Document>

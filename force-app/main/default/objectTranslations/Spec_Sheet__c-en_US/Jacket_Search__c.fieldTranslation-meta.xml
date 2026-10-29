@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Jacket Search --></label>
+    <name>Jacket_Search__c</name>
+    <picklistValues>
+        <masterLabel>CPE - Chlorinated Polyethylene</masterLabel>
+        <translation><!-- CPE - Chlorinated Polyethylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CSPE - Chlorosulfonated Polyethylene</masterLabel>
+        <translation><!-- CSPE - Chlorosulfonated Polyethylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EPDM - Ethylene Propylene Diene Monomer Rubber</masterLabel>
+        <translation><!-- EPDM - Ethylene Propylene Diene Monomer Rubber --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FEP - Fluorinated Ethylene Propylene</masterLabel>
+        <translation><!-- FEP - Fluorinated Ethylene Propylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fiberglass</masterLabel>
+        <translation><!-- Fiberglass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LSZH - Low Smoke Zero Halogen</masterLabel>
+        <translation><!-- LSZH - Low Smoke Zero Halogen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Neoprene</masterLabel>
+        <translation><!-- Neoprene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nylon</masterLabel>
+        <translation><!-- Nylon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PE - Polyethylene</masterLabel>
+        <translation><!-- PE - Polyethylene --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PVC - Polyvinyl Chloride</masterLabel>
+        <translation><!-- PVC - Polyvinyl Chloride --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plenum</masterLabel>
+        <translation><!-- Plenum --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Silicone/Rubber</masterLabel>
+        <translation><!-- Silicone/Rubber --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TPE - Thermoplastic Elastomer</masterLabel>
+        <translation><!-- TPE - Thermoplastic Elastomer --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R4_AAI_OmniCable_Points_Program_2021</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Sports__c</columns>
+    <columns>OCC_Rewards__c</columns>
+    <columns>CONTACT.DEPARTMENT</columns>
+    <columns>OCC_RewardStepValue__c</columns>
+    <columns>OCC_RewardStep__c</columns>
+    <columns>PortalUser__c</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>MaxOrderQuoteDate__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Standard</value>
+    </filters>
+    <filters>
+        <field>Account.Company_Name__c</field>
+        <operation>equals</operation>
+        <value>AAI</value>
+    </filters>
+    <label>R4 - AAI OmniCable Points Program 2021</label>
+    <sharedTo>
+        <role>Corporate</role>
+    </sharedTo>
+</ListView>

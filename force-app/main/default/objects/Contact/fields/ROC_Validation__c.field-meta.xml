@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ROC_Validation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checking this box launches a validation email to the customer from Pardot with a validation link for them to click.</description>
+    <inlineHelpText>Checking this box launches a validation email to the customer from Pardot with a validation link for them to click.</inlineHelpText>
+    <label>ROC Validation</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

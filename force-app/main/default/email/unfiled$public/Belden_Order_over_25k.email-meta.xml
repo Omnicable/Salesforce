@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email alert when an order comes in with &gt;=$25k in Belden items</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Belden Order over $25k</name>
+    <style>none</style>
+    <subject>Belden order over $25k</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

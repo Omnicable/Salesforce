@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_PO_Selector__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <inlineHelpText>Used to show which PO&apos;s to display on Request Release page</inlineHelpText>
+    <label>Portal PO Selector</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>979602</fullName>
+                <default>false</default>
+                <label>979602</label>
+            </value>
+            <value>
+                <fullName>979603</fullName>
+                <default>false</default>
+                <label>979603</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

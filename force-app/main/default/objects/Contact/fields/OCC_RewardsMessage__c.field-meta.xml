@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCC_RewardsMessage__c</fullName>
+    <externalId>false</externalId>
+    <formula>&apos;Wow, you are on a roll…or shall we say on a reel?  Ok, we’ll stop with the bad jokes. &lt;br&gt;&lt;br&gt;&apos;  &amp; 
+
+IF(ISPICKVAL(OCC_WHRewardsCriteria__c, &quot;Amount_5000_10&quot;), 
+&apos;Either way, we want to thank you for being a valued customer of Omni Cable and placing $5,000 in orders on the &lt;a href=&quot;https://myomnicable.com&quot;&gt; myomnicable.com &lt;/a&gt; customer portal.&lt;br&gt;&lt;br&gt;&apos;, 
+ 
+&apos;Either way, we want to thank you for being a valued customer of Omni Cable and placing your first 5 orders on the &lt;a href=&quot;https://myomnicable.com&quot;&gt; myomnicable.com &lt;/a&gt; customer portal.&lt;br&gt;&lt;br&gt;&apos;)
+
+ &amp; 
+
+IF(OCC_Rewards__c = true, 
+&apos;&lt;b&gt;We added&apos;
+ &amp; 
+
+IF(ISPICKVAL(OCC_WHRewardsCriteria__c, &quot;Amount_5000_10&quot;), 
+&apos; $10 &apos;, &apos; $5 &apos;)
+
+ &amp; 
+
+&apos;to your Reel Rewards Account as a token of our appreciation.&lt;/b&gt;&lt;br&gt;&lt;br&gt;&apos;, 
+ 
+&apos;&lt;b&gt;We are emailing you a&apos;  
+
+ &amp; 
+
+IF(ISPICKVAL(OCC_WHRewardsCriteria__c, &quot;Amount_5000_10&quot;), 
+&apos; $10 &apos;, &apos; $5 &apos;)
+
+ &amp; 
+
+&apos;Tango Card as a token of our appreciation.&lt;/b&gt;&lt;br&gt;&lt;br&gt;&apos;)
+
+ &amp;
+
+&apos;We hope that&lt;a href=&quot;https://myomnicable.com&quot;&gt; myomnicable.com &lt;/a&gt; had made it a little easier for you to do business with Omni Cable. If you can, please take two minutes to fill out this short survey to let us know how we’re doing. Your feedback will help us to continue improving the site.  &lt;br&gt;&lt;br&gt; Thank you for your continued support and enjoy your tango card!&lt;br&gt;&lt;br&gt; Omni Cable&apos;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OCC_RewardsMessage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

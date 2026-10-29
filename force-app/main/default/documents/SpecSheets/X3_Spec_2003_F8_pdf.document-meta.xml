@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+J201906 J201912 J201925 J202206 J202212 J202225 J202250 J2024100</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 2012020 2012021 2012023 2012010 2012011 2012000 2012001 2012015 2012016 2012004 2012005 2012006</keywords>
+    <name>General Cable Telephone Cable - Figure 8 Telephone Cable</name>
+    <public>true</public>
+</Document>

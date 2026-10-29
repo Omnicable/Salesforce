@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-family:Arial,Helvetica,sans-serif;">{{{Recipient.FirstName}}},<br />
+<br />
+In the fast-paced world of sales, meeting your customers' needs swiftly and efficiently is crucial. At OmniCable, we understand the challenges you face and offer unique value-added resources to help you serve your customers. This includes:</span>
+<ul>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">No Minimum Order Quantities: We provide the flexibility you need to fulfill any order size, no matter how small. This allows you to cater to all customer requests without the burden of minimum order restrictions.</span></li>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">Drop Ship and Same-Day Shipping Options: To ensure your customers receive their orders on time, we offer reliable drop-ship services and same-day shipping options. &nbsp;</span></li>
+	<li><span style="font-family:Arial,Helvetica,sans-serif;">Custom Cutting Services: Whether it’s wire, fiber, or cable, we offer custom cutting to match your exact specifications. This ensures you have the right product in the right size, ready to meet your customers' requirements.</span></li>
+</ul>
+<span style="font-family:Arial,Helvetica,sans-serif;">Our goal is to support you in providing exceptional service. By partnering with OmniCable, you gain access to a range of resources designed to simplify your sales process and boost your performance.<br />
+<br />
+Let’s discuss how our solutions can help you be there for your customers exactly when they need you. Are you available for a quick call next week? &nbsp;<br />
+<br />
+Best regards,<br />
+{{{Sender.Name}}}<br />
+{{{Sender.Title}}}<br />
+OmniCable<br />
+{{{Sender.Phone}}}</span></body>
+</html>

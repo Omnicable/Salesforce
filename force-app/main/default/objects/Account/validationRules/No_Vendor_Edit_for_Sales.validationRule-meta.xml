@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Vendor_Edit_for_Sales</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( Type , &quot;Vendor&quot;) &amp;&amp; 
+( $User.ProfileId &lt;&gt; &apos;00e60000001BWT6&apos; &amp;&amp; 
+$User.ProfileId &lt;&gt; &apos;00e60000001BUtM&apos;)</errorConditionFormula>
+    <errorMessage>Only Purchasing can edit Vendor Accounts. 
+
+Please call extension x602 to have the Vendor changed.</errorMessage>
+</ValidationRule>

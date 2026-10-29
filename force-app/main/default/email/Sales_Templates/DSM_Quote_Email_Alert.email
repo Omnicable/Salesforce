@@ -1,0 +1,7 @@
+A quote has been entered for {!QuotesOrdersCredits_Header__c.Customer_Name__c}
+
+Quote # {!QuotesOrdersCredits_Header__c.Order_Number__c}
+{!QuotesOrdersCredits_Header__c.TotalDollars__c}
+{!QuotesOrdersCredits_Header__c.Buyer__c}
+
+Click here to view the quote: https://omnicable.my.salesforce.com/{!QuotesOrdersCredits_Header__c.Id}

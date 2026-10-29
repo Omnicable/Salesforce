@@ -1,0 +1,15 @@
+<!--
+  @description       : base component inherited by all other lighting components
+  @author            : chrisw@launchdm.com
+  @group             : PriceSheet
+  @last modified on  : 07-13-2022
+  @last modified by  : chrisw@launchdm.com
+-->
+<aura:component controller="PriceSheetController" extensible="true"  implements="force:hasRecordId">
+	<aura:attribute name="recordId" type="String"/>
+	<aura:attribute name="isLoading" type="Boolean" default="false"/>
+
+	
+
+	{!v.body}
+</aura:component>

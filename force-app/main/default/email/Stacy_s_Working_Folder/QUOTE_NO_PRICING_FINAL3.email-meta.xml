@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>40.0</apiVersion>
+    <available>true</available>
+    <description>Need to exclude wt: /Mft if not filled out</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>QUOTE w/o PRICING - FINAL3</name>
+    <style>none</style>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

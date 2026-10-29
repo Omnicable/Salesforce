@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExtID_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>Ext_Id__c &lt;&gt;  Account_Number__c +&apos;:&apos;+TEXT(Sequence__c)&amp;&amp;
+ Account.Name  &lt;&gt; &quot;Omni Cable Corporation&quot; &amp;&amp;
+(ISPICKVAL( Account.Type, &quot;Distributor&quot;)&amp;&amp;  RecordType.Name &lt;&gt; &quot;Potential Distributor Contact&quot;)</errorConditionFormula>
+    <errorMessage>Please check the ExtID field. Doesn&apos;t match account #:sequence#</errorMessage>
+</ValidationRule>

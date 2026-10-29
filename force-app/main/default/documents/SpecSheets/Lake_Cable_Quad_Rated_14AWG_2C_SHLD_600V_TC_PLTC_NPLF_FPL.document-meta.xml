@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>LAKE CABLE SPEC SHEET - QR21402</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>QR21402 V142S-QR QUAD RATED TC PLTC NPLF FPL</keywords>
+    <name>Quad Rated Cable - 14AWG 2C SHLD 600V TC/PLTC/NPLF/FPL</name>
+    <public>true</public>
+</Document>

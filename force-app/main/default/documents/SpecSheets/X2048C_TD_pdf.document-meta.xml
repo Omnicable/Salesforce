@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>M CABLE SPEC SHEET
+D62402, M Cable # 2048C</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>D62402, M Cable # 2048C</keywords>
+    <name>M Cable Multi Pair Individually Shielded Low Capacitance for RS-422 - 24 AWG - 7x32 Stranded Tinned Copper</name>
+    <public>true</public>
+</Document>

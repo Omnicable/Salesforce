@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlatformEventChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <channelType>data</channelType>
+    <eventType>data</eventType>
+    <label>CDC for Hoopla Newsflashes 19b845bc-9e58-4660-9e1e-5478b728ecf0</label>
+</PlatformEventChannel>

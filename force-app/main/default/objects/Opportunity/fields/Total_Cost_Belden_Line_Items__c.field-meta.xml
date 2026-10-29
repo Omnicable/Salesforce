@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Cost_Belden_Line_Items__c</fullName>
+    <description>Sum of the Line Cost (Booked) for all non-canceled Belden items.</description>
+    <inlineHelpText>Sum of the Line Cost (Booked) for all non-canceled Belden items.</inlineHelpText>
+    <label>Total Cost Belden Line Items</label>
+    <summarizedField>OpportunityLineItem.Line_Cost__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Line_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Belden_Line_Item__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

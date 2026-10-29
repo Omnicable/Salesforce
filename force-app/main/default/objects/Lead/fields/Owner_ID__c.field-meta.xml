@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_ID__c</fullName>
+    <externalId>false</externalId>
+    <formula>OwnerId 
+
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+    IF(FIND(MID(OwnerId,1,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
+    +IF(FIND(MID(OwnerId,2,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;) &gt;0,2,0)
+    +IF(FIND(MID(OwnerId,3,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
+    +IF(FIND(MID (OwnerId,4,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
+    +IF (FIND(MID(OwnerId,5,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+    )+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+    IF(FIND(MID(OwnerId,6,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;) &gt;0,1,0)
+    +IF(FIND(MID(OwnerId,7,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
+    +IF(FIND(MID (OwnerId,8,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
+    +IF (FIND(MID(OwnerId,9,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
+    +IF(FIND(MID(OwnerId,10,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;) &gt;0,16,0)
+    )+1,1)
+&amp; MID (&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+    IF(FIND(MID (OwnerId,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
+    +IF(FIND(MID(OwnerId,12,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
+    +IF(FIND(MID(OwnerId,13,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;) &gt;0,4,0)
+    +IF(FIND(MID(OwnerId,14,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
+    +IF(FIND(MID (OwnerId,15,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+    )+1,1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Owner ID</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

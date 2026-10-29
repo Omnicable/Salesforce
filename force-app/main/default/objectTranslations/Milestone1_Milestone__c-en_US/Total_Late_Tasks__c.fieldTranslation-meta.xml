@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Number of incomplete and overdue tasks related to this milestone and its child milestones --></help>
+    <label><!-- Total Late Tasks --></label>
+    <name>Total_Late_Tasks__c</name>
+</CustomFieldTranslation>

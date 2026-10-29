@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- This Month vs. PY Avg. --></label>
+    <name>Current_Month_TrendvsPY__c</name>
+</CustomFieldTranslation>

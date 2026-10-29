@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Division__c</fullName>
+    <description>Customer Buying Group Hierarchy</description>
+    <inlineHelpText>Customer Buying Group Hierarchy</inlineHelpText>
+    <label>Division</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>National_Account__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>3E</fullName>
+                <default>false</default>
+                <label>3E</label>
+            </value>
+            <value>
+                <fullName>Albuquerque</fullName>
+                <default>false</default>
+                <label>Albuquerque</label>
+            </value>
+            <value>
+                <fullName>Atlanta</fullName>
+                <default>false</default>
+                <label>Atlanta</label>
+            </value>
+            <value>
+                <fullName>Bay Area</fullName>
+                <default>false</default>
+                <label>Bay Area</label>
+            </value>
+            <value>
+                <fullName>Big Sky</fullName>
+                <default>false</default>
+                <label>Big Sky</label>
+            </value>
+            <value>
+                <fullName>Blue Ridge</fullName>
+                <default>false</default>
+                <label>Blue Ridge</label>
+            </value>
+            <value>
+                <fullName>Cain Electric</fullName>
+                <default>false</default>
+                <label>Cain Electric</label>
+            </value>
+            <value>
+                <fullName>California Gold</fullName>
+                <default>false</default>
+                <label>California Gold</label>
+            </value>
+            <value>
+                <fullName>Capitol District</fullName>
+                <default>false</default>
+                <label>Capitol District</label>
+            </value>
+            <value>
+                <fullName>Carolina</fullName>
+                <default>false</default>
+                <label>Carolina</label>
+            </value>
+            <value>
+                <fullName>Cascade</fullName>
+                <default>false</default>
+                <label>Cascade</label>
+            </value>
+            <value>
+                <fullName>CED Elevator &amp; Electrical</fullName>
+                <default>false</default>
+                <label>CED Elevator &amp; Electrical</label>
+            </value>
+            <value>
+                <fullName>Central East</fullName>
+                <default>false</default>
+                <label>Central East</label>
+            </value>
+            <value>
+                <fullName>Central Industrial</fullName>
+                <default>false</default>
+                <label>Central Industrial</label>
+            </value>
+            <value>
+                <fullName>Central West</fullName>
+                <default>false</default>
+                <label>Central West</label>
+            </value>
+            <value>
+                <fullName>Chicago</fullName>
+                <default>false</default>
+                <label>Chicago</label>
+            </value>
+            <value>
+                <fullName>Columbia</fullName>
+                <default>false</default>
+                <label>Columbia</label>
+            </value>
+            <value>
+                <fullName>Contractors ED</fullName>
+                <default>false</default>
+                <label>Contractors</label>
+            </value>
+            <value>
+                <fullName>Crossroads</fullName>
+                <default>false</default>
+                <label>Crossroads</label>
+            </value>
+            <value>
+                <fullName>Datacom &amp; Security</fullName>
+                <default>false</default>
+                <label>Datacom &amp; Security</label>
+            </value>
+            <value>
+                <fullName>Dauphin</fullName>
+                <default>false</default>
+                <label>Dauphin</label>
+            </value>
+            <value>
+                <fullName>Denver</fullName>
+                <default>false</default>
+                <label>Denver</label>
+            </value>
+            <value>
+                <fullName>Dubuque</fullName>
+                <default>false</default>
+                <label>Dubuque</label>
+            </value>
+            <value>
+                <fullName>East</fullName>
+                <default>false</default>
+                <label>East</label>
+            </value>
+            <value>
+                <fullName>Eastern</fullName>
+                <default>false</default>
+                <label>Eastern</label>
+            </value>
+            <value>
+                <fullName>Eastern Industrial</fullName>
+                <default>false</default>
+                <label>Eastern Industrial</label>
+            </value>
+            <value>
+                <fullName>East I/C Group</fullName>
+                <default>false</default>
+                <label>East I/C Group</label>
+            </value>
+            <value>
+                <fullName>EESCO</fullName>
+                <default>false</default>
+                <label>EESCO Group</label>
+            </value>
+            <value>
+                <fullName>Frost</fullName>
+                <default>false</default>
+                <label>Frost</label>
+            </value>
+            <value>
+                <fullName>Global Accounts</fullName>
+                <default>false</default>
+                <label>Global Accounts</label>
+            </value>
+            <value>
+                <fullName>Gold Coast</fullName>
+                <default>false</default>
+                <label>Gold Coast</label>
+            </value>
+            <value>
+                <fullName>Grand Canyon</fullName>
+                <default>false</default>
+                <label>Grand Canyon</label>
+            </value>
+            <value>
+                <fullName>Great Lakes</fullName>
+                <default>false</default>
+                <label>Great Lakes</label>
+            </value>
+            <value>
+                <fullName>Great Plains</fullName>
+                <default>false</default>
+                <label>Great Plains</label>
+            </value>
+            <value>
+                <fullName>Greentech East</fullName>
+                <default>false</default>
+                <label>Greentech Central</label>
+            </value>
+            <value>
+                <fullName>Greentech Colorado</fullName>
+                <default>false</default>
+                <label>Greentech Colorado</label>
+            </value>
+            <value>
+                <fullName>Greentech Mid-Atlantic</fullName>
+                <default>false</default>
+                <label>Greentech Mid-Atlantic</label>
+            </value>
+            <value>
+                <fullName>Greentech Midwest</fullName>
+                <default>false</default>
+                <label>Greentech Midwest</label>
+            </value>
+            <value>
+                <fullName>Greentech New England</fullName>
+                <default>false</default>
+                <label>Greentech New England</label>
+            </value>
+            <value>
+                <fullName>Greentech New York Metro</fullName>
+                <default>false</default>
+                <label>Greentech New York Metro</label>
+            </value>
+            <value>
+                <fullName>Greentech NorCal</fullName>
+                <default>false</default>
+                <label>Greentech NorCal/Hawaii</label>
+            </value>
+            <value>
+                <fullName>Greentech North</fullName>
+                <default>false</default>
+                <label>Greentech North</label>
+            </value>
+            <value>
+                <fullName>Greentech SoCal</fullName>
+                <default>false</default>
+                <label>Greentech SoCal</label>
+            </value>
+            <value>
+                <fullName>Greemtech Southeast</fullName>
+                <default>false</default>
+                <label>Greentech Southeast</label>
+            </value>
+            <value>
+                <fullName>Greentech Southwest</fullName>
+                <default>false</default>
+                <label>Greentech Southwest</label>
+            </value>
+            <value>
+                <fullName>Greentech West</fullName>
+                <default>false</default>
+                <label>Greentech West</label>
+            </value>
+            <value>
+                <fullName>Houston</fullName>
+                <default>false</default>
+                <label>Houston</label>
+            </value>
+            <value>
+                <fullName>Ignore</fullName>
+                <default>false</default>
+                <label>Ignore</label>
+            </value>
+            <value>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+                <label>Industrial</label>
+            </value>
+            <value>
+                <fullName>Inland Empire District</fullName>
+                <default>false</default>
+                <label>Inland Empire District</label>
+            </value>
+            <value>
+                <fullName>Integrated Supply</fullName>
+                <default>false</default>
+                <label>Integrated Supply</label>
+            </value>
+            <value>
+                <fullName>International</fullName>
+                <default>false</default>
+                <label>International Group</label>
+            </value>
+            <value>
+                <fullName>Kansas</fullName>
+                <default>false</default>
+                <label>Kansas</label>
+            </value>
+            <value>
+                <fullName>Lakeshore</fullName>
+                <default>false</default>
+                <label>Lakeshore</label>
+            </value>
+            <value>
+                <fullName>Lone Star</fullName>
+                <default>false</default>
+                <label>Lone Star</label>
+            </value>
+            <value>
+                <fullName>Lowe</fullName>
+                <default>false</default>
+                <label>Lowe</label>
+            </value>
+            <value>
+                <fullName>Magnolia</fullName>
+                <default>false</default>
+                <label>Magnolia</label>
+            </value>
+            <value>
+                <fullName>Manufactured Structures</fullName>
+                <default>false</default>
+                <label>Manufactured Structures</label>
+            </value>
+            <value>
+                <fullName>Mid-Atlantic</fullName>
+                <default>false</default>
+                <label>Mid-Atlantic</label>
+            </value>
+            <value>
+                <fullName>Mid - Continent</fullName>
+                <default>false</default>
+                <label>Mid - Continent</label>
+            </value>
+            <value>
+                <fullName>Mid-South</fullName>
+                <default>false</default>
+                <label>Mid-South</label>
+            </value>
+            <value>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+                <label>Mountain</label>
+            </value>
+            <value>
+                <fullName>Mountain Plains</fullName>
+                <default>false</default>
+                <label>Mountain Plains</label>
+            </value>
+            <value>
+                <fullName>Nebraska</fullName>
+                <default>false</default>
+                <label>Nebraska</label>
+            </value>
+            <value>
+                <fullName>New England</fullName>
+                <default>false</default>
+                <label>New England</label>
+            </value>
+            <value>
+                <fullName>New York Metro</fullName>
+                <default>false</default>
+                <label>New York Metro</label>
+            </value>
+            <value>
+                <fullName>North Central</fullName>
+                <default>false</default>
+                <label>North Central</label>
+            </value>
+            <value>
+                <fullName>North Colorado</fullName>
+                <default>false</default>
+                <label>North Colorado</label>
+            </value>
+            <value>
+                <fullName>Northern Plains</fullName>
+                <default>false</default>
+                <label>Northern Plains</label>
+            </value>
+            <value>
+                <fullName>North Pacific</fullName>
+                <default>false</default>
+                <label>North Pacific</label>
+            </value>
+            <value>
+                <fullName>North Texas</fullName>
+                <default>false</default>
+                <label>North Texas</label>
+            </value>
+            <value>
+                <fullName>Northwest</fullName>
+                <default>false</default>
+                <label>Northwest</label>
+            </value>
+            <value>
+                <fullName>Nu-Lite</fullName>
+                <default>false</default>
+                <label>Nu-Lite</label>
+            </value>
+            <value>
+                <fullName>OEM &amp; Electronics Group</fullName>
+                <default>false</default>
+                <label>OEM &amp; Electronics Group</label>
+            </value>
+            <value>
+                <fullName>Pacific Ind.</fullName>
+                <default>false</default>
+                <label>Pacific Ind.</label>
+            </value>
+            <value>
+                <fullName>Patriot</fullName>
+                <default>false</default>
+                <label>Patriot</label>
+            </value>
+            <value>
+                <fullName>Platt</fullName>
+                <default>false</default>
+                <label>Platt</label>
+            </value>
+            <value>
+                <fullName>Puget Sound</fullName>
+                <default>false</default>
+                <label>Puget Sound</label>
+            </value>
+            <value>
+                <fullName>Red River</fullName>
+                <default>false</default>
+                <label>Red River</label>
+            </value>
+            <value>
+                <fullName>Rexel Automation</fullName>
+                <default>false</default>
+                <label>Rexel Automation</label>
+            </value>
+            <value>
+                <fullName>Rexel C&amp;I</fullName>
+                <default>false</default>
+                <label>Rexel C&amp;I</label>
+            </value>
+            <value>
+                <fullName>Riverfront</fullName>
+                <default>false</default>
+                <label>Riverfront</label>
+            </value>
+            <value>
+                <fullName>River Valley</fullName>
+                <default>false</default>
+                <label>River Valley</label>
+            </value>
+            <value>
+                <fullName>Rocky Mountain</fullName>
+                <default>false</default>
+                <label>Rocky Mountain</label>
+            </value>
+            <value>
+                <fullName>Salt Lake</fullName>
+                <default>false</default>
+                <label>Salt Lake</label>
+            </value>
+            <value>
+                <fullName>Salt Lake City</fullName>
+                <default>false</default>
+                <label>Salt Lake City</label>
+            </value>
+            <value>
+                <fullName>SO California</fullName>
+                <default>false</default>
+                <label>SO California</label>
+            </value>
+            <value>
+                <fullName>South Central</fullName>
+                <default>false</default>
+                <label>South-Central</label>
+            </value>
+            <value>
+                <fullName>Southern</fullName>
+                <default>false</default>
+                <label>Southern</label>
+            </value>
+            <value>
+                <fullName>South Florida</fullName>
+                <default>false</default>
+                <label>South Florida</label>
+            </value>
+            <value>
+                <fullName>South Texas</fullName>
+                <default>false</default>
+                <label>South Texas</label>
+            </value>
+            <value>
+                <fullName>Southwest</fullName>
+                <default>false</default>
+                <label>Southwest</label>
+            </value>
+            <value>
+                <fullName>Stusser Metro</fullName>
+                <default>false</default>
+                <label>Stusser Metro</label>
+            </value>
+            <value>
+                <fullName>Sunbelt</fullName>
+                <default>false</default>
+                <label>Sunbelt</label>
+            </value>
+            <value>
+                <fullName>Tennessee Valley</fullName>
+                <default>false</default>
+                <label>Tennessee Valley</label>
+            </value>
+            <value>
+                <fullName>Tri County</fullName>
+                <default>false</default>
+                <label>Tri County</label>
+            </value>
+            <value>
+                <fullName>Tri-State District</fullName>
+                <default>false</default>
+                <label>Tri-State District</label>
+            </value>
+            <value>
+                <fullName>TSS</fullName>
+                <default>false</default>
+                <label>TSS</label>
+            </value>
+            <value>
+                <fullName>US Broadband</fullName>
+                <default>false</default>
+                <label>US Broadband</label>
+            </value>
+            <value>
+                <fullName>US Distribution</fullName>
+                <default>false</default>
+                <label>US Distribution</label>
+            </value>
+            <value>
+                <fullName>Utility</fullName>
+                <default>false</default>
+                <label>Utility</label>
+            </value>
+            <value>
+                <fullName>Utility Group</fullName>
+                <default>false</default>
+                <label>Utility Group</label>
+            </value>
+            <value>
+                <fullName>Valley</fullName>
+                <default>false</default>
+                <label>Valley</label>
+            </value>
+            <value>
+                <fullName>Virtual Sales</fullName>
+                <default>false</default>
+                <label>Virtual Sales</label>
+            </value>
+            <value>
+                <fullName>Wesco Integrated Supply Group</fullName>
+                <default>false</default>
+                <label>Wesco Integrated Supply Group</label>
+            </value>
+            <value>
+                <fullName>West</fullName>
+                <default>false</default>
+                <label>West</label>
+            </value>
+            <value>
+                <fullName>West I/C Group</fullName>
+                <default>false</default>
+                <label>West I/C Group</label>
+            </value>
+            <value>
+                <fullName>Wichita</fullName>
+                <default>false</default>
+                <label>Wichita</label>
+            </value>
+            <value>
+                <fullName>Wisconsin</fullName>
+                <default>false</default>
+                <label>Wisconsin</label>
+            </value>
+            <value>
+                <fullName>Yankee</fullName>
+                <default>false</default>
+                <label>Yankee</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>3E</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Atlanta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Bay Area</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Big Sky</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Blue Ridge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Cain Electric</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>California Gold</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Carolina</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Cascade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>CED Elevator &amp; Electrical</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Central Industrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Chicago</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Columbia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Contractors ED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Dauphin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Denver</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Dubuque</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Eastern Industrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Frost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Gold Coast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Grand Canyon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Great Lakes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech Colorado</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech Mid-Atlantic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech Midwest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech New England</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech New York Metro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech NorCal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech SoCal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greemtech Southeast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech Southwest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Greentech West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Houston</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Industrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Inland Empire District</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Kansas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Lakeshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Magnolia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Mid-Atlantic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Mid - Continent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Mid-South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>New England</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>New York Metro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>North Colorado</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Northern Plains</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>North Texas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Nu-Lite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Pacific Ind.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Patriot</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Red River</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Riverfront</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Rocky Mountain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Salt Lake</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Salt Lake City</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>SO California</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>South Central</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Southern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>South Florida</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>South Texas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Stusser Metro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Sunbelt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Tennessee Valley</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Tri County</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Valley</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Wichita</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Wisconsin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CED</controllingFieldValue>
+            <valueName>Yankee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rexel</controllingFieldValue>
+            <valueName>East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rexel</controllingFieldValue>
+            <valueName>West</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>Datacom &amp; Security</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>East I/C Group</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>EESCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>International</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>Manufactured Structures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>OEM &amp; Electronics Group</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>US Broadband</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>US Distribution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>Utility Group</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>Wesco Integrated Supply Group</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Wesco</controllingFieldValue>
+            <valueName>West I/C Group</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Great Plains</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Lowe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>North Central</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>North Pacific</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>River Valley</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Southwest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Crescent Electric</controllingFieldValue>
+            <valueName>Virtual Sales</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

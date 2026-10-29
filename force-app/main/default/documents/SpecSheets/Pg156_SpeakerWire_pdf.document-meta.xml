@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+D301602 D301402  D301202</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S C1356 C1362 C1360 C1357 C1358 C1361 C1363 C7102A</keywords>
+    <name>Special Audio Cable - Flat Ribbed Speaker Wire</name>
+    <public>true</public>
+</Document>

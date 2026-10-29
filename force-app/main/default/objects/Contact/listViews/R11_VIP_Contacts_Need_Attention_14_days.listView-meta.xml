@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R11_VIP_Contacts_Need_Attention_14_days</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Contact_Title__c</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>MaxOrderQuoteDate__c</columns>
+    <columns>lastActivitydate__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.OWNERSHIP</columns>
+    <columns>Days_without_contact__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>VIP_Contact__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Days_without_contact__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>14</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>11</value>
+    </filters>
+    <label>R11 VIP Contacts Need Attention &gt;14 days</label>
+    <sharedTo>
+        <role>RegionalManager11</role>
+    </sharedTo>
+</ListView>

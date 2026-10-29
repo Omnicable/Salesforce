@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+MVE30203 MVE31/003 MVE32/003 MVE34/003 MVE335003 MVE350003</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 15493.440200 15493.445100 15493.445200 15493.445400 15493.446000 15493.446200 15493.446500 15493.447000 15493.447500</keywords>
+    <name>General Cable Medium Voltage - 15kV - 3 Conductor, Shielded, EPR/PVC, 133% Insulation Level</name>
+    <public>true</public>
+</Document>

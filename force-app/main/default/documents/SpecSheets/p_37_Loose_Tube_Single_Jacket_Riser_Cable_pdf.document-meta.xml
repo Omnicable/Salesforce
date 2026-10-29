@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+F6M06LNRIO F6M12LNRIO F8S06LNRIO F8S12LNRIO</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S CG0064M1M-DT CG0124M1M-DT AQ0064M1M-DT AQ0124M1M-DT</keywords>
+    <name>General Cable Fiber Optic Cable - Indoor/Outdoor - Loose Tube Single Jacket Riser Cable</name>
+    <public>true</public>
+</Document>

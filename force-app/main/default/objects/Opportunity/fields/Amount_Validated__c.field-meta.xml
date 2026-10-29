@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Validated__c</fullName>
+    <description>Validates that the Amount should equal Total Order Sales (Booked)</description>
+    <formula>Amount = Total_Order_Sales__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Amount Validated</label>
+    <type>Checkbox</type>
+</CustomField>

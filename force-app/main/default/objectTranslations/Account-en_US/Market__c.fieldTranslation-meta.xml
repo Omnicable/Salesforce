@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Markets Served --></help>
+    <label><!-- Market --></label>
+    <name>Market__c</name>
+    <picklistValues>
+        <masterLabel>Extraction</masterLabel>
+        <translation><!-- Extraction --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>F&amp;B</masterLabel>
+        <translation><!-- F&amp;B --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Institutional</masterLabel>
+        <translation><!-- Institutional --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manufacturing</masterLabel>
+        <translation><!-- Manufacturing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Process</masterLabel>
+        <translation><!-- Process --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Renewables</masterLabel>
+        <translation><!-- Renewables --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tech</masterLabel>
+        <translation><!-- Tech --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Utility</masterLabel>
+        <translation><!-- Utility --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

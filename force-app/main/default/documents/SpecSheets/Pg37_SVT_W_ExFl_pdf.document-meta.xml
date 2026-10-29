@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+B50201-03 B50201-07 B50201-08 B50201-04 B50201-06 B50201-05 B51/001 B52/001-03 B52/001-07 B52/001-08 B52/001-04 B52/001-06 B52/001-05 B54/001-F</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 80611 80621 80631 80641 80651 80661 80671 80681 80691 80701</keywords>
+    <name>Flexible and Portable Cord - Mining Cable - Type W Single Conductor</name>
+    <public>true</public>
+</Document>

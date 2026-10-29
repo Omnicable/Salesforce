@@ -12,7 +12,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Buy Own</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Buy Own</label>
             </value>
             <value>

@@ -1,0 +1,4 @@
+Created by: {!Promo__c.CreatedBy}
+Promo Name: {!Promo__c.Name} 
+
+https://omnicable.my.salesforce.com/{!Promo__c.Id}

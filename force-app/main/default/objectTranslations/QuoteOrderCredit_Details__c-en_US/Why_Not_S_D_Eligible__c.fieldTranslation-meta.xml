@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Explain why the Belden item isn&apos;t S&amp;D eligible --></help>
+    <label><!-- Why Not S&amp;D Eligible? --></label>
+    <name>Why_Not_S_D_Eligible__c</name>
+</CustomFieldTranslation>

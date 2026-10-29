@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+Y30203A, Y31/003A, Y32/003A, Y34/003A, Y325003A, Y335003A, Y350003A</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Y30203A, Y31/003A, Y32/003A, Y34/003A, Y325003A, Y335003A, Y350003A</keywords>
+    <name>General Cable - Aluminum Interlocked Armor - 15kV</name>
+    <public>false</public>
+</Document>

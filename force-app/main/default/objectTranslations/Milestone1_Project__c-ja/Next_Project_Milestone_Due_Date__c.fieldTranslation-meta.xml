@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>このプロジェクトのマイルストーンの次の期限日。サブマイルストーンを含む。</help>
+    <label>次のプロジェクトの期限日</label>
+    <name>Next_Project_Milestone_Due_Date__c</name>
+</CustomFieldTranslation>

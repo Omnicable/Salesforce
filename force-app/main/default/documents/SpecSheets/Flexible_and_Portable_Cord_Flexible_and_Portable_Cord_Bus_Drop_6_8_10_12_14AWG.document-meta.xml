@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+A81403 A81203 A81003 A80803 A80603</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 03714 03712 03710 03708 03706</keywords>
+    <name>Flexible and Portable Cord - Flexible and Portable Cord - Bus Drop 6,8,10,12,14AWG</name>
+    <public>true</public>
+</Document>

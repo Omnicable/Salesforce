@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Why is the customer on freight allowed terms? Ex. To stay competitive, they asked to be, etc. --></help>
+    <label><!-- Freight Allowed Reason --></label>
+    <name>Freight_Reason__c</name>
+</CustomFieldTranslation>

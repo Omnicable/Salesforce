@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>(Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Trending Sales</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(Account.Sales_Current_Year__c:SUM=0, 0, ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Trending Growth</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(Account.Sales_Current_Year__c:SUM =0, 0, 
+
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 0.9738 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 0.9975,0.0016, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 0.9975 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0238,0.0032, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0238 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/22)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0448,0.0036, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0448 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0450,0.0040, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0450 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0725,0.0048, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0725 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0945,0.0054, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0945,0.0060, 0))))))))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Trending Tier</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(Account.Sales_Current_Year__c:SUM = 0,0,
+
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 0.9738 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 0.9975,0.0016, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 0.9975 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0238,0.0032, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0238 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0448,0.0036, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0448 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0450,0.0040, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0450 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0725,0.0048, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0725 &amp;&amp; ((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &lt; 1.0945,0.0054, 
+IF(((Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)/Account.Sales_Year_Prior__c:SUM &gt;= 1.0945,0.0060, 0)))))))
+* (Account.Sales_Current_Year__c:SUM/Account.Business_Days_YTD__c:MAX)*254)</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA4</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Trending Payout</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <colorRanges>
+        <columnName>FORMULA2</columnName>
+        <highBreakpoint>99.99</highBreakpoint>
+        <highColor>#95FFAF</highColor>
+        <lowBreakpoint>97.38</lowBreakpoint>
+        <lowColor>#FFFFFF</lowColor>
+        <midColor>#FFFF93</midColor>
+    </colorRanges>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Sales_Current_Year__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Sales_Year_Prior__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Active__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Buying_Group__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>ad</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Active__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>A</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <formattingRules>
+        <columnName>FORMULA2</columnName>
+        <values>
+            <rangeUpperBound>97.38</rangeUpperBound>
+        </values>
+        <values>
+            <backgroundColor>#FFFF93</backgroundColor>
+            <rangeUpperBound>99.99</rangeUpperBound>
+        </values>
+        <values>
+            <backgroundColor>#95FFAF</backgroundColor>
+        </values>
+    </formattingRules>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Company_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>AD GIBP Trending Sales</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

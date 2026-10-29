@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+T30804 T30604 T30404 T30204</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>T30804 T30604 T30404 T30204</keywords>
+    <name>General Cable - Teck 90 1000V Power - 4 Conductor</name>
+    <public>false</public>
+</Document>

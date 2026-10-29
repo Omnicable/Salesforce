@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- How many open tasks are there in this project? (Calculated. Includes Late and Blocked tasks.) --></help>
+    <label><!-- Total Open Task Count --></label>
+    <name>Total_Open_Task_Count__c</name>
+</CustomFieldTranslation>

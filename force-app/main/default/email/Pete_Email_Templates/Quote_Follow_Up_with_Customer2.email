@@ -1,0 +1,10 @@
+Hi {!QuotesOrdersCredits_Header__c.Buyer_First_Name__c}, <br><br>
+
+Thank you for the quote opportunity. In regards to quote #{!QuotesOrdersCredits_Header__c.Name}, do you have any additional feedback or job information (I.E. For bid or buy, date required, pricing feedback, etc.)? <br><br>
+
+Any and all information would be greatly appreciated. Please let me know if there is anything else I can do for you. <br><br><br>
+
+
+Have a great day, <br><br>
+
+{!User.Full_Name__c}

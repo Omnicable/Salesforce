@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+F6M06LNGO F6M12LNGO F8S06LNGO F8S12LNGO</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S CG0064M1A-DWB CG0124M1A-DWB AQ0064M1A-DWB AQ0124M1A-DWB</keywords>
+    <name>General Cable Fiber Optic Cable - Outdoor - Loose Tube Single Jacket Cable</name>
+    <public>true</public>
+</Document>

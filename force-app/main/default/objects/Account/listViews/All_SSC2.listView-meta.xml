@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_SSC2</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Region_Number__c</columns>
+    <columns>Account_Number__c</columns>
+    <columns>Sales_Current_Year__c</columns>
+    <columns>Sales_Year_Prior__c</columns>
+    <columns>CSC_Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Salesperson_Code__c</field>
+        <operation>greaterThan</operation>
+        <value>109</value>
+    </filters>
+    <filters>
+        <field>Salesperson_Code__c</field>
+        <operation>lessThan</operation>
+        <value>200</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <label>All CSC</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SSC</group>
+    </sharedTo>
+</ListView>

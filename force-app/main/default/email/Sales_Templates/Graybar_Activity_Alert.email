@@ -1,0 +1,11 @@
+Created By: {!Task.CreatedBy}
+Created Date: {!Task.CreatedDate}
+Assigned to: {!Task.Assigned_User__c} 
+
+Subject: {!Task.Subject}
+Contact: {!Contact.Full_Name__c}
+Account: {!Account.Name}
+
+Comments: {!Task.Description}
+
+View the logged call here: https://omnicable.lightning.force.com/lightning/r/Task/{!Task.Id}/view

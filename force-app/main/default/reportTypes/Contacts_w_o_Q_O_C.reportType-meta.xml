@@ -742,6 +742,11 @@
             <field>EWS_dollars__c</field>
             <table>Contact.Quotes_Orders_Credits__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Industrial_Automation__c</field>
+            <table>Contact.Quotes_Orders_Credits__r</table>
+        </columns>
         <masterLabel>Quotes/Orders/Credits</masterLabel>
     </sections>
     <sections>

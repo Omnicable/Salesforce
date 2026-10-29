@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>タスクが完了済みになったときに自動的にタスクのChatterフィードのユーザ割り当てを解除します。</help>
+    <label>自動完了タスクフォロー解除</label>
+    <name>Auto_Follow_Complete_Task__c</name>
+</CustomFieldTranslation>

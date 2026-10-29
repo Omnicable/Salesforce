@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GENERAL CABLE SPEC SHEET
+T30804 T30604 T30404</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>GCC PART #&apos;S 321940 793180 793160 331250 11288.030600 11288.02040 11288.020300 11288.020200 11288.040100 11288.025100 11288.025200 11288.025300 11288.045400 11288.046000 11288.026200 11288.036500 11288.057000 11288.037500</keywords>
+    <name>General Cable Armored Cables - Teck 90 - Multiconductor with Ground - 1kV, 600 Volt</name>
+    <public>true</public>
+</Document>
