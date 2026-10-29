@@ -111,7 +111,7 @@ public  class SalesCloudPostDeployment implements Database.Batchable<SObject>, D
             return Database.getQueryLocator([
                 SELECT Id, CreatedDate, Expected_Date__c, Quote_Order_Credit_Detail__r.Expected_Date__c, Quote_Order_Credit_Detail__r.Dollars__c
                 FROM OrderItem
-                WHERE Quote_Order_Credit_Detail__r.Expected_Date__c != null and Expected_Date__c = null
+                WHERE Quote_Order_Credit_Detail__r.Dollars__c != null and Dollars__c = null
             ]);
 
         }else if(recordType.getSObjectType() == Schema.QuoteLineItem.SObjectType && action == 'SYNC_PORTAL_DATA') {
