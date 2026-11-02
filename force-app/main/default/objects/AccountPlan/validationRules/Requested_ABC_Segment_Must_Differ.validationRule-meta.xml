@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_ABC_Segment_Must_Differ</fullName>
+    <active>true</active>
+    <description>Prevents users from requesting an ABC Segment change to the same classification currently assigned to the related Account.</description>
+    <errorConditionFormula>AND(
+
+ ISPICKVAL( ABC_Segment_Verification__c , &quot;Needs to Change&quot;),
+  NOT( ISPICKVAL( Requested_ABC_Segment__c , &quot;&quot;) ),
+ TEXT( Requested_ABC_Segment__c ) =  TEXT( Account.ABC_Segment__c) 
+
+)</errorConditionFormula>
+    <errorDisplayField>Requested_ABC_Segment__c</errorDisplayField>
+    <errorMessage>Requested ABC Segment must be different from the Account&apos;s current ABC Segment.</errorMessage>
+</ValidationRule>
