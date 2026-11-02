@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regional_Sales_Director__c</fullName>
+    <externalId>false</externalId>
+    <formula>Account.Owner.Manager.FirstName &amp; &quot; &quot; &amp; Account.Owner.Manager.LastName</formula>
+    <label>Regional Sales Director</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
