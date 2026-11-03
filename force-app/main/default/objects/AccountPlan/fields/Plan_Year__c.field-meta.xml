@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plan_Year__c</fullName>
+    <description>Stores the year associated with the Account Plan</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the 4-digit plan year (e.g., 2026)</inlineHelpText>
+    <label>Plan Year</label>
+    <length>4</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
