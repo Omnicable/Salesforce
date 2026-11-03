@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ABC_Segment_Change_Justification__c</fullName>
+    <description>Captures the business justification for a requested ABC Segment change during annual Account Planning. Used by Sales Enablement/RVP to evaluate the request as part of the approval process.</description>
+    <inlineHelpText>Explain why the Account&apos;s ABC Segment should be changed. Include relevant business factors supporting the proposed classification.</inlineHelpText>
+    <label>ABC Segment Change Justification</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>
