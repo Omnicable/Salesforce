@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Margin_Percentage__c</fullName>
+    <description>Stores the planned margin percentage for the Account Plan, automatically populated from the associated Account Plan Measures objective</description>
+    <label>Target Margin %</label>
+    <precision>7</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

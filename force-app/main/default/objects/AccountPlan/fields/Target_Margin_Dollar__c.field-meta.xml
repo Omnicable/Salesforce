@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Margin_Dollar__c</fullName>
+    <description>Automatically calculates the target margin amount by multiplying the Target Revenue  by the Target Margin Percentage on the Account Plan</description>
+    <formula>Target_Revenue__c * Target_Margin_Percentage__c</formula>
+    <label>Target Margin $</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>
