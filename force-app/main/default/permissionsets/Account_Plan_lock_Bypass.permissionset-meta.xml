@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Account_Plan_Lock</name>
+    </customPermissions>
+    <description>Allow authorized automation to update locked Account Plans</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Account Plan lock Bypass</label>
+</PermissionSet>

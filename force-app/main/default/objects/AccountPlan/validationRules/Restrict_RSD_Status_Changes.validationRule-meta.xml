@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_RSD_Status_Changes</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Status),
+OR(
+ISPICKVAL(Status, &quot;In Progress&quot;),
+ISPICKVAL(Status, &quot;Ready For Review&quot;)
+),
+NOT($Permission.Set_RSD_Account_Plan_Status),
+NOT(
+OR(
+ ISPICKVAL(PRIORVALUE(Status), &quot;Completed&quot;),
+ ISPICKVAL(PRIORVALUE(Status), &quot;Active&quot;),
+ ISPICKVAL(PRIORVALUE(Status), &quot;Inactive&quot;)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Only Authorized RSD users can change the Account Plan status to In Progress or Ready for Review.</errorMessage>
+</ValidationRule>

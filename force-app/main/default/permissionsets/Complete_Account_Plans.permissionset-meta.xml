@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Set_Account_Plan_Complete_Status</name>
+    </customPermissions>
+    <description>Contains the Complete_Plans custom permission, referenced by Account Plan validation rules to restrict plan completion to authorized RVPs. Does not grant record access.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Complete Account Plans</label>
+</PermissionSet>
