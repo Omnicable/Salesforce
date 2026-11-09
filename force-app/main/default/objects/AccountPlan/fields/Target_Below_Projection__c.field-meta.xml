@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Below_Projection__c</fullName>
+    <description>Indicates whether Target Revenue is below Projected EOY Sales and controls the visibility of Target Reason.</description>
+    <formula>AND(
+NOT(ISBLANK(Target_Revenue__c)),
+NOT(ISBLANK( Projected_EOY_Sales__c)),
+ Target_Revenue__c &lt;  Projected_EOY_Sales__c 
+)</formula>
+    <label>Target Below Projection</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>
