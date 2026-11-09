@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Bypass_Plan_Lock</name>
+    </customPermissions>
+    <description>Contains the Bypass_Plan_Lock custom permission, referenced by Account Planning validation rules to allow authorized admins and automation users to edit completed plans.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Account Plan Lock</label>
+</PermissionSet>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_ABC_Segment_Change_Details</fullName>
+    <active>true</active>
+    <description>Requires Requested ABC Segment Change and Justification fields to be completed when ABC Segment Verification is set to Needs to Change. Prevents incomplete change requests from being submitted for approval.</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL( ABC_Segment_Verification__c , &quot;Needs to Change&quot;),
+ OR(
+ ISPICKVAL( Requested_ABC_Segment__c , &quot;&quot; ),
+ LEN( ABC_Segment_Change_Justification__c ) = 0
+)  
+)</errorConditionFormula>
+    <errorMessage>When ABC Segment Verification is set to Needs to Change, both Requested ABC Segment and ABC Segment Justification are required.</errorMessage>
+</ValidationRule>

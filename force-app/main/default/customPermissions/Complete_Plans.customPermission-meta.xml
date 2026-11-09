@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Identifies users authorized to mark Account Plans as Complete. Referenced by Account Planning validation rules.</description>
+    <isLicensed>false</isLicensed>
+    <label>Complete Plans</label>
+</CustomPermission>
