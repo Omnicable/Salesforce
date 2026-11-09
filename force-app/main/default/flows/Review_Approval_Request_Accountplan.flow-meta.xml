@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Store_Approval_Decision</name>
+        <label>Store Approval Decision</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>approvalDecision</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ApprovalDecisionRadioButtons</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>approvalComments</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DecisionCommentsLongText</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <choices>
+        <description>Stores the choice label and value for the Approve option for ApprovalDecisionRadioButtons on the ReviewApprovalRequestScreen. Don’t change the value of this choice. Changing the value can cause the approval to fail.</description>
+        <name>ChoiceApprovalDecisionRadioButtonsApprove</name>
+        <choiceText>Approve</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Approve</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Stores the choice label and value for the Reject option for ApprovalDecisionRadioButtons on the ReviewApprovalRequestScreen. Don’t change the value of this choice. Changing the value can cause the approval to fail.</description>
+        <name>ChoiceApprovalDecisionRadioButtonsReject</name>
+        <choiceText>Reject</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Reject</stringValue>
+        </value>
+    </choices>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <description>Displays information about a record to be approved and allows the reviewer to approve or reject it. The approver can optionally add comments about their decision.</description>
+    <environments>Default</environments>
+    <interviewLabel>Review Approval Request: {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Review Approval Request -Accountplan</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <description>Allows the flow user to approve or reject an approval request, and add comments to the decision.</description>
+        <name>ReviewApprovalRequestScreen</name>
+        <label>Review Approval Request</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Store_Approval_Decision</targetReference>
+        </connector>
+        <fields>
+            <name>InstructionsDisplayText</name>
+            <fieldText>&lt;p&gt;Review the requested ABC Segment change for this Account Plan. Select Approve or Reject and provide comments about your decision.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>ApprovalInformationDisplayText</name>
+            <fieldText>&lt;p&gt;{!approvalInformation}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>ApprovalDecisionRadioButtons</name>
+            <choiceReferences>ChoiceApprovalDecisionRadioButtonsApprove</choiceReferences>
+            <choiceReferences>ChoiceApprovalDecisionRadioButtonsReject</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Approval Decision</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>DecisionCommentsLongText</name>
+            <fieldText>Decision Comments</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>ReviewApprovalRequestScreen</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Stores the value of DecisionCommentsLongText and is available as output from the flow.</description>
+        <name>approvalComments</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the value of the selection that the reviewer makes in ApprovalDecisionRadioButtons. This required variable is available as output from the flow. Approve and Reject are its only valid values. Don’t use any other values. Using other values causes the approval to fail.</description>
+        <name>approvalDecision</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Stores information about the record to be approved and is passed into the flow.</description>
+        <name>approvalInformation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The record being approved. Approval orchestrations pass ActionInput__RecordId into this input.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The record being approved. Approval orchestrations pass ActionInput__RecordId into this input.</description>
+        <name>submitter</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
