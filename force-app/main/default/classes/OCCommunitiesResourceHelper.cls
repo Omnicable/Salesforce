@@ -828,6 +828,10 @@ global class OCCommunitiesResourceHelper {
         String endpoint ='';
         String message = 'Congratulations!';
         
+
+        Tango_Credentials__c credentials = Tango_Credentials__c.getOrgDefaults();
+
+        
         if(runningInASandbox()){
             endpoint = 'https://integration-api.tangocard.com/raas/v2/orders';
             req.setHeader('authorization', 'Basic T21uaUNhYmxlOkZkU1ohTFVXJEBIYXVERlVzdHRuWk9Abk5veklleWpTZndUJGplU3pHcVA=');
@@ -838,8 +842,9 @@ global class OCCommunitiesResourceHelper {
             req.setBody('{"accountIdentifier":"omnicable","customerIdentifier":"omnicable","subject":"Test Subject","message": "' + message + '","amount":1.0,"sendEmail":true, "etid":"E000000", "utid":"U561593","recipient":{"email":"' + testEmail+ '","firstName":"' + contact.FirstName + '","lastName":"' + contact.LastName + '"},"sender":{"email":"portal@omnicable.com","firstName":"OmniCable"}}');
             
         }else{
+            String apiKey = 'Basic ' + credentials.API_Key__c;
             endpoint = 'https://api.tangocard.com/raas/v2/orders';
-            req.setHeader('authorization', 'Basic T21uaUNhYmxlOk5EWmREaWRZbCFRJGtUTkVjWWxJYmlkTk1SVXByd1YmQ3dURlhmYmohaUI=');
+            req.setHeader('authorization', apiKey);
             req.setBody('{"accountIdentifier":"omnicable","customerIdentifier":"omnicable","message": "' + message + '","amount":"' + total + '","sendEmail":true, "utid":"U561593","recipient":{"email":"' + contact.Email + '","firstName":"' + contact.FirstName + '","lastName":"' + contact.lastName + '"},"sender":{"email":"portal@omnicable.com","firstName":"OmniCable"}, "etid":"E838072"}');             
             
         }
