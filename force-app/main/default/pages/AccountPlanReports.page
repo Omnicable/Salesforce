@@ -1,0 +1,243 @@
+<!--
+  Embed on the Account Plan Lightning record page via App Builder.
+  Select updates reportId via URL param; a single analytics:reportChart binds to it.
+  Scales the visible chart to the VF iframe viewport without scrolling.
+-->
+<apex:page standardController="AccountPlan"
+    lightningStylesheets="true"
+    showHeader="false"
+    sidebar="false"
+    docType="html-5.0"
+>
+    <apex:variable var="selectedReport"
+        value="{!IF(ISBLANK($CurrentPage.parameters.reportId), '00O0d000004FCA2EAO', $CurrentPage.parameters.reportId)}"
+    />
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden !important;
+            background: #fff;
+        }
+        .apr-wrap {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            max-height: 100vh;
+            padding: 0.5rem 0.75rem;
+            overflow: hidden;
+            font-family: 'Salesforce Sans', Arial, sans-serif;
+        }
+        .apr-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 0 0 auto;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .apr-toolbar label {
+            margin: 0;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: #181818;
+            line-height: 1.875rem;
+        }
+        .apr-toolbar select {
+            height: 1.875rem;
+            margin: 0;
+            padding: 0 0.5rem;
+            border: 1px solid #c9c9c9;
+            border-radius: 0.25rem;
+            background: #fff;
+            font-size: 0.8125rem;
+            box-sizing: border-box;
+        }
+        .apr-chart {
+            flex: 1 1 auto;
+            min-height: 0;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .apr-chart-scaler {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform-origin: top center;
+            will-change: transform;
+        }
+        .reportTitle {
+            text-align: center;
+        }
+    </style>
+
+    <div class="apr-wrap">
+        <div class="apr-toolbar" id="aprToolbar">
+            <label for="aprReportSelect">Report</label>
+            <select id="aprReportSelect" onchange="aprChangeReport(this.value)">
+                <option value="00OOz000006dgyPMAQ">YoY Revenue</option>
+                <option value="00OOz000006dh01MAA">Monthly Revenue</option>
+                <option value="00OOz000006dh1dMAA">Margin History</option>
+            </select>
+        </div>
+
+        <div class="apr-chart" id="aprChartHost">
+            <div class="apr-chart-scaler" id="aprChartScaler">
+                <analytics:reportChart reportId="{!selectedReport}"
+                    size="medium"
+                    cacheResults="true"
+                    cacheAge="3600000"
+                    showRefreshButton="true"
+                    hideOnError="false"
+                    filter="{column:'ACCOUNT_ID',operator:'equals',value:'{!AccountPlan.AccountId}'}"
+                />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var currentId = '{!JSENCODE(selectedReport)}';
+            var select = document.getElementById('aprReportSelect');
+            if (select) {
+                select.value = currentId;
+            }
+
+            window.aprChangeReport = function (reportId) {
+                var params = new URLSearchParams(window.location.search);
+                params.set('reportId', reportId);
+                window.location.search = params.toString();
+            };
+
+            var resizeTimer = null;
+            var lastApplied = '';
+            var naturalW = 0;
+            var naturalH = 0;
+
+            function measureUnscaled(el) {
+                var w = Math.max(el.scrollWidth || 0, el.offsetWidth || 0);
+                var h = Math.max(el.scrollHeight || 0, el.offsetHeight || 0);
+                var nodes = el.querySelectorAll('iframe, img, table, canvas, svg');
+                for (var i = 0; i < nodes.length; i++) {
+                    var n = nodes[i];
+                    w = Math.max(w, n.scrollWidth || 0, n.offsetWidth || 0);
+                    h = Math.max(h, n.scrollHeight || 0, n.offsetHeight || 0);
+                }
+                var child = el.firstElementChild;
+                if (child) {
+                    w = Math.max(w, child.scrollWidth || 0, child.offsetWidth || 0);
+                    h = Math.max(h, child.scrollHeight || 0, child.offsetHeight || 0);
+                }
+                return { w: w, h: h };
+            }
+
+            function aprFitChart() {
+                var host = document.getElementById('aprChartHost');
+                var scaler = document.getElementById('aprChartScaler');
+                if (!host || !scaler) {
+                    return;
+                }
+
+                var hostRect = host.getBoundingClientRect();
+                var availW = Math.max(hostRect.width || host.clientWidth || 0, 50);
+                var availH = Math.max(hostRect.height || host.clientHeight || 0, 50);
+
+                scaler.style.transform = 'translateX(-50%)';
+                void scaler.offsetWidth;
+                var size = measureUnscaled(scaler);
+                if (size.w < 20 || size.h < 20) {
+                    return;
+                }
+
+                naturalW = Math.max(naturalW, size.w);
+                naturalH = Math.max(naturalH, size.h);
+
+                var scale = Math.min(availW / naturalW, availH / naturalH);
+                scale = Math.max(scale * 0.92, 0.1);
+
+                var next = scale.toFixed(4) + ':' + Math.round(availW) + 'x' + Math.round(availH) +
+                    ':' + Math.round(naturalW) + 'x' + Math.round(naturalH);
+                if (next === lastApplied) {
+                    return;
+                }
+                lastApplied = next;
+
+                scaler.style.transform =
+                    'translateX(-50%) scale(' + scale + ')';
+
+                void scaler.offsetWidth;
+                var scaled = scaler.getBoundingClientRect();
+                var hostBottom = hostRect.top + availH;
+                var hostRight = hostRect.left + availW;
+                var overflowH = scaled.bottom - hostBottom;
+                var overflowW = scaled.right - hostRight;
+                var overflowLeft = hostRect.left - scaled.left;
+                if (overflowH > 1 || overflowW > 1 || overflowLeft > 1) {
+                    var fix = scale;
+                    if (scaled.height > 0 && overflowH > 1) {
+                        fix = Math.min(fix, scale * ((scaled.height - overflowH) / scaled.height));
+                    }
+                    if (scaled.width > 0 && (overflowW > 1 || overflowLeft > 1)) {
+                        var widthFix = scale * (availW / scaled.width) * 0.98;
+                        fix = Math.min(fix, widthFix);
+                    }
+                    fix = Math.max(fix * 0.98, 0.1);
+                    lastApplied = fix.toFixed(4) + ':' + Math.round(availW) + 'x' + Math.round(availH) +
+                        ':' + Math.round(naturalW) + 'x' + Math.round(naturalH);
+                    scaler.style.transform =
+                        'translateX(-50%) scale(' + fix + ')';
+                }
+            }
+
+            function aprFitSoon() {
+                if (resizeTimer) {
+                    clearTimeout(resizeTimer);
+                }
+                resizeTimer = setTimeout(function () {
+                    lastApplied = '';
+                    aprFitChart();
+                }, 50);
+            }
+
+            window.addEventListener('load', function () {
+                aprFitChart();
+                setTimeout(aprFitChart, 400);
+                setTimeout(aprFitChart, 1000);
+                setTimeout(aprFitChart, 1500);
+            });
+
+            window.addEventListener('resize', aprFitSoon);
+            if (window.visualViewport) {
+                window.visualViewport.addEventListener('resize', aprFitSoon);
+            }
+            try {
+                if (window.parent && window.parent !== window) {
+                    window.parent.addEventListener('resize', aprFitSoon);
+                }
+            } catch (e) {
+                // cross-origin parent; ignore
+            }
+
+            if (window.ResizeObserver) {
+                var ro = new ResizeObserver(function () {
+                    aprFitSoon();
+                });
+                var hostEl = document.getElementById('aprChartHost');
+                var wrapEl = document.querySelector('.apr-wrap');
+                if (hostEl) {
+                    ro.observe(hostEl);
+                }
+                if (wrapEl) {
+                    ro.observe(wrapEl);
+                }
+                ro.observe(document.documentElement);
+            }
+        })();
+    </script>
+</apex:page>
