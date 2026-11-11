@@ -1338,7 +1338,12 @@ global without sharing class OCCommunitiesResourceHelper {
         return result;
     }
 
+    @TestVisible private static Boolean sandboxOverride = null;
+
     public static Boolean runningInASandbox() {
+        if (sandboxOverride != null) {
+            return sandboxOverride;
+        }
         return [SELECT Id, IsSandbox FROM Organization LIMIT 1].IsSandbox;
     }
     
@@ -1722,7 +1727,7 @@ global without sharing class OCCommunitiesResourceHelper {
         }
         
         //Get User Account
-        List<Account> accounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r) Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: contact.AccountId];
+        List<Account> accounts = [Select Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name, Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c, Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress, Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: contact.AccountId];
         Account account = null;
         if(Accounts.size() > 0){
             account = accounts.get(0);
@@ -1731,7 +1736,9 @@ global without sharing class OCCommunitiesResourceHelper {
         
         //Get Parent Account
         Account parentAccount = null;
-        List<Account> parentAccounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r), Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: account.ParentId];
+        List<Account> parentAccounts = (account != null && account.ParentId != null)
+            ? [Select Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name, Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c, Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress, Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: account.ParentId]
+            : new List<Account>();
         if(ParentAccounts.size() > 0){
             parentAccount = parentAccounts.get(0);
         }
