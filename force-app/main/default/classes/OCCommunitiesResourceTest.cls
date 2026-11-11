@@ -1,1554 +1,1948 @@
-@IsTest 
-global without sharing class OCCommunitiesResourceTest implements HTTPCalloutMock{
- 
-    @IsTest(SeeAllData=false) global static void testGetRewards() {   
-    
-        OCCommunitiesResource.RewardsResponse result = new  OCCommunitiesResource.RewardsResponse();
-        
-        
-        /////////////
-        test.startTest();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
+global without sharing class OCCommunitiesResourceHelper {
 
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', OCC_RewardsValue__c=1 ,AccountId=account.Id, Sequence__c = 1, OCC_Rewards__c=true, OCC_RewardStepValue__c = 1, OCC_RewardStep__c = 1, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-        
-        //List<User> Users = [Select Name, ContactId from User where Id =: UserInfo.getUserId()];
-        
-        
-        User user1 = new User(
-            Username = System.now().millisecond() + '2test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user1);
-        
- 
-        
-        List<QuotesOrdersCredits_Header__c> qocHeaders = new List<QuotesOrdersCredits_Header__c>();
-        List<QuotesOrdersCredits_Header__c> qocHeaders2 = new List<QuotesOrdersCredits_Header__c>();
-        List<QuoteOrderCredit_Details__c> qocDetails = new List<QuoteOrderCredit_Details__c>();
-        List<QuoteOrderCredit_Details__c> qocDetails2 = new List<QuoteOrderCredit_Details__c>();
-        
-        for(Integer i = 0; i < 1; i++){
-            QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(RewardOverride__c=1, Customer__c = account.Id, Buyer__c = contact.Id, Date__c = system.today());
-            qocHeaders.add(header);
-        }
-        
-        insert qocHeaders; 
-        
-        for(Integer i = 0; i < 1; i++){
-            QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Date__c = system.today(), Type__c = 'Order', Status__c = 'Invoiced', OCC_RewardRedeemed__c = false);
-            qocHeaders2.add(header);
-        }
-        
-        insert qocHeaders2;         
-        
-        
-        for(Integer i = 0; i < qocHeaders2.size(); i++){
-            String headerId = qocHeaders2[i].Id;
-            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, /*Amount__c = 300,*/ Dollars__c = 300);
-            qocDetails2.add(detail);
-
-        }
-        
-        insert qocDetails2;
-        
-        
-        QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(SalesNote3__c ='RMA', RewardOverride__c=1 , Customer__c = account.Id, Buyer__c = contact.Id, Date__c = system.today(), Type__c = 'Credit', Status__c = 'Invoiced', OCC_RewardRedeemed__c = false);
-        insert header;
-        
-        
-        for(Integer i = 0; i < qocHeaders.size(); i++){
-            String headerId = qocHeaders[i].Id;
-            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, /*Amount__c = 300,*/ Dollars__c = 300);
-            qocDetails.add(detail);
-
-        }
-        
-        insert qocDetails;
-        
-        QuotesOrdersCredits_Header__c header1 = qocHeaders.get(0);
-        
-        Pending_Issue__c issue = new Pending_Issue__c(Account__c = account.Id, Order__c = header1.id,  Issue_Status__c = 'Open');
-        upsert issue;
-        
-        System.debug(LoggingLevel.ERROR, 'details=: ' + qocDetails);
-
-        test.stopTest();
-        
-        System.runAs(user1) {
-        result = OCCommunitiesResource.getRewards();
-        System.debug(result.Value);
-        System.assertEquals(true, result.Success);
-        }
-        
-    }
-    
-    @IsTest(SeeAllData=false) global static void testSendRFQOrder() {   
-    
-        OCCommunitiesResource.RFQResponse result = new OCCommunitiesResource.RFQResponse();
-        
-        test.startTest();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-        
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '444456');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', AccountId=account.Id, Sequence__c = 1, OCC_Rewards__c=true, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-       
-        
-        User user1 = new User(
-            Username = System.now().millisecond() + '3test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'chrisw@launchdm.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user1);
-        
- 
-        test.stopTest();
-        System.runAs(user1) {
-
-            OCCommunitiesResource.RFQRequest request = new OCCommunitiesResource.RFQRequest();
-            
-            request.RFQData = 'Test Email Body';
-            request.typeStr = 'Order';
-            List<OCCommunitiesResource.ImageData> ImageDataList = new List<OCCommunitiesResource.ImageData>();
-            OCCommunitiesResource.ImageData imData = new OCCommunitiesResource.ImageData();
-
-            imData.image = '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';
-            imData.name = 'test';
-            ImageDataList.add(imData);
-            
-            request.ImageData = ImageDataList;
-            result = OCCommunitiesResource.sendRFQ(JSON.serialize(request));
-            System.debug(LoggingLevel.ERROR, 'result1=: ' + result);
-            Boolean success = true;
-            System.assertEquals(true, success);
-       
-        }
-        
-    }
-    
-    @IsTest(SeeAllData=false) global static void testSendRFQRFQ() {   
-    
-        OCCommunitiesResource.RFQResponse result = new OCCommunitiesResource.RFQResponse();
-        
-        test.startTest();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', AccountId=account.Id, Sequence__c = 1, OCC_Rewards__c=true, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-
-        
-        User user1 = new User(
-            Username = System.now().millisecond() + '4test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'chrisw@launchdm.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        Database.insert(user1);
-        
- 
-        test.stopTest();
-        System.runAs(user1) {
-
-        
-            OCCommunitiesResource.RFQRequest request = new OCCommunitiesResource.RFQRequest();
-            
-            request.RFQData = 'Test Email Body';
-            request.typeStr = 'RFQ';
-            List<OCCommunitiesResource.ImageData> ImageDataList = new List<OCCommunitiesResource.ImageData>();
-            OCCommunitiesResource.ImageData imData = new OCCommunitiesResource.ImageData();
-
-            imData.image = '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';
-            imData.name = 'test';
-            ImageDataList.add(imData);
-            
-            request.ImageData = ImageDataList;
-            result = OCCommunitiesResource.sendRFQ(JSON.serialize(request));
-            System.debug(LoggingLevel.ERROR, 'result1=: ' + result);
-            Boolean success = true;
-            System.assertEquals(true, success);
-       
-        }
-        
-    }
-    
-    ///////////////////
-    @IsTest(SeeAllData=false) global static void testSendRFQRMA() {   
-    
-        OCCommunitiesResource.RFQResponse result = new OCCommunitiesResource.RFQResponse();
-        
-        test.startTest();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', AccountId=account.Id, Sequence__c = 1, OCC_Rewards__c=true, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-        
-        User user1 = new User(
-            Username = System.now().millisecond() + '5test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user1);
-        
- 
-        test.stopTest();
-        System.runAs(user1) {
-
-        
-            OCCommunitiesResource.RFQRequest request = new OCCommunitiesResource.RFQRequest();
-            
-            request.RFQData = 'Test Email Body';
-            request.typeStr = 'RMA';
-            List<OCCommunitiesResource.ImageData> ImageDataList = new List<OCCommunitiesResource.ImageData>();
-            OCCommunitiesResource.ImageData imData = new OCCommunitiesResource.ImageData();
-
-            imData.image = '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';
-            imData.name = 'test';
-            ImageDataList.add(imData);
-            
-            request.ImageData = ImageDataList;
-            result = OCCommunitiesResource.sendRFQ(JSON.serialize(request));
-            System.debug(LoggingLevel.ERROR, 'result1=: ' + result);
-            Boolean success = true;
-            System.assertEquals(true, success);
-       
-        }
-        
-    }
-    
-    
-    @IsTest(SeeAllData=false) global static void testsendEmail() {   
-    
-
-        OCCommunitiesResource.RFQResponse result = new OCCommunitiesResource.RFQResponse();
-        
-        test.startTest();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', AccountId=account.Id, Sequence__c = 1,  OCC_Rewards__c=true, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-       
-        
-        User user1 = new User(
-            Username = System.now().millisecond() + '6test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user1);
-
-        // Call as the running admin. Portal profiles in this org lack Single Email permission.
-        OCCommunitiesResource.EmailRequest request = new OCCommunitiesResource.EmailRequest();
-        request.Message = 'Test Email Body';
-        request.Email = 'chrisw@launchd.com';
-        request.Subject = 'test Subject';
-        result = OCCommunitiesResource.sendEmail(JSON.serialize(request));
-        System.debug(LoggingLevel.ERROR, 'result1=: ' + result);
-        // This org/profile may block single email in tests; still require a completed call.
-        System.assert(
-            result.Success == true
-                || (result.Message != null && result.Message.contains('NO_SINGLE_MAIL_PERMISSION')),
-            result.Message
-        );
-        test.stopTest();
-
-    }
-    
-    @IsTest(SeeAllData=false) global static void testFindQOCById() {   
-   
-		
-		OCCommunitiesResource.QOCDataResult result = new OCCommunitiesResource.QOCDataResult();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '111156');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', AccountId=account.Id, OCC_ViewAll__c = true, OCC_Rewards__c=true, Sequence__c = 1, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Email='chrisw@launchdm.com', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-        
-       
-                
-        User user1 = new User(
-            Username = System.now().millisecond() + '7test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user1);
-        
-        
-
-	        List<QuotesOrdersCredits_Header__c> qocHeaders = new List<QuotesOrdersCredits_Header__c>();
-	        List<QuoteOrderCredit_Details__c> qocDetails = new List<QuoteOrderCredit_Details__c>();
-	        
-	        for(Integer i = 0; i < 5; i++){
-	            QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Date__c = system.today());
-	            QuotesOrdersCredits_Header__c orderheader = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Type__c = 'Order', Date__c = system.today());
-	            qocHeaders.add(orderheader);
-	            qocHeaders.add(header);
-	        }
-	        
-	        insert qocHeaders; 
-	        
-	        QuotesOrdersCredits_Header__c header = qocHeaders.get(0);
-	        header.Notes__c = 'test notes';
-	        upsert header;
-	        
-	        /*
-	        ContentVersion content = new ContentVersion(Title = 'testTitle', QuotesOrdersCredits_Header__c = header.Id);
-	        insert content;
-	        */
-	        
-	        
-	        for(Integer i = 0; i < qocHeaders.size(); i++){
-	            String headerId = qocHeaders[i].Id;
-	            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, Dollars__c = 300);
-	            qocDetails.add(detail);
-	
-	        }
-	        
-	        insert qocDetails;
-	        
-	        QuoteOrderCredit_Details__c detailUpdate = qocDetails.get(0);
-	        detailUpdate.Put_up_1__c = '1 x 200';
-	        upsert detailUpdate;
-	        
-	        Pending_Issue__c issue = new Pending_Issue__c(Account__c = account.Id, Order__c = header.id,  Issue_Status__c = 'Open');
-	        upsert issue;
-	        
-	        System.debug(LoggingLevel.ERROR, 'details=: ' + qocDetails);
-	       
-	        //url is null
-	        Test.setCurrentPageReference(new PageReference('Page.OmniCableTemplate')); 
-	        PageReference pageRef = System.currentPageReference();
-	        String url = 'https://omnicable-developer-edition.na31.force.com';
-	        
-	        System.debug(LoggingLevel.ERROR, 'url=: ' + url);
-	        
-	    
-	        
-        System.runAs(user1) {
-            OCCommunitiesResource.QOCRequest request = new OCCommunitiesResource.QOCRequest();
-	        request.url = url;
-	        request.id = header.Id;
-	        
-	        result = OCCommunitiesResource.findQOCById(JSON.serialize(request));
-	        System.debug(LoggingLevel.ERROR, 'result1=: ' + result);
-	        System.assertEquals(true, result.Success);
-	       
-        }
-        
-    }
-    
-    
-    @IsTest(SeeAllData=false) global static void testGetCommunitiesDataVeiwAll() {   
-    
-		/*
-        OCCommunitiesResource.QOCDataResult result = new OCCommunitiesResource.QOCDataResult();
-       
- 		User user = [SELECT Id, ContactId, Name, Email, FirstName, LastName, Phone FROM User WHERE LastName = 'Tester'];
-        System.debug(LoggingLevel.ERROR, 'updateProfile User=: ' + user);
-
-        Contact contact = [SELECT Id, Name, Email, FirstName, LastName, Phone FROM Contact WHERE Id =: user.ContactId];
-        System.debug(LoggingLevel.ERROR, 'updateProfile Contact=: ' + contact);
-		*/
-		
-		OCCommunitiesResource.QOCDataResult result = new OCCommunitiesResource.QOCDataResult();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert account;
-        
-       
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', AccountId=account.Id, OCC_ViewAll__c = true, OCC_Rewards__c=true, Sequence__c = 1, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Email='chrisw@launchdm.com', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-        
-        
-        OCC_ApprovedAccount__c approvedAccount = new OCC_ApprovedAccount__c(Account__c=account.Id, Contact__c=contact.Id, Name='test');
-        insert approvedAccount;
-       
-                
-        User user1 = new User(
-            Username = System.now().millisecond() + '8test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user1);
-        
-        
-
-	        List<QuotesOrdersCredits_Header__c> qocHeaders = new List<QuotesOrdersCredits_Header__c>();
-	        List<QuoteOrderCredit_Details__c> qocDetails = new List<QuoteOrderCredit_Details__c>();
-	        
-	        for(Integer i = 0; i < 5; i++){
-	            QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Date__c = system.today());
-	            QuotesOrdersCredits_Header__c orderheader = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Type__c = 'Order', Date__c = system.today());
-	            qocHeaders.add(orderheader);
-	            qocHeaders.add(header);
-	        }
-	        
-	        insert qocHeaders; 
-	        
-	        QuotesOrdersCredits_Header__c header = qocHeaders.get(0);
-	        header.Notes__c = 'test notes';
-	        upsert header;
-	        
-	        /*
-	        ContentVersion content = new ContentVersion(Title = 'testTitle', QuotesOrdersCredits_Header__c = header.Id);
-	        insert content;
-	        */
-	        
-	        
-	        for(Integer i = 0; i < qocHeaders.size(); i++){
-	            String headerId = qocHeaders[i].Id;
-	            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, Dollars__c = 300);
-	            qocDetails.add(detail);
-	
-	        }
-	        
-	        insert qocDetails;
-	        
-	        QuoteOrderCredit_Details__c detailUpdate = qocDetails.get(0);
-	        detailUpdate.Put_up_1__c = '1 x 200';
-	        upsert detailUpdate;
-	        
-	        Pending_Issue__c issue = new Pending_Issue__c(Account__c = account.Id, Order__c = header.id,  Issue_Status__c = 'Open');
-	        upsert issue;
-	        
-	        System.debug(LoggingLevel.ERROR, 'details=: ' + qocDetails);
-	       
-	        //url is null
-	        Test.setCurrentPageReference(new PageReference('Page.OmniCableTemplate')); 
-	        PageReference pageRef = System.currentPageReference();
-	        String url = 'https://omnicable-developer-edition.na31.force.com';
-	        
-	        System.debug(LoggingLevel.ERROR, 'url=: ' + url);
-	        
-	    
-	        
-        System.runAs(user1) {
-            OCCommunitiesResource.QOCRequest request = new OCCommunitiesResource.QOCRequest();
-	        request.url = url;
-	        request.id = UserInfo.getUserId();
-	        
-	        result = OCCommunitiesResource.getCommunitiesData(JSON.serialize(request));
-	        System.debug(LoggingLevel.ERROR, 'result1=: ' + result);
-	        System.assertEquals(true, result.Success);
-	       
-        }
-        
-    }
-    
-    /*
-    @IsTest(SeeAllData=false) global static void testGetCommunitiesDataAdmin() {   
-   
-		
-		OCCommunitiesResource.QOCDataResult result = new OCCommunitiesResource.QOCDataResult();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Community Plus%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-		Account parent = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert parent;
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '2345678', ParentId = parent.Id);
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact( Email='chrisw@launchdm.com', AccountId=account.Id,  OCC_Rewards__c=true, Sequence__c = 1, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-                   
-        User user1 = new User(
-            Username = System.now().millisecond() + 'test12345@test.com',
-            ContactId = null,
-            ProfileId = profile1.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        insert(user1);
-		
-        
-        System.runAs(user1) {
-
-	        List<QuotesOrdersCredits_Header__c> qocHeaders = new List<QuotesOrdersCredits_Header__c>();
-	        List<QuoteOrderCredit_Details__c> qocDetails = new List<QuoteOrderCredit_Details__c>();
-	        
-	        for(Integer i = 0; i < 5; i++){
-	            QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Date__c = system.today());
-	            QuotesOrdersCredits_Header__c orderheader = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Type__c = 'Order', Date__c = system.today());
-	            qocHeaders.add(orderheader);
-	            qocHeaders.add(header);
-	        }
-	        
-	        insert qocHeaders; 
-	        
-	        QuotesOrdersCredits_Header__c header = qocHeaders.get(0);
-	        header.Notes__c = 'test notes';
-	        upsert header;
-	       
-	        
-	        for(Integer i = 0; i < qocHeaders.size(); i++){
-	            String headerId = qocHeaders[i].Id;
-	            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, Dollars__c = 300);
-	            qocDetails.add(detail);
-	
-	        }
-	        
-	        insert qocDetails;
-	        
-	        QuoteOrderCredit_Details__c detailUpdate = qocDetails.get(0);
-	        detailUpdate.Put_up_1__c = '1 x 200';
-	        upsert detailUpdate;
-	        
-	        Pending_Issue__c issue = new Pending_Issue__c(Account__c = account.Id, Order__c = header.id,  Issue_Status__c = 'Open');
-	        upsert issue;
-	        
-	        System.debug(LoggingLevel.ERROR, 'details=: ' + qocDetails);
-	       
-	        //url is null
-	        Test.setCurrentPageReference(new PageReference('Page.OmniCableTemplate')); 
-	        PageReference pageRef = System.currentPageReference();
-	        String url = 'https://omnicable-developer-edition.na31.force.com';
-	        
-	        System.debug(LoggingLevel.ERROR, 'url=: ' + url);
-	        
-	    
-	        OCCommunitiesResource.QOCRequest request = new OCCommunitiesResource.QOCRequest();
-	        request.url = url;
-	        request.id = UserInfo.getUserId();
-	        
-	        result = OCCommunitiesResource.getCommunitiesData(JSON.serialize(request));
-	        System.debug(LoggingLevel.ERROR, 'result1=: ' + result);
-	        System.assertEquals(true, result.Success);
-	       
-        }
-        
-    }
-    */
-    
-    @IsTest(SeeAllData=false) global static void testGetCommunitiesDataApproved() {   
-   
-		
-		OCCommunitiesResource.QOCDataResult result = new OCCommunitiesResource.QOCDataResult();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-		Account parent = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert parent;
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '1345678', ParentId = parent.Id);
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', OCC_ViewAll__c = false, OCC_ViewApproved__c = true, AccountId=account.Id,  OCC_Rewards__c=true, Sequence__c = 1, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-                   
-        User user1 = new User(
-            Username = System.now().millisecond() + '9test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US',
-            ManagerId = null
-        );
-        
-        insert(user1);
-		
-        
-        
-
-	        List<QuotesOrdersCredits_Header__c> qocHeaders = new List<QuotesOrdersCredits_Header__c>();
-	        List<QuoteOrderCredit_Details__c> qocDetails = new List<QuoteOrderCredit_Details__c>();
-	        
-	        for(Integer i = 0; i < 5; i++){
-	            QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Date__c = system.today());
-	            QuotesOrdersCredits_Header__c orderheader = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Type__c = 'Order', Date__c = system.today());
-	            qocHeaders.add(orderheader);
-	            qocHeaders.add(header);
-	        }
-	        
-	        insert qocHeaders; 
-	        
-	        QuotesOrdersCredits_Header__c header = qocHeaders.get(0);
-	        header.Notes__c = 'test notes';
-	        upsert header;
-	       
-	        
-	        for(Integer i = 0; i < qocHeaders.size(); i++){
-	            String headerId = qocHeaders[i].Id;
-	            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, Dollars__c = 300);
-	            qocDetails.add(detail);
-	
-	        }
-	        
-	        insert qocDetails;
-	        
-	        QuoteOrderCredit_Details__c detailUpdate = qocDetails.get(0);
-	        detailUpdate.Put_up_1__c = '1 x 200';
-	        upsert detailUpdate;
-	        
-	        Pending_Issue__c issue = new Pending_Issue__c(Account__c = account.Id, Order__c = header.id,  Issue_Status__c = 'Open');
-	        upsert issue;
-	        
-	        System.debug(LoggingLevel.ERROR, 'details=: ' + qocDetails);
-	       
-	        //url is null
-	        Test.setCurrentPageReference(new PageReference('Page.OmniCableTemplate')); 
-	        PageReference pageRef = System.currentPageReference();
-	        String url = 'https://omnicable-developer-edition.na31.force.com';
-	        
-	        System.debug(LoggingLevel.ERROR, 'url=: ' + url);
-	        
-	    
-	        
-        System.runAs(user1) {
-            OCCommunitiesResource.QOCRequest request = new OCCommunitiesResource.QOCRequest();
-	        request.url = url;
-	        request.id = UserInfo.getUserId();
-	        
-	        result = OCCommunitiesResource.getCommunitiesData(JSON.serialize(request));
-	        System.debug(LoggingLevel.ERROR, 'result1=: ' + result);
-	        System.assertEquals(true, result.Success);
-	       
-        }
-        
-    }
-    
-    @IsTest(SeeAllData=false) global static void testGetCommunitiesData() {   
-
-        OCCommunitiesResource.QOCDataResult result = new OCCommunitiesResource.QOCDataResult();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', AccountId=account.Id, OCC_ViewAll__c = false,  OCC_Rewards__c=true, Sequence__c = 1, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-        
-                
-        User user1 = new User(
-            Username = System.now().millisecond() + '10test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user1);
-        
- 
-        
-
-	        List<QuotesOrdersCredits_Header__c> qocHeaders = new List<QuotesOrdersCredits_Header__c>();
-	        List<QuoteOrderCredit_Details__c> qocDetails = new List<QuoteOrderCredit_Details__c>();
-	        
-	        for(Integer i = 0; i < 5; i++){
-	            QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Date__c = system.today());
-	            QuotesOrdersCredits_Header__c orderheader = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Type__c = 'Order', Date__c = system.today());
-	            qocHeaders.add(orderheader);
-	            qocHeaders.add(header);
-	        }
-	        
-	        insert qocHeaders; 
-	        
-	        QuotesOrdersCredits_Header__c header = qocHeaders.get(0);
-	        header.Notes__c = 'test notes';
-	        upsert header;
-	        
-	        for(Integer i = 0; i < qocHeaders.size(); i++){
-	            String headerId = qocHeaders[i].Id;
-	            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, Dollars__c = 300);
-	            qocDetails.add(detail);
-	
-	        }
-	        
-	        insert qocDetails;
-	        
-	        QuoteOrderCredit_Details__c detailUpdate = qocDetails.get(0);
-	        detailUpdate.Put_up_1__c = '1 x 200';
-	        upsert detailUpdate;
-	        
-	        Pending_Issue__c issue = new Pending_Issue__c(Account__c = account.Id, Order__c = header.id,  Issue_Status__c = 'Open');
-	        upsert issue;
-	        
-	        System.debug(LoggingLevel.ERROR, 'details=: ' + qocDetails);
-	       
-	        //url is null
-	        Test.setCurrentPageReference(new PageReference('Page.OmniCableTemplate')); 
-	        PageReference pageRef = System.currentPageReference();
-	        String url = 'https://omnicable-developer-edition.na31.force.com';
-	        
-	        System.debug(LoggingLevel.ERROR, 'url=: ' + url);
-	        
-	    
-	        
-        System.runAs(user1) {
-            OCCommunitiesResource.QOCRequest request = new OCCommunitiesResource.QOCRequest();
-	        request.url = url;
-	        request.id = UserInfo.getUserId();
-	        
-	        result = OCCommunitiesResource.getCommunitiesData(JSON.serialize(request));
-	        System.debug(LoggingLevel.ERROR, 'result1=: ' + result);
-	        System.assertEquals(true, result.Success);
-	       
-        }
-        
-    }
-    
-    @IsTest(SeeAllData=false) global static void testuploadProfilePhoto(){
+    public static OCCommunitiesResource.UploadPhotoResult uploadProfilePhoto(OCCommunitiesResource.UploadPhotoRequest request, Id contactId){
         OCCommunitiesResource.UploadPhotoResult result = new OCCommunitiesResource.UploadPhotoResult();
-        OCCommunitiesResource.UploadPhotoRequest request = new OCCommunitiesResource.UploadPhotoRequest();
-    	
-    	/*
-        User user = [SELECT Id, ContactId, Name, Email, FirstName, LastName, Phone FROM User WHERE LastName = 'Tester'];
-        System.debug(LoggingLevel.ERROR, 'updateProfile User=: ' + user);
-
-        Contact contact = [SELECT Id, Name, OCC_Photo__c ,Email, FirstName, LastName, Phone FROM Contact WHERE Id =: user.ContactId];
-        System.debug(LoggingLevel.ERROR, 'updateProfile Contact=: ' + contact);
-        */
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', AccountId=account.Id,  OCC_Rewards__c=true, Sequence__c = 1, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-                
-        User user = new User(
-            Username = System.now().millisecond() + '11test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user);
-        
-        
-        System.runAs(user) {
-        
-        
-            request.image = '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';
-            result = OCCommunitiesResource.uploadProfilePhoto(JSON.serialize(request));
-            System.debug(LoggingLevel.ERROR, 'uploadProfilePhoto result=: ' + result);
-            System.assertEquals(true, result.Success, result.Message);
-        
-        }
-        
-    }
-    
-    
-    @IsTest(SeeAllData=false) global static void testupdateProfile(){
-  
-        OCCommunitiesResource.ProfileResult result = new OCCommunitiesResource.ProfileResult();
-
-		Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Date bday = Date.newInstance(1980, 02, 02);
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Birthdate=bday , AccountId=account.Id,  OCC_Rewards__c=true, Sequence__c = 1, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Phone = '555-555-5555', Email='chrisw@launchdm.com', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-                
-        User user = new User(
-            Username = System.now().millisecond() + '12test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user);
-        
-        System.runAs(user) {
-
-
-            OCCommunitiesResource.ProfileRequest request = new OCCommunitiesResource.ProfileRequest();
+         
+        try{
+            /*
+            Blob imageBlob = EncodingUtil.base64Decode(request.image);
             
-            request.firstName = 'test first';
-            request.lastName = 'test last';
-            request.email = 'chrisw@launchdm.com';
-            request.phone = '555-555-5555';
-            request.contactId = contact.Id;
-            Date newBDay = Date.newInstance(1981, 02, 02);
-            request.month = '12';
-            request.day  =  '02';
-            request.year  =  '1980';
-             
+            ConnectApi.CommunityPage communityPage = ConnectApi.Communities.getCommunities(ConnectApi.CommunityStatus.Live);
+            List<ConnectApi.Community> community = communityPage.communities;
 
+            //TODO: Will there only be 1 community?
+            System.debug('#####' + community[0]);
             
-            result = OCCommunitiesResource.updateProfile(JSON.serialize(request));
-            System.debug(LoggingLevel.ERROR, 'updateProfile rsult=: ' + result);
-            System.assertEquals(true, result.Success, result.Message);
-       
+            ConnectApi.BinaryInput fileUpload = new ConnectApi.BinaryInput(imageBlob, 'image/jpg', request.title);
+            ConnectApi.Photo photoProfile = ConnectApi.ChatterUsers.setPhoto(community[0].id, UserInfo.getUserId() ,fileUpload);
+            */
+
+            List<Contact> contacts = [Select Id, Name, OCC_Photo__c from Contact where Id =: contactId];
+            Contact contact = null;
+            if (Contacts.size() > 0){
+                contact = Contacts.get(0);
+                contact.OCC_Photo__c = '<img alt="contact-image" src="data:image/jpeg;base64,' + request.image + '"></img>';
+                upsert contact;
+            }
+            
+            contact = [Select Id, Name, OCC_Photo__c from Contact where Id =: contactId].get(0);
+            result.Contact = contact;
+            
+            result.Success = true;
+        }catch(Exception e){
+            result.Success = false;
+            result.Message = e.getMessage();
         }
-    
+        
+        return result;
     }
-    
-    
-        ///////////////////
-     //static testMethod void testRedeemRewards() {
-     
-    @IsTest(SeeAllData=false) global static void testRedeemRewards() { 
-    
-        //////  
-        test.startTest();
-        
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
 
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456');
-        insert account;
-        
-        String newId = account.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', AccountId=account.Id,  OCC_Rewards__c=true, Sequence__c = 1, OCC_RewardStepValue__c = 3, OCC_RewardStep__c = 99, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
-        
-
-        
-                
-        User user1 = new User(
-            Username = System.now().millisecond() + '13test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        Database.insert(user1);
-        
-        
-
-        List<QuotesOrdersCredits_Header__c> qocHeaders = new List<QuotesOrdersCredits_Header__c>();
-        List<QuoteOrderCredit_Details__c> qocDetails = new List<QuoteOrderCredit_Details__c>();
-        
-        for(Integer i = 0; i < 2; i++){
-            QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(RewardOverride__c=2, Customer__c = account.Id, Buyer__c = contact.Id, Status__c = 'Invoiced', Type__c = 'Order', OCC_RewardRedeemed__c  = false, Date__c = system.today());
-            QuotesOrdersCredits_Header__c orderheader = new QuotesOrdersCredits_Header__c(Customer__c = account.Id, Buyer__c = contact.Id, Type__c = 'Order', Date__c = system.today());
-	        qocHeaders.add(orderheader);
-            qocHeaders.add(header);
-        }
-        
-        insert qocHeaders; 
-        
-        QuotesOrdersCredits_Header__c credit = new QuotesOrdersCredits_Header__c(RewardOverride__c=2, Customer__c = account.Id, Buyer__c = contact.Id, Status__c = 'Credit', Type__c = 'Credit', OCC_RewardRedeemed__c  = false, Date__c = system.today());
-        insert credit;
-        
-        for(Integer i = 0; i < qocHeaders.size(); i++){
-            String headerId = qocHeaders[i].Id;
-            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, Dollars__c = 300);
-            qocDetails.add(detail);
-
-        }
-        
-        insert qocDetails;
-        
-        
-        QuotesOrdersCredits_Header__c header1 = qocHeaders.get(0);
-        
-        Pending_Issue__c issue = new Pending_Issue__c(Account__c = account.Id, Order__c = header1.id,  Issue_Status__c = 'Open');
-	        upsert issue;
-        
-        System.debug(LoggingLevel.ERROR, 'details=: ' + qocDetails);
-
-        test.stopTest();
-        ////
-
-        
-        System.runAs(user1) {
-            Test.setMock(HttpCalloutMock.class, new OCCommunitiesResourceTest());
+    public static OCCommunitiesResource.RewardsResponse getRewards(Id contactId) {
         OCCommunitiesResource.RewardsResponse result = new OCCommunitiesResource.RewardsResponse();
-        OCCommunitiesResource.RewardsRequest request = new OCCommunitiesResource.RewardsRequest();
-        request.Name = 'McTesty';
-        request.Email = 'chrisw@launchdm.com';
-        request.AccountName = 'test Account';
+        
+        try {
 
-        result = OCCommunitiesResource.redeemRewards(JSON.serialize(request));
-        System.debug(LoggingLevel.ERROR, 'result4=: ' + result);
-        Boolean Success2 = true;
-        System.assertNotEquals(null, Success2);
+            
+            List<Contact> Contacts = [Select OCC_Rewards__c, OCC_RewardsValue__c  from Contact where Id =: contactId];
+            Contact contact = null;
+            if (Contacts.size() > 0){
+                contact = Contacts.get(0);
+            }
+            
+            Decimal total = 0;
+            
+            if(contact.OCC_RewardsValue__c != NULL){
+                total +=  contact.OCC_RewardsValue__c;
+            }
+            
+            for(QuotesOrdersCredits_Header__c header : [Select OCC_Rewards__c, RewardOverride__c, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where Buyer__r.Id =:contactId AND Status__c = 'Invoiced' AND Type__c = 'Order' AND OCC_RewardRedeemed__c = false]){
+                if(header.OCC_Rewards__c != NULL){
+                    
+                    if(header.RewardOverride__c != null){
+                        total += header.RewardOverride__c;
+                    }else{
+                        total += header.OCC_Rewards__c;
+                    }
+                    
+                }                
+                
+            }
+            
+            for(QuotesOrdersCredits_Header__c header : [Select OCC_Rewards__c, RewardOverride__c, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where Buyer__r.Id =:contactId AND Type__c = 'Credit' AND CreditRMAPortalType__c = 'Return' AND OCC_RewardRedeemed__c = false]){
+                if(header.OCC_Rewards__c != NULL){
+                    
+                    if(header.RewardOverride__c != null){
+                        total += header.RewardOverride__c;
+                    }else{
+                        total += header.OCC_Rewards__c;
+                    }
+                    
+                }
+            }
+            
+
+            result.Value = String.valueOf(total);
+            result.Message = String.valueOf(total);
+            result.Success = true;
+        } catch (Exception e) {
+            
+            result.Success = false;
+            result.Message = e.getMessage();
+
+            
+        }
+        
+        System.debug('TOTAL: ' + result.Value);
+        return result;
+    }
+    
+    public static OCCommunitiesResource.QOCDataResult findQOCById(OCCommunitiesResource.QOCRequest request,Id contactId){
+        OCCommunitiesResource.QOCDataResult result = new OCCommunitiesResource.QOCDataResult();
+        
+
+        try{                        
+            QuotesOrdersCredits_Header__c header =  [Select Id,  Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Purchase_Agent__r.Name, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c,  Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c WHERE QuotesOrdersCredits_Header__c.Id =: request.Id AND Buyer__c =: contactId AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled'];
+            
+            if(header != null){
+                
+                OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                quoteData.header = header;
+                result.quotes.add(quoteData);
+                    
+                List<QuoteOrderCredit_Details__c> details = [Select Id, Customer_Item__c, CableCode__c, Item_Markings__c, SalesPricePortal__c, NotesPortal__c, TotalDollarsPortal__c, Put_up_1__c, Put_up_2__c, Put_up_3__c, Put_up_4__c, Put_up_5__c, Put_up_6__c, Put_up_7__c, Spec_Sheet__c, C2SPRC__c, Name, Dollars__c, Expected_Date__c, Freight_Terms__c, Freight_Carrier__c, Item_Description__c,  Line_Item__c, Line_Number__c, Line_Status__c, Qty_Ordered__c, Qty_Shipped__c, TrackingURL__c, Order_Header__c, Received_Complete__c from QuoteOrderCredit_Details__c where Order_Header__c =: header.Id AND Line_Status__c != 'Cancelled'];
+                quoteData.details.addAll(details);
+                
+                List<ContentDocumentLink> docs = [Select Id, ContentDocumentId, ContentDocument.title, LinkedEntityId from ContentDocumentLink where LinkedEntityId =: header.Id];
+                for(ContentDocumentLink contentDoc : [Select Id, ContentDocumentId, ContentDocument.LatestPublishedVersionId, ContentDocument.title, LinkedEntityId from ContentDocumentLink where LinkedEntityId =: header.Id]) {
+                                    
+                    OCCommunitiesResource.QOCAttachment att = new OCCommunitiesResource.QOCAttachment();
+                    att.title = contentDoc.ContentDocument.title;
+                    att.url = request.url + '/sfc/servlet.shepherd/version/download/' + contentDoc.ContentDocument.LatestPublishedVersionId;
+                    att.image = request.url + '/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' + contentDoc.ContentDocument.LatestPublishedVersionId;
+                    quoteData.attachments.add(att);
+                }
+                
+            }else{
+                result.Message = 'No results found for Id: ' + request.Id;
+            }
+            
+            result.Success = true;
+            
+        }catch(Exception e){
+            //result.Message = e.getMessage();
+            result.Message = 'No results found for Id: ' + request.Id;
+        }
+        
+        return result;
+    }
+
+    public static OCCommunitiesResource.QOCDataResult getCommunitiesData(OCCommunitiesResource.QOCRequest request, Id contactId){
+        OCCommunitiesResource.QOCDataResult result = new OCCommunitiesResource.QOCDataResult();
+        
+        try{
+
+            Map<String, OCCommunitiesResource.QOCTypeData> qocMap = new Map<String, OCCommunitiesResource.QOCTypeData>();
+            Map<String, OCCommunitiesResource.QOCTypeData> pendingMap = new Map<String, OCCommunitiesResource.QOCTypeData>();
+            
+            List<String> headerIds = new List<String>();
+            List<String> pendingHeaderIds = new List<String>();
+            
+            List<String> accountIds = new List<String>();
+            
+            // List<User> Users = [Select Name, AccountId,FirstName, FullPhotoUrl, Photo__c, LastName, CommunityNickname, Email, Phone, UserRole.Name, ContactId, UserRoleId from User where ContactId =: contactId ];
+            // String roleId;
+            // if (Users.size() > 0){
+            //     result.user = Users.get(0);
+            //     result.BuyerId = contactId;  
+            //     roleId = result.user.UserRoleId;
+            // }
+            
+            List<Contact> Contacts = [Select Email, Name, OCC_Hide_Account_Access_Panel__c, Phone, FirstName, LastName, Buyer__c, PhotoUrl, OCC_Photo__c, OCC_ViewAll__c, OCC_ViewApproved__c, OCC_Rewards__c, Birthdate, OCC_RewardsValue__c, AccountId from Contact where Id =: contactId];
+            Contact contact = null;
+            String accountId;
+            if (Contacts.size() > 0){
+                contact = Contacts.get(0);
+                result.contact = contact;
+                result.Rewards = contact.OCC_Rewards__c;
+                accountId = contact.AccountId;
+                
+                //Add own account Id
+                accountIds.add(accountId);
+            }  
+            
+            
+            List<Account> Accounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r), Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: accountId];
+            List<Account> childAccounts = new List<Account>();
+            List<Account> allAccounts = new List<Account>();
+            
+            System.debug(LoggingLevel.ERROR, 'Accounts=: ' + Accounts.size());
+            
+            //account = users account           
+            Account account = null;
+            if (Accounts.size() > 0){
+                account = Accounts.get(0);
+                result.account = account;
+                result.manager1 = account.Owner;
+                result.manager2 = account.Outside_Salesperson__r;
+                
+                List<User> otherManagers = [Select Name, UserRole.Name, Email, Phone, FullPhotoUrl, Photo__c, ManagerId from User where Id  =: account.Outside_Salesperson__r.ManagerId];
+                if (otherManagers.size() > 0){
+                    result.manager3 = otherManagers.get(0);
+                   
+                }
+                
+                
+                //parent account
+                Account parentAccount = null;
+                List<Account> ParentAccounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r), Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: account.ParentId];
+                if(ParentAccounts.size() > 0){
+                    parentAccount = ParentAccounts.get(0);
+                    //NOTE: Removed 10-15-19
+                    //accountIds.add(parentAccount.Id);
+                }
+                
+                
+                //get all accounts where id = your account or parent account = parentId
+                System.debug(LoggingLevel.ERROR, 'parentAccount: ' + parentAccount);
+                if(contact.OCC_ViewAll__c == true){
+                    
+                    if(parentAccount != null){
+                        childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: parentAccount.Id Or Id =: account.Id Or Id =: parentAccount.Id) AND Active__c != 'D' ORDER BY Name];
+                    }else{
+                        childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: account.Id Or Id =: account.Id) AND Active__c != 'D' ORDER BY Name];
+                        
+                    }
+                    
+                    result.childAccounts = childAccounts;
+                    
+                    //Add all child accounts because contact has access
+                    for (Account act : result.childAccounts) {
+                        accountIds.add(act.Id);
+                    }
+
+                    
+                }else if(contact.OCC_ViewApproved__c == true){
+                    
+                    List<String> approvedAccountIds = new List<String>();
+                    for(OCC_ApprovedAccount__c approvedAccount : [Select Contact__c, Status__c, Account__c, Account__r.Active__c, Account__r.Name FROM OCC_ApprovedAccount__c where Contact__c =: contact.Id AND (Status__c = 'Accepted' OR Status__c = 'Pending')]){
+                        approvedAccountIds.add(approvedAccount.Account__c);
+                        result.approvedAccounts.add(approvedAccount);
+                        accountIds.add(approvedAccount.Account__c);
+                    }
+                    
+                    result.approvedAccountIds = approvedAccountIds;
+                    childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (/*ParentId =: account.Id Or */Id =: account.Id OR Id IN: approvedAccountIds) AND Active__c != 'D' ORDER BY Name];
+                    
+                    
+                    if(parentAccount != null){
+                        allAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: parentAccount.Id Or Id =: account.Id Or Id =: parentAccount.Id) AND Active__c != 'D' ORDER BY Name];
+                        // allAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: parentAccount.Id Or Id =: account.Id) AND Active__c != 'D' ORDER BY Name];
+
+                    }else{
+                        allAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: account.Id Or Id =: account.Id) AND Active__c != 'D' ORDER BY Name];
+                    }
+                    
+                    result.allAccounts = allAccounts;
+                    result.childAccounts = childAccounts;
+
+                    //Add all accounts contact has access to and child accounts
+                    // for (Account act : result.allAccounts) {
+                    //     accountIds.add(act.Id);
+                    // }
+
+                    for (Account act : result.childAccounts) {
+                        accountIds.add(act.Id);
+                    }
+
+
+
+                }else{
+
+                    childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: account.Id Or Id =: account.Id) AND Active__c != 'D' ORDER BY Name];
+                    result.childAccounts = childAccounts;
+
+                    //Only contact's account and child accounts
+                    for (Account act : result.childAccounts) {
+                        accountIds.add(act.Id);
+                    }
+
+
+                }
+            
+                
+            }
+            
+            
+            List<OCC_ContactSlider__c> contactSlider = [Select Name, URL__c, LinkUrl__c, Index__c from OCC_ContactSlider__c where Contact__c =: contactId ORDER BY OCC_ContactSlider__c.Index__c];
+            
+            if (contactSlider.size() == 0){
+                contactSlider = [Select Name, URL__c, LinkUrl__c, Index__c from OCC_ContactSlider__c where Contact__c = Null ORDER BY OCC_ContactSlider__c.Index__c];
+            }
+            
+            result.contactSlider = contactSlider;
+            result.Message = String.valueOf(contactSlider.size());
+            
+       //     System.debug(LoggingLevel.ERROR, 'Occ1=: ' + user);
+            
+            
+            // List<UserRole> roles = [Select Id, Name from UserRole where Id =: roleId];
+            
+            // Removed:  This should not be used  since everything relies on contact
+            // if(contact == null){
+            //     result.AccountType = 'System Admin';
+                
+            //     for(QuotesOrdersCredits_Header__c header : [Select Id, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c,  Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c,  Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c from QuotesOrdersCredits_Header__c WHERE QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS AND (QuotesOrdersCredits_Header__c.Status__c != 'Cancelled') AND (Type__c = 'RFQ' OR Type__c ='Release') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 5]) {
+                 
+            //         OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+            //         quoteData.header = header;
+            //         qocMap.put(header.Id, quoteData);
+            //         headerIds.add(header.Id);
+            //         result.quotes.add(quoteData);                    
+            //     }
+                
+            //     for(QuotesOrdersCredits_Header__c header : [Select Id, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c,  Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c,  Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c from QuotesOrdersCredits_Header__c WHERE QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS AND (QuotesOrdersCredits_Header__c.Status__c != 'Cancelled') AND (Type__c = 'Order') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 5]) {
+                 
+            //         OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+            //         quoteData.header = header;
+            //         qocMap.put(header.Id, quoteData);
+            //         headerIds.add(header.Id);
+            //         result.orders.add(quoteData);                    
+            //     }
+                                
+            // }else 
+            
+            if (contact.OCC_ViewAll__c == true){
+                result.AccountType = 'View All';
+                
+                for(QuotesOrdersCredits_Header__c header : [Select Id, of_Lines__c, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where (Customer__c IN: childAccounts OR Buyer__c =: contactId) /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'RFQ' OR Type__c = 'Release') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 5]) {
+                 
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = header;
+                    qocMap.put(header.Id, quoteData);
+                    headerIds.add(header.Id);
+                    result.quotes.add(quoteData);
+                    
+                }
+                                
+                for(QuotesOrdersCredits_Header__c header : [Select Id, of_Lines__c, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where (Customer__c IN: childAccounts OR Buyer__c =: contactId) /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND Type__c = 'Order' ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 5]) {
+                 
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = header;
+                    qocMap.put(header.Id, quoteData);
+                    headerIds.add(header.Id);
+                    result.orders.add(quoteData);
+                    
+                }
+
+
+            }else if (contact.OCC_ViewApproved__c == true){
+                
+                //TODO: add approved accounts
+                result.AccountType = 'View Approved Accounts';
+                for(QuotesOrdersCredits_Header__c header : [Select Id, of_Lines__c, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where (Customer__c IN: childAccounts OR Buyer__c =: contactId) /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'RFQ' Or Type__c ='Release') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 5]) {
+                 
+                   OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                   quoteData.header = header;
+                   qocMap.put(header.Id, quoteData);
+                   headerIds.add(header.Id);
+                   result.quotes.add(quoteData);
+                }
+                
+                for(QuotesOrdersCredits_Header__c header : [Select Id, of_Lines__c, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where (Customer__c IN: childAccounts OR Buyer__c =: contactId) /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Order') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 5]) {
+                 
+                   OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                   quoteData.header = header;
+                   qocMap.put(header.Id, quoteData);
+                   headerIds.add(header.Id);
+                   result.orders.add(quoteData);
+                }
+                
+            
+            }else{
+                result.AccountType = 'View Mine Only';
+                for(QuotesOrdersCredits_Header__c header : [Select Id,  of_Lines__c, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c , TotalDollars__c, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c  where Buyer__c =: contactId /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'RFQ' OR Type__c = 'Release') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 5]) {
+                 
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = header;
+                    qocMap.put(header.Id, quoteData);
+                    headerIds.add(header.Id);
+                    result.quotes.add(quoteData);                   
+                    
+                }
+                
+                for(QuotesOrdersCredits_Header__c header : [Select Id,  of_Lines__c, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c , TotalDollars__c, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c  where Buyer__c =: contactId /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Order') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 5]) {
+                 
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = header;
+                    qocMap.put(header.Id, quoteData);
+                    headerIds.add(header.Id);
+                    result.orders.add(quoteData);                   
+                    
+                }
+
+            }
        
-        }        
+            
+            for(QuoteOrderCredit_Details__c detail : [Select Id, Customer_Item__c, CableCode__c, Item_Markings__c, SalesPricePortal__c, NotesPortal__c, TotalDollarsPortal__c, Put_up_1__c, Put_up_2__c, Put_up_3__c, Put_up_4__c, Put_up_5__c, Put_up_6__c, Put_up_7__c, Spec_Sheet__c, C2SPRC__c, Name, Dollars__c, Expected_Date__c, Freight_Terms__c, Freight_Carrier__c, Item_Description__c,  Line_Item__c, Line_Number__c, Line_Status__c, Qty_Ordered__c, Qty_Shipped__c, TrackingURL__c, Order_Header__c, Received_Complete__c from QuoteOrderCredit_Details__c where Order_Header__c IN: headerIds AND Line_Status__c != 'Cancelled' ORDER BY QuoteOrderCredit_Details__c.Line_Number__c]) {
+            
+                OCCommunitiesResource.QOCTypeData quoteData =  qocMap.get(detail.Order_Header__c);
+                if(quoteData != null) {
+                    quoteData.details.add(detail);
+                }   
+            }
+            
+            /*
+            for(QuoteOrderCredit_Details__c pendingDetail : [Select Id, SalesPricePortal__c, TotalDollarsPortal__c, Put_up_1__c, Put_up_2__c, Put_up_3__c, Put_up_4__c, Put_up_5__c, Put_up_6__c, Put_up_7__c,  Spec_Sheet__c, C2SPRC__c, Name, Dollars__c, Expected_Date__c, Freight_Terms__c, Freight_Carrier__c, Item_Description__c, Line_Item__c, Line_Number__c, Line_Status__c, Qty_Ordered__c, TrackingURL__c, Order_Header__c from QuoteOrderCredit_Details__c where Order_Header__c IN: pendingHeaderIds AND Line_Status__c != 'Cancelled' ORDER BY QuoteOrderCredit_Details__c.Line_Number__c]) {
         
+                OCCommunitiesResource.QOCTypeData quoteData =  pendingMap.get(pendingDetail.Order_Header__c);
+                if(quoteData != null) {
+                    quoteData.details.add(pendingDetail);
+                }  
+                
+            } 
+            */
+            
+            List<ContentDocumentLink> docs = [Select Id, ContentDocumentId, ContentDocument.title, LinkedEntityId from ContentDocumentLink where LinkedEntityId IN: headerIds];
+            result.Message = String.valueOf(docs.size());
+           
+            for(ContentDocumentLink contentDoc : [Select Id, ContentDocumentId, ContentDocument.LatestPublishedVersionId, ContentDocument.title, LinkedEntityId from ContentDocumentLink where LinkedEntityId IN: headerIds]) {
+                OCCommunitiesResource.QOCTypeData quoteData =  qocMap.get(contentDoc.LinkedEntityId);
+                if(quoteData != null) {
+                                        
+                    OCCommunitiesResource.QOCAttachment att = new OCCommunitiesResource.QOCAttachment();
+                    att.title = contentDoc.ContentDocument.title;
+                    att.url = request.url + '/sfc/servlet.shepherd/version/download/' + contentDoc.ContentDocument.LatestPublishedVersionId;
+                    att.image = request.url + '/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' + contentDoc.ContentDocument.LatestPublishedVersionId;
+                    quoteData.attachments.add(att);
+                }
+                
+            }                     
+            /*
+            for(ContentVersion content : [Select Id, Title, QuotesOrdersCredits_Header__c from ContentVersion where QuotesOrdersCredits_Header__c IN: headerIds]) {
+            
+                OCCommunitiesResource.QOCTypeData quoteData =  qocMap.get(content.QuotesOrdersCredits_Header__c);
+                if(quoteData != null) {
+                    QOCAttachment att = new QOCAttachment();
+                    att.title = content.Title;
+                    att.url = request.url + '/sfc/servlet.shepherd/version/download/' + content.Id;
+                    att.image = request.url + '/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' + content.Id;
+                    quoteData.attachments.add(att);
+                }   
+            }
+            */
+            
+            result.rmfPOValues = OCCommunitiesResourceHelper.getPicklistValue('QuotesOrdersCredits_Header__c', 'RMF_PO__c');
+
+            /*
+            for (Account act : result.allAccounts) {
+                accountIds.add(act.Id);
+            }
+
+            for (Account act : result.childAccounts) {
+                accountIds.add(act.Id);
+            }
+
+            for (String id : result.approvedAccountIds) {
+                accountIds.add(id);
+            }
+            */
+
+            // result.alternativePartNumbers = OCCommunitiesResourceHelper.getAlternativePartNumbersAll(accountIds);
+            // result.deliveryAddresses = OCCommunitiesResourceHelper.getDeliveryAddresses(accountIds);
+            System.debug('ACCOUNT IDS: ' + accountIds);
+            // result.masterOrders = OCCommunitiesResourceHelper.getAllMasterOrders(accountIds);
+            result.siteUrl = URL.getSalesforceBaseUrl().toExternalForm();
+            // result.roles = roles;
+            result.Success = true;
+            
+        }catch(Exception e){
+            result.Success = false;
+            result.Message = e.getMessage();
+        }
+        
+        return result;
+    
+    }
+
+     /**
+     * @name sendRFQ
+     * @description Send the request for release and email appropriate managers
+     * @param Boolean favorite
+     * @param OCCommunitiesResource.RFQRequest request
+     * @param Id Contact id 
+    **/
+    public static OCCommunitiesResource.RFQResponse sendRFQ(OCCommunitiesResource.RFQRequest request, Id contactId) {
+        OCCommunitiesResource.RFQResponse result = new OCCommunitiesResource.RFQResponse();
+        
+        try{
+    
+            String baseBody = request.RFQData;
+            String contactName = '';
+            
+            List<Contact> Contacts = [Select Email, Name, FirstName, LastName, AccountId from Contact where Id =: contactId];
+            Contact contact = null;
+            if (Contacts.size() > 0){
+                contact = Contacts.get(0);
+                contactName = contact.Name;
+                System.debug(LoggingLevel.ERROR, 'RFQ- got contact = ' + contact.Email);
+            }
+            
+            //TODO:  get manager email from account number request.AccountNumber
+            String managerEmail = '';
+            List<Account> Accounts = [Select Id, ParentId, Account_Number__c, Outside_Salesperson__r.Email, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone from Account where Account_Number__c =: request.AccountNumber];
+            Account account = null;
+            if (Accounts.size() > 0){           
+                account = Accounts.get(0);
+                managerEmail = account.Owner.Email;
+            }
+            
+            //TODO: Check emails
+             String[] toAddress = new String[]{contact.Email};
+             
+            if(toAddress.size() > 0) {
+               
+                Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();  
+                //NOTE: toggle comment setToAddresses
+                message.setToAddresses(toAddress);
+                
+                if (request.imageData != null && request.imageData.size() > 0){
+                    List<Messaging.EmailFileAttachment> efas = new List<Messaging.EmailFileAttachment>();
+                    
+                    for(Integer i=0; i< request.imageData.size(); i++){
+                        OCCommunitiesResource.ImageData imgData = request.imageData.get(i);
+                        Blob imageBlob = EncodingUtil.base64Decode(imgData.image);
+                        Messaging.EmailFileAttachment efa = new Messaging.EmailFileAttachment();
+                        efa.setBody(imageBlob);
+                        efa.setFileName(imgData.name);
+                        efas.add(efa);
+                    }
+                    message.setFileAttachments(efas);
+                }
+            
+                message.setSaveAsActivity(true);
+                
+                if(request.typeStr.equals('RMA')){
+                    if(!runningInASandbox()){
+                        if(String.isNotBlank(managerEmail)){
+                            message.setBccAddresses(new String[] {'portal@omnicable.com', managerEmail});
+                        }else{
+                            message.setBccAddresses(new String[] {'portal@omnicable.com'});
+                        }
+                        message.setCcAddresses(new String[] {'RMAs@omnicable.com'});
+                        message.setSubject('RMA Request Received from myomnicable.com');
+                    }else{
+                        message.setSubject('TEST-RMA Request Received from myomnicable.com');
+                    }
+                    
+                    message.setSenderDisplayName('RMAs@omnicable.com');
+                    message.setReplyTo('RMAs@omnicable.com');
+                    baseBody = contact.FirstName + ', <br> <br>' +  'We have received your RMA request below from <a href="https://myomnicable.com"> myomnicable.com </a> and will contact you shortly. <br> <br> '  + baseBody + '<br> <br> <br> Thank you, <br> Omni Cable';
+                    
+                }else if(request.typeStr.equals('RFQ')){
+                    //NOTE: toggle comment setBccAddresses
+                    message.setBccAddresses(new String[] {'portal@omnicable.com'});
+                    if(String.isNotBlank(managerEmail)){
+                        message.setCcAddresses(new String[] {managerEmail});
+                        message.setReplyTo(managerEmail);
+                        message.setSenderDisplayName(managerEmail);
+                    }
+                    message.setSubject('RFQ Received from myomnicable.com');
+                    String siteUrl = URL.getSalesforceBaseUrl().toExternalForm();
+                    
+                    QuotesOrdersCredits_Header__c newQOC = new QuotesOrdersCredits_Header__c( RFQ_Text__c = request.RFQData, Customer__c = account.Id, Date__c = date.today(), Job_Reference__c = request.jobReferenceNumber, Mark_Number__c = request.markNumber, Buyer__c = contactId, Type__c = 'RFQ');
+                    insert newQOC;
+                    
+                    QuotesOrdersCredits_Header__c newFullQOC = [Select Id,  of_Lines__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Customer__r.ShippingStreet, Customer__r.ShippingCity, Customer__r.ShippingState, Customer__r.ShippingPostalCode, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c,  Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c WHERE Id = :newQOC.Id];
+                    
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = newFullQOC;
+                    result.quoteData = quoteData;
+                    
+                    baseBody = contact.FirstName + ', <br> <br>' +  'We have received your request for release from <a href="https://myomnicable.com"> myomnicable.com </a>. You will receive your quote shortly. <br> <br> <b>RFQ #:</b> ' +  newFullQOC.RFQNumber__c + '<br>'  + baseBody + '<br> <br> <br> Thanks for the opportunity, <br> Omni Cable';
+                    
+                }else if(request.typeStr.equals('Order')){
+                    if(!runningInASandbox()){
+                        message.setBccAddresses(new String[] {'portal@omnicable.com'});
+                        if(String.isNotBlank(managerEmail)){
+                            message.setCcAddresses(new String[] {managerEmail});
+                        }
+                        message.setSubject('Order Received from myomnicable.com');
+                    }else{
+                        message.setSubject('TEST-Order Received from myomnicable.com');
+                    }
+                    
+                    if(String.isNotBlank(managerEmail)){
+                        message.setSenderDisplayName(managerEmail);
+                        message.setReplyTo(managerEmail);
+                    }
+                    baseBody = contact.FirstName + ', <br> <br>' +  'Thank you for placing your order through <a href="https://myomnicable.com"> myomnicable.com </a>. You will receive an order confirmation shortly. <br> <br> '  + baseBody + '<br> <br> <br> Thank you, <br> Omni Cable';
+                }
+              
+                
+                message.setPlainTextBody(baseBody);
+                message.setHtmlBody(baseBody);
+    
+                Messaging.sendEmail(new Messaging.SingleEmailMessage[] { message });
+                
+            }
+            
+            result.Success = true;
+                        
+        } catch (Exception e) {
+            
+            result.Success = false;
+            result.Message = e.getMessage();
+            
+        }
+        
+        return result;
     }
     
-    
-    @IsTest(SeeAllData=false) global static void pollForNotifications() { 
-    	
-    	
-    	 /////////////
-        test.startTest();
+    public static OCCommunitiesResource.RFQResponse sendEmail(OCCommunitiesResource.EmailRequest request, Id contactId) {
+        OCCommunitiesResource.RFQResponse result = new OCCommunitiesResource.RFQResponse();
         
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
         
-        Account parentAccount = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '1234567');
-        insert parentAccount;
+        try{
+        
+            System.debug(LoggingLevel.ERROR, 'RFQ- about to parese send data');
 
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456', ParentId=parentAccount.Id);
-        insert account;
+            System.debug(LoggingLevel.ERROR, 'RFQ- data parsed');
+            
+            String contactName = '';
+            
+            List<Contact> Contacts = [Select Email, Name, FirstName, LastName, AccountId from Contact where Id =: contactId];
+            Contact contact = null;
+            String accountId;
+            if (Contacts.size() > 0){
+                contact = Contacts.get(0);
+                accountId = contact.AccountId;
+                contactName = contact.Name;
+                System.debug(LoggingLevel.ERROR, 'RFQ- got contact = ' + contact.Email);
+            }
+            
+            String managerEmail = '';
+            List<Account> Accounts = [Select Outside_Salesperson__r.Email, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone from Account where Id =: accountId];
+            Account account = null;
+            if (Accounts.size() > 0){
+                account = Accounts.get(0);
+                managerEmail = account.Outside_Salesperson__r.Email;
+            }
+            
+             String[] toAddress = new String[]{request.Email};
+             
+            if(toAddress.size() > 0) {
+               
+                Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();  
+                message.setToAddresses(toAddress);
+                if(String.isNotBlank(managerEmail)){
+                    message.setCcAddresses(new String[] {managerEmail});
+                }
+                message.setSaveAsActivity(true);
+                message.setSubject(request.Subject);
+                
+                String baseBody = request.Message;
+                
+                message.setPlainTextBody(baseBody);
+                message.setHtmlBody(baseBody);
+    
+                Messaging.sendEmail(new Messaging.SingleEmailMessage[] { message });
+                
+            }
+            
+            result.Success = true;
+            
+        } catch (Exception e) {
+            
+            result.Success = false;
+            result.Message = e.getMessage();
+            
+        }
         
-        Account account2 = new Account(Name='Test Account2', OCC_Rewards__c = true, Account_Number__c = '123455', ParentId=parentAccount.Id);
-        insert account2;
+        return result;
+    }
+    
+    public static OCCommunitiesResource.RewardsResponse redeemRewards(OCCommunitiesResource.RewardsRequest request, Id contactId) { // redeemRewards(String name, String email, Integer amount, String message) {    
         
-        String newId = account.Account_Number__c + ':1';
-        String newId2 = account2.Account_Number__c + ':1';
+        OCCommunitiesResource.RewardsResponse result = new OCCommunitiesResource.RewardsResponse();
+        //if (test.isRunningTest()) Test.setMock(HttpCalloutMock.class, new OCCommunitiesResourceTest());
         
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', OCC_ViewAll__c = true, AccountId=account.Id, Sequence__c = 1, OCC_Rewards__c=true, OCC_RewardStepValue__c = 1, OCC_RewardStep__c = 1, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
+        try {       
+   
+            Contact contact = [Select OCC_PendingRedeemIssue__c, OCC_Rewards__c, FirstName, LastName, Email, Name, OCC_RewardsValue__c, AccountId, Account.Name, Account.OCC_Rewards__c, Account.Owner.Email, Account.Additional_Salesperson__r.Email, Account.Outside_Salesperson__r.Email, Account.Outside_Salesperson__r.UserRole.Name from Contact where Id =: contactId FOR UPDATE];
+
+            if(contact != null && contact.Account != null && contact.Account.OCC_Rewards__c == true && contact.OCC_PendingRedeemIssue__c == false){
+                String name = (contact != null && contact.Name != null && contact.Name != '') ? contact.Name : request.Name;
+                
+                HeaderCalculationResult headerResults = getHeaderAndTotals(contact);
+                List<QuotesOrdersCredits_Header__c> redeemedHeaders = headerResults.headers;
+                Decimal total = headerResults.total;
+                result.OrginalValue = String.valueOf(total);
+
+                if(total > 0){
+                    HttpResponse res = tangoRewardCall(contact, request.Email, total);
+                    if (String.valueOf(res.getStatusCode()).startsWith('2')){
+                        
+                        Boolean saveResuls = updateHeaderQocs(redeemedHeaders, contact);
+
+                        contact.OCC_RewardsValue__c = 0;
+                        contact.OCC_RewardsTotal__c = 0; 
+                        contact.OCC_PendingRedeemIssue__c = !saveResuls;
+                        Database.SaveResult contactResult = Database.update(contact, false);
+                        
+                        String body = 'Account: ' + contact.Account.Name + ' <br/><br/>  Contact: ' + contact.Name + '<br/><br/> Redeemed Amount: '  + total + ' <br/><br/> Redeemed Date: ' +  System.now(); 
+                        String[] bccAddresses =  getManagerEmails(contact);
+                        sendEmail(new String[] {'portal@omnicable.com'},  bccAddresses, 'Tango Redeedemed by: ' + contact.Name , body);
+                        System.debug(LoggingLevel.INFO, 'Redeem - Success - before values updated ' + res.getBody());
+                        result.Success = true;
+                    }else{
+                        System.debug(LoggingLevel.ERROR, 'Redeem - Failure - before values updated ' + res.getBody());
+                        String body = 'Contact: ' + contact.Name + '<br/><br/> Total: ' + total + ' <br/><br/> Issue: The following contact tried to redeem their Tango Rewards with the following error.  <br/><br/> Tango Request Body: ' + res.getBody();
+                        sendEmail(new String[] {'portal@omnicable.com'},  new String[] {}, 'Tango Request Error', body);
+                        result.Message = 'Sorry but we are unable to process your request at the moment.  An email has been sent to nofity us of the issue';
+                        result.Success = false;
+                    }
+                    result.Value = getRewards(contactId).Value;
+                }else{
+                    result.Success = false;
+                    result.Value = '0';
+                    result.Message = 'You have 0 Tang Rewards to redeem at this time.';
+                }
+                
+                
+            }else{
+                result.Success = false;
+                result.Value = '0';
+
+                if(contact != null && contact.OCC_PendingRedeemIssue__c == true){
+                    result.Message = 'Rewards are temporarily unavailable.';
+                }else{
+                    result.Message = 'Tango Rewards are not available for this account.';
+                }
+            }
+            
+        } catch(Exception e) {
+
+            //TODO: Update contact to pendign issue because something went wrong
+            // Database.rollback(sp);
+            result.Success = false;
+            result.Message = e.getMessage();
+            System.debug('Error: ' + e.getMessage());
+        }
+        System.debug('Results: ' + result);
+        return result;
+
+    } 
+
+    public static String[] getManagerEmails(Contact contact){
+
+        String[] bccAddresses =  new String[]{};
+                        
+        if(contact.Account.Owner != null && contact.Account.Owner.Email != null){
+            bccAddresses.add(contact.Account.Owner.Email);
+        }
+
+        if(contact.Account.Outside_Salesperson__r != null && contact.Account.Outside_Salesperson__r.Email != null && contact.Account.Outside_Salesperson__r.UserRole != null &&  contact.Account.Outside_Salesperson__r.UserRole.Name != null && contact.Account.Outside_Salesperson__r.UserRole.Name != 'District Sales Manager 13'){
+            bccAddresses.add(contact.Account.Outside_Salesperson__r.Email);
+        }
+
+        if(contact.Account.Additional_Salesperson__r != null && contact.Account.Additional_Salesperson__r.Email != null){
+            bccAddresses.add(contact.Account.Additional_Salesperson__r.Email);
+        }
+
+        System.debug('Manager Emails Redeem: ' + bccAddresses);
+        return bccAddresses;
+    }
+
+    public static Boolean updateHeaderQocs(List<QuotesOrdersCredits_Header__c> redeemedHeaders, Contact contact){
         
-        Contact contact2 = new Contact(Contact_Title__c='Accounting', Email='chrisw2@launchdm.com', OCC_ViewAll__c = false, OCC_ViewApproved__c = true,  AccountId=account2.Id, Sequence__c = 1, OCC_Rewards__c=true, OCC_RewardStepValue__c = 1, OCC_RewardStep__c = 1, FirstName='Test', LastName='Williams', Ext_Id__c = newId2);
-        insert contact2;
+        //TODO: Production
+        Database.SaveResult[] quoteResults = Database.update(redeemedHeaders, false);   
+        Boolean saveSuccess = true;
+        Map<String,String> errorMap = new Map<String,String>();
+
+        try{
+
+            for (Integer i = 0; i < redeemedHeaders.size(); i++) {
+                Database.SaveResult s = quoteResults[i];
+                QuotesOrdersCredits_Header__c origRecord = redeemedHeaders[i];
+                if (!s.isSuccess()) {
+
+                    saveSuccess = false;
+                    String error = '';  
+                    for(Database.Error err : s.getErrors()) {
+                        error += 'Error Code: ' + err.getStatusCode() + '--' + ' Message: ' + err.getMessage() + ' Fields: ' + err.getFields();
+                    }
+                    errorMap.put(origRecord.Id, error);
+                } 
+            }
+    
+            System.debug('Save Success = ' + saveSuccess);
+            if (!saveSuccess){
+                contact.OCC_PendingRedeemIssue__c = true;
+                update contact;
+                System.debug('Error Map: ' + errorMap);
+                String body = 'Contact: ' + contact.Name + '<br/><br/> Issue: There was an issue updating orders after the following the above users tango redemption.  Please manually check the following headers to confirm the OCC_RewardRedeemed is checked <br/><br/> Headers Ids: ' + String.valueOf(errorMap);
+                sendEmail(new String[] {'portal@omnicable.com'}, new String[] {}, 'Order Issue: Tango Rewards Error', body);
+            }
+
+        }catch(Exception e){
+            contact.OCC_PendingRedeemIssue__c = true;
+            update contact;
+            System.debug('Error Map: ' + errorMap);
+            String body = 'Contact: ' + contact.Name + '<br/><br/> Issue: There was an issue updating orders after the following the above users tango redemption.  Please manually check the following headers to confirm the OCC_RewardRedeemed is checked <br/><br/> Headers Ids: ' + String.valueOf(errorMap);
+            sendEmail(new String[] {'portal@omnicable.com'}, new String[] {}, 'Order Issue: Tango Rewards Error', body);
+        }
+
+
+       return saveSuccess;
+
+    }
+
+    public class HeaderCalculationResult {
+        public Decimal total = 0;
+        public List<QuotesOrdersCredits_Header__c> headers = new List<QuotesOrdersCredits_Header__c>();
+    }
+
+    public static HeaderCalculationResult getHeaderAndTotals(Contact contact){
+        Decimal total = 0;
+        if(contact.OCC_RewardsValue__c != NULL){
+            total = total + contact.OCC_RewardsValue__c;
+            // contact.OCC_RewardsValue__c = 0;
+        }
+            
+        List<QuotesOrdersCredits_Header__c> redeemedHeaders = new List<QuotesOrdersCredits_Header__c>();
+        for(QuotesOrdersCredits_Header__c order : [Select Id, OCC_Rewards__c, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where Buyer__r.Id =:contact.Id AND ((Status__c = 'Invoiced' AND Type__c = 'Order') OR (Type__c = 'Credit' AND CreditRMAPortalType__c = 'Return')) AND OCC_RewardRedeemed__c  = false AND (OCC_Rewards__c != 0 OR RewardOverride__c != null)FOR UPDATE]){
+            if(order.OCC_Rewards__c != null){
+                if(order.RewardOverride__c != null){
+                    total = total + order.RewardOverride__c;
+                }else{
+                    total = total + order.OCC_Rewards__c;
+                }
+            } 
+            order.OCC_RewardRedeemed__c = true;  
+            redeemedHeaders.add(order);                  
+        }
         
-        OCC_BonusReward__c reward = new OCC_BonusReward__c(Name='Amount_5000_10', ActionDescription__c = 'your first 2 orders', Contact__c= contact.Id, ContactNotified__c=false, Redeemed__c=true, RewardValue__c=5);
-        OCC_BonusReward__c reward2 = new OCC_BonusReward__c(Name='Amount_5000_10', ActionDescription__c = 'your first 2 orders', Contact__c= contact2.Id, ContactNotified__c=false, Redeemed__c=false, RewardValue__c=5);
-        insert reward;
-        insert reward2;
+        HeaderCalculationResult result = new HeaderCalculationResult();
+        result.total = total;
+        result.headers = redeemedHeaders;
+        return result;
+    }
+
+	private static HttpResponse tangoRewardCall(Contact contact, String email, Decimal total) {
+        if (test.isRunningTest()) Test.setMock(HttpCalloutMock.class, new OCCommunitiesResourceTest());
+        System.debug('tangoreward call started');
+        Http httpProtocol = new Http();
+        HttpRequest req = new HttpRequest(); 
+        req.setHeader('content-type', 'application/json;charset=UTF-8');
+        String endpoint ='';
+        String message = 'Congratulations!';
+        
+
+        Tango_Credentials__c credentials = Tango_Credentials__c.getOrgDefaults();
+
+        
+        if(runningInASandbox()){
+            endpoint = 'https://integration-api.tangocard.com/raas/v2/orders';
+            req.setHeader('authorization', 'Basic T21uaUNhYmxlOkZkU1ohTFVXJEBIYXVERlVzdHRuWk9Abk5veklleWpTZndUJGplU3pHcVA=');
+        
+            String testFirstName = 'Chris';
+            String testLastName = 'Williams';
+            String testEmail = 'chriswill412@gmail.com';
+            req.setBody('{"accountIdentifier":"omnicable","customerIdentifier":"omnicable","subject":"Test Subject","message": "' + message + '","amount":1.0,"sendEmail":true, "etid":"E000000", "utid":"U561593","recipient":{"email":"' + testEmail+ '","firstName":"' + contact.FirstName + '","lastName":"' + contact.LastName + '"},"sender":{"email":"portal@omnicable.com","firstName":"OmniCable"}}');
+            
+        }else{
+            String apiKey = 'Basic ' + credentials.API_Key__c;
+            endpoint = 'https://api.tangocard.com/raas/v2/orders';
+            req.setHeader('authorization', apiKey);
+            req.setBody('{"accountIdentifier":"omnicable","customerIdentifier":"omnicable","message": "' + message + '","amount":"' + total + '","sendEmail":true, "utid":"U561593","recipient":{"email":"' + contact.Email + '","firstName":"' + contact.FirstName + '","lastName":"' + contact.lastName + '"},"sender":{"email":"portal@omnicable.com","firstName":"OmniCable"}, "etid":"E838072"}');             
+            
+        }
+        
+        req.setMethod('POST');
+        req.setEndPoint(endpoint);
+		HttpResponse response = new Http().send(req);
+        return response;
+	}
+
+    public static Boolean sendEmail(String[] toAddresses, String[] bccAddresses, String subject, String body){
+        Boolean success = true;
+        try {
+            Messaging.reserveMassEmailCapacity(toAddresses.size());
+            System.debug('Preparing to Send email');
+            Messaging.SingleEmailMessage emailMessage = new Messaging.SingleEmailMessage();  
+            
+            //TODO: Production
+            emailMessage.setToAddresses(toAddresses);
+            emailMessage.setBccAddresses(bccAddresses);
+
+            // emailMessage.setToAddresses(new String[] {'chrisw@launchdm.com'});
+            // emailMessage.setBccAddresses(new String[] {'chriswill412@gmail.com'});
+
+            emailMessage.setSubject(subject);
+            emailMessage.setHtmlBody(body);
+            List<Messaging.SendEmailResult> results = Messaging.sendEmail(new Messaging.SingleEmailMessage[] { emailMessage });
+            System.debug('Email Results: ' + results);
+            success = true;
+        }catch(Exception e){
+            System.debug('Email Error: ' + e.getMessage());
+            success = false;
+        }
+
+        
+        return success;
+    }
+    
+    public static OCCommunitiesResource.ProfileResult updateProfile(OCCommunitiesResource.ProfileRequest request){
+        
+        OCCommunitiesResource.ProfileResult result = new OCCommunitiesResource.ProfileResult();
+         
+        try{
+            
+            List<Contact> Contacts = [Select Name, FirstName, LastName, Email, Phone, Birthdate from Contact where Id =: request.contactId];
+            Contact contact = null;
+            if (Contacts.size() > 0){
+                contact = Contacts.get(0);
+            }
+            
+            if (request.firstName != null && request.firstName != ''){
+                contact.FirstName = request.firstName;
+            }
+            
+            if (request.lastName != null && request.lastName != ''){
+                contact.LastName = request.lastName;
+            }
+            
+            if (request.email != null && request.email != ''){
+                contact.Email = request.email;
+            }
+            
+            if (request.phone != null && request.phone != ''){
+                contact.Phone = request.phone;
+            }
+            
+            if (request.month != null && request.month != ''){
+                Date bday = Date.newInstance(Integer.valueOf(request.year), Integer.valueOf(request.month), Integer.valueOf(request.day));
+                contact.Birthdate = bday;
+            }
+            
+            update contact;
+            result.Success = true;
+        }catch (Exception e){
+            result.Success = false;
+            result.Message = e.getMessage();
+            
+        }
+        
+        return result;
+    }
   
-        OCC_ApprovedAccount__c approvedAccount = new OCC_ApprovedAccount__c(Account__c=account.Id, Contact__c=contact.Id, Name='test');
-        insert approvedAccount;
+    public static OCCommunitiesResource.AccountAccessResults requestAccountAccess(OCCommunitiesResource.AccountAccessRequest request, Id contactId){
         
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
+        OCCommunitiesResource.AccountAccessResults result = new OCCommunitiesResource.AccountAccessResults();
+        
+        try{
+            List<User> Users = [Select Id from User where ContactId =: contactId ];
+            String userId;
+            if (Users.size() > 0){
+                userId = Users.get(0).Id;
+            }
+            Contact contact = [SELECT AccountId FROM Contact WHERE Id =: contactId];
+
+            String accountId = contact.AccountId;
+
+            List<OCC_ApprovedAccount__c> deleteAccounts = [SELECT Id, Name from OCC_ApprovedAccount__c WHERE (Account__c IN: request.DeletedIds AND Contact__c =: contactId)];
+            if(deleteAccounts.size() > 0){
+                delete request.DeleteAccountLinks;
+            }
+            
+            List<OCC_ApprovedAccount__c> approvedAccounts = new List<OCC_ApprovedAccount__c>();
+            for(Integer i=0; i < request.Added.size(); i++){
+                OCCommunitiesResource.AccountRequest currRequest = request.Added.get(i);
+                OCC_ApprovedAccount__c  approvedAccount = new OCC_ApprovedAccount__c(Name=currRequest.Name, Account__c=currRequest.Account, Contact__c=contactId);
+                approvedAccounts.add(approvedAccount);
+                result.requestedIds.add(currRequest.Account);
+            }
+            
+            if(approvedAccounts.size() > 0){
+                insert approvedAccounts;
+            }
+            
+            
+            Account account = null;
+            List<Account> Accounts = [Select Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: accountId];
+            if(Accounts.size() > 0){
+                account = Accounts.get(0);
+            }
+            
+            User johnUser = [select Name, Email, Id from User where Email = 'jdean@omnicable.com' LIMIT 1];
+            // if(runningInASandbox()){
+            //     johnUser = [select Name, Email, Id from Contact where Email = 'jdean@omnicable.net'].get(0);
+            // }else{
+            //     johnUser = [select Name, Email, Id from Contact where Email = 'jdean@omnicable.com'].get(0);
+            // }
+            
+            
+            for(Integer i=0; i < approvedAccounts.size(); i++){
+                // Create an approval request
+                Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
+                req1.setComments('Submitting Request for Account Access');
+                req1.setObjectId(approvedAccounts.get(i).Id);
+                
+                Id[] approvalIds = new List<Id>();
+                
+                /*
+                Group approvalGroup = null;
+                
+                List<Group> approvalGroups = [SELECT Id FROM Group WHERE Name =: user.Name AND Type='Queue'];
+                
+                if(approvalGroups.size() == 0){
+                    approvalGroup = new Group(Name=user.Name, Type='Queue');
+                    insert approvalGroup;
+                    
+                    List<GroupMember> GMlist = new List<GroupMember>();
+                    
+                    if(!runningInASandbox()){
+                        
+                        GMlist = new List<GroupMember>{
+                            new GroupMember(GroupId  = approvalGroup.Id, UserOrGroupId = request.RegionalManagerId),
+                            new GroupMember(GroupId  = approvalGroup.Id, UserOrGroupId = johnUser.Id)
+                        };
+                        
+                    }else{
+                        
+                        GMlist = new List<GroupMember>{
+                            new GroupMember(GroupId  = approvalGroup.Id, UserOrGroupId = user.Id),
+                            new GroupMember(GroupId  = approvalGroup.Id, UserOrGroupId = johnUser.Id)
+                        };
+                        
+                    }
+
+                    insert GMlist;
+                }else{
+                    approvalGroup = approvalGroups.get(0);
+                }
+                
+                */
+                
+                 if(!runningInASandbox()){
+                    
+                    if(request.RegionalManagerId != null){
+                        approvalIds.add(Id.valueOf(request.RegionalManagerId));
+                    }else{
+                        approvalIds.add(johnUser.Id);
+                    }
+                    
+                }else{
+                    
+                    approvalIds.add(userId);
+                    
+                }
                 
                 
-         User user2 = new User(
-            Username = System.now().millisecond() + '14test12345@test.com',
-            ContactId = contact2.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
+                req1.setNextApproverIds(approvalIds);
         
-        Database.insert(user2); 
-        
-        User user1 = new User(
-            Username = System.now().millisecond() + '15test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345666666',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user1);  
-        
-        OCC_BonusReward__c bonusreward = new OCC_BonusReward__c();
-        bonusreward.Contact__c = contact.Id;
-        bonusreward.ActionDescription__c = '';
-        bonusreward.ContactNotified__c = false;
-        bonusreward.Redeemed__c = true;
-        bonusreward.RewardValue__c = 10;
-        bonusreward.Name = 'Amount_5000_10'; 
-        insert bonusreward;   
-        
-        
-        OCC_BonusReward__c bonusreward2 = new OCC_BonusReward__c();
-        bonusreward2.Contact__c = contact2.Id;
-        bonusreward2.ActionDescription__c = '';
-        bonusreward2.ContactNotified__c = false;
-        bonusreward2.Redeemed__c = true;
-        bonusreward2.RewardValue__c = 10;
-        bonusreward2.Name = 'Amount_5000_10';
-        insert bonusreward2;
- 
-        
-        
-        	
-        	List<QuotesOrdersCredits_Header__c> qocHeaders = new List<QuotesOrdersCredits_Header__c>();
-	        List<QuoteOrderCredit_Details__c> qocDetails = new List<QuoteOrderCredit_Details__c>();
-	        
-	        
-	        QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(Name='1234', Customer__c = account.Id, Buyer__c = contact.Id, Status__c = 'Invoiced', Type__c = 'Order', OCC_RewardRedeemed__c  = true, Date__c = system.today());
-	        QuotesOrdersCredits_Header__c header2 = new QuotesOrdersCredits_Header__c(Name='12345',Customer__c = account2.Id, Buyer__c = contact2.Id, Status__c = 'Invoiced', Type__c = 'Order', OCC_RewardRedeemed__c  = true, Date__c = system.today());
-	        QuotesOrdersCredits_Header__c headerQ = new QuotesOrdersCredits_Header__c(Name='1234', Customer__c = account.Id, Buyer__c = contact.Id, Status__c = 'Open', Type__c = 'Quote', OCC_RewardRedeemed__c  = true, Date__c = system.today());
-	        QuotesOrdersCredits_Header__c headerQ2 = new QuotesOrdersCredits_Header__c(Name='12345',Customer__c = account2.Id, Buyer__c = contact2.Id, Status__c = 'Open', Type__c = 'Quote', OCC_RewardRedeemed__c  = true, Date__c = system.today());
-	        qocHeaders.add(headerQ);
-	        qocHeaders.add(headerQ2);
-	        qocHeaders.add(header);
-	        qocHeaders.add(header2);
-	        
-	        QuotesOrdersCredits_Header__c credit = new QuotesOrdersCredits_Header__c(Type__c='Credit', Customer__c = account2.Id, Buyer__c = contact2.Id, OCC_RewardRedeemed__c  = true, Date__c = system.today(), SalesNote3__c ='RMA', Total_Order_Sales__c = 1);
-	        qocHeaders.add(credit);
-	        
-	        QuotesOrdersCredits_Header__c orderheader = new QuotesOrdersCredits_Header__c(Name='123456',Customer__c = account.Id, Buyer__c = contact.Id, Type__c = 'Order', Date__c = system.today());
-	        QuotesOrdersCredits_Header__c orderheader2 = new QuotesOrdersCredits_Header__c(Name='1234567',Customer__c = account2.Id, Buyer__c = contact2.Id, Type__c = 'Order', Date__c = system.today());
-	        qocHeaders.add(orderheader);
-	        qocHeaders.add(orderheader2);
-	        
-	        insert qocHeaders;
-	       
-	        
-	        for(Integer i = 0; i < qocHeaders.size(); i++){
-	            String headerId = qocHeaders[i].Id;
-	            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, Dollars__c = 300);
-	            qocDetails.add(detail);
-	
-	        }
-        
-        	insert qocDetails;
-        
-        
-        	QuotesOrdersCredits_Header__c header1 = qocHeaders.get(0);
-        
-        	Pending_Issue__c issue = new Pending_Issue__c(Account__c = account.Id, Order__c = header1.id,  Issue_Status__c = 'Open');
-	        upsert issue;
-        	
-        	
-        	
-        	
-        System.runAs(user1) {
-            OCCommunitiesResource.NotificationResults result = OCCommunitiesResource.pollForNotifications('');
-        	System.assertEquals(true, result.hasMessage);
-        	
-        	
-        	OCCommunitiesResource.DeleteAccountRequest request = new OCCommunitiesResource.DeleteAccountRequest();
-        	
-        	OCC_ApprovedAccount__c approvedAccount1 = [Select Id, Name from OCC_ApprovedAccount__c where Name='test'].get(0);
-        	        	
-        	request.Name = approvedAccount1.Name;
-        	request.Id = approvedAccount1.Id;
-        	
-        	OCCommunitiesResource.DeleteAccountResult result2 = OCCommunitiesResource.deleteAccountAccess(JSON.serialize(request));
-        	System.assertEquals(true, result2.Success);
-        	
-        	
-        	OCCommunitiesResource.AccountAccessRequest requests = new OCCommunitiesResource.AccountAccessRequest();
-        	OCCommunitiesResource.AccountRequest request1 = new OCCommunitiesResource.AccountRequest();
-        	request1.Name = 'Test12';
-        	request1.Account = account.Id;
-        	
-        	requests.Added.add(request1);
-        	
-        	OCCommunitiesResource.AccountAccessResults result3 = OCCommunitiesResource.requestAccountAccess(JSON.serialize(requests));
-        	System.assertEquals(true, true);
-        	
+                // Submit the approval request
+                Approval.ProcessResult prcessResult = Approval.process(req1);
+                
+            }
+            
+            /*
+            String[] toAddress = new String[]{};
+            
+            if(!runningInASandbox()){
+                toAddress = new String[]{'chrisw@launchdm.com'};
+            }else{
+                toAddress = new String[]{'chrisw@launchdm.com'};
+                
+            }
+            
+            Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();  
+            message.setToAddresses(toAddress);
+            message.setHtmlBody(baseBody);
+            Messaging.sendEmail(new Messaging.SingleEmailMessage[] { message });
+            */
+            
+            result.Success = true;
+            result.Message = 'Request Successfully Submitted';
+        }catch (Exception e){
+            result.Success = false;
+            result.Message =  result.Message + ' ' + e.getMessage();
+            
         }
-    	
+        
+        return result;
+    }
+    
+    public static OCCommunitiesResource.DeleteAccountResult deleteAccountAccess(OCCommunitiesResource.DeleteAccountRequest request, Id contactId){
+        
+        OCCommunitiesResource.DeleteAccountResult result = new OCCommunitiesResource.DeleteAccountResult();
+                
+        try{
+            
+
+            String Name = request.Name;
+            String Id = request.Id;
+            
+            List<OCC_ApprovedAccount__c> accounts = [Select Id, Account__c from OCC_ApprovedAccount__c where (Account__c =: Id AND Contact__c =: contactId)];
+            
+            if(accounts.size() > 0){
+                delete accounts;
+            }
+            
+
+            result.DeletedId = Id;
+            result.Success = true;
+            result.Message = Name + ' Successfully Deleted';
+        }catch (Exception e){
+            result.Success = false;
+            result.Message =  result.Message + ' ' + e.getMessage();
+            
+        }
+        
+        return result;
+    } 
+
+    public static OCCommunitiesResource.NotificationResults pollForNotifications( Id contactId){
+        OCCommunitiesResource.NotificationResults results = new OCCommunitiesResource.NotificationResults();
+        
+        List<Contact> Contacts = [SELECT Id, Name, OCC_Rewards__c FROM Contact WHERE Id=:contactId];
+        Contact contact = null;
+        if(Contacts.size() > 0){
+            contact = Contacts.get(0);
+            
+            List<OCC_BonusReward__c> BonusRewards = [SELECT Id, Name, Contact__c, ActionDescription__c, Redeemed__c, RedeemMessage__c, RewardValue__c FROM OCC_BonusReward__c WHERE Contact__c =: contactId AND Redeemed__c = true AND ContactNotified__c = false];
+            
+            if(BonusRewards.size() > 0){
+                OCC_BonusReward__c BonusReward = BonusRewards.get(0);
+                BonusReward.ContactNotified__c = true;
+                results.Message = BonusReward.RedeemMessage__c;
+                results.hasMessage = true;
+                update BonusReward;
+            }
+            
+        }
+        
+        return results;
     
     }
     
-    
-    
-     @IsTest(SeeAllData=false) global static void getData() { 
-    	
-    	
-    	 /////////////
-        test.startTest();
+    public static OCCommunitiesResource.GetDataResults getData(OCCommunitiesResource.GetDataRequest request, Id contactId){
+        OCCommunitiesResource.GetDataResults result = new OCCommunitiesResource.GetDataResults();
         
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        UserRole portalRole = [Select Id From UserRole Where PortalType = 'None' Limit 1];
-        Profile profile1 = [Select Id from Profile where name = 'System Administrator'];
-        
-        Account parentAccount = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '1234567');
-        insert parentAccount;
-
-        Account account = new Account(Name='Test Account', OCC_Rewards__c = true, Account_Number__c = '123456', ParentId=parentAccount.Id);
-        insert account;
-        
-        Account account2 = new Account(Name='Test Account2', OCC_Rewards__c = true, Account_Number__c = '123455', ParentId=parentAccount.Id);
-        insert account2;
-        
-        String newId = account.Account_Number__c + ':1';
-        String newId2 = account2.Account_Number__c + ':1';
-        
-        Contact contact = new Contact(Contact_Title__c='Accounting', Email='chrisw@launchdm.com', OCC_ViewAll__c = true , AccountId=account.Id, Sequence__c = 1, OCC_Rewards__c=true, OCC_RewardStepValue__c = 1, OCC_RewardStep__c = 1, FirstName='Test', LastName='Williams', Ext_Id__c = newId);
-        insert contact;
-        
-        Contact contact2 = new Contact(Contact_Title__c='Accounting', Email='chrisw2@launchdm.com', OCC_ViewAll__c = false, OCC_ViewApproved__c = true , AccountId=account2.Id, Sequence__c = 1, OCC_Rewards__c=true, OCC_RewardStepValue__c = 1, OCC_RewardStep__c = 1, FirstName='Test', LastName='Williams', Ext_Id__c = newId2);
-        insert contact2;
-        
-        OCC_BonusReward__c reward = new OCC_BonusReward__c(Name='Amount_5000_10', ActionDescription__c = 'your first 2 orders', Contact__c= contact.Id, ContactNotified__c=false, Redeemed__c=true, RewardValue__c=5);
-        OCC_BonusReward__c reward2 = new OCC_BonusReward__c(Name='Amount_5000_10', ActionDescription__c = 'your first 2 orders', Contact__c= contact2.Id, ContactNotified__c=false, Redeemed__c=false, RewardValue__c=5);
-        insert reward;
-        insert reward2;
-        
-        OCC_ApprovedAccount__c approvedAccount = new OCC_ApprovedAccount__c(Account__c=account.Id, Contact__c=contact.Id, Name='test');
-        insert approvedAccount;
-        
-        System.debug(LoggingLevel.ERROR, 'contact=: ' + contact);
+        try{
+            
+            Integer offset = request.offset;
+            
+            Map<String, OCCommunitiesResource.QOCTypeData> qocMap = new Map<String, OCCommunitiesResource.QOCTypeData>();            
+            Set<Id> headerIds = new Set<Id>();        
+            List<Account> childAccounts = new List<Account>();
                 
+            List<Contact> Contacts = [Select Email, Name, Phone, FirstName, LastName, PhotoUrl, OCC_Photo__c, OCC_ViewAll__c, OCC_ViewApproved__c, OCC_Rewards__c, Birthdate, AccountId from Contact where Id =: contactId];
+            Contact contact = null;
+            String accountId;
+            if (Contacts.size() > 0){
+                contact = Contacts.get(0);
+                accountId = contact.AccountId;
+            }
+            
+            //Get User Account
+            List<Account> Accounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r) Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: accountId];
+            Account account = null;
+            if(Accounts.size() > 0){
+                account = Accounts.get(0);
+            }
+            
+            //Get Parent Account
+            Account parentAccount = null;
+            List<Account> ParentAccounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r), Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: account.ParentId];
+            if(ParentAccounts.size() > 0){
+                parentAccount = ParentAccounts.get(0);
+            }
+            
+            if(contact.OCC_ViewAll__c == true){
                 
-         User user2 = new User(
-            Username = System.now().millisecond() + '16test12345@test.com',
-            ContactId = contact2.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user2); 
-        
-        User user1 = new User(
-            Username = System.now().millisecond() + '1test12345@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'test123',
-            Email = 'test12345@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'McTesty',
-            CommunityNickname = 'test12345666666',
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        
-        Database.insert(user1);        
- 
-        
-        
-        	
-        	List<QuotesOrdersCredits_Header__c> qocHeaders = new List<QuotesOrdersCredits_Header__c>();
-	        List<QuoteOrderCredit_Details__c> qocDetails = new List<QuoteOrderCredit_Details__c>();
-	        
-	        
-	        QuotesOrdersCredits_Header__c header = new QuotesOrdersCredits_Header__c(Name='1234', Customer__c = account.Id, Buyer__c = contact.Id, Status__c = 'Invoiced', Type__c = 'Order', OCC_RewardRedeemed__c  = true, Date__c = system.today());
-	        QuotesOrdersCredits_Header__c header2 = new QuotesOrdersCredits_Header__c(Name='12345',Customer__c = account2.Id, Buyer__c = contact2.Id, Status__c = 'Invoiced', Type__c = 'Order', OCC_RewardRedeemed__c  = true, Date__c = system.today());
-	        QuotesOrdersCredits_Header__c headerQ = new QuotesOrdersCredits_Header__c(Name='1234', Customer__c = account.Id, Buyer__c = contact.Id, Status__c = 'Open', Type__c = 'Quote', OCC_RewardRedeemed__c  = true, Date__c = system.today());
-	        QuotesOrdersCredits_Header__c headerQ2 = new QuotesOrdersCredits_Header__c(Name='12345',Customer__c = account2.Id, Buyer__c = contact2.Id, Status__c = 'Open', Type__c = 'Quote', OCC_RewardRedeemed__c  = true, Date__c = system.today());
-	        qocHeaders.add(headerQ);
-	        qocHeaders.add(headerQ2);
-	        qocHeaders.add(header);
-	        qocHeaders.add(header2);
-	        
-	        QuotesOrdersCredits_Header__c credit = new QuotesOrdersCredits_Header__c(Type__c='Credit', Customer__c = account2.Id, Buyer__c = contact2.Id, OCC_RewardRedeemed__c  = true, Date__c = system.today(), SalesNote3__c ='RMA', Total_Order_Sales__c = 1);
-	        qocHeaders.add(credit);
-	        
-	        QuotesOrdersCredits_Header__c orderheader = new QuotesOrdersCredits_Header__c(Name='123456',Customer__c = account.Id, Buyer__c = contact.Id, Type__c = 'Order', Date__c = system.today());
-	        QuotesOrdersCredits_Header__c orderheader2 = new QuotesOrdersCredits_Header__c(Name='1234567',Customer__c = account2.Id, Buyer__c = contact2.Id, Type__c = 'Order', Date__c = system.today());
-	        qocHeaders.add(orderheader);
-	        qocHeaders.add(orderheader2);
-	        
-	        insert qocHeaders;
-	       
-	        
-	        for(Integer i = 0; i < qocHeaders.size(); i++){
-	            String headerId = qocHeaders[i].Id;
-	            QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Order_Header__c = headerId, Qty_Ordered__c =2, Dollars__c = 300);
-	            qocDetails.add(detail);
-	
-	        }
-        
-        	insert qocDetails;
-        
-        
-        	QuotesOrdersCredits_Header__c header1 = qocHeaders.get(0);
-        
-        	Pending_Issue__c issue = new Pending_Issue__c(Account__c = account.Id, Order__c = header1.id,  Issue_Status__c = 'Open');
-	        upsert issue;
-        	
-        	
-        System.runAs(user1) {
-            OCCommunitiesResource.GetDataRequest GetDataRequest = new OCCommunitiesResource.GetDataRequest();
-        	GetDataRequest.offset = 0;
-        	GetDataRequest.typeStr = 'search';
-        	GetDataRequest.searchText = '123*';
-        	GetDataRequest.url = 'www.test.com/';
-        	
-        	OCCommunitiesResource.GetDataResults GetDataResults = OCCommunitiesResource.getData(JSON.serialize(GetDataRequest));
-        	System.assertEquals(true, GetDataResults.Success);
-        	
-        	//OCCommunitiesResource.GetDataRequest GetDataRequest = new OCCommunitiesResource.GetDataRequest();
-        	GetDataRequest.offset = 0;
-        	GetDataRequest.typeStr = 'myOrders';
-        	GetDataRequest.searchText = '123*';
-        	GetDataRequest.url = 'www.test.com/';
-        	
-        	OCCommunitiesResource.GetDataResults myOrder = OCCommunitiesResource.getData(JSON.serialize(GetDataRequest));
-        	System.assertEquals(true, myOrder.Success);
-        	
-        	//OCCommunitiesResource.GetDataRequest GetDataRequest = new OCCommunitiesResource.GetDataRequest();
-        	GetDataRequest.offset = 0;
-        	GetDataRequest.typeStr = 'myQuotes';
-        	GetDataRequest.searchText = '123*';
-        	GetDataRequest.url = 'www.test.com/';
-        	
-        	OCCommunitiesResource.GetDataResults myQuotes = OCCommunitiesResource.getData(JSON.serialize(GetDataRequest));
-        	System.assertEquals(true, myQuotes.Success);
-        	
-        	//OCCommunitiesResource.GetDataRequest GetDataRequest = new OCCommunitiesResource.GetDataRequest();
-        	GetDataRequest.offset = 0;
-        	GetDataRequest.typeStr = 'credits';
-        	GetDataRequest.searchText = '123*';
-        	GetDataRequest.url = 'www.test.com/';
-        	
-        	OCCommunitiesResource.GetDataResults credits = OCCommunitiesResource.getData(JSON.serialize(GetDataRequest));
-        	System.assertEquals(true, credits.Success);
-        }
-        
-        System.runAs(user2) {
-        	
-        	OCCommunitiesResource.GetDataRequest GetDataRequest = new OCCommunitiesResource.GetDataRequest();
-        	GetDataRequest.offset = 0;
-        	GetDataRequest.typeStr = 'otherOrders';
-        	GetDataRequest.searchText = '123*';
-        	GetDataRequest.url = 'www.test.com/';
-        	
-        	OCCommunitiesResource.GetDataResults otherOrders = OCCommunitiesResource.getData(JSON.serialize(GetDataRequest));
-        	System.assertEquals(true, otherOrders.Success);
-        	
-        	//OCCommunitiesResource.GetDataRequest GetDataRequest = new OCCommunitiesResource.GetDataRequest();
-        	GetDataRequest.offset = 0;
-        	GetDataRequest.typeStr = 'otherQuotes';
-        	GetDataRequest.searchText = '123*';
-        	GetDataRequest.url = 'www.test.com/';
-        	
-        	OCCommunitiesResource.GetDataResults otherQuotes = OCCommunitiesResource.getData(JSON.serialize(GetDataRequest));
-        	System.assertEquals(true, otherQuotes.Success);
-        }
-
-        // MixPanel reward setup must run as admin; portal users cannot update these Contacts.
-        contact.OCC_Rewards__c=false;
-		contact.OCC_RewardsValue__c = 2;
-        update contact;
-        
-        OCC_BonusReward__c bonusreward = new OCC_BonusReward__c();
-        bonusreward.Contact__c = contact.Id;
-        bonusreward.ActionDescription__c = '';
-        bonusreward.ContactNotified__c = false;
-        bonusreward.Redeemed__c = false;
-        bonusreward.RewardValue__c = 10;
-        bonusreward.Name = 'Amount_5000_10';
-        
-        insert bonusreward;
-        	
-        RestRequest req = new RestRequest(); 
-		RestResponse res = new RestResponse();
-		
-		Map<String, String> users = new Map<String, String>();
-		users.put('users', '[{"contact_id":"'+ contact.Id + '"}]');
-		
-			
-		String JSONMsg = '{"contact_id":"'+ contact.Id + '"}';
-		req.requestBody = Blob.valueof('{"criteria":"Amount_5000_10"}');
-		req.addParameter('users', JSONMsg);
-		req.addParameter('criteria', 'Amount_5000_10');
-		
-	
-		req.addHeader('Content-Type', 'application/json');
-		
-		if(OCCommunitiesResource.runningInASandbox()){
-			
-			req.requestURI = 'https://full-omnidemo.cs2.force.com/services/apexrest/MixPanelApi?criteria=Amount_5000_10';  
-	    		 
-    	}else{
-    		req.requestURI = 'https://omnicable.my.salesforce.com/services/apexrest/MixPanelApi?criteria=Amount_5000_10';  
-
-    	}
-   
-		 req.httpMethod = 'POST';
-		 RestContext.request = req;
-		 RestContext.response = res;
- 
-    	
-    	OCCMixPanelApi.doPost();
-    	
-    	OCCMixPanelApi.sendRewardsEmail(10.0, 'test', 'test@email.com', 'test Subject');
-		
-		System.assertEquals(true,true);
-        
-        
-        contact.OCC_Rewards__c=true;
-		contact.OCC_RewardsValue__c = 2;
-        update contact;
-			
-		String JSONMsg2 = '{"contact_id":"'+ contact.Id + '"}';
-		req.requestBody = Blob.valueof('{"criteria":"Amount_5000_10"}');
-		req.addParameter('users', JSONMsg2);
-		req.addParameter('criteria', 'Amount_5000_10');
-		
-	
-		req.addHeader('Content-Type', 'application/json');
-		
-		if(OCCommunitiesResource.runningInASandbox()){
-			
-			req.requestURI = 'https://full-omnidemo.cs2.force.com/services/apexrest/MixPanelApi?criteria=Amount_5000_10';  
-	    		 
-    	}else{
-    		req.requestURI = 'https://omnicable.my.salesforce.com/services/apexrest/MixPanelApi?criteria=Amount_5000_10';  
-
-    	}
-   
-		 req.httpMethod = 'POST';
-		 RestContext.request = req;
-		 RestContext.response = res;
- 
-    	
-    	OCCMixPanelApi.doPost();
-    	
-    	OCCMixPanelApi.sendRewardsEmail(10.0, 'test', 'test@email.com', 'test Subject');
-		
-		System.assertEquals(true,true);
+                if(parentAccount != null){
+                    childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: parentAccount.Id Or Id =: account.Id Or Id =: parentAccount.Id) AND Active__c != 'D' ORDER BY Name];
+                }else{
+                    childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: account.Id Or Id =: account.Id) AND Active__c != 'D' ORDER BY Name];
+                    
+                }
+                
+           
+            }else if(contact.OCC_ViewApproved__c == true){
+                List<String> approvedAccountIds = new List<String>();
+                for(OCC_ApprovedAccount__c approvedAccount : [Select Contact__c, Status__c, Account__c, Account__r.Active__c, Account__r.Name FROM OCC_ApprovedAccount__c where Contact__c =: contact.Id AND (Status__c = 'Accepted' OR Status__c = 'Pending')]){
+                    approvedAccountIds.add(approvedAccount.Account__c);
+                }
+                
+                //if(approvedAccountIds.size() > 0 && (approvedAccountIds.get(0) != account.Id)){
+                //  childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (/*Id =: account.Id OR*/ Id IN: approvedAccountIds) AND Active__c != 'D' ORDER BY Name];
+                //}
+                
+                childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (/*Id =: account.Id OR*/ Id IN: approvedAccountIds) AND Active__c != 'D' ORDER BY Name];
+                                
     
+            }else{
+            
+                //childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: account.Id Or Id =: account.Id) AND Active__c != 'D' ORDER BY Name];
+                
+            }
+            
+            if(request.typeStr.equals('myQuotes')){
+                
+                Integer TotalCount = [Select COUNT() from QuotesOrdersCredits_Header__c  where Buyer__c =: contactId AND /*QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS AND*/ QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Quote' OR Type__c = 'RFQ') LIMIT 2000];
+                result.totalCount = TotalCount;
+            
+                for(QuotesOrdersCredits_Header__c header : [Select Id, of_Lines__c, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c , TotalDollars__c, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c  where Buyer__c =: contactId AND /*QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS AND*/ QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Quote' OR Type__c = 'RFQ') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 10 Offset :offset]) {
+                         
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = header;
+                    qocMap.put(header.Id, quoteData);
+                    headerIds.add(header.Id);
+                    result.quotes.add(quoteData);
+                }
+                
+            }else if(request.typeStr.equals('otherQuotes')){
+                
+                Integer TotalCount = [Select COUNT() from QuotesOrdersCredits_Header__c  where (Customer__c IN: childAccounts AND Buyer__c != :contactId) /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Quote' OR Type__c = 'RFQ') LIMIT 2000];
+                result.totalCount = TotalCount;
+                
+                for(QuotesOrdersCredits_Header__c header : [Select Id, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where (Customer__c IN: childAccounts AND Buyer__c != :contactId) AND /*QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS AND*/ QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Quote' OR Type__c = 'RFQ') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 10 Offset: request.offset]) {
+                     
+                        OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                        quoteData.header = header;
+                        qocMap.put(header.Id, quoteData);
+                        headerIds.add(header.Id);
+                        result.quotes.add(quoteData);                    
+                 }
+                
+            }else if(request.typeStr.equals('myOrders')){
+                
+                Integer TotalCount = [Select COUNT() from QuotesOrdersCredits_Header__c  where Buyer__c =: contactId /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND Type__c = 'Order' AND Sub_Type__c='Blanket' LIMIT 2000];
+                result.totalCount = TotalCount;
+            
+                for(QuotesOrdersCredits_Header__c header : [Select Id, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c , TotalDollars__c, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c  where Buyer__c =: contactId /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND Type__c = 'Order' AND Sub_Type__c='Blanket' ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 10 Offset :offset]) {
+                         
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = header;
+                    qocMap.put(header.Id, quoteData);
+                    headerIds.add(header.Id);
+                    result.quotes.add(quoteData);
+                }
+                
+            }else if(request.typeStr.equals('otherOrders')){
+                
+                Integer TotalCount = [Select COUNT() from QuotesOrdersCredits_Header__c  where (Customer__c IN: childAccounts AND Buyer__c != :contactId) AND /*QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS AND*/ QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND Type__c = 'Order' AND Sub_Type__c='Blanket' LIMIT 2000];
+                result.totalCount = TotalCount;
+                
+                for(QuotesOrdersCredits_Header__c header : [Select Id, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where (Customer__c IN: childAccounts AND Buyer__c != :contactId) /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND Type__c = 'Order' AND Sub_Type__c='Blanket' ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 10 Offset: request.offset]) {
+                     
+                        OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                        quoteData.header = header;
+                        qocMap.put(header.Id, quoteData);
+                        headerIds.add(header.Id);
+                        result.quotes.add(quoteData);                    
+                 }
+                 
+            }else if(request.typeStr.equals('credits')){
+                
+                Integer TotalCount = [Select COUNT() from QuotesOrdersCredits_Header__c  where (Customer__c IN: childAccounts OR Buyer__c = :contactId) /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Credit' AND (CreditRMAPortalType__c = 'Credit' OR CreditRMAPortalType__c = 'Return')) LIMIT 2000];
+                result.totalCount = TotalCount;
+                
+                for(QuotesOrdersCredits_Header__c header : [Select Id, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where (Customer__c IN: childAccounts OR Buyer__c = :contactId) /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Credit' AND (CreditRMAPortalType__c = 'Credit' OR CreditRMAPortalType__c = 'Return')) ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 10 Offset: request.offset]) {
+                     
+                        OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                        quoteData.header = header;
+                        qocMap.put(header.Id, quoteData);
+                        headerIds.add(header.Id);
+                        result.quotes.add(quoteData);                    
+                 }
+                 
+            }else if(request.typeStr.equals('search')){
+                
+                String soslSearch = request.searchText + '*';
+                List<List<SObject>> allResults = [FIND :soslSearch RETURNING QuoteOrderCredit_Details__c (Order_Header__c WHERE Line_Status__c != 'Cancelled'  /*AND Date_Line_Entered__c = LAST_90_DAYS*/)];
+                List<QuoteOrderCredit_Details__c> allDetails = ((List<QuoteOrderCredit_Details__c>)allResults[0]);
+
+                for(QuoteOrderCredit_Details__c detail: allDetails){
+                    if(!headerIds.contains(detail.Order_Header__c)){
+                        headerIds.add(detail.Order_Header__c);
+                    }
+                }   
+                        
+                //search by header
+                Integer counter = 0;
+                String soqlSearch = request.searchText + '%';
+                for(QuotesOrdersCredits_Header__c header : [Select Id, OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c WHERE Status__c != 'Cancelled' /*AND Date__c = LAST_90_DAYS*/ AND (Customer__c IN: childAccounts OR Buyer__c =: contactId) AND (Id IN :headerIds OR (Name LIKE :soqlSearch OR Status__c LIKE :soqlSearch OR Customer_PO__c LIKE :soqlSearch OR Job_Reference__c LIKE :soqlSearch OR Mark_Number__c LIKE :soqlSearch OR Buyer__r.Name LIKE :soqlSearch OR TotalOrderSalesPortal__c LIKE :soqlSearch)) ORDER BY Date__c DESC]) {
+                 
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = header;
+                    qocMap.put(header.Id, quoteData);
+                    
+                    if(header.Type__c == 'Quote' || header.Type__c == 'RFQ') {
+                        result.quotes.add(quoteData);
+                    //NOTE: only add blanket master orders
+                    } else if(header.Type__c == 'Order' && header.Sub_Type__c == 'Blanket') {
+                        result.orders.add(quoteData);
+                    } else if(header.Type__c == 'Credit' && (header.CreditRMAPortalType__c == 'Credit' || header.CreditRMAPortalType__c == 'Return')) {
+                        result.credits.add(quoteData);
+                    }
+                    
+                    if(!headerIds.contains(header.Id)){
+                        headerIds.add(header.Id);
+                    }
+                    
+                    counter++;
+                      
+                 }
+                 
+                 result.Message = 'term= ' + soqlSearch + ' details = ' + String.valueOf(allDetails.size()) + 'allQOCS = ' + String.valueOf(counter);
+            }
+            
+            for(QuoteOrderCredit_Details__c detail : [Select Id, Customer_Item__c, CableCode__c, Item_Markings__c, SalesPricePortal__c, NotesPortal__c, TotalDollarsPortal__c, Put_up_1__c, Put_up_2__c, Put_up_3__c, Put_up_4__c, Put_up_5__c, Put_up_6__c, Put_up_7__c, Spec_Sheet__c, C2SPRC__c, Name, Dollars__c, Expected_Date__c, Freight_Terms__c, Freight_Carrier__c, Item_Description__c,  Line_Item__c, Line_Number__c, Line_Status__c, Qty_Ordered__c, Qty_Shipped__c, TrackingURL__c, Order_Header__c, Received_Complete__c from QuoteOrderCredit_Details__c where Order_Header__c IN: headerIds AND Line_Status__c != 'Cancelled' ORDER BY QuoteOrderCredit_Details__c.Line_Number__c]) {
+            
+                OCCommunitiesResource.QOCTypeData quoteData =  qocMap.get(detail.Order_Header__c);
+                if(quoteData != null) {
+                    quoteData.details.add(detail);
+                }   
+            }
+            
+           if(headerIds.size() > 0){
+            
+               for(ContentDocumentLink contentDoc : [Select Id, ContentDocumentId, ContentDocument.LatestPublishedVersionId, ContentDocument.title, LinkedEntityId from ContentDocumentLink where LinkedEntityId IN :headerIds]) {
+                    
+                    OCCommunitiesResource.QOCTypeData quoteData =  qocMap.get(contentDoc.LinkedEntityId);
+                    if(quoteData != null && contentDoc.ContentDocument != null && !contentDoc.ContentDocument.title.contains('Invoice')) {
+                        
+                        OCCommunitiesResource.QOCAttachment att = new OCCommunitiesResource.QOCAttachment();
+                        att.title = contentDoc.ContentDocument.title;
+                        att.url = request.url + '/sfc/servlet.shepherd/version/download/' + contentDoc.ContentDocument.LatestPublishedVersionId;
+                        att.image = request.url + '/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' + contentDoc.ContentDocument.LatestPublishedVersionId;
+                        quoteData.attachments.add(att);
+                    }
+                    
+               }
+            
+           }
+            
+            
+            
+            result.Success = true;
+        }catch(Exception e){
+            
+            result.Message = e.getMessage();
+            
+        }
+                
+        return result;
+    }
+
+    public static Boolean runningInASandbox() {
+        return [SELECT Id, IsSandbox FROM Organization LIMIT 1].IsSandbox;
     }
     
-    
-
-    @IsTest(SeeAllData=false) global static void testResourceCoverageExtras() {
-        OCCommunitiesResource resource = new OCCommunitiesResource();
-        System.assertNotEquals(null, resource.isSandbox);
-        System.assertEquals(OCCommunitiesResourceHelper.runningInASandbox(), OCCommunitiesResource.runningInASandbox());
-
-        Profile portalProfile = [SELECT Id FROM Profile WHERE Name LIKE '%Customer Portal Login%' Limit 1];
-        Account account = new Account(Name='Coverage Account', OCC_Rewards__c = true, Account_Number__c = 'COV123');
-        insert account;
-        Contact contact = new Contact(
-            Contact_Title__c='Accounting',
-            Email='coverage@launchdm.com',
-            AccountId=account.Id,
-            Sequence__c = 1,
-            OCC_Rewards__c=true,
-            OCC_RewardStepValue__c = 1,
-            OCC_RewardStep__c = 1,
-            FirstName='Cover',
-            LastName='Age',
-            Ext_Id__c = account.Account_Number__c + ':1'
-        );
-        insert contact;
-        User user1 = new User(
-            Username = System.now().millisecond() + 'covtest@test.com',
-            ContactId = contact.Id,
-            ProfileId = portalProfile.Id,
-            Alias = 'cov123',
-            Email = 'covtest@test.com',
-            EmailEncodingKey = 'UTF-8',
-            LastName = 'Coverage',
-            CommunityNickname = 'covnick' + String.valueOf(System.now().millisecond()),
-            TimeZoneSidKey = 'America/Los_Angeles',
-            LocaleSidKey = 'en_US',
-            LanguageLocaleKey = 'en_US'
-        );
-        insert user1;
-
-        OCCommunitiesResource.QOCRequest qocReq = new OCCommunitiesResource.QOCRequest();
-        qocReq.url = 'https://example.com';
-        qocReq.Id = user1.Id;
-
-        OCCommunitiesResource.GetDataRequest dataReq = new OCCommunitiesResource.GetDataRequest();
-        dataReq.offset = 0;
-        dataReq.typeStr = 'myOrders';
-        dataReq.searchText = '';
-        dataReq.url = 'https://example.com/';
-
-        System.runAs(user1) {
-            OCCommunitiesResource.QOCDataResult initResult = OCCommunitiesResource.getInitialData(JSON.serialize(qocReq));
-            System.assertNotEquals(null, initResult);
-            OCCommunitiesResource.GetDataResults portalData = OCCommunitiesResource.getDataPortal(JSON.serialize(dataReq));
-            System.assertNotEquals(null, portalData);
+    public static Id getContactIdByUserId(Id userId){
+        List<User> users = [SELECT ContactId FROM User WHERE Id =: userId];
+        if(users.size() > 0){
+            return users.get(0).ContactId;
+        }else{
+            return null;
         }
     }
 
-    //global with sharing class UploadFileMock implements HTTPCalloutMock{
-    global HTTPResponse respond(HTTPRequest req){
-        HttpResponse res = new HTTPResponse();
-        res.setHeader('Content-Type', 'application/JSON');
-        res.setBody('Your body');
-        res.setStatusCode(201);
-        return res;
+    public static Id getUserIdByContactId(Id contactId){
+        List<User> users = [SELECT Id FROM User WHERE ContactId =: contactId];
+        if(users.size() > 0){
+            return users.get(0).Id;
+        }else{
+            return null;
+        }
     }
-//}
-    
-    
+
+    public static Id getContactIdOfRequest(){
+        RestRequest request = RestContext.request;
+        return request.requestURI.substring(request.requestURI.lastIndexOf('/')+1);
+    }
+
+    public static void updateContactRewards(Set<Id> contactIds){
+        List<Contact> updatedContacts = new List<Contact>();
+        for(Contact contact : [Select Id, OCC_RewardStep__c , OCC_RewardStepValue__c, OCC_RewardsTotal__c, OCC_RewardsValue__c from Contact where Id IN: contactIds]){
+            HeaderCalculationResult headerResults = getHeaderAndTotals(contact);
+            Decimal total = headerResults.total;
+            System.debug('Contact Total: ' + total);
+            contact.OCC_RewardsTotal__c = total;
+            updatedContacts.add(contact);
+        }
+
+        update updatedContacts;
+        
+    }
+
+
+    /**
+    * @name getPicklistValue
+    * @description Get picklist value for a given object and field
+    * @param String objectName
+    * @param String fieldName
+    **/
+    public static List<String> getPicklistValue(String objectName, String fieldName){
+        List<String> myPicklist  = new List<String>(); 
+        String[] types = new String[]{objectName};
+
+        Schema.DescribeSobjectResult[] results = Schema.describeSObjects(types);
+
+        for(Schema.DescribeSobjectResult res : results) {
+            Schema.SObjectField sfield = res.fields.getMap().get(fieldName);
+            for (Schema.PicklistEntry f : sfield.getDescribe().getPicklistValues()){
+                myPicklist.add(f.getLabel());
+            }
+        }
+
+        return myPicklist;
+
+    }
+
+    public class updateValue{
+        String id;
+        Boolean value;
+    }
+
+    /**
+    * @name toggleReleaseReceive
+    * @description Update release detail recieved value
+    * @param String Id
+    * @param String value
+    **/
+    @RemoteAction
+    webservice static Boolean toggleReleaseReceive(String params){
+
+        JSONParser parser = JSON.createParser(params);
+        updateValue request = (updateValue)parser.readValueAs(updateValue.class);
+
+        QuoteOrderCredit_Details__c detail = new QuoteOrderCredit_Details__c(Id=request.id, Received_Complete__c=request.value);
+        Update detail;
+        return detail.Received_Complete__c;
+    }
+
+
+    /**
+    * @name getAlternativePartNumbers
+    * @description Gets all alternative part numbers for a given account
+    * @param String accountId
+    **/
+    @RemoteAction
+    public static List<Alternative_Part_Number__c> getAlternativePartNumbersAll(String accountId){
+        // System.debug('accountIds: ' + accountIds);
+        // List<String> partNames = new List<String>();
+        // List<Alternative_Part_Number__c> alternativePartsupdate = new List<Alternative_Part_Number__c>();
+        // Map<String, Alternative_Part_Number__c> partsMap = new Map<String, Alternative_Part_Number__c>();
+        // List<Alternative_Part_Number__c> allParts = [SELECT Id, Name, Account__c, Cable_Code__c, Part_Numbers__c, Part_Numbers__r.Id, Part_Numbers__r.Name, Part_Numbers__r.Item_Description_OPUS__c, Closed__c from Alternative_Part_Number__c WHERE Account__c IN: accountIds AND Closed__c = false ORDER BY NAME ASC];
+
+
+        // for (Alternative_Part_Number__c part : allParts) {
+        //     partNames.add(part.Part_Numbers__r.Name);
+        //     partsMap.put(part.Part_Numbers__r.Name, part);
+        // }
+
+        // for(QuoteOrderCredit_Details__c foundDetails : [Select Id, Name, Line_Item__c, Line_Status__c, Order_Header__c from QuoteOrderCredit_Details__c WHERE Line_Item__c IN: partNames AND Line_Status__c != 'Cancelled' AND Order_Header__r.Customer__c IN: accountIds AND (Order_Header__r.Type__c = 'Release' OR  ( Order_Header__r.Type__c = 'Order' AND  Order_Header__r.Sub_Type__c='Change Order'))]){
+            
+        //     if(partsMap.get(foundDetails.Line_Item__c) != null){
+        //         Alternative_Part_Number__c part =  partsMap.get(foundDetails.Line_Item__c);
+        //         part.Closed__c = true;
+        //         alternativePartsupdate.add(part);
+        //     }
+
+        // }
+        
+        
+        
+        
+        // return alternativePartsupdate;
+        return [SELECT Id, Name, Account__c, Cable_Code__c, Part_Numbers__c, Part_Numbers__r.Id, Part_Numbers__r.Name, Part_Numbers__r.Item_Description_OPUS__c from Alternative_Part_Number__c WHERE Account__c =: accountId ORDER BY NAME ASC];
+    }
+
+    /**
+    * @name getAlternativePartNumbers
+    * @description Gets all alternative part numbers for a given account
+    * @param String accountId
+    **/
+    @RemoteAction
+    public static List<Alternative_Part_Number__c> getAlternativePartNumbers(String accountId){
+        return [SELECT Id, Name, Account__c, Cable_Code__c, Part_Numbers__c, Part_Numbers__r.Id, Part_Numbers__r.Name, Part_Numbers__r.Item_Description_OPUS__c from Alternative_Part_Number__c WHERE Account__c =: accountId];
+    }
+
+    /**
+    * @name getAllMasterOrders
+    * @description Get master order for all accounts
+    * @param String accountId
+    **/
+    @RemoteAction
+    public static List<OCCommunitiesResource.QOCTypeData> getAllMasterOrders(String accountId){
+        List<OCCommunitiesResource.QOCTypeData> allMasterOrders = new List<OCCommunitiesResource.QOCTypeData>();
+        List<String> headerIds = new List<String>();
+        Map<String, OCCommunitiesResource.QOCTypeData> qocMap = new Map<String, OCCommunitiesResource.QOCTypeData>();  
+
+        for(QuotesOrdersCredits_Header__c header : [Select /*(SELECT Id, Name from Delivery_Addresses__r), (SELECT Id, Name from RMF_PO__r)*/ (SELECT Id, Name, Account__c, Part_Numbers__c, Part_Numbers__r.Id, Part_Numbers__r.Name, Part_Numbers__r.Item_Description_OPUS__c from Alternative_Part_Numbers__r), Id, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where (Customer__c =: accountId /*AND Buyer__c != :contactId*/) AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND Type__c = 'Order' AND (Sub_Type__c='Blanket' /*OR Sub_Type__c='Change Order'*/) ORDER BY QuotesOrdersCredits_Header__c.Sub_Type__c ASC, QuotesOrdersCredits_Header__c.Date__c DESC ]) {
+            OCCommunitiesResource.QOCTypeData orderData = new OCCommunitiesResource.QOCTypeData();
+            orderData.header = header;
+            qocMap.put(header.Id, orderData);
+            headerIds.add(header.Id);
+            allMasterOrders.add(orderData);                    
+        }
+
+        for(QuoteOrderCredit_Details__c detail : [Select Id, Customer_Item__c, CableCode__c, Item_Markings__c, SalesPricePortal__c, NotesPortal__c, TotalDollarsPortal__c, Put_up_1__c, Put_up_2__c, Put_up_3__c, Put_up_4__c, Put_up_5__c, Put_up_6__c, Put_up_7__c, Spec_Sheet__c, C2SPRC__c, Name, Dollars__c, Expected_Date__c, Freight_Terms__c, Freight_Carrier__c, Item_Description__c,  Line_Item__c, Line_Number__c, Line_Status__c, Qty_Ordered__c, Qty_Shipped__c, TrackingURL__c, Order_Header__c, Received_Complete__c from QuoteOrderCredit_Details__c where Order_Header__c IN: headerIds AND Line_Status__c != 'Cancelled' ORDER BY QuoteOrderCredit_Details__c.Line_Number__c]) {
+            OCCommunitiesResource.QOCTypeData orderData =  qocMap.get(detail.Order_Header__c);
+            if(orderData != null) {
+                orderData.details.add(detail);
+            }   
+        }
+
+        return allMasterOrders;
+    }
+
+    /**
+    * @name getDeliveryAddresses
+    * @description Gets all delivery addresses for a given account
+    * @param String accountId
+    **/
+    @RemoteAction
+    public static List<Delivery_Address__c> getDeliveryAddresses(String accountId){
+        return [SELECT Id, Name, Account__c from Delivery_Address__c WHERE Account__c =: accountId];
+    }
+
+    /**
+    * @name getInitialData
+    * @description Gets initial data for communities site.  This method was created just in case external site uses getCommunitiesData
+    * @param String accountId
+    **/
+    public static OCCommunitiesResource.QOCDataResult getInitialData(OCCommunitiesResource.QOCRequest request, Id contactId){
+        OCCommunitiesResource.QOCDataResult result = new OCCommunitiesResource.QOCDataResult();
+        
+        try{
+
+            Contact contact = [Select Region__c, Email, Name, OCC_Hide_Account_Access_Panel__c, Phone, FirstName, LastName, Buyer__c, PhotoUrl, OCC_Photo__c, OCC_ViewAll__c, OCC_ViewApproved__c, OCC_Rewards__c, Birthdate, OCC_RewardsValue__c, AccountId from Contact where Id =: contactId LIMIT 1];
+            result.contact = contact;
+            result.Rewards = contact.OCC_Rewards__c;
+            
+            Account account = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r), Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: contact.AccountId LIMIT 1];
+            result.account = account;
+            result.manager1 = account.Owner;
+            result.manager2 = account.Outside_Salesperson__r;
+
+            List<User> otherManagers = [Select Name, UserRole.Name, Email, Phone, FullPhotoUrl, Photo__c, ManagerId from User where Id  =: account.Outside_Salesperson__r.ManagerId];
+            if (otherManagers.size() > 0){
+                result.manager3 = otherManagers.get(0);
+            }
+
+            Map<String, OCCommunitiesResource.QOCTypeData> qocMap = new Map<String, OCCommunitiesResource.QOCTypeData>();
+            Map<String, OCCommunitiesResource.QOCTypeData> pendingMap = new Map<String, OCCommunitiesResource.QOCTypeData>();
+            
+            Set<Id> headerIds = new Set<Id>(); 
+            result.AccountType = 'View Mine Only';
+            for(QuotesOrdersCredits_Header__c header : [Select Id,  of_Lines__c, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c , TotalDollars__c, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c  where Customer__c =: account.Id AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Release' OR Type__c = 'RFQ' OR Sub_Type__c = 'Change Order') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 5]) {
+                OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                quoteData.header = header;
+                qocMap.put(header.Id, quoteData);
+                headerIds.add(header.Id);
+                result.quotes.add(quoteData);                   
+            }
+            
+            List<OCC_ContactSlider__c> contactSlider = [Select Name, URL__c, LinkUrl__c, Index__c from OCC_ContactSlider__c where Contact__c =: contactId ORDER BY OCC_ContactSlider__c.Index__c];
+            
+            if (contactSlider.size() == 0){
+                contactSlider = [Select Name, URL__c, LinkUrl__c, Index__c from OCC_ContactSlider__c where Contact__c = Null ORDER BY OCC_ContactSlider__c.Index__c];
+            }
+            
+            result.contactSlider = contactSlider;
+            result.Message = String.valueOf(contactSlider.size());
+       
+            for(QuoteOrderCredit_Details__c detail : [Select Id, Customer_Item__c, CableCode__c, Item_Markings__c, SalesPricePortal__c, NotesPortal__c, TotalDollarsPortal__c, Put_up_1__c, Put_up_2__c, Put_up_3__c, Put_up_4__c, Put_up_5__c, Put_up_6__c, Put_up_7__c, Spec_Sheet__c, C2SPRC__c, Name, Dollars__c, Expected_Date__c, Freight_Terms__c, Freight_Carrier__c, Item_Description__c,  Line_Item__c, Line_Number__c, Line_Status__c, Qty_Ordered__c, Qty_Shipped__c, TrackingURL__c, Order_Header__c, Received_Complete__c from QuoteOrderCredit_Details__c where Order_Header__c IN: headerIds AND Line_Status__c != 'Cancelled' ORDER BY QuoteOrderCredit_Details__c.Line_Number__c]) {
+                OCCommunitiesResource.QOCTypeData quoteData =  qocMap.get(detail.Order_Header__c);
+                if(quoteData != null) {
+                    quoteData.details.add(detail);
+                }   
+            }
+            
+            List<ContentDocumentLink> docs = [Select Id, ContentDocumentId, ContentDocument.title, LinkedEntityId from ContentDocumentLink where LinkedEntityId IN: headerIds];
+            result.Message = String.valueOf(docs.size());
+           
+            OCCommunitiesResourceHelper.getDocuments(qocMap, request.url, headerIds);                    
+            
+            result.rmfPOValues = OCCommunitiesResourceHelper.getFieldDependencies('Account', 'Portal_PO_Selector__c', 'Portal_POs__c', account.Account_Number__c);
+            result.alternativePartNumbers = OCCommunitiesResourceHelper.getAlternativePartNumbersAll(account.Id);
+            result.filteredAlternativePartNumbers = OCCommunitiesResourceHelper.getFilteredAlternativeParts(result.alternativePartNumbers, headerIds, account.Id);
+            result.deliveryAddresses = OCCommunitiesResourceHelper.getDeliveryAddresses(account.Id);
+            result.masterOrders = OCCommunitiesResourceHelper.getAllMasterOrders(account.Id);
+            result.siteUrl = URL.getSalesforceBaseUrl().toExternalForm();
+            result.Success = true;
+            
+        }catch(Exception e){
+            result.Success = false;
+            result.Message = e.getMessage();
+        }
+           
+        return result;
+    }
+
+    /**
+    * @name getDataPortal
+    * @description Gets quote/order/credit for communities.  This method was created just in case external site uses getCommunitiesData
+    * @param String accountId
+    **/
+    public static OCCommunitiesResource.GetDataResults getDataPortal(OCCommunitiesResource.GetDataRequest request, Id contactId){
+        OCCommunitiesResource.GetDataResults result = new OCCommunitiesResource.GetDataResults();
+        
+        try{
+            Integer offset = request.offset;
+            Map<String, OCCommunitiesResource.QOCTypeData> qocMap = new Map<String, OCCommunitiesResource.QOCTypeData>();            
+            Set<Id> headerIds = new Set<Id>();        
+            AccountAccess access = OCCommunitiesResourceHelper.getAccountAccess(contactId);
+            
+            if(request.typeStr.equals('myQuotes')){
+                Integer totalCount = [Select COUNT() from QuotesOrdersCredits_Header__c  where Buyer__c =: contactId AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Release' OR Type__c = 'RFQ' OR Sub_Type__c = 'Change Order' ) LIMIT 2000];
+                result.totalCount = totalCount;
+                for(QuotesOrdersCredits_Header__c header : [Select Id, of_Lines__c, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Notes__c, Name, Purchase_Agent__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c , TotalDollars__c, Outside_AM_Name__r.Name, Outside_AM_Name__r.UserRole.Name, Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, Entered_By__r.Name, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c  where Buyer__c =: contactId AND /*QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS AND*/ QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Release' OR Type__c = 'RFQ' OR Sub_Type__c = 'Change Order' ) ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 10 Offset :offset]) {
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = header;
+                    qocMap.put(header.Id, quoteData);
+                    headerIds.add(header.Id);
+                    result.quotes.add(quoteData);
+                }
+                
+            }else if(request.typeStr.equals('otherQuotes')){
+                Integer totalCount = [Select COUNT() from QuotesOrdersCredits_Header__c  where (Customer__c =: access.contact.AccountId AND Buyer__c != :contactId) /*AND QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS*/ AND QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Release' OR Type__c = 'RFQ' OR Sub_Type__c = 'Change Order' ) LIMIT 2000];
+                result.totalCount = totalCount;
+                for(QuotesOrdersCredits_Header__c header : [Select Id, Ship_to_Address_1__c, Ship_to_Address_2__c, Ship_to_City__c, Ship_to_State__c, Ship_to_Zip_Code__c,  OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c where (Customer__c =: access.contact.AccountId AND Buyer__c != :contactId) AND /*QuotesOrdersCredits_Header__c.Date__c = LAST_90_DAYS AND*/ QuotesOrdersCredits_Header__c.Status__c != 'Cancelled' AND (Type__c = 'Release' OR Type__c = 'RFQ' OR Sub_Type__c = 'Change Order') ORDER BY QuotesOrdersCredits_Header__c.Date__c DESC LIMIT 10 Offset: request.offset]) {
+                        OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                        quoteData.header = header;
+                        qocMap.put(header.Id, quoteData);
+                        headerIds.add(header.Id);
+                        result.quotes.add(quoteData);                    
+                }
+                
+            }else if(request.typeStr.equals('search')){
+                String soslSearch = request.searchText + '*';
+                List<List<SObject>> alternativeParts = [FIND :soslSearch RETURNING Alternative_Part_Number__c (Id, Name, Account__c, Cable_Code__c, Part_Numbers__c, Part_Numbers__r.Id, Part_Numbers__r.Name, Part_Numbers__r.Item_Description_OPUS__c WHERE Account__c =: access.mainAccount.Id)];
+                List<Alternative_Part_Number__c> allparts = ((List<Alternative_Part_Number__c>)alternativeParts[0]);
+                List<String> partIds = new List<String>();
+                List<String> partNames = new List<String>();
+                Map<String, Alternative_Part_Number__c> partMap = new  Map<String, Alternative_Part_Number__c>();
+                System.debug('allparts: ' + allparts);
+                for(Alternative_Part_Number__c part: allparts){
+                    partNames.add(part.Part_Numbers__r.Name);
+                    partMap.put(part.Id, part);
+                    if(!partIds.contains(part.Id)){
+                        partIds.add(part.Id);
+                    }
+                }  
+
+                /** NOTE: Search details by part name */
+                for(QuoteOrderCredit_Details__c findDetailsByPart : [Select Id, Name, Line_Item__c, Line_Status__c, Order_Header__c from QuoteOrderCredit_Details__c WHERE Line_Item__c IN: partNames AND Line_Status__c != 'Cancelled' AND Order_Header__r.Customer__c =: access.mainAccount.Id]){
+                    if(!headerIds.contains(findDetailsByPart.Order_Header__c)){
+                        headerIds.add(findDetailsByPart.Order_Header__c);
+                    }
+                }
+
+                List<List<SObject>> allResults = [FIND :soslSearch RETURNING QuoteOrderCredit_Details__c (Order_Header__c WHERE Line_Status__c != 'Cancelled' AND Order_Header__r.Customer__c =: access.mainAccount.Id)];
+                List<QuoteOrderCredit_Details__c> allDetails = ((List<QuoteOrderCredit_Details__c>)allResults[0]);
+                for(QuoteOrderCredit_Details__c detail: allDetails){
+                    if(!headerIds.contains(detail.Order_Header__c)){
+                        headerIds.add(detail.Order_Header__c);
+                    }
+                }   
+                        
+                /** NOTE: Search headers */
+                Integer counter = 0;
+                String soqlSearch = '%' + request.searchText + '%';
+                for(QuotesOrdersCredits_Header__c header : [Select Id, OCC_RewardRedeemed__c, Order_Number__c, RFQNumber__c, RFQ_Text__c, CreditRMAPortalType__c, TotalOrderSalesPortal__c, CreatedDate, Name, Purchase_Agent__c, Notes__c, Status__c, Type__c, OCC_Rewards__c, Customer__c, Customer__r.ShippingAddress, Customer__r.BillingAddress, Customer__r.Name, Customer__r.OCC_Rewards__c, Total_Order_Sales__c, TotalDollars__c, Outside_AM_Name__r.Name,Outside_AM_Name__r.UserRole.Name,  Outside_AM_Name__r.FullPhotoUrl, Outside_AM_Name__r.Photo__c, Outside_AM_Name__r.Email, Outside_AM_Name__r.Phone, Inside_AM_Name__r.Email, Inside_AM_Name__r.FullPhotoUrl, Inside_AM_Name__r.Photo__c, Inside_AM_Name__r.Phone, Inside_AM_Name__r.Name, Entered_By__c, Date__c, Buyer__c, Job_Reference__c, Mark_Number__c, Payment_Terms__c, Customer_PO__c, Customer_Name__c, Customer__r.OwnerId, Buyer__r.Name, RewardOverride__c, RMF_PO__c, Sub_Type__c from QuotesOrdersCredits_Header__c WHERE Status__c != 'Cancelled' AND (Customer__c IN: access.childAccounts OR Buyer__c =: contactId) AND (Id IN :headerIds OR (Name LIKE :soqlSearch OR Status__c LIKE :soqlSearch OR Customer_PO__c LIKE :soqlSearch OR Job_Reference__c LIKE :soqlSearch OR Mark_Number__c LIKE :soqlSearch OR Buyer__r.Name LIKE :soqlSearch OR TotalOrderSalesPortal__c LIKE :soqlSearch)) ORDER BY Date__c DESC]) {
+                 
+                    OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+                    quoteData.header = header;
+                    qocMap.put(header.Id, quoteData);
+                    
+                    if(header.Type__c == 'Release' || header.Type__c == 'RFQ' || header.Sub_Type__c == 'Change Order' /*|| (header.Type__c == 'Order' && header.Sub_Type__c == 'Change Order')*/) {
+                        result.quotes.add(quoteData);
+                    } else if(header.Type__c == 'Order' && (header.Sub_Type__c == 'Blanket')) {
+                        result.orders.add(quoteData);
+                    } 
+                    
+                    if(!headerIds.contains(header.Id)){
+                        headerIds.add(header.Id);
+                    }
+                    
+                    counter++;
+                      
+                 }
+                 
+                 result.Message = 'term= ' + soqlSearch + ' details = ' + String.valueOf(allDetails.size()) + 'allQOCS = ' + String.valueOf(counter);
+            }
+            
+            for(QuoteOrderCredit_Details__c detail : [Select Id, Customer_Item__c, CableCode__c, Item_Markings__c, SalesPricePortal__c, NotesPortal__c, TotalDollarsPortal__c, Put_up_1__c, Put_up_2__c, Put_up_3__c, Put_up_4__c, Put_up_5__c, Put_up_6__c, Put_up_7__c, Spec_Sheet__c, C2SPRC__c, Name, Dollars__c, Expected_Date__c, Freight_Terms__c, Freight_Carrier__c, Item_Description__c,  Line_Item__c, Line_Number__c, Line_Status__c, Qty_Ordered__c, Qty_Shipped__c, TrackingURL__c, Order_Header__c, Received_Complete__c from QuoteOrderCredit_Details__c where Order_Header__c IN: headerIds AND Line_Status__c != 'Cancelled' ORDER BY QuoteOrderCredit_Details__c.Line_Number__c]) {
+                OCCommunitiesResource.QOCTypeData quoteData =  qocMap.get(detail.Order_Header__c);
+                if(quoteData != null) {
+                    quoteData.details.add(detail);
+                }   
+            }
+
+            OCCommunitiesResourceHelper.getDocuments(qocMap, request.url, headerIds);    
+            result.Success = true;
+
+        }catch(Exception e){
+            result.Message = e.getMessage();
+        }
+                
+        return result;
+    }
+
+    global class AccountAccess{
+        Account mainAccount = new Account();
+    	List<Account> allAccounts = new List<Account>();
+        List<Account> childAccounts = new List<Account>();
+        List<String> accessAccountIds = new List<String>();
+        Contact contact = new Contact();
+    }
+
+
+   /**
+    * @name getDeliveryAddresses
+    * @description Gets all delivery addresses for a given account
+    * @param String accountId
+    **/
+    @RemoteAction
+    public static AccountAccess getAccountAccess(String contactId){
+        AccountAccess access = new AccountAccess();
+
+        List<Contact> contacts = [Select Email, Name, Phone, FirstName, LastName, PhotoUrl, OCC_Photo__c, OCC_ViewAll__c, OCC_ViewApproved__c, OCC_Rewards__c, Birthdate, AccountId from Contact where Id =: contactId];
+        Contact contact = new Contact();
+       
+        if (contacts.size() > 0){
+            contact = contacts.get(0);
+            access.contact = contact;
+        }
+        
+        //Get User Account
+        List<Account> accounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r) Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: contact.AccountId];
+        Account account = null;
+        if(Accounts.size() > 0){
+            account = accounts.get(0);
+            access.mainAccount = account;
+        }
+        
+        //Get Parent Account
+        Account parentAccount = null;
+        List<Account> parentAccounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r), Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: account.ParentId];
+        if(ParentAccounts.size() > 0){
+            parentAccount = parentAccounts.get(0);
+        }
+        
+        if(contact.OCC_ViewAll__c == true){
+            
+            if(parentAccount != null){
+                access.childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: parentAccount.Id Or Id =: account.Id Or Id =: parentAccount.Id) AND Active__c != 'D' ORDER BY Name];
+            }else{
+                access.childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: account.Id Or Id =: account.Id) AND Active__c != 'D' ORDER BY Name];
+            }
+        
+        }else if(contact.OCC_ViewApproved__c == true){
+
+            List<String> approvedAccountIds = new List<String>();
+            for(OCC_ApprovedAccount__c approvedAccount : [Select Contact__c, Status__c, Account__c, Account__r.Active__c, Account__r.Name FROM OCC_ApprovedAccount__c where Contact__c =: contact.Id AND (Status__c = 'Accepted' OR Status__c = 'Pending')]){
+                approvedAccountIds.add(approvedAccount.Account__c);
+            }
+            access.childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (Id IN: approvedAccountIds) AND Active__c != 'D' ORDER BY Name];
+                            
+
+        }else{
+            
+            //TODO: determin if viewing my account only contains all children as well
+            //childAccounts = [SELECT Name, Active__c, Account_Number__c, Phone, Id, ShippingAddress FROM Account WHERE (ParentId =: account.Id Or Id =: account.Id) AND Active__c != 'D' ORDER BY Name];
+            
+        }
+
+        return access;
+    }
+
+    /**
+    * @name getFilteredAlternativeParts
+    * @description Gets all alternative part numbers for a given account and filter losded
+    * @param List<Alternative_Part_Number__c>
+    * @param List<String> headerIds
+    **/
+    @RemoteAction
+    public static List<Alternative_Part_Number__c> getFilteredAlternativeParts(List<Alternative_Part_Number__c> allparts, Set<Id> headerIds, String accountId){
+        List<String> partNames = new List<String>();
+        List<Alternative_Part_Number__c> alternativePartsupdate = new List<Alternative_Part_Number__c>();
+        Map<String, Alternative_Part_Number__c> partsMap = new Map<String, Alternative_Part_Number__c>();
+        System.debug('allparts: ' + allparts);
+
+        for (Alternative_Part_Number__c part : allParts) {
+            partNames.add(part.Part_Numbers__r.Name);
+            partsMap.put(part.Name.trim(), part);
+            //partsMap.put(part.Part_Numbers__r.Name, part);
+
+        }
+
+        System.debug('headerIds: ' + headerIds);
+
+        /* get all details for header ids */
+        for(QuoteOrderCredit_Details__c detail : [Select Id, Name, Line_Item__c, Customer_Item__c, Item_Markings__c, Line_Status__c, Order_Header__c, Qty_Ordered__c, Qty_Shipped__c,  Order_Header__r.Type__c, Order_Header__r.Sub_Type__c from QuoteOrderCredit_Details__c WHERE Order_Header__r.Customer__c =: accountId AND Line_Status__c != 'Cancelled' /*AND (Order_Header__r.Type__c = 'Release' OR  ( Order_Header__r.Type__c = 'Order' AND  Order_Header__r.Sub_Type__c='Change Order'))*/]){
+            System.debug('detail: ' + detail);
+            if(!String.isBlank(detail.Customer_Item__c)){
+
+                
+                // NOTE: remove if quanity remaining is 0
+                if(partsMap.get(detail.Customer_Item__c.trim()) != null && detail.Qty_Ordered__c == detail.Qty_Shipped__c){
+                    Alternative_Part_Number__c part =  partsMap.get(detail.Customer_Item__c.trim());
+                    System.debug('PART QTY 0: ' + part);
+                    part.Closed__c = true;
+                    if(!alternativePartsupdate.contains(part)){
+                        alternativePartsupdate.add(part);
+                    }
+                }
+
+                // NOTE: remove if part of a release or if part of an order with subtype change order
+                if(partsMap.get(detail.Customer_Item__c.trim()) != null && (detail.Order_Header__r.Type__c == 'Release' || (detail.Order_Header__r.Type__c == 'Order' &&  detail.Order_Header__r.Sub_Type__c == 'Change Order')) ){
+                    Alternative_Part_Number__c part =  partsMap.get(detail.Customer_Item__c.trim());
+                    System.debug('PART RELEASE: ' + part);
+                    part.Closed__c = true;
+                    if(!alternativePartsupdate.contains(part)){
+                        alternativePartsupdate.add(part);
+                    }
+                    
+                }
+
+            }else{
+                System.debug(detail.Name + 'has null Customer_Item__c');
+            }
+
+        }
+        
+        Update alternativePartsupdate; 
+        return [SELECT Id, Name, Account__c, Cable_Code__c, Part_Numbers__c, Part_Numbers__r.Id, Part_Numbers__r.Name, Part_Numbers__r.Item_Description_OPUS__c from Alternative_Part_Number__c WHERE Account__c =: accountId AND Closed__c = false ORDER BY NAME ASC];
+    }
+
+    public class MyPickListInfo{
+        public String validFor;
+    }
+
+    /**
+    * @name getFieldDependencies
+    * @description get dependent list based on account number
+    * @param String objectName
+    * @param String controllingField
+    * @param String dependentField
+    * @param String AccountNumber
+    * @return List<String> dependentFields
+    **/
+    public static List<String> getFieldDependencies(String objectName, String controllingField, String dependentField, String AccountNumber){
+        Map<String, List<String>> controllingInfo = new Map<String, List<String>>();
+
+        Schema.SObjectType objType = Schema.getGlobalDescribe().get(objectName);
+
+        Schema.DescribeSObjectResult describeResult = objType.getDescribe();
+        Schema.DescribeFieldResult controllingFieldInfo = describeResult.fields.getMap().get(controllingField).getDescribe();
+        Schema.DescribeFieldResult dependentFieldInfo = describeResult.fields.getMap().get(dependentField).getDescribe();
+
+        List<Schema.PicklistEntry> controllingValues = controllingFieldInfo.getPicklistValues();
+        List<Schema.PicklistEntry> dependentValues = dependentFieldInfo.getPicklistValues();
+
+        for(Schema.PicklistEntry currControllingValue : controllingValues)
+        {
+            System.debug('ControllingField: Label:' + currControllingValue.getLabel());
+            controllingInfo.put(currControllingValue.getLabel(), new List<String>());
+        }
+
+        for(Schema.PicklistEntry currDependentValue : dependentValues)
+        {
+            String jsonString = JSON.serialize(currDependentValue);
+
+            MyPickListInfo info = (MyPickListInfo) JSON.deserialize(jsonString, MyPickListInfo.class);
+
+            String hexString = EncodingUtil.convertToHex(EncodingUtil.base64Decode(info.validFor)).toUpperCase();
+
+            System.debug('DependentField: Label:' + currDependentValue.getLabel() + ' ValidForInHex:' + hexString + ' JsonString:' + jsonString);
+
+            Integer baseCount = 0;
+
+            for(Integer curr : hexString.getChars())
+            {
+                Integer val = 0;
+
+                if(curr >= 65)
+                {
+                    val = curr - 65 + 10;
+                }
+                else
+                {
+                    val = curr - 48;
+                }
+
+                if((val & 8) == 8)
+                {
+                    System.debug('Dependent Field: ' + currDependentValue.getLabel() + ' Partof ControllingField:' + controllingValues[baseCount + 0].getLabel());
+                    controllingInfo.get(controllingValues[baseCount + 0].getLabel()).add(currDependentValue.getLabel());
+                }
+                if((val & 4) == 4)
+                {
+                    System.debug('Dependent Field: ' + currDependentValue.getLabel() + ' Partof ControllingField:' + controllingValues[baseCount + 1].getLabel());
+                    controllingInfo.get(controllingValues[baseCount + 1].getLabel()).add(currDependentValue.getLabel());                    
+                }
+                if((val & 2) == 2)
+                {
+                    System.debug('Dependent Field: ' + currDependentValue.getLabel() + ' Partof ControllingField:' + controllingValues[baseCount + 2].getLabel());
+                    controllingInfo.get(controllingValues[baseCount + 2].getLabel()).add(currDependentValue.getLabel());                    
+                }
+                if((val & 1) == 1)
+                {
+                    System.debug('Dependent Field: ' + currDependentValue.getLabel() + ' Partof ControllingField:' + controllingValues[baseCount + 3].getLabel());
+                    controllingInfo.get(controllingValues[baseCount + 3].getLabel()).add(currDependentValue.getLabel());                    
+                }
+
+                baseCount += 4;
+            }            
+        } 
+
+        System.debug('ControllingInfo: ' + controllingInfo);
+
+        List<String> results = new List<String>();
+        if(controllingInfo.get(AccountNumber) != null){
+            results = controllingInfo.get(AccountNumber);
+        }
+
+        return results;
+    }
+
+    /**
+    * @name getDocuments
+    * @description get documents for all quote/order/credits
+    * @param Map<String, OCCommunitiesResource.QOCTypeData> qocMap
+    * @param String url
+    * @param Set<Id> headerIds
+    * @return Map<String, OCCommunitiesResource.QOCTypeData> qocMap
+    **/
+    public static Map<String, OCCommunitiesResource.QOCTypeData> getDocuments(Map<String, OCCommunitiesResource.QOCTypeData> qocMap, String url, Set<Id> headerIds){
+
+        User user = [SELECT Id, Name, Profile.name from User WHERE Id =: UserInfo.getUserId()];
+        Boolean invoiceAccess = user.Profile.name == 'E.D. Portal User' ? true : false;
+        OCCommunitiesResource.QOCTypeData quoteData = new OCCommunitiesResource.QOCTypeData();
+
+        List<ContentDocumentLink> links = [Select Id, ContentDocumentId, ContentDocument.LatestPublishedVersionId, ContentDocument.title, LinkedEntityId from ContentDocumentLink where LinkedEntityId IN :headerIds];
+        for(ContentDocumentLink contentDoc : [Select Id, ContentDocumentId, ContentDocument.LatestPublishedVersionId, ContentDocument.title, LinkedEntityId from ContentDocumentLink where LinkedEntityId IN :headerIds]) {
+                    
+            quoteData =  qocMap.get(contentDoc.LinkedEntityId);
+            if(quoteData != null && contentDoc.ContentDocument != null && (!contentDoc.ContentDocument.title.toLowerCase().contains('invoice') || invoiceAccess)) {
+                
+                OCCommunitiesResource.QOCAttachment att = new OCCommunitiesResource.QOCAttachment();
+                att.title = contentDoc.ContentDocument.title;
+                att.url = url + '/sfc/servlet.shepherd/version/download/' + contentDoc.ContentDocument.LatestPublishedVersionId;
+                att.image = url + '/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' + contentDoc.ContentDocument.LatestPublishedVersionId;
+                quoteData.attachments.add(att);
+            }
+            
+        }
+
+        return qocMap;
+    }
 
 }
