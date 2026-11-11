@@ -1,4 +1,4 @@
-global class OCCommunitiesResourceHelper {
+global without sharing class OCCommunitiesResourceHelper {
 
     public static OCCommunitiesResource.UploadPhotoResult uploadProfilePhoto(OCCommunitiesResource.UploadPhotoRequest request, Id contactId){
         OCCommunitiesResource.UploadPhotoResult result = new OCCommunitiesResource.UploadPhotoResult();
@@ -523,7 +523,11 @@ global class OCCommunitiesResourceHelper {
                 
                 if(request.typeStr.equals('RMA')){
                     if(!runningInASandbox()){
-                        message.setBccAddresses(new String[] {'portal@omnicable.com', managerEmail});
+                        if(String.isNotBlank(managerEmail)){
+                            message.setBccAddresses(new String[] {'portal@omnicable.com', managerEmail});
+                        }else{
+                            message.setBccAddresses(new String[] {'portal@omnicable.com'});
+                        }
                         message.setCcAddresses(new String[] {'RMAs@omnicable.com'});
                         message.setSubject('RMA Request Received from myomnicable.com');
                     }else{
@@ -537,10 +541,12 @@ global class OCCommunitiesResourceHelper {
                 }else if(request.typeStr.equals('RFQ')){
                     //NOTE: toggle comment setBccAddresses
                     message.setBccAddresses(new String[] {'portal@omnicable.com'});
-                    message.setCcAddresses(new String[] {managerEmail});
+                    if(String.isNotBlank(managerEmail)){
+                        message.setCcAddresses(new String[] {managerEmail});
+                        message.setReplyTo(managerEmail);
+                        message.setSenderDisplayName(managerEmail);
+                    }
                     message.setSubject('RFQ Received from myomnicable.com');
-                    message.setReplyTo(managerEmail);
-                    message.setSenderDisplayName(managerEmail);
                     String siteUrl = URL.getSalesforceBaseUrl().toExternalForm();
                     
                     QuotesOrdersCredits_Header__c newQOC = new QuotesOrdersCredits_Header__c( RFQ_Text__c = request.RFQData, Customer__c = account.Id, Date__c = date.today(), Job_Reference__c = request.jobReferenceNumber, Mark_Number__c = request.markNumber, Buyer__c = contactId, Type__c = 'RFQ');
@@ -557,14 +563,18 @@ global class OCCommunitiesResourceHelper {
                 }else if(request.typeStr.equals('Order')){
                     if(!runningInASandbox()){
                         message.setBccAddresses(new String[] {'portal@omnicable.com'});
-                        message.setCcAddresses(new String[] {managerEmail});
+                        if(String.isNotBlank(managerEmail)){
+                            message.setCcAddresses(new String[] {managerEmail});
+                        }
                         message.setSubject('Order Received from myomnicable.com');
                     }else{
                         message.setSubject('TEST-Order Received from myomnicable.com');
                     }
                     
-                    message.setSenderDisplayName(managerEmail);
-                    message.setReplyTo(managerEmail);
+                    if(String.isNotBlank(managerEmail)){
+                        message.setSenderDisplayName(managerEmail);
+                        message.setReplyTo(managerEmail);
+                    }
                     baseBody = contact.FirstName + ', <br> <br>' +  'Thank you for placing your order through <a href="https://myomnicable.com"> myomnicable.com </a>. You will receive an order confirmation shortly. <br> <br> '  + baseBody + '<br> <br> <br> Thank you, <br> Omni Cable';
                 }
               
@@ -624,7 +634,7 @@ global class OCCommunitiesResourceHelper {
                
                 Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();  
                 message.setToAddresses(toAddress);
-                if(managerEmail != null){
+                if(String.isNotBlank(managerEmail)){
                     message.setCcAddresses(new String[] {managerEmail});
                 }
                 message.setSaveAsActivity(true);
@@ -828,6 +838,10 @@ global class OCCommunitiesResourceHelper {
         String endpoint ='';
         String message = 'Congratulations!';
         
+
+        Tango_Credentials__c credentials = Tango_Credentials__c.getOrgDefaults();
+
+        
         if(runningInASandbox()){
             endpoint = 'https://integration-api.tangocard.com/raas/v2/orders';
             req.setHeader('authorization', 'Basic T21uaUNhYmxlOkZkU1ohTFVXJEBIYXVERlVzdHRuWk9Abk5veklleWpTZndUJGplU3pHcVA=');
@@ -838,8 +852,9 @@ global class OCCommunitiesResourceHelper {
             req.setBody('{"accountIdentifier":"omnicable","customerIdentifier":"omnicable","subject":"Test Subject","message": "' + message + '","amount":1.0,"sendEmail":true, "etid":"E000000", "utid":"U561593","recipient":{"email":"' + testEmail+ '","firstName":"' + contact.FirstName + '","lastName":"' + contact.LastName + '"},"sender":{"email":"portal@omnicable.com","firstName":"OmniCable"}}');
             
         }else{
+            String apiKey = 'Basic ' + credentials.API_Key__c;
             endpoint = 'https://api.tangocard.com/raas/v2/orders';
-            req.setHeader('authorization', 'Basic T21uaUNhYmxlOk5EWmREaWRZbCFRJGtUTkVjWWxJYmlkTk1SVXByd1YmQ3dURlhmYmohaUI=');
+            req.setHeader('authorization', apiKey);
             req.setBody('{"accountIdentifier":"omnicable","customerIdentifier":"omnicable","message": "' + message + '","amount":"' + total + '","sendEmail":true, "utid":"U561593","recipient":{"email":"' + contact.Email + '","firstName":"' + contact.FirstName + '","lastName":"' + contact.lastName + '"},"sender":{"email":"portal@omnicable.com","firstName":"OmniCable"}, "etid":"E838072"}');             
             
         }
@@ -1323,7 +1338,12 @@ global class OCCommunitiesResourceHelper {
         return result;
     }
 
+    @TestVisible private static Boolean sandboxOverride = null;
+
     public static Boolean runningInASandbox() {
+        if (sandboxOverride != null) {
+            return sandboxOverride;
+        }
         return [SELECT Id, IsSandbox FROM Organization LIMIT 1].IsSandbox;
     }
     
@@ -1707,7 +1727,7 @@ global class OCCommunitiesResourceHelper {
         }
         
         //Get User Account
-        List<Account> accounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r) Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: contact.AccountId];
+        List<Account> accounts = [Select Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name, Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c, Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress, Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: contact.AccountId];
         Account account = null;
         if(Accounts.size() > 0){
             account = accounts.get(0);
@@ -1716,7 +1736,9 @@ global class OCCommunitiesResourceHelper {
         
         //Get Parent Account
         Account parentAccount = null;
-        List<Account> parentAccounts = [Select (SELECT Id, Name, Area_Account_Manager__c, Area_Account_Manager__r.Name from Job_Areas__r), Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name,  Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c , Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress , Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: account.ParentId];
+        List<Account> parentAccounts = (account != null && account.ParentId != null)
+            ? [Select Id, Active__c, Account_Number__c, Name, ParentId, OCC_Rewards__c, Phone, ShippingAddress, Outside_Salesperson__r.UserRole.Name, Outside_Salesperson__r.Name, Outside_Salesperson__r.FullPhotoUrl, Outside_Salesperson__r.Photo__c, Outside_Salesperson__r.Email, Outside_Salesperson__r.ManagerId, Outside_Salesperson__r.Phone, BillingAddress, Owner.UserRole.Name, Owner.FirstName, Owner.LastName, Owner.Email, Owner.Phone, Owner.FullPhotoUrl, Owner.Photo__c from Account where Id =: account.ParentId]
+            : new List<Account>();
         if(ParentAccounts.size() > 0){
             parentAccount = parentAccounts.get(0);
         }
