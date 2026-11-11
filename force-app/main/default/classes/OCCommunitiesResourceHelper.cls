@@ -1,4 +1,4 @@
-global class OCCommunitiesResourceHelper {
+global without sharing class OCCommunitiesResourceHelper {
 
     public static OCCommunitiesResource.UploadPhotoResult uploadProfilePhoto(OCCommunitiesResource.UploadPhotoRequest request, Id contactId){
         OCCommunitiesResource.UploadPhotoResult result = new OCCommunitiesResource.UploadPhotoResult();
@@ -523,7 +523,11 @@ global class OCCommunitiesResourceHelper {
                 
                 if(request.typeStr.equals('RMA')){
                     if(!runningInASandbox()){
-                        message.setBccAddresses(new String[] {'portal@omnicable.com', managerEmail});
+                        if(String.isNotBlank(managerEmail)){
+                            message.setBccAddresses(new String[] {'portal@omnicable.com', managerEmail});
+                        }else{
+                            message.setBccAddresses(new String[] {'portal@omnicable.com'});
+                        }
                         message.setCcAddresses(new String[] {'RMAs@omnicable.com'});
                         message.setSubject('RMA Request Received from myomnicable.com');
                     }else{
@@ -537,10 +541,12 @@ global class OCCommunitiesResourceHelper {
                 }else if(request.typeStr.equals('RFQ')){
                     //NOTE: toggle comment setBccAddresses
                     message.setBccAddresses(new String[] {'portal@omnicable.com'});
-                    message.setCcAddresses(new String[] {managerEmail});
+                    if(String.isNotBlank(managerEmail)){
+                        message.setCcAddresses(new String[] {managerEmail});
+                        message.setReplyTo(managerEmail);
+                        message.setSenderDisplayName(managerEmail);
+                    }
                     message.setSubject('RFQ Received from myomnicable.com');
-                    message.setReplyTo(managerEmail);
-                    message.setSenderDisplayName(managerEmail);
                     String siteUrl = URL.getSalesforceBaseUrl().toExternalForm();
                     
                     QuotesOrdersCredits_Header__c newQOC = new QuotesOrdersCredits_Header__c( RFQ_Text__c = request.RFQData, Customer__c = account.Id, Date__c = date.today(), Job_Reference__c = request.jobReferenceNumber, Mark_Number__c = request.markNumber, Buyer__c = contactId, Type__c = 'RFQ');
@@ -557,14 +563,18 @@ global class OCCommunitiesResourceHelper {
                 }else if(request.typeStr.equals('Order')){
                     if(!runningInASandbox()){
                         message.setBccAddresses(new String[] {'portal@omnicable.com'});
-                        message.setCcAddresses(new String[] {managerEmail});
+                        if(String.isNotBlank(managerEmail)){
+                            message.setCcAddresses(new String[] {managerEmail});
+                        }
                         message.setSubject('Order Received from myomnicable.com');
                     }else{
                         message.setSubject('TEST-Order Received from myomnicable.com');
                     }
                     
-                    message.setSenderDisplayName(managerEmail);
-                    message.setReplyTo(managerEmail);
+                    if(String.isNotBlank(managerEmail)){
+                        message.setSenderDisplayName(managerEmail);
+                        message.setReplyTo(managerEmail);
+                    }
                     baseBody = contact.FirstName + ', <br> <br>' +  'Thank you for placing your order through <a href="https://myomnicable.com"> myomnicable.com </a>. You will receive an order confirmation shortly. <br> <br> '  + baseBody + '<br> <br> <br> Thank you, <br> Omni Cable';
                 }
               
@@ -624,7 +634,7 @@ global class OCCommunitiesResourceHelper {
                
                 Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();  
                 message.setToAddresses(toAddress);
-                if(managerEmail != null){
+                if(String.isNotBlank(managerEmail)){
                     message.setCcAddresses(new String[] {managerEmail});
                 }
                 message.setSaveAsActivity(true);
