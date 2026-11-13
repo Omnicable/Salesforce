@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Excluded_from_Account_Sales__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Excluded from Account Sales</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>
