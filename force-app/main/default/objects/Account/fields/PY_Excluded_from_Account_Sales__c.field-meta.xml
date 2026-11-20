@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PY_Excluded_from_Account_Sales__c</fullName>
+    <description>Stores total excluded sales for the prior year</description>
+    <inlineHelpText>Total sales excluded from prior year sales calculations</inlineHelpText>
+    <label>PY Excluded from Account Sales</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>
