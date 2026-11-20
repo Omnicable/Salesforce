@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjusted_Sales_Current_Year__c</fullName>
+    <description>Calculates current year sales after subtracting excluded sales</description>
+    <formula>BLANKVALUE(Sales_Current_Year__c, 0) - BLANKVALUE(CY_Excluded_From_Account_Sales__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Adjusted Sales Current Year</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>
