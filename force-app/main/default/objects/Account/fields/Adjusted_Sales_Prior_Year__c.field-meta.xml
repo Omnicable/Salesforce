@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjusted_Sales_Prior_Year__c</fullName>
+    <description>Calculates prior year sales after subtracting excluded sales</description>
+    <formula>BLANKVALUE(Sales_Year_Prior__c , 0) - BLANKVALUE(PY_Excluded_from_Account_Sales__c , 0)</formula>
+    <label>Adjusted Sales Prior Year</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>
