@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Start_ABC_Segment_Approval_Process</name>
+        <label>Start ABC Segment Approval Process</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>AccountPlan_ABC_Segment_Approval_Process</actionName>
+        <actionType>requestApproval</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>firstApprover</name>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>submitter</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <isWaitUntilCompleted>true</isWaitUntilCompleted>
+        <nameSegment>AccountPlan_ABC_Segment_Approval_Process</nameSegment>
+        <offset>1</offset>
+        <offsetUnit>Days</offsetUnit>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <timeoutPathUsage>DisableTimeoutPath</timeoutPathUsage>
+    </actionCalls>
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_ABC_Segment_Request</name>
+        <label>Check ABC Segment Request</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Valid_Change_Request</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ABC_Segment_Verification__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Needs to Change</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Requested_ABC_Segment__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Requested_ABC_Segment__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.ABC_Segment__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Start_ABC_Segment_Approval_Process</targetReference>
+            </connector>
+            <label>Valid Change Request</label>
+        </rules>
+    </decisions>
+    <description>Automatically initiates the RVP approval process when an Account Plans  verification changes to Needs to Change</description>
+    <environments>Default</environments>
+    <interviewLabel>Account Plan - ABC Segment Approval Trigger {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Plan - ABC Segment Approval Trigger</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_ABC_Segment_Request</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ABC_Segment_Verification__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Needs to Change</stringValue>
+            </value>
+        </filters>
+        <object>AccountPlan</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>
