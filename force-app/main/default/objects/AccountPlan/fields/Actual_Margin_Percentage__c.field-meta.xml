@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Margin_Percentage__c</fullName>
+    <description>Calculates the actual margin percentage based on Actual Margin $ divided by Actual Revenue. Returns blank when actual revenue is zero or blank.</description>
+    <formula>IF(
+    Actual_Revenue__c &gt; 0,
+    Actual_Margin__c / Actual_Revenue__c,
+    NULL
+)</formula>
+    <label>Actual Margin Percentage</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>
