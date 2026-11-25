@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_ABC_Verification_Before_Review</fullName>
+    <active>true</active>
+    <description>Prevents Account Plans from moving to Ready for Review unless ABC Segment Verification is Verified. Ensures segment change requests are Resolved before RVP review.</description>
+    <errorConditionFormula>AND(
+ ISCHANGED(  Status ),
+ ISPICKVAL(  Status , &quot;Ready for Review&quot;),
+ NOT(
+  ISPICKVAL( ABC_Segment_Verification__c , &quot;Verified&quot;) 
+
+) 
+)</errorConditionFormula>
+    <errorDisplayField>ABC_Segment_Verification__c</errorDisplayField>
+    <errorMessage>ABC Segment Verification must be Verified before the Account Plan can move to Ready for Review. Complete verification or resolve any pending segment change request.</errorMessage>
+</ValidationRule>

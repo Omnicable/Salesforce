@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Set_RSD_Account_Plan_Status</name>
+    </customPermissions>
+    <description>Grant RSD users permission to update Account Plan statuses to in Progress and Ready for Review.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Account Plan - RSD Status Access</label>
+</PermissionSet>

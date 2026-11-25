@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Both_Targets_For_Review</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND
+(
+ISPICKVAL(Status, &quot;Ready For Review&quot;),
+OR(
+ISBLANK(Target_Revenue__c),
+ISBLANK(Target_Margin_Dollar__c)
+)
+)</errorConditionFormula>
+    <errorMessage>Both Target Revenue and Target Margin % must be entered before submitting the Account Plan for review</errorMessage>
+</ValidationRule>
