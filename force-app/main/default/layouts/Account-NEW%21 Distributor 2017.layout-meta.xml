@@ -3,13 +3,14 @@
     <customButtons>Customer_Stats</customButtons>
     <customButtons>Products_Purchased</customButtons>
     <customButtons>Sales_Call_Stats</customButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>Delete</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>Edit</excludeButtons>
+    <excludeButtons>GenerateKnowledge</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -33,6 +34,9 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Account_Number__c</field>
+            </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -103,6 +107,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Region_Number__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ABC_Segment__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
